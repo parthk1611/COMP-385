@@ -1,0 +1,14 @@
+digraph G {
+graph [bgcolor="white", pad="0.2", nodesep="0.30", ranksep="0.45"]; node [shape=box, style="rounded,filled", fillcolor="#F4F4F4", color="#535353", fontname="Helvetica", fontsize=16, margin="0.16,0.12"]; edge [fontname="Helvetica",fontsize=13,color="#555555",arrowsize=0.7];
+rankdir=TB;node [shape=record,style=filled];
+grid [label="{Grid cell|grid_id (key)\lgrid_x_m, grid_y_m\lCRS and source version\l}"];
+features [label="{Cell day feature record|grid_id + ignition_date (key)\lissue_time_utc\lpredictors + quality flags\l}"];
+model [label="{Model artifact|model identifier / hash\lpredictor contract hash\ltraining and calibration roles\l}"];
+score [label="{Saved prediction|grid_id + ignition_date + study\lprobability, raw probability\lrecorded start, weather flag\l}"];
+explain [label="{Saved explanation|grid_id + date + model\ltop factors / raw log odds\lfirst evaluated day only\l}"];
+incident [label="{Incident reconstruction|fire_id, observation interval\llandscape and weather versions\lsettings / arrival-time output\l}"];
+replay [label="{Replay score|fire_id + step\lsimulator and baseline metrics\lpartition / scoring support\l}"];
+grid -> features [label="one to many"];features -> score [label="one keyed record per study"];model -> score [label="one to many"];score -> explain [label="zero or one saved explanation"];incident -> replay [label="one to many"];
+
+explain -> incident [style=invis];
+}

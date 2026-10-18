@@ -1,0 +1,966 @@
+{
+  "created_utc": "2026-10-16T08:21:58.855047+00:00",
+  "scope": "Week4 local development completion; research data/models, not operational acceptance",
+  "root": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE",
+  "entries": [
+    {
+      "path": "data/processed/historical_weather_development_v2/config.json",
+      "bytes": 942,
+      "sha256": "2b8b2d27747fd807400c70c8dca795130674eb328c8b1857620f151a0f2c89f9"
+    },
+    {
+      "path": "data/processed/historical_weather_development_v2/manifest.json",
+      "bytes": 6322,
+      "sha256": "b6c5e61a07f5ecd9f6497a3da8bbec1a7edf6b5ce16dd6d482c45d1877e1d152"
+    },
+    {
+      "path": "data/processed/hrdps_live_research_2026-10-16_stateful/manifest.json",
+      "bytes": 11334,
+      "sha256": "92c69a04bb579b811500cd17296570a4c5c8eba1c4f6afae8e9cf7b471a0e65a"
+    },
+    {
+      "path": "data/processed/ignition_models_week3_v1/comparison_weather_v2/inner_spatial_histogram_boosting.joblib",
+      "bytes": 322262,
+      "sha256": "848bc21a5727baa915fca1e6d50738b661a3809f24d3b2e6b8e591ebc4ac78fc"
+    },
+    {
+      "path": "data/processed/ignition_models_week3_v1/comparison_weather_v2/inner_spatial_historical_rate.joblib",
+      "bytes": 2333,
+      "sha256": "677728d8c85db90d55cb7bd4138e75650cc3906e06d843f4895a2925e8fa07bf"
+    },
+    {
+      "path": "data/processed/ignition_models_week3_v1/comparison_weather_v2/inner_spatial_lightgbm.joblib",
+      "bytes": 271932,
+      "sha256": "59bc583123fbfc4f3db45df5d1e5936142ee324fce48a79036756fb9fecf538b"
+    },
+    {
+      "path": "data/processed/ignition_models_week3_v1/comparison_weather_v2/inner_spatial_logistic.joblib",
+      "bytes": 5322,
+      "sha256": "8e83b9686e483a262653e6c6b1cf0dcdf695e1904b718ae2a9bc26d447d96303"
+    },
+    {
+      "path": "data/processed/ignition_models_week3_v1/comparison_weather_v2/temporal_histogram_boosting.joblib",
+      "bytes": 325633,
+      "sha256": "37641ac354acc459bdc5365f478b51f0ccf7c5dbe746394f7a3bb68e15c71d0b"
+    },
+    {
+      "path": "data/processed/ignition_models_week3_v1/comparison_weather_v2/temporal_historical_rate.joblib",
+      "bytes": 2648,
+      "sha256": "ec51e42671adcfa10128bf124cd655665c2887de35fadf17f615d9ccce65ae1e"
+    },
+    {
+      "path": "data/processed/ignition_models_week3_v1/comparison_weather_v2/temporal_lightgbm.joblib",
+      "bytes": 273047,
+      "sha256": "9a594aa6eb408a87335255c4c9930b4833a3f6aab5b576f3d88fd9a5b03dd374"
+    },
+    {
+      "path": "data/processed/ignition_models_week3_v1/comparison_weather_v2/temporal_logistic.joblib",
+      "bytes": 5829,
+      "sha256": "fb6c51d813a1680b1cf75aa22daaa71bcea5f02f1a513bdc6f5d3e5106f5255b"
+    },
+    {
+      "path": "data/processed/ignition_models_week3_v1/comparison_weather_v2_boundary/inner_spatial_histogram_boosting.joblib",
+      "bytes": 322198,
+      "sha256": "cdaf8ccaab983cd1ea218a36ef5969dd9ae9678287b733a2f2636cf7f03ca4f8"
+    },
+    {
+      "path": "data/processed/ignition_models_week3_v1/comparison_weather_v2_boundary/inner_spatial_historical_rate.joblib",
+      "bytes": 2333,
+      "sha256": "b86894c3138861ff60ca5f96b66f6dc8e941c5347d4b95803f8e60c73a557950"
+    },
+    {
+      "path": "data/processed/ignition_models_week3_v1/comparison_weather_v2_boundary/inner_spatial_lightgbm.joblib",
+      "bytes": 271676,
+      "sha256": "65ae3ba68cd34d2ce878b2a131183315fd77694df1eabfc8e55da101536fdb9a"
+    },
+    {
+      "path": "data/processed/ignition_models_week3_v1/comparison_weather_v2_boundary/inner_spatial_logistic.joblib",
+      "bytes": 5242,
+      "sha256": "94b5b1471b504f6139ebfc7315ee6b96a077307eb7ec2591a9b6c2d6246a5230"
+    },
+    {
+      "path": "data/processed/ignition_models_week3_v1/comparison_weather_v2_boundary/temporal_histogram_boosting.joblib",
+      "bytes": 325585,
+      "sha256": "74088e30e530401b1570617812cd1cc7797c348415f7740613831598d41846a8"
+    },
+    {
+      "path": "data/processed/ignition_models_week3_v1/comparison_weather_v2_boundary/temporal_historical_rate.joblib",
+      "bytes": 2648,
+      "sha256": "a05394a6e81e1485ec82f9acd1c8a1dc0ed92b8382890f5562df26e06e9b59d4"
+    },
+    {
+      "path": "data/processed/ignition_models_week3_v1/comparison_weather_v2_boundary/temporal_lightgbm.joblib",
+      "bytes": 272503,
+      "sha256": "c71b43662139ab5970e080247281fbb1357e1cab396cd2c62bfff1ddb7018898"
+    },
+    {
+      "path": "data/processed/ignition_models_week3_v1/comparison_weather_v2_boundary/temporal_logistic.joblib",
+      "bytes": 5765,
+      "sha256": "fb2d8824ac4115ed8d40d2c975b6d0d499a9244962925429c1a12aa03675873d"
+    },
+    {
+      "path": "data/processed/ignition_weather_v2_development/manifest.json",
+      "bytes": 6598,
+      "sha256": "0b85423c41993d7571dadb3ffbcf66f83f634b7c53e9fa8a6d22f6160f75aa73"
+    },
+    {
+      "path": "data/processed/ignition_weather_v2_development/predictor_contract.json",
+      "bytes": 3188,
+      "sha256": "51e162d6caf8e4242c0a7cc3fff730eefcac036834cbf142aaae7db64e41672c"
+    },
+    {
+      "path": "data/processed/selected_2025_ignition_panel/manifest.json",
+      "bytes": 2909,
+      "sha256": "42b10640f780570cf49596cf4176d98849b068553bb4ddb94a35b42463aeaa1c"
+    },
+    {
+      "path": "data/processed/selected_2025_ignition_panel/predictor_contract.json",
+      "bytes": 2327,
+      "sha256": "141eeeda383338c8ad34cfa4847a9094297fed6d921c017b69f2c2a3c89bd0b1"
+    },
+    {
+      "path": "data/processed/selected_provincial_2025/config.json",
+      "bytes": 2465,
+      "sha256": "6c97a392f00a125181149ddde3ddfbf7cb20c790dddcb3101bf51ee6a937f2a6"
+    },
+    {
+      "path": "data/processed/selected_provincial_2025/manifest.json",
+      "bytes": 3320,
+      "sha256": "c677e058b67be9f4b9864acc01bc728e8a50cd2f6f0837b714a1f5dae2229787"
+    },
+    {
+      "path": "data/processed/selected_provincial_static_2025/config.json",
+      "bytes": 524,
+      "sha256": "0d63c45cc3e6e830109ea4edddf0ec880972a0b001a71870be8cb3529b6cf8dc"
+    },
+    {
+      "path": "data/processed/selected_provincial_static_2025/manifest.json",
+      "bytes": 89803,
+      "sha256": "8f86148bc774a3ec9fca800beeaddb6d00fa393e4b8f08e67323537046065556"
+    },
+    {
+      "path": "data/processed/selected_provincial_static_native_2025/manifest.json",
+      "bytes": 1028,
+      "sha256": "824510907e68d00aff8532bd52865c72330dbac56ae7b9a8889fafb4da8c9216"
+    },
+    {
+      "path": "data/processed/selected_provincial_static_native_2025/native_fuel_manifest.json",
+      "bytes": 27417,
+      "sha256": "30fbe63703ba2d009db5a5b63c52b534eacf6cd477506254ee40ee37017b616c"
+    },
+    {
+      "path": "data/raw/scanfi_v1_2_national/SCANFI_att_closure_SW_2020_v1.2.json",
+      "bytes": 507,
+      "sha256": "b02348b08f32baf9ff04a6e331d0ef18b39f39f5a9b9909454eec09c34a94830"
+    },
+    {
+      "path": "data/raw/scanfi_v1_2_national/SCANFI_sps_balsamFir_SW_2020_v1.2.json",
+      "bytes": 511,
+      "sha256": "b78bb90f7bea1240a6fe7a1bb8c9c22f425f520c21328190ee79ce388709629c"
+    },
+    {
+      "path": "data/raw/scanfi_v1_2_national/SCANFI_sps_blackSpruce_SW_2020_v1.2.json",
+      "bytes": 515,
+      "sha256": "921edcbc4e9e7d44dec1d6ddeb5fb593a25f83b337ac72585e508ea388053bd6"
+    },
+    {
+      "path": "data/raw/scanfi_v1_2_national/SCANFI_sps_douglasFir_SW_2020_v1.2.json",
+      "bytes": 510,
+      "sha256": "3399a35f7ce0670595e7fb8debdebd4ffacd8f7b532879224397bfcef3de1ef1"
+    },
+    {
+      "path": "data/raw/scanfi_v1_2_national/SCANFI_sps_jackPine_SW_2020_v1.2.json",
+      "bytes": 509,
+      "sha256": "1534c59846d0619811710c26db7618207b405c7480ea647d5613352188349688"
+    },
+    {
+      "path": "data/raw/scanfi_v1_2_national/SCANFI_sps_lodgepolePine_SW_2020_v1.2.json",
+      "bytes": 517,
+      "sha256": "ece3307f5f7d6afca512e5c098602afb58adc73922ad89f8061a0aeca20337c0"
+    },
+    {
+      "path": "data/raw/scanfi_v1_2_national/SCANFI_sps_ponderosaPine_SW_2020_v1.2.json",
+      "bytes": 514,
+      "sha256": "4f4f2683b703ff90271220540f48cade18065797657c15c970c555866f7a277f"
+    },
+    {
+      "path": "data/raw/scanfi_v1_2_national/SCANFI_sps_prcB_SW_2020_v1.2.json",
+      "bytes": 501,
+      "sha256": "5c61da88004570280ce40a72fe7c04f816e21e8565aca6d3f901b831369d02ab"
+    },
+    {
+      "path": "data/raw/scanfi_v1_2_national/SCANFI_sps_prcC_other_SW_2020_v1.2.json",
+      "bytes": 513,
+      "sha256": "fa2ef8658c15a93ef8bd909e74baaaa9d6360d87a139677499ca16b2da5b7a6b"
+    },
+    {
+      "path": "data/raw/scanfi_v1_2_national/SCANFI_sps_tamarack_SW_2020_v1.2.json",
+      "bytes": 509,
+      "sha256": "931829cfd99e626194416dc692d8db3d19ea572ce342b8737cc908ee0a2f45e8"
+    },
+    {
+      "path": "data/raw/scanfi_v1_2_national/SCANFI_sps_whiteRedPine_SW_2020_v1.2.json",
+      "bytes": 514,
+      "sha256": "bb4b10697bee030c12800ef9d8d70517d233e5f46dbf0c6a57efe6a399733cff"
+    },
+    {
+      "path": "reports/week_1_to_5_checklist.md",
+      "bytes": 24478,
+      "sha256": "e00f8aa7c5ab66f4a51ff4bfa5e3d26081b65a4840074036c9917ee25be5bd4e"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/evaluation_reservation_v1.json",
+      "bytes": 2911,
+      "sha256": "4524309d0848ee20c674de3beb32891b161767d0e3e66d90b72ad4659b631d2c"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/predictor_contract_v1.json",
+      "bytes": 2995,
+      "sha256": "8d3a4118e71288c431987af1462d710fb836ada2f015073075cf6b2da825da2f"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/README.md",
+      "bytes": 11827,
+      "sha256": "1c460e6dc5edfe22c548a6c66a0f246b428a5b9f0b009d69e77dd6754735e2bd"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/artifact_manifest.json",
+      "bytes": 8106,
+      "sha256": "1b74da2dc797974bc48411e70c101742d3f5da4dde3acac7e82b53bf50dd2872"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/checklist_snapshot.md",
+      "bytes": 24478,
+      "sha256": "e00f8aa7c5ab66f4a51ff4bfa5e3d26081b65a4840074036c9917ee25be5bd4e"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/code_quality.json",
+      "bytes": 4848,
+      "sha256": "d2989ec16ed9769559fccd00be276954bf278375449ebb7d604ec9f1cd53ec5c"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/comparison_weather_v2/experiment_config.json",
+      "bytes": 5531,
+      "sha256": "5e7a7b3a71f4a981f033957cb65777fa5753535ce4e1e0b8c414d6e6e6ae035f"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/comparison_weather_v2/inner_spatial_histogram_boosting_daily_alerts.csv",
+      "bytes": 8497,
+      "sha256": "9f67b955872ec4fad469ec0534187cc5e2dbf85a046726d83f3c7b9f729e7a3e"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/comparison_weather_v2/inner_spatial_historical_rate_daily_alerts.csv",
+      "bytes": 8497,
+      "sha256": "b223f73b96df3af81ec42703d013b409951430515ebf9e49bd453e33be10ee87"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/comparison_weather_v2/inner_spatial_lightgbm_daily_alerts.csv",
+      "bytes": 8497,
+      "sha256": "84423e2da1f4a51ba8b34dba714d262b7b4c3f016ef3e7fa3bf434e416310b0f"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/comparison_weather_v2/inner_spatial_logistic_daily_alerts.csv",
+      "bytes": 8497,
+      "sha256": "be7f9985c385d9408f7633d38b9ee796eb39a0cfc1b95ab4eb6850aac6324a00"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/comparison_weather_v2/inner_spatial_partition_v1.csv",
+      "bytes": 950301,
+      "sha256": "0ce5ed31483a6dc634ff70ae00bd8380a8238afbfc89697e661106012ae1fbd4"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/comparison_weather_v2/model_comparison.json",
+      "bytes": 17810,
+      "sha256": "1968fd590ce971c34524c83f56d930da62a5a8c06f13abca84a6eb1b78e72443"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/comparison_weather_v2/temporal_histogram_boosting_daily_alerts.csv",
+      "bytes": 8530,
+      "sha256": "86b8605323194ea378fa50be8fb06951bc20666ae409aa27b7c8b65151fe54ca"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/comparison_weather_v2/temporal_historical_rate_daily_alerts.csv",
+      "bytes": 8530,
+      "sha256": "b7bb296dc0309875bb86809b02b0ffbde80b68cc9a041e8ada452e2d4a5b8b76"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/comparison_weather_v2/temporal_lightgbm_daily_alerts.csv",
+      "bytes": 8530,
+      "sha256": "c990c952639bf653b6e03703ace1a39573e7cd72d63498f76cc61881d894cbe3"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/comparison_weather_v2/temporal_logistic_daily_alerts.csv",
+      "bytes": 8530,
+      "sha256": "cde9436baffc7689641ed91b2a444b78877b8d7a3e778f86b8d965cd4c634dc1"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/comparison_weather_v2.log",
+      "bytes": 492,
+      "sha256": "dfed5bfe1ea1c127476443cbb3ed8963b06b47638cc91653764129d84fd635e1"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/comparison_weather_v2_boundary/experiment_config.json",
+      "bytes": 5530,
+      "sha256": "79e190044b78af5d6f272e2fb7c1761cb6b49bb26449196a95971806c6242564"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/comparison_weather_v2_boundary/inner_spatial_histogram_boosting_daily_alerts.csv",
+      "bytes": 8497,
+      "sha256": "8fd0c539e26a8e1bd8ea20e1d7f5b3f48449a10e310871e0ac8b31155fae60e2"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/comparison_weather_v2_boundary/inner_spatial_historical_rate_daily_alerts.csv",
+      "bytes": 8497,
+      "sha256": "98fb6844b3bbb36e68a3e95c97649410faee226f57336479066e01988d55639d"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/comparison_weather_v2_boundary/inner_spatial_lightgbm_daily_alerts.csv",
+      "bytes": 8497,
+      "sha256": "b380c4ec85aa2d5508a44d7142872d3ec0b27d8b1f4a0fda15ea6be199bacef0"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/comparison_weather_v2_boundary/inner_spatial_logistic_daily_alerts.csv",
+      "bytes": 8497,
+      "sha256": "31cd2e29181b22a77de40fab731a0dbc3a7c32b0099cde94fb2e2fd747284942"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/comparison_weather_v2_boundary/inner_spatial_partition_v1.csv",
+      "bytes": 950301,
+      "sha256": "0ce5ed31483a6dc634ff70ae00bd8380a8238afbfc89697e661106012ae1fbd4"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/comparison_weather_v2_boundary/model_comparison.json",
+      "bytes": 17891,
+      "sha256": "4189f4002ad990034ebb8bb36f11fb1def255e307605518771de79c5befcf135"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/comparison_weather_v2_boundary/temporal_histogram_boosting_daily_alerts.csv",
+      "bytes": 8530,
+      "sha256": "c4f9abb619cc1b007d454def47046306d5cd09a8eb7d7d297103cec063126662"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/comparison_weather_v2_boundary/temporal_historical_rate_daily_alerts.csv",
+      "bytes": 8530,
+      "sha256": "a8f17421cf6aa9942b6493fcd84c00f2ea3a469c274d35f8dd4d368ce91c3c92"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/comparison_weather_v2_boundary/temporal_lightgbm_daily_alerts.csv",
+      "bytes": 8530,
+      "sha256": "ddad1329331f3cc008271123d36e8125410931a795ac449c1cb3599590919be5"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/comparison_weather_v2_boundary/temporal_logistic_daily_alerts.csv",
+      "bytes": 8530,
+      "sha256": "14f61e221aca8c97d8a79f5a4ba48282377b89ecde402c0fe9d68bb51bc60c52"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/comparison_weather_v2_boundary.log",
+      "bytes": 492,
+      "sha256": "39da56319f5645155632fb571539a9b3e86e8461a090b38e6fadd0aaa7f2bfd0"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/completion_environment.lock.txt",
+      "bytes": 860,
+      "sha256": "19575a1254ffa99ee60e48310fde5b7fde269ed9583039a4a28954506c2e6a29"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/completion_integrity.json",
+      "bytes": 16032,
+      "sha256": "6d9acf3c4f9f38f97f28adef0b3ef4ad0f985c81c543f4051557f9250e3d1a35"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/current_boundary_centroid_grid.csv",
+      "bytes": 706770,
+      "sha256": "5778abf65a901d5daa771add7a25b7dfb7cdeb3b9b00712e1bb1e94a7dfabd0c"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/environment.lock.txt",
+      "bytes": 847,
+      "sha256": "5ddb11dc4293e8c8750f7ccfe47298f751b4e036a676c21db08427bbf1e4ce36"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/feature_dictionary_and_decisions.md",
+      "bytes": 5798,
+      "sha256": "5f9024505cfc94b5f1fa5f4607e9342b49476d51480f2ded17539d1eab0013e7"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/fuel_quadrature_validation.json",
+      "bytes": 4141,
+      "sha256": "cdd2e468f3d6e9e9cb91b32f68a34e635615ec7e8d15839524171ba05bd3056f"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/historical_weather_build.log",
+      "bytes": 6677,
+      "sha256": "0b3142732139b6382977e8f166717cfe77b53e8339c381a296d5370547d91b42"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/historical_weather_failed_empty_chunk.log",
+      "bytes": 4171,
+      "sha256": "a859425af099162023e85a8e18140253971597885a9cc399e1bbefe7c8eb95ed"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/historical_weather_v2_audit.json",
+      "bytes": 6322,
+      "sha256": "b6c5e61a07f5ecd9f6497a3da8bbec1a7edf6b5ce16dd6d482c45d1877e1d152"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/hrdps_before_checkpoint_audit.json",
+      "bytes": 11233,
+      "sha256": "1e2284378c7aa3f3efc220341ed9d2f44434aa1f8dc0642790172afe41da2d58"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/hrdps_code_quality.json",
+      "bytes": 3211,
+      "sha256": "22f3402c2efd8645dfc35733ffe2535dbe6087f7b928ff6c35088b96a6a52447"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/hrdps_final_code_quality.json",
+      "bytes": 3652,
+      "sha256": "f3821a6ec8c14b5ac24d42fb15eb4c36588f70d2c8610a279a7cea72913c4530"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/hrdps_latest_build.log",
+      "bytes": 1975,
+      "sha256": "0439b2e0298ea3d2e47a045c88ecedcfe046f2c8f43f809a637314646b7e3147"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/hrdps_live_build.log",
+      "bytes": 1677,
+      "sha256": "dde3b4b6c7c05bf0af5411a6dd2ba98ff3dba2ba22f7851e6259d4f047755165"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/hrdps_live_integration_audit.json",
+      "bytes": 11334,
+      "sha256": "92c69a04bb579b811500cd17296570a4c5c8eba1c4f6afae8e9cf7b471a0e65a"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/hrdps_run00_audit.json",
+      "bytes": 5570,
+      "sha256": "d90f7a642bffb2b5761a9e6b7460337f46c3e2f9b65d747685e348bcd075d51a"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/hrdps_stateful_build.log",
+      "bytes": 2076,
+      "sha256": "be422f88597507290fbd52adcf8d0abd7e65718f3928d02382e2cc4aa008e267"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/increment_notes.md",
+      "bytes": 8487,
+      "sha256": "e13b971a8dec82cc0b5813ae5c1dfcfdbdedd2c85d891e694a7fff37d949be13"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/integrity_verification.json",
+      "bytes": 1244,
+      "sha256": "cdffe094b153112745e9fd51478472c18dd99fa5a57d832e7bb903992d1a064f"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/join_code_quality.json",
+      "bytes": 1313,
+      "sha256": "ebf00e83e49eac98fb62295fc91aa4d245fd65422cf21d43780470a11105f67f"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/join_source_before_cli.py",
+      "bytes": 7658,
+      "sha256": "5bfd6480df8ab94dbf55a842c5ec4633db5df16541ecb34ee476cbea004e70b3"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/model_comparison_update.md",
+      "bytes": 3811,
+      "sha256": "3188b032ac14bbd00cab8216854f7fbdc760a5e4429e8b67b4f5ccc230d5bdc8"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/native_fuel_build.log",
+      "bytes": 26,
+      "sha256": "397dc111771965bb90bae6c99d5e44017df96100dee60ae9a966b51604890d00"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/native_fuel_code_quality.json",
+      "bytes": 1927,
+      "sha256": "1a9f082510f6894f88d1a7c90c10f634b7629bd72207659f8713a170aa9c0444"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/native_static_build.log",
+      "bytes": 28,
+      "sha256": "7a7def7b69ed0a82c7dd6aa40d714db27ae6306f84170f69bf5a599278cc6e23"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/native_static_build_audit.json",
+      "bytes": 1028,
+      "sha256": "824510907e68d00aff8532bd52865c72330dbac56ae7b9a8889fafb4da8c9216"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/preimplementation_review.md",
+      "bytes": 2596,
+      "sha256": "73ecaf549c4b3e9a93395b1efa4317267a88b6c819d22773309ca13360840b6b"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/project_architecture.md",
+      "bytes": 12526,
+      "sha256": "088898df6a813c0061ee828576e9833af2f17b8072650bf6e1910a7031640324"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/project_context.md",
+      "bytes": 20430,
+      "sha256": "dfa78bfd136184ffbc113e134982aa373b5a3a7a726bb8600071c7523dcb286a"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/provincial_era5_verified.json",
+      "bytes": 31538,
+      "sha256": "30c4e1478748b0b776ded85c53248f4fd69d800e313ffff3c965dc76be2e65f8"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/provincial_static_build.log",
+      "bytes": 2796,
+      "sha256": "ec83255b9530a45a1202e6331391a1da3536b6bf065925eca9009133289b4e8f"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/provincial_static_build_audit.json",
+      "bytes": 89803,
+      "sha256": "8f86148bc774a3ec9fca800beeaddb6d00fa393e4b8f08e67323537046065556"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/provincial_static_code_quality.json",
+      "bytes": 4109,
+      "sha256": "867b6ba836d1b41aa9c4f582f3c34499534fc7efb194114a2b9c5bbfb4816d10"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/provincial_weather_build.log",
+      "bytes": 1199,
+      "sha256": "bc5ec3dea7e01616f0997e3ebc104844b9ceaf284cc867307080cc5884c1444a"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/provincial_weather_build_audit.json",
+      "bytes": 3320,
+      "sha256": "c677e058b67be9f4b9864acc01bc728e8a50cd2f6f0837b714a1f5dae2229787"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/provincial_weather_code_quality.json",
+      "bytes": 1723,
+      "sha256": "df0291169c983bc124dcc9b90b4f67ea03346ea1bc5f92d4440c117ab9eeab1f"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/selected_2025_fire_adjudication.csv",
+      "bytes": 68848,
+      "sha256": "6527a6ae0ee2bc68572b4dad29c3a5f4a15bce798c92704f371dad47310c9b46"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/selected_2025_panel_audit.json",
+      "bytes": 2909,
+      "sha256": "42b10640f780570cf49596cf4176d98849b068553bb4ddb94a35b42463aeaa1c"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/selected_panel_build.log",
+      "bytes": 2909,
+      "sha256": "42b10640f780570cf49596cf4176d98849b068553bb4ddb94a35b42463aeaa1c"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/selected_panel_code_quality.json",
+      "bytes": 2021,
+      "sha256": "1b7d5344fc4bb784b426efd2e44062d1fa63f9ca1784652a2d5c345c4323b1b6"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/selected_panel_final_code_quality.json",
+      "bytes": 2020,
+      "sha256": "676356caeee88a6d29bf3489baa21a7e95194c2c9ac4984cb53ee7d180eb8f49"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/requirements.txt",
+      "bytes": 282,
+      "sha256": "03be4422aed335898dd79cf8e29e65d320cabdc0a3edea7dcdb29f388127b274"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/scripts/__init__.py",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/scripts/analyze_static_samples.py",
+      "bytes": 26148,
+      "sha256": "a9db1d1e99ef3364cfba9a91d3542284d1abc46aee47de96a85d2f869f9db149"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/scripts/build_selected_2025_panel.py",
+      "bytes": 9146,
+      "sha256": "cc46a2ab793db372bc4c8e6afc8de46eed3f8b97c52fee347a7b419fc5eb93ff"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/scripts/fetch_era5_pilot.py",
+      "bytes": 2635,
+      "sha256": "721aec2d071b156dd82471fa7a02ff2cbddb945145620cbe68ee6e8907a654b8"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/scripts/fetch_ontario_static.py",
+      "bytes": 8100,
+      "sha256": "6557bc01cecce74a73f4d3077b57cd32d9b54bb047ee5e1eef0bc737aa199e7c"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/scripts/fetch_static_samples.py",
+      "bytes": 6424,
+      "sha256": "f530e7b1854da85fd317c2e165b1bd18a093a59f3d4cf7b6f3bee7339b9b059e"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/scripts/hrdps_live_weather.py",
+      "bytes": 16454,
+      "sha256": "e01ea1d42fc6c28d9413b5c689f71a55f6828a095cad67f6490c5d39311bfd47"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/scripts/ignition_comparison.py",
+      "bytes": 18630,
+      "sha256": "5426f8dee840cd4cb96700531d5cff2c05ea14e328008ec89c2c2c2377f9b26f"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/scripts/join_development_weather_v2.py",
+      "bytes": 7893,
+      "sha256": "a89e5a12ab9782723cf0d62a77b2fb61e7a12588c1efc5b440d1228642e0f3d8"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/scripts/prepare_historical_weather_v2.py",
+      "bytes": 15493,
+      "sha256": "cd0607906e7dd18b3c6351132aab9a3e4d5f70d502b185dcefaa03e16f9c6e02"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/scripts/prepare_ignition_pilot.py",
+      "bytes": 13880,
+      "sha256": "f9b1842aa288caf59122cc98a13eef0afe55b88f60bcc6ec2a8d3cbc0dea2bc1"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/scripts/prepare_provincial_static.py",
+      "bytes": 10989,
+      "sha256": "cce18bb112393ad495bf2571f3d0f527e02b856445eaac771f5cf6956e53a1e9"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/scripts/prepare_provincial_weather.py",
+      "bytes": 9016,
+      "sha256": "f5b472926dd2f5f04cf10dedafff223f7eccb461ff1cafcf04517cb398a0356c"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/scripts/prepare_selected_weather.py",
+      "bytes": 10353,
+      "sha256": "923a5fc00aa2ed13da05f485e8bda9e0f631e4cc7215a9d19a1aee2152c7250e"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/scripts/profile_ontario_static.py",
+      "bytes": 5666,
+      "sha256": "ad9a376ac39c22b29f0aba6f7d1ca72b84eed138b6a7ad36933aec2770ee649f"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/scripts/refine_provincial_fuel.py",
+      "bytes": 6110,
+      "sha256": "b1bb6902dc8b197dfdcb21e00471c118442f3cffe5ca4e4f89cd441019043214"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/capability_2_fire_spread/scripts/build_spread_fire_catalogue.py",
+      "bytes": 12467,
+      "sha256": "00e79bd06254e17c42f5aaf37394fcead8ce927705aa1958b823ed65a7f71775"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/capability_2_fire_spread/scripts/build_spread_fuel_summary.py",
+      "bytes": 6239,
+      "sha256": "3309318cf10e8b140b3e748fefc08d35658c786f12fcd865df6f572cdffac79f"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/capability_2_fire_spread/scripts/build_spread_master.py",
+      "bytes": 10517,
+      "sha256": "6f2cec932606d821506b754cb8e16b6aafd97be0c9cf152d430a3002db92024a"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/capability_2_fire_spread/scripts/build_spread_progression.py",
+      "bytes": 15763,
+      "sha256": "b89399717db4e25773da796be95922aa660edef6752fe809ea10032114f13c3d"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/capability_2_fire_spread/scripts/build_spread_terrain_summary.py",
+      "bytes": 4938,
+      "sha256": "3526d05ad18941ee44e0c1c5ffeb2e8ff76c4c409bec7f126a549f72d1f22041"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/capability_2_fire_spread/scripts/build_spread_weather.py",
+      "bytes": 7746,
+      "sha256": "4ebd31800c8251b84b38bb9ac15dde2806a59d46490d58d4456b044f57d47d79"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/capability_2_fire_spread/scripts/download_fire_disturbance.py",
+      "bytes": 5196,
+      "sha256": "938d311ab91498f4ad11a4146ed27235f25007d886aaf396e851f50be4565ba5"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/capability_2_fire_spread/scripts/download_firms_viirs.py",
+      "bytes": 5790,
+      "sha256": "f339a905a9c960eb0312db7266a53d57a7d040fe9ec93ac09bb7bfa147531d6b"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/capability_2_fire_spread/scripts/download_spread_fuel_windows.py",
+      "bytes": 5762,
+      "sha256": "25480b67ee8b323ae23ae8c4d5f0c3cced05dbb1fa1a3ea01ac224963bbb6c6e"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/capability_2_fire_spread/scripts/download_spread_terrain_windows.py",
+      "bytes": 4729,
+      "sha256": "23ce51e0eb53d5a53a92b1b81d250b0b985881c6cf3bf43f1159400a7c8858a4"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/capability_2_fire_spread/scripts/download_spread_weather.py",
+      "bytes": 6074,
+      "sha256": "02889c13a18235a3d24761771e35125bcafaf986b284fa2ed8578f7e84643c77"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/capability_2_fire_spread/scripts/eda_fire_spread.py",
+      "bytes": 22677,
+      "sha256": "b88cfc8a84718650c431c04d85dddd9f6e6d19cae19ed088b2ad2433ef8d6856"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/capability_2_fire_spread/scripts/export_spread_viewer_data.py",
+      "bytes": 15689,
+      "sha256": "c18548b9bc5d3b75772f77fb56c5a14faca4a154b05b662386a09e5ddcfaf58e"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/capability_2_fire_spread/scripts/fbp_spread.py",
+      "bytes": 7028,
+      "sha256": "68881016befa50a10e8fba5e32c5bb1ca2ef08a580eacb52e0d473c02f2caca3"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/capability_2_fire_spread/scripts/fire_weather_index.py",
+      "bytes": 5019,
+      "sha256": "449a207639d98a15811a2dddfe0bb399ab0ab6375cb46d5fb6dfbe2cef339691"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/capability_2_fire_spread/scripts/run_spread_replay.py",
+      "bytes": 17191,
+      "sha256": "62549f2d9287033944974937a28ca2b0fbece77a8559a3047601fa505ecf285b"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/capability_2_fire_spread/scripts/simulate_spread.py",
+      "bytes": 15835,
+      "sha256": "d20a7c6a3340efb517016c290dff731e89d7ea1f2fb6ed0f4897b3356393b187"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/capability_2_fire_spread/scripts/spread_basemap.py",
+      "bytes": 3264,
+      "sha256": "a43091dafc55a9808bbcf00419596b508f076d7e881d580be2d6957d8eee71ee"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/capability_2_fire_spread/scripts/spread_common.py",
+      "bytes": 2232,
+      "sha256": "2399783e3384bb8714a0aa23c08ee89eccf8bacd88e709e2b00d8e91f26ffade"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/capability_2_fire_spread/scripts/validate_spread_master.py",
+      "bytes": 8971,
+      "sha256": "a6a15ac47df8f81d664a5a9704b4d50a2d4ec60ffce94b2df93bf89c13400612"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/capability_2_fire_spread/tests/test_fire_spread_dataset.py",
+      "bytes": 6848,
+      "sha256": "08bc03963bd3b2d25407a7c4d4c9d900157a28df8f6d6bb0197870a5a2da05e9"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/capability_2_fire_spread/tests/test_fire_spread_simulator.py",
+      "bytes": 10077,
+      "sha256": "72e07560ef41b09603dd47207746d9b64d6afb39c619034771aa1352332b026f"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/scripts/build_cdem_terrain_summary.py",
+      "bytes": 16120,
+      "sha256": "ab227a15fd48462589dae7f099fcf0f71b067d6a5b96eb5a2be51167059f85df"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/scripts/build_cpa_daily_ignition_labels.py",
+      "bytes": 12238,
+      "sha256": "ae85e5193c4c60a4297b24aca53b2a9cc957ee20f1c7daf5d21311904ec96bb1"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/scripts/build_ignition_feature_panel.py",
+      "bytes": 34747,
+      "sha256": "0d32e9ad09819db9d3ff62087b0095b7bf535eaa5f9d4dceb27e637723af5e37"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/scripts/download_cpa_boundary.py",
+      "bytes": 7605,
+      "sha256": "ba739604df4c0386e8d30956ac7d9863e52b1f18d7ec2bf633e5920b784c7fb2"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/scripts/download_cwfis_fwi.py",
+      "bytes": 5127,
+      "sha256": "ce9db12ddfa0376cc19ae327d278cc673975dda28d364d18358fb34e1597b2cc"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/scripts/download_nfdb.py",
+      "bytes": 2454,
+      "sha256": "1ae36163fdc584db79b2d6d9657dbc38474b0a71bba1f886f710095a92933c25"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/scripts/download_ontario_fire_region.py",
+      "bytes": 3524,
+      "sha256": "059588c8a317eae23705125fb6f30acc0ce0b617830bca130cf7adc68cb64128"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/scripts/prepare_ontario_ignitions.py",
+      "bytes": 5799,
+      "sha256": "7eac81e68e0552827717d7191833776db593cd14e3781dccc4d6b2690807826f"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/team_repository/tests/test_ignition_feature_panel.py",
+      "bytes": 8563,
+      "sha256": "b2326553e330a8b58d260f31ab5256e16380747ff99f756068b303e0b5cfb62e"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/tests/test_development_weather_join.py",
+      "bytes": 2634,
+      "sha256": "d39e6439372b7107e3ad5e0ada5e280458f8153eeb14c12e71500e70e89002dd"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/tests/test_historical_weather_v2.py",
+      "bytes": 4543,
+      "sha256": "4c4312314a72480ccec7cd0d8e00a27e8a4e30b41d67426937716d9347b51b1e"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/tests/test_hrdps_live_weather.py",
+      "bytes": 3966,
+      "sha256": "b95d04fb77ed10bbde5e9dba31e5e049e0e6ac6d91798cbd21f07f3ac0993400"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/tests/test_ignition_comparison.py",
+      "bytes": 4868,
+      "sha256": "ff68d19f219e9343cbe09bfc3bec3f903ba92848251e3fd266f045d303b08d10"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/tests/test_ignition_pilot.py",
+      "bytes": 4839,
+      "sha256": "0a2621249d5fd9029871a7492feb67b1784d95bc689ffa4a99fb5909d880f076"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/tests/test_native_fuel.py",
+      "bytes": 594,
+      "sha256": "10f9fbd7c80aa4b7b9a8e26e296d7e275f2581c616882bfc7046e9e2c9dfa0a1"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/tests/test_processed_outputs.py",
+      "bytes": 1563,
+      "sha256": "7d7b6ae778b8ef87daa34fd1e3695c8eaac4bb47efac3f9e340b7dcbca61d467"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/tests/test_provincial_static.py",
+      "bytes": 1209,
+      "sha256": "07a119ff0a0d495b1ec72646866bf83cb558518355f580fb4d680848914c7297"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/tests/test_provincial_weather.py",
+      "bytes": 1898,
+      "sha256": "6877e2696f810d52f79b28ce73634b927b95553962bcebec5a7439936fd223d0"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/tests/test_selected_2025_panel.py",
+      "bytes": 1023,
+      "sha256": "bdbe3849923046a9a7b34774551e9528cca963379bed31be09d2ddbfe268b9df"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/tests/test_selected_weather.py",
+      "bytes": 3642,
+      "sha256": "f4eea5f493d45ec30756a575ec239d804af9a48f32273a8bee95fb164b0b1df3"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/tests/test_static_analysis.py",
+      "bytes": 1827,
+      "sha256": "8f7759f73e31c1d2ccc4cbf3a2d62d493741a76832f718ac5af3897f40a3a654"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/completion/tests/test_week3_interfaces.py",
+      "bytes": 1994,
+      "sha256": "aab05a130a2313b4365a57593d04d5e2b0d30efb5cc2f30d36566330cc6f0096"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/hrdps_live_weather_before_checkpoint.py",
+      "bytes": 14747,
+      "sha256": "97bc694068f77af0c1789f73ff14815d042cd68a7b787b3ba9491c8b56a74606"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/hrdps_live_weather_run00.py",
+      "bytes": 12887,
+      "sha256": "9df56d85cacb142b2ad2f59dd155a4c781abc99e8f96ade1f4afa88ea227b22e"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/requirements.txt",
+      "bytes": 269,
+      "sha256": "77c8e70c09babe3ec05815a55f11efd9751f8f539b043f58bf4fec59c827b777"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/scripts/join_development_weather_v2.py",
+      "bytes": 7893,
+      "sha256": "a89e5a12ab9782723cf0d62a77b2fb61e7a12588c1efc5b440d1228642e0f3d8"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/scripts/prepare_historical_weather_v2.py",
+      "bytes": 15493,
+      "sha256": "cd0607906e7dd18b3c6351132aab9a3e4d5f70d502b185dcefaa03e16f9c6e02"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/tests/test_development_weather_join.py",
+      "bytes": 2634,
+      "sha256": "d39e6439372b7107e3ad5e0ada5e280458f8153eeb14c12e71500e70e89002dd"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/tests/test_historical_weather_v2.py",
+      "bytes": 4543,
+      "sha256": "4c4312314a72480ccec7cd0d8e00a27e8a4e30b41d67426937716d9347b51b1e"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/tzfpy_install.log",
+      "bytes": 392,
+      "sha256": "e29ec06cebc0233c2ae02ed8f121963dda478d0bebeb3829b815b47220524041"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/unit_tests.txt",
+      "bytes": 179,
+      "sha256": "3cf585e3c6587eb603cf7ce361e72f52221f198ad344867109d15b43d0b691a1"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/unit_tests_continuation.txt",
+      "bytes": 180,
+      "sha256": "ee81d547a810bfa7e39fe25f71a854c70dcf12a93ffd32bb0c62ad79a96b84ed"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/unit_tests_final.txt",
+      "bytes": 180,
+      "sha256": "ee6829b58d7642f3b1a209e4c2efc1b309e5aac8368b7913759c950914caa82e"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/v1_grid_boundary_sensitivity.csv",
+      "bytes": 599630,
+      "sha256": "f698a3e818e961cde11967c1d5372bd6b4a633b7ccd4adddf01e8aed3e97e486"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/validate_fuel_quadrature.py",
+      "bytes": 2312,
+      "sha256": "2c52ccaa7a9214d54090033f7ea4933ddb445401047df33bcc08d551593827f7"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/weather_coverage_comparison.png",
+      "bytes": 49333,
+      "sha256": "e2809daad5c8eecac8ca0df136ca34678a4c037fd3644b1dea4c0050d70f6fb7"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/weather_feature_join_audit.json",
+      "bytes": 6598,
+      "sha256": "0b85423c41993d7571dadb3ffbcf66f83f634b7c53e9fa8a6d22f6160f75aa73"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/weather_feature_join_before_cli.json",
+      "bytes": 6598,
+      "sha256": "1b931fb3764b5d5e2dbcabd96a929a6a8636e491c1fcc3e8ffe40880aba5d57a"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/weather_join_before_cli.log",
+      "bytes": 7049,
+      "sha256": "69b1bcd0cfd3a46add0d963bd19e6d5c3c9f46ccf026d6118c6fa9808e63cd36"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/weather_join_build.log",
+      "bytes": 7049,
+      "sha256": "c78bf7ff780e657fa02719b107817fa7f95e97b991bdca3f6ea7e29abcd1479e"
+    }
+  ],
+  "large_inputs_and_outputs": "Raw rasters/GRIB/ERA5 and full Parquet prediction/data tables retained locally; manifests reference them. ZIP is code/evidence package, not a standalone raw-data distribution.",
+  "reserved_data": "Original calibration/final-test content not included or parsed; hash-only verification recorded.",
+  "source_snapshot": "reports/week_4_data_2026-10-16/source_snapshot/completion/",
+  "tests": "110 passed in 2.40s"
+}

@@ -1,0 +1,337 @@
+{
+  "reviewed": "2026-10-16",
+  "hash": "sha256",
+  "note": "Manifest excludes itself, ZIP, post-package verification and render intermediates; no raw data or full prediction Parquets are redistributed in ZIP.",
+  "files": [
+    {
+      "path": "data/processed/ignition_models_week3_v1/week_3_design_2026-10-15/inner_spatial_histogram_boosting.joblib",
+      "bytes": 317558,
+      "sha256": "1a2560257143dbaef7ee896b6145b8d473cf23c8552ecd07a15d182d8fa3961a"
+    },
+    {
+      "path": "data/processed/ignition_models_week3_v1/week_3_design_2026-10-15/inner_spatial_historical_rate.joblib",
+      "bytes": 2333,
+      "sha256": "580003f716cb27e35c5bf3e4774210f10744ef0adddb0d67780625536cd8f1d6"
+    },
+    {
+      "path": "data/processed/ignition_models_week3_v1/week_3_design_2026-10-15/inner_spatial_lightgbm.joblib",
+      "bytes": 270620,
+      "sha256": "8ccd0f04b889e7b116172f2e2db00ecfb75cbe8a7038b82c28de99b290a3b779"
+    },
+    {
+      "path": "data/processed/ignition_models_week3_v1/week_3_design_2026-10-15/inner_spatial_logistic.joblib",
+      "bytes": 5322,
+      "sha256": "a29cc2ea1371504bb178e8f5a75cc7120d636fc384335a62fe4c807eaaca4365"
+    },
+    {
+      "path": "data/processed/ignition_models_week3_v1/week_3_design_2026-10-15/temporal_histogram_boosting.joblib",
+      "bytes": 321793,
+      "sha256": "050e07f451092b89bc34f27f5cac2e3f2e3a773f94a01b1aeb6d5bb2ba22a0e2"
+    },
+    {
+      "path": "data/processed/ignition_models_week3_v1/week_3_design_2026-10-15/temporal_historical_rate.joblib",
+      "bytes": 2648,
+      "sha256": "cdd51e12214139e0755f80ada5cd73e4ad750c736cee8ffb6313b400a9b53ef8"
+    },
+    {
+      "path": "data/processed/ignition_models_week3_v1/week_3_design_2026-10-15/temporal_lightgbm.joblib",
+      "bytes": 273239,
+      "sha256": "11cf2e7e9f569c2b81b07480f0661d7ecb0291c966ba5c2337a55cdbd1064bb1"
+    },
+    {
+      "path": "data/processed/ignition_models_week3_v1/week_3_design_2026-10-15/temporal_logistic.joblib",
+      "bytes": 5829,
+      "sha256": "57b6c080ec0949dee524deeea720a52bf68f831e2fbd2c71afa44116aecf5060"
+    },
+    {
+      "path": "reports/week_1_to_5_checklist.md",
+      "bytes": 21584,
+      "sha256": "cbf2c8b55971490c9f4c97159f0d34f5d49eea8edda0be2976e43223e29efbd9"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/README.md",
+      "bytes": 5863,
+      "sha256": "b1229094c228bfbc4487d3069057f37143246d7998e5248c8f5b8ae3f76c1dc9"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/branch_snapshot.json",
+      "bytes": 1152,
+      "sha256": "f4602a8eb13bb5dcf600995672db3f14aa89be1cc69ee0e711a589305afd424f"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/change_inventory.json",
+      "bytes": 818,
+      "sha256": "8721402f1a1e078c3bd84ddda5fa9ef4fd47bdbf39fdaaf0b5946a26a143ff49"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/code_quality_ignition.json",
+      "bytes": 5604,
+      "sha256": "c877fd0896561eb206934aa69a85ad323d878a27baeaf54b89611edc3b75d815"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/code_quality_spread.json",
+      "bytes": 4558,
+      "sha256": "804468ff6ca231de69090379c983b7c1044479689c154371d3b054fd3941bcb7"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/comparison.png",
+      "bytes": 85067,
+      "sha256": "cdd8199e594239f89acf6d22bb796332be31b473d77738c0d87e4a881dd082ea"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/decisions.md",
+      "bytes": 4333,
+      "sha256": "cf60cb88843ad3d75b1178e9633ad9f7ed5def34e0608a79dca096c48d296ed1"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/development_run_before_review/experiment_config.json",
+      "bytes": 5374,
+      "sha256": "6c68a6b61caab685f1bc7ca7ce1c3035458b4aaf9c5539104acc46ea20fa8a82"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/development_run_before_review/ignition_comparison.py",
+      "bytes": 17786,
+      "sha256": "5d1808d5826b46f96f4240faa881d3964d39226ebb2d352a201af09786de543d"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/development_run_before_review/model_comparison.json",
+      "bytes": 17635,
+      "sha256": "052da05b483d6ce31ccbef616e78cb1a3d229a0d053a8cd478948a2f1d0ab070"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/development_run_before_review/model_comparison_registered_before_guard.json",
+      "bytes": 17635,
+      "sha256": "052da05b483d6ce31ccbef616e78cb1a3d229a0d053a8cd478948a2f1d0ab070"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/development_run_before_review/model_comparison_run.log",
+      "bytes": 492,
+      "sha256": "799619669248a54bba42fb256ae8a6ff1adc5fc5a3c3477e77e042d891208fd4"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/environment.lock.txt",
+      "bytes": 847,
+      "sha256": "5ddb11dc4293e8c8750f7ccfe47298f751b4e036a676c21db08427bbf1e4ce36"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/experiment_config.json",
+      "bytes": 5374,
+      "sha256": "0f4e9182353da31e54cfb6e11c9bb7a4c6fb9b16f44dc7cd5c9d053d7e7e7dcd"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/experiment_report.md",
+      "bytes": 7771,
+      "sha256": "b3cfa8784ae8a5e9ffa850c2562deb660b6c1ba3fa6bd74a440b44c426fcf5e1"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/export_cli_help.txt",
+      "bytes": 1504,
+      "sha256": "7c5300ee293f0f7058066c55c9daeda70349325f01d92367bc6a6b87cb91dccc"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/hardware.json",
+      "bytes": 184,
+      "sha256": "67e2c0465c1d6abc56f686de05b4065b9537c9526d9e289a3aa2cea4aca3c1a6"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/inner_spatial_first_prediction_probe.npy",
+      "bytes": 32128,
+      "sha256": "a1d81234e7bd0d212403430661c8bcc2bf104369eb8ce7ad971fdd60e7b03ff4"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/inner_spatial_histogram_boosting_daily_alerts.csv",
+      "bytes": 8497,
+      "sha256": "89c163e9a25e34cfa5c8c301b53ef08fdbf72a1396c6968039e10c9dfc773609"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/inner_spatial_historical_rate_daily_alerts.csv",
+      "bytes": 8497,
+      "sha256": "b223f73b96df3af81ec42703d013b409951430515ebf9e49bd453e33be10ee87"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/inner_spatial_lightgbm_daily_alerts.csv",
+      "bytes": 8497,
+      "sha256": "1585f01693c793cf0c2668adc210afb74d00223912bc889a71a0941afec0a039"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/inner_spatial_logistic_daily_alerts.csv",
+      "bytes": 8497,
+      "sha256": "9dcc40b5cfe0e7d8125a89dcb7be369910bcf979179d6670966696aa59b6bd42"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/inner_spatial_partition_v1.csv",
+      "bytes": 950301,
+      "sha256": "0ce5ed31483a6dc634ff70ae00bd8380a8238afbfc89697e661106012ae1fbd4"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/interface_examples.json",
+      "bytes": 2669,
+      "sha256": "ba383737a743312cbf47631f23a49ac84271c37889db7ba3de2560d9d6765645"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/interfaces.schema.json",
+      "bytes": 10865,
+      "sha256": "0f1ac540791dbe6984f2d13aa9b18456c2a3fe71abe0fa580781ef7b1a4f3824"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/model_artifact_paths.json",
+      "bytes": 2217,
+      "sha256": "0d57953d0d1565825d4fd5822d89fdc9d6dbd6830326e56c7d42d9b93521b795"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/model_comparison.json",
+      "bytes": 17835,
+      "sha256": "2f7a9680987e641859e92633fc2efc53b6afc4192fa162601358e82e707e1b2d"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/model_comparison_first_run.json",
+      "bytes": 16636,
+      "sha256": "6957432247e949e333215a7e91798c9ab75c317824606ffc1936f1ef2d6c1818"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/model_comparison_run.log",
+      "bytes": 493,
+      "sha256": "77381f4fd7f8142e376b3633b1b64617dd0faab58cf048ef0f813a3e152f0d66"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/preimplementation_review.md",
+      "bytes": 3486,
+      "sha256": "62810d31cf09e40750e0cf5c20c603441c49f9bbae4e95f5d85fc053e73ae7fa"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/repeatability.json",
+      "bytes": 612,
+      "sha256": "59f9a0ff6ff48c4420b2dd28041604b0b3fea46d9f02e10fd8affbb1c7c599d8"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/replay_cli_help.txt",
+      "bytes": 1846,
+      "sha256": "8411d5001be7f673028729a3f5bb1fffbce5972b4062410723c8f4cfc95acb61"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/reserved_integrity.json",
+      "bytes": 737,
+      "sha256": "846fec86d24ca609dc810edcc68be8d732cc979874c49bcd864f4988c788831f"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/source_snapshot/build_report.py",
+      "bytes": 7808,
+      "sha256": "a0aab9c71ecef3fd21e1609263695ee87581c3476819bd7e4e1773a160d2483f"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/source_snapshot/requirements.txt",
+      "bytes": 269,
+      "sha256": "77c8e70c09babe3ec05815a55f11efd9751f8f539b043f58bf4fec59c827b777"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/source_snapshot/scripts/ignition_comparison.py",
+      "bytes": 17911,
+      "sha256": "e22b0da1cfc7d5c33baeab5a743d42365818890c0661f80a68f5635ebaca7761"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/source_snapshot/team_repository/AGENTS.md",
+      "bytes": 6525,
+      "sha256": "dde4742da4348f10e9626b114446f17202f8376c971ae8a274856f6e5a77fc88"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/source_snapshot/team_repository/capability_2_fire_spread/docs/fire_spread_simulator.md",
+      "bytes": 7001,
+      "sha256": "6cb4af48e62defeed14c7b12f52ecede9e99c80c506fbe76bb59eb06f4e96272"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/source_snapshot/team_repository/capability_2_fire_spread/scripts/export_spread_viewer_data.py",
+      "bytes": 15689,
+      "sha256": "c18548b9bc5d3b75772f77fb56c5a14faca4a154b05b662386a09e5ddcfaf58e"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/source_snapshot/team_repository/capability_2_fire_spread/scripts/run_spread_replay.py",
+      "bytes": 17191,
+      "sha256": "62549f2d9287033944974937a28ca2b0fbece77a8559a3047601fa505ecf285b"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/source_snapshot/team_repository/capability_2_fire_spread/scripts/simulate_spread.py",
+      "bytes": 15835,
+      "sha256": "d20a7c6a3340efb517016c290dff731e89d7ea1f2fb6ed0f4897b3356393b187"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/source_snapshot/team_repository/capability_2_fire_spread/tests/test_fire_spread_simulator.py",
+      "bytes": 10077,
+      "sha256": "72e07560ef41b09603dd47207746d9b64d6afb39c619034771aa1352332b026f"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/source_snapshot/tests/test_ignition_comparison.py",
+      "bytes": 3289,
+      "sha256": "5e1537f81ae0d789d186a59ca5c856197dc6ae4643508d9634485bc4c9ef3b8d"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/source_snapshot/tests/test_week3_interfaces.py",
+      "bytes": 1994,
+      "sha256": "aab05a130a2313b4365a57593d04d5e2b0d30efb5cc2f30d36566330cc6f0096"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/spread_design_review.md",
+      "bytes": 5742,
+      "sha256": "2c248ca5264db00bb6d8e773e0f4fd9de3aa5fe85a969b9d68ee6b2dd70deb0c"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/spread_regressions_after.txt",
+      "bytes": 99,
+      "sha256": "5a7cd7a6372907f137d811c25cf378c11d9fba72ee5ae92634bd6eddd0d6d386"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/spread_regressions_before.txt",
+      "bytes": 3519,
+      "sha256": "2d97197e65234802d716f4586855870f66fa86550075b63e7f88d68e69998a5a"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/team_repository_changes.patch",
+      "bytes": 17203,
+      "sha256": "22a757569169c4d3f46f29e690618108cd64f06461258823a79dfa4ec0bf105f"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/technical_design.md",
+      "bytes": 18504,
+      "sha256": "f31c642838b9f53b3ae0e4b515eee1bc29c0d50a1c6b0285f940c0914e6cb86f"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/temporal_first_prediction_probe.npy",
+      "bytes": 32128,
+      "sha256": "3c0a68bcd7340009a0e126358eddf28b655a38478ba6466a3c5bd52da2709af5"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/temporal_histogram_boosting_daily_alerts.csv",
+      "bytes": 8530,
+      "sha256": "860b282000b09e6dd11dd9c629da8ca11fc56bd64be8ae021db1a867be8457f5"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/temporal_historical_rate_daily_alerts.csv",
+      "bytes": 8530,
+      "sha256": "b7bb296dc0309875bb86809b02b0ffbde80b68cc9a041e8ada452e2d4a5b8b76"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/temporal_lightgbm_daily_alerts.csv",
+      "bytes": 8530,
+      "sha256": "f6b4eaa6b2a705c2dd865f7685a8a83a9a74c919969669d59a7de6a7cc4f0f9e"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/temporal_logistic_daily_alerts.csv",
+      "bytes": 8530,
+      "sha256": "c3ee0613adc04010f8a89d12fe21f415e5bffcd751686b339e6ef7936a340ca9"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/unit_tests.txt",
+      "bytes": 99,
+      "sha256": "1c944c9da144a3b6b4a47c21141f741537d849ddd808d44166a98f68dcf62d2e"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/validation_review.md",
+      "bytes": 4738,
+      "sha256": "90aa3b8ff8c0fd384d0653890babea350b879a18d8b5e459e71f4ce0e976b661"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/week_3_design_report.pdf",
+      "bytes": 162489,
+      "sha256": "a4580b464ba013badca136edeb3fa7b16de7b36076eb4ffe1d0e3b498e77626b"
+    }
+  ]
+}

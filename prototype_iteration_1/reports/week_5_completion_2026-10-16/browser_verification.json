@@ -1,0 +1,29 @@
+{
+  "dashboard_url": "http://127.0.0.1:8767/",
+  "actual_UI_checks": [
+    "Historical and selected map modes loaded",
+    "Selected2025-09-01 cellofr10km_-10000_100000 displayed0.2290%",
+    "Factor detail values: FBPcode3share0.289fraction, DC356.554index, temp27.308C; issue2025-09-01T04:00:00+00:00",
+    "Actual CSV download /Users/parthkevadiya/Downloads/selected_2025-09-01.csv with9648rows",
+    "Corrected reconstruction banner visible",
+    "First6hourmode shows6.0h; slider100shows3.0h; slider33shows1.0h",
+    "Livepanel showszerooverlap/zeroobservedstates andno probability"
+  ],
+  "limits": [
+    "No independent first-time-user/accessibility certification",
+    "Live503 is expected, not hidden",
+    "No field/horizon forecast validation"
+  ],
+  "captured_console_note": {
+    "message": "MutationObserver parameter1 is not aNode",
+    "trace_evidence": {
+      "initial_dashboard_load_before_spread_view": true,
+      "application_source_url_in_exception": null,
+      "tail_frame": "node:electron/js2c/sandbox_bundle",
+      "minified_unnamed_script_frame": "line127,column82056"
+    },
+    "interpretation": "Trace is consistent with injected desktop/browser host instrumentation, not established as a project-page exception. No empty-console claim. The optional viewer theme observer also now checks for a realDOMNode.",
+    "fresh_browser_recheck": "All requested app flows passed; host observer message persists in fresh tab",
+    "debugger_cleanup": "Runtime domain disabled after diagnosis"
+  }
+}

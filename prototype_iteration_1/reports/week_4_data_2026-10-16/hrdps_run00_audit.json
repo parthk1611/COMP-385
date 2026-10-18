@@ -1,0 +1,107 @@
+{
+  "bundle": {
+    "run_time_utc": "2026-10-16T00:00:00+00:00",
+    "available_at_utc": "2026-10-16T07:42:35.979644+00:00"
+  },
+  "issue_time_utc": "2026-10-16T07:42:35.979644+00:00",
+  "next_six_hours_covered": true,
+  "grid_cells": 9648,
+  "hourly_rows": 231552,
+  "fwi_rows": 9648,
+  "fwi_status_counts": {
+    "research_startup_forecast_update": 8526,
+    "incomplete_weather": 1122
+  },
+  "research_startup": true,
+  "operationally_validated": false,
+  "input_metadata": {
+    "temp_c": {
+      "GRIB_UNIT": "[C]",
+      "GRIB_COMMENT": "Temperature [C]",
+      "GRIB_ELEMENT": "TMP",
+      "GRIB_SHORT_NAME": "2-HTGL",
+      "GRIB_REF_TIME": "1792108800",
+      "GRIB_VALID_TIME": "1792112400",
+      "GRIB_FORECAST_SECONDS": "3600",
+      "GRIB_DISCIPLINE": "0(Meteorological)",
+      "GRIB_IDS": "CENTER=54(Montreal) SUBCENTER=0 MASTER_TABLE=4 LOCAL_TABLE=1 SIGNF_REF_TIME=1(Start_of_Forecast) REF_TIME=2026-10-16T00:00:00Z PROD_STATUS=0(Operational) TYPE=2(Analysis_and_forecast)",
+      "GRIB_PDS_PDTN": "0",
+      "GRIB_PDS_TEMPLATE_NUMBERS": "0 0 2 50 50 0 0 0 0 0 0 0 60 103 0 0 0 0 2 255 255 255 255 255 255",
+      "GRIB_PDS_TEMPLATE_ASSEMBLED_VALUES": "0 0 2 50 50 0 0 0 60 103 0 2 255 -127 -2147483647"
+    },
+    "rh_pct": {
+      "GRIB_UNIT": "[%]",
+      "GRIB_COMMENT": "Relative humidity [%]",
+      "GRIB_ELEMENT": "RH",
+      "GRIB_SHORT_NAME": "2-HTGL",
+      "GRIB_REF_TIME": "1792108800",
+      "GRIB_VALID_TIME": "1792112400",
+      "GRIB_FORECAST_SECONDS": "3600",
+      "GRIB_DISCIPLINE": "0(Meteorological)",
+      "GRIB_IDS": "CENTER=54(Montreal) SUBCENTER=0 MASTER_TABLE=4 LOCAL_TABLE=1 SIGNF_REF_TIME=1(Start_of_Forecast) REF_TIME=2026-10-16T00:00:00Z PROD_STATUS=0(Operational) TYPE=2(Analysis_and_forecast)",
+      "GRIB_PDS_PDTN": "0",
+      "GRIB_PDS_TEMPLATE_NUMBERS": "1 1 2 50 50 0 0 0 0 0 0 0 60 103 0 0 0 0 2 255 255 255 255 255 255",
+      "GRIB_PDS_TEMPLATE_ASSEMBLED_VALUES": "1 1 2 50 50 0 0 0 60 103 0 2 255 -127 -2147483647"
+    },
+    "u_grid_ms": {
+      "GRIB_UNIT": "[m/s]",
+      "GRIB_COMMENT": "u-component of wind [m/s]",
+      "GRIB_ELEMENT": "UGRD",
+      "GRIB_SHORT_NAME": "10-HTGL",
+      "GRIB_REF_TIME": "1792108800",
+      "GRIB_VALID_TIME": "1792112400",
+      "GRIB_FORECAST_SECONDS": "3600",
+      "GRIB_DISCIPLINE": "0(Meteorological)",
+      "GRIB_IDS": "CENTER=54(Montreal) SUBCENTER=0 MASTER_TABLE=4 LOCAL_TABLE=1 SIGNF_REF_TIME=1(Start_of_Forecast) REF_TIME=2026-10-16T00:00:00Z PROD_STATUS=0(Operational) TYPE=2(Analysis_and_forecast)",
+      "GRIB_PDS_PDTN": "0",
+      "GRIB_PDS_TEMPLATE_NUMBERS": "2 2 2 50 50 0 0 0 0 0 0 0 60 103 0 0 0 0 10 255 255 255 255 255 255",
+      "GRIB_PDS_TEMPLATE_ASSEMBLED_VALUES": "2 2 2 50 50 0 0 0 60 103 0 10 255 -127 -2147483647"
+    },
+    "v_grid_ms": {
+      "GRIB_UNIT": "[m/s]",
+      "GRIB_COMMENT": "v-component of wind [m/s]",
+      "GRIB_ELEMENT": "VGRD",
+      "GRIB_SHORT_NAME": "10-HTGL",
+      "GRIB_REF_TIME": "1792108800",
+      "GRIB_VALID_TIME": "1792112400",
+      "GRIB_FORECAST_SECONDS": "3600",
+      "GRIB_DISCIPLINE": "0(Meteorological)",
+      "GRIB_IDS": "CENTER=54(Montreal) SUBCENTER=0 MASTER_TABLE=4 LOCAL_TABLE=1 SIGNF_REF_TIME=1(Start_of_Forecast) REF_TIME=2026-10-16T00:00:00Z PROD_STATUS=0(Operational) TYPE=2(Analysis_and_forecast)",
+      "GRIB_PDS_PDTN": "0",
+      "GRIB_PDS_TEMPLATE_NUMBERS": "2 3 2 50 50 0 0 0 0 0 0 0 60 103 0 0 0 0 10 255 255 255 255 255 255",
+      "GRIB_PDS_TEMPLATE_ASSEMBLED_VALUES": "2 3 2 50 50 0 0 0 60 103 0 10 255 -127 -2147483647"
+    },
+    "precip_mm": {
+      "GRIB_UNIT": "[kg/(m^2)]",
+      "GRIB_COMMENT": "01 hr Total precipitation [kg/(m^2)]",
+      "GRIB_ELEMENT": "APCP01",
+      "GRIB_SHORT_NAME": "0-SFC",
+      "GRIB_REF_TIME": "1792108800",
+      "GRIB_VALID_TIME": "1792112400",
+      "GRIB_FORECAST_SECONDS": "0",
+      "GRIB_DISCIPLINE": "0(Meteorological)",
+      "GRIB_IDS": "CENTER=54(Montreal) SUBCENTER=0 MASTER_TABLE=4 LOCAL_TABLE=1 SIGNF_REF_TIME=1(Start_of_Forecast) REF_TIME=2026-10-16T00:00:00Z PROD_STATUS=0(Operational) TYPE=2(Analysis_and_forecast)",
+      "GRIB_PDS_PDTN": "8",
+      "GRIB_PDS_TEMPLATE_NUMBERS": "1 8 2 50 50 0 0 0 1 0 0 0 0 1 0 0 0 0 0 255 255 255 255 255 255 7 234 10 16 1 0 0 1 0 0 0 0 1 2 1 0 0 0 1 1 0 0 0 0",
+      "GRIB_PDS_TEMPLATE_ASSEMBLED_VALUES": "1 8 2 50 50 0 0 1 0 1 0 0 255 -127 -2147483647 2026 10 16 1 0 0 1 0 1 2 1 1 1 0",
+      "accumulation_start_utc": "2026-10-16T00:00:00+00:00"
+    }
+  },
+  "code_sha256": "9df56d85cacb142b2ad2f59dd155a4c781abc99e8f96ade1f4afa88ea227b22e",
+  "download_files": 128,
+  "wind_policy": "GRIB2 Section3 template3.1 component bit5; grid-relative U/V rotated using geodesic grid-north bearing",
+  "rain_policy": "Accumulation intervals validated from metadata; difference only consecutive values with same accumulation start; reset 1h values used directly; unknown gaps remain null. Prior-run history is model forecast, not observed rain",
+  "ignition_model_compatibility": "Not interchangeable with CWFIS benchmark; no ignition model invoked",
+  "outputs": [
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_research_2026-10-16/hourly_weather.parquet",
+      "sha256": "dc1c03d7aac015f1e22677e6d2e9c0851455ef30c4eb2bca331b1134dd4ac57f",
+      "bytes": 11010984
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_research_2026-10-16/daily_forecast_fwi.parquet",
+      "sha256": "b09bea19da8de113dd17a68f538ac6459e561d9b3f1aed575880a4e690bafd1f",
+      "bytes": 625643
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "status": "unavailable",
+  "probability": null,
+  "checks": {
+    "contemporaneous_ERA5_HRDPS_reference_days": 0,
+    "trusted_observed_state_cells": 0,
+    "model_live_qualified": false
+  },
+  "reasons": [
+    "No coincident ERA5/HRDPS reference dates for measured forecast-source parity",
+    "Available FWI checkpoints are forecast-derived research states, not trusted observed/overwintered initial conditions",
+    "Selected-source model is qualified only for a retrospective within-season study",
+    "No accepted cross-source/issue-time validation decision exists"
+  ],
+  "forecast_weather_adapter": "implemented and unit-tested",
+  "research_scenarios_only": true,
+  "operational": false,
+  "input_hashes": {
+    "forecast_manifest": "92c69a04bb579b811500cd17296570a4c5c8eba1c4f6afae8e9cf7b471a0e65a",
+    "state_checkpoint": "e83343a771658eb1b85f15840bd48a90ed8daf0a3ff3178daabd60b1e16237f7",
+    "selected_model_results": "136786b7b4bccfebd0c98dbdb05a789ebe41420b794eee80ea5cc8b988dc0a9f"
+  },
+  "unit_contract": {
+    "ERA5_temperature": "Kelvin to Celsius",
+    "HRDPS_temperature": "Celsius checked from GRIB",
+    "wind": "Both paths yield earth-relative km/h and meteorological from-bearing; rotated-grid wind requires rotation",
+    "rain": "Both yield mm after source-specific reset-aware interval decoding",
+    "FWI": "Shared equations with exact standard-noon/state clock, but startup/provenance and source distributions are not interchangeable"
+  },
+  "scope": "Assessment completed: live acceptance fails. No live ignition prediction may be emitted by this prototype."
+}

@@ -1,0 +1,24 @@
+{
+  "slide_entries": 11,
+  "classification_counts": {
+    "journal": 6,
+    "journal_review": 1,
+    "main_conference": 1,
+    "technical_report": 1,
+    "topic_output": 1,
+    "workshop": 1
+  },
+  "journal_or_main_conference_papers": 8,
+  "research_papers_including_workshop": 9,
+  "local_paper_pdfs": 7,
+  "evidence_files": 34,
+  "documentation_checks": [],
+  "application_code_changed": false,
+  "external_tools_executed": false,
+  "models_trained": false,
+  "dpv_full_text_review_complete": true,
+  "c2fk_full_text_review_complete": true,
+  "burn_probability_entry_resolved_as_method": true,
+  "extended_slide_review_complete": true,
+  "access_date": "2026-10-15"
+}

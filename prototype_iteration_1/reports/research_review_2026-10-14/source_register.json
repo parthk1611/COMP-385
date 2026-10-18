@@ -1,0 +1,114 @@
+[
+  {
+    "id": "cell2fire",
+    "slide_entry": "Cell2Fire (2021)",
+    "classification": "journal",
+    "publication_url": "https://doi.org/10.3389/ffgc.2021.692706",
+    "review_depth": "full_text_relevant_sections",
+    "local_pdf": "sources/cell2fire_2021.pdf"
+  },
+  {
+    "id": "c2fk",
+    "slide_entry": "C2F-K (Chile)",
+    "classification": "journal",
+    "publication_url": "https://doi.org/10.1016/j.envsoft.2026.107009",
+    "review_depth": "institutional_full_text_html_methods_results_tables_and_limitations",
+    "local_pdf": null,
+    "review_sections": [
+      "2.3",
+      "2.4",
+      "2.5",
+      "2.6",
+      "3.1",
+      "3.2",
+      "3.3",
+      "3.4",
+      "4"
+    ],
+    "local_full_text": null,
+    "access_note": "Full text read in authenticated library browser; no local publisher PDF saved"
+  },
+  {
+    "id": "prometheus",
+    "slide_entry": "Prometheus (2010)",
+    "classification": "technical_report",
+    "publication_url": "https://publications.gc.ca/site/eng/9.568367/publication.html",
+    "review_depth": "relevant_full_text_sections_in_browser",
+    "local_pdf": null
+  },
+  {
+    "id": "kim",
+    "slide_entry": "Kim et al. (2025)",
+    "classification": "journal",
+    "publication_url": "https://doi.org/10.1038/s41598-025-05706-6",
+    "review_depth": "full_text_relevant_sections",
+    "local_pdf": "sources/kim_2025.pdf"
+  },
+  {
+    "id": "pytorchfire",
+    "slide_entry": "PyTorchFire (2025)",
+    "classification": "journal",
+    "publication_url": "https://doi.org/10.1016/j.envsoft.2025.106401",
+    "review_depth": "full_text_and_selected_source_code",
+    "local_pdf": "sources/pytorchfire_2025.pdf"
+  },
+  {
+    "id": "jaxwildfire",
+    "slide_entry": "JaxWildfire (2025)",
+    "classification": "workshop",
+    "publication_url": "https://arxiv.org/abs/2512.06102",
+    "review_depth": "workshop_paper_and_repository_availability",
+    "local_pdf": "sources/jaxwildfire_2025.pdf"
+  },
+  {
+    "id": "dpv",
+    "slide_entry": "Downstream Protection Value (2021)",
+    "classification": "journal",
+    "publication_url": "https://doi.org/10.1016/j.cor.2021.105252",
+    "review_depth": "institutional_full_text_methods_results_and_limitations",
+    "local_pdf": null,
+    "local_full_text": "sources/dpv_2021_fulltext.mhtml",
+    "review_sections": [
+      "2.5",
+      "2.6",
+      "3",
+      "4"
+    ]
+  },
+  {
+    "id": "burn_probability",
+    "slide_entry": "Burn-probability maps",
+    "classification": "topic_output",
+    "publication_url": null,
+    "review_depth": "resolved_method_output_supported_by_cell2fire_and_c2fk",
+    "local_pdf": null,
+    "supporting_sections": [
+      "Cell2Fire 2.2.2",
+      "C2FK 2.6 equation 23"
+    ]
+  },
+  {
+    "id": "next_day",
+    "slide_entry": "Next Day Spread (2022)",
+    "classification": "journal",
+    "publication_url": "https://doi.org/10.1109/TGRS.2022.3192974",
+    "review_depth": "journal_metadata_and_author_preprint",
+    "local_pdf": "sources/next_day_spread_2022_preprint.pdf"
+  },
+  {
+    "id": "wildfirespreadts",
+    "slide_entry": "WildfireSpreadTS (2023)",
+    "classification": "main_conference",
+    "publication_url": "https://doi.org/10.52202/075280-3258",
+    "review_depth": "proceedings_and_developer_notes",
+    "local_pdf": "sources/wildfirespreadts_2023.pdf"
+  },
+  {
+    "id": "jain",
+    "slide_entry": "Jain review (2020)",
+    "classification": "journal_review",
+    "publication_url": "https://doi.org/10.1139/er-2020-0019",
+    "review_depth": "journal_metadata_and_author_manuscript_sections",
+    "local_pdf": "sources/jain_2020_author_manuscript.pdf"
+  }
+]

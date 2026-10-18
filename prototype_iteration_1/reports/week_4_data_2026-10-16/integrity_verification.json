@@ -1,0 +1,36 @@
+{
+  "original_partitions": [
+    {
+      "role": "training",
+      "sha256": "3198dd0152210e9bb7c5172c1fa6b67e8ae51645206c9ffd466f9e3c1af1a8b0",
+      "unchanged": true,
+      "check": "raw-byte hashing only; calibration/final-test Parquet content not parsed",
+      "mode": "0o644"
+    },
+    {
+      "role": "validation",
+      "sha256": "1c1d2feeba4fc6582011f42c514a80d7bcbcbe7bcbf8f853807c24056774501c",
+      "unchanged": true,
+      "check": "raw-byte hashing only; calibration/final-test Parquet content not parsed",
+      "mode": "0o644"
+    },
+    {
+      "role": "calibration",
+      "sha256": "8cde63a28b4b5f6b7369b63f489c0d9ec2a52de3d9085bd93e448f6331c73d15",
+      "unchanged": true,
+      "check": "raw-byte hashing only; calibration/final-test Parquet content not parsed",
+      "mode": "0o644"
+    },
+    {
+      "role": "final_test",
+      "sha256": "e37b96286065f0b540a9cd59757ece2f029d2a3b0a2b8048c5794084169a984a",
+      "unchanged": true,
+      "check": "raw-byte hashing only; calibration/final-test Parquet content not parsed",
+      "mode": "0o444"
+    }
+  ],
+  "week3_models_unchanged": true,
+  "weather_source_code_matches": true,
+  "join_source_code_matches": true,
+  "repeated_join_content_hashes_identical": true
+}

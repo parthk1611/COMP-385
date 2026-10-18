@@ -1,0 +1,20 @@
+digraph G {
+graph [bgcolor="white", pad="0.2", nodesep="0.30", ranksep="0.45"]; node [shape=box, style="rounded,filled", fillcolor="#F4F4F4", color="#535353", fontname="Helvetica", fontsize=16, margin="0.16,0.12"]; edge [fontname="Helvetica",fontsize=13,color="#555555",arrowsize=0.7];
+rankdir=TB;
+select [label="Analyst selects study, date and cell"];
+map [label="Browser loads saved study map
+HTML contains date-indexed probabilities"];
+request [label="Browser requests cell details
+GET /api/cell-details"];
+validate [label="HTTP handler validates date, grid and study"];
+lookup [label="Read exact saved prediction + provenance
+Reject duplicate or nonfinite result"];
+factors [label="Requested date has saved explanation?",shape=diamond];
+yes [label="Read matching feature values and units
+Return first-day raw-log-odds factors"];
+no [label="Return probability and provenance
+Factors explicitly unavailable"];
+view [label="Browser displays matching selection
+Changing date or cell clears stale details"];
+select -> map -> request -> validate -> lookup -> factors;factors -> yes [label="yes"];factors -> no [label="no"];yes -> view;no -> view;
+}

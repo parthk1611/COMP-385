@@ -1,0 +1,1188 @@
+{
+  "fbp_2024": {
+    "tile_files": 145,
+    "bytes": 3688480940,
+    "grid_centres_in_tile_bounds": 9673,
+    "valid_grid_centre_samples": 9654,
+    "missing_grid_centre_samples": 19,
+    "sampling": "one raster pixel at each existing 10 km grid centre; not area aggregation",
+    "files": [
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0000000_y+0000000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0000000_y+0100000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0000000_y+0200000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0000000_y+0300000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0000000_y+0400000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0000000_y+0500000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0000000_y-0100000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0100000_y+0000000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0100000_y+0100000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0100000_y+0200000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0100000_y+0300000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0100000_y+0400000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0100000_y+0500000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0100000_y+0600000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0100000_y-0100000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0200000_y+0000000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0200000_y+0100000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0200000_y+0200000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0200000_y+0300000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0200000_y+0400000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0200000_y+0500000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0200000_y+0600000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0200000_y+0700000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0200000_y+0800000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0200000_y-0100000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0300000_y+0000000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0300000_y+0100000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0300000_y+0200000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0300000_y+0300000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0300000_y+0400000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0300000_y+0500000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0300000_y+0600000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0300000_y+0700000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0300000_y+0800000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0300000_y-0100000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0400000_y+0000000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0400000_y+0100000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0400000_y+0200000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0400000_y+0300000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0400000_y+0400000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0400000_y+0500000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0400000_y+0600000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0400000_y+0700000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0400000_y+0800000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0400000_y-0100000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0500000_y+0000000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0500000_y+0100000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0500000_y+0200000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0500000_y+0300000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0500000_y+0400000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0500000_y+0500000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0500000_y+0600000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0500000_y+0700000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0500000_y-0100000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0500000_y-0200000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0600000_y+0000000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0600000_y+0100000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0600000_y+0200000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0600000_y+0300000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0600000_y+0400000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0600000_y+0500000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0600000_y+0600000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0600000_y+0700000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0600000_y-0100000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0600000_y-0200000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0700000_y+0000000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0700000_y+0100000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0700000_y+0200000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0700000_y+0300000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0700000_y+0400000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0700000_y+0500000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0700000_y+0600000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0700000_y+0700000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0700000_y-0100000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0700000_y-0200000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0700000_y-0300000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0800000_y+0000000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0800000_y+0100000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0800000_y+0200000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0800000_y+0300000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0800000_y+0400000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0800000_y+0500000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0800000_y+0600000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0800000_y+0700000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0800000_y-0100000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0800000_y-0200000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0800000_y-0300000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0900000_y+0000000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0900000_y+0100000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0900000_y+0200000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0900000_y+0300000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0900000_y+0400000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0900000_y-0100000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0900000_y-0200000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0900000_y-0300000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+0900000_y-0400000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1000000_y+0000000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1000000_y+0100000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1000000_y+0200000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1000000_y+0300000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1000000_y+0400000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1000000_y-0100000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1000000_y-0200000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1000000_y-0300000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1000000_y-0400000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1000000_y-0500000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1000000_y-0600000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1000000_y-0700000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1000000_y-0800000.tif",
+        "bytes": 7340548
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1100000_y+0000000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1100000_y+0100000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1100000_y+0200000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1100000_y-0100000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1100000_y-0200000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1100000_y-0300000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1100000_y-0400000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1100000_y-0500000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1100000_y-0600000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1100000_y-0700000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1100000_y-0800000.tif",
+        "bytes": 7340548
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1200000_y-0100000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1200000_y-0200000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1200000_y-0300000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1200000_y-0400000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1200000_y-0500000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1200000_y-0600000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1200000_y-0700000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1300000_y-0200000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1300000_y-0300000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1300000_y-0400000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1300000_y-0500000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1300000_y-0600000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1400000_y-0200000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1400000_y-0300000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1400000_y-0400000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1400000_y-0500000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1500000_y-0200000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1500000_y-0300000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1500000_y-0400000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x+1600000_y-0200000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x-0100000_y+0000000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x-0100000_y+0100000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x-0100000_y+0200000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x-0100000_y+0300000.tif",
+        "bytes": 25690908
+      },
+      {
+        "path": "data/raw/ontario/fbp/2024/x-0100000_y+0400000.tif",
+        "bytes": 25690908
+      }
+    ]
+  },
+  "mrdem_30m": {
+    "tile_files": 145,
+    "bytes": 4755401424,
+    "grid_centres_in_tile_bounds": 9673,
+    "valid_grid_centre_samples": 9673,
+    "missing_grid_centre_samples": 0,
+    "sampling": "one raster pixel at each existing 10 km grid centre; not area aggregation",
+    "files": [
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0000000_y+0000000.tif",
+        "bytes": 32839223
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0000000_y+0100000.tif",
+        "bytes": 34847877
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0000000_y+0200000.tif",
+        "bytes": 34668173
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0000000_y+0300000.tif",
+        "bytes": 34790111
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0000000_y+0400000.tif",
+        "bytes": 34651158
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0000000_y+0500000.tif",
+        "bytes": 33797691
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0000000_y-0100000.tif",
+        "bytes": 31809186
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0100000_y+0000000.tif",
+        "bytes": 35168234
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0100000_y+0100000.tif",
+        "bytes": 34384322
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0100000_y+0200000.tif",
+        "bytes": 34538811
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0100000_y+0300000.tif",
+        "bytes": 34605839
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0100000_y+0400000.tif",
+        "bytes": 33916493
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0100000_y+0500000.tif",
+        "bytes": 34249893
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0100000_y+0600000.tif",
+        "bytes": 34542968
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0100000_y-0100000.tif",
+        "bytes": 34187541
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0200000_y+0000000.tif",
+        "bytes": 35075938
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0200000_y+0100000.tif",
+        "bytes": 34762186
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0200000_y+0200000.tif",
+        "bytes": 33937282
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0200000_y+0300000.tif",
+        "bytes": 34475778
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0200000_y+0400000.tif",
+        "bytes": 33013166
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0200000_y+0500000.tif",
+        "bytes": 34410905
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0200000_y+0600000.tif",
+        "bytes": 35369109
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0200000_y+0700000.tif",
+        "bytes": 35802157
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0200000_y+0800000.tif",
+        "bytes": 36288801
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0200000_y-0100000.tif",
+        "bytes": 34909569
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0300000_y+0000000.tif",
+        "bytes": 34801363
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0300000_y+0100000.tif",
+        "bytes": 34606763
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0300000_y+0200000.tif",
+        "bytes": 34191573
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0300000_y+0300000.tif",
+        "bytes": 34490332
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0300000_y+0400000.tif",
+        "bytes": 34497278
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0300000_y+0500000.tif",
+        "bytes": 33923945
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0300000_y+0600000.tif",
+        "bytes": 35397735
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0300000_y+0700000.tif",
+        "bytes": 36134361
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0300000_y+0800000.tif",
+        "bytes": 37393093
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0300000_y-0100000.tif",
+        "bytes": 35666707
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0400000_y+0000000.tif",
+        "bytes": 33457353
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0400000_y+0100000.tif",
+        "bytes": 29114242
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0400000_y+0200000.tif",
+        "bytes": 34829326
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0400000_y+0300000.tif",
+        "bytes": 34014795
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0400000_y+0400000.tif",
+        "bytes": 34843585
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0400000_y+0500000.tif",
+        "bytes": 34883983
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0400000_y+0600000.tif",
+        "bytes": 35184688
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0400000_y+0700000.tif",
+        "bytes": 36371211
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0400000_y+0800000.tif",
+        "bytes": 37935588
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0400000_y-0100000.tif",
+        "bytes": 27116432
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0500000_y+0000000.tif",
+        "bytes": 34517799
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0500000_y+0100000.tif",
+        "bytes": 34758079
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0500000_y+0200000.tif",
+        "bytes": 34775793
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0500000_y+0300000.tif",
+        "bytes": 34979374
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0500000_y+0400000.tif",
+        "bytes": 34687901
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0500000_y+0500000.tif",
+        "bytes": 34948152
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0500000_y+0600000.tif",
+        "bytes": 35380300
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0500000_y+0700000.tif",
+        "bytes": 36962975
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0500000_y-0100000.tif",
+        "bytes": 13840173
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0500000_y-0200000.tif",
+        "bytes": 16208234
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0600000_y+0000000.tif",
+        "bytes": 35464224
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0600000_y+0100000.tif",
+        "bytes": 35205834
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0600000_y+0200000.tif",
+        "bytes": 34798182
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0600000_y+0300000.tif",
+        "bytes": 34607740
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0600000_y+0400000.tif",
+        "bytes": 35165826
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0600000_y+0500000.tif",
+        "bytes": 35469080
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0600000_y+0600000.tif",
+        "bytes": 35584823
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0600000_y+0700000.tif",
+        "bytes": 37609842
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0600000_y-0100000.tif",
+        "bytes": 20142466
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0600000_y-0200000.tif",
+        "bytes": 11467126
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0700000_y+0000000.tif",
+        "bytes": 35650219
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0700000_y+0100000.tif",
+        "bytes": 35186724
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0700000_y+0200000.tif",
+        "bytes": 35895853
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0700000_y+0300000.tif",
+        "bytes": 35909272
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0700000_y+0400000.tif",
+        "bytes": 36311946
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0700000_y+0500000.tif",
+        "bytes": 36165041
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0700000_y+0600000.tif",
+        "bytes": 37013495
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0700000_y+0700000.tif",
+        "bytes": 37862390
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0700000_y-0100000.tif",
+        "bytes": 32102904
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0700000_y-0200000.tif",
+        "bytes": 15158606
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0700000_y-0300000.tif",
+        "bytes": 28781713
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0800000_y+0000000.tif",
+        "bytes": 35321391
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0800000_y+0100000.tif",
+        "bytes": 35118898
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0800000_y+0200000.tif",
+        "bytes": 35945902
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0800000_y+0300000.tif",
+        "bytes": 35812050
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0800000_y+0400000.tif",
+        "bytes": 37433685
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0800000_y+0500000.tif",
+        "bytes": 38540045
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0800000_y+0600000.tif",
+        "bytes": 37428096
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0800000_y+0700000.tif",
+        "bytes": 38106061
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0800000_y-0100000.tif",
+        "bytes": 35919288
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0800000_y-0200000.tif",
+        "bytes": 36738355
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0800000_y-0300000.tif",
+        "bytes": 26348975
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0900000_y+0000000.tif",
+        "bytes": 34854302
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0900000_y+0100000.tif",
+        "bytes": 35225142
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0900000_y+0200000.tif",
+        "bytes": 36252595
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0900000_y+0300000.tif",
+        "bytes": 37163905
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0900000_y+0400000.tif",
+        "bytes": 38030989
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0900000_y-0100000.tif",
+        "bytes": 35540194
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0900000_y-0200000.tif",
+        "bytes": 36353054
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0900000_y-0300000.tif",
+        "bytes": 21163309
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+0900000_y-0400000.tif",
+        "bytes": 15921521
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1000000_y+0000000.tif",
+        "bytes": 34983517
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1000000_y+0100000.tif",
+        "bytes": 34325037
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1000000_y+0200000.tif",
+        "bytes": 34331983
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1000000_y+0300000.tif",
+        "bytes": 37625409
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1000000_y+0400000.tif",
+        "bytes": 38249073
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1000000_y-0100000.tif",
+        "bytes": 36002391
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1000000_y-0200000.tif",
+        "bytes": 35971210
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1000000_y-0300000.tif",
+        "bytes": 22703182
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1000000_y-0400000.tif",
+        "bytes": 14108777
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1000000_y-0500000.tif",
+        "bytes": 15669634
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1000000_y-0600000.tif",
+        "bytes": 26576652
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1000000_y-0700000.tif",
+        "bytes": 26059481
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1000000_y-0800000.tif",
+        "bytes": 23969927
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1100000_y+0000000.tif",
+        "bytes": 35460190
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1100000_y+0100000.tif",
+        "bytes": 34629659
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1100000_y+0200000.tif",
+        "bytes": 34529088
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1100000_y-0100000.tif",
+        "bytes": 35833055
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1100000_y-0200000.tif",
+        "bytes": 35214744
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1100000_y-0300000.tif",
+        "bytes": 27541373
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1100000_y-0400000.tif",
+        "bytes": 23752579
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1100000_y-0500000.tif",
+        "bytes": 35029378
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1100000_y-0600000.tif",
+        "bytes": 33312619
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1100000_y-0700000.tif",
+        "bytes": 13773068
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1100000_y-0800000.tif",
+        "bytes": 26986095
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1200000_y-0100000.tif",
+        "bytes": 35273777
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1200000_y-0200000.tif",
+        "bytes": 36331329
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1200000_y-0300000.tif",
+        "bytes": 35930192
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1200000_y-0400000.tif",
+        "bytes": 33712843
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1200000_y-0500000.tif",
+        "bytes": 31988490
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1200000_y-0600000.tif",
+        "bytes": 24599361
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1200000_y-0700000.tif",
+        "bytes": 17234821
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1300000_y-0200000.tif",
+        "bytes": 36518685
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1300000_y-0300000.tif",
+        "bytes": 36296181
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1300000_y-0400000.tif",
+        "bytes": 33678236
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1300000_y-0500000.tif",
+        "bytes": 23367207
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1300000_y-0600000.tif",
+        "bytes": 27288821
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1400000_y-0200000.tif",
+        "bytes": 36816602
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1400000_y-0300000.tif",
+        "bytes": 36152507
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1400000_y-0400000.tif",
+        "bytes": 27170134
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1400000_y-0500000.tif",
+        "bytes": 28784156
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1500000_y-0200000.tif",
+        "bytes": 36645278
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1500000_y-0300000.tif",
+        "bytes": 36633715
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1500000_y-0400000.tif",
+        "bytes": 33258241
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x+1600000_y-0200000.tif",
+        "bytes": 37030147
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x-0100000_y+0000000.tif",
+        "bytes": 31981182
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x-0100000_y+0100000.tif",
+        "bytes": 34158612
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x-0100000_y+0200000.tif",
+        "bytes": 34417183
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x-0100000_y+0300000.tif",
+        "bytes": 34221207
+      },
+      {
+        "path": "data/raw/ontario/mrdem_30m/x-0100000_y+0400000.tif",
+        "bytes": 33547789
+      }
+    ]
+  },
+  "grid": {
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/team_repository/data/interim/ontario_fire_region_10km_grid.csv",
+    "rows": 9673,
+    "sha256": "b22741d83b64c2b78c19fbf182848566644a23fad4aeef3301ff25ef7c6c3f35"
+  },
+  "scope": "Selected FBP2024 and MRDEM existing local tiles only; no SCANFI-v2 substitution; centre checks do not prove full cell-footprint coverage or historical eligibility."
+}

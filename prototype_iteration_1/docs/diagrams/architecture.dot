@@ -1,0 +1,29 @@
+digraph G {
+graph [bgcolor="white", pad="0.2", nodesep="0.30", ranksep="0.45"]; node [shape=box, style="rounded,filled", fillcolor="#F4F4F4", color="#535353", fontname="Helvetica", fontsize=16, margin="0.16,0.12"]; edge [fontname="Helvetica",fontsize=13,color="#555555",arrowsize=0.7];
+rankdir=TB;
+source [label="Pinned source archives
+Historical NFDB / CDEM / CWFIS
+Separate selected seven-source study"];
+prep [label="Validate and prepare
+CRS, units, timestamps, missingness
+10 km ignition / 90 m spread"];
+train [label="Offline ignition experiments
+Four candidates -> LightGBM
+Refit -> calibration -> frozen final test"];
+spread [label="Offline incident reconstruction
+FBP-inspired rates + travel-time search
+Calibration / holdout baseline comparison"];
+store [label="Versioned local files
+Models, predictions, factors, maps
+Contracts, hashes and replay outputs"];
+api [label="Python loopback HTTP application
+Validate requests, serve saved results
+Details, provenance, CSV and GeoJSON"];
+ui [label="Analyst browser dashboard
+2019 / 2025 ignition maps
+Spread replay / live-readiness status"];
+live [label="HRDPS + research FWI adapter
+Qualification assessment fails
+No live ignition probability",fillcolor="#FFF2DC"];
+source -> prep; prep -> train; prep -> spread; train -> store; spread -> store; store -> api; api -> ui; live -> api [label="HTTP 503 / unavailable"];
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "prometheus_government_mirror",
+    "url": "https://publications.aws.tpsgc-pwgsc.cloud-nuage.canada.ca/collections/collection_2010/nrcan/Fo133-1-417-eng.pdf",
+    "downloaded": false,
+    "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+  },
+  {
+    "id": "dpv_author_thesis_alternate",
+    "url": "https://escholarship.org/content/qt1pz7c83m/qt1pz7c83m.pdf",
+    "downloaded": false,
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "c2fk_publisher_xml",
+    "url": "https://api.elsevier.com/content/article/PII:S1364815226001568?httpAccept=text/xml",
+    "downloaded": false,
+    "error": "HTTP Error 429: Too Many Requests"
+  },
+  {
+    "id": "dpv_publisher_xml",
+    "url": "https://api.elsevier.com/content/article/PII:S0305054821000447?httpAccept=text/xml",
+    "downloaded": false,
+    "error": "HTTP Error 429: Too Many Requests"
+  },
+  {
+    "id": "prometheus_2010_cfs_delivery",
+    "url": "https://d1ied5g1xfgpx8.cloudfront.net/pdfs/31775.pdf",
+    "downloaded": false,
+    "error": "HTTP Error 301: Moved Permanently"
+  }
+]

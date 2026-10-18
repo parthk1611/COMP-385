@@ -1,0 +1,8 @@
+{
+  "original_week5_zip_sha256": "32e1bedb96148708ed65be9b8894ff8dc7f6bab41317dacf26e431b231f491d6",
+  "original_week5_zip_unchanged": true,
+  "verified_scientific_entries": 121,
+  "original_evaluation_partitions_unchanged": 4,
+  "new_real_data_training_or_final_evaluation": false,
+  "display_reads": "Saved scores, source metadata and first-day features were read for API/UI checks; no predictions recalculated."
+}

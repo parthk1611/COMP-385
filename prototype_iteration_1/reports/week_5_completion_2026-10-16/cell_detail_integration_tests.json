@@ -1,0 +1,78 @@
+[
+  {
+    "status": "ok",
+    "grid_id": "ofr10km_-10000_100000",
+    "date": "2019-05-01",
+    "probability": 0.0017897932640083558,
+    "raw_probability": 0.001788453296852463,
+    "recorded_start": false,
+    "weather_missing": false,
+    "mode": "retrospective_saved_evaluation",
+    "live": false,
+    "source_versions": "NFDB/CDEM/CWFIS v2",
+    "explanation_scale": "raw model log odds; not causal or calibrated probability contributions",
+    "issue_time_utc": "2019-05-01T04:00:00+00:00",
+    "explanation_status": "available",
+    "factors": [
+      {
+        "feature": "cwfis_dmc",
+        "raw_log_odds_contribution": 0.9037409165781553,
+        "value": 31.549439421479494,
+        "unit": "index",
+        "missing": false
+      },
+      {
+        "feature": "fire_history_neighborhood_365d",
+        "raw_log_odds_contribution": 0.5890708567817917,
+        "value": 4.0,
+        "unit": "count",
+        "missing": false
+      },
+      {
+        "feature": "calendar_day_of_year",
+        "raw_log_odds_contribution": 0.3805253075995497,
+        "value": 121.0,
+        "unit": "day of year",
+        "missing": false
+      }
+    ]
+  },
+  {
+    "status": "ok",
+    "grid_id": "ofr10km_-10000_100000",
+    "date": "2025-09-01",
+    "probability": 0.0022899407366086823,
+    "raw_probability": 0.021383183105102243,
+    "recorded_start": false,
+    "weather_missing": false,
+    "mode": "retrospective_saved_evaluation",
+    "live": false,
+    "source_versions": "Ontario starts/FBP2024/SCANFIv1.2-2020/MRDEM/ERA5-2025 researchFWI",
+    "explanation_scale": "raw model log odds; not causal or calibrated probability contributions",
+    "issue_time_utc": "2025-09-01T04:00:00+00:00",
+    "explanation_status": "available",
+    "factors": [
+      {
+        "feature": "fbp_2024_code_3_share",
+        "raw_log_odds_contribution": 1.2726907297622476,
+        "value": 0.2887314736537126,
+        "unit": "fraction 0\u20131",
+        "missing": false
+      },
+      {
+        "feature": "dc",
+        "raw_log_odds_contribution": 0.8404510959434428,
+        "value": 356.5542399741728,
+        "unit": "index",
+        "missing": false
+      },
+      {
+        "feature": "temp_c",
+        "raw_log_odds_contribution": 0.6615201270666453,
+        "value": 27.307525634765625,
+        "unit": "\u00b0C",
+        "missing": false
+      }
+    ]
+  }
+]

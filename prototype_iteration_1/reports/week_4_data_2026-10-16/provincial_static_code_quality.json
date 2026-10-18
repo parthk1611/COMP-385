@@ -1,0 +1,173 @@
+{
+  "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/scripts/prepare_provincial_static.py",
+  "language": "python",
+  "metrics": {
+    "lines": {
+      "total": 161,
+      "code": 142,
+      "blank": 18,
+      "comment": 1
+    },
+    "functions": 7,
+    "classes": 0,
+    "avg_complexity": 7.6
+  },
+  "quality_score": 61,
+  "grade": "D",
+  "smells": [
+    {
+      "type": "high_complexity",
+      "severity": "high",
+      "message": "Function 'local_source' has complexity 28 (max: 10)",
+      "location": "local_source"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 500 should be a named constant",
+      "location": "line 23"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 3978 should be a named constant",
+      "location": "line 32"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 100 should be a named constant",
+      "location": "line 53"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 100 should be a named constant",
+      "location": "line 55"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 100 should be a named constant",
+      "location": "line 60"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 206 should be a named constant",
+      "location": "line 78"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 1024 should be a named constant",
+      "location": "line 83"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 512 should be a named constant",
+      "location": "line 85"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 10000 should be a named constant",
+      "location": "line 106"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 10000 should be a named constant",
+      "location": "line 107"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 1000 should be a named constant",
+      "location": "line 108"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 3978 should be a named constant",
+      "location": "line 112"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 3978 should be a named constant",
+      "location": "line 115"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2020 should be a named constant",
+      "location": "line 127"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2024 should be a named constant",
+      "location": "line 133"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 100 should be a named constant",
+      "location": "line 147"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 1000 should be a named constant",
+      "location": "line 151"
+    }
+  ],
+  "solid_violations": [],
+  "function_details": [
+    {
+      "name": "quadrature",
+      "parameters": 1,
+      "lines": 7,
+      "complexity": 1
+    },
+    {
+      "name": "sample_tiles",
+      "parameters": 3,
+      "lines": 15,
+      "complexity": 3
+    },
+    {
+      "name": "fuel_fractions",
+      "parameters": 1,
+      "lines": 10,
+      "complexity": 3
+    },
+    {
+      "name": "canopy_summary",
+      "parameters": 1,
+      "lines": 13,
+      "complexity": 4
+    },
+    {
+      "name": "local_source",
+      "parameters": 3,
+      "lines": 35,
+      "complexity": 28
+    },
+    {
+      "name": "remote_layer",
+      "parameters": 4,
+      "lines": 25,
+      "complexity": 6
+    },
+    {
+      "name": "run",
+      "parameters": 1,
+      "lines": 27,
+      "complexity": 8
+    }
+  ],
+  "class_details": []
+}

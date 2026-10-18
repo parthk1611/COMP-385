@@ -1,0 +1,1362 @@
+{
+  "scope": "All 11 January-November 2025 provincial inputs; exact hashes plus variable/time/grid metadata, not a completed weather transform or ignition join.",
+  "files": [
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/week_2_completion/era5_ontario_2025/era5_land_ontario_2025_01.nc",
+      "bytes": 251366988,
+      "sha256": "01fd2915184f2f3123772c9a92728202b37925e78dc616e184ddd55fb2b80da3",
+      "hash_matches": true,
+      "variables": {
+        "t2m": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "K",
+          "step_type": "instant",
+          "first_utc": "2025-01-01T00:00:00+00:00",
+          "last_utc": "2025-01-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "d2m": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "K",
+          "step_type": "instant",
+          "first_utc": "2025-01-01T00:00:00+00:00",
+          "last_utc": "2025-01-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "u10": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "m s**-1",
+          "step_type": "instant",
+          "first_utc": "2025-01-01T00:00:00+00:00",
+          "last_utc": "2025-01-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "v10": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "m s**-1",
+          "step_type": "instant",
+          "first_utc": "2025-01-01T00:00:00+00:00",
+          "last_utc": "2025-01-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "tp": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "m",
+          "step_type": "accum",
+          "first_utc": "2025-01-01T00:00:00+00:00",
+          "last_utc": "2025-01-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/week_2_completion/era5_ontario_2025/era5_land_ontario_2025_02.nc",
+      "bytes": 217281899,
+      "sha256": "0b01e2f2c6486045c3a7de7c24cd37c576ba0defb435b6304321e4665c77b620",
+      "hash_matches": true,
+      "variables": {
+        "t2m": {
+          "shape": [
+            672,
+            166,
+            221
+          ],
+          "units": "K",
+          "step_type": "instant",
+          "first_utc": "2025-02-01T00:00:00+00:00",
+          "last_utc": "2025-02-28T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "d2m": {
+          "shape": [
+            672,
+            166,
+            221
+          ],
+          "units": "K",
+          "step_type": "instant",
+          "first_utc": "2025-02-01T00:00:00+00:00",
+          "last_utc": "2025-02-28T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "u10": {
+          "shape": [
+            672,
+            166,
+            221
+          ],
+          "units": "m s**-1",
+          "step_type": "instant",
+          "first_utc": "2025-02-01T00:00:00+00:00",
+          "last_utc": "2025-02-28T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "v10": {
+          "shape": [
+            672,
+            166,
+            221
+          ],
+          "units": "m s**-1",
+          "step_type": "instant",
+          "first_utc": "2025-02-01T00:00:00+00:00",
+          "last_utc": "2025-02-28T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "tp": {
+          "shape": [
+            672,
+            166,
+            221
+          ],
+          "units": "m",
+          "step_type": "accum",
+          "first_utc": "2025-02-01T00:00:00+00:00",
+          "last_utc": "2025-02-28T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/week_2_completion/era5_ontario_2025/era5_land_ontario_2025_03.nc",
+      "bytes": 233597142,
+      "sha256": "e4f01c718de4fb30ec0cb629d5a2d109e5c4418dbf08981790ac9d8f75e3f362",
+      "hash_matches": true,
+      "variables": {
+        "t2m": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "K",
+          "step_type": "instant",
+          "first_utc": "2025-03-01T00:00:00+00:00",
+          "last_utc": "2025-03-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "d2m": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "K",
+          "step_type": "instant",
+          "first_utc": "2025-03-01T00:00:00+00:00",
+          "last_utc": "2025-03-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "u10": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "m s**-1",
+          "step_type": "instant",
+          "first_utc": "2025-03-01T00:00:00+00:00",
+          "last_utc": "2025-03-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "v10": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "m s**-1",
+          "step_type": "instant",
+          "first_utc": "2025-03-01T00:00:00+00:00",
+          "last_utc": "2025-03-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "tp": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "m",
+          "step_type": "accum",
+          "first_utc": "2025-03-01T00:00:00+00:00",
+          "last_utc": "2025-03-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/week_2_completion/era5_ontario_2025/era5_land_ontario_2025_04.nc",
+      "bytes": 221501942,
+      "sha256": "c633d6341d23281a0513acef83558ba3f46b2593553cc120f9dd53922916805c",
+      "hash_matches": true,
+      "variables": {
+        "t2m": {
+          "shape": [
+            720,
+            166,
+            221
+          ],
+          "units": "K",
+          "step_type": "instant",
+          "first_utc": "2025-04-01T00:00:00+00:00",
+          "last_utc": "2025-04-30T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "d2m": {
+          "shape": [
+            720,
+            166,
+            221
+          ],
+          "units": "K",
+          "step_type": "instant",
+          "first_utc": "2025-04-01T00:00:00+00:00",
+          "last_utc": "2025-04-30T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "u10": {
+          "shape": [
+            720,
+            166,
+            221
+          ],
+          "units": "m s**-1",
+          "step_type": "instant",
+          "first_utc": "2025-04-01T00:00:00+00:00",
+          "last_utc": "2025-04-30T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "v10": {
+          "shape": [
+            720,
+            166,
+            221
+          ],
+          "units": "m s**-1",
+          "step_type": "instant",
+          "first_utc": "2025-04-01T00:00:00+00:00",
+          "last_utc": "2025-04-30T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "tp": {
+          "shape": [
+            720,
+            166,
+            221
+          ],
+          "units": "m",
+          "step_type": "accum",
+          "first_utc": "2025-04-01T00:00:00+00:00",
+          "last_utc": "2025-04-30T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/week_2_completion/era5_ontario_2025/era5_land_ontario_2025_05.nc",
+      "bytes": 220929852,
+      "sha256": "79b22b78f0f3c5929c32f5603c78e37478e51b24152f2caac84d3a2b89309fae",
+      "hash_matches": true,
+      "variables": {
+        "t2m": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "K",
+          "step_type": "instant",
+          "first_utc": "2025-05-01T00:00:00+00:00",
+          "last_utc": "2025-05-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "d2m": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "K",
+          "step_type": "instant",
+          "first_utc": "2025-05-01T00:00:00+00:00",
+          "last_utc": "2025-05-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "u10": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "m s**-1",
+          "step_type": "instant",
+          "first_utc": "2025-05-01T00:00:00+00:00",
+          "last_utc": "2025-05-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "v10": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "m s**-1",
+          "step_type": "instant",
+          "first_utc": "2025-05-01T00:00:00+00:00",
+          "last_utc": "2025-05-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "tp": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "m",
+          "step_type": "accum",
+          "first_utc": "2025-05-01T00:00:00+00:00",
+          "last_utc": "2025-05-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/week_2_completion/era5_ontario_2025/era5_land_ontario_2025_06.nc",
+      "bytes": 222283596,
+      "sha256": "bb5105c2f08bd9ede3bf8bc1ba919a2bd0710d8f70b82012e33de6a5a03f797a",
+      "hash_matches": true,
+      "variables": {
+        "t2m": {
+          "shape": [
+            720,
+            166,
+            221
+          ],
+          "units": "K",
+          "step_type": "instant",
+          "first_utc": "2025-06-01T00:00:00+00:00",
+          "last_utc": "2025-06-30T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "d2m": {
+          "shape": [
+            720,
+            166,
+            221
+          ],
+          "units": "K",
+          "step_type": "instant",
+          "first_utc": "2025-06-01T00:00:00+00:00",
+          "last_utc": "2025-06-30T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "u10": {
+          "shape": [
+            720,
+            166,
+            221
+          ],
+          "units": "m s**-1",
+          "step_type": "instant",
+          "first_utc": "2025-06-01T00:00:00+00:00",
+          "last_utc": "2025-06-30T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "v10": {
+          "shape": [
+            720,
+            166,
+            221
+          ],
+          "units": "m s**-1",
+          "step_type": "instant",
+          "first_utc": "2025-06-01T00:00:00+00:00",
+          "last_utc": "2025-06-30T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "tp": {
+          "shape": [
+            720,
+            166,
+            221
+          ],
+          "units": "m",
+          "step_type": "accum",
+          "first_utc": "2025-06-01T00:00:00+00:00",
+          "last_utc": "2025-06-30T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/week_2_completion/era5_ontario_2025/era5_land_ontario_2025_07.nc",
+      "bytes": 222363525,
+      "sha256": "248212ec65a216a7c747e58ca6b28aa06062d6b623883031930cc27a647e395b",
+      "hash_matches": true,
+      "variables": {
+        "t2m": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "K",
+          "step_type": "instant",
+          "first_utc": "2025-07-01T00:00:00+00:00",
+          "last_utc": "2025-07-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "d2m": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "K",
+          "step_type": "instant",
+          "first_utc": "2025-07-01T00:00:00+00:00",
+          "last_utc": "2025-07-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "u10": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "m s**-1",
+          "step_type": "instant",
+          "first_utc": "2025-07-01T00:00:00+00:00",
+          "last_utc": "2025-07-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "v10": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "m s**-1",
+          "step_type": "instant",
+          "first_utc": "2025-07-01T00:00:00+00:00",
+          "last_utc": "2025-07-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "tp": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "m",
+          "step_type": "accum",
+          "first_utc": "2025-07-01T00:00:00+00:00",
+          "last_utc": "2025-07-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/week_2_completion/era5_ontario_2025/era5_land_ontario_2025_08.nc",
+      "bytes": 221753307,
+      "sha256": "f28161258e0c5ba89633343d1a4c263b03ceb5a8aad5ee2240951e8c5b6770a4",
+      "hash_matches": true,
+      "variables": {
+        "t2m": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "K",
+          "step_type": "instant",
+          "first_utc": "2025-08-01T00:00:00+00:00",
+          "last_utc": "2025-08-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "d2m": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "K",
+          "step_type": "instant",
+          "first_utc": "2025-08-01T00:00:00+00:00",
+          "last_utc": "2025-08-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "u10": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "m s**-1",
+          "step_type": "instant",
+          "first_utc": "2025-08-01T00:00:00+00:00",
+          "last_utc": "2025-08-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "v10": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "m s**-1",
+          "step_type": "instant",
+          "first_utc": "2025-08-01T00:00:00+00:00",
+          "last_utc": "2025-08-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "tp": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "m",
+          "step_type": "accum",
+          "first_utc": "2025-08-01T00:00:00+00:00",
+          "last_utc": "2025-08-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/week_2_completion/era5_ontario_2025/era5_land_ontario_2025_09.nc",
+      "bytes": 215483077,
+      "sha256": "3edb36770b0ca1fe6e8b43b8dd7c6f770262b7ceb6580c5af23367f2d98c36d4",
+      "hash_matches": true,
+      "variables": {
+        "t2m": {
+          "shape": [
+            720,
+            166,
+            221
+          ],
+          "units": "K",
+          "step_type": "instant",
+          "first_utc": "2025-09-01T00:00:00+00:00",
+          "last_utc": "2025-09-30T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "d2m": {
+          "shape": [
+            720,
+            166,
+            221
+          ],
+          "units": "K",
+          "step_type": "instant",
+          "first_utc": "2025-09-01T00:00:00+00:00",
+          "last_utc": "2025-09-30T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "u10": {
+          "shape": [
+            720,
+            166,
+            221
+          ],
+          "units": "m s**-1",
+          "step_type": "instant",
+          "first_utc": "2025-09-01T00:00:00+00:00",
+          "last_utc": "2025-09-30T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "v10": {
+          "shape": [
+            720,
+            166,
+            221
+          ],
+          "units": "m s**-1",
+          "step_type": "instant",
+          "first_utc": "2025-09-01T00:00:00+00:00",
+          "last_utc": "2025-09-30T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "tp": {
+          "shape": [
+            720,
+            166,
+            221
+          ],
+          "units": "m",
+          "step_type": "accum",
+          "first_utc": "2025-09-01T00:00:00+00:00",
+          "last_utc": "2025-09-30T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/week_2_completion/era5_ontario_2025/era5_land_ontario_2025_10.nc",
+      "bytes": 216940086,
+      "sha256": "ea2ed72051973cc3b141e8819d792b65ce904fbdd388fe4bcbdc35b04c7b1590",
+      "hash_matches": true,
+      "variables": {
+        "t2m": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "K",
+          "step_type": "instant",
+          "first_utc": "2025-10-01T00:00:00+00:00",
+          "last_utc": "2025-10-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "d2m": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "K",
+          "step_type": "instant",
+          "first_utc": "2025-10-01T00:00:00+00:00",
+          "last_utc": "2025-10-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "u10": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "m s**-1",
+          "step_type": "instant",
+          "first_utc": "2025-10-01T00:00:00+00:00",
+          "last_utc": "2025-10-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "v10": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "m s**-1",
+          "step_type": "instant",
+          "first_utc": "2025-10-01T00:00:00+00:00",
+          "last_utc": "2025-10-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "tp": {
+          "shape": [
+            744,
+            166,
+            221
+          ],
+          "units": "m",
+          "step_type": "accum",
+          "first_utc": "2025-10-01T00:00:00+00:00",
+          "last_utc": "2025-10-31T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      }
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/week_2_completion/era5_ontario_2025/era5_land_ontario_2025_11.nc",
+      "bytes": 233339872,
+      "sha256": "82b40eb7daf5ca0b76944c05a11b3ad233dcc67e17b0ded92276b35ef64bb946",
+      "hash_matches": true,
+      "variables": {
+        "t2m": {
+          "shape": [
+            720,
+            166,
+            221
+          ],
+          "units": "K",
+          "step_type": "instant",
+          "first_utc": "2025-11-01T00:00:00+00:00",
+          "last_utc": "2025-11-30T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "d2m": {
+          "shape": [
+            720,
+            166,
+            221
+          ],
+          "units": "K",
+          "step_type": "instant",
+          "first_utc": "2025-11-01T00:00:00+00:00",
+          "last_utc": "2025-11-30T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "u10": {
+          "shape": [
+            720,
+            166,
+            221
+          ],
+          "units": "m s**-1",
+          "step_type": "instant",
+          "first_utc": "2025-11-01T00:00:00+00:00",
+          "last_utc": "2025-11-30T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "v10": {
+          "shape": [
+            720,
+            166,
+            221
+          ],
+          "units": "m s**-1",
+          "step_type": "instant",
+          "first_utc": "2025-11-01T00:00:00+00:00",
+          "last_utc": "2025-11-30T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        },
+        "tp": {
+          "shape": [
+            720,
+            166,
+            221
+          ],
+          "units": "m",
+          "step_type": "accum",
+          "first_utc": "2025-11-01T00:00:00+00:00",
+          "last_utc": "2025-11-30T23:00:00+00:00",
+          "earth_relative": "0",
+          "transform": [
+            0.1,
+            0.0,
+            -96.05,
+            0.0,
+            -0.1,
+            57.55,
+            0.0,
+            0.0,
+            1.0
+          ]
+        }
+      }
+    }
+  ],
+  "file_count": 11,
+  "total_bytes": 2476841286,
+  "all_pinned_hashes_match": true,
+  "file_data_arrays_fully_profiled": false
+}

@@ -1,0 +1,89 @@
+{
+  "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/scripts/build_selected_2025_panel.py",
+  "language": "python",
+  "metrics": {
+    "lines": {
+      "total": 109,
+      "code": 94,
+      "blank": 13,
+      "comment": 2
+    },
+    "functions": 4,
+    "classes": 0,
+    "avg_complexity": 7.5
+  },
+  "quality_score": 88,
+  "grade": "B",
+  "smells": [
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'source_events' has complexity 16 (max: 10)",
+      "location": "source_events"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2025 should be a named constant",
+      "location": "line 1"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2025 should be a named constant",
+      "location": "line 27"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 4326 should be a named constant",
+      "location": "line 34"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 10000 should be a named constant",
+      "location": "line 35"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2025 should be a named constant",
+      "location": "line 91"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2020 should be a named constant",
+      "location": "line 95"
+    }
+  ],
+  "solid_violations": [],
+  "function_details": [
+    {
+      "name": "provider_dates",
+      "parameters": 1,
+      "lines": 6,
+      "complexity": 1
+    },
+    {
+      "name": "source_events",
+      "parameters": 2,
+      "lines": 25,
+      "complexity": 16
+    },
+    {
+      "name": "shifted_weather",
+      "parameters": 1,
+      "lines": 12,
+      "complexity": 3
+    },
+    {
+      "name": "run",
+      "parameters": 1,
+      "lines": 22,
+      "complexity": 10
+    }
+  ],
+  "class_details": []
+}

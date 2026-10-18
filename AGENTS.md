@@ -2,8 +2,8 @@
 
 COMP-385 is building data products for Ontario wildfire modelling. Keep the two
 prediction problems distinct: the ignition product predicts whether an existing
-10 km grid cell has an ignition on a calendar day; a future spread product will
-predict incident-conditioned fire-front/perimeter progression. Do not describe
+10 km grid cell has an ignition on a calendar day; the separate research spread
+prototype simulates incident-conditioned progression on a 90 m grid. Do not describe
 the ignition panel as a spread model or use final perimeters, final size, burn
 products, or future detections as ignition predictors.
 
@@ -76,9 +76,12 @@ also remains future work.
 
 First maintain and validate the ignition panel and its time contract, then add
 the deferred feature families only with documented source timing and tests.
-Build fire spread separately: it needs incident-conditioned candidate cells and
-dated fire-front or perimeter progression. It does not yet exist; final
-perimeters and final fire size cannot substitute for that target.
+Keep fire spread separate in `capability_2_fire_spread/`: an implemented
+research simulator, replay dataset and archived viewer exist. Corrected surface
+propagation requires new replay scores; final-perimeter-assisted reconstruction
+is not forecast validation. Final perimeters and final fire size cannot
+substitute for an ignition target. Local development status is tracked in the
+enclosing CAPSTONE workspace reports, not inferred from a fresh clone.
 
 ## Reproducibility and artifacts
 

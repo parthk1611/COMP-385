@@ -1,0 +1,15 @@
+127.0.0.1 - - [16/Oct/2026 17:15:48] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [16/Oct/2026 17:15:48] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [16/Oct/2026 17:15:48] "GET /historical.html HTTP/1.1" 200 -
+127.0.0.1 - - [16/Oct/2026 17:15:48] "GET /selected.html HTTP/1.1" 200 -
+127.0.0.1 - - [16/Oct/2026 17:15:48] "GET /spread.html HTTP/1.1" 200 -
+127.0.0.1 - - [16/Oct/2026 17:15:48] "GET /api/historical-score?date=2019-05-01&grid_id=ofr10km_-10000_100000 HTTP/1.1" 200 -
+127.0.0.1 - - [16/Oct/2026 17:15:48] "GET /api/selected-score?date=2025-09-01&grid_id=ofr10km_-10000_100000 HTTP/1.1" 200 -
+127.0.0.1 - - [16/Oct/2026 17:15:48] "GET /api/cell-details?study=historical&date=2019-05-01&grid_id=ofr10km_-10000_100000 HTTP/1.1" 200 -
+127.0.0.1 - - [16/Oct/2026 17:15:48] "GET /api/cell-details?study=historical&date=2019-06-02&grid_id=ofr10km_-10000_100000 HTTP/1.1" 200 -
+127.0.0.1 - - [16/Oct/2026 17:15:48] "GET /api/cell-details?study=selected&date=2025-09-01&grid_id=ofr10km_-10000_100000 HTTP/1.1" 200 -
+127.0.0.1 - - [16/Oct/2026 17:15:48] "GET /api/export?study=historical&date=2019-05-01&format=csv HTTP/1.1" 200 -
+127.0.0.1 - - [16/Oct/2026 17:15:48] "GET /api/export?study=selected&date=2025-09-01&format=csv HTTP/1.1" 200 -
+127.0.0.1 - - [16/Oct/2026 17:15:49] "GET /api/export?study=selected&date=2025-09-01&format=geojson HTTP/1.1" 200 -
+127.0.0.1 - - [16/Oct/2026 17:15:49] "GET /api/live-ignition HTTP/1.1" 503 -
+127.0.0.1 - - [16/Oct/2026 17:15:49] "GET /api/historical-score?date=2019-02-30&grid_id=ofr10km_0_0 HTTP/1.1" 400 -

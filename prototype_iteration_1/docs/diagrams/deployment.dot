@@ -1,0 +1,20 @@
+digraph G {
+graph [bgcolor="white", pad="0.2", nodesep="0.30", ranksep="0.45"]; node [shape=box, style="rounded,filled", fillcolor="#F4F4F4", color="#535353", fontname="Helvetica", fontsize=16, margin="0.16,0.12"]; edge [fontname="Helvetica",fontsize=13,color="#555555",arrowsize=0.7];
+rankdir=TB;
+zip [label="Code Iteration 1 ZIP
+Extract source, tests, models and runtime caches"];
+env [label="Local Python 3.13 environment
+Install pinned requirements
+Run packaged tests"];
+server [label="Python ThreadingHTTPServer
+Bind 127.0.0.1 port 8768
+No public endpoint or cloud deployment"];
+files [label="Packaged local read-only research artifacts
+Parquet / joblib / JSON / HTML"];
+browser [label="Browser on the same machine
+HTTP dashboard and exports"];
+remote [label="External providers used during acquisition
+ERA5 / HRDPS / Ontario / NRCan / VIIRS
+Not required for saved-result demonstration"];
+zip -> env -> server -> browser;files -> server;remote -> files [style=dashed,label="acquisition / rebuild only"];
+}

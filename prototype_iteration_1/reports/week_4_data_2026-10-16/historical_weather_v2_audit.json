@@ -1,0 +1,176 @@
+{
+  "config": {
+    "feature_version": "historical-weather-development-v2",
+    "issue_years": [
+      2010,
+      2017
+    ],
+    "station_count": 4,
+    "max_station_distance_km": 200,
+    "distance_sensitivity_km": [
+      100,
+      200,
+      300
+    ],
+    "mode": "retrospective_hindcast_not_operational_forecast",
+    "code_sha256": "cd0607906e7dd18b3c6351132aab9a3e4d5f70d502b185dcefaa03e16f9c6e02",
+    "source_sha256": "67e706160316e2b1e496bc3b316d17d5c1623954f29231d5cb71e618f0329246",
+    "grid_sha256": "b22741d83b64c2b78c19fbf182848566644a23fad4aeef3301ff25ef7c6c3f35",
+    "reserved_evaluation_partitions_opened": false,
+    "selection": "Nearest four daily finite nonnegative-FWI reporting stations within 200 km; no label-based tuning",
+    "deduplication": "First valid FWI record in physical source order per station/date; otherwise first record",
+    "precipitation": "Sum only seven consecutive available prior-day source rain values",
+    "label_or_model_promotion": false
+  },
+  "source_profile": {
+    "raw_archive_rows": 4159936,
+    "selected_rows_before_dedup": 385108,
+    "duplicate_date_station_rows": 0,
+    "date_station_rows": 385108,
+    "invalid_coordinate_rows_in_requested_dates": 0,
+    "invalid_measurements_after_dedup": {
+      "temp": 0,
+      "rh": 190,
+      "ws": 2,
+      "precip": 5,
+      "ffmc": 28577,
+      "dmc": 28728,
+      "dc": 28584,
+      "isi": 35486,
+      "bui": 35637,
+      "fwi": 35639,
+      "dsr": 35639
+    }
+  },
+  "rows": 14238656,
+  "expected_rows": 14238656,
+  "missing_rows": 1630927,
+  "missing_fraction": 0.11454220117404339,
+  "year_stats": {
+    "2010": {
+      "rows": 1779832,
+      "missing": 249567
+    },
+    "2011": {
+      "rows": 1779832,
+      "missing": 174142
+    },
+    "2012": {
+      "rows": 1779832,
+      "missing": 250096
+    },
+    "2013": {
+      "rows": 1779832,
+      "missing": 233539
+    },
+    "2014": {
+      "rows": 1779832,
+      "missing": 182024
+    },
+    "2015": {
+      "rows": 1779832,
+      "missing": 150050
+    },
+    "2016": {
+      "rows": 1779832,
+      "missing": 162592
+    },
+    "2017": {
+      "rows": 1779832,
+      "missing": 228917
+    }
+  },
+  "nearest_daily_station_coverage": {
+    "100": 0.6330667023629196,
+    "200": 0.8854577988259567,
+    "300": 0.9653812831772887
+  },
+  "boundary_sensitivity": {
+    "boundary_path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/week_2_completion/ontario_fire_region/current_non_ofr_boundary.geojson",
+    "boundary_sha256": "8f22dbd0f0986630690841607107c084efaef7facd35ce66f9d91d79038dd2a0",
+    "input_invalid_geometries": 0,
+    "geometry_policy": "Project to EPSG:3978; make_valid on derived geometry; raw input unchanged",
+    "v1_grid_cells": 9673,
+    "boundary_only_grid_cells": 9648,
+    "v1_cells_excluded": [
+      "ofr10km_-20000_120000",
+      "ofr10km_-20000_240000",
+      "ofr10km_-20000_250000",
+      "ofr10km_-20000_280000",
+      "ofr10km_-20000_300000",
+      "ofr10km_-20000_80000",
+      "ofr10km_-20000_90000",
+      "ofr10km_0_30000",
+      "ofr10km_110000_-50000",
+      "ofr10km_1140000_40000",
+      "ofr10km_1140000_50000",
+      "ofr10km_1170000_-50000",
+      "ofr10km_1250000_-140000",
+      "ofr10km_1260000_-140000",
+      "ofr10km_1270000_-140000",
+      "ofr10km_1330000_-330000",
+      "ofr10km_1340000_-330000",
+      "ofr10km_1370000_-150000",
+      "ofr10km_1450000_-300000",
+      "ofr10km_1460000_-260000",
+      "ofr10km_180000_-70000",
+      "ofr10km_190000_-90000",
+      "ofr10km_250000_-100000",
+      "ofr10km_290000_-90000",
+      "ofr10km_300000_-80000"
+    ],
+    "boundary_only_new_cells": [],
+    "role": "Current-boundary sensitivity only; original pinned boundary absent. Not a historically available replacement.",
+    "construction_uses_fire_records": false
+  },
+  "time_cutoff_violations": 0,
+  "elapsed_seconds": 45.67739041603636,
+  "peak_rss_mib": 859.59375,
+  "outputs": [
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/historical_weather_development_v2/deduplicated_station_observations.parquet",
+      "bytes": 5779517,
+      "sha256": "055d17fff3149979ac7239a7692dab7777bb737653d95eff1e7bf2a0fdfa221b"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/historical_weather_development_v2/weather_2010.parquet",
+      "bytes": 186504070,
+      "sha256": "65752db6b03802c6b630b09be261e3a9efee08e2cfdfdc2bf8c35c02b391fc44"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/historical_weather_development_v2/weather_2011.parquet",
+      "bytes": 176097462,
+      "sha256": "59ebbe8a021eb82378f2d0bccf24d95c3d183f9ba951ccf0b27d49151dd824ab"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/historical_weather_development_v2/weather_2012.parquet",
+      "bytes": 168443973,
+      "sha256": "9a7baa5dc4ea32a41e18c237e4ec47db0a1581321504f4ff88481d1b838fbc2a"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/historical_weather_development_v2/weather_2013.parquet",
+      "bytes": 167862335,
+      "sha256": "0dd75316c8e9055116861e24821f95f49e299ece0d416579fec74fd53315f8ab"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/historical_weather_development_v2/weather_2014.parquet",
+      "bytes": 182550523,
+      "sha256": "9982b925c9d680bfebdfb2dfc3f21e0e21aacbd7c269d27fa7cee545b9c2f8fe"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/historical_weather_development_v2/weather_2015.parquet",
+      "bytes": 189206505,
+      "sha256": "da6520624fcb3ed9ca673ee63154d4797c117e89ff83d247986d7385ed8fb9e9"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/historical_weather_development_v2/weather_2016.parquet",
+      "bytes": 187788775,
+      "sha256": "1a5d86fa7a1309573503ebe0078af88130bf5881fdabaf61060f447d5706ebb6"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/historical_weather_development_v2/weather_2017.parquet",
+      "bytes": 179642160,
+      "sha256": "c138b93e9c0b824584d611c099f785aa8636e5723519c891e6152a9209befcdf"
+    }
+  ]
+}

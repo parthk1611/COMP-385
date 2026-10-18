@@ -1,0 +1,59 @@
+{
+  "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/scripts/join_development_weather_v2.py",
+  "language": "python",
+  "metrics": {
+    "lines": {
+      "total": 124,
+      "code": 112,
+      "blank": 11,
+      "comment": 1
+    },
+    "functions": 2,
+    "classes": 0,
+    "avg_complexity": 9.5
+  },
+  "quality_score": 94,
+  "grade": "A",
+  "smells": [
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'join_frame' has complexity 12 (max: 10)",
+      "location": "join_frame"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2010 should be a named constant",
+      "location": "line 24"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2010 should be a named constant",
+      "location": "line 25"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2010 should be a named constant",
+      "location": "line 61"
+    }
+  ],
+  "solid_violations": [],
+  "function_details": [
+    {
+      "name": "join_frame",
+      "parameters": 3,
+      "lines": 24,
+      "complexity": 12
+    },
+    {
+      "name": "run",
+      "parameters": 3,
+      "lines": 33,
+      "complexity": 7
+    }
+  ],
+  "class_details": []
+}

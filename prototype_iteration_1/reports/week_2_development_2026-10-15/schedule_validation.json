@@ -1,0 +1,14 @@
+{
+  "well_formed_xml": true,
+  "task_count": 21,
+  "dependency_ids_valid": true,
+  "finish_to_start_dates_respected": true,
+  "all_working_day_starts_finishes": true,
+  "native_microsoft_project_import_tested": false,
+  "official_deadline_confirmed": false,
+  "resource_capacity_levelled": false,
+  "planned_start": "2026-10-15",
+  "planned_checkpoint": "2026-12-16",
+  "calendar": "Monday-Friday, 08-12 and 13-17, no holiday exceptions; durations are scheduling estimates, not confirmed student working hours",
+  "reference": "https://learn.microsoft.com/en-us/office-project/xml-data-interchange/project-element?view=project-client-2016"
+}

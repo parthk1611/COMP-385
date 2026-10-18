@@ -1,5 +1,18 @@
 # Fire-spread simulator v1
 
+> October 16 revision: the score tables below describe archived v1 reconstruction,
+> not the corrected propagation code. The current engine checks intermediate and
+> diagonal-contact cells, respects an empty active mask, and defaults perimeter
+> fuel repair to off. Replay/export drivers explicitly enable repair and label
+> reconstruction; new replay outputs default to `simulation_surface_v2`, and the
+> exporter requires matching propagation metadata. Corrected reconstruction results
+> are archived in [the iteration 1 evidence](../../prototype_iteration_1/reports/week_5_completion_2026-10-16/corrected_spread_results.json):
+> 150 holdout steps from 22 scoreable fires, mean recall 0.3606 versus 0.4018
+> for even growth, and IoU 0.1019 versus 0.1039. This does not establish forecast
+> skill. FBP equations are a selected inspired subset, not full canonical equivalence.
+> Full landscape archives remain outside Git; the scores below retain their
+> original v1 provenance.
+
 A wind-driven simulator that grows a fire across a 90 m grid, replayed against
 real Ontario fires from the spread dataset. This note says what it does, how
 it was tuned and scored, what the scores are, and where it falls short.
@@ -17,11 +30,11 @@ neighbours. The time to cross to a neighbour comes from:
 
 Each cell's arrival time is the earliest time fire can reach it by any path
 (shortest travel time over sixteen neighbours), so fire goes around lakes and
-runs ahead through faster fuels. Water and non-fuel never burn.
+runs ahead through faster fuels. Water and non-fuel do not ignite; the corrected surface revision also checks intermediate barrier cells.
 
 Inputs per fire are the dataset's 90 m fuel and elevation windows and its
 hourly weather. The fuel map is the 2024 edition, which shows regrowth or
-non-fuel where older fires burned; inside each fire's perimeter the land is
+non-fuel where older fires burned; in reconstruction mode, inside each fire's perimeter the land is
 given the fuel of the nearest burnable cell outside it (lakes are kept).
 
 ## Departure from the proposal
@@ -52,8 +65,8 @@ They are chosen so that the simulated head runs as far as the observed one
 (satellites record a median 77% of a fire's final area). No single pair meets
 both: the chosen pair gives 0.65 and 1.25 on the calibration fires.
 
-Scores are then taken on 24 fires from 2021–2024 that played no part in the
-tuning (22 of them gave scoreable steps). The baseline, "even growth", burns
+Scores are then taken on 24 fires from 2021–2024 that were excluded from the direct parameter search
+(the broader area-target heuristic still needs a provenance audit) (22 of them gave scoreable steps). The baseline, "even growth", burns
 the same area as the simulator but spreads it evenly outward from the same
 stretch of perimeter, with no wind, fuel or terrain.
 

@@ -1,0 +1,41 @@
+{
+  "points": 65655,
+  "areas": 2751,
+  "point_duplicate_identifier_year_rows": 788,
+  "area_duplicate_identifier_year_rows": 14,
+  "areas_with_point_key": 2545,
+  "area_keys_without_point": 199,
+  "point_missing_start_dates": 49,
+  "point_year_date_disagreements": 14,
+  "historical_IFR_candidate_point_rows_before_boundary": 8100,
+  "nfdb_selected_events": 8109,
+  "nfdb_unmatched_events": 0,
+  "matched_join_rows": 8131,
+  "matched_date_equal_rows": 8107,
+  "matched_cell_equal_rows": 8108,
+  "matched_date_and_cell_equal_rows": 8107,
+  "raw_hash_checks": [
+    {
+      "layer": "point",
+      "sha256": "a91844ce173dc5b7414668452b796a4a7a59259eb7e08648bffdda37ac4ef949",
+      "matches_pinned_source": true
+    },
+    {
+      "layer": "area",
+      "sha256": "deefdb081d80481159530dc8ec7b4d1e3ca65734aedf7539c79fd841e1721a76",
+      "matches_pinned_source": true
+    }
+  ],
+  "decision": "Preserve NFDB v1 labels. Province point/area key and date/cell disagreements require separately versioned label adjudication. Do not concatenate or automatically overwrite.",
+  "nfdb_distinct_ids": 8105,
+  "nfdb_duplicate_id_rows": 8,
+  "nfdb_exact_key_matched_distinct_ids": 8105,
+  "nfdb_exact_key_matched_event_rows": 8109,
+  "normalization_note": "Start/out timestamps normalized to UTC recorded calendar date only; no ignition clock time inferred. Source records and duplicate keys preserved.",
+  "join_note": "All 8,109 retained NFDB rows have >=1 exact (year, stripped uppercase fire identifier) provincial point candidate; 8,105 distinct NFDB IDs. Join expands to 8,131 rows because keys repeat. Candidate rows are not confirmed one-to-one matches.",
+  "per_source_row_strict_matching": {
+    "unique_date_cell_match": 8107,
+    "identifier_only_conflict": 2
+  },
+  "strict_rule": "Exact normalized identifier + year + recorded start date + 10 km cell. One candidate required. Disagreements quarantined; existing labels preserved."
+}

@@ -1,0 +1,25 @@
+digraph G {
+graph [bgcolor="white", pad="0.2", nodesep="0.30", ranksep="0.45"]; node [shape=box, style="rounded,filled", fillcolor="#F4F4F4", color="#535353", fontname="Helvetica", fontsize=16, margin="0.16,0.12"]; edge [fontname="Helvetica",fontsize=13,color="#555555",arrowsize=0.7];
+rankdir=TB;
+raw [label="D1 Source archives
+Fire records / weather / landscape"];
+validate [label="1 Validate source versions
+Audit quality, timing, geometry and exclusions"];
+features [label="D2 Separate feature stores
+Historical cell-days / selected 2025 cell-days
+Incident fuel, terrain and observations"];
+fit [label="2 Develop and evaluate
+Training-only preprocessing
+Temporal / geographic / calibration roles"];
+results [label="D3 Frozen model and result store
+Scores, factor files, replay metrics and manifests"];
+request [label="Analyst request
+Study + date + cell / incident + horizon",shape=oval];
+serve [label="3 Validate and retrieve
+Key uniqueness / finite probabilities
+Provenance / explanation availability"];
+output [label="Map, details and exports
+Missing result -> unavailable
+Never reinterpret missing as zero"];
+raw -> validate -> features -> fit -> results; results -> serve; request -> serve; serve -> output;
+}

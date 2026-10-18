@@ -1,0 +1,154 @@
+[
+  {
+    "path": "data/raw/samples/thunder_bay/fbp_2024.tif",
+    "place": "thunder_bay",
+    "dataset": "fbp_2024",
+    "shape": [
+      1000,
+      1000
+    ],
+    "crs": "EPSG:3978",
+    "pixel_size": [
+      30.0,
+      30.0
+    ],
+    "min": 2.0,
+    "max": 675.0,
+    "missing_fraction": 0.0,
+    "sha256": "ffafb5b20aac245cc30b116eeac2a1bc88b3cd2d807cadbba9367800a7b9dfd5",
+    "code_counts": {
+      "2": 64723,
+      "3": 24516,
+      "4": 44153,
+      "11": 179899,
+      "13": 33371,
+      "31": 68207,
+      "101": 135625,
+      "102": 330538,
+      "415": 23,
+      "625": 29422,
+      "650": 81525,
+      "675": 7998
+    }
+  },
+  {
+    "path": "data/raw/samples/thunder_bay/mrdem_dtm.tif",
+    "place": "thunder_bay",
+    "dataset": "mrdem_dtm",
+    "shape": [
+      1000,
+      1000
+    ],
+    "crs": "EPSG:3979",
+    "pixel_size": [
+      30.0,
+      30.0
+    ],
+    "min": 175.18917846679688,
+    "max": 505.5604248046875,
+    "missing_fraction": 0.0,
+    "sha256": "503da7a17e5aef6163153107d2d5cd75a5b4fdaeebdf1090bdfc533fd7a0fc0f"
+  },
+  {
+    "path": "data/raw/samples/red_lake/fbp_2024.tif",
+    "place": "red_lake",
+    "dataset": "fbp_2024",
+    "shape": [
+      1000,
+      1000
+    ],
+    "crs": "EPSG:3978",
+    "pixel_size": [
+      30.0,
+      30.0
+    ],
+    "min": 2.0,
+    "max": 675.0,
+    "missing_fraction": 0.0,
+    "sha256": "c3f1a29d96038ef87965d673a953aba4f6995c23bc6617a3a4ad0330487a6acb",
+    "code_counts": {
+      "2": 151102,
+      "3": 147820,
+      "4": 157297,
+      "5": 7,
+      "11": 72088,
+      "13": 3164,
+      "31": 34512,
+      "101": 14013,
+      "102": 241475,
+      "415": 1,
+      "625": 31865,
+      "650": 86351,
+      "675": 60305
+    }
+  },
+  {
+    "path": "data/raw/samples/red_lake/mrdem_dtm.tif",
+    "place": "red_lake",
+    "dataset": "mrdem_dtm",
+    "shape": [
+      1000,
+      1000
+    ],
+    "crs": "EPSG:3979",
+    "pixel_size": [
+      30.0,
+      30.0
+    ],
+    "min": 354.4690856933594,
+    "max": 460.50921630859375,
+    "missing_fraction": 0.0,
+    "sha256": "6d14070757a59c1e08a49567b834d1a929f0d6e4e706d6b0e903de5590238534"
+  },
+  {
+    "path": "data/raw/samples/timmins/fbp_2024.tif",
+    "place": "timmins",
+    "dataset": "fbp_2024",
+    "shape": [
+      1000,
+      1000
+    ],
+    "crs": "EPSG:3978",
+    "pixel_size": [
+      30.0,
+      30.0
+    ],
+    "min": 2.0,
+    "max": 675.0,
+    "missing_fraction": 0.0,
+    "sha256": "54529b88b2667038843a14557d17f1d0bba2b1d1e5df303b9a3ebd97e083b52c",
+    "code_counts": {
+      "2": 239787,
+      "3": 129482,
+      "4": 38458,
+      "5": 4,
+      "11": 215646,
+      "13": 24052,
+      "31": 48588,
+      "101": 68213,
+      "102": 26509,
+      "415": 103,
+      "625": 58941,
+      "650": 96051,
+      "675": 54166
+    }
+  },
+  {
+    "path": "data/raw/samples/timmins/mrdem_dtm.tif",
+    "place": "timmins",
+    "dataset": "mrdem_dtm",
+    "shape": [
+      1000,
+      1000
+    ],
+    "crs": "EPSG:3979",
+    "pixel_size": [
+      30.0,
+      30.0
+    ],
+    "min": -5.78945779800415,
+    "max": 414.0936584472656,
+    "missing_fraction": 0.0,
+    "sha256": "a4c3fca6ce2aec0a5389a47dd3b7548776546a9a3f0588dea2f5459c595350ac"
+  }
+]

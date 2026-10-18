@@ -1,0 +1,35 @@
+[
+  {
+    "study": "historical",
+    "format": "csv",
+    "rows": 9673,
+    "bytes": 4136793,
+    "geometry_and_provenance_checked": true
+  },
+  {
+    "study": "historical",
+    "format": "geojson",
+    "rows": 9673,
+    "bytes": 9969939,
+    "geometry_and_provenance_checked": true
+  },
+  {
+    "study": "selected",
+    "format": "csv",
+    "rows": 9648,
+    "bytes": 4366572,
+    "geometry_and_provenance_checked": true
+  },
+  {
+    "study": "selected",
+    "format": "geojson",
+    "rows": 9648,
+    "bytes": 10184684,
+    "geometry_and_provenance_checked": true
+  },
+  {
+    "actual_browser_download": "/Users/parthkevadiya/Downloads/selected_2025-09-01.csv",
+    "rows": 9648,
+    "key_values_checked_against_http_export": true
+  }
+]

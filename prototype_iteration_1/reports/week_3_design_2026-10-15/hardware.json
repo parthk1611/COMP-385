@@ -1,0 +1,8 @@
+{
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "python": "3.13.12",
+  "memory_bytes": 19327352832,
+  "cpu": "Apple M3 Pro",
+  "comparison_threads": 4
+}

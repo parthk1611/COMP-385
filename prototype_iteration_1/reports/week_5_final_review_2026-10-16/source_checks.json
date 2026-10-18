@@ -1,0 +1,5 @@
+{
+  "full_suite": "........................................................................ [ 55%]\n.........................................................                [100%]\n129 passed in 3.09s",
+  "dashboard_javascript_syntax": "passed with node --check",
+  "pip_check": "No broken requirements found."
+}

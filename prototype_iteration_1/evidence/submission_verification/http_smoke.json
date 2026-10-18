@@ -1,0 +1,289 @@
+{
+  "scope": "Packaged runtime files and source from a relocated folder on the same Mac; existing Python environment, not a clean OS installation",
+  "checks": [
+    {
+      "route": "/",
+      "expected_status": 200,
+      "actual_status": 200,
+      "bytes": 7219,
+      "seconds": 0.0007459169719368219,
+      "sha256": "a36ce6d6c432a437a9bd1f85803c23cfa380823889d004f6a11526c6e6ec80ce"
+    },
+    {
+      "route": "/historical.html",
+      "expected_status": 200,
+      "actual_status": 200,
+      "bytes": 51615289,
+      "seconds": 0.04785900004208088,
+      "sha256": "73641b5c274bb2cefa001712a3fb3e178c6abf91dbde2b563e55000d668aa222"
+    },
+    {
+      "route": "/selected.html",
+      "expected_status": 200,
+      "actual_status": 200,
+      "bytes": 19910529,
+      "seconds": 0.02523899998050183,
+      "sha256": "b7d4337cb327efb8db89755d39f453bd523bac12ee77aba8764ee1892697940a"
+    },
+    {
+      "route": "/spread.html",
+      "expected_status": 200,
+      "actual_status": 200,
+      "bytes": 1203899,
+      "seconds": 0.0027210420230403543,
+      "sha256": "77a35de3fff6cd91705f6847281931fb813bcd7fcfe673fddc1a3651f4111201"
+    },
+    {
+      "route": "/api/historical-score?date=2019-05-01&grid_id=ofr10km_-10000_100000",
+      "expected_status": 200,
+      "actual_status": 200,
+      "bytes": 572,
+      "seconds": 0.08294245903380215,
+      "sha256": "54c3714e26937b9d450b0dfbdaac3bc82a6d53485035938ec72eb356aecd8738",
+      "response": {
+        "status": "ok",
+        "grid_id": "ofr10km_-10000_100000",
+        "date": "2019-05-01",
+        "issue_time_utc": "2019-05-01T04:00:00+00:00",
+        "probability": 0.0017897932640083558,
+        "raw_probability": 0.001788453296852463,
+        "recorded_start": false,
+        "weather_missing": false,
+        "mode": "retrospective_saved_evaluation",
+        "live": false,
+        "source_versions": "NFDB/CDEM/CWFIS v2",
+        "model_id": "temporal_lightgbm_calibrated",
+        "model_sha256": "0f879891bf39a45d63de3bd7bef2f2a31be2b98962bf370303a461a271ed514b",
+        "feature_contract_sha256": "51e162d6caf8e4242c0a7cc3fff730eefcac036834cbf142aaae7db64e41672c"
+      }
+    },
+    {
+      "route": "/api/selected-score?date=2025-09-01&grid_id=ofr10km_-10000_100000",
+      "expected_status": 200,
+      "actual_status": 200,
+      "bytes": 613,
+      "seconds": 0.016358708031475544,
+      "sha256": "acfb23cd84f497c2151f8000e9d9dfb0dc30aa8c797e1efaaf269e392955e750",
+      "response": {
+        "status": "ok",
+        "grid_id": "ofr10km_-10000_100000",
+        "date": "2025-09-01",
+        "issue_time_utc": "2025-09-01T04:00:00+00:00",
+        "probability": 0.0022899407366086823,
+        "raw_probability": 0.021383183105102243,
+        "recorded_start": false,
+        "weather_missing": false,
+        "mode": "retrospective_saved_evaluation",
+        "live": false,
+        "source_versions": "Ontario starts/FBP2024/SCANFIv1.2-2020/MRDEM/ERA5-2025 researchFWI",
+        "model_id": "temporal_selected2025",
+        "model_sha256": "a976d748b2e7db978011747b05deab126448ff6ada0b4d6444bdbb9f0f372214",
+        "feature_contract_sha256": "141eeeda383338c8ad34cfa4847a9094297fed6d921c017b69f2c2a3c89bd0b1"
+      }
+    },
+    {
+      "route": "/api/cell-details?study=historical&date=2019-05-01&grid_id=ofr10km_-10000_100000",
+      "expected_status": 200,
+      "actual_status": 200,
+      "bytes": 1142,
+      "seconds": 0.07062791695352644,
+      "sha256": "ccbbfeabc9079b7d55bbba91065c6de87c98fe90123981fe6b67e1de6649cbc3",
+      "response": {
+        "status": "ok",
+        "grid_id": "ofr10km_-10000_100000",
+        "date": "2019-05-01",
+        "issue_time_utc": "2019-05-01T04:00:00+00:00",
+        "probability": 0.0017897932640083558,
+        "raw_probability": 0.001788453296852463,
+        "recorded_start": false,
+        "weather_missing": false,
+        "mode": "retrospective_saved_evaluation",
+        "live": false,
+        "source_versions": "NFDB/CDEM/CWFIS v2",
+        "model_id": "temporal_lightgbm_calibrated",
+        "model_sha256": "0f879891bf39a45d63de3bd7bef2f2a31be2b98962bf370303a461a271ed514b",
+        "feature_contract_sha256": "51e162d6caf8e4242c0a7cc3fff730eefcac036834cbf142aaae7db64e41672c",
+        "explanation_scale": "raw model log odds; not causal or calibrated probability contributions",
+        "explanation_status": "available",
+        "factors": [
+          {
+            "feature": "cwfis_dmc",
+            "raw_log_odds_contribution": 0.9037409165781553,
+            "value": 31.549439421479494,
+            "unit": "index",
+            "missing": false
+          },
+          {
+            "feature": "fire_history_neighborhood_365d",
+            "raw_log_odds_contribution": 0.5890708567817917,
+            "value": 4.0,
+            "unit": "count",
+            "missing": false
+          },
+          {
+            "feature": "calendar_day_of_year",
+            "raw_log_odds_contribution": 0.3805253075995497,
+            "value": 121.0,
+            "unit": "day of year",
+            "missing": false
+          }
+        ]
+      }
+    },
+    {
+      "route": "/api/cell-details?study=historical&date=2019-06-02&grid_id=ofr10km_-10000_100000",
+      "expected_status": 200,
+      "actual_status": 200,
+      "bytes": 734,
+      "seconds": 0.03970358404330909,
+      "sha256": "a8ab41eadbafe944cc3cc23883c61021abafac179120aa07763a8a1171306eef",
+      "response": {
+        "status": "ok",
+        "grid_id": "ofr10km_-10000_100000",
+        "date": "2019-06-02",
+        "issue_time_utc": "2019-06-02T04:00:00+00:00",
+        "probability": 0.0008909509776508993,
+        "raw_probability": 0.0008160978663855634,
+        "recorded_start": false,
+        "weather_missing": false,
+        "mode": "retrospective_saved_evaluation",
+        "live": false,
+        "source_versions": "NFDB/CDEM/CWFIS v2",
+        "model_id": "temporal_lightgbm_calibrated",
+        "model_sha256": "0f879891bf39a45d63de3bd7bef2f2a31be2b98962bf370303a461a271ed514b",
+        "feature_contract_sha256": "51e162d6caf8e4242c0a7cc3fff730eefcac036834cbf142aaae7db64e41672c",
+        "explanation_scale": "raw model log odds; not causal or calibrated probability contributions",
+        "explanation_status": "unavailable_for_this_date",
+        "factors": []
+      }
+    },
+    {
+      "route": "/api/cell-details?study=selected&date=2025-09-01&grid_id=ofr10km_-10000_100000",
+      "expected_status": 200,
+      "actual_status": 200,
+      "bytes": 1188,
+      "seconds": 0.04474024998489767,
+      "sha256": "5171d9832bc744052bee9ac8f89aa53dc87f995dc95314e691cc732d474bd545",
+      "response": {
+        "status": "ok",
+        "grid_id": "ofr10km_-10000_100000",
+        "date": "2025-09-01",
+        "issue_time_utc": "2025-09-01T04:00:00+00:00",
+        "probability": 0.0022899407366086823,
+        "raw_probability": 0.021383183105102243,
+        "recorded_start": false,
+        "weather_missing": false,
+        "mode": "retrospective_saved_evaluation",
+        "live": false,
+        "source_versions": "Ontario starts/FBP2024/SCANFIv1.2-2020/MRDEM/ERA5-2025 researchFWI",
+        "model_id": "temporal_selected2025",
+        "model_sha256": "a976d748b2e7db978011747b05deab126448ff6ada0b4d6444bdbb9f0f372214",
+        "feature_contract_sha256": "141eeeda383338c8ad34cfa4847a9094297fed6d921c017b69f2c2a3c89bd0b1",
+        "explanation_scale": "raw model log odds; not causal or calibrated probability contributions",
+        "explanation_status": "available",
+        "factors": [
+          {
+            "feature": "fbp_2024_code_3_share",
+            "raw_log_odds_contribution": 1.2726907297622476,
+            "value": 0.2887314736537126,
+            "unit": "fraction 0\u20131",
+            "missing": false
+          },
+          {
+            "feature": "dc",
+            "raw_log_odds_contribution": 0.8404510959434428,
+            "value": 356.5542399741728,
+            "unit": "index",
+            "missing": false
+          },
+          {
+            "feature": "temp_c",
+            "raw_log_odds_contribution": 0.6615201270666453,
+            "value": 27.307525634765625,
+            "unit": "\u00b0C",
+            "missing": false
+          }
+        ]
+      }
+    },
+    {
+      "route": "/api/export?study=historical&date=2019-05-01&format=csv",
+      "expected_status": 200,
+      "actual_status": 200,
+      "bytes": 4136793,
+      "seconds": 0.07965087506454438,
+      "sha256": "4471243e460e3fd594e6df5f84c2cbaada89bd391574ce809e96c65e2c4ef998",
+      "data_rows": 9673
+    },
+    {
+      "route": "/api/export?study=selected&date=2025-09-01&format=csv",
+      "expected_status": 200,
+      "actual_status": 200,
+      "bytes": 4366572,
+      "seconds": 0.06623945804312825,
+      "sha256": "7e90d480e8d8e85255a393fd78cdea931848f3949342decf1077a10270ef110e",
+      "data_rows": 9648
+    },
+    {
+      "route": "/api/export?study=selected&date=2025-09-01&format=geojson",
+      "expected_status": 200,
+      "actual_status": 200,
+      "bytes": 10184684,
+      "seconds": 0.21325925004202873,
+      "sha256": "61f8dfe03de4d46b69c62ae1ae03bb087e58a3f79afa911c865f9fc98598ccfc",
+      "features": 9648
+    },
+    {
+      "route": "/api/live-ignition",
+      "expected_status": 503,
+      "actual_status": 503,
+      "bytes": 1497,
+      "seconds": 0.001210374990478158,
+      "sha256": "7494a29dcfe8ba658e20daa3ea19d060b1beb58b40c5e917b1dae7834d9b1a4a",
+      "response": {
+        "status": "unavailable",
+        "probability": null,
+        "checks": {
+          "contemporaneous_ERA5_HRDPS_reference_days": 0,
+          "trusted_observed_state_cells": 0,
+          "model_live_qualified": false
+        },
+        "reasons": [
+          "No coincident ERA5/HRDPS reference dates for measured forecast-source parity",
+          "Available FWI checkpoints are forecast-derived research states, not trusted observed/overwintered initial conditions",
+          "Selected-source model is qualified only for a retrospective within-season study",
+          "No accepted cross-source/issue-time validation decision exists"
+        ],
+        "forecast_weather_adapter": "implemented and unit-tested",
+        "research_scenarios_only": true,
+        "operational": false,
+        "input_hashes": {
+          "forecast_manifest": "92c69a04bb579b811500cd17296570a4c5c8eba1c4f6afae8e9cf7b471a0e65a",
+          "state_checkpoint": "e83343a771658eb1b85f15840bd48a90ed8daf0a3ff3178daabd60b1e16237f7",
+          "selected_model_results": "136786b7b4bccfebd0c98dbdb05a789ebe41420b794eee80ea5cc8b988dc0a9f"
+        },
+        "unit_contract": {
+          "ERA5_temperature": "Kelvin to Celsius",
+          "HRDPS_temperature": "Celsius checked from GRIB",
+          "wind": "Both paths yield earth-relative km/h and meteorological from-bearing; rotated-grid wind requires rotation",
+          "rain": "Both yield mm after source-specific reset-aware interval decoding",
+          "FWI": "Shared equations with exact standard-noon/state clock, but startup/provenance and source distributions are not interchangeable"
+        },
+        "scope": "Assessment completed: live acceptance fails. No live ignition prediction may be emitted by this prototype."
+      }
+    },
+    {
+      "route": "/api/historical-score?date=2019-02-30&grid_id=ofr10km_0_0",
+      "expected_status": 400,
+      "actual_status": 400,
+      "bytes": 50,
+      "seconds": 0.000784000032581389,
+      "sha256": "c8e87c0d3e938c1d57546618026b0a09597bd6d57bb550e69244672f3728c14d",
+      "response": {
+        "status": "invalid_request",
+        "probability": null
+      }
+    }
+  ],
+  "passed": 14
+}

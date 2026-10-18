@@ -1,0 +1,14 @@
+{
+  "source_url": "https://ws.gisetl.lrc.gov.on.ca/fmedatadownload/Packages/FIRERESP.zip",
+  "archive_sha256": "b0a551e3b1cf49dcbde4bbbc366e044f70e4c461b0bb1002c521b90f89e7934c",
+  "archive_format": "OpenFileGDB; older downloader expects Shapefile and cannot read this version",
+  "input_features": 31,
+  "selected_non_OFR": 15,
+  "source_crs": "EPSG:4269",
+  "retained_pinned_grid_cells": 9673,
+  "current_boundary_covers_grid_centers": 9648,
+  "pinned_cells_center_outside_current_boundary": 25,
+  "retained_events_inside_current_boundary": 8109,
+  "retained_events_outside_current_boundary": 0,
+  "semantics": "Current boundary diagnostic only; not a byte-identical restoration of older pinned boundary; retained grid/events unchanged"
+}

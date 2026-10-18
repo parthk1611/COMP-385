@@ -33,6 +33,7 @@ import json
 import math
 from datetime import UTC, datetime
 from multiprocessing import Pool
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -184,7 +185,7 @@ def replay_fire(fire_id: str, settings: Settings, keep_grids: bool = False):
 
 def _worker(job: tuple[str, float, float]) -> list[dict]:
     fire_id, ros_scale, flank_scale = job
-    rows = replay_fire(fire_id, Settings(ros_scale=ros_scale, flank_scale=flank_scale))
+    rows = replay_fire(fire_id, Settings(ros_scale=ros_scale, flank_scale=flank_scale, repair_burn_scar=True))
     for row in rows:
         row["ros_scale"], row["flank_scale"] = ros_scale, flank_scale
     return rows
@@ -228,6 +229,7 @@ def main() -> None:
     parser.add_argument("--holdout-fires", type=int, default=24)
     parser.add_argument("--seed", type=int, default=385)
     parser.add_argument("--workers", type=int, default=8)
+    parser.add_argument("--output-dir", type=Path, default=PROCESSED / "simulation_surface_v2")
     args = parser.parse_args()
     log = action_log("10 simulator replay")
     calibration, holdout = pick_fires("calibration", args.calibration_fires, args.seed), pick_fires("holdout", args.holdout_fires, args.seed)
@@ -246,12 +248,15 @@ def main() -> None:
         test = pd.DataFrame([row for rows in pool.imap_unordered(_worker, [(fire, best[0], best[1]) for fire in holdout]) for row in rows])
     holdout_summary = summarise(test)
     long_runs = summarise(test[test.observed_distance_m >= LONG_RUN_M])
-    out = PROCESSED / "simulation"
+    out = args.output_dir
     out.mkdir(parents=True, exist_ok=True)
     tuning.round(4).to_csv(out / "spread_simulator_calibration_steps_v1.csv", index=False)
     test.round(4).to_csv(out / "spread_simulator_holdout_steps_v1.csv", index=False)
     report = {
         "dataset_version": DATASET_VERSION,
+        "mode": "retrospective_reconstruction_final_perimeter_assisted",
+        "forecast_validation": False,
+        "propagation_revision": "surface-barrier-clearance-v2",
         "created_at_utc": datetime.now(UTC).isoformat(),
         "simulator": "FBP rate of spread, wind ellipse, slope, shortest travel time on a 90 m grid; burn scar in the 2024 fuel map repaired from surrounding fuel",
         "scoring": f"new 375 m cells between consecutive satellite observations {MIN_HOURS}-{MAX_HOURS} h apart with at least {MIN_NEW_CELLS} observed new cells",

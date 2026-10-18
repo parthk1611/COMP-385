@@ -1,0 +1,143 @@
+{
+  "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/scripts/week5_ignition.py",
+  "language": "python",
+  "metrics": {
+    "lines": {
+      "total": 214,
+      "code": 182,
+      "blank": 30,
+      "comment": 2
+    },
+    "functions": 14,
+    "classes": 0,
+    "avg_complexity": 4.9
+  },
+  "quality_score": 85,
+  "grade": "B",
+  "smells": [
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2010 should be a named constant",
+      "location": "line 29"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2018 should be a named constant",
+      "location": "line 72"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 200 should be a named constant",
+      "location": "line 92"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 1000 should be a named constant",
+      "location": "line 115"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 200000 should be a named constant",
+      "location": "line 130"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2018 should be a named constant",
+      "location": "line 154"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2018 should be a named constant",
+      "location": "line 163"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 1000 should be a named constant",
+      "location": "line 190"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 385 should be a named constant",
+      "location": "line 191"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2019 should be a named constant",
+      "location": "line 207"
+    }
+  ],
+  "solid_violations": [],
+  "function_details": [
+    {
+      "name": "validate_role",
+      "parameters": 2,
+      "lines": 7,
+      "complexity": 3
+    },
+    {
+      "name": "configuration",
+      "parameters": 0,
+      "lines": 8,
+      "complexity": 3
+    },
+    {
+      "name": "require_final_freeze",
+      "parameters": 1,
+      "lines": 8,
+      "complexity": 3
+    },
+    {
+      "name": "checked_partition",
+      "parameters": 3,
+      "lines": 8,
+      "complexity": 3
+    },
+    {
+      "name": "join_reserved",
+      "parameters": 3,
+      "lines": 15,
+      "complexity": 10
+    },
+    {
+      "name": "prepare_reserved",
+      "parameters": 1,
+      "lines": 35,
+      "complexity": 10
+    },
+    {
+      "name": "probability_logits",
+      "parameters": 1,
+      "lines": 7,
+      "complexity": 3
+    },
+    {
+      "name": "fit_calibration",
+      "parameters": 2,
+      "lines": 4,
+      "complexity": 4
+    },
+    {
+      "name": "objective",
+      "parameters": 1,
+      "lines": 9,
+      "complexity": 2
+    },
+    {
+      "name": "apply_calibration",
+      "parameters": 2,
+      "lines": 5,
+      "complexity": 1
+    }
+  ],
+  "class_details": []
+}

@@ -1,0 +1,16 @@
+digraph G {
+graph [bgcolor="white", pad="0.2", nodesep="0.30", ranksep="0.45"]; node [shape=box, style="rounded,filled", fillcolor="#F4F4F4", color="#535353", fontname="Helvetica", fontsize=16, margin="0.16,0.12"]; edge [fontname="Helvetica",fontsize=13,color="#555555",arrowsize=0.7];
+rankdir=TB;
+node [shape=record,style=filled];
+handler [label="{Handler : BaseHTTPRequestHandler|do_GET()\lhandle_get()\lsend_json()\l}"];
+api [label="{capstone_app module functions|score_response() / cell_details()\lexport_predictions()\lassess_live_inputs()\l}"];
+case [label="{FireCase dataclass|fuel, elevation, weather\larrival, observation_times\lmask_from_cells() / burned_375()\l}"];
+settings [label="{Settings dataclass|ros_scale, flank_scale, wind_scale\lrepair_burn_scar, hourly_moisture\l}"];
+sim [label="{Spread functions|load_case()\lsimulate()\lmove_clearance()\l}"];
+fit [label="{Ignition experiment modules|ignition_comparison.py\lweek5_ignition.py\lselected_2025_model.py\l}"];
+store [label="{Parquet / JSON / joblib / HTML|saved results and contracts\l}"];
+handler -> api [label="calls"];api -> store [label="reads"];fit -> store [label="writes offline"];sim -> case [label="uses"];sim -> settings [label="uses"];sim -> store [label="offline replay export",constraint=false];
+
+{rank=same;api;fit;}
+store -> sim [style=invis];
+}

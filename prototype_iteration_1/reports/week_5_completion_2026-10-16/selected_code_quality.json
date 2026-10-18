@@ -1,0 +1,59 @@
+{
+  "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/scripts/selected_2025_model.py",
+  "language": "python",
+  "metrics": {
+    "lines": {
+      "total": 89,
+      "code": 76,
+      "blank": 12,
+      "comment": 1
+    },
+    "functions": 5,
+    "classes": 0,
+    "avg_complexity": 4.8
+  },
+  "quality_score": 100,
+  "grade": "A",
+  "smells": [
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'read' has complexity 11 (max: 10)",
+      "location": "read"
+    }
+  ],
+  "solid_violations": [],
+  "function_details": [
+    {
+      "name": "select_dates",
+      "parameters": 2,
+      "lines": 6,
+      "complexity": 2
+    },
+    {
+      "name": "study_metrics",
+      "parameters": 2,
+      "lines": 9,
+      "complexity": 2
+    },
+    {
+      "name": "fit_bundle",
+      "parameters": 3,
+      "lines": 8,
+      "complexity": 2
+    },
+    {
+      "name": "run",
+      "parameters": 0,
+      "lines": 9,
+      "complexity": 7
+    },
+    {
+      "name": "read",
+      "parameters": 2,
+      "lines": 18,
+      "complexity": 11
+    }
+  ],
+  "class_details": []
+}

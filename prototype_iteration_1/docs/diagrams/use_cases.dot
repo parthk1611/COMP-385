@@ -1,0 +1,21 @@
+digraph G {
+graph [bgcolor="white", pad="0.2", nodesep="0.30", ranksep="0.45"]; node [shape=box, style="rounded,filled", fillcolor="#F4F4F4", color="#535353", fontname="Helvetica", fontsize=16, margin="0.16,0.12"]; edge [fontname="Helvetica",fontsize=13,color="#555555",arrowsize=0.7];
+rankdir=LR;
+analyst [shape=plaintext,label="Analyst"];
+operator [shape=plaintext,label="Developer / operator"];
+subgraph cluster_system {label="Ontario wildfire research prototype";fontname="Helvetica";fontsize=18;
+u1 [shape=ellipse,label="Inspect historical ignition risk
+UC 01"];
+u2 [shape=ellipse,label="Explain a selected cell
+UC 02"];
+u3 [shape=ellipse,label="Inspect incident progression
+UC 03"];
+u4 [shape=ellipse,label="Compare replay with baseline
+UC 04"];
+u5 [shape=ellipse,label="Export date results"];
+u6 [shape=ellipse,label="Build and validate data"];
+u7 [shape=ellipse,label="Fit and evaluate models"];
+u8 [shape=ellipse,label="Inspect live readiness"];
+}
+analyst -> u1 [dir=none];analyst -> u2 [dir=none];analyst -> u3 [dir=none];analyst -> u4 [dir=none];analyst -> u5 [dir=none];analyst -> u8 [dir=none];operator -> u6 [dir=none];operator -> u7 [dir=none];u2 -> u1 [style=dashed,label="requires saved score"];
+}

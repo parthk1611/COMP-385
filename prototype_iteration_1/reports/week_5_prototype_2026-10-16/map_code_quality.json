@@ -1,0 +1,83 @@
+{
+  "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/scripts/build_ignition_map.py",
+  "language": "python",
+  "metrics": {
+    "lines": {
+      "total": 62,
+      "code": 52,
+      "blank": 9,
+      "comment": 1
+    },
+    "functions": 2,
+    "classes": 0,
+    "avg_complexity": 15.5
+  },
+  "quality_score": 81,
+  "grade": "B",
+  "smells": [
+    {
+      "type": "high_complexity",
+      "severity": "high",
+      "message": "Function 'map_payload' has complexity 27 (max: 10)",
+      "location": "map_payload"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 600 should be a named constant",
+      "location": "line 26"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2019 should be a named constant",
+      "location": "line 28"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 100 should be a named constant",
+      "location": "line 40"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 10000 should be a named constant",
+      "location": "line 41"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 10000 should be a named constant",
+      "location": "line 42"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 10000 should be a named constant",
+      "location": "line 44"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 100 should be a named constant",
+      "location": "line 45"
+    }
+  ],
+  "solid_violations": [],
+  "function_details": [
+    {
+      "name": "map_payload",
+      "parameters": 3,
+      "lines": 40,
+      "complexity": 27
+    },
+    {
+      "name": "run",
+      "parameters": 0,
+      "lines": 14,
+      "complexity": 4
+    }
+  ],
+  "class_details": []
+}

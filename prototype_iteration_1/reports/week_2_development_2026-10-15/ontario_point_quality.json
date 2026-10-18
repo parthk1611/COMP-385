@@ -1,0 +1,68 @@
+{
+  "rows": 65655,
+  "columns": [
+    "X",
+    "Y",
+    "OGF_ID",
+    "FIRE_DISTURBANCE_AREA_IDENT",
+    "FIRE_TYPE_CODE",
+    "FIRE_YEAR",
+    "FIRE_GENERAL_CAUSE_CODE",
+    "FIRE_WEATHER_INDEX",
+    "FIRE_RESPONSE_OBJ_CODE",
+    "FIRE_START_DATE",
+    "FIRE_OUT_DATE",
+    "FIRE_FINAL_SIZE",
+    "BUSINESS_EFFECTIVE_DATE",
+    "GEOMETRY_UPDATE_DATETIME",
+    "EFFECTIVE_DATETIME",
+    "SYSTEM_DATETIME",
+    "OBJECTID"
+  ],
+  "exact_duplicate_rows": 0,
+  "missing_counts": {
+    "X": 0,
+    "Y": 0,
+    "OGF_ID": 0,
+    "FIRE_DISTURBANCE_AREA_IDENT": 0,
+    "FIRE_TYPE_CODE": 0,
+    "FIRE_YEAR": 0,
+    "FIRE_GENERAL_CAUSE_CODE": 76,
+    "FIRE_WEATHER_INDEX": 0,
+    "FIRE_RESPONSE_OBJ_CODE": 24073,
+    "FIRE_START_DATE": 49,
+    "FIRE_OUT_DATE": 1202,
+    "FIRE_FINAL_SIZE": 0,
+    "BUSINESS_EFFECTIVE_DATE": 48503,
+    "GEOMETRY_UPDATE_DATETIME": 9432,
+    "EFFECTIVE_DATETIME": 0,
+    "SYSTEM_DATETIME": 0,
+    "OBJECTID": 0
+  },
+  "categorical_counts": {
+    "FIRE_TYPE_CODE": {
+      "IFR": 65205,
+      "OFR": 371,
+      "PB": 79
+    },
+    "FIRE_GENERAL_CAUSE_CODE": {
+      "LTG": 31503,
+      "REC": 11561,
+      "MIS": 6688,
+      "RES": 6492,
+      "RWY": 4588,
+      "INC": 1377,
+      "UNK": 1300,
+      "IDF": 1236,
+      "IDO": 834,
+      "<missing>": 76
+    }
+  },
+  "date_field": {
+    "nonparseable_or_missing": 49,
+    "min": "1976-03-28 00:00:00+00:00",
+    "max": "2025-11-12 00:00:00+00:00"
+  },
+  "OBJECTID_duplicate_nonmissing": 0,
+  "OGF_ID_duplicate_nonmissing": 0
+}

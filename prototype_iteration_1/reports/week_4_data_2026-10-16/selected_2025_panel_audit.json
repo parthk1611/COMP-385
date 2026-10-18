@@ -1,0 +1,77 @@
+{
+  "rows": 1775232,
+  "cells": 9648,
+  "dates": 184,
+  "positive_cell_days": 600,
+  "selected_source_records": 624,
+  "excluded_source_counts": {
+    "outside_declared_fire_season": 14,
+    "outside_selected_IFR_label_type": 5,
+    "year_date_conflict": 3,
+    "outside_fixed_centroid_grid": 3
+  },
+  "all_weather_instants_before_issue": true,
+  "feature_null_rows": {
+    "scanfi_2020_closure_sample_mean_pct": 1104,
+    "scanfi_2020_canopy_weighted_conifer_pct": 92368,
+    "mrdem_sample_valid_fraction": 0,
+    "mrdem_elevation_sample_mean_m": 0,
+    "mrdem_elevation_sample_std_m": 0,
+    "mrdem_sampled_1km_slope_mean_pct": 0,
+    "fbp_2024_code_2_share": 1104,
+    "fbp_2024_code_3_share": 1104,
+    "fbp_2024_code_4_share": 1104,
+    "fbp_2024_code_5_share": 1104,
+    "fbp_2024_code_11_share": 1104,
+    "fbp_2024_code_13_share": 1104,
+    "fbp_2024_code_31_share": 1104,
+    "fbp_2024_code_101_share": 1104,
+    "fbp_2024_code_102_share": 1104,
+    "fbp_2024_code_625_share": 1104,
+    "fbp_2024_code_650_share": 1104,
+    "fbp_2024_code_675_share": 1104,
+    "fbp_2024_code_415_share": 1104,
+    "fbp_2024_code_105_share": 1104,
+    "fbp_2024_code_1_share": 1104,
+    "temp_c": 2208,
+    "rh_pct": 2208,
+    "wind_kmh": 2208,
+    "rain_24h_mm": 2208,
+    "rain_prior_7_noon_days_mm": 2208,
+    "ffmc": 2208,
+    "dmc": 2208,
+    "dc": 2208,
+    "isi": 2208,
+    "bui": 2208,
+    "fwi": 2208,
+    "fbp_native_valid_area_fraction": 0,
+    "scanfi_species_valid_fraction": 0,
+    "fwi_state_valid": 0,
+    "rain_coverage_hours": 0
+  },
+  "fwistate_valid_rows": 1773024,
+  "code_sha256": "cc46a2ab793db372bc4c8e6afc8de46eed3f8b97c52fee347a7b419fc5eb93ff",
+  "static_manifest_sha256": "824510907e68d00aff8532bd52865c72330dbac56ae7b9a8889fafb4da8c9216",
+  "weather_manifest_sha256": "c677e058b67be9f4b9864acc01bc728e8a50cd2f6f0837b714a1f5dae2229787",
+  "grid_weather_mapping_sha256": "11fd3f8d4b41fb287bd0bc7287bcdf834d7744074e4a1587f1d9e1ec4808909f",
+  "point_source_sha256": "a91844ce173dc5b7414668452b796a4a7a59259eb7e08648bffdda37ac4ef949",
+  "outputs": [
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/selected_2025_ignition_panel/cell_days.parquet",
+      "sha256": "9119010e26b095b7662c8463e73cd678e03e0196292428b4dabcedefbd60ce91",
+      "bytes": 201315146
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/selected_2025_ignition_panel/fire_source_adjudication.csv",
+      "sha256": "6527a6ae0ee2bc68572b4dad29c3a5f4a15bce798c92704f371dad47310c9b46",
+      "bytes": 68848
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/selected_2025_ignition_panel/predictor_contract.json",
+      "sha256": "141eeeda383338c8ad34cfa4847a9094297fed6d921c017b69f2c2a3c89bd0b1",
+      "bytes": 2327
+    }
+  ],
+  "training_ready": false,
+  "operationally_validated": false
+}

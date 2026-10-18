@@ -1,0 +1,42 @@
+{
+  "checked": "2026-10-15",
+  "dpv_article_full_text_retrieved": true,
+  "c2fk_article_full_text_retrieved": true,
+  "dpv_author_thesis_pdf": "University repository request returned HTTP 403; not saved or claimed read",
+  "c2fk_repository_pdf_search": "Official repository recursive tree contains no PDF",
+  "c2fk_publisher_excerpt": "Software availability indexed as BSD-3-Clause; repository snapshot GPL-3.0. Discrepancy requires version-specific verification.",
+  "minimum_two_peer_reviewed_original_studies_complete": true,
+  "sources": [
+    "https://www.sciencedirect.com/science/article/pii/S1364815226001568",
+    "https://www.sciencedirect.com/science/article/abs/pii/S0305054821000447",
+    "https://github.com/fire2a/C2FK"
+  ],
+  "extended_slide_review_complete": true,
+  "access_method": "Centennial Library institutional publisher HTML",
+  "dpv_local_archive": "../research_review_2026-10-14/sources/dpv_2021_fulltext.mhtml",
+  "c2fk_local_pdf_saved": false,
+  "c2fk_sections_read": [
+    "2.3",
+    "2.4",
+    "2.5",
+    "2.6",
+    "3.1",
+    "3.2",
+    "3.3",
+    "3.4",
+    "4"
+  ],
+  "c2fk_table3": {
+    "F1_percent": [
+      86.4,
+      68.1,
+      47.62
+    ],
+    "mean_F1_percent": 67.37,
+    "mean_precision_percent": 54.96,
+    "mean_recall_percent": 90.32,
+    "crown_fire_enabled": false,
+    "suppression_modelled": false
+  },
+  "burn_probability_entry": "Resolved method/output with Cell2Fire and C2FK equation23 support, not an invented additional paper"
+}

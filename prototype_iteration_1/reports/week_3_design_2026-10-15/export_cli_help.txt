@@ -1,0 +1,25 @@
+usage: export_spread_viewer_data.py [-h] [--fires-per-split FIRES_PER_SPLIT]
+                                    [--page-only] [--no-base-map]
+                                    [--simulation-dir SIMULATION_DIR]
+
+Export simulator runs for the browser viewer. Replays a few fires with the
+tuned settings and writes `viewer/fire_spread_viewer.html`: the page in
+`viewer/viewer_template.html` with the data written into it, so the one file
+opens anywhere. For each fire it keeps the fuel grid, where satellites saw the
+fire at each pass, the simulated arrival time of every cell for each step
+between passes, the hourly wind, and the step's scores. It also runs the first
+six hours from the reported ignition point. The ground under the fire is the
+Canada Base Map (see `spread_basemap.py`): one image for each fire's window
+and a closer one around its ignition run, downloaded the first time they are
+needed and kept in `data/raw/basemap/`. Fires are chosen by rule, not by how
+well they turned out: in each split, the scored fires with the most usable
+steps whose grid is small enough to ship.
+
+options:
+  -h, --help            show this help message and exit
+  --fires-per-split FIRES_PER_SPLIT
+  --page-only           rebuild the page from the template and the data
+                        already exported, without simulating again
+  --no-base-map         leave out the Canada Base Map images; the viewer then
+                        draws the fuel map as its ground
+  --simulation-dir SIMULATION_DIR

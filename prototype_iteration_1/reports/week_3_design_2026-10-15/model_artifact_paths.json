@@ -1,0 +1,42 @@
+[
+  {
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/week_3_design_2026-10-15/inner_spatial_histogram_boosting.joblib",
+    "bytes": 317558,
+    "sha256": "1a2560257143dbaef7ee896b6145b8d473cf23c8552ecd07a15d182d8fa3961a"
+  },
+  {
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/week_3_design_2026-10-15/inner_spatial_historical_rate.joblib",
+    "bytes": 2333,
+    "sha256": "580003f716cb27e35c5bf3e4774210f10744ef0adddb0d67780625536cd8f1d6"
+  },
+  {
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/week_3_design_2026-10-15/inner_spatial_lightgbm.joblib",
+    "bytes": 270620,
+    "sha256": "8ccd0f04b889e7b116172f2e2db00ecfb75cbe8a7038b82c28de99b290a3b779"
+  },
+  {
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/week_3_design_2026-10-15/inner_spatial_logistic.joblib",
+    "bytes": 5322,
+    "sha256": "a29cc2ea1371504bb178e8f5a75cc7120d636fc384335a62fe4c807eaaca4365"
+  },
+  {
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/week_3_design_2026-10-15/temporal_histogram_boosting.joblib",
+    "bytes": 321793,
+    "sha256": "050e07f451092b89bc34f27f5cac2e3f2e3a773f94a01b1aeb6d5bb2ba22a0e2"
+  },
+  {
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/week_3_design_2026-10-15/temporal_historical_rate.joblib",
+    "bytes": 2648,
+    "sha256": "cdd51e12214139e0755f80ada5cd73e4ad750c736cee8ffb6313b400a9b53ef8"
+  },
+  {
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/week_3_design_2026-10-15/temporal_lightgbm.joblib",
+    "bytes": 273239,
+    "sha256": "11cf2e7e9f569c2b81b07480f0661d7ecb0291c966ba5c2337a55cdbd1064bb1"
+  },
+  {
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/week_3_design_2026-10-15/temporal_logistic.joblib",
+    "bytes": 5829,
+    "sha256": "57b6c080ec0949dee524deeea720a52bf68f831e2fbd2c71afa44116aecf5060"
+  }
+]

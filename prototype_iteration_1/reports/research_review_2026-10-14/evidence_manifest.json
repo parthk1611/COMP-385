@@ -1,0 +1,172 @@
+[
+  {
+    "path": "sources/c2fk_readme.md",
+    "bytes": 10579,
+    "sha256": "0a325ff00607bd7e5522d3a7e8a1eb3a242817c167e23ddb89aa1c6377913894"
+  },
+  {
+    "path": "sources/cell2fire_2021.pdf",
+    "bytes": 5727411,
+    "sha256": "447077363452dbf134c68e27a0ecf2e466edcc44f9ab8cd4eb51c78d5a64479e"
+  },
+  {
+    "path": "sources/cell2fire_2021.txt",
+    "bytes": 93912,
+    "sha256": "fd3523f1e954d5fcfcdce9c4f7d617adb70933703fb59f322926bb88e4fbf42a"
+  },
+  {
+    "path": "sources/cell2fire_doc_src_rstfiles_install.rst",
+    "bytes": 1153,
+    "sha256": "653cae8c7df78d2c3a2d71db68d2fd8a945b97c92b3002cf4576003bf540ad84"
+  },
+  {
+    "path": "sources/cell2fire_doc_src_rstfiles_output.rst",
+    "bytes": 1268,
+    "sha256": "45daa9b99d618ecd707c0f73423eec8dbb68da1de8010131dd015c6bf83c3322"
+  },
+  {
+    "path": "sources/cell2fire_doc_src_rstfiles_run.rst",
+    "bytes": 803,
+    "sha256": "cb8da614d9645a55b6a56ac4bdced715a5a46f0a2b8f9215e47ffd830b5ed431"
+  },
+  {
+    "path": "sources/cell2fire_readme.md",
+    "bytes": 4122,
+    "sha256": "63fa1f0688edb5c21f7c4fdab49a6973380204a5e6f9d7abb8c261885ae2adbc"
+  },
+  {
+    "path": "sources/cell2fire_requirements.txt",
+    "bytes": 79,
+    "sha256": "f5f4f50c6b78878eecdaaafd70707e15d958e1309ebcb95bc3c814d69133ff74"
+  },
+  {
+    "path": "sources/dpv_2021_fulltext.mhtml",
+    "bytes": 4056257,
+    "sha256": "ad4c077e9fe16176dd843ccbe14aa0122488f704ed5232c2e9b1a26868fc43aa"
+  },
+  {
+    "path": "sources/dpv_2021_fulltext.txt",
+    "bytes": 84402,
+    "sha256": "36bffd87081d67abd91d8f2fad587d257f53d70a6b5b2f31c62d74e0e236fa44"
+  },
+  {
+    "path": "sources/jain_2020_author_manuscript.pdf",
+    "bytes": 2728395,
+    "sha256": "d872f0eddbb3fae93115c4be5eb5cb9ac9b4c1483dd5da4a485d292978c9dec9"
+  },
+  {
+    "path": "sources/jain_2020_author_manuscript.txt",
+    "bytes": 288947,
+    "sha256": "95f4c5494e51179874f09056405d06782085060ed78651417c042f08a1dd8b0f"
+  },
+  {
+    "path": "sources/jaxwildfire_2025.pdf",
+    "bytes": 1105739,
+    "sha256": "a42aa49be0f86cbe727822d3d71fee8c453716d0207d17e5e7e7e6bf250ec372"
+  },
+  {
+    "path": "sources/jaxwildfire_2025.txt",
+    "bytes": 23276,
+    "sha256": "4f6be35a9fb6b28f01d9a13a1aa8628e5edde9d3c2e97cd27c647ae9af199a2c"
+  },
+  {
+    "path": "sources/jaxwildfire_readme.md",
+    "bytes": 196,
+    "sha256": "825125b7f2e7e6fea2be378088fa2e3f7f429e4cd1e45e737b437d461bbe9ef5"
+  },
+  {
+    "path": "sources/kim_2025.pdf",
+    "bytes": 6018182,
+    "sha256": "a4f41dd7641458f2a783d8100420b928060806ad3d78e34b40e82bc591ca8a37"
+  },
+  {
+    "path": "sources/kim_2025.txt",
+    "bytes": 55079,
+    "sha256": "27776f86a7d7efe96120ecbf3205a5b2ecba984d5613ce1d9d92591399db5a2b"
+  },
+  {
+    "path": "sources/next_day_spread_2022_preprint.pdf",
+    "bytes": 2651755,
+    "sha256": "270b15478a73f9791d19a6bfebf372fee0f8036dd6d51c7d8effc15f133aa9b8"
+  },
+  {
+    "path": "sources/next_day_spread_2022_preprint.txt",
+    "bytes": 66254,
+    "sha256": "5254ba59d88fe2114bd01b024e1998e8617e516381a9cf35780dc3299e14afa3"
+  },
+  {
+    "path": "sources/pytorchfire_2025.pdf",
+    "bytes": 7366495,
+    "sha256": "09d3a62ec4375abde2ca0f177ba02173b2660cb54a573db6bccf4d21e137eb2d"
+  },
+  {
+    "path": "sources/pytorchfire_2025.txt",
+    "bytes": 71145,
+    "sha256": "61b214f465d99454a11fa69dfc55df03972ba94dbd116912662a58036b7d0978"
+  },
+  {
+    "path": "sources/pytorchfire_docs_index.md",
+    "bytes": 4811,
+    "sha256": "34e5431311733e4bd1da9e4725677a71549bb5866d49308116204a7cff29e88e"
+  },
+  {
+    "path": "sources/pytorchfire_docs_reference_firedataforge.md",
+    "bytes": 1315,
+    "sha256": "523737738de7206948039ee579aa1507093c105f5912bba6a381a39c45a49ac0"
+  },
+  {
+    "path": "sources/pytorchfire_docs_reference_model.md",
+    "bytes": 39,
+    "sha256": "39e104de794eac15e0a867135728546fc29e342e2994ad5f68e5dfd38ad01941"
+  },
+  {
+    "path": "sources/pytorchfire_docs_reference_trainer.md",
+    "bytes": 39,
+    "sha256": "5b90d243da3a00a90ecf222a86df1f251ac22bf2f311c5c80417e777de63a1a2"
+  },
+  {
+    "path": "sources/pytorchfire_pyproject.toml",
+    "bytes": 1638,
+    "sha256": "e87ad488459c611d3fab213eec3a215d298645a0546f2eeb2e9597af754734f2"
+  },
+  {
+    "path": "sources/pytorchfire_pytorchfire_model.py",
+    "bytes": 18217,
+    "sha256": "02ff886cf3a17c305c988ab429d1be00ca11a24898d6682f32cab50d75bb63c0"
+  },
+  {
+    "path": "sources/pytorchfire_pytorchfire_trainer.py",
+    "bytes": 10437,
+    "sha256": "a2069d19774129d44c0f9d074b72db28002e8589bb78a1d8d0bd6aebe449c79b"
+  },
+  {
+    "path": "sources/pytorchfire_readme.md",
+    "bytes": 8796,
+    "sha256": "f06df00a0e47710a83a7e60864bb708431be130f476375b6096df19aba2c9af9"
+  },
+  {
+    "path": "sources/pytorchfire_requirements.txt",
+    "bytes": 19,
+    "sha256": "834d3ad50e7e23461983562dc92d9ef1655dd515af5c23399c6de17033b1e3df"
+  },
+  {
+    "path": "sources/research_slide.png",
+    "bytes": 49036,
+    "sha256": "46e6ae69aa588fa12da72188635e9bd5f4b7a3b1b0ed26db355dcb256dbc2b86"
+  },
+  {
+    "path": "sources/wildfirespreadts_2023.pdf",
+    "bytes": 2305741,
+    "sha256": "cde1e00b125759633cc4dd72748da2393ca60881110f0500d14aeec3a91beb44"
+  },
+  {
+    "path": "sources/wildfirespreadts_2023.txt",
+    "bytes": 56744,
+    "sha256": "3ff1f8cadb2eadadbb5bb737c4ce0710b79d8aef50b323e5370e245ddbbdb3c2"
+  },
+  {
+    "path": "sources/wildfirespreadts_README.md",
+    "bytes": 4769,
+    "sha256": "281e02eb7965f5eb15a6a67a32e27080a6d7ab361ffe8da6797154223084a154"
+  }
+]

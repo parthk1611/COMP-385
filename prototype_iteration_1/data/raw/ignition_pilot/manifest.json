@@ -1,0 +1,122 @@
+{
+  "retrieved_at_utc": "2026-10-09T18:27:01.666128+00:00",
+  "model_crs": "EPSG:3978",
+  "bounds": [
+    410000,
+    -65000,
+    440000,
+    -35000
+  ],
+  "point_source": "https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/LIO_OPEN_DATA/LIO_Open09/MapServer/30",
+  "area_source": "https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/LIO_OPEN_DATA/LIO_Open09/MapServer/28",
+  "scanfi_sources": {
+    "closure": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_att_closure_SW_2020_v1.2.tif",
+    "balsamFir": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_balsamFir_SW_2020_v1.2.tif",
+    "blackSpruce": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_blackSpruce_SW_2020_v1.2.tif",
+    "douglasFir": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_douglasFir_SW_2020_v1.2.tif",
+    "jackPine": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_jackPine_SW_2020_v1.2.tif",
+    "lodgepolePine": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_lodgepolePine_SW_2020_v1.2.tif",
+    "ponderosaPine": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_ponderosaPine_SW_2020_v1.2.tif",
+    "tamarack": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_tamarack_SW_2020_v1.2.tif",
+    "whiteRedPine": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_whiteRedPine_SW_2020_v1.2.tif",
+    "prcC_other": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_prcC_other_SW_2020_v1.2.tif",
+    "prcB": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_prcB_SW_2020_v1.2.tif"
+  },
+  "files": [
+    {
+      "path": "data/raw/ignition_pilot/fire_layer_28.json",
+      "bytes": 433,
+      "sha256": "f252edf7be8f7d04da7c274350d7cf741c7c4063d50ab7566f5496b896c66cc9"
+    },
+    {
+      "path": "data/raw/ignition_pilot/fire_layer_28_metadata.json",
+      "bytes": 7865,
+      "sha256": "08718cca0e2a2691460a14257a49e5a6a531a20abac82e2d97aefe4182146a11"
+    },
+    {
+      "path": "data/raw/ignition_pilot/fire_layer_30.json",
+      "bytes": 1857,
+      "sha256": "4191f9d9ef9abac5cce3ba1d8bae7ada7b73eeec5d38d8c9f776112440aa43c9"
+    },
+    {
+      "path": "data/raw/ignition_pilot/fire_layer_30_metadata.json",
+      "bytes": 7118,
+      "sha256": "f376d9db435ce987bcc58e8840ee7cbe95cee6f4011ecba355141e3a4938c937"
+    },
+    {
+      "path": "data/raw/ignition_pilot/scanfi_balsamFir.tif",
+      "bytes": 222785,
+      "sha256": "acc368103220000cbc566492a8a5c177b5aa9157c67997d9cc313645e3144bff"
+    },
+    {
+      "path": "data/raw/ignition_pilot/scanfi_blackSpruce.tif",
+      "bytes": 316694,
+      "sha256": "60f29a9e87f6e0da378d051234080407344f9e96f032dc5503b4b58666e7c900"
+    },
+    {
+      "path": "data/raw/ignition_pilot/scanfi_closure.tif",
+      "bytes": 317772,
+      "sha256": "91f52de41d20423e4331b48b202ce62557c1b4b15b8184e4826582911c0747f6"
+    },
+    {
+      "path": "data/raw/ignition_pilot/scanfi_douglasFir.tif",
+      "bytes": 2033,
+      "sha256": "7bc34a09c1c0c67c0caefed12181161ee9942ca6b7b3bccb51d8be58fcba2d86"
+    },
+    {
+      "path": "data/raw/ignition_pilot/scanfi_jackPine.tif",
+      "bytes": 278478,
+      "sha256": "685735dea584a236c96e7d08892cde125c70860f70582f21cdf34d424f526203"
+    },
+    {
+      "path": "data/raw/ignition_pilot/scanfi_lodgepolePine.tif",
+      "bytes": 2033,
+      "sha256": "7bc34a09c1c0c67c0caefed12181161ee9942ca6b7b3bccb51d8be58fcba2d86"
+    },
+    {
+      "path": "data/raw/ignition_pilot/scanfi_ponderosaPine.tif",
+      "bytes": 2033,
+      "sha256": "7bc34a09c1c0c67c0caefed12181161ee9942ca6b7b3bccb51d8be58fcba2d86"
+    },
+    {
+      "path": "data/raw/ignition_pilot/scanfi_prcB.tif",
+      "bytes": 377701,
+      "sha256": "992082c6ab1cd0758a0a473d1c58c5801273b3fbc16aa220a0d5aff6a71f69cb"
+    },
+    {
+      "path": "data/raw/ignition_pilot/scanfi_prcC_other.tif",
+      "bytes": 185113,
+      "sha256": "6a8af5d6c927c1e4658676cf7747bc49752f3de9a3d5e8f977fc493c2b0d9e02"
+    },
+    {
+      "path": "data/raw/ignition_pilot/scanfi_tamarack.tif",
+      "bytes": 76683,
+      "sha256": "ae520418ecb87d10925a548e5c0da7c9e098c1a60d891a2100385fb909b06979"
+    },
+    {
+      "path": "data/raw/ignition_pilot/scanfi_v1_readme.txt",
+      "bytes": 6681,
+      "sha256": "7456256fbbf733d511da0f0be5dbfc5aeb2cca99ee61b01b47f898cbcdd46d3d"
+    },
+    {
+      "path": "data/raw/ignition_pilot/scanfi_whiteRedPine.tif",
+      "bytes": 24124,
+      "sha256": "50ed7c7b89e2776015b7c6d75645786dac1225b6988d39ecb2d7b07be2f2361c"
+    },
+    {
+      "path": "data/raw/samples/thunder_bay/fbp_2024.tif",
+      "bytes": 2097588,
+      "sha256": "ffafb5b20aac245cc30b116eeac2a1bc88b3cd2d807cadbba9367800a7b9dfd5"
+    },
+    {
+      "path": "data/raw/samples/thunder_bay/mrdem_dtm.tif",
+      "bytes": 2656056,
+      "sha256": "503da7a17e5aef6163153107d2d5cd75a5b4fdaeebdf1090bdfc533fd7a0fc0f"
+    },
+    {
+      "path": "data/processed/static_features_2500m.parquet",
+      "bytes": 92276,
+      "sha256": "3ac0671cb1fe9d09f9cfa1efe0dd5664d7ec3b5ec860167d2cfa7ab31b1c719e"
+    }
+  ]
+}

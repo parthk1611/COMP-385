@@ -1,0 +1,12 @@
+{
+  "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/week_5_prototype_2026-10-16/historical_ignition_map.html",
+  "sha256": "88b04b3c1fec1108f07cb6f61b0d97f6e42dc5eff89f8398f1303f62928c1d42",
+  "bytes": 51615223,
+  "cells": 9673,
+  "dates": 184,
+  "default_date": "2019-05-01",
+  "model_mode": "retrospective_final_evaluation",
+  "explanation_scale": "raw log odds, not calibrated probability",
+  "operational": false,
+  "code_sha256": "14354b6bddf3e0becfe37b516a7c66369830ef7b623d495ce47f75bb68ca1cb9"
+}

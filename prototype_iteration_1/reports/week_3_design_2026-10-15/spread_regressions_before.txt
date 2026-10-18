@@ -1,0 +1,59 @@
+.........FFF.....F.                                                      [100%]
+=================================== FAILURES ===================================
+_ SimulationTest.test_an_explicit_empty_active_mask_does_not_restart_the_edge __
+
+self = <test_fire_spread_simulator.SimulationTest testMethod=test_an_explicit_empty_active_mask_does_not_restart_the_edge>
+
+    def test_an_explicit_empty_active_mask_does_not_restart_the_edge(self) -> None:
+        case = flat_case(np.full((21, 21), 2, dtype=np.int32))
+        initial = one_cell(case.shape, 10, 10)
+        arrival = SIM.simulate(case, initial, START, hours=2., active=np.zeros(case.shape, dtype=bool))
+>       self.assertEqual(int(np.isfinite(arrival).sum()), 1)
+E       AssertionError: 86 != 1
+
+capability_2_fire_spread/tests/test_fire_spread_simulator.py:118: AssertionError
+__________ SimulationTest.test_diagonal_cannot_clip_a_blocked_corner ___________
+
+self = <test_fire_spread_simulator.SimulationTest testMethod=test_diagonal_cannot_clip_a_blocked_corner>
+
+    def test_diagonal_cannot_clip_a_blocked_corner(self) -> None:
+        fuel = np.array([[2, SIM.WATER_CODE], [SIM.WATER_CODE, 2]], dtype=np.int32)
+        case = flat_case(fuel)
+        arrival = SIM.simulate(case, one_cell(case.shape, 0, 0), START, hours=6.)
+>       self.assertFalse(np.isfinite(arrival[1, 1]))
+E       AssertionError: np.True_ is not false
+
+capability_2_fire_spread/tests/test_fire_spread_simulator.py:112: AssertionError
+_____ SimulationTest.test_final_perimeter_repair_requires_explicit_opt_in ______
+
+self = <test_fire_spread_simulator.SimulationTest testMethod=test_final_perimeter_repair_requires_explicit_opt_in>
+
+    def test_final_perimeter_repair_requires_explicit_opt_in(self) -> None:
+>       self.assertFalse(SIM.Settings().repair_burn_scar)
+E       AssertionError: True is not false
+
+capability_2_fire_spread/tests/test_fire_spread_simulator.py:121: AssertionError
+____ SimulationTest.test_surface_fire_cannot_jump_a_one_cell_water_barrier _____
+
+self = <test_fire_spread_simulator.SimulationTest testMethod=test_surface_fire_cannot_jump_a_one_cell_water_barrier>
+
+    def test_surface_fire_cannot_jump_a_one_cell_water_barrier(self) -> None:
+        for axis in (0, 1):
+            fuel = np.full((21, 21), 2, dtype=np.int32)
+            if axis == 0:
+                fuel[10, :] = SIM.WATER_CODE
+            else:
+                fuel[:, 10] = SIM.WATER_CODE
+            case = flat_case(fuel, wind=30., wind_from=180. if axis == 0 else 270.)
+            arrival = SIM.simulate(case, one_cell(case.shape, 5, 5), START, hours=6.)
+            far_side = arrival[11:, :] if axis == 0 else arrival[:, 11:]
+>           self.assertFalse(np.isfinite(far_side).any())
+E           AssertionError: np.True_ is not false
+
+capability_2_fire_spread/tests/test_fire_spread_simulator.py:106: AssertionError
+=========================== short test summary info ============================
+FAILED capability_2_fire_spread/tests/test_fire_spread_simulator.py::SimulationTest::test_an_explicit_empty_active_mask_does_not_restart_the_edge
+FAILED capability_2_fire_spread/tests/test_fire_spread_simulator.py::SimulationTest::test_diagonal_cannot_clip_a_blocked_corner
+FAILED capability_2_fire_spread/tests/test_fire_spread_simulator.py::SimulationTest::test_final_perimeter_repair_requires_explicit_opt_in
+FAILED capability_2_fire_spread/tests/test_fire_spread_simulator.py::SimulationTest::test_surface_fire_cannot_jump_a_one_cell_water_barrier
+4 failed, 15 passed in 0.98s

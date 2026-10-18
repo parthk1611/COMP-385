@@ -1,0 +1,11 @@
+{
+  "source_config_match": true,
+  "model_config_match": true,
+  "snapshot_match": true,
+  "bundle_crc_ok": true,
+  "manifest_entries": 66,
+  "bundle_sha256": "1aaef1d4d5a735a3388a191cd1d4d735fe968dc4ffcbc1fbece99df28e047bf2",
+  "bundle_bytes": 912260,
+  "pdf_visual_review": "All 15 final pages inspected in rendered contact sheets; metrics page inspected at full size. No clipping/overlap/glyph defects observed.",
+  "reserved_data": "Comparison reads training/validation only; hash-only reservation integrity separately verified."
+}

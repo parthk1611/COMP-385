@@ -1,0 +1,18 @@
+[
+  {
+    "role": "calibration",
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_evaluation_v1/calibration.parquet",
+    "sha256": "8cde63a28b4b5f6b7369b63f489c0d9ec2a52de3d9085bd93e448f6331c73d15",
+    "unchanged": true,
+    "mode": "0o644",
+    "check": "raw-byte hashing only; no Parquet content opened by comparison"
+  },
+  {
+    "role": "final_test",
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_evaluation_v1/final_test.parquet",
+    "sha256": "e37b96286065f0b540a9cd59757ece2f029d2a3b0a2b8048c5794084169a984a",
+    "unchanged": true,
+    "mode": "0o444",
+    "check": "raw-byte hashing only; no Parquet content opened by comparison"
+  }
+]

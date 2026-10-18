@@ -1,0 +1,83 @@
+{
+  "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/scripts/refine_provincial_fuel.py",
+  "language": "python",
+  "metrics": {
+    "lines": {
+      "total": 77,
+      "code": 68,
+      "blank": 8,
+      "comment": 1
+    },
+    "functions": 3,
+    "classes": 0,
+    "avg_complexity": 11.3
+  },
+  "quality_score": 82,
+  "grade": "B",
+  "smells": [
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'weighted_codes' has complexity 11 (max: 10)",
+      "location": "weighted_codes"
+    },
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'native_fuel' has complexity 11 (max: 10)",
+      "location": "native_fuel"
+    },
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'run' has complexity 12 (max: 10)",
+      "location": "run"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 100000 should be a named constant",
+      "location": "line 30"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2024 should be a named constant",
+      "location": "line 33"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 3978 should be a named constant",
+      "location": "line 38"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 10000 should be a named constant",
+      "location": "line 41"
+    }
+  ],
+  "solid_violations": [],
+  "function_details": [
+    {
+      "name": "weighted_codes",
+      "parameters": 3,
+      "lines": 16,
+      "complexity": 11
+    },
+    {
+      "name": "native_fuel",
+      "parameters": 1,
+      "lines": 25,
+      "complexity": 11
+    },
+    {
+      "name": "run",
+      "parameters": 2,
+      "lines": 19,
+      "complexity": 12
+    }
+  ],
+  "class_details": []
+}

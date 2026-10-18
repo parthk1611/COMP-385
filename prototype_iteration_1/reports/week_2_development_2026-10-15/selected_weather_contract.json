@@ -1,0 +1,24 @@
+{
+  "version": "selected_era5_pilot_weather_v1",
+  "purpose": "Bounded research weather transformation; not a joined ignition panel or operational forecast",
+  "input": "CDS ERA5-Land 2025 Jan-Nov hourly pilot, five variables",
+  "keys": [
+    "weather_cell",
+    "date"
+  ],
+  "observation_time_field": "noon_time_utc",
+  "units": {
+    "temp_c": "degrees Celsius",
+    "rh_pct": "percent; Magnus water approximation",
+    "wind_kmh": "km/h",
+    "wind_from_degrees": "meteorological from bearing; north0 east90",
+    "rain_24h_mm": "mm over (noon-24h,noon]"
+  },
+  "timezone": "Fixed UTC-5 standard noon for this Thunder Bay input; western Ontario would require a declared UTC-6 or verified local-standard-time mapping",
+  "fwi_startup": "Research-only April1 FFMC85/DMC6/DC15; no snow/overwintering assertion",
+  "missingness": "Missing hourly rainfall/required noon weather invalidates state; no implicit zero rainfall or restart",
+  "forecast_cutoff": "For a 00:00 local calendar-day label, only a preceding weather noon is eligible; same-date noon is forbidden. Reanalysis is retrospective; no available-at-issue claim. No ignition join was built by this converter.",
+  "province_execution": "Current implementation loads full hourly input arrays and loops cells; use on bounded pilot grids. Province processing needs chunking and timezone/state design before use.",
+  "ecmwf_reference": "https://confluence.ecmwf.int/spaces/CKB/pages/140385202/ERA5-Land+data+documentation",
+  "output": "../../data/processed/selected_weather_v1/era5_daily_weather.parquet"
+}

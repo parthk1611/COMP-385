@@ -1,0 +1,27 @@
+{
+  "machine": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "scope": "HTTP response transport only; includes body transfer/Parquet lookup, excludes browser render and offline builds",
+  "requests": {
+    "historical_map": {
+      "n": 20,
+      "bytes": 51615289,
+      "p50_seconds": 0.031825353973545134,
+      "p95_seconds": 0.03816361870267429,
+      "max_seconds": 0.04175924998708069
+    },
+    "selected_map": {
+      "n": 20,
+      "bytes": 19910529,
+      "p50_seconds": 0.01231808349257335,
+      "p95_seconds": 0.013693723193136977,
+      "max_seconds": 0.014390666969120502
+    },
+    "historical_cell": {
+      "n": 20,
+      "bytes": 261,
+      "p50_seconds": 0.014714270480908453,
+      "p95_seconds": 0.023415518662659472,
+      "max_seconds": 0.04973800003062934
+    }
+  }
+}

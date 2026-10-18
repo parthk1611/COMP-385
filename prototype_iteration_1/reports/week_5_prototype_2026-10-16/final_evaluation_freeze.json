@@ -1,0 +1,26 @@
+{
+  "artifacts": [
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week5_v1/temporal_lightgbm_calibrated.joblib",
+      "sha256": "0f879891bf39a45d63de3bd7bef2f2a31be2b98962bf370303a461a271ed514b",
+      "save_load_parity": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week5_v1/spatial_lightgbm_calibrated.joblib",
+      "sha256": "e7c5c5d11565a5f8502fb8df321dcb187802c86e1237054e4fa2bcea18cd5b5b",
+      "save_load_parity": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/week_5_prototype_2026-10-16/calibration_report.json",
+      "sha256": "2a785b4b0d83c889d24698324a7d711aea9a723d365af0c22ab137bee8ea49bb"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/week_5_prototype_2026-10-16/protocol_freeze.json",
+      "sha256": "a6679a4514e46a2dbeab484ba2e32a52cfb250479c9c8f476895a448208b3f9c"
+    }
+  ],
+  "alert_policy": "ceil(1% of eligible cells) separately perday, deterministic key-hash ties, same budget for calibrated/raw/prior; illustrative research capacity, not stakeholder-approved; no threshold tuned on2019",
+  "selection_complete_before_final_content": true,
+  "calibration_fit_on": 2018,
+  "no_post_final_tuning": true
+}

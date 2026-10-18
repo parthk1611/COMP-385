@@ -1,0 +1,63 @@
+{
+  "version": "ignition-evaluation-reservation-v1",
+  "created_utc": "2026-10-15T16:47:21.085446+00:00",
+  "status": "Frozen local selectors; not yet enforced by a training pipeline",
+  "historical_grid_sha256": "b22741d83b64c2b78c19fbf182848566644a23fad4aeef3301ff25ef7c6c3f35",
+  "grid_size_m": 10000,
+  "crs": "EPSG:3978",
+  "temporal_protocol": {
+    "training_years": [
+      2010,
+      2015
+    ],
+    "validation_years": [
+      2016,
+      2017
+    ],
+    "calibration_years": [
+      2018,
+      2018
+    ],
+    "final_test_years": [
+      2019,
+      2019
+    ],
+    "season": "May 1 through October 31",
+    "timezone": "America/Toronto",
+    "issue_time": "00:00 local",
+    "final_refit": "After selecting hyperparameters on validation, refit training+validation years 2010-2017; calibrate on 2018; score 2019 once after freeze. No learned transform may fit 2018/2019 unless it is the explicitly declared calibration map fitted only on 2018.",
+    "prior_exposure": "Existing all-year EDA includes 2019 descriptive inspection; this is not a pristine never-inspected holdout. No model has been selected using these proposed final-test scores."
+  },
+  "spatial_protocol": {
+    "separate_experiment": true,
+    "block_size_m": 100000,
+    "selection": "int(sha256(\"comp385-spatial-v1|block_x|block_y\")[:16],16) % 5 == 0",
+    "buffer": "Exclude development-cell centres less than 20000 m from any reserved test-cell centre",
+    "geographic_development_cells": 7767,
+    "spatial_test_cells": 1387,
+    "buffer_cells": 519,
+    "temporal_rules": "Use same year roles; train/validate/calibrate only spatial_development cells; final score only spatial_test cells in 2019. Do not reuse the fitted all-geography temporal model.",
+    "history_features": "For this strict secondary experiment, exclude all fire_history_* features from both training and testing; otherwise held-out-area labels could enter engineered history features. Fit preprocessing on spatial-development training years only."
+  },
+  "eligibility_caveat": "Existing grid includes cells added due to historical ignitions. Reservation does not fix that label-dependent study-mask design; report it and conduct a separate label-independent-mask sensitivity study before final claims.",
+  "checks": {
+    "grid_unique": true,
+    "all_cells_assigned": true,
+    "dates_unique": true,
+    "dates_expected": true,
+    "spatial_roles_disjoint": true,
+    "min_development_to_test_center_distance_m": 20000.0,
+    "label_values_used_to_select_spatial_blocks": false,
+    "test_feature_values_read": false
+  },
+  "selectors": {
+    "ignition_spatial_partition_v1.csv": {
+      "sha256": "cc6003b321c6b660e766c29b4940829a0fe8b983386a7cb3cd6c041537d9fec0",
+      "rows": 9673
+    },
+    "ignition_temporal_partition_v1.csv": {
+      "sha256": "63a6215dfade10a14f8d446ca7a3d7544bfda17d5fa9b6bb216e010515ea34b4",
+      "rows": 1840
+    }
+  }
+}

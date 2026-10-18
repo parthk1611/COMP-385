@@ -1,0 +1,8 @@
+{
+  "python": "3.13.12 | packaged by Anaconda, Inc. | (main, Feb 24 2026, 16:07:20) [Clang 20.1.8 ]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "dependency_source": "existing project environment; no clean-machine dependency installation claimed",
+  "test_cwd": "extracted layout Code_Iteration_1",
+  "test_command": "python -m pytest tests team_repository/tests team_repository/capability_2_fire_spread/tests -q",
+  "returncode": 0
+}

@@ -1,0 +1,113 @@
+{
+  "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/scripts/prepare_selected_weather.py",
+  "language": "python",
+  "metrics": {
+    "lines": {
+      "total": 185,
+      "code": 161,
+      "blank": 22,
+      "comment": 2
+    },
+    "functions": 8,
+    "classes": 0,
+    "avg_complexity": 8.1
+  },
+  "quality_score": 75,
+  "grade": "C",
+  "smells": [
+    {
+      "type": "high_complexity",
+      "severity": "high",
+      "message": "Function 'daily_weather' has complexity 23 (max: 10)",
+      "location": "daily_weather"
+    },
+    {
+      "type": "high_complexity",
+      "severity": "high",
+      "message": "Function 'read_era5' has complexity 23 (max: 10)",
+      "location": "read_era5"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 1000 should be a named constant",
+      "location": "line 36"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 100 should be a named constant",
+      "location": "line 41"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 360 should be a named constant",
+      "location": "line 46"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 100 should be a named constant",
+      "location": "line 70"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 1970 should be a named constant",
+      "location": "line 102"
+    }
+  ],
+  "solid_violations": [],
+  "function_details": [
+    {
+      "name": "deaccumulate_era5",
+      "parameters": 2,
+      "lines": 18,
+      "complexity": 7
+    },
+    {
+      "name": "humidity",
+      "parameters": 2,
+      "lines": 6,
+      "complexity": 1
+    },
+    {
+      "name": "wind",
+      "parameters": 2,
+      "lines": 7,
+      "complexity": 1
+    },
+    {
+      "name": "daily_weather",
+      "parameters": 3,
+      "lines": 43,
+      "complexity": 23
+    },
+    {
+      "name": "read_era5",
+      "parameters": 1,
+      "lines": 38,
+      "complexity": 23
+    },
+    {
+      "name": "build",
+      "parameters": 4,
+      "lines": 25,
+      "complexity": 4
+    },
+    {
+      "name": "digest",
+      "parameters": 1,
+      "lines": 21,
+      "complexity": 4
+    },
+    {
+      "name": "main",
+      "parameters": 0,
+      "lines": 13,
+      "complexity": 2
+    }
+  ],
+  "class_details": []
+}

@@ -1,0 +1,146 @@
+[
+  {
+    "id": "cell2fire_2021",
+    "url": "https://www.frontiersin.org/journals/forests-and-global-change/articles/10.3389/ffgc.2021.692706/pdf",
+    "retrieved_utc": "2026-10-15T03:44:34.158491+00:00",
+    "resolved_url": "https://www.frontiersin.org/journals/forests-and-global-change/articles/10.3389/ffgc.2021.692706/pdf",
+    "path": "sources/cell2fire_2021.pdf",
+    "sha256": "447077363452dbf134c68e27a0ecf2e466edcc44f9ab8cd4eb51c78d5a64479e",
+    "bytes": 5727411,
+    "downloaded": true,
+    "pages": 21
+  },
+  {
+    "id": "kim_2025",
+    "url": "https://www.nature.com/articles/s41598-025-05706-6.pdf",
+    "retrieved_utc": "2026-10-15T03:44:34.158831+00:00",
+    "resolved_url": "https://www.nature.com/articles/s41598-025-05706-6.pdf?error=cookies_not_supported&code=6f9e25be-6681-40f8-8cf9-4a3032b3e2de",
+    "path": "sources/kim_2025.pdf",
+    "sha256": "a4f41dd7641458f2a783d8100420b928060806ad3d78e34b40e82bc591ca8a37",
+    "bytes": 6018182,
+    "downloaded": true,
+    "pages": 11
+  },
+  {
+    "id": "pytorchfire_2025",
+    "url": "https://zeyuxia.com/publications/xia-2025-pytorchfire/PyTorchFire_EMS_2025.pdf",
+    "retrieved_utc": "2026-10-15T03:44:34.158922+00:00",
+    "resolved_url": "https://zeyuxia.com/publications/xia-2025-pytorchfire/PyTorchFire_EMS_2025.pdf",
+    "path": "sources/pytorchfire_2025.pdf",
+    "sha256": "09d3a62ec4375abde2ca0f177ba02173b2660cb54a573db6bccf4d21e137eb2d",
+    "bytes": 7366495,
+    "downloaded": true,
+    "pages": 16
+  },
+  {
+    "id": "jaxwildfire_2025",
+    "url": "https://ml4physicalsciences.github.io/2025/files/NeurIPS_ML4PS_2025_80.pdf",
+    "retrieved_utc": "2026-10-15T03:44:34.158992+00:00",
+    "resolved_url": "https://ml4physicalsciences.github.io/2025/files/NeurIPS_ML4PS_2025_80.pdf",
+    "path": "sources/jaxwildfire_2025.pdf",
+    "sha256": "a42aa49be0f86cbe727822d3d71fee8c453716d0207d17e5e7e7e6bf250ec372",
+    "bytes": 1105739,
+    "downloaded": true,
+    "pages": 8
+  },
+  {
+    "id": "prometheus_2010",
+    "url": "https://publications.gc.ca/collections/collection_2010/nrcan/Fo133-1-417-eng.pdf",
+    "retrieved_utc": "2026-10-15T03:44:34.159050+00:00",
+    "resolved_url": "https://publications.gc.ca/site/archivee-archived.html?url=https%3A%2F%2Fpublications.gc.ca%2Fcollections%2Fcollection_2010%2Fnrcan%2FFo133-1-417-eng.pdf",
+    "downloaded": false,
+    "error": "Response is not PDF"
+  },
+  {
+    "id": "next_day_spread_2022_preprint",
+    "url": "https://arxiv.org/pdf/2112.02447",
+    "retrieved_utc": "2026-10-15T03:44:34.386928+00:00",
+    "resolved_url": "https://arxiv.org/pdf/2112.02447",
+    "path": "sources/next_day_spread_2022_preprint.pdf",
+    "sha256": "270b15478a73f9791d19a6bfebf372fee0f8036dd6d51c7d8effc15f133aa9b8",
+    "bytes": 2651755,
+    "downloaded": true,
+    "pages": 17
+  },
+  {
+    "id": "wildfirespreadts_2023",
+    "url": "https://proceedings.nips.cc/paper_files/paper/2023/file/ebd545176bdaa9cd5d45954947bd74b7-Paper-Datasets_and_Benchmarks.pdf",
+    "retrieved_utc": "2026-10-15T03:44:34.741018+00:00",
+    "resolved_url": "https://proceedings.nips.cc/paper_files/paper/2023/file/ebd545176bdaa9cd5d45954947bd74b7-Paper-Datasets_and_Benchmarks.pdf",
+    "path": "sources/wildfirespreadts_2023.pdf",
+    "sha256": "cde1e00b125759633cc4dd72748da2393ca60881110f0500d14aeec3a91beb44",
+    "bytes": 2305741,
+    "downloaded": true,
+    "pages": 15
+  },
+  {
+    "id": "jain_2020_author_manuscript",
+    "url": "https://markcrowley.ca/assets/pdf/2020-envrevjrnl-jain-review.pdf",
+    "retrieved_utc": "2026-10-15T03:44:35.282493+00:00",
+    "resolved_url": "https://markcrowley.ca/assets/pdf/2020-envrevjrnl-jain-review.pdf",
+    "path": "sources/jain_2020_author_manuscript.pdf",
+    "sha256": "d872f0eddbb3fae93115c4be5eb5cb9ac9b4c1483dd5da4a485d292978c9dec9",
+    "bytes": 2728395,
+    "downloaded": true,
+    "pages": 79
+  },
+  {
+    "id": "dpv_author_thesis",
+    "url": "https://escholarship.org/content/qt1pz7c83m/qt1pz7c83m_noSplash_178cd3b256d144d7cfd29b2f09f8da2b.pdf",
+    "retrieved_utc": "2026-10-15T03:44:37.328328+00:00",
+    "downloaded": false,
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "id": "c2fk_readme",
+    "url": "https://raw.githubusercontent.com/fire2a/C2FK/main/README.md",
+    "retrieved_utc": "2026-10-15T03:44:37.575201+00:00",
+    "resolved_url": "https://raw.githubusercontent.com/fire2a/C2FK/main/README.md",
+    "path": "sources/c2fk_readme.md",
+    "sha256": "0a325ff00607bd7e5522d3a7e8a1eb3a242817c167e23ddb89aa1c6377913894",
+    "bytes": 10579,
+    "downloaded": true
+  },
+  {
+    "id": "pytorchfire_readme",
+    "url": "https://raw.githubusercontent.com/xiazeyu/PyTorchFire/main/README.md",
+    "retrieved_utc": "2026-10-15T03:44:37.668357+00:00",
+    "resolved_url": "https://raw.githubusercontent.com/xiazeyu/PyTorchFire/main/README.md",
+    "path": "sources/pytorchfire_readme.md",
+    "sha256": "f06df00a0e47710a83a7e60864bb708431be130f476375b6096df19aba2c9af9",
+    "bytes": 8796,
+    "downloaded": true
+  },
+  {
+    "id": "jaxwildfire_readme",
+    "url": "https://raw.githubusercontent.com/ori-goals/JaxWildfire/main/README.md",
+    "retrieved_utc": "2026-10-15T03:44:37.692354+00:00",
+    "resolved_url": "https://raw.githubusercontent.com/ori-goals/JaxWildfire/main/README.md",
+    "path": "sources/jaxwildfire_readme.md",
+    "sha256": "825125b7f2e7e6fea2be378088fa2e3f7f429e4cd1e45e737b437d461bbe9ef5",
+    "bytes": 196,
+    "downloaded": true
+  },
+  {
+    "id": "cell2fire_readme",
+    "url": "https://raw.githubusercontent.com/cell2fire/Cell2Fire/master/README.md",
+    "retrieved_utc": "2026-10-15T03:44:37.785772+00:00",
+    "resolved_url": "https://raw.githubusercontent.com/cell2fire/Cell2Fire/master/README.md",
+    "path": "sources/cell2fire_readme.md",
+    "sha256": "63fa1f0688edb5c21f7c4fdab49a6973380204a5e6f9d7abb8c261885ae2adbc",
+    "bytes": 4122,
+    "downloaded": true
+  },
+  {
+    "id": "dpv_2021_institutional_html",
+    "url": "https://doi.org/10.1016/j.cor.2021.105252",
+    "retrieved_on": "2026-10-15",
+    "method": "Centennial Library publisher full-text HTML saved with browser UI",
+    "path": "sources/dpv_2021_fulltext.mhtml",
+    "sha256": "ad4c077e9fe16176dd843ccbe14aa0122488f704ed5232c2e9b1a26868fc43aa",
+    "bytes": 4056257,
+    "downloaded": true,
+    "format": "MHTML; private local study copy",
+    "pages": null
+  }
+]

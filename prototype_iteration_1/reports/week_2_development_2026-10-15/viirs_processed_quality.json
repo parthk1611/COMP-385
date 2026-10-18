@@ -1,0 +1,45 @@
+{
+  "rows": 300601,
+  "fires": 631,
+  "columns": [
+    "fire_id",
+    "observation",
+    "time_utc",
+    "satellite",
+    "longitude",
+    "latitude",
+    "x",
+    "y",
+    "frp",
+    "confidence",
+    "daynight",
+    "distance_outside_perimeter_m"
+  ],
+  "time_min": "2012-05-12 17:25:00+00:00",
+  "time_max": "2024-10-18 19:44:00+00:00",
+  "missing_counts": {
+    "fire_id": 0,
+    "observation": 0,
+    "time_utc": 0,
+    "satellite": 0,
+    "longitude": 0,
+    "latitude": 0,
+    "x": 0,
+    "y": 0,
+    "frp": 0,
+    "confidence": 0,
+    "daynight": 0,
+    "distance_outside_perimeter_m": 0
+  },
+  "confidence_counts": {
+    "n": 282515,
+    "h": 18086
+  },
+  "satellites": {
+    "N": 163087,
+    "N20": 137514
+  },
+  "duplicate_event_time_coordinate_rows": 0,
+  "source_sha256": "5e56d563f502fd70155ca7a0cb8fd0eb424b144df924b18c2431e28987aebbe6",
+  "scope": "Processed event-matched detections; not all raw Ontario detections. Matching may use final event extents; do not use as ignition inputs."
+}

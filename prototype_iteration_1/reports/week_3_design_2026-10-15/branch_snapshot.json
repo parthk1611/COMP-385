@@ -1,0 +1,19 @@
+{
+  "reviewed": "2026-10-16",
+  "local_branch": "codex/week-one-plan",
+  "local_HEAD": "4707b0b3bad4fbd11378c95c93944ae47a7271de",
+  "remote_refs": [
+    "origin c4f88a7c7e764ea36e151a886070e57acc2f43f1",
+    "origin/ai-capstone-import ef23ef78677cc71def7a3f9eb28d8e1d1d7aaa68",
+    "origin/docs/dataset-context b3ebe98b2b470c40c73fe6f2a653ad4275757690",
+    "origin/docs/ignition-eda 00498e9eb97bdaaa0b67c45da848a2ae990ca573",
+    "origin/docs/model-selection 2ae767eb42679add4b2db33d7e1549b5204f6417",
+    "origin/fm/comp-385-document-project-context 1fde049a933984e9b243c54c98cbee2f2590141b",
+    "origin/main c4f88a7c7e764ea36e151a886070e57acc2f43f1",
+    "origin/rishi/fire-disturbance-eda a02b683235d41057f9b21c6c2c330443dc963cbc",
+    "origin/rishi/fire-spread-dataset ce3c83ef94826e47796bd6f4ac64d3c47a9f706a"
+  ],
+  "remote_merge_or_push": false,
+  "fetched_main_change": "Relative to the prior inspected main, only capability_2_fire_spread/.gitignore changed; no main source merge was needed. rishi history changed with identical compared trees.",
+  "note": "Remote heads are the fetched snapshot, not a promise about future GitHub state."
+}

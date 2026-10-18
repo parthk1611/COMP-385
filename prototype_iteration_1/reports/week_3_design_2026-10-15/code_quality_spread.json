@@ -1,0 +1,196 @@
+{
+  "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/team_repository/capability_2_fire_spread/scripts/simulate_spread.py",
+  "language": "python",
+  "metrics": {
+    "lines": {
+      "total": 301,
+      "code": 239,
+      "blank": 41,
+      "comment": 21
+    },
+    "functions": 9,
+    "classes": 2,
+    "avg_complexity": 10.0
+  },
+  "quality_score": 46,
+  "grade": "F",
+  "smells": [
+    {
+      "type": "long_function",
+      "severity": "medium",
+      "message": "Function 'load_case' has 77 lines (max: 50)",
+      "location": "load_case"
+    },
+    {
+      "type": "long_function",
+      "severity": "medium",
+      "message": "Function 'rates_for' has 68 lines (max: 50)",
+      "location": "rates_for"
+    },
+    {
+      "type": "too_many_parameters",
+      "severity": "low",
+      "message": "Function 'simulate' has 6 parameters (max: 5)",
+      "location": "simulate"
+    },
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'move_clearance' has complexity 11 (max: 10)",
+      "location": "move_clearance"
+    },
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'load_case' has complexity 17 (max: 10)",
+      "location": "load_case"
+    },
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'simulate' has complexity 19 (max: 10)",
+      "location": "simulate"
+    },
+    {
+      "type": "high_complexity",
+      "severity": "high",
+      "message": "Function 'rates_for' has complexity 29 (max: 10)",
+      "location": "rates_for"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 375 should be a named constant",
+      "location": "line 78"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 375 should be a named constant",
+      "location": "line 80"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 375 should be a named constant",
+      "location": "line 88"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 375 should be a named constant",
+      "location": "line 97"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 102 should be a named constant",
+      "location": "line 103"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2024 should be a named constant",
+      "location": "line 109"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 1000 should be a named constant",
+      "location": "line 144"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 3978 should be a named constant",
+      "location": "line 179"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 4326 should be a named constant",
+      "location": "line 180"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 360 should be a named constant",
+      "location": "line 220"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 360 should be a named constant",
+      "location": "line 237"
+    }
+  ],
+  "solid_violations": [],
+  "function_details": [
+    {
+      "name": "move_clearance",
+      "parameters": 2,
+      "lines": 45,
+      "complexity": 11
+    },
+    {
+      "name": "shape",
+      "parameters": 1,
+      "lines": 4,
+      "complexity": 1
+    },
+    {
+      "name": "mask_from_cells",
+      "parameters": 2,
+      "lines": 10,
+      "complexity": 4
+    },
+    {
+      "name": "burned_375",
+      "parameters": 3,
+      "lines": 11,
+      "complexity": 1
+    },
+    {
+      "name": "_repair_burn_scar",
+      "parameters": 2,
+      "lines": 18,
+      "complexity": 4
+    },
+    {
+      "name": "load_case",
+      "parameters": 3,
+      "lines": 77,
+      "complexity": 17
+    },
+    {
+      "name": "simulate",
+      "parameters": 6,
+      "lines": 29,
+      "complexity": 19
+    },
+    {
+      "name": "rates_for",
+      "parameters": 1,
+      "lines": 68,
+      "complexity": 29
+    },
+    {
+      "name": "weather_at",
+      "parameters": 2,
+      "lines": 6,
+      "complexity": 4
+    }
+  ],
+  "class_details": [
+    {
+      "name": "class",
+      "methods": 0,
+      "lines": 13
+    },
+    {
+      "name": "class",
+      "methods": 8,
+      "lines": 235
+    }
+  ]
+}

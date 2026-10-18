@@ -1,0 +1,18 @@
+{
+  "app_url": "http://127.0.0.1:8768/",
+  "checked": [
+    "Empty selection prompts selecting a grid cell",
+    "Selected-source first-day explanation values/units rendered",
+    "Changing the date clears prior cell details",
+    "Later-date details retain issue/model provenance and explicitly unavailable factors",
+    "Actual CSV download has 9648 unique grid keys on 2025-09-02",
+    "Live panel retains 0 paired days and 0 trusted observed cells, with no probability",
+    "Corrected spread viewer loads with reconstruction banner"
+  ],
+  "download": {
+    "path": "/Users/parthkevadiya/Downloads/selected_2025-09-02.csv",
+    "rows": 9648,
+    "unique_keys": 9648
+  },
+  "reviewer": "implementer; not independent first-time-user acceptance"
+}

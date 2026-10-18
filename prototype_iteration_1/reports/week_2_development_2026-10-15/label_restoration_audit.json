@@ -1,0 +1,14 @@
+{
+  "method": "Existing pinned grid/events, existing fire_season_dates(), unchanged five-field label semantics; no boundary/grid regenerated",
+  "rows": 17798320,
+  "grid_cells": 9673,
+  "dates": 1840,
+  "events": 8109,
+  "positive_cell_days": 7785,
+  "sources": {
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/team_repository/data/interim/ontario_fire_region_10km_grid.csv": "b22741d83b64c2b78c19fbf182848566644a23fad4aeef3301ff25ef7c6c3f35",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/team_repository/data/interim/ontario_fire_region_nfdb_ignitions_2010_2019.csv": "dff9a8cdb0b7e7b96f6210b90642ff4eff4c3be51754261ac07df003f1c4a518"
+  },
+  "labels": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/team_repository/data/processed/ontario_fire_region_10km_daily_ignition_labels_2010_2019.csv.gz",
+  "label_compressed_sha256": "cba5340778f75949d0c0000e4e789b26ea03557a8bfb9c8cd665481c7d6bf4f4"
+}

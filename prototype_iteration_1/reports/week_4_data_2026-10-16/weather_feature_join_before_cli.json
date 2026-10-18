@@ -1,0 +1,179 @@
+{
+  "feature_version": "ignition-feature-candidate-v2-daily-stations",
+  "status": "development_candidate_not_promoted",
+  "files": {
+    "training": {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_weather_v2_development/training.parquet",
+      "rows": 10678992,
+      "bytes": 1013108858,
+      "sha256": "358e3fcf0046d561b4436d363b0dd718a3f7518e07ea56fac5d3d78dfeda374e"
+    },
+    "validation": {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_weather_v2_development/validation.parquet",
+      "rows": 3559664,
+      "bytes": 348647715,
+      "sha256": "1ad37ddd640a671b91f41eb44c020dbc2e008a657b1e62472560fe5248335095"
+    }
+  },
+  "year_comparison": [
+    {
+      "year": 2010,
+      "role": "training",
+      "rows": 1779832,
+      "v1_weather_missing": 482517,
+      "v2_weather_missing": 249567,
+      "newly_available_rows": 268264,
+      "no_longer_available_rows": 35314,
+      "fwi_mean_absolute_change_when_both_available": 0.8336956226816585,
+      "v2_nearest_station_km_quantiles_50_95_100": [
+        64.36386613656438,
+        164.01062310747588,
+        199.97745448249307
+      ],
+      "v1_positive_cell_days": 661,
+      "current_boundary_excluded_cell_days": 4600,
+      "current_boundary_excluded_positive_cell_days": 5
+    },
+    {
+      "year": 2011,
+      "role": "training",
+      "rows": 1779832,
+      "v1_weather_missing": 555552,
+      "v2_weather_missing": 174142,
+      "newly_available_rows": 427720,
+      "no_longer_available_rows": 46310,
+      "fwi_mean_absolute_change_when_both_available": 0.940806767521952,
+      "v2_nearest_station_km_quantiles_50_95_100": [
+        72.30551350271597,
+        171.87851788674757,
+        199.9996328812187
+      ],
+      "v1_positive_cell_days": 1245,
+      "current_boundary_excluded_cell_days": 4600,
+      "current_boundary_excluded_positive_cell_days": 2
+    },
+    {
+      "year": 2012,
+      "role": "training",
+      "rows": 1779832,
+      "v1_weather_missing": 653789,
+      "v2_weather_missing": 250096,
+      "newly_available_rows": 438455,
+      "no_longer_available_rows": 34762,
+      "fwi_mean_absolute_change_when_both_available": 0.9671906022927018,
+      "v2_nearest_station_km_quantiles_50_95_100": [
+        71.00912691544383,
+        176.83176034468204,
+        199.99379493596075
+      ],
+      "v1_positive_cell_days": 1407,
+      "current_boundary_excluded_cell_days": 4600,
+      "current_boundary_excluded_positive_cell_days": 5
+    },
+    {
+      "year": 2013,
+      "role": "training",
+      "rows": 1779832,
+      "v1_weather_missing": 654991,
+      "v2_weather_missing": 233539,
+      "newly_available_rows": 457057,
+      "no_longer_available_rows": 35605,
+      "fwi_mean_absolute_change_when_both_available": 0.6350544020425698,
+      "v2_nearest_station_km_quantiles_50_95_100": [
+        72.84678766856258,
+        175.1571304209381,
+        199.99379493596075
+      ],
+      "v1_positive_cell_days": 527,
+      "current_boundary_excluded_cell_days": 4600,
+      "current_boundary_excluded_positive_cell_days": 3
+    },
+    {
+      "year": 2014,
+      "role": "training",
+      "rows": 1779832,
+      "v1_weather_missing": 518114,
+      "v2_weather_missing": 182024,
+      "newly_available_rows": 377470,
+      "no_longer_available_rows": 41380,
+      "fwi_mean_absolute_change_when_both_available": 0.6227986104453491,
+      "v2_nearest_station_km_quantiles_50_95_100": [
+        68.18253358869363,
+        169.81571874032826,
+        199.99379493596075
+      ],
+      "v1_positive_cell_days": 293,
+      "current_boundary_excluded_cell_days": 4600,
+      "current_boundary_excluded_positive_cell_days": 2
+    },
+    {
+      "year": 2015,
+      "role": "training",
+      "rows": 1779832,
+      "v1_weather_missing": 1779816,
+      "v2_weather_missing": 150050,
+      "newly_available_rows": 1629766,
+      "no_longer_available_rows": 0,
+      "fwi_mean_absolute_change_when_both_available": 0.22841444382966758,
+      "v2_nearest_station_km_quantiles_50_95_100": [
+        66.81203091788717,
+        167.0193736869563,
+        199.9807116810658
+      ],
+      "v1_positive_cell_days": 584,
+      "current_boundary_excluded_cell_days": 4600,
+      "current_boundary_excluded_positive_cell_days": 3
+    },
+    {
+      "year": 2016,
+      "role": "validation",
+      "rows": 1779832,
+      "v1_weather_missing": 1753712,
+      "v2_weather_missing": 162592,
+      "newly_available_rows": 1591460,
+      "no_longer_available_rows": 340,
+      "fwi_mean_absolute_change_when_both_available": 0.9127385533030632,
+      "v2_nearest_station_km_quantiles_50_95_100": [
+        66.05266959451184,
+        167.70839783831144,
+        199.9807116810658
+      ],
+      "v1_positive_cell_days": 573,
+      "current_boundary_excluded_cell_days": 4600,
+      "current_boundary_excluded_positive_cell_days": 5
+    },
+    {
+      "year": 2017,
+      "role": "validation",
+      "rows": 1779832,
+      "v1_weather_missing": 1297588,
+      "v2_weather_missing": 228917,
+      "newly_available_rows": 1083859,
+      "no_longer_available_rows": 15188,
+      "fwi_mean_absolute_change_when_both_available": 0.8450021175653808,
+      "v2_nearest_station_km_quantiles_50_95_100": [
+        69.97934992079449,
+        170.53224992155572,
+        199.9923724627983
+      ],
+      "v1_positive_cell_days": 736,
+      "current_boundary_excluded_cell_days": 4600,
+      "current_boundary_excluded_positive_cell_days": 1
+    }
+  ],
+  "code_sha256": "5bfd6480df8ab94dbf55a842c5ec4633db5df16541ecb34ee476cbea004e70b3",
+  "weather_manifest_sha256": "b6c5e61a07f5ecd9f6497a3da8bbec1a7edf6b5ce16dd6d482c45d1877e1d152",
+  "original_materialization_manifest_sha256": "3531bda3000abe023fd54c46b1f171757b62b338dba0b139dd13df0f34affeec",
+  "selector_manifest_sha256": "4524309d0848ee20c674de3beb32891b161767d0e3e66d90b72ad4659b631d2c",
+  "predictor_contract_sha256": "51e162d6caf8e4242c0a7cc3fff730eefcac036834cbf142aaae7db64e41672c",
+  "calibration_and_final_test_opened": false,
+  "model_performance_compared": false,
+  "target_keys_and_labels_unchanged": true,
+  "mask_policy": "Retain v1 rows; current-boundary sensitivity flag is metadata and forbidden predictor. No added fire-dependent grid cells or inferred labels.",
+  "known_limits": [
+    "Current-boundary scenario is not old-boundary recovery",
+    "Historical weather availability timestamps unknown",
+    "Daily station/radius/quality/dedup changes need model sensitivity before promotion",
+    "No selected modern-source backfill or live compatibility claim"
+  ]
+}

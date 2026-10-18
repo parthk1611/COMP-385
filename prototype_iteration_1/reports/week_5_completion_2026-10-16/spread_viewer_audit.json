@@ -1,0 +1,15 @@
+{
+  "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/week_5_completion_2026-10-16/corrected_spread_viewer.html",
+  "sha256": "77a35de3fff6cd91705f6847281931fb813bcd7fcfe673fddc1a3651f4111201",
+  "fires": [
+    "2023_COC38",
+    "2021_RED72",
+    "2017_COC10",
+    "2019_RED44"
+  ],
+  "revision": "surface-barrier-clearance-v2",
+  "forecast_validated": false,
+  "renderer_code_sha256": "ae88477b6c49949a263b02a333f7965e12a4f8b9d15a05b27abb3d022ee4b7dc",
+  "layout_revision": "Legacy template has implicit body; explicit reconstruction banner inserted after style, simulation payload unchanged",
+  "theme_listener_revision": "Observe only an actual liveDOMNode; no simulation/payload change"
+}

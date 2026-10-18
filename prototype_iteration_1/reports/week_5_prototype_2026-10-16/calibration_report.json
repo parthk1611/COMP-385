@@ -1,0 +1,110 @@
+{
+  "results": [
+    {
+      "protocol": "temporal",
+      "refit_rows": 14238656,
+      "refit_positives": 6026,
+      "sampled_fitting_rows": 148407,
+      "calibrator": {
+        "method": "positive-slope logistic recalibration of clipped raw logit; natural prevalence; no smoothing/weights",
+        "slope": 0.8891474580956199,
+        "intercept": -0.7003492506750543,
+        "clip": 1e-12,
+        "optimizer_success": true,
+        "bounds": [
+          [
+            1e-06,
+            20
+          ],
+          [
+            -50,
+            50
+          ]
+        ]
+      },
+      "calibration_fit_diagnostics_not_unbiased_validation": {
+        "raw": {
+          "rows": 1779832,
+          "positives": 1250,
+          "prevalence": 0.0007023134767775835,
+          "average_precision": 0.010443906186766341,
+          "roc_auc": 0.8942641807912146,
+          "brier": 0.000700505305472083,
+          "log_loss": 0.004921486975281111,
+          "mean_probability": 0.0007417090292726942
+        },
+        "calibrated": {
+          "rows": 1779832,
+          "positives": 1250,
+          "prevalence": 0.0007023134767775835,
+          "average_precision": 0.010443906186766341,
+          "roc_auc": 0.8942641807912146,
+          "brier": 0.0006987173998645436,
+          "log_loss": 0.004908506346314688,
+          "mean_probability": 0.0007023134919429488
+        }
+      },
+      "feature_count": 36
+    },
+    {
+      "protocol": "spatial",
+      "refit_rows": 11433024,
+      "refit_positives": 4842,
+      "sampled_fitting_rows": 119558,
+      "calibrator": {
+        "method": "positive-slope logistic recalibration of clipped raw logit; natural prevalence; no smoothing/weights",
+        "slope": 0.8566090669814825,
+        "intercept": -0.8128920277309725,
+        "clip": 1e-12,
+        "optimizer_success": true,
+        "bounds": [
+          [
+            1e-06,
+            20
+          ],
+          [
+            -50,
+            50
+          ]
+        ]
+      },
+      "calibration_fit_diagnostics_not_unbiased_validation": {
+        "raw": {
+          "rows": 1429128,
+          "positives": 1028,
+          "prevalence": 0.0007193197530242218,
+          "average_precision": 0.003918141945229565,
+          "roc_auc": 0.878210298600873,
+          "brier": 0.0007206297402787585,
+          "log_loss": 0.005207214766075512,
+          "mean_probability": 0.0006705016913672837
+        },
+        "calibrated": {
+          "rows": 1429128,
+          "positives": 1028,
+          "prevalence": 0.0007193197530242218,
+          "average_precision": 0.003918141945229565,
+          "roc_auc": 0.878210298600873,
+          "brier": 0.0007186507178608955,
+          "log_loss": 0.0051895044128319,
+          "mean_probability": 0.0007193197516488397
+        }
+      },
+      "feature_count": 31
+    }
+  ],
+  "models": [
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week5_v1/temporal_lightgbm_calibrated.joblib",
+      "sha256": "0f879891bf39a45d63de3bd7bef2f2a31be2b98962bf370303a461a271ed514b",
+      "save_load_parity": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week5_v1/spatial_lightgbm_calibrated.joblib",
+      "sha256": "e7c5c5d11565a5f8502fb8df321dcb187802c86e1237054e4fa2bcea18cd5b5b",
+      "save_load_parity": true
+    }
+  ],
+  "final_test_opened": false,
+  "code_sha256": "6d39543cbf5276fcc658c9039824d01055105c86f14873d0d2649ff6c64e2470"
+}

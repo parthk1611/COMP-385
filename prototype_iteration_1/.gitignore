@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+.pytest_cache/
+.DS_Store
+/data/processed/ignition_models_week5_v1/spatial_final_predictions.parquet
+/data/processed/ignition_models_week5_v1/spatial_lightgbm_calibrated.joblib
+/data/processed/ignition_models_week5_v1/temporal_final_predictions.parquet
+/data/processed/ignition_models_week5_v1/temporal_lightgbm_calibrated.joblib
+/data/processed/ignition_weather_v2_reserved/final_test.parquet
+/data/processed/selected_2025_ignition_panel/cell_days.parquet
+/data/processed/selected_2025_models_v1/spatial_final_predictions.parquet
+/data/processed/selected_2025_models_v1/spatial_selected2025.joblib
+/data/processed/selected_2025_models_v1/temporal_final_predictions.parquet
+/data/processed/selected_2025_models_v1/temporal_selected2025.joblib
+/data/processed/selected_provincial_static_native_2025/static_features.parquet
+/reports/week_5_completion_2026-10-16/selected_2025_ignition_map.html
+/reports/week_5_prototype_2026-10-16/historical_ignition_map.html

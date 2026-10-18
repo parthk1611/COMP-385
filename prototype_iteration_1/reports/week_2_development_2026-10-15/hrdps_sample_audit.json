@@ -1,0 +1,257 @@
+[
+  {
+    "path": "data/raw/week_2_audit/hrdps_20261015T00Z_lead001/20261015T00Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT001H.grib2",
+    "grid_shape": [
+      1290,
+      2540
+    ],
+    "crs_wkt": "GEOGCRS[\"Coordinate System imported from GRIB file\",BASEGEOGCRS[\"Coordinate System imported from GRIB file\",DATUM[\"unnamed\",ELLIPSOID[\"Sphere\",6371229,0,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]],DERIVINGCONVERSION[\"Pole rotation (GRIB convention)\",METHOD[\"Pole rotation (GRIB convention)\"],PARAMETER[\"Latitude of the southern pole (GRIB convention)\",-36.08852,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]],PARAMETER[\"Longitude of the southern pole (GRIB convention)\",-114.694858,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]],PARAMETER[\"Axis rotation (GRIB convention)\",0,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]],CS[ellipsoidal,2],AXIS[\"latitude\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]],AXIS[\"longitude\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]]",
+    "bounds": [
+      -14.832470000590822,
+      -12.313751000775795,
+      42.31753300059079,
+      16.711251000775796
+    ],
+    "band_metadata": {
+      "GRIB_UNIT": "[kg/(m^2)]",
+      "GRIB_COMMENT": "01 hr Total precipitation [kg/(m^2)]",
+      "GRIB_ELEMENT": "APCP01",
+      "GRIB_SHORT_NAME": "0-SFC",
+      "GRIB_REF_TIME": "1792022400",
+      "GRIB_VALID_TIME": "1792026000",
+      "GRIB_FORECAST_SECONDS": "0",
+      "GRIB_DISCIPLINE": "0(Meteorological)",
+      "GRIB_IDS": "CENTER=54(Montreal) SUBCENTER=0 MASTER_TABLE=4 LOCAL_TABLE=1 SIGNF_REF_TIME=1(Start_of_Forecast) REF_TIME=2026-10-15T00:00:00Z PROD_STATUS=0(Operational) TYPE=2(Analysis_and_forecast)",
+      "GRIB_PDS_PDTN": "8",
+      "GRIB_PDS_TEMPLATE_NUMBERS": "1 8 2 50 50 0 0 0 1 0 0 0 0 1 0 0 0 0 0 255 255 255 255 255 255 7 234 10 15 1 0 0 1 0 0 0 0 1 2 1 0 0 0 1 1 0 0 0 0",
+      "GRIB_PDS_TEMPLATE_ASSEMBLED_VALUES": "1 8 2 50 50 0 0 1 0 1 0 0 255 -127 -2147483647 2026 10 15 1 0 0 1 0 1 2 1 1 1 0"
+    },
+    "domain_min": 0.0,
+    "domain_max": 34.930233001708984,
+    "masked_fraction": 0.0,
+    "point_samples": {
+      "thunder_bay": {
+        "row": 855,
+        "column": 1396,
+        "value": 0.0,
+        "inside_grid": true
+      },
+      "red_lake": {
+        "row": 786,
+        "column": 1234,
+        "value": 0.0,
+        "inside_grid": true
+      },
+      "timmins": {
+        "row": 759,
+        "column": 1609,
+        "value": 0.0,
+        "inside_grid": true
+      }
+    }
+  },
+  {
+    "path": "data/raw/week_2_audit/hrdps_20261015T00Z_lead001/20261015T00Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT001H.grib2",
+    "grid_shape": [
+      1290,
+      2540
+    ],
+    "crs_wkt": "GEOGCRS[\"Coordinate System imported from GRIB file\",BASEGEOGCRS[\"Coordinate System imported from GRIB file\",DATUM[\"unnamed\",ELLIPSOID[\"Sphere\",6371229,0,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]],DERIVINGCONVERSION[\"Pole rotation (GRIB convention)\",METHOD[\"Pole rotation (GRIB convention)\"],PARAMETER[\"Latitude of the southern pole (GRIB convention)\",-36.08852,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]],PARAMETER[\"Longitude of the southern pole (GRIB convention)\",-114.694858,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]],PARAMETER[\"Axis rotation (GRIB convention)\",0,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]],CS[ellipsoidal,2],AXIS[\"latitude\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]],AXIS[\"longitude\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]]",
+    "bounds": [
+      -14.832470000590822,
+      -12.313751000775795,
+      42.31753300059079,
+      16.711251000775796
+    ],
+    "band_metadata": {
+      "GRIB_UNIT": "[%]",
+      "GRIB_COMMENT": "Relative humidity [%]",
+      "GRIB_ELEMENT": "RH",
+      "GRIB_SHORT_NAME": "2-HTGL",
+      "GRIB_REF_TIME": "1792022400",
+      "GRIB_VALID_TIME": "1792026000",
+      "GRIB_FORECAST_SECONDS": "3600",
+      "GRIB_DISCIPLINE": "0(Meteorological)",
+      "GRIB_IDS": "CENTER=54(Montreal) SUBCENTER=0 MASTER_TABLE=4 LOCAL_TABLE=1 SIGNF_REF_TIME=1(Start_of_Forecast) REF_TIME=2026-10-15T00:00:00Z PROD_STATUS=0(Operational) TYPE=2(Analysis_and_forecast)",
+      "GRIB_PDS_PDTN": "0",
+      "GRIB_PDS_TEMPLATE_NUMBERS": "1 1 2 50 50 0 0 0 0 0 0 0 60 103 0 0 0 0 2 255 255 255 255 255 255",
+      "GRIB_PDS_TEMPLATE_ASSEMBLED_VALUES": "1 1 2 50 50 0 0 0 60 103 0 2 255 -127 -2147483647"
+    },
+    "domain_min": 16.666763305664062,
+    "domain_max": 99.99176025390625,
+    "masked_fraction": 0.0,
+    "point_samples": {
+      "thunder_bay": {
+        "row": 855,
+        "column": 1396,
+        "value": 75.59175872802734,
+        "inside_grid": true
+      },
+      "red_lake": {
+        "row": 786,
+        "column": 1234,
+        "value": 75.16676330566406,
+        "inside_grid": true
+      },
+      "timmins": {
+        "row": 759,
+        "column": 1609,
+        "value": 79.44176483154297,
+        "inside_grid": true
+      }
+    }
+  },
+  {
+    "path": "data/raw/week_2_audit/hrdps_20261015T00Z_lead001/20261015T00Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT001H.grib2",
+    "grid_shape": [
+      1290,
+      2540
+    ],
+    "crs_wkt": "GEOGCRS[\"Coordinate System imported from GRIB file\",BASEGEOGCRS[\"Coordinate System imported from GRIB file\",DATUM[\"unnamed\",ELLIPSOID[\"Sphere\",6371229,0,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]],DERIVINGCONVERSION[\"Pole rotation (GRIB convention)\",METHOD[\"Pole rotation (GRIB convention)\"],PARAMETER[\"Latitude of the southern pole (GRIB convention)\",-36.08852,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]],PARAMETER[\"Longitude of the southern pole (GRIB convention)\",-114.694858,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]],PARAMETER[\"Axis rotation (GRIB convention)\",0,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]],CS[ellipsoidal,2],AXIS[\"latitude\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]],AXIS[\"longitude\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]]",
+    "bounds": [
+      -14.832470000590822,
+      -12.313751000775795,
+      42.31753300059079,
+      16.711251000775796
+    ],
+    "band_metadata": {
+      "GRIB_UNIT": "[C]",
+      "GRIB_COMMENT": "Temperature [C]",
+      "GRIB_ELEMENT": "TMP",
+      "GRIB_SHORT_NAME": "2-HTGL",
+      "GRIB_REF_TIME": "1792022400",
+      "GRIB_VALID_TIME": "1792026000",
+      "GRIB_FORECAST_SECONDS": "3600",
+      "GRIB_DISCIPLINE": "0(Meteorological)",
+      "GRIB_IDS": "CENTER=54(Montreal) SUBCENTER=0 MASTER_TABLE=4 LOCAL_TABLE=1 SIGNF_REF_TIME=1(Start_of_Forecast) REF_TIME=2026-10-15T00:00:00Z PROD_STATUS=0(Operational) TYPE=2(Analysis_and_forecast)",
+      "GRIB_PDS_PDTN": "0",
+      "GRIB_PDS_TEMPLATE_NUMBERS": "0 0 2 50 50 0 0 0 0 0 0 0 60 103 0 0 0 0 2 255 255 255 255 255 255",
+      "GRIB_PDS_TEMPLATE_ASSEMBLED_VALUES": "0 0 2 50 50 0 0 0 60 103 0 2 255 -127 -2147483647"
+    },
+    "domain_min": -25.25298156738279,
+    "domain_max": 28.499017333984398,
+    "masked_fraction": 0.0,
+    "point_samples": {
+      "thunder_bay": {
+        "row": 855,
+        "column": 1396,
+        "value": 5.796014404296898,
+        "inside_grid": true
+      },
+      "red_lake": {
+        "row": 786,
+        "column": 1234,
+        "value": 6.717004394531273,
+        "inside_grid": true
+      },
+      "timmins": {
+        "row": 759,
+        "column": 1609,
+        "value": 4.391015625000023,
+        "inside_grid": true
+      }
+    }
+  },
+  {
+    "path": "data/raw/week_2_audit/hrdps_20261015T00Z_lead001/20261015T00Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT001H.grib2",
+    "grid_shape": [
+      1290,
+      2540
+    ],
+    "crs_wkt": "GEOGCRS[\"Coordinate System imported from GRIB file\",BASEGEOGCRS[\"Coordinate System imported from GRIB file\",DATUM[\"unnamed\",ELLIPSOID[\"Sphere\",6371229,0,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]],DERIVINGCONVERSION[\"Pole rotation (GRIB convention)\",METHOD[\"Pole rotation (GRIB convention)\"],PARAMETER[\"Latitude of the southern pole (GRIB convention)\",-36.08852,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]],PARAMETER[\"Longitude of the southern pole (GRIB convention)\",-114.694858,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]],PARAMETER[\"Axis rotation (GRIB convention)\",0,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]],CS[ellipsoidal,2],AXIS[\"latitude\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]],AXIS[\"longitude\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]]",
+    "bounds": [
+      -14.832470000590822,
+      -12.313751000775795,
+      42.31753300059079,
+      16.711251000775796
+    ],
+    "band_metadata": {
+      "GRIB_UNIT": "[m/s]",
+      "GRIB_COMMENT": "u-component of wind [m/s]",
+      "GRIB_ELEMENT": "UGRD",
+      "GRIB_SHORT_NAME": "10-HTGL",
+      "GRIB_REF_TIME": "1792022400",
+      "GRIB_VALID_TIME": "1792026000",
+      "GRIB_FORECAST_SECONDS": "3600",
+      "GRIB_DISCIPLINE": "0(Meteorological)",
+      "GRIB_IDS": "CENTER=54(Montreal) SUBCENTER=0 MASTER_TABLE=4 LOCAL_TABLE=1 SIGNF_REF_TIME=1(Start_of_Forecast) REF_TIME=2026-10-15T00:00:00Z PROD_STATUS=0(Operational) TYPE=2(Analysis_and_forecast)",
+      "GRIB_PDS_PDTN": "0",
+      "GRIB_PDS_TEMPLATE_NUMBERS": "2 2 2 50 50 0 0 0 0 0 0 0 60 103 0 0 0 0 10 255 255 255 255 255 255",
+      "GRIB_PDS_TEMPLATE_ASSEMBLED_VALUES": "2 2 2 50 50 0 0 0 60 103 0 10 255 -127 -2147483647"
+    },
+    "domain_min": -18.549999237060547,
+    "domain_max": 17.69999885559082,
+    "masked_fraction": 0.0,
+    "point_samples": {
+      "thunder_bay": {
+        "row": 855,
+        "column": 1396,
+        "value": 1.149999976158142,
+        "inside_grid": true
+      },
+      "red_lake": {
+        "row": 786,
+        "column": 1234,
+        "value": -0.7199999690055847,
+        "inside_grid": true
+      },
+      "timmins": {
+        "row": 759,
+        "column": 1609,
+        "value": 2.5799999237060547,
+        "inside_grid": true
+      }
+    }
+  },
+  {
+    "path": "data/raw/week_2_audit/hrdps_20261015T00Z_lead001/20261015T00Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT001H.grib2",
+    "grid_shape": [
+      1290,
+      2540
+    ],
+    "crs_wkt": "GEOGCRS[\"Coordinate System imported from GRIB file\",BASEGEOGCRS[\"Coordinate System imported from GRIB file\",DATUM[\"unnamed\",ELLIPSOID[\"Sphere\",6371229,0,LENGTHUNIT[\"metre\",1,ID[\"EPSG\",9001]]]],PRIMEM[\"Greenwich\",0,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]],DERIVINGCONVERSION[\"Pole rotation (GRIB convention)\",METHOD[\"Pole rotation (GRIB convention)\"],PARAMETER[\"Latitude of the southern pole (GRIB convention)\",-36.08852,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]],PARAMETER[\"Longitude of the southern pole (GRIB convention)\",-114.694858,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]],PARAMETER[\"Axis rotation (GRIB convention)\",0,ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]],CS[ellipsoidal,2],AXIS[\"latitude\",north,ORDER[1],ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]],AXIS[\"longitude\",east,ORDER[2],ANGLEUNIT[\"degree\",0.0174532925199433,ID[\"EPSG\",9122]]]]",
+    "bounds": [
+      -14.832470000590822,
+      -12.313751000775795,
+      42.31753300059079,
+      16.711251000775796
+    ],
+    "band_metadata": {
+      "GRIB_UNIT": "[m/s]",
+      "GRIB_COMMENT": "v-component of wind [m/s]",
+      "GRIB_ELEMENT": "VGRD",
+      "GRIB_SHORT_NAME": "10-HTGL",
+      "GRIB_REF_TIME": "1792022400",
+      "GRIB_VALID_TIME": "1792026000",
+      "GRIB_FORECAST_SECONDS": "3600",
+      "GRIB_DISCIPLINE": "0(Meteorological)",
+      "GRIB_IDS": "CENTER=54(Montreal) SUBCENTER=0 MASTER_TABLE=4 LOCAL_TABLE=1 SIGNF_REF_TIME=1(Start_of_Forecast) REF_TIME=2026-10-15T00:00:00Z PROD_STATUS=0(Operational) TYPE=2(Analysis_and_forecast)",
+      "GRIB_PDS_PDTN": "0",
+      "GRIB_PDS_TEMPLATE_NUMBERS": "2 3 2 50 50 0 0 0 0 0 0 0 60 103 0 0 0 0 10 255 255 255 255 255 255",
+      "GRIB_PDS_TEMPLATE_ASSEMBLED_VALUES": "2 3 2 50 50 0 0 0 60 103 0 10 255 -127 -2147483647"
+    },
+    "domain_min": -12.679999351501465,
+    "domain_max": 18.799999237060547,
+    "masked_fraction": 0.0,
+    "point_samples": {
+      "thunder_bay": {
+        "row": 855,
+        "column": 1396,
+        "value": 0.7199999690055847,
+        "inside_grid": true
+      },
+      "red_lake": {
+        "row": 786,
+        "column": 1234,
+        "value": 3.5999999046325684,
+        "inside_grid": true
+      },
+      "timmins": {
+        "row": 759,
+        "column": 1609,
+        "value": -0.9199999570846558,
+        "inside_grid": true
+      }
+    }
+  }
+]

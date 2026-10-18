@@ -1,0 +1,72 @@
+{
+  "input_files": [
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ignition_pilot/era5/era5_land_2025_01.nc",
+      "sha256": "aa90f72ab5b7d8eb751f02486482603d41d12c16abf9b6be6861edafb11994a7"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ignition_pilot/era5/era5_land_2025_02.nc",
+      "sha256": "a0a7d472b7cc02464a2f4961d68b70ceeaa378ffb08989dd8f3e0c8af1e28a59"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ignition_pilot/era5/era5_land_2025_03.nc",
+      "sha256": "c890d282de3d7f18c0a74dff4dff1f4caa331b7ffa97faf9432520ea50e60a4d"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ignition_pilot/era5/era5_land_2025_04.nc",
+      "sha256": "5195ecc7f45b227f66e9b9359365ba6060cb575b94ae9255d92a2610a5d91b7f"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ignition_pilot/era5/era5_land_2025_05.nc",
+      "sha256": "2c72b4451d21ce4d675d9850300df498bedc43edefed2e2f3d4956cb2a2de375"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ignition_pilot/era5/era5_land_2025_06.nc",
+      "sha256": "282277ba63a572440d72761a89d15207c3df52cee17800973e589775a0e5d4e7"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ignition_pilot/era5/era5_land_2025_07.nc",
+      "sha256": "435e9748fbfeb714539ef1bf35e07ea7a25b9deb072b25f4353e4ba6abf5f20c"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ignition_pilot/era5/era5_land_2025_08.nc",
+      "sha256": "6fe051e498edb576e870f821f3228f934f3f9df432be30dce113b13ffc6e7067"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ignition_pilot/era5/era5_land_2025_09.nc",
+      "sha256": "2c95d7b12248afea9848d3f90ce793c5c0233fc0e005d15a168bd4a0d9b64b34"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ignition_pilot/era5/era5_land_2025_10.nc",
+      "sha256": "29bfbd4a3a9a9416a2738f15f01e7d1078cd619a5cf73092e73dfa1d118a6701"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ignition_pilot/era5/era5_land_2025_11.nc",
+      "sha256": "72d4b1aa9406f3ec14ed3a5f129161c7736b44e6371533714172eee084b55967"
+    }
+  ],
+  "code_sha256": "923a5fc00aa2ed13da05f485e8bda9e0f631e4cc7215a9d19a1aee2152c7250e",
+  "fwi_code_sha256": "449a207639d98a15811a2dddfe0bb399ab0ab6375cb46d5fb6dfbe2cef339691",
+  "output_sha256": "93cfaa53b918454e0fc5394db017d12d7dec64894f798dd11b0af360c6962fcd",
+  "hours": 8016,
+  "weather_cells": 56,
+  "daily_rows": 18704,
+  "fwi_valid_rows": 13664,
+  "hourly_precipitation_unknown_samples": 56,
+  "fixed_standard_offset_hours": -5,
+  "startup_date": "2025-04-01",
+  "startup_policy": "Declared research startup FFMC=85/DMC=6/DC=15; no snow-based startup or overwintering claim",
+  "humidity_method": "Magnus approximation over water; RH capped to 0..100 percent",
+  "wind": "ERA5 u/v earth-relative (GRIB_uvRelativeToGrid=0); km/h, meteorological from direction",
+  "precipitation": "Hourly-ending mm; difference within daily forecast, reset at 01 UTC; unknown gaps remain null",
+  "scope": "Derived only over the actual input grid; no province-wide or operational-readiness claim",
+  "verification": {
+    "unique_cell_date_keys": true,
+    "all_noon_timestamps_17utc": true,
+    "valid_fwi_has_24_rain_hours": true,
+    "all_six_codes_present_when_valid": true,
+    "no_pre_startup_fwi": true,
+    "rain_missing_daily_rows": 56,
+    "daily_rows_with_any_missing_noon_weather": 0
+  }
+}

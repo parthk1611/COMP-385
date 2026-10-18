@@ -1,0 +1,41 @@
+{
+  "created_utc": "2026-10-15T17:14:19.770686+00:00",
+  "source": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/team_repository/data/processed/ontario_fire_region_10km_daily_ignition_features_v1.csv.gz",
+  "source_sha256": "b3ed801bf7ad6273b131dc24dec7fb28ef55dd0d0edbdf6b46ac416270b81e51",
+  "selector_manifest": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/week_2_development_2026-10-15/evaluation_reservation_v1.json",
+  "selector_manifest_sha256": "4524309d0848ee20c674de3beb32891b161767d0e3e66d90b72ad4659b631d2c",
+  "rows": 17798320,
+  "columns": 49,
+  "schema": "grid_id: string\nignition_date: string\nignition: int8\nignition_count: int32\nlarge_fire_200ha: int8\nfeature_set_version: string\nissue_time_utc: string\ncalendar_day_of_year: double\ncalendar_doy_sin: double\ncalendar_doy_cos: double\ncalendar_is_weekend: double\ncalendar_day_length_hours: double\nterrain_elevation_mean_m: double\nterrain_slope_deg: double\nterrain_aspect_sin: double\nterrain_aspect_cos: double\nterrain_ruggedness_m: double\nterrain_sample_count: double\nterrain_coverage_fraction: double\nterrain_source_id: string\nterrain_source_vintage_end_year: double\ncwfis_source_id: string\ncwfis_observation_date: string\ncwfis_station_count: double\ncwfis_nearest_station_km: double\ncwfis_observation_coverage_fraction: double\ncwfis_imputed_station_fraction: double\ncwfis_calcstatus_nonzero_fraction: double\ncwfis_missing: double\ncwfis_temp_c: double\ncwfis_rh_pct: double\ncwfis_wind_speed_kmh: double\ncwfis_precip_mm: double\ncwfis_ffmc: double\ncwfis_dmc: double\ncwfis_dc: double\ncwfis_isi: double\ncwfis_bui: double\ncwfis_fwi: double\ncwfis_dsr: double\ncwfis_precip_7d_mm: double\ncwfis_precip_7d_coverage_days: double\nfire_history_source_id: string\nfire_history_same_cell_30d: double\nfire_history_neighborhood_30d: double\nfire_history_same_cell_365d: double\nfire_history_neighborhood_365d: double\nfire_history_days_since_same_cell: double\nspatial_role: string",
+  "files": {
+    "training": {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_evaluation_v1/training.parquet",
+      "rows": 10678992,
+      "bytes": 433812536,
+      "sha256": "3198dd0152210e9bb7c5172c1fa6b67e8ae51645206c9ffd466f9e3c1af1a8b0"
+    },
+    "validation": {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_evaluation_v1/validation.parquet",
+      "rows": 3559664,
+      "bytes": 94425146,
+      "sha256": "1c1d2feeba4fc6582011f42c514a80d7bcbcbe7bcbf8f853807c24056774501c"
+    },
+    "calibration": {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_evaluation_v1/calibration.parquet",
+      "rows": 1779832,
+      "bytes": 60070934,
+      "sha256": "8cde63a28b4b5f6b7369b63f489c0d9ec2a52de3d9085bd93e448f6331c73d15"
+    },
+    "final_test": {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_evaluation_v1/final_test.parquet",
+      "rows": 1779832,
+      "bytes": 139725513,
+      "sha256": "e37b96286065f0b540a9cd59757ece2f029d2a3b0a2b8048c5794084169a984a"
+    }
+  },
+  "conversion": "Fixed declared Arrow types only; labels preserved, numeric empty fields remain null, no imputation/scaling/fitting. Added spatial_role from frozen cell selector. This is a dataset with labels/metadata, not an automatically approved predictor matrix.",
+  "final_test_policy": "Final-test file is isolated and set read-only after writing. No target distributions or predictive scores computed. Earlier 2019 EDA exposure remains disclosed. Hashes verify content but do not prevent future improper access.",
+  "spatial_policy": "For the separate spatial experiment, select only spatial_development during fitting and spatial_test in 2019 for final scoring; exclude buffer_excluded and all fire_history_* predictors.",
+  "training_enforcement": "No fitted model/training entry point has been created; consumers must explicitly apply the stated roles and predictor exclusions.",
+  "elapsed_seconds": 37.8
+}

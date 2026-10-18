@@ -1,0 +1,66 @@
+[
+  {
+    "figure": "Figure 2",
+    "name": "architecture",
+    "docx_media": "word/media/image1.png",
+    "png_sha256": "db3d9267b4750669d1896d342ca187540f3416d42d75d488b9ed60939d40a5db",
+    "width_inches": 6.5,
+    "height_inches": 5.241935483870968
+  },
+  {
+    "figure": "Figure 3",
+    "name": "data_flow",
+    "docx_media": "word/media/image2.png",
+    "png_sha256": "00b5f1e2f0579587dafe70eb92402eeb40c809f40cb1b0320c2f4f6ca9900325",
+    "width_inches": 6.5,
+    "height_inches": 5.088883062401678
+  },
+  {
+    "figure": "Figure 4",
+    "name": "logical_data",
+    "docx_media": "word/media/image3.png",
+    "png_sha256": "75e5c9a82dfc99163c569016f38127d202916205cf709b7339925bc87bdb3584",
+    "width_inches": 3.4131811105345093,
+    "height_inches": 5.8
+  },
+  {
+    "figure": "Figure 5",
+    "name": "use_cases",
+    "docx_media": "word/media/image4.png",
+    "png_sha256": "8fe9a98843f0ff7c9e2db145993b83da3b85875368397627e6f81e2f8e405967",
+    "width_inches": 6.5,
+    "height_inches": 4.241502308015107
+  },
+  {
+    "figure": "Figure 6",
+    "name": "components",
+    "docx_media": "word/media/image5.png",
+    "png_sha256": "8b0b4a2e9bd353e36cf6b5b069174b4d486c9442dc479ca77245e65c370611b1",
+    "width_inches": 4.906189555125725,
+    "height_inches": 5.7
+  },
+  {
+    "figure": "Figure 7",
+    "name": "ignition_sequence",
+    "docx_media": "word/media/image6.png",
+    "png_sha256": "73af555a3ce6f66665756bd3e20a37d8574b6338c4dfb9cb0d3651836e8773ff",
+    "width_inches": 5.620253164556962,
+    "height_inches": 5.7
+  },
+  {
+    "figure": "Figure 8",
+    "name": "spread_sequence",
+    "docx_media": "word/media/image7.png",
+    "png_sha256": "728b9f4def82cdb28ac32487b1721ee0e1ab6b21b9563b8a6465b0c8683edfe2",
+    "width_inches": 4.2653932584269665,
+    "height_inches": 5.7
+  },
+  {
+    "figure": "Figure 13",
+    "name": "deployment",
+    "docx_media": "word/media/image12.png",
+    "png_sha256": "6f134ecb15376ba0a2320e25e124f623923d9a452c066b0fef03d7c77fc3b8bc",
+    "width_inches": 6.5,
+    "height_inches": 3.3573913043478263
+  }
+]

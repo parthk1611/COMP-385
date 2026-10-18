@@ -1,0 +1,200 @@
+[
+  {
+    "path": "data/raw/ignition_pilot/scanfi_balsamFir.tif",
+    "crs": "PROJCS[\"NAD_1983_Canada_Lambert\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-95],PARAMETER[\"standard_parallel_1\",49],PARAMETER[\"standard_parallel_2\",77],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "shape": [
+      1000,
+      1000
+    ],
+    "resolution": [
+      30.0,
+      30.0
+    ],
+    "nodata": 255.0,
+    "valid_fraction": 1.0,
+    "min": 0.0,
+    "max": 70.0,
+    "median": 0.0,
+    "sha256": "acc368103220000cbc566492a8a5c177b5aa9157c67997d9cc313645e3144bff"
+  },
+  {
+    "path": "data/raw/ignition_pilot/scanfi_blackSpruce.tif",
+    "crs": "PROJCS[\"NAD_1983_Canada_Lambert\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-95],PARAMETER[\"standard_parallel_1\",49],PARAMETER[\"standard_parallel_2\",77],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "shape": [
+      1000,
+      1000
+    ],
+    "resolution": [
+      30.0,
+      30.0
+    ],
+    "nodata": 255.0,
+    "valid_fraction": 1.0,
+    "min": 0.0,
+    "max": 100.0,
+    "median": 0.0,
+    "sha256": "60f29a9e87f6e0da378d051234080407344f9e96f032dc5503b4b58666e7c900"
+  },
+  {
+    "path": "data/raw/ignition_pilot/scanfi_closure.tif",
+    "crs": "PROJCS[\"NAD_1983_Canada_Lambert\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-95],PARAMETER[\"standard_parallel_1\",49],PARAMETER[\"standard_parallel_2\",77],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "shape": [
+      1000,
+      1000
+    ],
+    "resolution": [
+      30.0,
+      30.0
+    ],
+    "nodata": 255.0,
+    "valid_fraction": 1.0,
+    "min": 0.0,
+    "max": 90.0,
+    "median": 0.0,
+    "sha256": "91f52de41d20423e4331b48b202ce62557c1b4b15b8184e4826582911c0747f6"
+  },
+  {
+    "path": "data/raw/ignition_pilot/scanfi_douglasFir.tif",
+    "crs": "PROJCS[\"NAD_1983_Canada_Lambert\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-95],PARAMETER[\"standard_parallel_1\",49],PARAMETER[\"standard_parallel_2\",77],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "shape": [
+      1000,
+      1000
+    ],
+    "resolution": [
+      30.0,
+      30.0
+    ],
+    "nodata": 255.0,
+    "valid_fraction": 1.0,
+    "min": 0.0,
+    "max": 0.0,
+    "median": 0.0,
+    "sha256": "7bc34a09c1c0c67c0caefed12181161ee9942ca6b7b3bccb51d8be58fcba2d86"
+  },
+  {
+    "path": "data/raw/ignition_pilot/scanfi_jackPine.tif",
+    "crs": "PROJCS[\"NAD_1983_Canada_Lambert\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-95],PARAMETER[\"standard_parallel_1\",49],PARAMETER[\"standard_parallel_2\",77],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "shape": [
+      1000,
+      1000
+    ],
+    "resolution": [
+      30.0,
+      30.0
+    ],
+    "nodata": 255.0,
+    "valid_fraction": 1.0,
+    "min": 0.0,
+    "max": 100.0,
+    "median": 0.0,
+    "sha256": "685735dea584a236c96e7d08892cde125c70860f70582f21cdf34d424f526203"
+  },
+  {
+    "path": "data/raw/ignition_pilot/scanfi_lodgepolePine.tif",
+    "crs": "PROJCS[\"NAD_1983_Canada_Lambert\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-95],PARAMETER[\"standard_parallel_1\",49],PARAMETER[\"standard_parallel_2\",77],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "shape": [
+      1000,
+      1000
+    ],
+    "resolution": [
+      30.0,
+      30.0
+    ],
+    "nodata": 255.0,
+    "valid_fraction": 1.0,
+    "min": 0.0,
+    "max": 0.0,
+    "median": 0.0,
+    "sha256": "7bc34a09c1c0c67c0caefed12181161ee9942ca6b7b3bccb51d8be58fcba2d86"
+  },
+  {
+    "path": "data/raw/ignition_pilot/scanfi_ponderosaPine.tif",
+    "crs": "PROJCS[\"NAD_1983_Canada_Lambert\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-95],PARAMETER[\"standard_parallel_1\",49],PARAMETER[\"standard_parallel_2\",77],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "shape": [
+      1000,
+      1000
+    ],
+    "resolution": [
+      30.0,
+      30.0
+    ],
+    "nodata": 255.0,
+    "valid_fraction": 1.0,
+    "min": 0.0,
+    "max": 0.0,
+    "median": 0.0,
+    "sha256": "7bc34a09c1c0c67c0caefed12181161ee9942ca6b7b3bccb51d8be58fcba2d86"
+  },
+  {
+    "path": "data/raw/ignition_pilot/scanfi_prcB.tif",
+    "crs": "PROJCS[\"NAD_1983_Canada_Lambert\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-95],PARAMETER[\"standard_parallel_1\",49],PARAMETER[\"standard_parallel_2\",77],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "shape": [
+      1000,
+      1000
+    ],
+    "resolution": [
+      30.0,
+      30.0
+    ],
+    "nodata": 255.0,
+    "valid_fraction": 1.0,
+    "min": 0.0,
+    "max": 100.0,
+    "median": 0.0,
+    "sha256": "992082c6ab1cd0758a0a473d1c58c5801273b3fbc16aa220a0d5aff6a71f69cb"
+  },
+  {
+    "path": "data/raw/ignition_pilot/scanfi_prcC_other.tif",
+    "crs": "PROJCS[\"NAD_1983_Canada_Lambert\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-95],PARAMETER[\"standard_parallel_1\",49],PARAMETER[\"standard_parallel_2\",77],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "shape": [
+      1000,
+      1000
+    ],
+    "resolution": [
+      30.0,
+      30.0
+    ],
+    "nodata": 255.0,
+    "valid_fraction": 1.0,
+    "min": 0.0,
+    "max": 90.0,
+    "median": 0.0,
+    "sha256": "6a8af5d6c927c1e4658676cf7747bc49752f3de9a3d5e8f977fc493c2b0d9e02"
+  },
+  {
+    "path": "data/raw/ignition_pilot/scanfi_tamarack.tif",
+    "crs": "PROJCS[\"NAD_1983_Canada_Lambert\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-95],PARAMETER[\"standard_parallel_1\",49],PARAMETER[\"standard_parallel_2\",77],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "shape": [
+      1000,
+      1000
+    ],
+    "resolution": [
+      30.0,
+      30.0
+    ],
+    "nodata": 255.0,
+    "valid_fraction": 1.0,
+    "min": 0.0,
+    "max": 60.0,
+    "median": 0.0,
+    "sha256": "ae520418ecb87d10925a548e5c0da7c9e098c1a60d891a2100385fb909b06979"
+  },
+  {
+    "path": "data/raw/ignition_pilot/scanfi_whiteRedPine.tif",
+    "crs": "PROJCS[\"NAD_1983_Canada_Lambert\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-95],PARAMETER[\"standard_parallel_1\",49],PARAMETER[\"standard_parallel_2\",77],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+    "shape": [
+      1000,
+      1000
+    ],
+    "resolution": [
+      30.0,
+      30.0
+    ],
+    "nodata": 255.0,
+    "valid_fraction": 1.0,
+    "min": 0.0,
+    "max": 40.0,
+    "median": 0.0,
+    "sha256": "50ed7c7b89e2776015b7c6d75645786dac1225b6988d39ecb2d7b07be2f2361c"
+  }
+]

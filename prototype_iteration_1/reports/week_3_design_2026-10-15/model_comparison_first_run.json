@@ -1,0 +1,457 @@
+{
+  "config_sha256": "d230e5da5da7755284cefeb8b1b0257afd4e79dd73bd1c03933f072b44199eae",
+  "training_population": {
+    "temporal": {
+      "rows": 10678992,
+      "positives": 4717
+    },
+    "inner_spatial": {
+      "rows": 6760896,
+      "positives": 3251
+    }
+  },
+  "validation_population": {
+    "temporal": {
+      "rows": 3559664,
+      "positives": 1309
+    },
+    "inner_spatial": {
+      "rows": 463312,
+      "positives": 156
+    }
+  },
+  "results": [
+    {
+      "rows": 3559664,
+      "positives": 1309,
+      "prevalence": 0.0003677313364407427,
+      "average_precision": 0.0003677313364407427,
+      "roc_auc": 0.5,
+      "brier": 0.0003676015827043644,
+      "log_loss": 0.003282316829000977,
+      "mean_probability": 0.00044170835599426615,
+      "protocol": "temporal",
+      "model": "historical_rate",
+      "fitted_rows": 111459,
+      "fitted_positive_rows": 4717,
+      "eligible_training_rows": 10678992,
+      "feature_count": 36,
+      "training_row_key_hash": "ea7a0f0284d87a6c61c42e9f4c7a89134b1b2e7928e8ba8b75a1752884c2df0c",
+      "fit_seconds": 0.013417000067420304,
+      "year_2016": {
+        "rows": 1779832,
+        "positives": 573,
+        "prevalence": 0.0003219404977548443,
+        "average_precision": 0.0003219404977548443,
+        "roc_auc": 0.5,
+        "brier": 0.00032185119641061705,
+        "log_loss": 0.0029286092084853535,
+        "mean_probability": 0.00044170835599426615
+      },
+      "year_2017": {
+        "rows": 1779832,
+        "positives": 736,
+        "prevalence": 0.00041352217512664115,
+        "average_precision": 0.00041352217512664115,
+        "roc_auc": 0.5,
+        "brier": 0.0004133519689981118,
+        "log_loss": 0.003636024449516601,
+        "mean_probability": 0.00044170835599426615
+      },
+      "daily_budget_recall": 0.012987012987012988,
+      "daily_budget_precision": 0.0004762438368444644,
+      "daily_bootstrap_recall_95pct": [
+        0.007149080811949445,
+        0.019365294123668775
+      ],
+      "p95_model_only_daily_score_seconds_20_days": 0.00047964801779016853
+    },
+    {
+      "rows": 3559664,
+      "positives": 1309,
+      "prevalence": 0.0003677313364407427,
+      "average_precision": 0.0019340153609545946,
+      "roc_auc": 0.8075151208674903,
+      "brier": 0.00036741612711921334,
+      "log_loss": 0.003034232882782817,
+      "mean_probability": 0.00033972354140132666,
+      "protocol": "temporal",
+      "model": "logistic",
+      "fitted_rows": 111459,
+      "fitted_positive_rows": 4717,
+      "eligible_training_rows": 10678992,
+      "feature_count": 36,
+      "training_row_key_hash": "ea7a0f0284d87a6c61c42e9f4c7a89134b1b2e7928e8ba8b75a1752884c2df0c",
+      "fit_seconds": 0.35425916698295623,
+      "year_2016": {
+        "rows": 1779832,
+        "positives": 573,
+        "prevalence": 0.0003219404977548443,
+        "average_precision": 0.0024856853690848977,
+        "roc_auc": 0.8456789344037838,
+        "brier": 0.0003215229953639209,
+        "log_loss": 0.0026507973670959473,
+        "mean_probability": 0.00033500874997116625
+      },
+      "year_2017": {
+        "rows": 1779832,
+        "positives": 736,
+        "prevalence": 0.00041352217512664115,
+        "average_precision": 0.0017233173718289724,
+        "roc_auc": 0.7787362901641448,
+        "brier": 0.0004133092297706753,
+        "log_loss": 0.0034176683984696865,
+        "mean_probability": 0.00034443833283148706
+      },
+      "daily_budget_recall": 0.08938120702826585,
+      "daily_budget_precision": 0.0032776781712236663,
+      "daily_bootstrap_recall_95pct": [
+        0.07328460937063717,
+        0.1069362369133536
+      ],
+      "p95_model_only_daily_score_seconds_20_days": 0.004185885470360517
+    },
+    {
+      "rows": 3559664,
+      "positives": 1309,
+      "prevalence": 0.0003677313364407427,
+      "average_precision": 0.005764443263258497,
+      "roc_auc": 0.8438198934119843,
+      "brier": 0.00036665509715061873,
+      "log_loss": 0.002934877534007769,
+      "mean_probability": 0.00036722012966858525,
+      "protocol": "temporal",
+      "model": "histogram_boosting",
+      "fitted_rows": 111459,
+      "fitted_positive_rows": 4717,
+      "eligible_training_rows": 10678992,
+      "feature_count": 36,
+      "training_row_key_hash": "ea7a0f0284d87a6c61c42e9f4c7a89134b1b2e7928e8ba8b75a1752884c2df0c",
+      "fit_seconds": 3.562573332921602,
+      "year_2016": {
+        "rows": 1779832,
+        "positives": 573,
+        "prevalence": 0.0003219404977548443,
+        "average_precision": 0.009003643920756838,
+        "roc_auc": 0.8673078360845213,
+        "brier": 0.00032033484805280005,
+        "log_loss": 0.002564801735689629,
+        "mean_probability": 0.00037104817293296825
+      },
+      "year_2017": {
+        "rows": 1779832,
+        "positives": 736,
+        "prevalence": 0.00041352217512664115,
+        "average_precision": 0.003280015953108074,
+        "roc_auc": 0.825403894058751,
+        "brier": 0.00041297534624843736,
+        "log_loss": 0.0033049533323259088,
+        "mean_probability": 0.0003633920864042022
+      },
+      "daily_budget_recall": 0.10160427807486631,
+      "daily_budget_precision": 0.003725907664724339,
+      "daily_bootstrap_recall_95pct": [
+        0.08477457707195817,
+        0.12034242067686415
+      ],
+      "p95_model_only_daily_score_seconds_20_days": 0.010696864599594846
+    },
+    {
+      "rows": 3559664,
+      "positives": 1309,
+      "prevalence": 0.0003677313364407427,
+      "average_precision": 0.005683833439665796,
+      "roc_auc": 0.8416341025873751,
+      "brier": 0.00036673738655491114,
+      "log_loss": 0.0029424981376227548,
+      "mean_probability": 0.00036730229179184623,
+      "protocol": "temporal",
+      "model": "lightgbm",
+      "fitted_rows": 111459,
+      "fitted_positive_rows": 4717,
+      "eligible_training_rows": 10678992,
+      "feature_count": 36,
+      "training_row_key_hash": "ea7a0f0284d87a6c61c42e9f4c7a89134b1b2e7928e8ba8b75a1752884c2df0c",
+      "fit_seconds": 0.7958227919880301,
+      "year_2016": {
+        "rows": 1779832,
+        "positives": 573,
+        "prevalence": 0.0003219404977548443,
+        "average_precision": 0.009033794694016892,
+        "roc_auc": 0.8678878866614324,
+        "brier": 0.0003204983426934408,
+        "log_loss": 0.002568384672461646,
+        "mean_probability": 0.000373199128438158
+      },
+      "year_2017": {
+        "rows": 1779832,
+        "positives": 736,
+        "prevalence": 0.00041352217512664115,
+        "average_precision": 0.003340125651798382,
+        "roc_auc": 0.8212107544181941,
+        "brier": 0.00041297643041638153,
+        "log_loss": 0.003316611602783863,
+        "mean_probability": 0.00036140545514553446
+      },
+      "daily_budget_recall": 0.09472880061115355,
+      "daily_budget_precision": 0.003473778574630211,
+      "daily_bootstrap_recall_95pct": [
+        0.07770185134985895,
+        0.11402966021610089
+      ],
+      "p95_model_only_daily_score_seconds_20_days": 0.02468413095339202
+    },
+    {
+      "rows": 463312,
+      "positives": 156,
+      "prevalence": 0.0003367061504990158,
+      "average_precision": 0.0003367061504990158,
+      "roc_auc": 0.5,
+      "brier": 0.0003366135579040774,
+      "log_loss": 0.0030532246295922627,
+      "mean_probability": 0.0004808534253445699,
+      "protocol": "inner_spatial",
+      "model": "historical_rate",
+      "fitted_rows": 70985,
+      "fitted_positive_rows": 3251,
+      "eligible_training_rows": 6760896,
+      "feature_count": 31,
+      "training_row_key_hash": "43f3573b131fe142715fb5d345efccf0826cf9ffc0e8fde432aa7b50e35ad34c",
+      "fit_seconds": 0.002097417018376291,
+      "year_2016": {
+        "rows": 231656,
+        "positives": 64,
+        "prevalence": 0.00027627171322996166,
+        "average_precision": 0.00027627171322996166,
+        "roc_auc": 0.5,
+        "brier": 0.0002762372408473625,
+        "log_loss": 0.002591537734716486,
+        "mean_probability": 0.0004808534253445699
+      },
+      "year_2017": {
+        "rows": 231656,
+        "positives": 92,
+        "prevalence": 0.0003971405877680699,
+        "average_precision": 0.0003971405877680699,
+        "roc_auc": 0.5,
+        "brier": 0.00039698987496079234,
+        "log_loss": 0.003514911524468039,
+        "mean_probability": 0.0004808534253445699
+      },
+      "daily_budget_recall": 0.019230769230769232,
+      "daily_budget_precision": 0.0006270903010033445,
+      "daily_bootstrap_recall_95pct": [
+        0.0,
+        0.04841855410661173
+      ],
+      "p95_model_only_daily_score_seconds_20_days": 0.0003133226535283029
+    },
+    {
+      "rows": 463312,
+      "positives": 156,
+      "prevalence": 0.0003367061504990158,
+      "average_precision": 0.0010427168567717067,
+      "roc_auc": 0.7358972172193852,
+      "brier": 0.00033660430926829576,
+      "log_loss": 0.0029289047233760357,
+      "mean_probability": 0.000417700270190835,
+      "protocol": "inner_spatial",
+      "model": "logistic",
+      "fitted_rows": 70985,
+      "fitted_positive_rows": 3251,
+      "eligible_training_rows": 6760896,
+      "feature_count": 31,
+      "training_row_key_hash": "43f3573b131fe142715fb5d345efccf0826cf9ffc0e8fde432aa7b50e35ad34c",
+      "fit_seconds": 0.18385929195210338,
+      "year_2016": {
+        "rows": 231656,
+        "positives": 64,
+        "prevalence": 0.00027627171322996166,
+        "average_precision": 0.0006697928585782045,
+        "roc_auc": 0.7753735556495907,
+        "brier": 0.0002761645591817796,
+        "log_loss": 0.00243358314037323,
+        "mean_probability": 0.0003743793931789696
+      },
+      "year_2017": {
+        "rows": 231656,
+        "positives": 92,
+        "prevalence": 0.0003971405877680699,
+        "average_precision": 0.0013410671337633537,
+        "roc_auc": 0.7101268557176041,
+        "brier": 0.00039704408845864236,
+        "log_loss": 0.0034242263063788414,
+        "mean_probability": 0.0004610211180988699
+      },
+      "daily_budget_recall": 0.019230769230769232,
+      "daily_budget_precision": 0.0006270903010033445,
+      "daily_bootstrap_recall_95pct": [
+        0.0,
+        0.040697674418604654
+      ],
+      "p95_model_only_daily_score_seconds_20_days": 0.0010638395731803032
+    },
+    {
+      "rows": 463312,
+      "positives": 156,
+      "prevalence": 0.0003367061504990158,
+      "average_precision": 0.0010517704602109228,
+      "roc_auc": 0.7709505475366222,
+      "brier": 0.00033668366372292824,
+      "log_loss": 0.0028880309519427085,
+      "mean_probability": 0.00042396499566160783,
+      "protocol": "inner_spatial",
+      "model": "histogram_boosting",
+      "fitted_rows": 70985,
+      "fitted_positive_rows": 3251,
+      "eligible_training_rows": 6760896,
+      "feature_count": 31,
+      "training_row_key_hash": "43f3573b131fe142715fb5d345efccf0826cf9ffc0e8fde432aa7b50e35ad34c",
+      "fit_seconds": 2.3013560828985646,
+      "year_2016": {
+        "rows": 231656,
+        "positives": 64,
+        "prevalence": 0.00027627171322996166,
+        "average_precision": 0.0007386185379442989,
+        "roc_auc": 0.7850359211997824,
+        "brier": 0.00027621117153415917,
+        "log_loss": 0.0024223768761107117,
+        "mean_probability": 0.00039373062923278845
+      },
+      "year_2017": {
+        "rows": 231656,
+        "positives": 92,
+        "prevalence": 0.0003971405877680699,
+        "average_precision": 0.0013158726429494292,
+        "roc_auc": 0.7622395029489453,
+        "brier": 0.00039715615591169725,
+        "log_loss": 0.003353685027774705,
+        "mean_probability": 0.00045419936209042727
+      },
+      "daily_budget_recall": 0.00641025641025641,
+      "daily_budget_precision": 0.00020903010033444816,
+      "daily_bootstrap_recall_95pct": [
+        0.0,
+        0.02094701718162377
+      ],
+      "p95_model_only_daily_score_seconds_20_days": 0.0025638225313741715
+    },
+    {
+      "rows": 463312,
+      "positives": 156,
+      "prevalence": 0.0003367061504990158,
+      "average_precision": 0.0009431248977436178,
+      "roc_auc": 0.7716943643178541,
+      "brier": 0.0003368576690773244,
+      "log_loss": 0.002893108764796121,
+      "mean_probability": 0.0004249616020009665,
+      "protocol": "inner_spatial",
+      "model": "lightgbm",
+      "fitted_rows": 70985,
+      "fitted_positive_rows": 3251,
+      "eligible_training_rows": 6760896,
+      "feature_count": 31,
+      "training_row_key_hash": "43f3573b131fe142715fb5d345efccf0826cf9ffc0e8fde432aa7b50e35ad34c",
+      "fit_seconds": 0.5478410830255598,
+      "year_2016": {
+        "rows": 231656,
+        "positives": 64,
+        "prevalence": 0.00027627171322996166,
+        "average_precision": 0.0007580352933262182,
+        "roc_auc": 0.7833963527453452,
+        "brier": 0.0002762073636025121,
+        "log_loss": 0.0024234134003747994,
+        "mean_probability": 0.0003925381177493751
+      },
+      "year_2017": {
+        "rows": 231656,
+        "positives": 92,
+        "prevalence": 0.0003971405877680699,
+        "average_precision": 0.001113788987326575,
+        "roc_auc": 0.7648323160542339,
+        "brier": 0.0003975079745521367,
+        "log_loss": 0.003362804129217443,
+        "mean_probability": 0.0004573850862525579
+      },
+      "daily_budget_recall": 0.00641025641025641,
+      "daily_budget_precision": 0.00020903010033444816,
+      "daily_bootstrap_recall_95pct": [
+        0.0,
+        0.021134305835010053
+      ],
+      "p95_model_only_daily_score_seconds_20_days": 0.0019245764415245505
+    }
+  ],
+  "models": [
+    {
+      "protocol": "temporal",
+      "model": "historical_rate",
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/temporal_historical_rate.joblib",
+      "bytes": 2648,
+      "sha256": "cdd51e12214139e0755f80ada5cd73e4ad750c736cee8ffb6313b400a9b53ef8",
+      "save_load_prediction_parity": true
+    },
+    {
+      "protocol": "temporal",
+      "model": "logistic",
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/temporal_logistic.joblib",
+      "bytes": 5829,
+      "sha256": "57b6c080ec0949dee524deeea720a52bf68f831e2fbd2c71afa44116aecf5060",
+      "save_load_prediction_parity": true
+    },
+    {
+      "protocol": "temporal",
+      "model": "histogram_boosting",
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/temporal_histogram_boosting.joblib",
+      "bytes": 321793,
+      "sha256": "050e07f451092b89bc34f27f5cac2e3f2e3a773f94a01b1aeb6d5bb2ba22a0e2",
+      "save_load_prediction_parity": true
+    },
+    {
+      "protocol": "temporal",
+      "model": "lightgbm",
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/temporal_lightgbm.joblib",
+      "bytes": 273239,
+      "sha256": "11cf2e7e9f569c2b81b07480f0661d7ecb0291c966ba5c2337a55cdbd1064bb1",
+      "save_load_prediction_parity": true
+    },
+    {
+      "protocol": "inner_spatial",
+      "model": "historical_rate",
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/inner_spatial_historical_rate.joblib",
+      "bytes": 2333,
+      "sha256": "580003f716cb27e35c5bf3e4774210f10744ef0adddb0d67780625536cd8f1d6",
+      "save_load_prediction_parity": true
+    },
+    {
+      "protocol": "inner_spatial",
+      "model": "logistic",
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/inner_spatial_logistic.joblib",
+      "bytes": 5322,
+      "sha256": "a29cc2ea1371504bb178e8f5a75cc7120d636fc384335a62fe4c807eaaca4365",
+      "save_load_prediction_parity": true
+    },
+    {
+      "protocol": "inner_spatial",
+      "model": "histogram_boosting",
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/inner_spatial_histogram_boosting.joblib",
+      "bytes": 317558,
+      "sha256": "1a2560257143dbaef7ee896b6145b8d473cf23c8552ecd07a15d182d8fa3961a",
+      "save_load_prediction_parity": true
+    },
+    {
+      "protocol": "inner_spatial",
+      "model": "lightgbm",
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/inner_spatial_lightgbm.joblib",
+      "bytes": 270620,
+      "sha256": "8ccd0f04b889e7b116172f2e2db00ecfb75cbe8a7038b82c28de99b290a3b779",
+      "save_load_prediction_parity": true
+    }
+  ],
+  "recommended_development_candidate": "histogram_boosting",
+  "total_seconds": 39.920713416999206,
+  "peak_process_rss_mib": 2789.375,
+  "final_test_scored": false,
+  "calibration_fitted": false,
+  "operational_acceptance": false
+}

@@ -1,0 +1,55 @@
+{
+  "cells": 144,
+  "days": 214,
+  "cell_days": 30816,
+  "point_records": 2,
+  "outside_grid_wildfire_records": 1,
+  "intersecting_area_records": 0,
+  "eligible_events": 1,
+  "positive_cell_days": 1,
+  "events_within_100m_of_cell_edge": 0,
+  "scanfi_qc": {
+    "native_species_sum_min": 0.0,
+    "native_species_sum_max": 100.0,
+    "native_zero_species_fraction": 0.567705,
+    "native_positive_species_sum_not_100_fraction": 0.0,
+    "cells_without_conifer_fraction": 31
+  },
+  "available_predictor_columns": [
+    "fbp_dominant_code",
+    "closure_2020_pct",
+    "percent_conifer",
+    "elevation_m",
+    "slope_pct",
+    "aspect_sin",
+    "aspect_cos",
+    "month",
+    "day_of_year",
+    "fuel_conifer_share",
+    "fuel_deciduous_share",
+    "fuel_open_share",
+    "fuel_mixedwood_share",
+    "fuel_nonfuel_share",
+    "fuel_water_share"
+  ],
+  "categorical_predictor_columns": [
+    "fbp_dominant_code"
+  ],
+  "target_column": "reported_fire_start",
+  "label_metadata_columns": [
+    "recorded_fire_count",
+    "date",
+    "window_start_utc",
+    "window_end_utc"
+  ],
+  "training_ready": false,
+  "weather_downloaded": false,
+  "fwi_computed": false,
+  "limitations": [
+    "Start dates are known/estimated dates without ignition times; reported_fire_start is a calendar-day label, not exact rolling 24-hour truth.",
+    "Zero means no event recorded in this snapshot; archive coverage and point/area completeness remain unverified.",
+    "No per-point LOCATION_ACCURACY field; 100 m edge flags are sensitivity checks, not measured location errors.",
+    "Current MRDEM historical availability and source revision history are not verified.",
+    "This small pilot cannot support reliable model-performance assessment."
+  ]
+}

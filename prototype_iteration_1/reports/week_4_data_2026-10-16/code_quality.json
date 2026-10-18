@@ -1,0 +1,204 @@
+{
+  "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/scripts/prepare_historical_weather_v2.py",
+  "language": "python",
+  "metrics": {
+    "lines": {
+      "total": 265,
+      "code": 240,
+      "blank": 24,
+      "comment": 1
+    },
+    "functions": 9,
+    "classes": 0,
+    "avg_complexity": 5.4
+  },
+  "quality_score": 60,
+  "grade": "D",
+  "smells": [
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'daily_features' has complexity 14 (max: 10)",
+      "location": "daily_features"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 100 should be a named constant",
+      "location": "line 51"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 200 should be a named constant",
+      "location": "line 55"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 1000 should be a named constant",
+      "location": "line 56"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 100 should be a named constant",
+      "location": "line 94"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 200000 should be a named constant",
+      "location": "line 114"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 3978 should be a named constant",
+      "location": "line 148"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 10000 should be a named constant",
+      "location": "line 152"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 10000 should be a named constant",
+      "location": "line 153"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 5000 should be a named constant",
+      "location": "line 155"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 3978 should be a named constant",
+      "location": "line 159"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 3978 should be a named constant",
+      "location": "line 168"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 9673 should be a named constant",
+      "location": "line 187"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2010 should be a named constant",
+      "location": "line 189"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2010 should be a named constant",
+      "location": "line 191"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 200 should be a named constant",
+      "location": "line 192"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 200 should be a named constant",
+      "location": "line 195"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 100 should be a named constant",
+      "location": "line 204"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 200 should be a named constant",
+      "location": "line 228"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 1024 should be a named constant",
+      "location": "line 252"
+    }
+  ],
+  "solid_violations": [
+    {
+      "principle": "DIP",
+      "name": "Dependency Inversion Principle",
+      "severity": "low",
+      "message": "File has 17 imports - consider dependency injection"
+    }
+  ],
+  "function_details": [
+    {
+      "name": "digest",
+      "parameters": 1,
+      "lines": 6,
+      "complexity": 1
+    },
+    {
+      "name": "save",
+      "parameters": 2,
+      "lines": 5,
+      "complexity": 1
+    },
+    {
+      "name": "sphere",
+      "parameters": 2,
+      "lines": 6,
+      "complexity": 1
+    },
+    {
+      "name": "valid_measurements",
+      "parameters": 2,
+      "lines": 10,
+      "complexity": 5
+    },
+    {
+      "name": "daily_features",
+      "parameters": 4,
+      "lines": 44,
+      "complexity": 14
+    },
+    {
+      "name": "prior_week_rain",
+      "parameters": 2,
+      "lines": 12,
+      "complexity": 5
+    },
+    {
+      "name": "load_observations",
+      "parameters": 3,
+      "lines": 34,
+      "complexity": 8
+    },
+    {
+      "name": "boundary_sensitivity",
+      "parameters": 2,
+      "lines": 34,
+      "complexity": 5
+    },
+    {
+      "name": "run",
+      "parameters": 2,
+      "lines": 27,
+      "complexity": 9
+    }
+  ],
+  "class_details": []
+}

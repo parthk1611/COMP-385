@@ -1,0 +1,70 @@
+{
+  "scope": "Generated runtime files omitted from Git; restore from local Code_Iteration_1.zip using the same relative paths.",
+  "files": [
+    {
+      "path": "data/processed/ignition_models_week5_v1/spatial_final_predictions.parquet",
+      "bytes": 4672550,
+      "sha256": "7580b0a2e6282e491c6ee0e4cb42b035f59ee1167ec5876459a818299ed15b30"
+    },
+    {
+      "path": "data/processed/ignition_models_week5_v1/spatial_lightgbm_calibrated.joblib",
+      "bytes": 116901,
+      "sha256": "e7c5c5d11565a5f8502fb8df321dcb187802c86e1237054e4fa2bcea18cd5b5b"
+    },
+    {
+      "path": "data/processed/ignition_models_week5_v1/temporal_final_predictions.parquet",
+      "bytes": 31757011,
+      "sha256": "05cfc2406687300c14e9eb85ecd95e35d8a19280601c99a121a2cb4a36da868e"
+    },
+    {
+      "path": "data/processed/ignition_models_week5_v1/temporal_lightgbm_calibrated.joblib",
+      "bytes": 117359,
+      "sha256": "0f879891bf39a45d63de3bd7bef2f2a31be2b98962bf370303a461a271ed514b"
+    },
+    {
+      "path": "data/processed/ignition_weather_v2_reserved/final_test.parquet",
+      "bytes": 189755567,
+      "sha256": "6877f3f32fbc39d10f043b0e91f749e16e11560f83568c8c170042b4aef81740"
+    },
+    {
+      "path": "data/processed/selected_2025_ignition_panel/cell_days.parquet",
+      "bytes": 201315146,
+      "sha256": "9119010e26b095b7662c8463e73cd678e03e0196292428b4dabcedefbd60ce91"
+    },
+    {
+      "path": "data/processed/selected_2025_models_v1/spatial_final_predictions.parquet",
+      "bytes": 1769377,
+      "sha256": "a093ad444d268e989e04258246ef12f06ee2a8294e5f1b77df6694ec82048879"
+    },
+    {
+      "path": "data/processed/selected_2025_models_v1/spatial_selected2025.joblib",
+      "bytes": 110455,
+      "sha256": "afff99a9225f99030117fd1fb7ede1123cd95bef976878b24fdc630a6f8ece78"
+    },
+    {
+      "path": "data/processed/selected_2025_models_v1/temporal_final_predictions.parquet",
+      "bytes": 10940990,
+      "sha256": "66f23f6e6ccd7c324594f8260dbeec25dd58d2f4e9a51cdb866e5f53ca24fc05"
+    },
+    {
+      "path": "data/processed/selected_2025_models_v1/temporal_selected2025.joblib",
+      "bytes": 113207,
+      "sha256": "a976d748b2e7db978011747b05deab126448ff6ada0b4d6444bdbb9f0f372214"
+    },
+    {
+      "path": "data/processed/selected_provincial_static_native_2025/static_features.parquet",
+      "bytes": 1589747,
+      "sha256": "627f1b981659e42403e9ed4e80a4083e6ca3f8d9f0c7fcdd10160c7355dc7ea0"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/selected_2025_ignition_map.html",
+      "bytes": 19910529,
+      "sha256": "b7d4337cb327efb8db89755d39f453bd523bac12ee77aba8764ee1892697940a"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/historical_ignition_map.html",
+      "bytes": 51615289,
+      "sha256": "73641b5c274bb2cefa001712a3fb3e178c6abf91dbde2b563e55000d668aa222"
+    }
+  ]
+}

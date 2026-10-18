@@ -1,0 +1,77 @@
+{
+  "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/scripts/prepare_provincial_weather.py",
+  "language": "python",
+  "metrics": {
+    "lines": {
+      "total": 131,
+      "code": 117,
+      "blank": 13,
+      "comment": 1
+    },
+    "functions": 4,
+    "classes": 0,
+    "avg_complexity": 11.5
+  },
+  "quality_score": 89,
+  "grade": "B",
+  "smells": [
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'sampled_inputs' has complexity 20 (max: 10)",
+      "location": "sampled_inputs"
+    },
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'derive_daily' has complexity 14 (max: 10)",
+      "location": "derive_daily"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2025 should be a named constant",
+      "location": "line 28"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 100 should be a named constant",
+      "location": "line 86"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2026 should be a named constant",
+      "location": "line 115"
+    }
+  ],
+  "solid_violations": [],
+  "function_details": [
+    {
+      "name": "standard_offsets",
+      "parameters": 1,
+      "lines": 15,
+      "complexity": 7
+    },
+    {
+      "name": "sampled_inputs",
+      "parameters": 2,
+      "lines": 30,
+      "complexity": 20
+    },
+    {
+      "name": "derive_daily",
+      "parameters": 4,
+      "lines": 35,
+      "complexity": 14
+    },
+    {
+      "name": "run",
+      "parameters": 1,
+      "lines": 23,
+      "complexity": 5
+    }
+  ],
+  "class_details": []
+}

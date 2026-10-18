@@ -1,0 +1,15 @@
+test_accumulation_crosses_midnight_and_resets_at_one_utc (test_selected_weather.SelectedWeatherTest.test_accumulation_crosses_midnight_and_resets_at_one_utc) ... ok
+test_component_units_and_direction (test_selected_weather.SelectedWeatherTest.test_component_units_and_direction) ... ok
+test_duplicate_times_are_rejected (test_selected_weather.SelectedWeatherTest.test_duplicate_times_are_rejected) ... ok
+test_equal_temperature_and_dewpoint_is_saturated (test_selected_weather.SelectedWeatherTest.test_equal_temperature_and_dewpoint_is_saturated) ... ok
+test_fwi_waits_for_declared_startup_and_breaks_after_gap (test_selected_weather.SelectedWeatherTest.test_fwi_waits_for_declared_startup_and_breaks_after_gap) ... ok
+test_missing_hour_is_not_a_one_hour_rainfall_total (test_selected_weather.SelectedWeatherTest.test_missing_hour_is_not_a_one_hour_rainfall_total) ... ok
+test_missing_noon_cannot_silently_advance_fwi_state (test_selected_weather.SelectedWeatherTest.test_missing_noon_cannot_silently_advance_fwi_state) ... ok
+test_negative_accumulation_change_remains_unknown (test_selected_weather.SelectedWeatherTest.test_negative_accumulation_change_remains_unknown) ... ok
+test_noon_rain_excludes_the_following_hour (test_selected_weather.SelectedWeatherTest.test_noon_rain_excludes_the_following_hour) ... ok
+test_standard_noon_does_not_follow_summer_dst (test_selected_weather.SelectedWeatherTest.test_standard_noon_does_not_follow_summer_dst) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.040s
+
+OK

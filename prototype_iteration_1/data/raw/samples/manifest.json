@@ -1,0 +1,250 @@
+{
+  "retrieved_on": "2026-10-02",
+  "model_crs": "EPSG:3978",
+  "sample_grid_size_m": 2500,
+  "sample_cells_per_side": 12,
+  "places": {
+    "red_lake": {
+      "longitude": -93.828,
+      "latitude": 51.018,
+      "bounds_model_crs": [
+        65000,
+        207500,
+        95000,
+        237500
+      ]
+    },
+    "thunder_bay": {
+      "longitude": -89.2477,
+      "latitude": 48.3809,
+      "bounds_model_crs": [
+        410000,
+        -65000,
+        440000,
+        -35000
+      ]
+    },
+    "timmins": {
+      "longitude": -81.3305,
+      "latitude": 48.4758,
+      "bounds_model_crs": [
+        987500,
+        35000,
+        1017500,
+        65000
+      ]
+    }
+  },
+  "source_urls": {
+    "fbp_2024": "https://cwfis.cfs.nrcan.gc.ca/geoserver/public/cffdrs_fbp_fuel_types/ows",
+    "mrdem_dtm": "https://canelevation-dem.s3.ca-central-1.amazonaws.com/mrdem-30/mrdem-30-dtm.tif",
+    "scanfi_closure_1985": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v2/SCANFI_att_closure_1985_v2_20260119.tif",
+    "scanfi_closure_2020": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v2/SCANFI_att_closure_2020_v2_20260119.tif",
+    "scanfi_closure_2025": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v2/SCANFI_att_closure_2025_v2_20260119.tif",
+    "scanfi_height_2020": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v2/SCANFI_att_height_2020_v2_20260119.tif",
+    "scanfi_balsam_fir_2020": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v2/SCANFI_spsCC_balsamFir_2020_v2_20260119.tif",
+    "scanfi_black_spruce_2020": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v2/SCANFI_spsCC_blackSpruce_2020_v2_20260119.tif",
+    "scanfi_broadleaf_2020": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v2/SCANFI_spsCC_broadleaf_2020_v2_20260119.tif",
+    "scanfi_jack_pine_2020": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v2/SCANFI_spsCC_jackPine_2020_v2_20260119.tif",
+    "scanfi_other_conifer_2020": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v2/SCANFI_spsCC_otherConiferous_2020_v2_20260119.tif",
+    "scanfi_tamarack_2020": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v2/SCANFI_spsCC_tamarack_2020_v2_20260119.tif",
+    "scanfi_white_red_pine_2020": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v2/SCANFI_spsCC_whiteRedPine_2020_v2_20260119.tif"
+  },
+  "files": [
+    {
+      "path": "data/raw/samples/red_lake/fbp_2024.tif",
+      "bytes": 2097588,
+      "sha256": "c3f1a29d96038ef87965d673a953aba4f6995c23bc6617a3a4ad0330487a6acb"
+    },
+    {
+      "path": "data/raw/samples/red_lake/mrdem_dtm.tif",
+      "bytes": 3079726,
+      "sha256": "6d14070757a59c1e08a49567b834d1a929f0d6e4e706d6b0e903de5590238534"
+    },
+    {
+      "path": "data/raw/samples/red_lake/scanfi_balsam_fir_2020.tif",
+      "bytes": 363991,
+      "sha256": "495bd2271cdee1913134f454919be2a43b8cae3928d240011537be9415f30aa5"
+    },
+    {
+      "path": "data/raw/samples/red_lake/scanfi_black_spruce_2020.tif",
+      "bytes": 541532,
+      "sha256": "e48c37b408419ea5c598b60b16bb82f50c586f1ed7d9f93fd4ff2c22f1b90cb9"
+    },
+    {
+      "path": "data/raw/samples/red_lake/scanfi_broadleaf_2020.tif",
+      "bytes": 530392,
+      "sha256": "1ce286a61e74dc7a4608444944086f798bc47b045e72edeebf799711fbe004cd"
+    },
+    {
+      "path": "data/raw/samples/red_lake/scanfi_closure_1985.tif",
+      "bytes": 501365,
+      "sha256": "367b8c86adc97caba283a43e682bb3c6bfd7ba9e6670fb86ceead73b9a09c4c6"
+    },
+    {
+      "path": "data/raw/samples/red_lake/scanfi_closure_2020.tif",
+      "bytes": 544036,
+      "sha256": "81699c874a99bf349b4da8e0d2f95cfe01235d1ea6d1f2de6d57f5c8fd934936"
+    },
+    {
+      "path": "data/raw/samples/red_lake/scanfi_closure_2025.tif",
+      "bytes": 537645,
+      "sha256": "2361895248be088e78a1fda748b79021bf8ec25a3d3e06ee4b6dc00cb59cb0da"
+    },
+    {
+      "path": "data/raw/samples/red_lake/scanfi_height_2020.tif",
+      "bytes": 443043,
+      "sha256": "3b255b19c216a27c8d214ec448eabaf3d07d0b08ab8dc2bdd0dca39b8b6d35c4"
+    },
+    {
+      "path": "data/raw/samples/red_lake/scanfi_jack_pine_2020.tif",
+      "bytes": 521299,
+      "sha256": "ec7497824c2bb3ae32812b6a97a4133ab3e3f473787cb046efb97fb7ffdf48ce"
+    },
+    {
+      "path": "data/raw/samples/red_lake/scanfi_other_conifer_2020.tif",
+      "bytes": 248746,
+      "sha256": "3a34905be4fdcc55a710b4c03631794ee259335073361c3313bcd02a75055095"
+    },
+    {
+      "path": "data/raw/samples/red_lake/scanfi_tamarack_2020.tif",
+      "bytes": 199491,
+      "sha256": "aea426f378e3ad7396f04f9154d2180fc7375bb5acfa614f70e7b15db26a827e"
+    },
+    {
+      "path": "data/raw/samples/red_lake/scanfi_white_red_pine_2020.tif",
+      "bytes": 43934,
+      "sha256": "420885a304f404773170bc53a7b73d2d6e99fcbb5d883626fae56d8fdcff00e2"
+    },
+    {
+      "path": "data/raw/samples/thunder_bay/fbp_2024.tif",
+      "bytes": 2097588,
+      "sha256": "ffafb5b20aac245cc30b116eeac2a1bc88b3cd2d807cadbba9367800a7b9dfd5"
+    },
+    {
+      "path": "data/raw/samples/thunder_bay/mrdem_dtm.tif",
+      "bytes": 2656056,
+      "sha256": "503da7a17e5aef6163153107d2d5cd75a5b4fdaeebdf1090bdfc533fd7a0fc0f"
+    },
+    {
+      "path": "data/raw/samples/thunder_bay/scanfi_balsam_fir_2020.tif",
+      "bytes": 262917,
+      "sha256": "224d722b758dac3848661ce05ce28cf9b594dfca6f4c1be69633f67a0669efd5"
+    },
+    {
+      "path": "data/raw/samples/thunder_bay/scanfi_black_spruce_2020.tif",
+      "bytes": 371342,
+      "sha256": "483a7a5999228fe792d597d4b8fd693641e801c37e42633687299d63f8281139"
+    },
+    {
+      "path": "data/raw/samples/thunder_bay/scanfi_broadleaf_2020.tif",
+      "bytes": 415137,
+      "sha256": "a46d85e42f2cb178f6bd2b782aeeaf5ccc4564c789ee68bc1963a6b7c42aa466"
+    },
+    {
+      "path": "data/raw/samples/thunder_bay/scanfi_closure_1985.tif",
+      "bytes": 387623,
+      "sha256": "f1f20bab914508ebbe44128e2ea147c7341c1c940363195bb875d6add473084b"
+    },
+    {
+      "path": "data/raw/samples/thunder_bay/scanfi_closure_2020.tif",
+      "bytes": 377997,
+      "sha256": "de293f086cdd5c54c816cdb2559b4d8e3872b768fbbc9a49ee8df2ce2762cb7b"
+    },
+    {
+      "path": "data/raw/samples/thunder_bay/scanfi_closure_2025.tif",
+      "bytes": 386671,
+      "sha256": "2c339c207815558664aea060e062899a523a6181efe95abc36da265882ba53e4"
+    },
+    {
+      "path": "data/raw/samples/thunder_bay/scanfi_height_2020.tif",
+      "bytes": 328276,
+      "sha256": "06e0e158eda029ab12baf316dc7b605b9e5f25f1dea68bd56264b1c35bfa1f78"
+    },
+    {
+      "path": "data/raw/samples/thunder_bay/scanfi_jack_pine_2020.tif",
+      "bytes": 297782,
+      "sha256": "8b404048eba2ee781e3acb42f72301670312d348c466f5fb6da0fd315a77c955"
+    },
+    {
+      "path": "data/raw/samples/thunder_bay/scanfi_other_conifer_2020.tif",
+      "bytes": 250152,
+      "sha256": "bf0041c4e0c201cabba214eb4df05c1f31a0eac0a46f3263187f7bc5573a4636"
+    },
+    {
+      "path": "data/raw/samples/thunder_bay/scanfi_tamarack_2020.tif",
+      "bytes": 114642,
+      "sha256": "60b5991ec116ef37fc4bf404164e1028183be90d6c184d8c020bea0639b4642c"
+    },
+    {
+      "path": "data/raw/samples/thunder_bay/scanfi_white_red_pine_2020.tif",
+      "bytes": 134237,
+      "sha256": "f33b4dcddcc3e8c5ead5e586731a888a0fafdb88dc94f0c4447297dcdc84cda2"
+    },
+    {
+      "path": "data/raw/samples/timmins/fbp_2024.tif",
+      "bytes": 2097588,
+      "sha256": "54529b88b2667038843a14557d17f1d0bba2b1d1e5df303b9a3ebd97e083b52c"
+    },
+    {
+      "path": "data/raw/samples/timmins/mrdem_dtm.tif",
+      "bytes": 3136331,
+      "sha256": "a4c3fca6ce2aec0a5389a47dd3b7548776546a9a3f0588dea2f5459c595350ac"
+    },
+    {
+      "path": "data/raw/samples/timmins/scanfi_balsam_fir_2020.tif",
+      "bytes": 363015,
+      "sha256": "27a0bcf5ad2b13736e69c72abaafd785fac8823fa9212c6c9383e5eea790d6a4"
+    },
+    {
+      "path": "data/raw/samples/timmins/scanfi_black_spruce_2020.tif",
+      "bytes": 642776,
+      "sha256": "3cad994937665b73f34ea8721230c0989ba9eb582b738c88587a8e0362fca788"
+    },
+    {
+      "path": "data/raw/samples/timmins/scanfi_broadleaf_2020.tif",
+      "bytes": 635462,
+      "sha256": "7d1f3f2c917fa678b0dbddf0634c428083e1a5fed51fc9a3e924f8723b2e2014"
+    },
+    {
+      "path": "data/raw/samples/timmins/scanfi_closure_1985.tif",
+      "bytes": 643516,
+      "sha256": "ca8177221544ad38c20c0d3e74816304ab3634b2fd1891017402394300ed841f"
+    },
+    {
+      "path": "data/raw/samples/timmins/scanfi_closure_2020.tif",
+      "bytes": 630534,
+      "sha256": "3d642b53775c0cb69bb07d3c8b2705f11c311fbb2fe57e21cf302ba8e5d4a8c9"
+    },
+    {
+      "path": "data/raw/samples/timmins/scanfi_closure_2025.tif",
+      "bytes": 625225,
+      "sha256": "e2a926430a6d61226803c32d68f69e440cf782a7a9efe86424a5934ad631d403"
+    },
+    {
+      "path": "data/raw/samples/timmins/scanfi_height_2020.tif",
+      "bytes": 535487,
+      "sha256": "f4770d83fa3757a241134ddd937350d23ac27cf4c4f957ef45c333570ccd5400"
+    },
+    {
+      "path": "data/raw/samples/timmins/scanfi_jack_pine_2020.tif",
+      "bytes": 448791,
+      "sha256": "b9d79201daf9fa9f0f1f28c746a2b0c0233cdd33ee9bb5fab90dafce803ba8d3"
+    },
+    {
+      "path": "data/raw/samples/timmins/scanfi_other_conifer_2020.tif",
+      "bytes": 335120,
+      "sha256": "b11544c978bf5609f311a3092bc79ae88316f61ac863749f56a29be89501e25b"
+    },
+    {
+      "path": "data/raw/samples/timmins/scanfi_tamarack_2020.tif",
+      "bytes": 375071,
+      "sha256": "4c60fe59dec99596fbefd26fbdbbe7c8eea7c03a09ad4828b068d540dbed0592"
+    },
+    {
+      "path": "data/raw/samples/timmins/scanfi_white_red_pine_2020.tif",
+      "bytes": 70238,
+      "sha256": "b16ef6e8ee6fa27e83c7988734531046f662bc48c1c3b27d495094ae4e33e9d2"
+    }
+  ]
+}

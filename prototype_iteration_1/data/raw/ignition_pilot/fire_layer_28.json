@@ -1,0 +1,14 @@
+{
+  "source": "https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/LIO_OPEN_DATA/LIO_Open09/MapServer/28",
+  "selection": {
+    "where": "FIRE_YEAR = 2025",
+    "geometry": "{\"xmin\": 410000, \"ymin\": -65000, \"xmax\": 440000, \"ymax\": -35000}",
+    "geometryType": "esriGeometryEnvelope",
+    "inSR": 3978,
+    "spatialRel": "esriSpatialRelIntersects"
+  },
+  "spatialReference": {
+    "wkid": 3978
+  },
+  "features": []
+}

@@ -1,0 +1,12 @@
+{
+  "branch": "parth/iteration-1-prototype",
+  "base_commit": "7a9b9be16a475f2369e4a5626c26dd10fa2a2c96",
+  "prototype_source_files_unchanged": 69,
+  "prototype_tests": "129 passed in 5.58s",
+  "repository_tests": "56 passed, 12 subtests passed in 2.22s",
+  "repository_test_command": "python -m pytest -c /dev/null --rootdir . tests capability_2_fire_spread/tests -q",
+  "environment_note": "Existing local Python environment; psutil was added to run the root model tests. This is not a clean dependency installation check.",
+  "generated_artifacts": "13 omitted runtime files inventoried in runtime_artifacts.json; full runnable submission ZIP remains local",
+  "source_and_markdown_whitespace": "passed; original provider CSV and text bytes preserved",
+  "credential_patterns": "no known credential-file names, private-key headers or GitHub/AWS/OpenAI token patterns found"
+}

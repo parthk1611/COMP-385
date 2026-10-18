@@ -1,0 +1,392 @@
+{
+  "scope": "Completed Week5 historical ignition prototype increment; overallWeek5 partial",
+  "entries": [
+    {
+      "path": "data/processed/ignition_models_week5_v1/spatial_first_day_explanations.json",
+      "bytes": 801219,
+      "sha256": "57dc7845bda88f7ce2dc67bc62c2f7fa0c160d17eb37abebe86bd3e9350664c3"
+    },
+    {
+      "path": "data/processed/ignition_models_week5_v1/spatial_lightgbm_calibrated.joblib",
+      "bytes": 116901,
+      "sha256": "e7c5c5d11565a5f8502fb8df321dcb187802c86e1237054e4fa2bcea18cd5b5b"
+    },
+    {
+      "path": "data/processed/ignition_models_week5_v1/temporal_first_day_explanations.json",
+      "bytes": 5650219,
+      "sha256": "3ab8d59d681bb2cec85221848c0c4a6419b1e97619a6249b793395aaac1b8028"
+    },
+    {
+      "path": "data/processed/ignition_models_week5_v1/temporal_lightgbm_calibrated.joblib",
+      "bytes": 117359,
+      "sha256": "0f879891bf39a45d63de3bd7bef2f2a31be2b98962bf370303a461a271ed514b"
+    },
+    {
+      "path": "data/processed/ignition_weather_v2_development/manifest.json",
+      "bytes": 6598,
+      "sha256": "0b85423c41993d7571dadb3ffbcf66f83f634b7c53e9fa8a6d22f6160f75aa73"
+    },
+    {
+      "path": "data/processed/ignition_weather_v2_development/predictor_contract.json",
+      "bytes": 3188,
+      "sha256": "51e162d6caf8e4242c0a7cc3fff730eefcac036834cbf142aaae7db64e41672c"
+    },
+    {
+      "path": "data/processed/ignition_weather_v2_reserved/calibration_manifest.json",
+      "bytes": 1139,
+      "sha256": "5a691129d7345c8c6b20288d93476c0b06497fa47b43507d72b91e77077452d6"
+    },
+    {
+      "path": "data/processed/ignition_weather_v2_reserved/final_test_manifest.json",
+      "bytes": 1139,
+      "sha256": "6f98681c2714bac37499dfdd3ba833a2c32f8318663fc95edd049148a14428bf"
+    },
+    {
+      "path": "data/processed/ignition_weather_v2_reserved/manifest.json",
+      "bytes": 2689,
+      "sha256": "b48f874b7466bbadbb60e7461c596393a9acc793131073c614cccf07a0aa8ac1"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/evaluation_reservation_v1.json",
+      "bytes": 2911,
+      "sha256": "4524309d0848ee20c674de3beb32891b161767d0e3e66d90b72ad4659b631d2c"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/ignition_spatial_partition_v1.csv",
+      "bytes": 688840,
+      "sha256": "cc6003b321c6b660e766c29b4940829a0fe8b983386a7cb3cd6c041537d9fec0"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/README.md",
+      "bytes": 10247,
+      "sha256": "0f0f36575aa17e8c142336858785565c3dbe4bc9b12aefa0c980ceac28aaac09"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/browser_verification.json",
+      "bytes": 747,
+      "sha256": "f405b53d5d9d8e419391f54da912d6245b0db92716a81570da0b08109cb7bb28"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/calibration_build.log",
+      "bytes": 130,
+      "sha256": "e745a398079fb933e897038206f42d428c5a7135db2940d4d6d4017acec7737a"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/calibration_report.json",
+      "bytes": 3514,
+      "sha256": "2a785b4b0d83c889d24698324a7d711aea9a723d365af0c22ab137bee8ea49bb"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/checklist_snapshot.md",
+      "bytes": 25606,
+      "sha256": "82135678104c252920559c0f6aeec2d22224cffb7b8b0c3c1de3022e7074ea62"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/code_quality.json",
+      "bytes": 3150,
+      "sha256": "47f8e4bb6cb382e34ee02a21f5e12f5252c2ccbcc15589b3e9b47eed11496a0c"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/environment.lock.txt",
+      "bytes": 860,
+      "sha256": "19575a1254ffa99ee60e48310fde5b7fde269ed9583039a4a28954506c2e6a29"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/final_calibration_diagnostics.png",
+      "bytes": 136729,
+      "sha256": "53783c5abe619f16cceb61dd87ab23414d24e3430c995edc063b46e5f92749df"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/final_evaluation.json",
+      "bytes": 21047,
+      "sha256": "69e4d3fac4f825d5c6fcd6bca440b07a481f83f724790c947e8aa16cd8633342"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/final_evaluation_build.log",
+      "bytes": 80,
+      "sha256": "d9a85218f888f04c32b84a6613e4f9388d0301881bc9d5e295af41c249acc0d6"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/final_evaluation_freeze.json",
+      "bytes": 1359,
+      "sha256": "cdf8ebaa765c3ccb0afe894fe8875764ea017547c7ae54864abd5c3af53c0385"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/final_evaluation_started.json",
+      "bytes": 237,
+      "sha256": "47b3712c46e48bbb938b864afe622067c791475a86614ca676e45a20ee3883d6"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/historical_ignition_map.html",
+      "bytes": 51615289,
+      "sha256": "73641b5c274bb2cefa001712a3fb3e178c6abf91dbde2b563e55000d668aa222"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/integrity_verification.json",
+      "bytes": 2821,
+      "sha256": "8940dfbece6d2d70092b1b2a1745a53cb447dad9d54860710ec637a89619e704"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/map_build.log",
+      "bytes": 28,
+      "sha256": "ad609dc22218dd82a63cef0eba536350209583061a53c6cb3d353a0e193263ac"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/map_build_audit.json",
+      "bytes": 733,
+      "sha256": "56fd52410aff046a9daa3e9de47dc2cd77a08c1d76805f80de21abb6fce147a1"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/map_build_before_mobile_layout.json",
+      "bytes": 528,
+      "sha256": "1679ff2f9b2f8e7d16bc7b4f072c2c6b394213012e820792c2a8c3ce8582a5a8"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/map_code_quality.json",
+      "bytes": 1946,
+      "sha256": "9a90e596f40e2e7cf13026848405f32cdcd31134a05153919bcf0f704ae5eac0"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/preimplementation_review.md",
+      "bytes": 1741,
+      "sha256": "163b188d48109f85983a49c1aac4503d50d641e8e07d691c12ef4278afde192e"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/project_architecture.md",
+      "bytes": 14765,
+      "sha256": "f9f30ac3f5b89d1c63060bac28ad8ef26d1f9ee186eaef91ec7d5ff37ff67167"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/project_context.md",
+      "bytes": 22669,
+      "sha256": "6d84b8625836b8b6f975dc085f28a0a5d9b34d9fb340be72c98a4e39eb20f6cf"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/protocol_freeze.json",
+      "bytes": 4640,
+      "sha256": "a6679a4514e46a2dbeab484ba2e32a52cfb250479c9c8f476895a448208b3f9c"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/requirements.txt",
+      "bytes": 282,
+      "sha256": "03be4422aed335898dd79cf8e29e65d320cabdc0a3edea7dcdb29f388127b274"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/scripts/__init__.py",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/scripts/analyze_static_samples.py",
+      "bytes": 26148,
+      "sha256": "a9db1d1e99ef3364cfba9a91d3542284d1abc46aee47de96a85d2f869f9db149"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/scripts/build_ignition_map.py",
+      "bytes": 11067,
+      "sha256": "6f5460bd265024ff9ca7e76461dcf15846957bc590adc6d9abeafc39d0155656"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/scripts/build_selected_2025_panel.py",
+      "bytes": 9146,
+      "sha256": "cc46a2ab793db372bc4c8e6afc8de46eed3f8b97c52fee347a7b419fc5eb93ff"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/scripts/fetch_era5_pilot.py",
+      "bytes": 2635,
+      "sha256": "721aec2d071b156dd82471fa7a02ff2cbddb945145620cbe68ee6e8907a654b8"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/scripts/fetch_ontario_static.py",
+      "bytes": 8100,
+      "sha256": "6557bc01cecce74a73f4d3077b57cd32d9b54bb047ee5e1eef0bc737aa199e7c"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/scripts/fetch_static_samples.py",
+      "bytes": 6424,
+      "sha256": "f530e7b1854da85fd317c2e165b1bd18a093a59f3d4cf7b6f3bee7339b9b059e"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/scripts/hrdps_live_weather.py",
+      "bytes": 16454,
+      "sha256": "e01ea1d42fc6c28d9413b5c689f71a55f6828a095cad67f6490c5d39311bfd47"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/scripts/ignition_comparison.py",
+      "bytes": 18630,
+      "sha256": "5426f8dee840cd4cb96700531d5cff2c05ea14e328008ec89c2c2c2377f9b26f"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/scripts/join_development_weather_v2.py",
+      "bytes": 7893,
+      "sha256": "a89e5a12ab9782723cf0d62a77b2fb61e7a12588c1efc5b440d1228642e0f3d8"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/scripts/prepare_historical_weather_v2.py",
+      "bytes": 15493,
+      "sha256": "cd0607906e7dd18b3c6351132aab9a3e4d5f70d502b185dcefaa03e16f9c6e02"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/scripts/prepare_ignition_pilot.py",
+      "bytes": 13880,
+      "sha256": "f9b1842aa288caf59122cc98a13eef0afe55b88f60bcc6ec2a8d3cbc0dea2bc1"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/scripts/prepare_provincial_static.py",
+      "bytes": 10989,
+      "sha256": "cce18bb112393ad495bf2571f3d0f527e02b856445eaac771f5cf6956e53a1e9"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/scripts/prepare_provincial_weather.py",
+      "bytes": 9016,
+      "sha256": "f5b472926dd2f5f04cf10dedafff223f7eccb461ff1cafcf04517cb398a0356c"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/scripts/prepare_selected_weather.py",
+      "bytes": 10353,
+      "sha256": "923a5fc00aa2ed13da05f485e8bda9e0f631e4cc7215a9d19a1aee2152c7250e"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/scripts/profile_ontario_static.py",
+      "bytes": 5666,
+      "sha256": "ad9a376ac39c22b29f0aba6f7d1ca72b84eed138b6a7ad36933aec2770ee649f"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/scripts/refine_provincial_fuel.py",
+      "bytes": 6110,
+      "sha256": "b1bb6902dc8b197dfdcb21e00471c118442f3cffe5ca4e4f89cd441019043214"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/scripts/week5_ignition.py",
+      "bytes": 16485,
+      "sha256": "6d39543cbf5276fcc658c9039824d01055105c86f14873d0d2649ff6c64e2470"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/team_repository/capability_2_fire_spread/scripts/fire_weather_index.py",
+      "bytes": 5019,
+      "sha256": "449a207639d98a15811a2dddfe0bb399ab0ab6375cb46d5fb6dfbe2cef339691"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/tests/test_development_weather_join.py",
+      "bytes": 2634,
+      "sha256": "d39e6439372b7107e3ad5e0ada5e280458f8153eeb14c12e71500e70e89002dd"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/tests/test_historical_weather_v2.py",
+      "bytes": 4543,
+      "sha256": "4c4312314a72480ccec7cd0d8e00a27e8a4e30b41d67426937716d9347b51b1e"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/tests/test_hrdps_live_weather.py",
+      "bytes": 3966,
+      "sha256": "b95d04fb77ed10bbde5e9dba31e5e049e0e6ac6d91798cbd21f07f3ac0993400"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/tests/test_ignition_comparison.py",
+      "bytes": 4868,
+      "sha256": "ff68d19f219e9343cbe09bfc3bec3f903ba92848251e3fd266f045d303b08d10"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/tests/test_ignition_map.py",
+      "bytes": 1023,
+      "sha256": "f658adb73730e117eefb5af70330d092c536fed0f98a89c16140aa2deb510595"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/tests/test_ignition_pilot.py",
+      "bytes": 4839,
+      "sha256": "0a2621249d5fd9029871a7492feb67b1784d95bc689ffa4a99fb5909d880f076"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/tests/test_native_fuel.py",
+      "bytes": 594,
+      "sha256": "10f9fbd7c80aa4b7b9a8e26e296d7e275f2581c616882bfc7046e9e2c9dfa0a1"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/tests/test_processed_outputs.py",
+      "bytes": 1563,
+      "sha256": "7d7b6ae778b8ef87daa34fd1e3695c8eaac4bb47efac3f9e340b7dcbca61d467"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/tests/test_provincial_static.py",
+      "bytes": 1209,
+      "sha256": "07a119ff0a0d495b1ec72646866bf83cb558518355f580fb4d680848914c7297"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/tests/test_provincial_weather.py",
+      "bytes": 1898,
+      "sha256": "6877e2696f810d52f79b28ce73634b927b95553962bcebec5a7439936fd223d0"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/tests/test_selected_2025_panel.py",
+      "bytes": 1023,
+      "sha256": "bdbe3849923046a9a7b34774551e9528cca963379bed31be09d2ddbfe268b9df"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/tests/test_selected_weather.py",
+      "bytes": 3642,
+      "sha256": "f4eea5f493d45ec30756a575ec239d804af9a48f32273a8bee95fb164b0b1df3"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/tests/test_static_analysis.py",
+      "bytes": 1827,
+      "sha256": "8f7759f73e31c1d2ccc4cbf3a2d62d493741a76832f718ac5af3897f40a3a654"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/tests/test_week3_interfaces.py",
+      "bytes": 1994,
+      "sha256": "aab05a130a2313b4365a57593d04d5e2b0d30efb5cc2f30d36566330cc6f0096"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/source_snapshot/tests/test_week5_ignition.py",
+      "bytes": 2682,
+      "sha256": "2ea085a48ea6ff273e4364fc09cf38be759ae25f464d1cdf1dac1cfcaf8b0936"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/spatial_calibrated_final_daily_alerts.csv",
+      "bytes": 4264,
+      "sha256": "5ce4dbfd68d920b497a081659060ddc507e46e397badc119395df5ab8b4064d9"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/spatial_training_prior_final_daily_alerts.csv",
+      "bytes": 4264,
+      "sha256": "a34a77d6f63959569011516fbbe49316a1c1fc44dd8f95d0f1ee1c85d0250e0f"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/spatial_uncalibrated_final_daily_alerts.csv",
+      "bytes": 4264,
+      "sha256": "5ce4dbfd68d920b497a081659060ddc507e46e397badc119395df5ab8b4064d9"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/temporal_calibrated_final_daily_alerts.csv",
+      "bytes": 4276,
+      "sha256": "81e7cd842e491e8194b760ea3e5292a8e4350db711f4ffdce47490a02c149856"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/temporal_training_prior_final_daily_alerts.csv",
+      "bytes": 4276,
+      "sha256": "f1a37e507ffcdb88fdb8c492cf5ed8fa655029388314b7c10f2326bfe07d9138"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/temporal_uncalibrated_final_daily_alerts.csv",
+      "bytes": 4276,
+      "sha256": "81e7cd842e491e8194b760ea3e5292a8e4350db711f4ffdce47490a02c149856"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/unit_tests_before_fit.txt",
+      "bytes": 180,
+      "sha256": "08a0678bba9664027f6f1ea9d4695d3dffbd651cbdf41d39d0f67f0a4ea82c19"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/unit_tests_final.txt",
+      "bytes": 180,
+      "sha256": "c5d24984321010e8e288439022a003c8273a3b2d870ef00e6aa9511d5e465505"
+    },
+    {
+      "path": "team_repository/data/interim/ontario_fire_region_10km_grid.csv",
+      "bytes": 563016,
+      "sha256": "b22741d83b64c2b78c19fbf182848566644a23fad4aeef3301ff25ef7c6c3f35"
+    }
+  ],
+  "excluded": "Large reserved/weather/source/whole-prediction Parquets retained locally and hash-listed; compact bundle is not a raw-data distribution",
+  "server": "Loopback preview is temporary; embedded HTML is permanent/self-contained"
+}

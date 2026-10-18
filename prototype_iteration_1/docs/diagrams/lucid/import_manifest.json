@@ -1,0 +1,62 @@
+{
+  "pages": [
+    {
+      "page": "Architecture",
+      "source_dot": "reports/submission_iteration_1_work/figures/architecture.dot",
+      "source_sha256": "b81c737edc0437f18348d8d202060c8a90ab83670460d607e5e9173bc563e6bd",
+      "native_nodes": 8,
+      "native_connectors": 8
+    },
+    {
+      "page": "Data flow",
+      "source_dot": "reports/submission_iteration_1_work/figures/data_flow.dot",
+      "source_sha256": "6727c12077d1fdf305c0794e4b9ff41392dd1afba6df040a42396994de5dac0e",
+      "native_nodes": 8,
+      "native_connectors": 7
+    },
+    {
+      "page": "Data relationships",
+      "source_dot": "reports/submission_iteration_1_work/figures/logical_data.dot",
+      "source_sha256": "f5ada99202e60151a6640efb0fd250bdb70d1dc7325900abf5711285c55a4502",
+      "native_nodes": 7,
+      "native_connectors": 5
+    },
+    {
+      "page": "Use cases",
+      "source_dot": "reports/submission_iteration_1_work/figures/use_cases.dot",
+      "source_sha256": "cd17238e814c369c9c8805a7c89e627bcdd43647451f8c33b8f5de7ecf74dd0c",
+      "native_nodes": 10,
+      "native_connectors": 9
+    },
+    {
+      "page": "Classes and components",
+      "source_dot": "reports/submission_iteration_1_work/figures/components.dot",
+      "source_sha256": "e0eee2347b83fd4266d4f7e5d0fce3543317a1902ad0806f6fa98bfa3bc96bcf",
+      "native_nodes": 7,
+      "native_connectors": 6
+    },
+    {
+      "page": "Ignition interaction",
+      "source_dot": "reports/submission_iteration_1_work/figures/ignition_sequence.dot",
+      "source_sha256": "e4ed452fd3f8bb622cf96ac8515e16e5f152e784984508b4cf1823384ab0cbe2",
+      "native_nodes": 9,
+      "native_connectors": 9
+    },
+    {
+      "page": "Spread interaction",
+      "source_dot": "reports/submission_iteration_1_work/figures/spread_sequence.dot",
+      "source_sha256": "f13b4be644f8d3bab43de90060cf6cc3d61ecf5690be59203b296b87ea0a2c0a",
+      "native_nodes": 7,
+      "native_connectors": 6
+    },
+    {
+      "page": "Local deployment",
+      "source_dot": "reports/submission_iteration_1_work/figures/deployment.dot",
+      "source_sha256": "fbf79b16781d2fbfae6c76d18ccc731890a97cdc770dee00e3321bd9ddcb4652",
+      "native_nodes": 6,
+      "native_connectors": 5
+    }
+  ],
+  "file": "Ontario_Wildfire_Project_Diagrams.drawio",
+  "bytes": 49910
+}

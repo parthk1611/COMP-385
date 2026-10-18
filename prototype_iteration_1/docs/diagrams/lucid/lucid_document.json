@@ -1,0 +1,142 @@
+{
+  "document_id": "24bb58c8-fb97-479c-a0a8-9434caf9e283",
+  "title": "Ontario Wildfire Project Diagrams",
+  "edit_url": "https://lucid.app/lucidchart/24bb58c8-fb97-479c-a0a8-9434caf9e283/edit",
+  "export_method": "Lucid connector PNG page exports",
+  "pages": [
+    {
+      "page": 1,
+      "title": "Architecture",
+      "page_id": "emQilzKQyKDD2",
+      "nodes": 8,
+      "connectors": 8,
+      "labels": [
+        "Versioned local files\nModels, predictions, factors, maps\nContracts, hashes and replay outputs",
+        "Analyst browser dashboard\n2019 / 2025 ignition maps\nSpread replay / live-readiness status",
+        "HRDPS + research FWI adapter\nQualification assessment fails\nNo live ignition probability",
+        "Offline ignition experiments\nFour candidates -> LightGBM\nRefit -> calibration -> frozen final test",
+        "Python loopback HTTP application\nValidate requests, serve saved results\nDetails, provenance, CSV and GeoJSON",
+        "Validate and prepare\nCRS, units, timestamps, missingness\n10 km ignition / 90 m spread",
+        "Offline incident reconstruction\nFBP-inspired rates + travel-time search\nCalibration / holdout baseline comparison",
+        "Pinned source archives\nHistorical NFDB / CDEM / CWFIS\nSeparate selected seven-source study"
+      ]
+    },
+    {
+      "page": 2,
+      "title": "Data flow",
+      "page_id": "YiCcaBaa1gA0h",
+      "nodes": 8,
+      "connectors": 7,
+      "labels": [
+        "Analyst request\nStudy + date + cell / incident + horizon",
+        "D1 Source archives\nFire records / weather / landscape",
+        "2 Develop and evaluate\nTraining-only preprocessing\nTemporal / geographic / calibration roles",
+        "Map, details and exports\nMissing result -> unavailable\nNever reinterpret missing as zero",
+        "3 Validate and retrieve\nKey uniqueness / finite probabilities\nProvenance / explanation availability",
+        "D2 Separate feature stores\nHistorical cell-days / selected 2025 cell-days\nIncident fuel, terrain and observations",
+        "1 Validate source versions\nAudit quality, timing, geometry and exclusions",
+        "D3 Frozen model and result store\nScores, factor files, replay metrics and manifests"
+      ]
+    },
+    {
+      "page": 3,
+      "title": "Data relationships",
+      "page_id": "8usByrFaXcNMG",
+      "nodes": 7,
+      "connectors": 5,
+      "labels": [
+        "Saved explanation\ngrid_id + date + model\ntop factors / raw log odds\nfirst evaluated day only",
+        "Grid cell\ngrid_id (key)\ngrid_x_m, grid_y_m\nCRS and source version",
+        "Cell day feature record\ngrid_id + ignition_date (key)\nissue_time_utc\npredictors + quality flags",
+        "Model artifact\nmodel identifier / hash\npredictor contract hash\ntraining and calibration roles",
+        "Saved prediction\ngrid_id + ignition_date + study\nprobability, raw probability\nrecorded start, weather flag",
+        "Replay score\nfire_id + step\nsimulator and baseline metrics\npartition / scoring support",
+        "Incident reconstruction\nfire_id, observation interval\nlandscape and weather versions\nsettings / arrival-time output"
+      ]
+    },
+    {
+      "page": 4,
+      "title": "Use cases",
+      "page_id": "aEHbwCSzFxf2d",
+      "nodes": 10,
+      "connectors": 9,
+      "labels": [
+        "Inspect incident progression\nUC 03",
+        "Explain a selected cell\nUC 02",
+        "Compare replay with baseline\nUC 04",
+        "Inspect historical ignition risk\nUC 01",
+        "Analyst",
+        "Export date results",
+        "Inspect live readiness",
+        "Developer / operator",
+        "Fit and evaluate models",
+        "Build and validate data"
+      ]
+    },
+    {
+      "page": 5,
+      "title": "Classes and components",
+      "page_id": "kQ4Ef7UKAdUW9",
+      "nodes": 7,
+      "connectors": 6,
+      "labels": [
+        "Handler : BaseHTTPRequestHandler\ndo_GET()\nhandle_get()\nsend_json()",
+        "Parquet / JSON / joblib / HTML\nsaved results and contracts",
+        "Ignition experiment modules\nignition_comparison.py\nweek5_ignition.py\nselected_2025_model.py",
+        "Spread functions\nload_case()\nsimulate()\nmove_clearance()",
+        "Settings dataclass\nros_scale, flank_scale, wind_scale\nrepair_burn_scar, hourly_moisture",
+        "FireCase dataclass\nfuel, elevation, weather\narrival, observation_times\nmask_from_cells() / burned_375()",
+        "capstone_app module functions\nscore_response() / cell_details()\nexport_predictions()\nassess_live_inputs()"
+      ]
+    },
+    {
+      "page": 6,
+      "title": "Ignition interaction",
+      "page_id": "TaIAKIkt4JvW2",
+      "nodes": 9,
+      "connectors": 9,
+      "labels": [
+        "Analyst selects study, date and cell",
+        "Read matching feature values and units\nReturn first-day raw-log-odds factors",
+        "Browser displays matching selection\nChanging date or cell clears stale details",
+        "Return probability and provenance\nFactors explicitly unavailable",
+        "Browser loads saved study map\nHTML contains date-indexed probabilities",
+        "Read exact saved prediction + provenance\nReject duplicate or nonfinite result",
+        "HTTP handler validates date, grid and study",
+        "Browser requests cell details\nGET /api/cell-details",
+        "Requested date has saved explanation?"
+      ]
+    },
+    {
+      "page": 7,
+      "title": "Spread interaction",
+      "page_id": "9bnDtH3gY58LM",
+      "nodes": 7,
+      "connectors": 6,
+      "labels": [
+        "Validate initial mask and traversable moves\nWater barriers and corners remain blocked",
+        "Compare matching observed interval\nSimulator and even-growth baseline\nHoldout scores retained even when worse",
+        "Export versioned replay and viewer data\nFinal-perimeter assistance labelled reconstruction",
+        "Analyst opens spread view\nChooses supported incident and 1 / 3 / 6 hours",
+        "Browser renders saved simulation outputs\nNo on-demand live forecast or validated horizon claim",
+        "FBP-inspired directional rate functions\nTravel-time search -> arrival minutes",
+        "Offline replay pipeline loads incident\nInitial active state + 90 m landscape + weather"
+      ]
+    },
+    {
+      "page": 8,
+      "title": "Local deployment",
+      "page_id": "CMrJdULNhEeuE",
+      "nodes": 6,
+      "connectors": 5,
+      "labels": [
+        "External providers used during acquisition\nERA5 / HRDPS / Ontario / NRCan / VIIRS\nNot required for saved-result demonstration",
+        "Local Python 3.13 environment\nInstall pinned requirements\nRun packaged tests",
+        "Packaged local read-only research artifacts\nParquet / joblib / JSON / HTML",
+        "Browser on the same machine\nHTTP dashboard and exports",
+        "Python ThreadingHTTPServer\nBind 127.0.0.1 port 8768\nNo public endpoint or cloud deployment",
+        "Code Iteration 1 ZIP\nExtract source, tests, models and runtime caches"
+      ]
+    }
+  ]
+}

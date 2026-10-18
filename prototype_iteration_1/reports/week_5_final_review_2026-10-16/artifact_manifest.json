@@ -1,0 +1,2486 @@
+{
+  "scope": "Final local technical review; live acceptance unmet",
+  "files": [
+    {
+      "path": "START_HERE.md",
+      "bytes": 565,
+      "sha256": "fd096b0e581e481179e704278f1b5e41a59bfba86a449eeaf0b4d140622ea059"
+    },
+    {
+      "path": "data/processed/ignition_models_week5_v1/spatial_first_day_explanations.json",
+      "bytes": 801219,
+      "sha256": "57dc7845bda88f7ce2dc67bc62c2f7fa0c160d17eb37abebe86bd3e9350664c3"
+    },
+    {
+      "path": "data/processed/ignition_models_week5_v1/spatial_lightgbm_calibrated.joblib",
+      "bytes": 116901,
+      "sha256": "e7c5c5d11565a5f8502fb8df321dcb187802c86e1237054e4fa2bcea18cd5b5b"
+    },
+    {
+      "path": "data/processed/ignition_models_week5_v1/temporal_first_day_explanations.json",
+      "bytes": 5650219,
+      "sha256": "3ab8d59d681bb2cec85221848c0c4a6419b1e97619a6249b793395aaac1b8028"
+    },
+    {
+      "path": "data/processed/ignition_models_week5_v1/temporal_lightgbm_calibrated.joblib",
+      "bytes": 117359,
+      "sha256": "0f879891bf39a45d63de3bd7bef2f2a31be2b98962bf370303a461a271ed514b"
+    },
+    {
+      "path": "data/processed/ignition_weather_v2_development/manifest.json",
+      "bytes": 6598,
+      "sha256": "0b85423c41993d7571dadb3ffbcf66f83f634b7c53e9fa8a6d22f6160f75aa73"
+    },
+    {
+      "path": "data/processed/ignition_weather_v2_development/predictor_contract.json",
+      "bytes": 3188,
+      "sha256": "51e162d6caf8e4242c0a7cc3fff730eefcac036834cbf142aaae7db64e41672c"
+    },
+    {
+      "path": "data/processed/selected_2025_ignition_panel/manifest.json",
+      "bytes": 2909,
+      "sha256": "42b10640f780570cf49596cf4176d98849b068553bb4ddb94a35b42463aeaa1c"
+    },
+    {
+      "path": "data/processed/selected_2025_ignition_panel/predictor_contract.json",
+      "bytes": 2327,
+      "sha256": "141eeeda383338c8ad34cfa4847a9094297fed6d921c017b69f2c2a3c89bd0b1"
+    },
+    {
+      "path": "data/processed/selected_2025_models_v1/spatial_first_day_explanations.json",
+      "bytes": 681831,
+      "sha256": "da929dcc9b4bc3e12ecb95cfdf11a09aac0c2ced6400748fccf44f6eae483822"
+    },
+    {
+      "path": "data/processed/selected_2025_models_v1/spatial_selected2025.joblib",
+      "bytes": 110455,
+      "sha256": "afff99a9225f99030117fd1fb7ede1123cd95bef976878b24fdc630a6f8ece78"
+    },
+    {
+      "path": "data/processed/selected_2025_models_v1/temporal_first_day_explanations.json",
+      "bytes": 4751135,
+      "sha256": "e3b5b624805ff3cdba459a040cef46e4f08bbce4e7f5f833bf00b70eafbd1c27"
+    },
+    {
+      "path": "data/processed/selected_2025_models_v1/temporal_selected2025.joblib",
+      "bytes": 113207,
+      "sha256": "a976d748b2e7db978011747b05deab126448ff6ada0b4d6444bdbb9f0f372214"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/fuel_windows_manifest.json",
+      "bytes": 14481,
+      "sha256": "ecbedfc0e32c8dfcb39dba39a95f2a79357b11003d0f9210f9aa45e7ee3c051e"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2012_COC32_fbp_fuel_90m.tif",
+      "bytes": 6424,
+      "sha256": "64404bf63067467ebf93721ce9ed0d0a9939e453fc148b3b9e64b277ed404c10"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2012_COC32_mrdem_dtm_90m.tif",
+      "bytes": 47950,
+      "sha256": "53aa8b8d34df818ac7eab14948400ffa6b12ce5d81e25378c0f4db2c94b5d748"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2012_RED60_fbp_fuel_90m.tif",
+      "bytes": 9878,
+      "sha256": "e658cfe2f2ad409952fce4e7a9ce6ff361596996871943429f3ad0d3380d6a3a"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2012_RED60_mrdem_dtm_90m.tif",
+      "bytes": 73024,
+      "sha256": "f755f38ca6e0cd71b607dd1e05524b26bc070651aefa59c912e4bc85c6098546"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2012_SLK72_fbp_fuel_90m.tif",
+      "bytes": 6509,
+      "sha256": "db4e23e481d11353bc39c9f8bd8bb52e3065e0d8c57441fa15963ad86153ac65"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2012_SLK72_mrdem_dtm_90m.tif",
+      "bytes": 41681,
+      "sha256": "5b98a610a00705dcfae3fb6f737d2c23b4bd76b779e99f0c4210f34460d84471"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2012_THU65_fbp_fuel_90m.tif",
+      "bytes": 6463,
+      "sha256": "19ef5fc85de62ec41ca14175a9838e7df6a6788fce6184b36d8283ef145e41a3"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2012_THU65_mrdem_dtm_90m.tif",
+      "bytes": 44905,
+      "sha256": "fe44213ed3238f74775c22ed536d28a34c7404fcf2bb3c28e4f724890738ded2"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2013_NIP19_fbp_fuel_90m.tif",
+      "bytes": 13963,
+      "sha256": "e7cbe6aefdfde87f42cd8ae4a743d6cf888b573f12f218ecad78329a3a313eae"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2013_NIP19_mrdem_dtm_90m.tif",
+      "bytes": 83151,
+      "sha256": "8c6b1722aef38daa896f37a9df546fc4da7b68fafe5fc7123cb4a706ed6e1f81"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2013_SLK23_fbp_fuel_90m.tif",
+      "bytes": 5460,
+      "sha256": "8363cde5d9033d443282352389c2a2115dac59084e75b3a78658bc09927a9468"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2013_SLK23_mrdem_dtm_90m.tif",
+      "bytes": 40727,
+      "sha256": "24f1f898266d0dbac0291938e978abd5bd398b75ecd7727e733679da7d1dd3f1"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2015_COC6_fbp_fuel_90m.tif",
+      "bytes": 18445,
+      "sha256": "d5e0d1a2d7f4f4e9b307511275b81f97a5207aafe5f8e6c19ec899c80135f49b"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2015_COC6_mrdem_dtm_90m.tif",
+      "bytes": 101272,
+      "sha256": "b819ba5702c189f62e2def00140aa605b0844a1280d433fff6c8e7852e09f1e3"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2015_RED25_fbp_fuel_90m.tif",
+      "bytes": 9569,
+      "sha256": "d9d9bbd41d1825a8aee6be072f8169252cd4d9cdb748f761ea8ba18188d17d2f"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2015_RED25_mrdem_dtm_90m.tif",
+      "bytes": 80657,
+      "sha256": "2fe2db1d2a4c085d4f871527707778f9aa651900b04a327b9614a9464b9d648d"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2015_RED44_fbp_fuel_90m.tif",
+      "bytes": 7212,
+      "sha256": "75afa6a46e70be84c54e791ebca66c79d2c262992fb03cedbd79819614040b5f"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2015_RED44_mrdem_dtm_90m.tif",
+      "bytes": 54739,
+      "sha256": "0f0091455ee182957f97766963f20b346a61ccf3c4c4314949b34b660e8932c5"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2017_COC10_fbp_fuel_90m.tif",
+      "bytes": 62804,
+      "sha256": "10cc67cab7cbc78fc4661d238a76a8e7927b7173deac9df1adb35922a3e2b66e"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2017_COC10_mrdem_dtm_90m.tif",
+      "bytes": 396777,
+      "sha256": "c940dc7a0511db67e836d7e30730975fb6abeacf49983bf09ddf795a0593c866"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2017_COC26_fbp_fuel_90m.tif",
+      "bytes": 10042,
+      "sha256": "9e2a8e43d94370c02ab2d293a48e3583073f45fa478e75ac859c60c82dbcdc4a"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2017_COC26_mrdem_dtm_90m.tif",
+      "bytes": 68650,
+      "sha256": "a650e0b3e2461000c9917f1444015bcde7e8ac0c41f16e5da0d0c1fd82260d51"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2017_NIP18_fbp_fuel_90m.tif",
+      "bytes": 4241,
+      "sha256": "e225bc50949714901cd84429f9630b47ae4a3e2f757b27ea08deee413c4b0d60"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2017_NIP18_mrdem_dtm_90m.tif",
+      "bytes": 49197,
+      "sha256": "42dcaf00920115b8ab6e58c4a072024abaac9eb5fe2cb21c1a22753efc7becc3"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2017_NIP37_fbp_fuel_90m.tif",
+      "bytes": 17659,
+      "sha256": "5a20adc65410de74d6ece59567e1ab7e5f5b7fc6305a42cb9a1b4f5e175900f6"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2017_NIP37_mrdem_dtm_90m.tif",
+      "bytes": 124017,
+      "sha256": "c3edef7bda9cc0351ef148fc1ee919f2fb4cb32b0403e9d6a5cd9643eb01cd06"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2018_COC20_fbp_fuel_90m.tif",
+      "bytes": 4831,
+      "sha256": "ae85bfe54c91efddef6589ebbd0a81fe1fd31289f3f4c13e14d16589e66cd0c1"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2018_COC20_mrdem_dtm_90m.tif",
+      "bytes": 50375,
+      "sha256": "c6a1585de32d3ec8a961f74087bc08bfac86f86718623bbac18e6a7d9b7da008"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2018_FOR24_fbp_fuel_90m.tif",
+      "bytes": 14627,
+      "sha256": "962bc34ebffa995032562336be6b32ca7dca1e3cc91e5bc1e9ec3e3bfda07452"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2018_FOR24_mrdem_dtm_90m.tif",
+      "bytes": 83418,
+      "sha256": "8fd86090cb764d50cbaccd580b2bd4792fac95ff5484b3d63d6579e186884d30"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2018_NIP13_fbp_fuel_90m.tif",
+      "bytes": 6396,
+      "sha256": "8b8c638f093c530d8b90ddfc5e6a1ab729e1016e2dab8b80748cf7c938fb0149"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2018_NIP13_mrdem_dtm_90m.tif",
+      "bytes": 57853,
+      "sha256": "56f59705533a71e45edb7e897fe2001414bad43ddaad7a01675352648dd22b86"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2018_RED103_fbp_fuel_90m.tif",
+      "bytes": 4237,
+      "sha256": "7e991dac7dff666b7abd14d35fd393a796bc169770cb3dd7ea9dfbf9ebd6ef9e"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2018_RED103_mrdem_dtm_90m.tif",
+      "bytes": 41436,
+      "sha256": "582e74af7ce6cd43ed99cee4df6b8be5197a1f84c08b203979ca799977e969f7"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2018_RED55_fbp_fuel_90m.tif",
+      "bytes": 21942,
+      "sha256": "5f0b00c7e3957b2c026585063433dd1cee08c360850e63e30a0cd3396f40e8eb"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2018_RED55_mrdem_dtm_90m.tif",
+      "bytes": 132541,
+      "sha256": "ac97d2ce4a1903968c87150e1447f7404f7e0b37d9e76cb4e3a5e7040315bc9c"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2018_RED96_fbp_fuel_90m.tif",
+      "bytes": 30738,
+      "sha256": "94e7798bd8ec6270211f8727155a358a54db66d1199fe11cde7d67f1d00104ba"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2018_RED96_mrdem_dtm_90m.tif",
+      "bytes": 238712,
+      "sha256": "63b67fce39ffaf7f73b07e5fdff9292d846995742c2651aa39073eefcdf7a897"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2018_SLK26_fbp_fuel_90m.tif",
+      "bytes": 32419,
+      "sha256": "5152d67e934409ed4c39276818fb74b93696d20a7925c4c16931a9b7065c400f"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2018_SLK26_mrdem_dtm_90m.tif",
+      "bytes": 192858,
+      "sha256": "472cc621f69afe472fe99929b66c1e56359864948490ff939f4275958e01b888"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2018_SLK27_fbp_fuel_90m.tif",
+      "bytes": 21238,
+      "sha256": "23b5d9d7d2349e288c914d76d33e19dc3f557ffec6ad640c2bf71501287d013a"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2018_SLK27_mrdem_dtm_90m.tif",
+      "bytes": 139371,
+      "sha256": "55302952caa5fa52f1a4ef32ecc75f54f13b387965dacb513b2e2c0ec801a55a"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2018_SLK67_fbp_fuel_90m.tif",
+      "bytes": 6182,
+      "sha256": "69f50953f456b56ec1257caf49a7acbe9207c1f29f3aa0b4d4a9623f2726832e"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2018_SLK67_mrdem_dtm_90m.tif",
+      "bytes": 43071,
+      "sha256": "9b092642f0dbe495fed77122945697696573d2573c4541614ae2aed00057fef5"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2019_RED44_fbp_fuel_90m.tif",
+      "bytes": 22509,
+      "sha256": "511758f6dc20654dd846d8049c3ea4ca895c78005546a882d4e35066b2bf2f2f"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2019_RED44_mrdem_dtm_90m.tif",
+      "bytes": 152297,
+      "sha256": "dcea7dd7516bf1c8c69cc98aa45f8b075f202f9c5d604e65ac054b208731bb12"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2019_RED62_fbp_fuel_90m.tif",
+      "bytes": 5348,
+      "sha256": "cfad8cf9cb6b316cbe1607ef1ac8e5c3b718860af178d9040516288984049de3"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2019_RED62_mrdem_dtm_90m.tif",
+      "bytes": 32681,
+      "sha256": "10096b6527a9af03e24469015b3023c8ef9920463866ae24c61ab0d9edd5e49e"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2021_COC26_fbp_fuel_90m.tif",
+      "bytes": 35483,
+      "sha256": "a8986e5850f130650493f154b5f2b91bb67ef537b7b5e98e5d0d0800dbe5f361"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2021_COC26_mrdem_dtm_90m.tif",
+      "bytes": 235454,
+      "sha256": "8edd4b4ce572a1bb9365679b5dbf0a70883e54be2ed6967a8914f9504c456d7c"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2021_FOR38_fbp_fuel_90m.tif",
+      "bytes": 12739,
+      "sha256": "db6ce48a82cb79e1f8adf3eda87b4841e6f9ea676c8a0c6cdd92d6958b557ae7"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2021_FOR38_mrdem_dtm_90m.tif",
+      "bytes": 95909,
+      "sha256": "332e38268cb68c5cff16a9333780bb0da8146028c65a70d85868d8decd0e15da"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2021_FOR56_fbp_fuel_90m.tif",
+      "bytes": 9388,
+      "sha256": "901609e240bfd80305334b57a4d918ca132503eb927fd07ba3141a7921a0dce3"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2021_FOR56_mrdem_dtm_90m.tif",
+      "bytes": 67854,
+      "sha256": "a84b3d0e7403078d81a02735e76335bdc6c8e3b79f51e75bfda3a3dcac5a1fb6"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2021_NIP37_fbp_fuel_90m.tif",
+      "bytes": 5170,
+      "sha256": "e2361f3e4ad2653ee05472e1302209304cd1e7276f01322db11b1fb286ad795f"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2021_NIP37_mrdem_dtm_90m.tif",
+      "bytes": 84555,
+      "sha256": "3b44c79a2301b8de742d8e9d04b34b5c9b2ef36339286543e0ba76e9aa6dddd0"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2021_RED147_fbp_fuel_90m.tif",
+      "bytes": 12295,
+      "sha256": "61357db401d09df4887fe315ff46ebaf9eab7f8cc45f40235f57fa369dad3715"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2021_RED147_mrdem_dtm_90m.tif",
+      "bytes": 70211,
+      "sha256": "decb12fa9b86e09dc0e96d81afe14d6c0cdb5b67fa1548c80583fce800060bf3"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2021_RED72_fbp_fuel_90m.tif",
+      "bytes": 15851,
+      "sha256": "29da3538e91d925d0167bd18a6bad37722588b63c00853fc6cc180ba0184081b"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2021_RED72_mrdem_dtm_90m.tif",
+      "bytes": 116070,
+      "sha256": "7a179e047b8cc94a0673605c7f86f7d0bb00f6db1d4bdb350c3a1869bae5af9a"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2021_SLK104_fbp_fuel_90m.tif",
+      "bytes": 6973,
+      "sha256": "90af2849f50c665d52c097750d3c9837f69fd28784af00c0c483d43a8db6422d"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2021_SLK104_mrdem_dtm_90m.tif",
+      "bytes": 40619,
+      "sha256": "9bbd207156a4be19c9ca4fa6f64aa912865825abc6714b7c02b112f506663d18"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2021_SLK106_fbp_fuel_90m.tif",
+      "bytes": 8809,
+      "sha256": "dfe17a269b8b8a1e7619ba46f1410b7d777f1c00fac6e322bd12c5ace7ec6bf1"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2021_SLK106_mrdem_dtm_90m.tif",
+      "bytes": 63364,
+      "sha256": "bd5ef8be6db0dd8afd72946a16a0836d6df66bdadecec9ee543647b7bea76bb8"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2021_SLK73_fbp_fuel_90m.tif",
+      "bytes": 13144,
+      "sha256": "f28ac4f53091bd2706ad1074bb36874e1c4e1e84f50122f70edf87011708b785"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2021_SLK73_mrdem_dtm_90m.tif",
+      "bytes": 92063,
+      "sha256": "a925b7bbd95a7d1353ce8a6b3b54927cc8affc687b447aa033903bc963f16fc2"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2023_COC20_fbp_fuel_90m.tif",
+      "bytes": 14499,
+      "sha256": "d6a9d65c60ed32bd2c3428bab556431a0f2527e30e9ed80cf696f42f1a26942a"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2023_COC20_mrdem_dtm_90m.tif",
+      "bytes": 99455,
+      "sha256": "65077defa72a67c1a95e7d33804d411b35a077b8ce528fcae786001f71a20e72"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2023_COC38_fbp_fuel_90m.tif",
+      "bytes": 47269,
+      "sha256": "e395535c6b390588ab47365a6d494f08e8fcff8e972f8e08b8c1a1f10f761f57"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2023_COC38_mrdem_dtm_90m.tif",
+      "bytes": 328739,
+      "sha256": "d7c5d882d7b2d26d540bb8785185cf9868447495d3fb178bcf5fcb38b09ff408"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2023_COC39_fbp_fuel_90m.tif",
+      "bytes": 4347,
+      "sha256": "fac136b8fafb4585ae23837ca16b1705e6647dfb2e0cfc1371efb094ef852325"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2023_COC39_mrdem_dtm_90m.tif",
+      "bytes": 38595,
+      "sha256": "2630979333495ad9b4ec9e9f950e839ac2745f2697d4ca229646e455f4fee72f"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2023_COC49_fbp_fuel_90m.tif",
+      "bytes": 32821,
+      "sha256": "a7348bc760abf04bf3bf339b6a37a1026f1fe99a79ffbf44084a3c76bd013e5c"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2023_COC49_mrdem_dtm_90m.tif",
+      "bytes": 264821,
+      "sha256": "fe6bd53dd8c3fe00e35ffb20a1e4232063616175fcbff137575f6288b842797e"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2023_COC55_fbp_fuel_90m.tif",
+      "bytes": 25052,
+      "sha256": "aec19e3567a87b0303a06cfb3fe5e755fe153fccaf175f159014f3b7c45e9231"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2023_COC55_mrdem_dtm_90m.tif",
+      "bytes": 163402,
+      "sha256": "106037e3fe484ca0724b46939787d6b5510503e930232d4c02f63bc026d229fa"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2023_NIP24_fbp_fuel_90m.tif",
+      "bytes": 11117,
+      "sha256": "ca195094341a137838c7c1bbef3dd67635eb07c9dbac7dca0f68693b5b68a5f7"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2023_NIP24_mrdem_dtm_90m.tif",
+      "bytes": 84328,
+      "sha256": "6d8f25741348d0404b2ad8f511f63f34c2b81fae55306573f1fab5ef9502b082"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2023_SLK18_fbp_fuel_90m.tif",
+      "bytes": 10173,
+      "sha256": "f0056337c6da4f9ecc7d27cf45a6fbd948a3a2d0d6a703e49c5b22c142fefa82"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2023_SLK18_mrdem_dtm_90m.tif",
+      "bytes": 68757,
+      "sha256": "7c797c1ced16464909675c0e015d28e0392701c1b10d908713b6e56885287e03"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2023_SLK19_fbp_fuel_90m.tif",
+      "bytes": 4547,
+      "sha256": "ce38df641a26142939aef963c1e05bf81ea2171ef93c52518d536f7fe91259de"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2023_SLK19_mrdem_dtm_90m.tif",
+      "bytes": 38679,
+      "sha256": "a47a3461e95040d06537a69f47bc0c9adee32038e60685e513e10cb8652906c9"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2024_COC16_fbp_fuel_90m.tif",
+      "bytes": 6409,
+      "sha256": "1fd4bc2457a05fa27180f509a1f819c9d6839dc358f94f55c3c8c567817969f9"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2024_COC16_mrdem_dtm_90m.tif",
+      "bytes": 36992,
+      "sha256": "5908579d09ba987568ab300978692906c57e515cf81da2665a9dabee37d0d894"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2024_COC17_fbp_fuel_90m.tif",
+      "bytes": 4108,
+      "sha256": "8c4ba882f74f184ee25ed7cf891d482de2cd7634e15cf958d0e0b1ccc144e581"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2024_COC17_mrdem_dtm_90m.tif",
+      "bytes": 24951,
+      "sha256": "93729c3a8ca5f279f4f23d88da8d6b032794e08996a187e64fe6c0cf02c22cae"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2024_COC25_fbp_fuel_90m.tif",
+      "bytes": 5000,
+      "sha256": "ac148c345524ba2d064aeb7afc8d51ca63a5e20f93baf1204e94d4249a1d51ff"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2024_COC25_mrdem_dtm_90m.tif",
+      "bytes": 33903,
+      "sha256": "8513aeac7a757ecbc3196330dd574b13635794604541216e89b609932bb25c84"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2024_COC45_fbp_fuel_90m.tif",
+      "bytes": 8841,
+      "sha256": "57a4e78890967f8e4256f645950324516bb30371ea53f5928eb29e561eebeac6"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2024_COC45_mrdem_dtm_90m.tif",
+      "bytes": 48054,
+      "sha256": "5858570fa1c7b8eac5b7696e2aa56c1e9851c09bd5d11a2f09137bdb62104780"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2024_NIP27_fbp_fuel_90m.tif",
+      "bytes": 42427,
+      "sha256": "0243fb855a62cce9c9514b603b726af51ce0884766597513ac799ddcd16af8b4"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2024_NIP27_mrdem_dtm_90m.tif",
+      "bytes": 287021,
+      "sha256": "8ca2c6129ed78a1ba2ec0a8b3f0f68416509965fda4bb5fa2894e8f7c9bb428c"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2024_SLK14_fbp_fuel_90m.tif",
+      "bytes": 6636,
+      "sha256": "56484877c30d09418fcdb2b1473be10d1336ed57640fbaf468fedfad019f590c"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2024_SLK14_mrdem_dtm_90m.tif",
+      "bytes": 44874,
+      "sha256": "415c7fa074267d4aaec02655ffa85b6ca0f932626ceef9da4e32362cbf0ceb72"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2024_SLK19_fbp_fuel_90m.tif",
+      "bytes": 17090,
+      "sha256": "98d1ba26ab318be1b2f2f5f027dd231e3ee27bbc5da771710db1ac17c36bdf85"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/fuel_terrain/windows/2024_SLK19_mrdem_dtm_90m.tif",
+      "bytes": 113948,
+      "sha256": "bbca44dc8882ce9e6f4174b9da836eba917e23702ceba27e3c3f867ac9591f08"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/interim/spread_fire_perimeters.geojson",
+      "bytes": 6598751,
+      "sha256": "7a2b7c6daf6980eb95e82b75b4f6b0f5eba4ef5e02964d3b9820920fe883f240"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/manifest.json",
+      "bytes": 53693,
+      "sha256": "c9917bd3bfc87e679b858d251f1f28caa9e415dba5dc93b80fe37b250268e900"
+    },
+    {
+      "path": "data/processed/spread_landscapes_restored_v2/perimeter_manifest.json",
+      "bytes": 753,
+      "sha256": "6f48eff8f64e67067f68ea1080aafbbf45d2bd80b5de9e4c216e75bdc4b72742"
+    },
+    {
+      "path": "data/processed/spread_replay_corrected_v2/calibration_freeze.json",
+      "bytes": 654,
+      "sha256": "1ee80fdc55875a3344ca695481908d8d07366efba0406026726b14821d6ddeb1"
+    },
+    {
+      "path": "data/processed/spread_replay_corrected_v2/spread_simulator_calibration_steps_v1.csv",
+      "bytes": 267953,
+      "sha256": "c5a07bdccece996fb9db426e554c6817c9b2a8e45c6ac04a9fdb3ad6fba9fddd"
+    },
+    {
+      "path": "data/processed/spread_replay_corrected_v2/spread_simulator_holdout_steps_v1.csv",
+      "bytes": 30496,
+      "sha256": "49cc78931e8a63fb1d54af5ecb761e943bc8a90477c6c1b4d4aa5ffe914b6adc"
+    },
+    {
+      "path": "data/processed/spread_replay_corrected_v2/spread_simulator_v1_scores.json",
+      "bytes": 9474,
+      "sha256": "13f224c258c6d1a931682b26dddc9834166998d627042d9488bfc8f3cc51bac3"
+    },
+    {
+      "path": "reports/research_review_2026-10-14/README.md",
+      "bytes": 31236,
+      "sha256": "c5433a06b6f1a28f46f5cce9f493ba0f760af9876f3261f0ba33115cf954bd4d"
+    },
+    {
+      "path": "reports/research_review_2026-10-14/additional_access_manifest.json",
+      "bytes": 1154,
+      "sha256": "bc473539b4f2349a9e7e3cccbf06f87a7a8d8e2414c4a6b7ebac30dfad9f4441"
+    },
+    {
+      "path": "reports/research_review_2026-10-14/evidence_manifest.json",
+      "bytes": 5428,
+      "sha256": "e9181c93e5cf42e9b47530efcc8703ed2db253e201ec70ef554b4d6e28de25fa"
+    },
+    {
+      "path": "reports/research_review_2026-10-14/publication_metadata.json",
+      "bytes": 16927,
+      "sha256": "809ccb8c86d0910bee566a99ecd471f2014a5a7789a218a98bf83d97a09f1d86"
+    },
+    {
+      "path": "reports/research_review_2026-10-14/source_download_manifest.json",
+      "bytes": 6333,
+      "sha256": "9c9dc9b9ecba55ec594a0bce5114eef2877ab61f94503f2898d7c59e19d4bfb7"
+    },
+    {
+      "path": "reports/research_review_2026-10-14/source_register.json",
+      "bytes": 3599,
+      "sha256": "ca4addf6257713d547baebdc37fad949362718ba31619a850a02b1d92a19b7b0"
+    },
+    {
+      "path": "reports/research_review_2026-10-14/tool_repository_snapshot.json",
+      "bytes": 108785,
+      "sha256": "faa98e9ccdd6dececc5cf38455de7eb52513b0d1bce32674c4ec51a5e26e2b3c"
+    },
+    {
+      "path": "reports/research_review_2026-10-14/verification.json",
+      "bytes": 670,
+      "sha256": "46039b58b39881c2b6fe2a801e8f05b0fa1f4679d644ae2531f7aa5008a4b58c"
+    },
+    {
+      "path": "reports/week_1_to_5_checklist.md",
+      "bytes": 27136,
+      "sha256": "1c2391e998c6f1251d5adcdca16ed3a607eba240a57cbf0c5d73abb18bc25f42"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/README.md",
+      "bytes": 5858,
+      "sha256": "769e186dbbbffb38a3a352bec6a5a2737b00a0de53df023c6e3f422db2c1c3a8"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/artifact_manifest.json",
+      "bytes": 8733,
+      "sha256": "b33fe6bfa3de484c0b931087dcaf33312a051b27242a8ef3249f95d524bf4947"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/boundary_source_audit.json",
+      "bytes": 741,
+      "sha256": "49c327eb97a18effec6ec5d2f763c4c060e896872414ee301fc552c212296a5a"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/cwfis_restored_manifest.json",
+      "bytes": 855,
+      "sha256": "005f272eee40c96e49cf279914d7585c5d30eb9d864670d94ea0a16c3d139dcd"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/data_decisions.md",
+      "bytes": 6339,
+      "sha256": "4d126f95f4432e6ae63cc2be0922e7907c42cce2eccbb96be5f28c4520094813"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/data_readiness.md",
+      "bytes": 17010,
+      "sha256": "d7ba6733ca476b62896107c86a95bb36bbb0dca9012e759bec6018c8b0edf7a5"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/development_schedule.csv",
+      "bytes": 4825,
+      "sha256": "e0d302f22b8c8bdd71bd73127280688a86e419e7bf6abeeb6b45f1184e954165"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/development_schedule.md",
+      "bytes": 3773,
+      "sha256": "d5aaeae5d8e9343d4b84a0b7ff72abe1e750e035907d17fe43ee0ff290d9d9ed"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/development_schedule.xml",
+      "bytes": 23677,
+      "sha256": "28f98e2b109c31b9b613d5f8197535d0003434f6851717f4824f3c7fdc16ad77"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/era5_daily_exploration.csv",
+      "bytes": 34744,
+      "sha256": "a83232343d5052822108c3ce58a34d4a5f2713792abcab7f0bd069409d465d0d"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/era5_file_audit.json",
+      "bytes": 21897,
+      "sha256": "6187a44e6be90637878e7db317572a1a1c41afa3f53a310d30ea08615d2cc428"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/era5_provincial_january_profile.json",
+      "bytes": 3578,
+      "sha256": "58aadf0bd62848056af5f2adad179dd9b1a62111322839144c4fbb71b05d6857"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/era5_variable_profile.csv",
+      "bytes": 4164,
+      "sha256": "aee5a983319c4e19aecb90eeb3d662054b55968f1a54e2c26c67d94d4d22cff4"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/evaluation_materialization_v1.json",
+      "bytes": 4086,
+      "sha256": "3531bda3000abe023fd54c46b1f171757b62b338dba0b139dd13df0f34affeec"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/evaluation_plan.md",
+      "bytes": 6243,
+      "sha256": "d0fcf0c463afe7295713378aa117a41d55435650efbe05595a121d52c1d8529b"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/evaluation_reservation_v1.json",
+      "bytes": 2911,
+      "sha256": "4524309d0848ee20c674de3beb32891b161767d0e3e66d90b72ad4659b631d2c"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/fire_source_reconciliation.json",
+      "bytes": 1935,
+      "sha256": "125d781fa0684aa88d2d482849168233da6223fd64fbc9bf1154a243790c9338"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/fuel_terrain_sample_quality.json",
+      "bytes": 3166,
+      "sha256": "5dee80ab577e1e7353a141e82cfe43e410d3642e1427b763268a4cb08410ca1a"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/grid_boundary_diagnostic.csv",
+      "bytes": 599632,
+      "sha256": "7841c2193647e68a214287863930c6dfe2d153cd1fa9217f1755de58a6e4127c"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/historical_feature_rebuild_audit.json",
+      "bytes": 2162,
+      "sha256": "7d05cea6a09d20c76b87e876a7b93fb07481b892e3719dec39da005525f74326"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/hrdps_sample_audit.json",
+      "bytes": 13092,
+      "sha256": "2eabb7aac0af314456d61ae4b843f8f7bea9ce185075845b48088dca90f74026"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/ignition_spatial_partition_v1.csv",
+      "bytes": 688840,
+      "sha256": "cc6003b321c6b660e766c29b4940829a0fe8b983386a7cb3cd6c041537d9fec0"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/ignition_temporal_partition_v1.csv",
+      "bytes": 38484,
+      "sha256": "63a6215dfade10a14f8d446ca7a3d7544bfda17d5fa9b6bb216e010515ea34b4"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/label_restoration_audit.json",
+      "bytes": 933,
+      "sha256": "eaad93e794d8fb747baa0dff4000a8f5510f540035d97acc44d35169136fade7"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/nfdb_duplicate_id_review.csv",
+      "bytes": 1143,
+      "sha256": "1269bf0633742ce78eee836d1d2610959d0b6b020dc90617b76a843583503f0b"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/nfdb_ontario_adjudication.csv",
+      "bytes": 760345,
+      "sha256": "6d7cd23b3d7015f06860efb854b4a27b21bf09daf6da25d7463eb0ce001b7051"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/nfdb_ontario_key_reconciliation.csv",
+      "bytes": 948451,
+      "sha256": "ff4c8d42657b4f649b69711036010e3ac272adfc949db370e30f068f096cf709"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/ontario_point_area_full_profile.json",
+      "bytes": 4600,
+      "sha256": "12826633fbd7690a828ed1676a5a1165178f6cd7a03cbab6d15cc344d1fc19ab"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/ontario_point_quality.json",
+      "bytes": 1496,
+      "sha256": "a30393ee211eef5d8d5bb4072c8f90746290a7ca89072f7ea6dd4d7b9ecf1064"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/partition_cardinality_v1.json",
+      "bytes": 656,
+      "sha256": "e6cf8cebd95e90ee6545ec4f28ac8914cb4fc41e02922b8246e210964903713a"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/point_area_key_reconciliation.csv",
+      "bytes": 980424,
+      "sha256": "2fff76624b1846217bbe26d85ada2bb89a2cfd7acf526e7aeff4d18f29baa3de"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/predictor_contract_v1.json",
+      "bytes": 2995,
+      "sha256": "8d3a4118e71288c431987af1462d710fb836ada2f015073075cf6b2da825da2f"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/provincial_static_centre_samples.csv",
+      "bytes": 437285,
+      "sha256": "35dd8afb1d4a5293bd42ebb06d2f348c64f1155b1b87efcd8d1ce5f099ef8f6c"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/provincial_static_coverage.json",
+      "bytes": 33655,
+      "sha256": "7c4b41c04fca26de08753abe96edabfbaee26bb7c92e33b6da3d2a2e781745a3"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/research_access_followup.json",
+      "bytes": 1487,
+      "sha256": "397a61f51691780c7fd659599f8db8f7948a099875b7f4f131e35ebdcfcf9ed8"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/scanfi_species_quality.json",
+      "bytes": 575,
+      "sha256": "a0e47687f1c2b68677fc1d883a8b0b119dcbfa8fe6d9e4fda67fefd6f75dff6d"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/schedule_validation.json",
+      "bytes": 642,
+      "sha256": "9652cd9b7d36d6eb1d905659f9c3c620f8a4fc60d4540fb8d25afaee9d6ffcd3"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/selected_static_quality.json",
+      "bytes": 11273,
+      "sha256": "ebe1a67a3a3a3c8aed5bd98af81bb5a9031680830953fa063b3147f1045073bc"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/selected_weather_audit.json",
+      "bytes": 3712,
+      "sha256": "9b2fea2a43967635f1f711559775dde7f95504fc1306528bdc68606d5aca8788"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/selected_weather_code_quality.json",
+      "bytes": 2427,
+      "sha256": "e7040fa269538d3ba7492f7b25686c4bae2c3a7ad8e07a740cd2d79c9133c625"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/selected_weather_contract.json",
+      "bytes": 1566,
+      "sha256": "479689b518b9f8a30f8641d8be15e2d753fd56607129b29064138bbfbc8fed2c"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/selected_weather_daily_profile.csv",
+      "bytes": 1379,
+      "sha256": "39c39177765e1ce0d893893fa122626de37d6a572d4c2d964acde92462722e17"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/selected_weather_unit_tests.txt",
+      "bytes": 1557,
+      "sha256": "61b82f103236592ea021da7e751fb0e533e5b1991437ec2592e9b6175787e3c0"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/spread_build_log_after_validation.txt",
+      "bytes": 38637,
+      "sha256": "97e4d904770c0dbc50dd11c8e2124ae9447ce1ff995d4456bded5021ea73c85b"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/spread_unit_tests.txt",
+      "bytes": 3700,
+      "sha256": "4a03794355f2fef627bfbf48fac6372d8587b4ee7b7ddaa272b71f13f7535bd2"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/spread_validation_fresh.json",
+      "bytes": 3157,
+      "sha256": "46fa471032e1116ffde4c3b6d2803acd45a7cbdacdbfd5ee20910555e5409954"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/storage_inventory.json",
+      "bytes": 7245,
+      "sha256": "df981cd9e652b2fede93085533469807b4df2456c21e53f2b2a373665ff812e1"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/system_requirements.md",
+      "bytes": 12784,
+      "sha256": "0908831a417ddcb8c57a955bf22a36620f20010c86f5f89b902e8e1426dd5da5"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/unit_tests_combined.txt",
+      "bytes": 99,
+      "sha256": "f415b1c01ef886447b2c51eb7fd7b630a2a8d4eef1490b75a6e284c7bbc001f6"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/use_cases.md",
+      "bytes": 8838,
+      "sha256": "fdec49e4238bffd6fdda5009321e1ebffb43da652df910f77f566bd260ba0eb6"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/validation_summary.json",
+      "bytes": 2304,
+      "sha256": "d3818c63b97b27a1d0e8010cecd04c8b22cf429f5354a7bef0c061c1e9bfa401"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/viirs_processed_quality.json",
+      "bytes": 1005,
+      "sha256": "b33236f7f35306a06e825b9e48f9ed83f66016bbc7928e5e1a22a2b3bbd36250"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/viirs_raw_quality.json",
+      "bytes": 16205,
+      "sha256": "d766405a9af169b02ff9a0a5b0ebc7e3fee1f2547b06671eeb27c8817767d5c5"
+    },
+    {
+      "path": "reports/week_2_development_2026-10-15/viirs_restoration_manifest.json",
+      "bytes": 11597,
+      "sha256": "5c1d59880ab759a3e2885287cca5c3fcbcd257b75c9c9244c11a7d7a317e7a27"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/README.md",
+      "bytes": 5863,
+      "sha256": "b1229094c228bfbc4487d3069057f37143246d7998e5248c8f5b8ae3f76c1dc9"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/artifact_manifest.json",
+      "bytes": 13874,
+      "sha256": "519fc1096d72f2f51eb97c7a2d72ca21702726f40a8741efaf3beb4ee5e5779f"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/branch_snapshot.json",
+      "bytes": 1152,
+      "sha256": "f4602a8eb13bb5dcf600995672db3f14aa89be1cc69ee0e711a589305afd424f"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/change_inventory.json",
+      "bytes": 818,
+      "sha256": "8721402f1a1e078c3bd84ddda5fa9ef4fd47bdbf39fdaaf0b5946a26a143ff49"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/code_quality_ignition.json",
+      "bytes": 5604,
+      "sha256": "c877fd0896561eb206934aa69a85ad323d878a27baeaf54b89611edc3b75d815"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/code_quality_spread.json",
+      "bytes": 4558,
+      "sha256": "804468ff6ca231de69090379c983b7c1044479689c154371d3b054fd3941bcb7"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/comparison.png",
+      "bytes": 85067,
+      "sha256": "cdd8199e594239f89acf6d22bb796332be31b473d77738c0d87e4a881dd082ea"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/decisions.md",
+      "bytes": 4333,
+      "sha256": "cf60cb88843ad3d75b1178e9633ad9f7ed5def34e0608a79dca096c48d296ed1"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/environment.lock.txt",
+      "bytes": 847,
+      "sha256": "5ddb11dc4293e8c8750f7ccfe47298f751b4e036a676c21db08427bbf1e4ce36"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/experiment_config.json",
+      "bytes": 5374,
+      "sha256": "0f4e9182353da31e54cfb6e11c9bb7a4c6fb9b16f44dc7cd5c9d053d7e7e7dcd"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/experiment_report.md",
+      "bytes": 7771,
+      "sha256": "b3cfa8784ae8a5e9ffa850c2562deb660b6c1ba3fa6bd74a440b44c426fcf5e1"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/export_cli_help.txt",
+      "bytes": 1504,
+      "sha256": "7c5300ee293f0f7058066c55c9daeda70349325f01d92367bc6a6b87cb91dccc"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/hardware.json",
+      "bytes": 184,
+      "sha256": "67e2c0465c1d6abc56f686de05b4065b9537c9526d9e289a3aa2cea4aca3c1a6"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/inner_spatial_histogram_boosting_daily_alerts.csv",
+      "bytes": 8497,
+      "sha256": "89c163e9a25e34cfa5c8c301b53ef08fdbf72a1396c6968039e10c9dfc773609"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/inner_spatial_historical_rate_daily_alerts.csv",
+      "bytes": 8497,
+      "sha256": "b223f73b96df3af81ec42703d013b409951430515ebf9e49bd453e33be10ee87"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/inner_spatial_lightgbm_daily_alerts.csv",
+      "bytes": 8497,
+      "sha256": "1585f01693c793cf0c2668adc210afb74d00223912bc889a71a0941afec0a039"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/inner_spatial_logistic_daily_alerts.csv",
+      "bytes": 8497,
+      "sha256": "9dcc40b5cfe0e7d8125a89dcb7be369910bcf979179d6670966696aa59b6bd42"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/inner_spatial_partition_v1.csv",
+      "bytes": 950301,
+      "sha256": "0ce5ed31483a6dc634ff70ae00bd8380a8238afbfc89697e661106012ae1fbd4"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/interface_examples.json",
+      "bytes": 2669,
+      "sha256": "ba383737a743312cbf47631f23a49ac84271c37889db7ba3de2560d9d6765645"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/interfaces.schema.json",
+      "bytes": 10865,
+      "sha256": "0f1ac540791dbe6984f2d13aa9b18456c2a3fe71abe0fa580781ef7b1a4f3824"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/model_artifact_paths.json",
+      "bytes": 2217,
+      "sha256": "0d57953d0d1565825d4fd5822d89fdc9d6dbd6830326e56c7d42d9b93521b795"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/model_comparison.json",
+      "bytes": 17835,
+      "sha256": "2f7a9680987e641859e92633fc2efc53b6afc4192fa162601358e82e707e1b2d"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/model_comparison_first_run.json",
+      "bytes": 16636,
+      "sha256": "6957432247e949e333215a7e91798c9ab75c317824606ffc1936f1ef2d6c1818"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/package_verification.json",
+      "bytes": 536,
+      "sha256": "00ac4bcdd2aa472b3f2127150ba52b052de889244c5808ca87577dc9a68a2762"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/preimplementation_review.md",
+      "bytes": 3486,
+      "sha256": "62810d31cf09e40750e0cf5c20c603441c49f9bbae4e95f5d85fc053e73ae7fa"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/repeatability.json",
+      "bytes": 612,
+      "sha256": "59f9a0ff6ff48c4420b2dd28041604b0b3fea46d9f02e10fd8affbb1c7c599d8"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/replay_cli_help.txt",
+      "bytes": 1846,
+      "sha256": "8411d5001be7f673028729a3f5bb1fffbce5972b4062410723c8f4cfc95acb61"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/reserved_integrity.json",
+      "bytes": 737,
+      "sha256": "846fec86d24ca609dc810edcc68be8d732cc979874c49bcd864f4988c788831f"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/spread_design_review.md",
+      "bytes": 5742,
+      "sha256": "2c248ca5264db00bb6d8e773e0f4fd9de3aa5fe85a969b9d68ee6b2dd70deb0c"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/spread_regressions_after.txt",
+      "bytes": 99,
+      "sha256": "5a7cd7a6372907f137d811c25cf378c11d9fba72ee5ae92634bd6eddd0d6d386"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/spread_regressions_before.txt",
+      "bytes": 3519,
+      "sha256": "2d97197e65234802d716f4586855870f66fa86550075b63e7f88d68e69998a5a"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/technical_design.md",
+      "bytes": 18504,
+      "sha256": "f31c642838b9f53b3ae0e4b515eee1bc29c0d50a1c6b0285f940c0914e6cb86f"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/temporal_histogram_boosting_daily_alerts.csv",
+      "bytes": 8530,
+      "sha256": "860b282000b09e6dd11dd9c629da8ca11fc56bd64be8ae021db1a867be8457f5"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/temporal_historical_rate_daily_alerts.csv",
+      "bytes": 8530,
+      "sha256": "b7bb296dc0309875bb86809b02b0ffbde80b68cc9a041e8ada452e2d4a5b8b76"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/temporal_lightgbm_daily_alerts.csv",
+      "bytes": 8530,
+      "sha256": "f6b4eaa6b2a705c2dd865f7685a8a83a9a74c919969669d59a7de6a7cc4f0f9e"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/temporal_logistic_daily_alerts.csv",
+      "bytes": 8530,
+      "sha256": "c3ee0613adc04010f8a89d12fe21f415e5bffcd751686b339e6ef7936a340ca9"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/unit_tests.txt",
+      "bytes": 99,
+      "sha256": "1c944c9da144a3b6b4a47c21141f741537d849ddd808d44166a98f68dcf62d2e"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/validation_review.md",
+      "bytes": 4738,
+      "sha256": "90aa3b8ff8c0fd384d0653890babea350b879a18d8b5e459e71f4ce0e976b661"
+    },
+    {
+      "path": "reports/week_3_design_2026-10-15/week_3_design_report.pdf",
+      "bytes": 162489,
+      "sha256": "a4580b464ba013badca136edeb3fa7b16de7b36076eb4ffe1d0e3b498e77626b"
+    },
+    {
+      "path": "reports/week_3_review_closeout_2026-10-16/week_3_design_report_reviewed.pdf",
+      "bytes": 162895,
+      "sha256": "31c161878f9f18d55b272415e69ddeb7299287b1aadd9c4a2163c6f81ca826d9"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/README.md",
+      "bytes": 11827,
+      "sha256": "1c460e6dc5edfe22c548a6c66a0f246b428a5b9f0b009d69e77dd6754735e2bd"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/artifact_manifest.json",
+      "bytes": 8106,
+      "sha256": "1b74da2dc797974bc48411e70c101742d3f5da4dde3acac7e82b53bf50dd2872"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/checklist_snapshot.md",
+      "bytes": 24478,
+      "sha256": "e00f8aa7c5ab66f4a51ff4bfa5e3d26081b65a4840074036c9917ee25be5bd4e"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/code_quality.json",
+      "bytes": 4848,
+      "sha256": "d2989ec16ed9769559fccd00be276954bf278375449ebb7d604ec9f1cd53ec5c"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/completion_environment.lock.txt",
+      "bytes": 860,
+      "sha256": "19575a1254ffa99ee60e48310fde5b7fde269ed9583039a4a28954506c2e6a29"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/completion_integrity.json",
+      "bytes": 16032,
+      "sha256": "6d9acf3c4f9f38f97f28adef0b3ef4ad0f985c81c543f4051557f9250e3d1a35"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/completion_manifest.json",
+      "bytes": 42329,
+      "sha256": "08f2fcb9946566ed12a6688588aae55db9e38c595029566a31eb47f659da4067"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/completion_package_verification.json",
+      "bytes": 394,
+      "sha256": "77f8bf3696bcd8c78e3c1b56c08bb7fcf0db8b7341d136124f03097a6413d0d7"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/current_boundary_centroid_grid.csv",
+      "bytes": 706770,
+      "sha256": "5778abf65a901d5daa771add7a25b7dfb7cdeb3b9b00712e1bb1e94a7dfabd0c"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/environment.lock.txt",
+      "bytes": 847,
+      "sha256": "5ddb11dc4293e8c8750f7ccfe47298f751b4e036a676c21db08427bbf1e4ce36"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/feature_dictionary_and_decisions.md",
+      "bytes": 5798,
+      "sha256": "5f9024505cfc94b5f1fa5f4607e9342b49476d51480f2ded17539d1eab0013e7"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/fuel_quadrature_validation.json",
+      "bytes": 4141,
+      "sha256": "cdd2e468f3d6e9e9cb91b32f68a34e635615ec7e8d15839524171ba05bd3056f"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/historical_weather_v2_audit.json",
+      "bytes": 6322,
+      "sha256": "b6c5e61a07f5ecd9f6497a3da8bbec1a7edf6b5ce16dd6d482c45d1877e1d152"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/hrdps_before_checkpoint_audit.json",
+      "bytes": 11233,
+      "sha256": "1e2284378c7aa3f3efc220341ed9d2f44434aa1f8dc0642790172afe41da2d58"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/hrdps_code_quality.json",
+      "bytes": 3211,
+      "sha256": "22f3402c2efd8645dfc35733ffe2535dbe6087f7b928ff6c35088b96a6a52447"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/hrdps_final_code_quality.json",
+      "bytes": 3652,
+      "sha256": "f3821a6ec8c14b5ac24d42fb15eb4c36588f70d2c8610a279a7cea72913c4530"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/hrdps_live_integration_audit.json",
+      "bytes": 11334,
+      "sha256": "92c69a04bb579b811500cd17296570a4c5c8eba1c4f6afae8e9cf7b471a0e65a"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/hrdps_run00_audit.json",
+      "bytes": 5570,
+      "sha256": "d90f7a642bffb2b5761a9e6b7460337f46c3e2f9b65d747685e348bcd075d51a"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/increment_notes.md",
+      "bytes": 8487,
+      "sha256": "e13b971a8dec82cc0b5813ae5c1dfcfdbdedd2c85d891e694a7fff37d949be13"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/integrity_verification.json",
+      "bytes": 1244,
+      "sha256": "cdffe094b153112745e9fd51478472c18dd99fa5a57d832e7bb903992d1a064f"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/join_code_quality.json",
+      "bytes": 1313,
+      "sha256": "ebf00e83e49eac98fb62295fc91aa4d245fd65422cf21d43780470a11105f67f"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/model_comparison_update.md",
+      "bytes": 3811,
+      "sha256": "3188b032ac14bbd00cab8216854f7fbdc760a5e4429e8b67b4f5ccc230d5bdc8"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/native_fuel_code_quality.json",
+      "bytes": 1927,
+      "sha256": "1a9f082510f6894f88d1a7c90c10f634b7629bd72207659f8713a170aa9c0444"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/native_static_build_audit.json",
+      "bytes": 1028,
+      "sha256": "824510907e68d00aff8532bd52865c72330dbac56ae7b9a8889fafb4da8c9216"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/preimplementation_review.md",
+      "bytes": 2596,
+      "sha256": "73ecaf549c4b3e9a93395b1efa4317267a88b6c819d22773309ca13360840b6b"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/project_architecture.md",
+      "bytes": 12526,
+      "sha256": "088898df6a813c0061ee828576e9833af2f17b8072650bf6e1910a7031640324"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/project_context.md",
+      "bytes": 20430,
+      "sha256": "dfa78bfd136184ffbc113e134982aa373b5a3a7a726bb8600071c7523dcb286a"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/provincial_era5_verified.json",
+      "bytes": 31538,
+      "sha256": "30c4e1478748b0b776ded85c53248f4fd69d800e313ffff3c965dc76be2e65f8"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/provincial_static_build_audit.json",
+      "bytes": 89803,
+      "sha256": "8f86148bc774a3ec9fca800beeaddb6d00fa393e4b8f08e67323537046065556"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/provincial_static_code_quality.json",
+      "bytes": 4109,
+      "sha256": "867b6ba836d1b41aa9c4f582f3c34499534fc7efb194114a2b9c5bbfb4816d10"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/provincial_weather_build_audit.json",
+      "bytes": 3320,
+      "sha256": "c677e058b67be9f4b9864acc01bc728e8a50cd2f6f0837b714a1f5dae2229787"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/provincial_weather_code_quality.json",
+      "bytes": 1723,
+      "sha256": "df0291169c983bc124dcc9b90b4f67ea03346ea1bc5f92d4440c117ab9eeab1f"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/selected_2025_fire_adjudication.csv",
+      "bytes": 68848,
+      "sha256": "6527a6ae0ee2bc68572b4dad29c3a5f4a15bce798c92704f371dad47310c9b46"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/selected_2025_panel_audit.json",
+      "bytes": 2909,
+      "sha256": "42b10640f780570cf49596cf4176d98849b068553bb4ddb94a35b42463aeaa1c"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/selected_panel_code_quality.json",
+      "bytes": 2021,
+      "sha256": "1b7d5344fc4bb784b426efd2e44062d1fa63f9ca1784652a2d5c345c4323b1b6"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/selected_panel_final_code_quality.json",
+      "bytes": 2020,
+      "sha256": "676356caeee88a6d29bf3489baa21a7e95194c2c9ac4984cb53ee7d180eb8f49"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/unit_tests.txt",
+      "bytes": 179,
+      "sha256": "3cf585e3c6587eb603cf7ce361e72f52221f198ad344867109d15b43d0b691a1"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/unit_tests_continuation.txt",
+      "bytes": 180,
+      "sha256": "ee81d547a810bfa7e39fe25f71a854c70dcf12a93ffd32bb0c62ad79a96b84ed"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/unit_tests_final.txt",
+      "bytes": 180,
+      "sha256": "ee6829b58d7642f3b1a209e4c2efc1b309e5aac8368b7913759c950914caa82e"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/v1_grid_boundary_sensitivity.csv",
+      "bytes": 599630,
+      "sha256": "f698a3e818e961cde11967c1d5372bd6b4a633b7ccd4adddf01e8aed3e97e486"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/weather_coverage_comparison.png",
+      "bytes": 49333,
+      "sha256": "e2809daad5c8eecac8ca0df136ca34678a4c037fd3644b1dea4c0050d70f6fb7"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/weather_feature_join_audit.json",
+      "bytes": 6598,
+      "sha256": "0b85423c41993d7571dadb3ffbcf66f83f634b7c53e9fa8a6d22f6160f75aa73"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/weather_feature_join_before_cli.json",
+      "bytes": 6598,
+      "sha256": "1b931fb3764b5d5e2dbcabd96a929a6a8636e491c1fcc3e8ffe40880aba5d57a"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/Ontario_Wildfire_Technical_Report.pdf",
+      "bytes": 121715,
+      "sha256": "70373c66956973011444e5365384e6480a1ef280be6c9a5af59da6e6b1bf64bf"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/README.md",
+      "bytes": 2901,
+      "sha256": "e7d663b8bc0d372c38fc8e6f2b267ab00f3da1baa30d926bf59f0416363da1c8"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/app_code_quality.json",
+      "bytes": 3185,
+      "sha256": "5777492a323fca9dd05a80cd42cd2fd59f1a23e3445737067548fabb87c6b386"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/app_code_quality_final.json",
+      "bytes": 6166,
+      "sha256": "6e5f5c5e47d65456e83b43e8b6de7dc30ebebab8b1c7917f3d053f9659675185"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/app_server_snapshot.log",
+      "bytes": 1333,
+      "sha256": "60ce4c3df009aea406261d2fb2161e8eb35bcbe0b1a2f143c362f0874c1756bd"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/artifact_manifest.json",
+      "bytes": 97719,
+      "sha256": "2780690262975dbc5730dfba053791ee409acce89781c2422416fadb53200c34"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/browser_verification.json",
+      "bytes": 1521,
+      "sha256": "a7e44ae7f3795d5f28a08722cda2ede3727b6ef906d46c4847ae2ec95033648c"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/cell_detail_integration_tests.json",
+      "bytes": 2358,
+      "sha256": "33cf4d6204ba9e1c596e3aa18cfc84faf88929f877f7a4cde0b3d986f3cda426"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/checklist_snapshot.md",
+      "bytes": 25461,
+      "sha256": "45e6126ebb5f7a090f8ac45c9e70a83522da873b917d4d4909f2d50df071464a"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/completion_protocol.json",
+      "bytes": 3462,
+      "sha256": "856001d9d9b5d2724a67b1238936daf5e8ce5a35fea0f7125c2033cf3dde6b64"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/corrected_spread_results.json",
+      "bytes": 9474,
+      "sha256": "13f224c258c6d1a931682b26dddc9834166998d627042d9488bfc8f3cc51bac3"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/corrected_spread_viewer.html",
+      "bytes": 1203899,
+      "sha256": "77a35de3fff6cd91705f6847281931fb813bcd7fcfe673fddc1a3651f4111201"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/environment.lock.txt",
+      "bytes": 860,
+      "sha256": "19575a1254ffa99ee60e48310fde5b7fde269ed9583039a4a28954506c2e6a29"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/export_integration_tests.json",
+      "bytes": 739,
+      "sha256": "c15fef2af3b6e1d11779236c0a31270729adf84da14f7a598b127a402204f1cf"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/http_integration_tests.json",
+      "bytes": 2953,
+      "sha256": "fce9fd82c1f1ac542bfa0f0c204c2a3db765981f737fdeb963ac536fc72253b8"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/http_performance.json",
+      "bytes": 788,
+      "sha256": "dc7e6056520fdfc63c9b32a2f7462635465463828be624d1123783ba9ae5c737"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/index.html",
+      "bytes": 4864,
+      "sha256": "073e95af69b4c7c55f1cc586ecc897cafecaa2cc7939a9f63190b77467f137ac"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/integrity_verification.json",
+      "bytes": 1945,
+      "sha256": "a5f46a275a21971a5900de5064bb7156ba8a505059ded22b25cc4d9df647fbfb"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/live_readiness.json",
+      "bytes": 1596,
+      "sha256": "703292a0626ef9f2af763402c6ddaddf7710ce0287d2732b82c701073e793aad"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/pdf_validation.json",
+      "bytes": 338,
+      "sha256": "80874f2994785e5e82604600640ccc08ea3df9b5c36635d5376b954499853db4"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/perimeter_restore.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/project_architecture.md",
+      "bytes": 17370,
+      "sha256": "2893f8c9d7ea8bda19d3c6751dd6378285026b11d4077ee505d2296c49f7c9d5"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/project_context.md",
+      "bytes": 25274,
+      "sha256": "e7ca2fe6729b54e55f5482c8ab854a488e732312513993ac06ed00217a6df3af"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/results_overview.png",
+      "bytes": 74670,
+      "sha256": "a434098f1bfeb939335e071fb531c91d8b3ea501fca619e82d2e3c2891f71430"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/selected_2025_ignition_map.html",
+      "bytes": 19910529,
+      "sha256": "b7d4337cb327efb8db89755d39f453bd523bac12ee77aba8764ee1892697940a"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/selected_2025_results.json",
+      "bytes": 37437,
+      "sha256": "136786b7b4bccfebd0c98dbdb05a789ebe41420b794eee80ea5cc8b988dc0a9f"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/selected_code_quality.json",
+      "bytes": 1118,
+      "sha256": "fbda732d74198cfeb1f560dd3422985f641d8a7d432b3d7b7ddaf0eeb5b26691"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/selected_final_freeze.json",
+      "bytes": 20320,
+      "sha256": "656d2a69dfc3d7ce071b41acde1859e37c9d4d5697d4cb77c82bbd15a2334626"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/selected_model.log",
+      "bytes": 124,
+      "sha256": "85bd82b6f8de8d36751403126a1673f76c8b8d5f29e72e12ee0822dab6ed94ba"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/requirements.txt",
+      "bytes": 282,
+      "sha256": "03be4422aed335898dd79cf8e29e65d320cabdc0a3edea7dcdb29f388127b274"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/scripts/__init__.py",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/scripts/analyze_static_samples.py",
+      "bytes": 26148,
+      "sha256": "a9db1d1e99ef3364cfba9a91d3542284d1abc46aee47de96a85d2f869f9db149"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/scripts/build_ignition_map.py",
+      "bytes": 11067,
+      "sha256": "6f5460bd265024ff9ca7e76461dcf15846957bc590adc6d9abeafc39d0155656"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/scripts/build_selected_2025_panel.py",
+      "bytes": 9146,
+      "sha256": "cc46a2ab793db372bc4c8e6afc8de46eed3f8b97c52fee347a7b419fc5eb93ff"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/scripts/capstone_app.py",
+      "bytes": 17712,
+      "sha256": "ec1184ef89070cda7e52401d5c05da5bbfb99fe4eff8425e780923252d1d0cad"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/scripts/complete_spread_replay.py",
+      "bytes": 12773,
+      "sha256": "ae88477b6c49949a263b02a333f7965e12a4f8b9d15a05b27abb3d022ee4b7dc"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/scripts/fetch_era5_pilot.py",
+      "bytes": 2635,
+      "sha256": "721aec2d071b156dd82471fa7a02ff2cbddb945145620cbe68ee6e8907a654b8"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/scripts/fetch_ontario_static.py",
+      "bytes": 8100,
+      "sha256": "6557bc01cecce74a73f4d3077b57cd32d9b54bb047ee5e1eef0bc737aa199e7c"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/scripts/fetch_static_samples.py",
+      "bytes": 6424,
+      "sha256": "f530e7b1854da85fd317c2e165b1bd18a093a59f3d4cf7b6f3bee7339b9b059e"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/scripts/hrdps_live_weather.py",
+      "bytes": 16454,
+      "sha256": "e01ea1d42fc6c28d9413b5c689f71a55f6828a095cad67f6490c5d39311bfd47"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/scripts/ignition_comparison.py",
+      "bytes": 18630,
+      "sha256": "5426f8dee840cd4cb96700531d5cff2c05ea14e328008ec89c2c2c2377f9b26f"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/scripts/join_development_weather_v2.py",
+      "bytes": 7893,
+      "sha256": "a89e5a12ab9782723cf0d62a77b2fb61e7a12588c1efc5b440d1228642e0f3d8"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/scripts/prepare_historical_weather_v2.py",
+      "bytes": 15493,
+      "sha256": "cd0607906e7dd18b3c6351132aab9a3e4d5f70d502b185dcefaa03e16f9c6e02"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/scripts/prepare_ignition_pilot.py",
+      "bytes": 13880,
+      "sha256": "f9b1842aa288caf59122cc98a13eef0afe55b88f60bcc6ec2a8d3cbc0dea2bc1"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/scripts/prepare_provincial_static.py",
+      "bytes": 10989,
+      "sha256": "cce18bb112393ad495bf2571f3d0f527e02b856445eaac771f5cf6956e53a1e9"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/scripts/prepare_provincial_weather.py",
+      "bytes": 9016,
+      "sha256": "f5b472926dd2f5f04cf10dedafff223f7eccb461ff1cafcf04517cb398a0356c"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/scripts/prepare_selected_weather.py",
+      "bytes": 10353,
+      "sha256": "923a5fc00aa2ed13da05f485e8bda9e0f631e4cc7215a9d19a1aee2152c7250e"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/scripts/profile_ontario_static.py",
+      "bytes": 5666,
+      "sha256": "ad9a376ac39c22b29f0aba6f7d1ca72b84eed138b6a7ad36933aec2770ee649f"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/scripts/refine_provincial_fuel.py",
+      "bytes": 6110,
+      "sha256": "b1bb6902dc8b197dfdcb21e00471c118442f3cffe5ca4e4f89cd441019043214"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/scripts/selected_2025_model.py",
+      "bytes": 9726,
+      "sha256": "21ee67dbde7a43fb931060e7c2655a2d8ff703bcf42bdd916f60a65e85e6bbe7"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/scripts/week5_ignition.py",
+      "bytes": 16485,
+      "sha256": "6d39543cbf5276fcc658c9039824d01055105c86f14873d0d2649ff6c64e2470"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/capability_2_fire_spread/scripts/build_spread_fire_catalogue.py",
+      "bytes": 12467,
+      "sha256": "00e79bd06254e17c42f5aaf37394fcead8ce927705aa1958b823ed65a7f71775"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/capability_2_fire_spread/scripts/build_spread_fuel_summary.py",
+      "bytes": 6239,
+      "sha256": "3309318cf10e8b140b3e748fefc08d35658c786f12fcd865df6f572cdffac79f"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/capability_2_fire_spread/scripts/build_spread_master.py",
+      "bytes": 10517,
+      "sha256": "6f2cec932606d821506b754cb8e16b6aafd97be0c9cf152d430a3002db92024a"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/capability_2_fire_spread/scripts/build_spread_progression.py",
+      "bytes": 15763,
+      "sha256": "b89399717db4e25773da796be95922aa660edef6752fe809ea10032114f13c3d"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/capability_2_fire_spread/scripts/build_spread_terrain_summary.py",
+      "bytes": 4938,
+      "sha256": "3526d05ad18941ee44e0c1c5ffeb2e8ff76c4c409bec7f126a549f72d1f22041"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/capability_2_fire_spread/scripts/build_spread_weather.py",
+      "bytes": 7746,
+      "sha256": "4ebd31800c8251b84b38bb9ac15dde2806a59d46490d58d4456b044f57d47d79"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/capability_2_fire_spread/scripts/download_fire_disturbance.py",
+      "bytes": 5196,
+      "sha256": "938d311ab91498f4ad11a4146ed27235f25007d886aaf396e851f50be4565ba5"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/capability_2_fire_spread/scripts/download_firms_viirs.py",
+      "bytes": 5790,
+      "sha256": "f339a905a9c960eb0312db7266a53d57a7d040fe9ec93ac09bb7bfa147531d6b"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/capability_2_fire_spread/scripts/download_spread_fuel_windows.py",
+      "bytes": 5762,
+      "sha256": "25480b67ee8b323ae23ae8c4d5f0c3cced05dbb1fa1a3ea01ac224963bbb6c6e"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/capability_2_fire_spread/scripts/download_spread_terrain_windows.py",
+      "bytes": 4729,
+      "sha256": "23ce51e0eb53d5a53a92b1b81d250b0b985881c6cf3bf43f1159400a7c8858a4"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/capability_2_fire_spread/scripts/download_spread_weather.py",
+      "bytes": 6074,
+      "sha256": "02889c13a18235a3d24761771e35125bcafaf986b284fa2ed8578f7e84643c77"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/capability_2_fire_spread/scripts/eda_fire_spread.py",
+      "bytes": 22677,
+      "sha256": "b88cfc8a84718650c431c04d85dddd9f6e6d19cae19ed088b2ad2433ef8d6856"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/capability_2_fire_spread/scripts/export_spread_viewer_data.py",
+      "bytes": 15689,
+      "sha256": "c18548b9bc5d3b75772f77fb56c5a14faca4a154b05b662386a09e5ddcfaf58e"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/capability_2_fire_spread/scripts/fbp_spread.py",
+      "bytes": 7028,
+      "sha256": "68881016befa50a10e8fba5e32c5bb1ca2ef08a580eacb52e0d473c02f2caca3"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/capability_2_fire_spread/scripts/fire_weather_index.py",
+      "bytes": 5019,
+      "sha256": "449a207639d98a15811a2dddfe0bb399ab0ab6375cb46d5fb6dfbe2cef339691"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/capability_2_fire_spread/scripts/run_spread_replay.py",
+      "bytes": 17191,
+      "sha256": "62549f2d9287033944974937a28ca2b0fbece77a8559a3047601fa505ecf285b"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/capability_2_fire_spread/scripts/simulate_spread.py",
+      "bytes": 15835,
+      "sha256": "d20a7c6a3340efb517016c290dff731e89d7ea1f2fb6ed0f4897b3356393b187"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/capability_2_fire_spread/scripts/spread_basemap.py",
+      "bytes": 3264,
+      "sha256": "a43091dafc55a9808bbcf00419596b508f076d7e881d580be2d6957d8eee71ee"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/capability_2_fire_spread/scripts/spread_common.py",
+      "bytes": 2232,
+      "sha256": "2399783e3384bb8714a0aa23c08ee89eccf8bacd88e709e2b00d8e91f26ffade"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/capability_2_fire_spread/scripts/validate_spread_master.py",
+      "bytes": 8971,
+      "sha256": "a6a15ac47df8f81d664a5a9704b4d50a2d4ec60ffce94b2df93bf89c13400612"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/capability_2_fire_spread/tests/test_fire_spread_dataset.py",
+      "bytes": 6848,
+      "sha256": "08bc03963bd3b2d25407a7c4d4c9d900157a28df8f6d6bb0197870a5a2da05e9"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/capability_2_fire_spread/tests/test_fire_spread_simulator.py",
+      "bytes": 10077,
+      "sha256": "72e07560ef41b09603dd47207746d9b64d6afb39c619034771aa1352332b026f"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/scripts/build_cdem_terrain_summary.py",
+      "bytes": 16120,
+      "sha256": "ab227a15fd48462589dae7f099fcf0f71b067d6a5b96eb5a2be51167059f85df"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/scripts/build_cpa_daily_ignition_labels.py",
+      "bytes": 12238,
+      "sha256": "ae85e5193c4c60a4297b24aca53b2a9cc957ee20f1c7daf5d21311904ec96bb1"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/scripts/build_ignition_feature_panel.py",
+      "bytes": 34747,
+      "sha256": "0d32e9ad09819db9d3ff62087b0095b7bf535eaa5f9d4dceb27e637723af5e37"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/scripts/download_cpa_boundary.py",
+      "bytes": 7605,
+      "sha256": "ba739604df4c0386e8d30956ac7d9863e52b1f18d7ec2bf633e5920b784c7fb2"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/scripts/download_cwfis_fwi.py",
+      "bytes": 5127,
+      "sha256": "ce9db12ddfa0376cc19ae327d278cc673975dda28d364d18358fb34e1597b2cc"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/scripts/download_nfdb.py",
+      "bytes": 2454,
+      "sha256": "1ae36163fdc584db79b2d6d9657dbc38474b0a71bba1f886f710095a92933c25"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/scripts/download_ontario_fire_region.py",
+      "bytes": 3524,
+      "sha256": "059588c8a317eae23705125fb6f30acc0ce0b617830bca130cf7adc68cb64128"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/scripts/prepare_ontario_ignitions.py",
+      "bytes": 5799,
+      "sha256": "7eac81e68e0552827717d7191833776db593cd14e3781dccc4d6b2690807826f"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/team_repository/tests/test_ignition_feature_panel.py",
+      "bytes": 8563,
+      "sha256": "b2326553e330a8b58d260f31ab5256e16380747ff99f756068b303e0b5cfb62e"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/tests/test_capstone_app.py",
+      "bytes": 2619,
+      "sha256": "3e3124347808bf6a23763281f957fa31eb92736a96e897b1743da8b86fca8666"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/tests/test_development_weather_join.py",
+      "bytes": 2634,
+      "sha256": "d39e6439372b7107e3ad5e0ada5e280458f8153eeb14c12e71500e70e89002dd"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/tests/test_historical_weather_v2.py",
+      "bytes": 4543,
+      "sha256": "4c4312314a72480ccec7cd0d8e00a27e8a4e30b41d67426937716d9347b51b1e"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/tests/test_hrdps_live_weather.py",
+      "bytes": 3966,
+      "sha256": "b95d04fb77ed10bbde5e9dba31e5e049e0e6ac6d91798cbd21f07f3ac0993400"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/tests/test_ignition_comparison.py",
+      "bytes": 4868,
+      "sha256": "ff68d19f219e9343cbe09bfc3bec3f903ba92848251e3fd266f045d303b08d10"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/tests/test_ignition_map.py",
+      "bytes": 1023,
+      "sha256": "f658adb73730e117eefb5af70330d092c536fed0f98a89c16140aa2deb510595"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/tests/test_ignition_pilot.py",
+      "bytes": 4839,
+      "sha256": "0a2621249d5fd9029871a7492feb67b1784d95bc689ffa4a99fb5909d880f076"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/tests/test_native_fuel.py",
+      "bytes": 594,
+      "sha256": "10f9fbd7c80aa4b7b9a8e26e296d7e275f2581c616882bfc7046e9e2c9dfa0a1"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/tests/test_processed_outputs.py",
+      "bytes": 1563,
+      "sha256": "7d7b6ae778b8ef87daa34fd1e3695c8eaac4bb47efac3f9e340b7dcbca61d467"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/tests/test_provincial_static.py",
+      "bytes": 1209,
+      "sha256": "07a119ff0a0d495b1ec72646866bf83cb558518355f580fb4d680848914c7297"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/tests/test_provincial_weather.py",
+      "bytes": 1898,
+      "sha256": "6877e2696f810d52f79b28ce73634b927b95553962bcebec5a7439936fd223d0"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/tests/test_selected_2025_panel.py",
+      "bytes": 1023,
+      "sha256": "bdbe3849923046a9a7b34774551e9528cca963379bed31be09d2ddbfe268b9df"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/tests/test_selected_weather.py",
+      "bytes": 3642,
+      "sha256": "f4eea5f493d45ec30756a575ec239d804af9a48f32273a8bee95fb164b0b1df3"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/tests/test_static_analysis.py",
+      "bytes": 1827,
+      "sha256": "8f7759f73e31c1d2ccc4cbf3a2d62d493741a76832f718ac5af3897f40a3a654"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/tests/test_week3_interfaces.py",
+      "bytes": 1994,
+      "sha256": "aab05a130a2313b4365a57593d04d5e2b0d30efb5cc2f30d36566330cc6f0096"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/tests/test_week5_completion.py",
+      "bytes": 1643,
+      "sha256": "3dc61321de2d4504c6f12b8d25374874d6b17e554a6fc502799862579411b132"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/source_snapshot/tests/test_week5_ignition.py",
+      "bytes": 2682,
+      "sha256": "2ea085a48ea6ff273e4364fc09cf38be759ae25f464d1cdf1dac1cfcaf8b0936"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/spread_code_quality.json",
+      "bytes": 2901,
+      "sha256": "515b73800e6c4e21e4cc1a7441f164b4ce02ebae94233c521693bcf877d44e5b"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/spread_performance.json",
+      "bytes": 4630,
+      "sha256": "39c234ca7a13102319b59a4491196ae190b842966db7ef7f89e9dac81abc5017"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/spread_replay.log",
+      "bytes": 765,
+      "sha256": "942bd97eeb9398df6cb546dd65abf2fac8dd305b29421e2258575914132211dc"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/spread_replay_failed_missing_perimeter.log",
+      "bytes": 3748,
+      "sha256": "2f209992e08595be30fb703ab326961b96700cc455208226335b2f8df5623633"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/spread_restore.log",
+      "bytes": 1242,
+      "sha256": "40bc97bdddfd249875828a1ce24e13d40174a95907dea30bc7840625e70ec9cf"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/spread_script_before_perimeter_restore.py",
+      "bytes": 10487,
+      "sha256": "b3218c23c5105058425434c08e4ca210dd07a1f9ad83aa5bc1cccc60fe275cc2"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/spread_script_used_for_replay.py",
+      "bytes": 12431,
+      "sha256": "70cc9d17139a0fd7cb5e01fc95b86eaa56cc287b247420772c253b43775f294d"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/spread_viewer.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/spread_viewer_audit.json",
+      "bytes": 715,
+      "sha256": "a58c205a568426b5ad80a6ab34be17cb6251c594573c939f2db4dee9d1d761aa"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/technical_report.md",
+      "bytes": 20268,
+      "sha256": "4c0d8f308af0c0b85b1cf87099847764740f3099ef0f2e75636afd83ea459475"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/unit_tests.txt",
+      "bytes": 180,
+      "sha256": "96566c80e548d55ea9ad69f1f808c7094f88ae0a58c63e84354a842dad6cefdd"
+    },
+    {
+      "path": "reports/week_5_completion_2026-10-16/unit_tests_final.txt",
+      "bytes": 180,
+      "sha256": "cda9f815be43914befb5a888a5138077cd57893e1ca757a33aca41b06629eb69"
+    },
+    {
+      "path": "reports/week_5_final_review_2026-10-16/README.md",
+      "bytes": 3015,
+      "sha256": "5d5596500623cfe567002ae4c9dd8aa3eb794cd1f20e9c6b838f481b6e774c9a"
+    },
+    {
+      "path": "reports/week_5_final_review_2026-10-16/acceptance_record.json",
+      "bytes": 6200,
+      "sha256": "8baca5a8d13c3ffbf3dcd27a68a304a3a9fdc7f22d3985223124a2411a38ca38"
+    },
+    {
+      "path": "reports/week_5_final_review_2026-10-16/acceptance_record.md",
+      "bytes": 6714,
+      "sha256": "e11e52672cd103a99e527bfd7d36672a9118742aa0b51bd6b5ef94ad5b36e24a"
+    },
+    {
+      "path": "reports/week_5_final_review_2026-10-16/browser_review.json",
+      "bytes": 750,
+      "sha256": "f73a3902aef94d4498e2b4be1f360c4459432e9afd80ec1cba06408c889e60d3"
+    },
+    {
+      "path": "reports/week_5_final_review_2026-10-16/build_report.py",
+      "bytes": 5341,
+      "sha256": "aff8931a9b1b0db970ba5433a732f11a7714fbcc43f36fdd33597579ede926c0"
+    },
+    {
+      "path": "reports/week_5_final_review_2026-10-16/capstone_app.patch",
+      "bytes": 19577,
+      "sha256": "b838a0fd2c7ee1d41732324569baa0722d76a1af447e0ba8bc6ba8f22a8d2140"
+    },
+    {
+      "path": "reports/week_5_final_review_2026-10-16/checklist_snapshot.md",
+      "bytes": 27136,
+      "sha256": "1c2391e998c6f1251d5adcdca16ed3a607eba240a57cbf0c5d73abb18bc25f42"
+    },
+    {
+      "path": "reports/week_5_final_review_2026-10-16/code_review.md",
+      "bytes": 2521,
+      "sha256": "deb6e92ceead7b71757b97d146e2edb0a0b7ec4d2c3f5755de11c2543eb18c7c"
+    },
+    {
+      "path": "reports/week_5_final_review_2026-10-16/final_technical_report.md",
+      "bytes": 29300,
+      "sha256": "fb1eeb98fdf13d1f455ea7d47cd3c7296d4a97f570787497429932179bedebe4"
+    },
+    {
+      "path": "reports/week_5_final_review_2026-10-16/final_technical_report.pdf",
+      "bytes": 28716,
+      "sha256": "f040142dff99aa4359e731759138fcb0b03768896c80f5ea10482da2ee4f1e7d"
+    },
+    {
+      "path": "reports/week_5_final_review_2026-10-16/http_review.json",
+      "bytes": 4595,
+      "sha256": "1d1bef3f7b7bdaeafeabc88d7eb50c0af9201ab9a841a4c7fdff845631e2c51d"
+    },
+    {
+      "path": "reports/week_5_final_review_2026-10-16/index.html",
+      "bytes": 7219,
+      "sha256": "a36ce6d6c432a437a9bd1f85803c23cfa380823889d004f6a11526c6e6ec80ce"
+    },
+    {
+      "path": "reports/week_5_final_review_2026-10-16/integrity_review.json",
+      "bytes": 417,
+      "sha256": "9fa33d157afa9f7ac6c1a8c35f7c3868ca970aabcc8b3b5a3cfe608397703710"
+    },
+    {
+      "path": "reports/week_5_final_review_2026-10-16/live_readiness.json",
+      "bytes": 1596,
+      "sha256": "703292a0626ef9f2af763402c6ddaddf7710ce0287d2732b82c701073e793aad"
+    },
+    {
+      "path": "reports/week_5_final_review_2026-10-16/pdf_validation.json",
+      "bytes": 323,
+      "sha256": "8e5911c76d3fc06a3b58e139f173bd80a2d5f164641799a394e8bff1615fadfa"
+    },
+    {
+      "path": "reports/week_5_final_review_2026-10-16/performance_review.json",
+      "bytes": 1833,
+      "sha256": "18f3b4652a1d35b2a1143c23ec0f7edb616110b0c3353a74c6039a2340af98f2"
+    },
+    {
+      "path": "reports/week_5_final_review_2026-10-16/source_checks.json",
+      "bytes": 313,
+      "sha256": "b2ee326f4862754a27226fd1920754ad6b17713b3228aa8bbf8329bf0c111044"
+    },
+    {
+      "path": "reports/week_5_final_review_2026-10-16/source_snapshot/scripts/capstone_app.py",
+      "bytes": 21921,
+      "sha256": "b1a289e235b945525633cd5f5bfe4085826f0c240c1597a5d1dc0e9dda6d8088"
+    },
+    {
+      "path": "reports/week_5_final_review_2026-10-16/source_snapshot/tests/test_capstone_app.py",
+      "bytes": 5636,
+      "sha256": "61c81a24b3f3624357d1a440737896283f2f6deb2e6babae1c724dd294e11b19"
+    },
+    {
+      "path": "reports/week_5_final_review_2026-10-16/test_capstone_app.patch",
+      "bytes": 4201,
+      "sha256": "f363ddf100a415664c9c5ed3537a72b4bed33e16be0cee6c7c05f456030293ff"
+    },
+    {
+      "path": "reports/week_5_final_review_2026-10-16/unit_tests.txt",
+      "bytes": 180,
+      "sha256": "f474d4a4faf67adcaa4f3623e427a4042a95566f5576d87a16172326a2a00d66"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/README.md",
+      "bytes": 10247,
+      "sha256": "0f0f36575aa17e8c142336858785565c3dbe4bc9b12aefa0c980ceac28aaac09"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/artifact_manifest.json",
+      "bytes": 16424,
+      "sha256": "cc6733829848807f29e754a084e1c95baf8b396bee542bd3b3fcffdd0534e4c3"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/browser_verification.json",
+      "bytes": 747,
+      "sha256": "f405b53d5d9d8e419391f54da912d6245b0db92716a81570da0b08109cb7bb28"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/calibration_report.json",
+      "bytes": 3514,
+      "sha256": "2a785b4b0d83c889d24698324a7d711aea9a723d365af0c22ab137bee8ea49bb"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/checklist_snapshot.md",
+      "bytes": 25606,
+      "sha256": "82135678104c252920559c0f6aeec2d22224cffb7b8b0c3c1de3022e7074ea62"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/code_quality.json",
+      "bytes": 3150,
+      "sha256": "47f8e4bb6cb382e34ee02a21f5e12f5252c2ccbcc15589b3e9b47eed11496a0c"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/environment.lock.txt",
+      "bytes": 860,
+      "sha256": "19575a1254ffa99ee60e48310fde5b7fde269ed9583039a4a28954506c2e6a29"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/final_calibration_diagnostics.png",
+      "bytes": 136729,
+      "sha256": "53783c5abe619f16cceb61dd87ab23414d24e3430c995edc063b46e5f92749df"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/final_evaluation.json",
+      "bytes": 21047,
+      "sha256": "69e4d3fac4f825d5c6fcd6bca440b07a481f83f724790c947e8aa16cd8633342"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/final_evaluation_freeze.json",
+      "bytes": 1359,
+      "sha256": "cdf8ebaa765c3ccb0afe894fe8875764ea017547c7ae54864abd5c3af53c0385"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/final_evaluation_started.json",
+      "bytes": 237,
+      "sha256": "47b3712c46e48bbb938b864afe622067c791475a86614ca676e45a20ee3883d6"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/historical_ignition_map.html",
+      "bytes": 51615289,
+      "sha256": "73641b5c274bb2cefa001712a3fb3e178c6abf91dbde2b563e55000d668aa222"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/integrity_verification.json",
+      "bytes": 2821,
+      "sha256": "8940dfbece6d2d70092b1b2a1745a53cb447dad9d54860710ec637a89619e704"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/map_build_audit.json",
+      "bytes": 733,
+      "sha256": "56fd52410aff046a9daa3e9de47dc2cd77a08c1d76805f80de21abb6fce147a1"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/map_build_before_mobile_layout.json",
+      "bytes": 528,
+      "sha256": "1679ff2f9b2f8e7d16bc7b4f072c2c6b394213012e820792c2a8c3ce8582a5a8"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/map_code_quality.json",
+      "bytes": 1946,
+      "sha256": "9a90e596f40e2e7cf13026848405f32cdcd31134a05153919bcf0f704ae5eac0"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/package_verification.json",
+      "bytes": 312,
+      "sha256": "3b21e7c31adce471a6cdf67c946401228cf3c461f887e18feb9b3bce5c6db29a"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/preimplementation_review.md",
+      "bytes": 1741,
+      "sha256": "163b188d48109f85983a49c1aac4503d50d641e8e07d691c12ef4278afde192e"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/project_architecture.md",
+      "bytes": 14765,
+      "sha256": "f9f30ac3f5b89d1c63060bac28ad8ef26d1f9ee186eaef91ec7d5ff37ff67167"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/project_context.md",
+      "bytes": 22669,
+      "sha256": "6d84b8625836b8b6f975dc085f28a0a5d9b34d9fb340be72c98a4e39eb20f6cf"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/protocol_freeze.json",
+      "bytes": 4640,
+      "sha256": "a6679a4514e46a2dbeab484ba2e32a52cfb250479c9c8f476895a448208b3f9c"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/spatial_calibrated_final_daily_alerts.csv",
+      "bytes": 4264,
+      "sha256": "5ce4dbfd68d920b497a081659060ddc507e46e397badc119395df5ab8b4064d9"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/spatial_training_prior_final_daily_alerts.csv",
+      "bytes": 4264,
+      "sha256": "a34a77d6f63959569011516fbbe49316a1c1fc44dd8f95d0f1ee1c85d0250e0f"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/spatial_uncalibrated_final_daily_alerts.csv",
+      "bytes": 4264,
+      "sha256": "5ce4dbfd68d920b497a081659060ddc507e46e397badc119395df5ab8b4064d9"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/temporal_calibrated_final_daily_alerts.csv",
+      "bytes": 4276,
+      "sha256": "81e7cd842e491e8194b760ea3e5292a8e4350db711f4ffdce47490a02c149856"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/temporal_training_prior_final_daily_alerts.csv",
+      "bytes": 4276,
+      "sha256": "f1a37e507ffcdb88fdb8c492cf5ed8fa655029388314b7c10f2326bfe07d9138"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/temporal_uncalibrated_final_daily_alerts.csv",
+      "bytes": 4276,
+      "sha256": "81e7cd842e491e8194b760ea3e5292a8e4350db711f4ffdce47490a02c149856"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/unit_tests_before_fit.txt",
+      "bytes": 180,
+      "sha256": "08a0678bba9664027f6f1ea9d4695d3dffbd651cbdf41d39d0f67f0a4ea82c19"
+    },
+    {
+      "path": "reports/week_5_prototype_2026-10-16/unit_tests_final.txt",
+      "bytes": 180,
+      "sha256": "c5d24984321010e8e288439022a003c8273a3b2d870ef00e6aa9511d5e465505"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 282,
+      "sha256": "03be4422aed335898dd79cf8e29e65d320cabdc0a3edea7dcdb29f388127b274"
+    },
+    {
+      "path": "scripts/__init__.py",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "scripts/analyze_static_samples.py",
+      "bytes": 26148,
+      "sha256": "a9db1d1e99ef3364cfba9a91d3542284d1abc46aee47de96a85d2f869f9db149"
+    },
+    {
+      "path": "scripts/build_ignition_map.py",
+      "bytes": 11067,
+      "sha256": "6f5460bd265024ff9ca7e76461dcf15846957bc590adc6d9abeafc39d0155656"
+    },
+    {
+      "path": "scripts/build_selected_2025_panel.py",
+      "bytes": 9146,
+      "sha256": "cc46a2ab793db372bc4c8e6afc8de46eed3f8b97c52fee347a7b419fc5eb93ff"
+    },
+    {
+      "path": "scripts/capstone_app.py",
+      "bytes": 21921,
+      "sha256": "b1a289e235b945525633cd5f5bfe4085826f0c240c1597a5d1dc0e9dda6d8088"
+    },
+    {
+      "path": "scripts/complete_spread_replay.py",
+      "bytes": 12773,
+      "sha256": "ae88477b6c49949a263b02a333f7965e12a4f8b9d15a05b27abb3d022ee4b7dc"
+    },
+    {
+      "path": "scripts/fetch_era5_pilot.py",
+      "bytes": 2635,
+      "sha256": "721aec2d071b156dd82471fa7a02ff2cbddb945145620cbe68ee6e8907a654b8"
+    },
+    {
+      "path": "scripts/fetch_ontario_static.py",
+      "bytes": 8100,
+      "sha256": "6557bc01cecce74a73f4d3077b57cd32d9b54bb047ee5e1eef0bc737aa199e7c"
+    },
+    {
+      "path": "scripts/fetch_static_samples.py",
+      "bytes": 6424,
+      "sha256": "f530e7b1854da85fd317c2e165b1bd18a093a59f3d4cf7b6f3bee7339b9b059e"
+    },
+    {
+      "path": "scripts/hrdps_live_weather.py",
+      "bytes": 16454,
+      "sha256": "e01ea1d42fc6c28d9413b5c689f71a55f6828a095cad67f6490c5d39311bfd47"
+    },
+    {
+      "path": "scripts/ignition_comparison.py",
+      "bytes": 18630,
+      "sha256": "5426f8dee840cd4cb96700531d5cff2c05ea14e328008ec89c2c2c2377f9b26f"
+    },
+    {
+      "path": "scripts/join_development_weather_v2.py",
+      "bytes": 7893,
+      "sha256": "a89e5a12ab9782723cf0d62a77b2fb61e7a12588c1efc5b440d1228642e0f3d8"
+    },
+    {
+      "path": "scripts/prepare_historical_weather_v2.py",
+      "bytes": 15493,
+      "sha256": "cd0607906e7dd18b3c6351132aab9a3e4d5f70d502b185dcefaa03e16f9c6e02"
+    },
+    {
+      "path": "scripts/prepare_ignition_pilot.py",
+      "bytes": 13880,
+      "sha256": "f9b1842aa288caf59122cc98a13eef0afe55b88f60bcc6ec2a8d3cbc0dea2bc1"
+    },
+    {
+      "path": "scripts/prepare_provincial_static.py",
+      "bytes": 10989,
+      "sha256": "cce18bb112393ad495bf2571f3d0f527e02b856445eaac771f5cf6956e53a1e9"
+    },
+    {
+      "path": "scripts/prepare_provincial_weather.py",
+      "bytes": 9016,
+      "sha256": "f5b472926dd2f5f04cf10dedafff223f7eccb461ff1cafcf04517cb398a0356c"
+    },
+    {
+      "path": "scripts/prepare_selected_weather.py",
+      "bytes": 10353,
+      "sha256": "923a5fc00aa2ed13da05f485e8bda9e0f631e4cc7215a9d19a1aee2152c7250e"
+    },
+    {
+      "path": "scripts/profile_ontario_static.py",
+      "bytes": 5666,
+      "sha256": "ad9a376ac39c22b29f0aba6f7d1ca72b84eed138b6a7ad36933aec2770ee649f"
+    },
+    {
+      "path": "scripts/refine_provincial_fuel.py",
+      "bytes": 6110,
+      "sha256": "b1bb6902dc8b197dfdcb21e00471c118442f3cffe5ca4e4f89cd441019043214"
+    },
+    {
+      "path": "scripts/selected_2025_model.py",
+      "bytes": 9726,
+      "sha256": "21ee67dbde7a43fb931060e7c2655a2d8ff703bcf42bdd916f60a65e85e6bbe7"
+    },
+    {
+      "path": "scripts/week5_ignition.py",
+      "bytes": 16485,
+      "sha256": "6d39543cbf5276fcc658c9039824d01055105c86f14873d0d2649ff6c64e2470"
+    },
+    {
+      "path": "team_repository/capability_2_fire_spread/scripts/build_spread_fire_catalogue.py",
+      "bytes": 12467,
+      "sha256": "00e79bd06254e17c42f5aaf37394fcead8ce927705aa1958b823ed65a7f71775"
+    },
+    {
+      "path": "team_repository/capability_2_fire_spread/scripts/build_spread_fuel_summary.py",
+      "bytes": 6239,
+      "sha256": "3309318cf10e8b140b3e748fefc08d35658c786f12fcd865df6f572cdffac79f"
+    },
+    {
+      "path": "team_repository/capability_2_fire_spread/scripts/build_spread_master.py",
+      "bytes": 10517,
+      "sha256": "6f2cec932606d821506b754cb8e16b6aafd97be0c9cf152d430a3002db92024a"
+    },
+    {
+      "path": "team_repository/capability_2_fire_spread/scripts/build_spread_progression.py",
+      "bytes": 15763,
+      "sha256": "b89399717db4e25773da796be95922aa660edef6752fe809ea10032114f13c3d"
+    },
+    {
+      "path": "team_repository/capability_2_fire_spread/scripts/build_spread_terrain_summary.py",
+      "bytes": 4938,
+      "sha256": "3526d05ad18941ee44e0c1c5ffeb2e8ff76c4c409bec7f126a549f72d1f22041"
+    },
+    {
+      "path": "team_repository/capability_2_fire_spread/scripts/build_spread_weather.py",
+      "bytes": 7746,
+      "sha256": "4ebd31800c8251b84b38bb9ac15dde2806a59d46490d58d4456b044f57d47d79"
+    },
+    {
+      "path": "team_repository/capability_2_fire_spread/scripts/download_fire_disturbance.py",
+      "bytes": 5196,
+      "sha256": "938d311ab91498f4ad11a4146ed27235f25007d886aaf396e851f50be4565ba5"
+    },
+    {
+      "path": "team_repository/capability_2_fire_spread/scripts/download_firms_viirs.py",
+      "bytes": 5790,
+      "sha256": "f339a905a9c960eb0312db7266a53d57a7d040fe9ec93ac09bb7bfa147531d6b"
+    },
+    {
+      "path": "team_repository/capability_2_fire_spread/scripts/download_spread_fuel_windows.py",
+      "bytes": 5762,
+      "sha256": "25480b67ee8b323ae23ae8c4d5f0c3cced05dbb1fa1a3ea01ac224963bbb6c6e"
+    },
+    {
+      "path": "team_repository/capability_2_fire_spread/scripts/download_spread_terrain_windows.py",
+      "bytes": 4729,
+      "sha256": "23ce51e0eb53d5a53a92b1b81d250b0b985881c6cf3bf43f1159400a7c8858a4"
+    },
+    {
+      "path": "team_repository/capability_2_fire_spread/scripts/download_spread_weather.py",
+      "bytes": 6074,
+      "sha256": "02889c13a18235a3d24761771e35125bcafaf986b284fa2ed8578f7e84643c77"
+    },
+    {
+      "path": "team_repository/capability_2_fire_spread/scripts/eda_fire_spread.py",
+      "bytes": 22677,
+      "sha256": "b88cfc8a84718650c431c04d85dddd9f6e6d19cae19ed088b2ad2433ef8d6856"
+    },
+    {
+      "path": "team_repository/capability_2_fire_spread/scripts/export_spread_viewer_data.py",
+      "bytes": 15689,
+      "sha256": "c18548b9bc5d3b75772f77fb56c5a14faca4a154b05b662386a09e5ddcfaf58e"
+    },
+    {
+      "path": "team_repository/capability_2_fire_spread/scripts/fbp_spread.py",
+      "bytes": 7028,
+      "sha256": "68881016befa50a10e8fba5e32c5bb1ca2ef08a580eacb52e0d473c02f2caca3"
+    },
+    {
+      "path": "team_repository/capability_2_fire_spread/scripts/fire_weather_index.py",
+      "bytes": 5019,
+      "sha256": "449a207639d98a15811a2dddfe0bb399ab0ab6375cb46d5fb6dfbe2cef339691"
+    },
+    {
+      "path": "team_repository/capability_2_fire_spread/scripts/run_spread_replay.py",
+      "bytes": 17191,
+      "sha256": "62549f2d9287033944974937a28ca2b0fbece77a8559a3047601fa505ecf285b"
+    },
+    {
+      "path": "team_repository/capability_2_fire_spread/scripts/simulate_spread.py",
+      "bytes": 15835,
+      "sha256": "d20a7c6a3340efb517016c290dff731e89d7ea1f2fb6ed0f4897b3356393b187"
+    },
+    {
+      "path": "team_repository/capability_2_fire_spread/scripts/spread_basemap.py",
+      "bytes": 3264,
+      "sha256": "a43091dafc55a9808bbcf00419596b508f076d7e881d580be2d6957d8eee71ee"
+    },
+    {
+      "path": "team_repository/capability_2_fire_spread/scripts/spread_common.py",
+      "bytes": 2232,
+      "sha256": "2399783e3384bb8714a0aa23c08ee89eccf8bacd88e709e2b00d8e91f26ffade"
+    },
+    {
+      "path": "team_repository/capability_2_fire_spread/scripts/validate_spread_master.py",
+      "bytes": 8971,
+      "sha256": "a6a15ac47df8f81d664a5a9704b4d50a2d4ec60ffce94b2df93bf89c13400612"
+    },
+    {
+      "path": "team_repository/capability_2_fire_spread/tests/test_fire_spread_dataset.py",
+      "bytes": 6848,
+      "sha256": "08bc03963bd3b2d25407a7c4d4c9d900157a28df8f6d6bb0197870a5a2da05e9"
+    },
+    {
+      "path": "team_repository/capability_2_fire_spread/tests/test_fire_spread_simulator.py",
+      "bytes": 10077,
+      "sha256": "72e07560ef41b09603dd47207746d9b64d6afb39c619034771aa1352332b026f"
+    },
+    {
+      "path": "team_repository/data/interim/ontario_fire_region_10km_grid.csv",
+      "bytes": 563016,
+      "sha256": "b22741d83b64c2b78c19fbf182848566644a23fad4aeef3301ff25ef7c6c3f35"
+    },
+    {
+      "path": "team_repository/docs/week_1_development_plan.md",
+      "bytes": 8773,
+      "sha256": "a59ba39d021d349d9d6798dea019d976c6ffa293cdc6317466f066f94c7fa233"
+    },
+    {
+      "path": "team_repository/scripts/build_cdem_terrain_summary.py",
+      "bytes": 16120,
+      "sha256": "ab227a15fd48462589dae7f099fcf0f71b067d6a5b96eb5a2be51167059f85df"
+    },
+    {
+      "path": "team_repository/scripts/build_cpa_daily_ignition_labels.py",
+      "bytes": 12238,
+      "sha256": "ae85e5193c4c60a4297b24aca53b2a9cc957ee20f1c7daf5d21311904ec96bb1"
+    },
+    {
+      "path": "team_repository/scripts/build_ignition_feature_panel.py",
+      "bytes": 34747,
+      "sha256": "0d32e9ad09819db9d3ff62087b0095b7bf535eaa5f9d4dceb27e637723af5e37"
+    },
+    {
+      "path": "team_repository/scripts/download_cpa_boundary.py",
+      "bytes": 7605,
+      "sha256": "ba739604df4c0386e8d30956ac7d9863e52b1f18d7ec2bf633e5920b784c7fb2"
+    },
+    {
+      "path": "team_repository/scripts/download_cwfis_fwi.py",
+      "bytes": 5127,
+      "sha256": "ce9db12ddfa0376cc19ae327d278cc673975dda28d364d18358fb34e1597b2cc"
+    },
+    {
+      "path": "team_repository/scripts/download_nfdb.py",
+      "bytes": 2454,
+      "sha256": "1ae36163fdc584db79b2d6d9657dbc38474b0a71bba1f886f710095a92933c25"
+    },
+    {
+      "path": "team_repository/scripts/download_ontario_fire_region.py",
+      "bytes": 3524,
+      "sha256": "059588c8a317eae23705125fb6f30acc0ce0b617830bca130cf7adc68cb64128"
+    },
+    {
+      "path": "team_repository/scripts/prepare_ontario_ignitions.py",
+      "bytes": 5799,
+      "sha256": "7eac81e68e0552827717d7191833776db593cd14e3781dccc4d6b2690807826f"
+    },
+    {
+      "path": "team_repository/tests/test_ignition_feature_panel.py",
+      "bytes": 8563,
+      "sha256": "b2326553e330a8b58d260f31ab5256e16380747ff99f756068b303e0b5cfb62e"
+    },
+    {
+      "path": "tests/test_capstone_app.py",
+      "bytes": 5636,
+      "sha256": "61c81a24b3f3624357d1a440737896283f2f6deb2e6babae1c724dd294e11b19"
+    },
+    {
+      "path": "tests/test_development_weather_join.py",
+      "bytes": 2634,
+      "sha256": "d39e6439372b7107e3ad5e0ada5e280458f8153eeb14c12e71500e70e89002dd"
+    },
+    {
+      "path": "tests/test_historical_weather_v2.py",
+      "bytes": 4543,
+      "sha256": "4c4312314a72480ccec7cd0d8e00a27e8a4e30b41d67426937716d9347b51b1e"
+    },
+    {
+      "path": "tests/test_hrdps_live_weather.py",
+      "bytes": 3966,
+      "sha256": "b95d04fb77ed10bbde5e9dba31e5e049e0e6ac6d91798cbd21f07f3ac0993400"
+    },
+    {
+      "path": "tests/test_ignition_comparison.py",
+      "bytes": 4868,
+      "sha256": "ff68d19f219e9343cbe09bfc3bec3f903ba92848251e3fd266f045d303b08d10"
+    },
+    {
+      "path": "tests/test_ignition_map.py",
+      "bytes": 1023,
+      "sha256": "f658adb73730e117eefb5af70330d092c536fed0f98a89c16140aa2deb510595"
+    },
+    {
+      "path": "tests/test_ignition_pilot.py",
+      "bytes": 4839,
+      "sha256": "0a2621249d5fd9029871a7492feb67b1784d95bc689ffa4a99fb5909d880f076"
+    },
+    {
+      "path": "tests/test_native_fuel.py",
+      "bytes": 594,
+      "sha256": "10f9fbd7c80aa4b7b9a8e26e296d7e275f2581c616882bfc7046e9e2c9dfa0a1"
+    },
+    {
+      "path": "tests/test_processed_outputs.py",
+      "bytes": 1563,
+      "sha256": "7d7b6ae778b8ef87daa34fd1e3695c8eaac4bb47efac3f9e340b7dcbca61d467"
+    },
+    {
+      "path": "tests/test_provincial_static.py",
+      "bytes": 1209,
+      "sha256": "07a119ff0a0d495b1ec72646866bf83cb558518355f580fb4d680848914c7297"
+    },
+    {
+      "path": "tests/test_provincial_weather.py",
+      "bytes": 1898,
+      "sha256": "6877e2696f810d52f79b28ce73634b927b95553962bcebec5a7439936fd223d0"
+    },
+    {
+      "path": "tests/test_selected_2025_panel.py",
+      "bytes": 1023,
+      "sha256": "bdbe3849923046a9a7b34774551e9528cca963379bed31be09d2ddbfe268b9df"
+    },
+    {
+      "path": "tests/test_selected_weather.py",
+      "bytes": 3642,
+      "sha256": "f4eea5f493d45ec30756a575ec239d804af9a48f32273a8bee95fb164b0b1df3"
+    },
+    {
+      "path": "tests/test_static_analysis.py",
+      "bytes": 1827,
+      "sha256": "8f7759f73e31c1d2ccc4cbf3a2d62d493741a76832f718ac5af3897f40a3a654"
+    },
+    {
+      "path": "tests/test_week3_interfaces.py",
+      "bytes": 1994,
+      "sha256": "aab05a130a2313b4365a57593d04d5e2b0d30efb5cc2f30d36566330cc6f0096"
+    },
+    {
+      "path": "tests/test_week5_completion.py",
+      "bytes": 1643,
+      "sha256": "3dc61321de2d4504c6f12b8d25374874d6b17e554a6fc502799862579411b132"
+    },
+    {
+      "path": "tests/test_week5_ignition.py",
+      "bytes": 2682,
+      "sha256": "2ea085a48ea6ff273e4364fc09cf38be759ae25f464d1cdf1dac1cfcaf8b0936"
+    }
+  ],
+  "note": "Excludes this manifest and post-package verification. Original dated manifests describe their original revisions; this ledger identifies the complete current review delivery."
+}

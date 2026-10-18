@@ -1,0 +1,21 @@
+{
+  "url": "http://127.0.0.1:8766/historical_ignition_map.html",
+  "method": "Actual Codex in-app browser UI smoke test",
+  "default_date": "2019-05-01",
+  "next_day_result": "2019-05-02 shown",
+  "select_date_result": "2019-05-01 restored",
+  "keyboard_selected_cell": "ofr10km_-10000_100000",
+  "displayed_probability": "0.1790%",
+  "displayed_factors": [
+    "cwfis dmc +0.904 raw log odds",
+    "fire history neighborhood 365d +0.589 raw log odds",
+    "calendar day of year +0.381 raw log odds"
+  ],
+  "recorded_start_toggle": "checked and verified",
+  "browser_console_errors": [],
+  "limitations": [
+    "Narrow default in-app viewport visually inspected",
+    "No full accessibility/latency certification",
+    "Not a live forecast"
+  ]
+}

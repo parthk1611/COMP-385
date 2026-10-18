@@ -1,0 +1,75 @@
+{
+  "note": "Illustrative schema fixtures; probabilities, timestamps and filenames are not an actual prediction response. Exact archived observation clock remains unverified.",
+  "examples": {
+    "RiskRequest": {
+      "date": "2017-07-12",
+      "grid_ids": [
+        "ofr10km_410000_110000"
+      ],
+      "mode": "retrospective_development",
+      "model_version": "week3-temporal-histogram-v1"
+    },
+    "IgnitionScore": {
+      "grid_id": "ofr10km_410000_110000",
+      "date": "2017-07-12",
+      "issue_time_utc": "2017-07-12T04:00:00Z",
+      "mode": "retrospective_development",
+      "model_version": "week3-temporal-histogram-v1",
+      "feature_version": "ignition-feature-v1.0.0",
+      "status": "ok",
+      "probability": 0.001,
+      "probability_status": "uncalibrated_development",
+      "quality_flags": [
+        "historical_availability_unknown"
+      ],
+      "error": null
+    },
+    "WeatherObservation": {
+      "observed_at_utc": null,
+      "available_at_utc": null,
+      "availability_status": "historical_archive_unknown",
+      "source_version": "cwfis_fwi_2010s_v3_ll",
+      "temp_c": null,
+      "rh_pct": null,
+      "wind_speed_kmh": null,
+      "wind_from_degrees_true": null,
+      "rain_24h_mm": null,
+      "state_version": "archived_provider_codes",
+      "timezone_policy": "provider prior local calendar day; exact observation clock must be verified",
+      "observation_date": "2017-07-11",
+      "time_precision": "date_only"
+    },
+    "SpreadRequest": {
+      "incident_id": "example-incident",
+      "start_time_utc": "2017-07-12T18:00:00Z",
+      "horizon_hours": 6,
+      "pixel_size_m": 90,
+      "crs": "EPSG:3978",
+      "mode": "retrospective_reconstruction",
+      "initial_mask_artifact": "masks/example-observation.npy",
+      "fuel_artifact": "fuels/example-2024.tif",
+      "terrain_artifact": "terrain/example-90m.tif",
+      "weather_artifact": "weather/example-hourly.parquet",
+      "uses_final_perimeter": true,
+      "outcome_conditioned_domain": true,
+      "available_at_utc": null
+    },
+    "SpreadResult": {
+      "incident_id": "example-incident",
+      "start_time_utc": "2017-07-12T18:00:00Z",
+      "horizon_hours": 6,
+      "mode": "retrospective_reconstruction",
+      "propagation_revision": "surface-barrier-clearance-v2",
+      "crs": "EPSG:3978",
+      "pixel_size_m": 90,
+      "arrival_minutes_artifact": "outputs/example-arrival.npy",
+      "validation_status": "reconstruction_only",
+      "operationally_validated": false,
+      "quality_flags": [
+        "final_perimeter_assisted_fuel",
+        "domain_derived_from_final_extent",
+        "reanalysis_weather"
+      ]
+    }
+  }
+}

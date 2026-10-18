@@ -1,0 +1,287 @@
+[
+  {
+    "path": "README.md",
+    "bytes": 5858,
+    "sha256": "769e186dbbbffb38a3a352bec6a5a2737b00a0de53df023c6e3f422db2c1c3a8"
+  },
+  {
+    "path": "boundary_source_audit.json",
+    "bytes": 741,
+    "sha256": "49c327eb97a18effec6ec5d2f763c4c060e896872414ee301fc552c212296a5a"
+  },
+  {
+    "path": "cwfis_restored_manifest.json",
+    "bytes": 855,
+    "sha256": "005f272eee40c96e49cf279914d7585c5d30eb9d864670d94ea0a16c3d139dcd"
+  },
+  {
+    "path": "data_decisions.md",
+    "bytes": 6339,
+    "sha256": "4d126f95f4432e6ae63cc2be0922e7907c42cce2eccbb96be5f28c4520094813"
+  },
+  {
+    "path": "data_readiness.md",
+    "bytes": 17010,
+    "sha256": "d7ba6733ca476b62896107c86a95bb36bbb0dca9012e759bec6018c8b0edf7a5"
+  },
+  {
+    "path": "development_schedule.csv",
+    "bytes": 4825,
+    "sha256": "e0d302f22b8c8bdd71bd73127280688a86e419e7bf6abeeb6b45f1184e954165"
+  },
+  {
+    "path": "development_schedule.md",
+    "bytes": 3773,
+    "sha256": "d5aaeae5d8e9343d4b84a0b7ff72abe1e750e035907d17fe43ee0ff290d9d9ed"
+  },
+  {
+    "path": "development_schedule.xml",
+    "bytes": 23677,
+    "sha256": "28f98e2b109c31b9b613d5f8197535d0003434f6851717f4824f3c7fdc16ad77"
+  },
+  {
+    "path": "era5_daily_exploration.csv",
+    "bytes": 34744,
+    "sha256": "a83232343d5052822108c3ce58a34d4a5f2713792abcab7f0bd069409d465d0d"
+  },
+  {
+    "path": "era5_file_audit.json",
+    "bytes": 21897,
+    "sha256": "6187a44e6be90637878e7db317572a1a1c41afa3f53a310d30ea08615d2cc428"
+  },
+  {
+    "path": "era5_provincial_january_profile.json",
+    "bytes": 3578,
+    "sha256": "58aadf0bd62848056af5f2adad179dd9b1a62111322839144c4fbb71b05d6857"
+  },
+  {
+    "path": "era5_variable_profile.csv",
+    "bytes": 4164,
+    "sha256": "aee5a983319c4e19aecb90eeb3d662054b55968f1a54e2c26c67d94d4d22cff4"
+  },
+  {
+    "path": "evaluation_materialization_v1.json",
+    "bytes": 4086,
+    "sha256": "3531bda3000abe023fd54c46b1f171757b62b338dba0b139dd13df0f34affeec"
+  },
+  {
+    "path": "evaluation_plan.md",
+    "bytes": 6243,
+    "sha256": "d0fcf0c463afe7295713378aa117a41d55435650efbe05595a121d52c1d8529b"
+  },
+  {
+    "path": "evaluation_reservation_v1.json",
+    "bytes": 2911,
+    "sha256": "4524309d0848ee20c674de3beb32891b161767d0e3e66d90b72ad4659b631d2c"
+  },
+  {
+    "path": "figures/era5_pilot_exploration.png",
+    "bytes": 210173,
+    "sha256": "dd70ccca5a0ed1c88acd1e2a35ad5d16add79f6f9e0e57edf57fd09c7b2be639"
+  },
+  {
+    "path": "figures/ignition_spatial_reservation.png",
+    "bytes": 88175,
+    "sha256": "e927b10c628635d179019d69090c7b1af0d4c294663eb7f4446d29df7ba5b473"
+  },
+  {
+    "path": "fire_source_reconciliation.json",
+    "bytes": 1935,
+    "sha256": "125d781fa0684aa88d2d482849168233da6223fd64fbc9bf1154a243790c9338"
+  },
+  {
+    "path": "fuel_terrain_sample_quality.json",
+    "bytes": 3166,
+    "sha256": "5dee80ab577e1e7353a141e82cfe43e410d3642e1427b763268a4cb08410ca1a"
+  },
+  {
+    "path": "grid_boundary_diagnostic.csv",
+    "bytes": 599632,
+    "sha256": "7841c2193647e68a214287863930c6dfe2d153cd1fa9217f1755de58a6e4127c"
+  },
+  {
+    "path": "historical_feature_rebuild_audit.json",
+    "bytes": 2162,
+    "sha256": "7d05cea6a09d20c76b87e876a7b93fb07481b892e3719dec39da005525f74326"
+  },
+  {
+    "path": "hrdps_sample_audit.json",
+    "bytes": 13092,
+    "sha256": "2eabb7aac0af314456d61ae4b843f8f7bea9ce185075845b48088dca90f74026"
+  },
+  {
+    "path": "ignition_spatial_partition_v1.csv",
+    "bytes": 688840,
+    "sha256": "cc6003b321c6b660e766c29b4940829a0fe8b983386a7cb3cd6c041537d9fec0"
+  },
+  {
+    "path": "ignition_temporal_partition_v1.csv",
+    "bytes": 38484,
+    "sha256": "63a6215dfade10a14f8d446ca7a3d7544bfda17d5fa9b6bb216e010515ea34b4"
+  },
+  {
+    "path": "label_restoration_audit.json",
+    "bytes": 933,
+    "sha256": "eaad93e794d8fb747baa0dff4000a8f5510f540035d97acc44d35169136fade7"
+  },
+  {
+    "path": "nfdb_duplicate_id_review.csv",
+    "bytes": 1143,
+    "sha256": "1269bf0633742ce78eee836d1d2610959d0b6b020dc90617b76a843583503f0b"
+  },
+  {
+    "path": "nfdb_ontario_adjudication.csv",
+    "bytes": 760345,
+    "sha256": "6d7cd23b3d7015f06860efb854b4a27b21bf09daf6da25d7463eb0ce001b7051"
+  },
+  {
+    "path": "nfdb_ontario_key_reconciliation.csv",
+    "bytes": 948451,
+    "sha256": "ff4c8d42657b4f649b69711036010e3ac272adfc949db370e30f068f096cf709"
+  },
+  {
+    "path": "ontario_point_area_full_profile.json",
+    "bytes": 4600,
+    "sha256": "12826633fbd7690a828ed1676a5a1165178f6cd7a03cbab6d15cc344d1fc19ab"
+  },
+  {
+    "path": "ontario_point_quality.json",
+    "bytes": 1496,
+    "sha256": "a30393ee211eef5d8d5bb4072c8f90746290a7ca89072f7ea6dd4d7b9ecf1064"
+  },
+  {
+    "path": "ontario_points_normalized_audit.csv.gz",
+    "bytes": 2606173,
+    "sha256": "c9675d28280a1044b161ee2b5dcc04816af6a86e644ec16c2ceebbd2b96afdeb"
+  },
+  {
+    "path": "partition_cardinality_v1.json",
+    "bytes": 656,
+    "sha256": "e6cf8cebd95e90ee6545ec4f28ac8914cb4fc41e02922b8246e210964903713a"
+  },
+  {
+    "path": "point_area_key_reconciliation.csv",
+    "bytes": 980424,
+    "sha256": "2fff76624b1846217bbe26d85ada2bb89a2cfd7acf526e7aeff4d18f29baa3de"
+  },
+  {
+    "path": "predictor_contract_v1.json",
+    "bytes": 2995,
+    "sha256": "8d3a4118e71288c431987af1462d710fb836ada2f015073075cf6b2da825da2f"
+  },
+  {
+    "path": "provincial_static_centre_samples.csv",
+    "bytes": 437285,
+    "sha256": "35dd8afb1d4a5293bd42ebb06d2f348c64f1155b1b87efcd8d1ce5f099ef8f6c"
+  },
+  {
+    "path": "provincial_static_coverage.json",
+    "bytes": 33655,
+    "sha256": "7c4b41c04fca26de08753abe96edabfbaee26bb7c92e33b6da3d2a2e781745a3"
+  },
+  {
+    "path": "research_access_followup.json",
+    "bytes": 1487,
+    "sha256": "397a61f51691780c7fd659599f8db8f7948a099875b7f4f131e35ebdcfcf9ed8"
+  },
+  {
+    "path": "scanfi_species_quality.json",
+    "bytes": 575,
+    "sha256": "a0e47687f1c2b68677fc1d883a8b0b119dcbfa8fe6d9e4fda67fefd6f75dff6d"
+  },
+  {
+    "path": "schedule_validation.json",
+    "bytes": 642,
+    "sha256": "9652cd9b7d36d6eb1d905659f9c3c620f8a4fc60d4540fb8d25afaee9d6ffcd3"
+  },
+  {
+    "path": "selected_static_quality.json",
+    "bytes": 11273,
+    "sha256": "ebe1a67a3a3a3c8aed5bd98af81bb5a9031680830953fa063b3147f1045073bc"
+  },
+  {
+    "path": "selected_weather_audit.json",
+    "bytes": 3712,
+    "sha256": "9b2fea2a43967635f1f711559775dde7f95504fc1306528bdc68606d5aca8788"
+  },
+  {
+    "path": "selected_weather_build.log",
+    "bytes": 3409,
+    "sha256": "3ede7acc143da2493ba45f2d9a8ffcf7dafe16c407532813bf92da0be9070270"
+  },
+  {
+    "path": "selected_weather_code_quality.json",
+    "bytes": 2427,
+    "sha256": "e7040fa269538d3ba7492f7b25686c4bae2c3a7ad8e07a740cd2d79c9133c625"
+  },
+  {
+    "path": "selected_weather_contract.json",
+    "bytes": 1566,
+    "sha256": "479689b518b9f8a30f8641d8be15e2d753fd56607129b29064138bbfbc8fed2c"
+  },
+  {
+    "path": "selected_weather_daily_profile.csv",
+    "bytes": 1379,
+    "sha256": "39c39177765e1ce0d893893fa122626de37d6a572d4c2d964acde92462722e17"
+  },
+  {
+    "path": "selected_weather_unit_tests.txt",
+    "bytes": 1557,
+    "sha256": "61b82f103236592ea021da7e751fb0e533e5b1991437ec2592e9b6175787e3c0"
+  },
+  {
+    "path": "spread_build_log_after_validation.txt",
+    "bytes": 38637,
+    "sha256": "97e4d904770c0dbc50dd11c8e2124ae9447ce1ff995d4456bded5021ea73c85b"
+  },
+  {
+    "path": "spread_unit_tests.txt",
+    "bytes": 3700,
+    "sha256": "4a03794355f2fef627bfbf48fac6372d8587b4ee7b7ddaa272b71f13f7535bd2"
+  },
+  {
+    "path": "spread_validation_fresh.json",
+    "bytes": 3157,
+    "sha256": "46fa471032e1116ffde4c3b6d2803acd45a7cbdacdbfd5ee20910555e5409954"
+  },
+  {
+    "path": "storage_inventory.json",
+    "bytes": 7245,
+    "sha256": "df981cd9e652b2fede93085533469807b4df2456c21e53f2b2a373665ff812e1"
+  },
+  {
+    "path": "system_requirements.md",
+    "bytes": 12784,
+    "sha256": "0908831a417ddcb8c57a955bf22a36620f20010c86f5f89b902e8e1426dd5da5"
+  },
+  {
+    "path": "unit_tests_combined.txt",
+    "bytes": 99,
+    "sha256": "f415b1c01ef886447b2c51eb7fd7b630a2a8d4eef1490b75a6e284c7bbc001f6"
+  },
+  {
+    "path": "use_cases.md",
+    "bytes": 8838,
+    "sha256": "fdec49e4238bffd6fdda5009321e1ebffb43da652df910f77f566bd260ba0eb6"
+  },
+  {
+    "path": "validation_summary.json",
+    "bytes": 2304,
+    "sha256": "d3818c63b97b27a1d0e8010cecd04c8b22cf429f5354a7bef0c061c1e9bfa401"
+  },
+  {
+    "path": "viirs_processed_quality.json",
+    "bytes": 1005,
+    "sha256": "b33236f7f35306a06e825b9e48f9ed83f66016bbc7928e5e1a22a2b3bbd36250"
+  },
+  {
+    "path": "viirs_raw_quality.json",
+    "bytes": 16205,
+    "sha256": "d766405a9af169b02ff9a0a5b0ebc7e3fee1f2547b06671eeb27c8817767d5c5"
+  },
+  {
+    "path": "viirs_restoration_manifest.json",
+    "bytes": 11597,
+    "sha256": "5c1d59880ab759a3e2885287cca5c3fcbcd257b75c9c9244c11a7d7a317e7a27"
+  }
+]

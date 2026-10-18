@@ -1,0 +1,191 @@
+{
+  "scope": "Week 4 historical preparation increment; source and review evidence only; raw/large datasets excluded from ZIP",
+  "files": [
+    {
+      "path": "reports/week_1_to_5_checklist.md",
+      "bytes": 23595,
+      "sha256": "a3fbb2dbc1d9ab073a1cebf484d5e66700fddd91631ce5272b459a4e393414cf"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/README.md",
+      "bytes": 8487,
+      "sha256": "e13b971a8dec82cc0b5813ae5c1dfcfdbdedd2c85d891e694a7fff37d949be13"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/code_quality.json",
+      "bytes": 4848,
+      "sha256": "d2989ec16ed9769559fccd00be276954bf278375449ebb7d604ec9f1cd53ec5c"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/current_boundary_centroid_grid.csv",
+      "bytes": 706770,
+      "sha256": "5778abf65a901d5daa771add7a25b7dfb7cdeb3b9b00712e1bb1e94a7dfabd0c"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/environment.lock.txt",
+      "bytes": 847,
+      "sha256": "5ddb11dc4293e8c8750f7ccfe47298f751b4e036a676c21db08427bbf1e4ce36"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/historical_weather_build.log",
+      "bytes": 6677,
+      "sha256": "0b3142732139b6382977e8f166717cfe77b53e8339c381a296d5370547d91b42"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/historical_weather_failed_empty_chunk.log",
+      "bytes": 4171,
+      "sha256": "a859425af099162023e85a8e18140253971597885a9cc399e1bbefe7c8eb95ed"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/historical_weather_v2_audit.json",
+      "bytes": 6322,
+      "sha256": "b6c5e61a07f5ecd9f6497a3da8bbec1a7edf6b5ce16dd6d482c45d1877e1d152"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/integrity_verification.json",
+      "bytes": 1244,
+      "sha256": "cdffe094b153112745e9fd51478472c18dd99fa5a57d832e7bb903992d1a064f"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/join_code_quality.json",
+      "bytes": 1313,
+      "sha256": "ebf00e83e49eac98fb62295fc91aa4d245fd65422cf21d43780470a11105f67f"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/join_source_before_cli.py",
+      "bytes": 7658,
+      "sha256": "5bfd6480df8ab94dbf55a842c5ec4633db5df16541ecb34ee476cbea004e70b3"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/preimplementation_review.md",
+      "bytes": 2596,
+      "sha256": "73ecaf549c4b3e9a93395b1efa4317267a88b6c819d22773309ca13360840b6b"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/provincial_era5_verified.json",
+      "bytes": 31538,
+      "sha256": "30c4e1478748b0b776ded85c53248f4fd69d800e313ffff3c965dc76be2e65f8"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/requirements.txt",
+      "bytes": 269,
+      "sha256": "77c8e70c09babe3ec05815a55f11efd9751f8f539b043f58bf4fec59c827b777"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/scripts/join_development_weather_v2.py",
+      "bytes": 7893,
+      "sha256": "a89e5a12ab9782723cf0d62a77b2fb61e7a12588c1efc5b440d1228642e0f3d8"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/scripts/prepare_historical_weather_v2.py",
+      "bytes": 15493,
+      "sha256": "cd0607906e7dd18b3c6351132aab9a3e4d5f70d502b185dcefaa03e16f9c6e02"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/tests/test_development_weather_join.py",
+      "bytes": 2634,
+      "sha256": "d39e6439372b7107e3ad5e0ada5e280458f8153eeb14c12e71500e70e89002dd"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/source_snapshot/tests/test_historical_weather_v2.py",
+      "bytes": 4543,
+      "sha256": "4c4312314a72480ccec7cd0d8e00a27e8a4e30b41d67426937716d9347b51b1e"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/unit_tests.txt",
+      "bytes": 179,
+      "sha256": "3cf585e3c6587eb603cf7ce361e72f52221f198ad344867109d15b43d0b691a1"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/v1_grid_boundary_sensitivity.csv",
+      "bytes": 599630,
+      "sha256": "f698a3e818e961cde11967c1d5372bd6b4a633b7ccd4adddf01e8aed3e97e486"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/weather_coverage_comparison.png",
+      "bytes": 49333,
+      "sha256": "e2809daad5c8eecac8ca0df136ca34678a4c037fd3644b1dea4c0050d70f6fb7"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/weather_feature_join_audit.json",
+      "bytes": 6598,
+      "sha256": "0b85423c41993d7571dadb3ffbcf66f83f634b7c53e9fa8a6d22f6160f75aa73"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/weather_feature_join_before_cli.json",
+      "bytes": 6598,
+      "sha256": "1b931fb3764b5d5e2dbcabd96a929a6a8636e491c1fcc3e8ffe40880aba5d57a"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/weather_join_before_cli.log",
+      "bytes": 7049,
+      "sha256": "69b1bcd0cfd3a46add0d963bd19e6d5c3c9f46ccf026d6118c6fa9808e63cd36"
+    },
+    {
+      "path": "reports/week_4_data_2026-10-16/weather_join_build.log",
+      "bytes": 7049,
+      "sha256": "c78bf7ff780e657fa02719b107817fa7f95e97b991bdca3f6ea7e29abcd1479e"
+    }
+  ],
+  "data_artifacts": [
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/historical_weather_development_v2/deduplicated_station_observations.parquet",
+      "bytes": 5779517,
+      "sha256": "055d17fff3149979ac7239a7692dab7777bb737653d95eff1e7bf2a0fdfa221b"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/historical_weather_development_v2/weather_2010.parquet",
+      "bytes": 186504070,
+      "sha256": "65752db6b03802c6b630b09be261e3a9efee08e2cfdfdc2bf8c35c02b391fc44"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/historical_weather_development_v2/weather_2011.parquet",
+      "bytes": 176097462,
+      "sha256": "59ebbe8a021eb82378f2d0bccf24d95c3d183f9ba951ccf0b27d49151dd824ab"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/historical_weather_development_v2/weather_2012.parquet",
+      "bytes": 168443973,
+      "sha256": "9a7baa5dc4ea32a41e18c237e4ec47db0a1581321504f4ff88481d1b838fbc2a"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/historical_weather_development_v2/weather_2013.parquet",
+      "bytes": 167862335,
+      "sha256": "0dd75316c8e9055116861e24821f95f49e299ece0d416579fec74fd53315f8ab"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/historical_weather_development_v2/weather_2014.parquet",
+      "bytes": 182550523,
+      "sha256": "9982b925c9d680bfebdfb2dfc3f21e0e21aacbd7c269d27fa7cee545b9c2f8fe"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/historical_weather_development_v2/weather_2015.parquet",
+      "bytes": 189206505,
+      "sha256": "da6520624fcb3ed9ca673ee63154d4797c117e89ff83d247986d7385ed8fb9e9"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/historical_weather_development_v2/weather_2016.parquet",
+      "bytes": 187788775,
+      "sha256": "1a5d86fa7a1309573503ebe0078af88130bf5881fdabaf61060f447d5706ebb6"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/historical_weather_development_v2/weather_2017.parquet",
+      "bytes": 179642160,
+      "sha256": "c138b93e9c0b824584d611c099f785aa8636e5723519c891e6152a9209befcdf"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_weather_v2_development/training.parquet",
+      "rows": 10678992,
+      "bytes": 1013108858,
+      "sha256": "358e3fcf0046d561b4436d363b0dd718a3f7518e07ea56fac5d3d78dfeda374e"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_weather_v2_development/validation.parquet",
+      "rows": 3559664,
+      "bytes": 348647715,
+      "sha256": "1ad37ddd640a671b91f41eb44c020dbc2e008a657b1e62472560fe5248335095"
+    }
+  ],
+  "candidate_promoted": false,
+  "reserved_content_opened": false
+}

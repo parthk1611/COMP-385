@@ -93,6 +93,33 @@ class EllipseTest(unittest.TestCase):
 
 
 class SimulationTest(unittest.TestCase):
+    def test_surface_fire_cannot_jump_a_one_cell_water_barrier(self) -> None:
+        for axis in (0, 1):
+            fuel = np.full((21, 21), 2, dtype=np.int32)
+            if axis == 0:
+                fuel[10, :] = SIM.WATER_CODE
+            else:
+                fuel[:, 10] = SIM.WATER_CODE
+            case = flat_case(fuel, wind=30., wind_from=180. if axis == 0 else 270.)
+            arrival = SIM.simulate(case, one_cell(case.shape, 5, 5), START, hours=6.)
+            far_side = arrival[11:, :] if axis == 0 else arrival[:, 11:]
+            self.assertFalse(np.isfinite(far_side).any())
+
+    def test_diagonal_cannot_clip_a_blocked_corner(self) -> None:
+        fuel = np.array([[2, SIM.WATER_CODE], [SIM.WATER_CODE, 2]], dtype=np.int32)
+        case = flat_case(fuel)
+        arrival = SIM.simulate(case, one_cell(case.shape, 0, 0), START, hours=6.)
+        self.assertFalse(np.isfinite(arrival[1, 1]))
+
+    def test_an_explicit_empty_active_mask_does_not_restart_the_edge(self) -> None:
+        case = flat_case(np.full((21, 21), 2, dtype=np.int32))
+        initial = one_cell(case.shape, 10, 10)
+        arrival = SIM.simulate(case, initial, START, hours=2., active=np.zeros(case.shape, dtype=bool))
+        self.assertEqual(int(np.isfinite(arrival).sum()), 1)
+
+    def test_final_perimeter_repair_requires_explicit_opt_in(self) -> None:
+        self.assertFalse(SIM.Settings().repair_burn_scar)
+
     def test_fire_runs_downwind_as_far_as_the_head_rate_allows(self) -> None:
         case = flat_case(np.full((61, 81), 2, dtype=np.int32))
         arrival = SIM.simulate(case, one_cell(case.shape, 30, 10), START, hours=3.0)

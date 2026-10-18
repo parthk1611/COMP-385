@@ -1,0 +1,1764 @@
+{
+  "config": {
+    "code_sha256": "cce18bb112393ad495bf2571f3d0f527e02b856445eaac771f5cf6956e53a1e9",
+    "grid_sha256": "5778abf65a901d5daa771add7a25b7dfb7cdeb3b9b00712e1bb1e94a7dfabd0c",
+    "mode": "fixed-landscape retrospective study",
+    "sampling": "100 deterministic equal-area 1 km strata centres per 10 km cell; native categorical nearest sampling. Fractions/terrain statistics are quadrature estimates.",
+    "versions": {
+      "FBP": "2024",
+      "SCANFI": "v1.2/2020",
+      "MRDEM": "30m DTM"
+    },
+    "historical_2010_2019_join": false
+  },
+  "rows": 9648,
+  "grid_ids_unique": true,
+  "fuel_sources": [
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0000000_y+0000000.tif",
+      "sha256": "428c24a09c561a353fb9736d5ae4dea37be8151fff6b97823f2d3b6d4046e1fc",
+      "sampled_positions": 9400,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0000000_y+0100000.tif",
+      "sha256": "365cd5197ea1c3e1e92203dd43b7c52eb07c227343b2d4b204ad97426df43fff",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0000000_y+0200000.tif",
+      "sha256": "9d9e8f53beeff90a95f331eac867b72295cdf1e95fd9b44292d395c2ddef5bc2",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0000000_y+0300000.tif",
+      "sha256": "d5791ad3d3d41febeb32fcc9aa0fc964ae47f0b285ba8609836c12c0b1bd581c",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0000000_y+0400000.tif",
+      "sha256": "923070a6b41b082efbe9bc04d770ee5b27777bd0f6f1321e3b6d844f88349897",
+      "sampled_positions": 7900,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0000000_y+0500000.tif",
+      "sha256": "f942f2f53f6c8ed3694c1bbcf577fd5c97c636377d15ec8bb808ae5f854d4912",
+      "sampled_positions": 600,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0000000_y-0100000.tif",
+      "sha256": "86e3074abd9bdb449524cf53bb2e9da7f39cd76065866e362e96c3fd1f2141c9",
+      "sampled_positions": 2900,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0100000_y+0000000.tif",
+      "sha256": "d5e16a90e41df428e95e73b71dda3b594807f2f2eb1d85f50e1171ec1b1d9078",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0100000_y+0100000.tif",
+      "sha256": "a105b39761e9a7f22f637c09b2ff28a5fa0df127f828ea63a6176948108a8764",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0100000_y+0200000.tif",
+      "sha256": "0fca11726750dd0f7b97a049d8b42327a478d34907aeb1f30ceccfd0982d3129",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0100000_y+0300000.tif",
+      "sha256": "e1b5b162dd99bea52ef14bc179f34f2d41abda251e6f3153e446bf7164df1b87",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0100000_y+0400000.tif",
+      "sha256": "faf9b2e86704fe0e7f1dc7045a57ad13e069dab9d2455d8b3e5113577fc5a7c8",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0100000_y+0500000.tif",
+      "sha256": "e544a415bc4af2da47e7c399840b1e87dc6ac4c01ec837db76533c56b53e8beb",
+      "sampled_positions": 8700,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0100000_y+0600000.tif",
+      "sha256": "c0bbad1ea370b8762dcd25d98e48d8f418b82063d2db0a9ac7f49d79b8dd05fb",
+      "sampled_positions": 1900,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0100000_y-0100000.tif",
+      "sha256": "95cd146a86a453da27bcc1c639d85125245358024ee353945abedf3d2aba3720",
+      "sampled_positions": 5000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0200000_y+0000000.tif",
+      "sha256": "0cab8e02d2458ba915f0e6315d7b42b74926cfb5c1a865675f0f4e16a419eb42",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0200000_y+0100000.tif",
+      "sha256": "4ae7f59983edf23cb08d7e46e3389df3d00c98814c51796581f79721152f0a4b",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0200000_y+0200000.tif",
+      "sha256": "c8cbb6d866b46378e60692c6f03291bdfa15b33019b592cb413e1680105553e6",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0200000_y+0300000.tif",
+      "sha256": "9f324c4cb754ec6f9ceec5ae613547a53b3f37a7b0308aaae4bc19f4a0078015",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0200000_y+0400000.tif",
+      "sha256": "a4bfd85f3d9fe494d3909930d56fc4c1e2a4003caf3204ad14ed563215f3285b",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0200000_y+0500000.tif",
+      "sha256": "4b9fccbdf15174befabdb228b08e8e94a49395d352d1194b03dd597029ada1d7",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0200000_y+0600000.tif",
+      "sha256": "7a3b8a4981f1674103472029ba5664ce4c6db3c64b57fb4e12fcbd0168b01740",
+      "sampled_positions": 9700,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0200000_y+0700000.tif",
+      "sha256": "1c831d3e88a5eaad88ed9fd4f7292106b51b88c9616a11348108e7bc8d4e3d79",
+      "sampled_positions": 4000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0200000_y-0100000.tif",
+      "sha256": "40c711fe7f8c4146ddc88e8a8d7394d88be65b4538ea9237cbae01ad49c82d43",
+      "sampled_positions": 8500,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0300000_y+0000000.tif",
+      "sha256": "80032a47587ff02f7f85bbefa97682fde428d5fa9f0021c4b1797860824fb52b",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0300000_y+0100000.tif",
+      "sha256": "35df48fce93fab79ce8e1f95f1da2a4f321e93242ee3b7f05a38f259d6c90dd3",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0300000_y+0200000.tif",
+      "sha256": "2e6a3980b86fb6c6d6b91dcb56135c7cb0d069885429153317a4cb3818a2dfd9",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0300000_y+0300000.tif",
+      "sha256": "d0d34bd12afb6fe0153983cde628a128458f8a0ead77ba03299834889f67ce71",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0300000_y+0400000.tif",
+      "sha256": "c0137171a15aae9c053ba4865524044cc2b991be955725d553e66d2426e3f898",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0300000_y+0500000.tif",
+      "sha256": "7e1cceff025e70dd7fcf74659b799543d72b0243cfe454350af18d11a6c494bb",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0300000_y+0600000.tif",
+      "sha256": "69c54a1835b913f7f150ee8208859822ffeb3d5980111b654ec72c699c3dd439",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0300000_y+0700000.tif",
+      "sha256": "4f3ad0e897e250c593ed2a544c3343f51d7dd392d0a6a6128a047f8cc9c4b00d",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0300000_y+0800000.tif",
+      "sha256": "54a45fef1964fdf3cb46c080f3494f0c515243c9ce0551274a3eccad62336974",
+      "sampled_positions": 5300,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0300000_y-0100000.tif",
+      "sha256": "09e0abccbad68217550dc877bdd90016cca6e397d62e5a854a771a309224f07b",
+      "sampled_positions": 8900,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0400000_y+0000000.tif",
+      "sha256": "5ae258ddf49fea22ad215a30d4c427b84421e1d7eb668b1fd51dc93d11902221",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0400000_y+0100000.tif",
+      "sha256": "225549eef3b07379acf17e7c5562b901a328dc58f15faee03bab3ded19e5c5bf",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0400000_y+0200000.tif",
+      "sha256": "883bf37a96cfa535b2e864549f7f638be6496699cb500ebabd1dbce2a9d828b4",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0400000_y+0300000.tif",
+      "sha256": "4f61df1ad7dbfe7459090acb005acab50bcdc6ab69663c5d281711ae277d9177",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0400000_y+0400000.tif",
+      "sha256": "95a4cd66d755c1b0e843be86e9bca7af24ac24ff1795e36cb5b440d6c8e81f0f",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0400000_y+0500000.tif",
+      "sha256": "cc7a0341c076a81d0e561b5f057892aed2abbc24bcdfbee4f60a5a659a88edbb",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0400000_y+0600000.tif",
+      "sha256": "4cec41c5e2d701600dfd3070326ec7f974fe749b691557fbf0f7bde5c48ddc08",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0400000_y+0700000.tif",
+      "sha256": "d3d78e358ecdd106a18ff6e2e0279b001b478dc97912edc2d7f1aa6c8a978d2a",
+      "sampled_positions": 9700,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0400000_y+0800000.tif",
+      "sha256": "9a88bfadda6acdf2357a08a3c9085d1f66f85c3e52e2c93ebdfcdde85efead8e",
+      "sampled_positions": 1800,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0400000_y-0100000.tif",
+      "sha256": "62f0f8754e0712e0f554e95f1e948190f3f6fbbbc1f59e92f8a92186b43461b2",
+      "sampled_positions": 7300,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0500000_y+0000000.tif",
+      "sha256": "c656713513ab4d140525066db3b5c8bc8d20b22ed5fb76fdd714a005990c1427",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0500000_y+0100000.tif",
+      "sha256": "59118184da954e47d310a8efd369546ba7eae46abd5eba4aa7a081ab0b26bf09",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0500000_y+0200000.tif",
+      "sha256": "d053112b5021299eb51240ba3ff67f97b5794ae2121f26c674de07d969c55a49",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0500000_y+0300000.tif",
+      "sha256": "8d36856ef2ecb20f72c6528e0c6feae8e9cb0998fa5cce1e83fb499ec0906b2d",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0500000_y+0400000.tif",
+      "sha256": "0a2b53e24e0528df4366e50b4750c93680c946e47c47e4f1c1b51e5d197a5ecb",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0500000_y+0500000.tif",
+      "sha256": "22960e352fd0980480a23f0ed9ef22c7ca308cfe679b6260a7c74c86072373fc",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0500000_y+0600000.tif",
+      "sha256": "d5e4ce1bbb7b96e62a65b5b2afbe8b60d0ad9308086531a08b2b3d954b892851",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0500000_y+0700000.tif",
+      "sha256": "8462718b8c5866102257ad0ef80638ed457f578c8c244286370a9828f35599a0",
+      "sampled_positions": 7200,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0500000_y-0100000.tif",
+      "sha256": "fdccf11bfe35e8f3f8eeed19ac45d3603b851a2704f2e7c8ec8e84d21a1606eb",
+      "sampled_positions": 7800,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0600000_y+0000000.tif",
+      "sha256": "1ed3bac9543d83f26546567ee3d6eda25f995466097e6a2be824a34b5dbfe05f",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0600000_y+0100000.tif",
+      "sha256": "1ee37e920f0bdd141105afac0d2f99d474cc8a140e5da0521f2ccb52a00b0144",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0600000_y+0200000.tif",
+      "sha256": "1adf360b6094cd537711a789cc3dc2240985ff7c6ded1f9f23d793a272d6c2cb",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0600000_y+0300000.tif",
+      "sha256": "67d03fff5059976700f21eaa61da23936762eaf8b549647ad4600ae79c8bff00",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0600000_y+0400000.tif",
+      "sha256": "b05610cf007276e848deb67aa32197b804c4f2bb104341e11c42866ab153eda2",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0600000_y+0500000.tif",
+      "sha256": "68cfbb42e9b2d3931a58f386d0dbd4059981a4c3011f2cfa061f11bacd6fe542",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0600000_y+0600000.tif",
+      "sha256": "3d3329346b0b0e547c337d8997f957ec80339d69b99ed0103da95a22444e93c2",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0600000_y+0700000.tif",
+      "sha256": "d948c5fc5e41562ba6bebcf53771376527907e7ccacbfd43415cc299cd5934b5",
+      "sampled_positions": 4500,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0600000_y-0100000.tif",
+      "sha256": "1049e903156a794db8fd7475c39022b5885cead1d75e7218502573bc4d7da13a",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0600000_y-0200000.tif",
+      "sha256": "4857f673336e371c49cf2b345aef8a5dbd683a8af5f799c77c76c3d4a02dd4e0",
+      "sampled_positions": 2200,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0700000_y+0000000.tif",
+      "sha256": "bef2c139ec7e3c1b282eaf54b47ef694f3017ba9c970a90fcbcae4f9c8547d68",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0700000_y+0100000.tif",
+      "sha256": "4d4c67a7c6b2981720adbc5f1b177b530ced16515f3b7d941d53a116b53753b3",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0700000_y+0200000.tif",
+      "sha256": "f056c446742cbec219330d216d092ccd495bd4e721cdd39b10593eccdbb4f9d3",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0700000_y+0300000.tif",
+      "sha256": "53436ec11de261ef08676bccb2d543a901747b2aa8c8f86ce79a9f4f7b98295a",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0700000_y+0400000.tif",
+      "sha256": "63b06e0b645d2ed8b2c1ec2a07af185f93e81b5037b81914e72b7a1dea461b9f",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0700000_y+0500000.tif",
+      "sha256": "20a4571a736475afb3819fda526c77444b6a79e7d1dfd9c24ea5bc5b45bd453b",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0700000_y+0600000.tif",
+      "sha256": "2c06e19d89d2f8a76ce5561b17e3f2efc71b73f97d3178ef0ae276918e8fc74d",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0700000_y+0700000.tif",
+      "sha256": "d83cdf0feecae7592d2ee74d13f00ecd992e73bdc991dc086ea989c01c0c2288",
+      "sampled_positions": 5000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0700000_y-0100000.tif",
+      "sha256": "de7ab42d3c0abf07b9eedb3b21048bd06ced17a1a16cfe3620560a2f68b84a18",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0700000_y-0200000.tif",
+      "sha256": "769ed6721b3275fd4113b1a6d653ebeb7874beb014e1a01020853661c8647a1a",
+      "sampled_positions": 6500,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0700000_y-0300000.tif",
+      "sha256": "dd0d2c74143dd661437b291bc323a4bedc2b27f4fac896a6a1360eb4d0eca7a1",
+      "sampled_positions": 100,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0800000_y+0000000.tif",
+      "sha256": "65f0286a78451a4eb31a274dbb4853a364ff18fbfb68b33e7139922628dd895f",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0800000_y+0100000.tif",
+      "sha256": "fa5895497bf097553af7b2510f6dcfb3c53fe0c3a8325374cb72d87266c99fa3",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0800000_y+0200000.tif",
+      "sha256": "7386f6b8a38075ef97d4a4938ef0941940af1ccc922fc88838a47516d9ef8407",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0800000_y+0300000.tif",
+      "sha256": "d6901effc93c82a104e2bcec6c2696608185f86b8483b4d2fb723570f81c9383",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0800000_y+0400000.tif",
+      "sha256": "365c39a5e81e2c2e40428c8cdaa3b97e83261cb6a4cb11b66ef876c25d503c96",
+      "sampled_positions": 9500,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0800000_y+0500000.tif",
+      "sha256": "51f2d468ab91bd3805af625807dde5279ad67ece20f1f2b5e69439dc14e13ad3",
+      "sampled_positions": 3900,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0800000_y+0600000.tif",
+      "sha256": "2eef1ec4907ef94b46376ae177a0fe6cb9b36446741c7d6f9e1deb641c7df337",
+      "sampled_positions": 1100,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0800000_y-0100000.tif",
+      "sha256": "67b152f93ec1cecc834bfd963b20cd7ced09cc1d83159cb4a79e5f393e927eaa",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0800000_y-0200000.tif",
+      "sha256": "21831008936420b8b440f43a4364f84cd8eaef54d2892becd08d662ea82b2f42",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0800000_y-0300000.tif",
+      "sha256": "2ef35a3034aa937ee8c9e61eba18810934454182f40349357aa4f7ee13de8d72",
+      "sampled_positions": 3200,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0900000_y+0000000.tif",
+      "sha256": "e9aaca232edb3d1e80bcf7a7a8443702038e49f8e73fd40f5abaa8417b51c934",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0900000_y+0100000.tif",
+      "sha256": "81365fff2ae5954b014a09fdd0a122bfb1cb1e0ae1f9dfd32d364f1bd10e7c92",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0900000_y+0200000.tif",
+      "sha256": "03f9ad63b07ad18f969728577fa54115e09b9c4d6fd1aca88fff2528d2b5e05c",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0900000_y+0300000.tif",
+      "sha256": "0e5407723166171a25ceb4a7217b7710a7f6d9931d44c74bcc4c814d78e7c366",
+      "sampled_positions": 9900,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0900000_y+0400000.tif",
+      "sha256": "713b47d6830223f5605c830a83e64e558b81f9d78145bd3ec1d717287b87bbe7",
+      "sampled_positions": 2900,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0900000_y-0100000.tif",
+      "sha256": "23966600f74eba120827a018bb21a7b6fcad5ea8d5c3f2061150290c57b233ab",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0900000_y-0200000.tif",
+      "sha256": "5441f6164fa4d601e5b8352865fdfce814beedea7fff93e58d111b95d783bc99",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0900000_y-0300000.tif",
+      "sha256": "53f7eaea7b3550342bab3ec19e88e76aa8b4e4dc5718061826fdec37829d7926",
+      "sampled_positions": 9400,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0900000_y-0400000.tif",
+      "sha256": "34a0e286110195c6daed41940449fff16b48f65c94d0b5c4b142ce114b84c50d",
+      "sampled_positions": 500,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1000000_y+0000000.tif",
+      "sha256": "2196ffa2023d00e9429afdfefae6ecd6efdda51b5b1f166231b8802c484d4311",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1000000_y+0100000.tif",
+      "sha256": "58d7ba069755358b8f0bc1ca90a7d06180b8e4404e20f2ff1a3f457bcb4adcda",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1000000_y+0200000.tif",
+      "sha256": "b96cb86eb993c5778c09e855518c6306d9493b0b9790063c3e3cdc9bc854ad18",
+      "sampled_positions": 9400,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1000000_y+0300000.tif",
+      "sha256": "4446f45bff51bec90c7db20641fd4830ede94ea202d3b1e903ac9528f8964308",
+      "sampled_positions": 5500,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1000000_y-0100000.tif",
+      "sha256": "9f8d2a0bf23d180c8f14cc0268cacb56da9752add2253449396dad30d1ff86a0",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1000000_y-0200000.tif",
+      "sha256": "417d220a3038470f2c77108c7e02aba41a2ccbd06e289caee31f6614d66b6250",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1000000_y-0300000.tif",
+      "sha256": "04ee9dff6fbcb86aa2dde58f3a7d122475f8344545cdd0768d25406de07f45f9",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1000000_y-0400000.tif",
+      "sha256": "1e2f5720874b85a8717fdb4067653257783beb5fef1f1884ffda389868d6a373",
+      "sampled_positions": 9500,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1000000_y-0500000.tif",
+      "sha256": "fb16b05cde48d15c3fc0bef6a3d8d3bc94193f3b2fe24da75388c3efcf3c87fb",
+      "sampled_positions": 2500,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1100000_y+0000000.tif",
+      "sha256": "a48acf5387be92b23906563e5afb8a0350a378cb041c9067ea993a6fdf6e5594",
+      "sampled_positions": 4200,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1100000_y+0100000.tif",
+      "sha256": "2a14ca37662053a3ff39f42382c76acd4e2b222f924cb08eea494876e84692ee",
+      "sampled_positions": 1800,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1100000_y-0100000.tif",
+      "sha256": "4bb94112d13463508b02c8fea2d043a2e4fb529c3ae9968b0429463cb7a31e59",
+      "sampled_positions": 7500,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1100000_y-0200000.tif",
+      "sha256": "2555880d905daeb0d16a9738548a3285ee6ebc84c759c022a6c2998534a28ea7",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1100000_y-0300000.tif",
+      "sha256": "3deca13633c96292275ab8cadd828620f4e087910092183ec23ea540b032720a",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1100000_y-0400000.tif",
+      "sha256": "c54d3985ec136809918b9201a61b2ea1f14145cc936b1c6fe051af0a7cb23df5",
+      "sampled_positions": 6200,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1200000_y-0100000.tif",
+      "sha256": "a3b6a083969234254020e1cab4853425fb6f9f394ea747b74abac5fb919d3c2b",
+      "sampled_positions": 100,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1200000_y-0200000.tif",
+      "sha256": "6cea0de53a55d20398dae76013a32faf24475452b7f055bcc402577a5609e897",
+      "sampled_positions": 7500,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1200000_y-0300000.tif",
+      "sha256": "e112cf4fab48740b4e65fad84c07134615d2b7a7a252b48a17b808e5f1d1bb6c",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1200000_y-0400000.tif",
+      "sha256": "87119d5d6a6415e85d173a7216ee444df8e46db10f82c70b556fdfebc5d6f07d",
+      "sampled_positions": 2700,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1300000_y-0200000.tif",
+      "sha256": "d2da01ece9e1a883e71db79d4e8bd218d2fbe58136aff4ba7250828eadb74d33",
+      "sampled_positions": 6000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1300000_y-0300000.tif",
+      "sha256": "ce77e6f2cd668f99592d7f72f9ed603bd4495b6844e6e238697699097d3020b3",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1300000_y-0400000.tif",
+      "sha256": "61a92fa1dc184c4e4ee61701f1b044203ffe9f78b2de6f8610d2c6e368050c87",
+      "sampled_positions": 2700,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1400000_y-0200000.tif",
+      "sha256": "f6207bd1df850432fa18ec099f666c54b8ff3b23abbd3be878fcefcd928e7335",
+      "sampled_positions": 2100,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1400000_y-0300000.tif",
+      "sha256": "896e3c3e0b7c0cb84cfd5b1df09a74203dae7e493ec4a2a80a47bc94f7f7d212",
+      "sampled_positions": 7100,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1400000_y-0400000.tif",
+      "sha256": "8c448dba762ebbd26379c3fcdef0e5aedf1958805db16a7def11eae392c607aa",
+      "sampled_positions": 800,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x-0100000_y+0000000.tif",
+      "sha256": "1d86d23e357bfb41d1a4cb0f8fcbe1d6d556933412d4ffa78a2cb4a2d6a51b70",
+      "sampled_positions": 600,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x-0100000_y+0100000.tif",
+      "sha256": "9eb695818082ee3a61e29cc7d14be9356a5545c9e5f1b7483a345e848d666283",
+      "sampled_positions": 1000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x-0100000_y+0200000.tif",
+      "sha256": "b3a1515d3a80902fdd0b5c9ca94443544ad700bef5c984153735e377c5365bdb",
+      "sampled_positions": 1000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x-0100000_y+0300000.tif",
+      "sha256": "e09758e6f44819e0f8d2377fd70cb2c40ef5497dd4a2657bc9b6e1c24e3b012a",
+      "sampled_positions": 1000,
+      "crs": "EPSG:3978"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x-0100000_y+0400000.tif",
+      "sha256": "9318a7af847f989e9c2c9244af834c28ec8c7a4b5006ae1ceb818ed0884e95c3",
+      "sampled_positions": 300,
+      "crs": "EPSG:3978"
+    }
+  ],
+  "terrain_sources": [
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0000000_y+0000000.tif",
+      "sha256": "9bd216b67204558629f5853b21e63c2b5ce489a1df79b8f928ecb44c228f7adb",
+      "sampled_positions": 9400,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0000000_y+0100000.tif",
+      "sha256": "cd39331bdd6c8c6803b49cee7cb9b62e2505824732009e06e639f8f036b639c1",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0000000_y+0200000.tif",
+      "sha256": "6f81ae2249b5177013aeafed5fb5bc165c49aefa9a0e754bae19b8f0d3ab8e7b",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0000000_y+0300000.tif",
+      "sha256": "f0d122c42019319f446058f4701ae4abdbd0794e63506df32cc173edac0eb4a5",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0000000_y+0400000.tif",
+      "sha256": "992690a278149e2bd4516e87c130ff15e3317c291ae55093b9d006bc1f2833d8",
+      "sampled_positions": 7900,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0000000_y+0500000.tif",
+      "sha256": "e6ee8b7b41aa4c6069d9b8689544ee2eadac58ae7bcedc889f82f57624a32488",
+      "sampled_positions": 600,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0000000_y-0100000.tif",
+      "sha256": "e4d45128dc80fc8e1e9e520af69bc159347f9df2742ab04a6afe01d680c315d4",
+      "sampled_positions": 2900,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0100000_y+0000000.tif",
+      "sha256": "f3f61595a6005af75a1e690223517b3020b042448a6513ec96455decff6878dd",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0100000_y+0100000.tif",
+      "sha256": "da70ddc35aa11353113ca252d4b2c910055900a8cbf2899214c5d8e2d5fa5233",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0100000_y+0200000.tif",
+      "sha256": "907466053a5388dd301ae336cf26ec47bf1eea28dd706bc889fa60e79880aadd",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0100000_y+0300000.tif",
+      "sha256": "aa123cdf3d8dc1f1af5f80a21ff1a6b4437ba461a30ee2cb34adfc51584715f8",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0100000_y+0400000.tif",
+      "sha256": "8b9795b0b30be3c13a6327b60fa8cfcbd8f4f760272e77934525d7474cddc788",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0100000_y+0500000.tif",
+      "sha256": "e584dc1684d20708d60c095552d66cce99a18452a0ed614570abf7d8324a98b2",
+      "sampled_positions": 8700,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0100000_y+0600000.tif",
+      "sha256": "7e07bff02cfdeb5edbedd1ed97c7f79384549b5015d2b342ca6bec7f46efae4a",
+      "sampled_positions": 1900,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0100000_y-0100000.tif",
+      "sha256": "5e7f65dcfef3a4a801d4a8c3614d26edbfb7c5336b711e108bb94d7582e07b2f",
+      "sampled_positions": 5000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0200000_y+0000000.tif",
+      "sha256": "d3080e6ce23c3439ed0685b0f2249ce8b8673fef8a3298ea647c570dc7e8a532",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0200000_y+0100000.tif",
+      "sha256": "8f31e7ea02bf8d1e5654987fd40b73caf155ac2327ac339dc8f289ec19376483",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0200000_y+0200000.tif",
+      "sha256": "c655e3187451a9508ddee58a7a2b319efdadc5bebb3d0866107414dc795d9514",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0200000_y+0300000.tif",
+      "sha256": "93696cd7d3184a681e8a9edf7bcdab744ebd13a4a0edc3e7b14fa2967eab58e8",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0200000_y+0400000.tif",
+      "sha256": "f14d2beadeb9d8d49078a7c2f9e52eefed5c5206eee34341b0915d0533b01928",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0200000_y+0500000.tif",
+      "sha256": "313ca2c00668afc2cf3e9b1a5d5d1d85efd2d49241311ddec37e007d97de04b0",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0200000_y+0600000.tif",
+      "sha256": "9871df8704a584971634f4a07663ecdb45731f2cf82a5883eb78380c1887d306",
+      "sampled_positions": 9700,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0200000_y+0700000.tif",
+      "sha256": "e5d9df40dc352d615a05210c872fd049cce4ecf30638c744dc2e44afe2ca1c32",
+      "sampled_positions": 4000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0200000_y-0100000.tif",
+      "sha256": "ac8b60217c5147a795b709b741410c8c60ca79a59fd213a5896e7655eacd70ca",
+      "sampled_positions": 8500,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0300000_y+0000000.tif",
+      "sha256": "31e5af061f314f903ef1ccfc917519c09211684923aa2a2e62eada5bca84ff55",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0300000_y+0100000.tif",
+      "sha256": "6e86698ec18b1454f7c367bea185186cc635d275fd2d0da6d2a29b52f42e0a80",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0300000_y+0200000.tif",
+      "sha256": "78af15424267fadcf425a7336d18e52b60d93811d30dd2a9b7a88410fdc6b365",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0300000_y+0300000.tif",
+      "sha256": "c1c54c282449b408c968f700a33df9e2f377e581e66e5a572bfa2f7da5018805",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0300000_y+0400000.tif",
+      "sha256": "ac365be460bc629c669782f46e00a6ca04b70ec63e8acbdec4082abc2cc8240d",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0300000_y+0500000.tif",
+      "sha256": "8de420fd1b95c487f014926786c88be7deb9b0c9449a638a46b26d4da07b02ad",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0300000_y+0600000.tif",
+      "sha256": "8cbd19ae6e15a8f960bc01d9b108691fa9ca88cc7288b73ddae3bdb1601960d3",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0300000_y+0700000.tif",
+      "sha256": "730158945d770701e3e741cd9adbeec5fdb28c0f9fe87818dea3f95c1fc6d4fa",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0300000_y+0800000.tif",
+      "sha256": "994126393ad7cb2c42baaf25e0dbebf010aab8a14dae4d36eb8ece51b3f6ff23",
+      "sampled_positions": 5300,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0300000_y-0100000.tif",
+      "sha256": "f14a0bea6df55e8b3d65f6605797da4b17b4083ad4058ffb1fdba707ca0e1329",
+      "sampled_positions": 8900,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0400000_y+0000000.tif",
+      "sha256": "e976eb14fa43524c9e793b95704d69993af4a951b8a85dad989e590ee0c9a36f",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0400000_y+0100000.tif",
+      "sha256": "8459e65206d6a263481298be5a7e61ac33be030c82dc7e5d3de9ef7229b67f67",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0400000_y+0200000.tif",
+      "sha256": "625fa47da6aae6e1ec0d1497aeea3a233fa288e341f802f4a089ff3eacbc46e0",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0400000_y+0300000.tif",
+      "sha256": "d11903557b52df83e80ccb3bc131167d2d90e02ba15e528750da4c261462efa4",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0400000_y+0400000.tif",
+      "sha256": "9969764e42b7ddbfbdf9ab6fdafd73f5c5277b55c32ffc0ab4f37174bf81a256",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0400000_y+0500000.tif",
+      "sha256": "3706c424b7dabef810dce0920230543a05f06558e3694a575568b04a875dd052",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0400000_y+0600000.tif",
+      "sha256": "56ef3c369adeebc57fcd91686603ad14005a0d19e3f390804fa823ce36fc860d",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0400000_y+0700000.tif",
+      "sha256": "eda53ccde598f1329709823a641af85c64839616524d9bf08de44d7684dcf6aa",
+      "sampled_positions": 9700,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0400000_y+0800000.tif",
+      "sha256": "fcf5e617ae193f67483fa7d867daa6003689a469211a0635291b624612ac9e66",
+      "sampled_positions": 1800,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0400000_y-0100000.tif",
+      "sha256": "6349fc3fd00fcd741686f79c4b976bebf4134a9c5c9ca09564d8f1add9e53c08",
+      "sampled_positions": 7300,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0500000_y+0000000.tif",
+      "sha256": "5340816ddb98b76ddbf4dff1230982dc91c72fc1eba5c1f72e16dbc716be8f7b",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0500000_y+0100000.tif",
+      "sha256": "fceaf231891974e9f4036b4d092e5411bb2705c1e3ace9ea4c105c714d251312",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0500000_y+0200000.tif",
+      "sha256": "752971090c68112841890839ea182ce7a487bd53efe31e4d7f967d479ef4fe60",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0500000_y+0300000.tif",
+      "sha256": "70a8d4291a2d11dd4f17c655db9dea84ed99241dbb34cf3e06732f4628202245",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0500000_y+0400000.tif",
+      "sha256": "c5b756509c4ac39136d250c75637571fecffef7a9052d3f3195117d7cb0fee45",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0500000_y+0500000.tif",
+      "sha256": "15b4b196b52c2d41e96ae54cfa3a439bf487934f35e01197aa09611df1842c4f",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0500000_y+0600000.tif",
+      "sha256": "da5082891643977aba45be40145f9006b9755db249e16cc28ac13e4ad6703f6f",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0500000_y+0700000.tif",
+      "sha256": "66430b4ad2a175a24c933ee7d9b7a491d189ae600c0544fe512fb88db03c4876",
+      "sampled_positions": 7200,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0500000_y-0100000.tif",
+      "sha256": "fea9aa606e0b3ea029554b83d644efe649572f1a70bdd479444587325979aef3",
+      "sampled_positions": 7800,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0600000_y+0000000.tif",
+      "sha256": "696510080668a337284b82b0464555c7d8b956f460af25e71fa54d353e0e1f18",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0600000_y+0100000.tif",
+      "sha256": "e5b1e346a3c7ca5dd7fab474877b7e19f9764cd569ee96f8393da090acb75f92",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0600000_y+0200000.tif",
+      "sha256": "c772dc2d6459dc4ce7c760db659f99a21d7cbeaac6572f5ad511619628b73948",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0600000_y+0300000.tif",
+      "sha256": "b8b37027fa3d48958d9f6034cff169391c659818ac57e616dfbfd8a794652f54",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0600000_y+0400000.tif",
+      "sha256": "8422022edd0d7a3af69b1fa841daa34f97c2c4ac3a872647fa65dd5d45461266",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0600000_y+0500000.tif",
+      "sha256": "999005afb91ca948d480670d3f7e7288ade5e96a903f22f714da0c5b908fba81",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0600000_y+0600000.tif",
+      "sha256": "e4a0db8f7af50be59c329a54e58007de9c65c0590f08188dea4aa1dc23587187",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0600000_y+0700000.tif",
+      "sha256": "fa903f9cf816822be632740fdddc253d2e8d436fdefe52407533e166dc686023",
+      "sampled_positions": 4500,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0600000_y-0100000.tif",
+      "sha256": "1f99a2c3195728a9eeb3a43daf929b8f9c39694ccf31a0274cdaa3fe4a5be404",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0600000_y-0200000.tif",
+      "sha256": "30f4e471e21264443547c0ee8345bad973beb77017df8531b8fa17cb7b68deb1",
+      "sampled_positions": 2200,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0700000_y+0000000.tif",
+      "sha256": "b66733c784e80d403dca86aa56a0a68370db481260f003e35f168f621a4cff0a",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0700000_y+0100000.tif",
+      "sha256": "83c5aadec7a37ffd8dc90c05d6145f80b97031582ccdfa26af9d8df782e30834",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0700000_y+0200000.tif",
+      "sha256": "d7e5425a9a2b3cca1d69a3f6b7aab4aaac13d4a2ab8c5ca24f662a36ef2fe16d",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0700000_y+0300000.tif",
+      "sha256": "fa89cf90bf34bf146b84ea6dcb3317541a3b98e1ad477047dac7cd0d406f2ced",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0700000_y+0400000.tif",
+      "sha256": "ba45d9e28e31f9e1aac3e71a1ea65a33a54a2fa58cd95a9ff6f7f7e9ca479816",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0700000_y+0500000.tif",
+      "sha256": "a06b5e50d3f871797703c63f9020b8de7110adc1ed6960c04de4aaf23ca49a87",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0700000_y+0600000.tif",
+      "sha256": "82e65bf0d343e1a0846399d14d3ff93e0418b3e87d0075a9b5f59e93f4cb3abb",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0700000_y+0700000.tif",
+      "sha256": "e06ba633c6fbba1323d7e659e82d9d25055acb32f774b8b7455cc6c6d3c2ac06",
+      "sampled_positions": 5000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0700000_y-0100000.tif",
+      "sha256": "7b5d8b380f700ca0b0461ea084f6d57b326006b201e92b0b15a3acb99f4e4b06",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0700000_y-0200000.tif",
+      "sha256": "469514cf828579b1de38f7fe4305b4126bd84e7878a9f60ebf367a931aaa1a03",
+      "sampled_positions": 6500,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0700000_y-0300000.tif",
+      "sha256": "f1a064c6d01b0b659275652843c787396ad5b37852422d7af91eb6b1b1c59437",
+      "sampled_positions": 100,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0800000_y+0000000.tif",
+      "sha256": "dc8997527d31de79ce930e282e7d6cc6e7af56e3cbdd3116123f962791d3de67",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0800000_y+0100000.tif",
+      "sha256": "50491ad7089a5f4ead083340a125f22a0e72d322ef5426bec04eb54e8d043cc2",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0800000_y+0200000.tif",
+      "sha256": "cb6713e0047eefc63cf8d0a1742ad8056b02be46763a59a214566196cdfe41b3",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0800000_y+0300000.tif",
+      "sha256": "c6434d0ade17369dfe39818794fa8a6086c37f714d6d2b8c9ef48d5e35d72a3a",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0800000_y+0400000.tif",
+      "sha256": "98ae7278786c3727bf94ff75baca0c8410460a7c2633ae1b91cb8eda1f0e560c",
+      "sampled_positions": 9500,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0800000_y+0500000.tif",
+      "sha256": "92d2921c0dd5a7cf866a9f3e3e8fa817e3c54edf84c795f4e90e6254dfcf0701",
+      "sampled_positions": 3900,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0800000_y+0600000.tif",
+      "sha256": "e434aeedece84efa2f789d559490370ad9685bcb6e1298e99fd6639499d70ace",
+      "sampled_positions": 1100,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0800000_y-0100000.tif",
+      "sha256": "f232bd81fdbecbaed40670fb4f9f63dba09c32a4052d3055bdd438c08ac100d8",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0800000_y-0200000.tif",
+      "sha256": "4c243fc579fd06eba9774123dd2f2b7346c7f6dc3f99b9a12246404e84971d3c",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0800000_y-0300000.tif",
+      "sha256": "6d10702019b32fd612de426a43eac7168966ecc0de68a60f68c0a46983915090",
+      "sampled_positions": 3200,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0900000_y+0000000.tif",
+      "sha256": "81677817f26ca9476c6001200c5ead37015c6493fb995f06a7a3c6dcd9f45485",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0900000_y+0100000.tif",
+      "sha256": "dbd5133daff4009637a6c69f04f4d5c7b9415e211420c4b067f687c4ece43b5e",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0900000_y+0200000.tif",
+      "sha256": "178c341db4b38cf1f15fdc9229676f042796ca03ea2cfef97bacc2e0ad2c28e7",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0900000_y+0300000.tif",
+      "sha256": "b269d2794bfa6fe1e3342102b4fd2939e712ec20ab5d6694b4b5f4db3f673086",
+      "sampled_positions": 9900,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0900000_y+0400000.tif",
+      "sha256": "5e0c409ca1b729cab043635b46af7a3d2556f2ed57abefa94b86a54f01e2fea5",
+      "sampled_positions": 2900,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0900000_y-0100000.tif",
+      "sha256": "ad8d9cc7c822bf8e6a844892e24d452ff5c15e1b2b26d044ebd69d7f372035b6",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0900000_y-0200000.tif",
+      "sha256": "1b85ad0183aeb1a889d032139f5fa300d3ef464711f27eb20a5ba1909995abe4",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0900000_y-0300000.tif",
+      "sha256": "058d1738c24bb9920424a05b8ea7c2267fa692e08f05f1cff81ac2b6572730b4",
+      "sampled_positions": 9400,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+0900000_y-0400000.tif",
+      "sha256": "17234f863e3789692a2404bea07e2ae92924ed414fb5fb6decf42471de244685",
+      "sampled_positions": 500,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+1000000_y+0000000.tif",
+      "sha256": "47fb10df7ec40193161661eb92cfeff40450c2fcbc1e71e33879fe45bed97a77",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+1000000_y+0100000.tif",
+      "sha256": "7115993350bf2188fb5f494e67f58f3756ed57c7867aa70572efb4237e302c46",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+1000000_y+0200000.tif",
+      "sha256": "372bd78e1e29dc1ff0320a8d6a0989d89596cfa8e95adc371e5ea5e7fc1d9ff1",
+      "sampled_positions": 9400,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+1000000_y+0300000.tif",
+      "sha256": "1ede8d6a918d3d6a3a8ea0433c1e7a5ed350372be99914d157a1e5f261aec707",
+      "sampled_positions": 5500,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+1000000_y-0100000.tif",
+      "sha256": "c48b5beb038b5237fe000b3810288c39ad6df05b0504168c3875d4d922d6a0aa",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+1000000_y-0200000.tif",
+      "sha256": "0c1fbfaea8e32d6ed5fd6295fb1cdee450f531f4b8ed3f35c9383124fb13d81c",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+1000000_y-0300000.tif",
+      "sha256": "ba9a851b7e1e7711a200aeeafa21b8b9c18c525b2ec59286fbb290d1c7cd1848",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+1000000_y-0400000.tif",
+      "sha256": "a0f244a5a1b78c4833200940f4b1a04c503b0176c20595a98c3b019a643e8481",
+      "sampled_positions": 9500,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+1000000_y-0500000.tif",
+      "sha256": "175f4a7c520fe379a0855d27ed5b4d436897b994211704c2762f128966e4805c",
+      "sampled_positions": 2500,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+1100000_y+0000000.tif",
+      "sha256": "303f4e80f316cc08df01379aed4bd620f829e0f1f4b1a3ee4bf44030e34a1579",
+      "sampled_positions": 4200,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+1100000_y+0100000.tif",
+      "sha256": "5af13666a71a0f575846d8e8d68ba1fe0ebeaf2ad20c2d7d4e9b8028fdb031be",
+      "sampled_positions": 1800,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+1100000_y-0100000.tif",
+      "sha256": "a558f8a3068a725750bf2a27907f600ae1fe1086b9ec79072cee2db0e81568a6",
+      "sampled_positions": 7500,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+1100000_y-0200000.tif",
+      "sha256": "0cc0d6f081301a8648683007cefd077ec108eb26acb970942da1f0ae4cd30572",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+1100000_y-0300000.tif",
+      "sha256": "3aa1666cac949d28338589364a2eb37a4952e9277f2d6d8bb6ac55446caf7a7f",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+1100000_y-0400000.tif",
+      "sha256": "68aba9aad33cabce2ad94d9857dcd5a650b119514a501620b14cf1b4b95cba6f",
+      "sampled_positions": 6200,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+1200000_y-0100000.tif",
+      "sha256": "1d36dc5a035483f1bdacee1ee4799cb4f2e8efea9296f880ef059eb544a74ac4",
+      "sampled_positions": 100,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+1200000_y-0200000.tif",
+      "sha256": "1a613e9497349b423922ad5212e0d619483989c9dadc57c9ab346946be812daa",
+      "sampled_positions": 7500,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+1200000_y-0300000.tif",
+      "sha256": "c47967e974d725b1d8d3b095b20f2158585a7128027219c2b28f1cf284df951b",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+1200000_y-0400000.tif",
+      "sha256": "5b50172cc4df92f2697519de975849a8c417869455ab52c2fb26f8d2cf3dd060",
+      "sampled_positions": 2700,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+1300000_y-0200000.tif",
+      "sha256": "25db019679501b183e0ede992130042964e83887dda9639ae332e876b62739ae",
+      "sampled_positions": 6000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+1300000_y-0300000.tif",
+      "sha256": "14a8d2c18987c7fd5c42f694bb143ecd7b1df951903a088dbf4b83fb74ff4082",
+      "sampled_positions": 10000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+1300000_y-0400000.tif",
+      "sha256": "1927da296b6bc70f5134db3bef99573e82ec03246caea5d8b0db1a5d6c0a8417",
+      "sampled_positions": 2700,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+1400000_y-0200000.tif",
+      "sha256": "9b83812e70e896c2f4e13ab22c9b29495e56f3c9d18f77602066b4c1cc045c98",
+      "sampled_positions": 2100,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+1400000_y-0300000.tif",
+      "sha256": "9cc9c8d2ab50c498b1c9fb738d8c6ad5898216e10d548c8582bd400c9215652e",
+      "sampled_positions": 7100,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x+1400000_y-0400000.tif",
+      "sha256": "b8ce367325eacee0b6c521c5c27d6218581198bb6659b62255eb74ff7244d19c",
+      "sampled_positions": 800,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x-0100000_y+0000000.tif",
+      "sha256": "378514575f32a85f6420bddb7d5900678ccfb6e204cbb2dc12049b67790bb78e",
+      "sampled_positions": 600,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x-0100000_y+0100000.tif",
+      "sha256": "28b2ac34b673b2b444ebf88684429a3ce0750fc5de50d2dcd87bf1faf2fbc610",
+      "sampled_positions": 1000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x-0100000_y+0200000.tif",
+      "sha256": "11e89c96424c2780faa19373297487fbefcd8d645ca6cb18e5c30ea2dcf1c178",
+      "sampled_positions": 1000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x-0100000_y+0300000.tif",
+      "sha256": "b4f825a67da7d472e90a27601414f5c26383e8ec4bdd31a8038b9cf2ecb1dba5",
+      "sampled_positions": 1000,
+      "crs": "EPSG:3979"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/mrdem_30m/x-0100000_y+0400000.tif",
+      "sha256": "a649700450522cdcb5f980b30292d61165ff051cb61ef8b777ea941fed16f2e3",
+      "sampled_positions": 300,
+      "crs": "EPSG:3979"
+    }
+  ],
+  "scanfi_sources": [
+    {
+      "url": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_att_closure_SW_2020_v1.2.tif",
+      "identity": {
+        "ETag": "\"e64dbefb-6278c7a0f6d40\"",
+        "Last-Modified": "Sat, 23 Nov 2024 03:55:57 GMT",
+        "Content-Length": "3863854843"
+      },
+      "national_source": {
+        "url": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_att_closure_SW_2020_v1.2.tif",
+        "identity": {
+          "ETag": "\"e64dbefb-6278c7a0f6d40\"",
+          "Last-Modified": "Sat, 23 Nov 2024 03:55:57 GMT",
+          "Content-Length": "3863854843"
+        },
+        "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/scanfi_v1_2_national/SCANFI_att_closure_SW_2020_v1.2.tif",
+        "sha256": "af713e8ee695c17f4dc3963824f570df748aeafee5f3b18aab993729b81181c8",
+        "bytes": 3863854843
+      },
+      "native_crs": "PROJCS[\"NAD_1983_Canada_Lambert\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-95],PARAMETER[\"standard_parallel_1\",49],PARAMETER[\"standard_parallel_2\",77],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+      "native_overviews": [],
+      "method": "Nearest-neighbour 1 km quadrature in EPSG:3978; 100 samples per cell, not exact full native-pixel area means",
+      "sample_sha256": "11def61f6e0dab2d099010633fe029a0db13e63e9bd0547e2897b1448bb62408"
+    },
+    {
+      "url": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_balsamFir_SW_2020_v1.2.tif",
+      "identity": {
+        "ETag": "\"3d4651b6-6278c7ee36380\"",
+        "Last-Modified": "Sat, 23 Nov 2024 03:57:18 GMT",
+        "Content-Length": "1028018614"
+      },
+      "national_source": {
+        "url": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_balsamFir_SW_2020_v1.2.tif",
+        "identity": {
+          "ETag": "\"3d4651b6-6278c7ee36380\"",
+          "Last-Modified": "Sat, 23 Nov 2024 03:57:18 GMT",
+          "Content-Length": "1028018614"
+        },
+        "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/scanfi_v1_2_national/SCANFI_sps_balsamFir_SW_2020_v1.2.tif",
+        "sha256": "9bff0222d7f7fb0a0151c0f2a401da7affa16bfa3ef5c4e3de08ce53dfeda5dd",
+        "bytes": 1028018614
+      },
+      "native_crs": "PROJCS[\"NAD_1983_Canada_Lambert\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-95],PARAMETER[\"standard_parallel_1\",49],PARAMETER[\"standard_parallel_2\",77],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+      "native_overviews": [],
+      "method": "Nearest-neighbour 1 km quadrature in EPSG:3978; 100 samples per cell, not exact full native-pixel area means",
+      "sample_sha256": "3c9629f0898fbe8c211dfae473f20aab433bd0301021eb419cb153890d6b7ae0"
+    },
+    {
+      "url": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_blackSpruce_SW_2020_v1.2.tif",
+      "identity": {
+        "ETag": "\"c478575a-6278ce4651b40\"",
+        "Last-Modified": "Sat, 23 Nov 2024 04:25:41 GMT",
+        "Content-Length": "3296221018"
+      },
+      "national_source": {
+        "url": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_blackSpruce_SW_2020_v1.2.tif",
+        "identity": {
+          "ETag": "\"c478575a-6278ce4651b40\"",
+          "Last-Modified": "Sat, 23 Nov 2024 04:25:41 GMT",
+          "Content-Length": "3296221018"
+        },
+        "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/scanfi_v1_2_national/SCANFI_sps_blackSpruce_SW_2020_v1.2.tif",
+        "sha256": "bd7abc90f036cfa66fe6bb08a1ed2d2ba9dbf97ba6ea9e373df8927ae3ffed89",
+        "bytes": 3296221018
+      },
+      "native_crs": "PROJCS[\"NAD_1983_Canada_Lambert\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-95],PARAMETER[\"standard_parallel_1\",49],PARAMETER[\"standard_parallel_2\",77],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+      "native_overviews": [],
+      "method": "Nearest-neighbour 1 km quadrature in EPSG:3978; 100 samples per cell, not exact full native-pixel area means",
+      "sample_sha256": "ff3d97353cee2915c91fcbd30be739208bf051cd36ef9ef2274a9ac426f17cfa"
+    },
+    {
+      "url": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_douglasFir_SW_2020_v1.2.tif",
+      "identity": {
+        "ETag": "\"d715059-6278d387f4200\"",
+        "Last-Modified": "Sat, 23 Nov 2024 04:49:12 GMT",
+        "Content-Length": "225529945"
+      },
+      "national_source": {
+        "url": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_douglasFir_SW_2020_v1.2.tif",
+        "identity": {
+          "ETag": "\"d715059-6278d387f4200\"",
+          "Last-Modified": "Sat, 23 Nov 2024 04:49:12 GMT",
+          "Content-Length": "225529945"
+        },
+        "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/scanfi_v1_2_national/SCANFI_sps_douglasFir_SW_2020_v1.2.tif",
+        "sha256": "780e6d664497ef96607a93a1d813218008f8d0beccbe74a2d2ffcc2589705275",
+        "bytes": 225529945
+      },
+      "native_crs": "PROJCS[\"NAD_1983_Canada_Lambert\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-95],PARAMETER[\"standard_parallel_1\",49],PARAMETER[\"standard_parallel_2\",77],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+      "native_overviews": [],
+      "method": "Nearest-neighbour 1 km quadrature in EPSG:3978; 100 samples per cell, not exact full native-pixel area means",
+      "sample_sha256": "1c222e7dee121328820cdb3718d907163dbb702ed97a57ded505dce895afd712"
+    },
+    {
+      "url": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_jackPine_SW_2020_v1.2.tif",
+      "identity": {
+        "ETag": "\"56ea54d4-6278da10b2c80\"",
+        "Last-Modified": "Sat, 23 Nov 2024 05:18:26 GMT",
+        "Content-Length": "1458197716"
+      },
+      "national_source": {
+        "url": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_jackPine_SW_2020_v1.2.tif",
+        "identity": {
+          "ETag": "\"56ea54d4-6278da10b2c80\"",
+          "Last-Modified": "Sat, 23 Nov 2024 05:18:26 GMT",
+          "Content-Length": "1458197716"
+        },
+        "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/scanfi_v1_2_national/SCANFI_sps_jackPine_SW_2020_v1.2.tif",
+        "sha256": "cb312a59f55a6e12d862de8b24561e059f6ecba829022d811d5a5c1ddcdde75e",
+        "bytes": 1458197716
+      },
+      "native_crs": "PROJCS[\"NAD_1983_Canada_Lambert\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-95],PARAMETER[\"standard_parallel_1\",49],PARAMETER[\"standard_parallel_2\",77],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+      "native_overviews": [],
+      "method": "Nearest-neighbour 1 km quadrature in EPSG:3978; 100 samples per cell, not exact full native-pixel area means",
+      "sample_sha256": "6db63032d4ed6eaa810b72f5f20ba8e6c1e569902fb1b974240d3d61bc922b40"
+    },
+    {
+      "url": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_lodgepolePine_SW_2020_v1.2.tif",
+      "identity": {
+        "ETag": "\"2a09f5d4-6278dfd6e4c00\"",
+        "Last-Modified": "Sat, 23 Nov 2024 05:44:16 GMT",
+        "Content-Length": "705295828"
+      },
+      "national_source": {
+        "url": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_lodgepolePine_SW_2020_v1.2.tif",
+        "identity": {
+          "ETag": "\"2a09f5d4-6278dfd6e4c00\"",
+          "Last-Modified": "Sat, 23 Nov 2024 05:44:16 GMT",
+          "Content-Length": "705295828"
+        },
+        "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/scanfi_v1_2_national/SCANFI_sps_lodgepolePine_SW_2020_v1.2.tif",
+        "sha256": "6ba446c1065faab399c9e6efdbad55cbdcad948c287a136193ef7a91e829fb30",
+        "bytes": 705295828
+      },
+      "native_crs": "PROJCS[\"NAD_1983_Canada_Lambert\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-95],PARAMETER[\"standard_parallel_1\",49],PARAMETER[\"standard_parallel_2\",77],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+      "native_overviews": [],
+      "method": "Nearest-neighbour 1 km quadrature in EPSG:3978; 100 samples per cell, not exact full native-pixel area means",
+      "sample_sha256": "1c222e7dee121328820cdb3718d907163dbb702ed97a57ded505dce895afd712"
+    },
+    {
+      "url": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_ponderosaPine_SW_2020_v1.2.tif",
+      "identity": {
+        "ETag": "\"508b2bb-6278e25a9fac0\"",
+        "Last-Modified": "Sat, 23 Nov 2024 05:55:31 GMT",
+        "Content-Length": "84456123"
+      },
+      "national_source": {
+        "url": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_ponderosaPine_SW_2020_v1.2.tif",
+        "identity": {
+          "ETag": "\"508b2bb-6278e25a9fac0\"",
+          "Last-Modified": "Sat, 23 Nov 2024 05:55:31 GMT",
+          "Content-Length": "84456123"
+        },
+        "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/scanfi_v1_2_national/SCANFI_sps_ponderosaPine_SW_2020_v1.2.tif",
+        "sha256": "464d4b7539f110afbb5adb13e30afe2de4193a91ba2cb441bc8e04cfc41b6c3d",
+        "bytes": 84456123
+      },
+      "native_crs": "PROJCS[\"NAD_1983_Canada_Lambert\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-95],PARAMETER[\"standard_parallel_1\",49],PARAMETER[\"standard_parallel_2\",77],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+      "native_overviews": [],
+      "method": "Nearest-neighbour 1 km quadrature in EPSG:3978; 100 samples per cell, not exact full native-pixel area means",
+      "sample_sha256": "1c222e7dee121328820cdb3718d907163dbb702ed97a57ded505dce895afd712"
+    },
+    {
+      "url": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_prcB_SW_2020_v1.2.tif",
+      "identity": {
+        "ETag": "\"99e99338-6278e3fb61200\"",
+        "Last-Modified": "Sat, 23 Nov 2024 06:02:48 GMT",
+        "Content-Length": "2582221624"
+      },
+      "national_source": {
+        "url": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_prcB_SW_2020_v1.2.tif",
+        "identity": {
+          "ETag": "\"99e99338-6278e3fb61200\"",
+          "Last-Modified": "Sat, 23 Nov 2024 06:02:48 GMT",
+          "Content-Length": "2582221624"
+        },
+        "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/scanfi_v1_2_national/SCANFI_sps_prcB_SW_2020_v1.2.tif",
+        "sha256": "54b8b0a18c6b6b7c6172508583ef9b4944208bfcf5519338e9d988f9cc9997fe",
+        "bytes": 2582221624
+      },
+      "native_crs": "PROJCS[\"NAD_1983_Canada_Lambert\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-95],PARAMETER[\"standard_parallel_1\",49],PARAMETER[\"standard_parallel_2\",77],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+      "native_overviews": [],
+      "method": "Nearest-neighbour 1 km quadrature in EPSG:3978; 100 samples per cell, not exact full native-pixel area means",
+      "sample_sha256": "c9c432ef2d497875d5323e66a80afeeec523bfba6219087b14f7dc3a62f8d5f3"
+    },
+    {
+      "url": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_prcC_other_SW_2020_v1.2.tif",
+      "identity": {
+        "ETag": "\"8e51866b-6278e6aecb140\"",
+        "Last-Modified": "Sat, 23 Nov 2024 06:14:53 GMT",
+        "Content-Length": "2387707499"
+      },
+      "national_source": {
+        "url": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_prcC_other_SW_2020_v1.2.tif",
+        "identity": {
+          "ETag": "\"8e51866b-6278e6aecb140\"",
+          "Last-Modified": "Sat, 23 Nov 2024 06:14:53 GMT",
+          "Content-Length": "2387707499"
+        },
+        "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/scanfi_v1_2_national/SCANFI_sps_prcC_other_SW_2020_v1.2.tif",
+        "sha256": "c1dea5f7ef2b38015006c5891453308048437ca405515ffc659be60a5882f377",
+        "bytes": 2387707499
+      },
+      "native_crs": "PROJCS[\"NAD_1983_Canada_Lambert\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-95],PARAMETER[\"standard_parallel_1\",49],PARAMETER[\"standard_parallel_2\",77],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+      "native_overviews": [],
+      "method": "Nearest-neighbour 1 km quadrature in EPSG:3978; 100 samples per cell, not exact full native-pixel area means",
+      "sample_sha256": "78f3e3ce53fea6f5d32a7ce3909de0e5bd4dfc78d51adc4061ca0e5f5b55b5fd"
+    },
+    {
+      "url": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_tamarack_SW_2020_v1.2.tif",
+      "identity": {
+        "ETag": "\"6aa516f0-6278f082960c0\"",
+        "Last-Modified": "Sat, 23 Nov 2024 06:58:51 GMT",
+        "Content-Length": "1789204208"
+      },
+      "national_source": {
+        "url": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_tamarack_SW_2020_v1.2.tif",
+        "identity": {
+          "ETag": "\"6aa516f0-6278f082960c0\"",
+          "Last-Modified": "Sat, 23 Nov 2024 06:58:51 GMT",
+          "Content-Length": "1789204208"
+        },
+        "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/scanfi_v1_2_national/SCANFI_sps_tamarack_SW_2020_v1.2.tif",
+        "sha256": "7602d48ab53d7d6dfd64cb8f49cab9feacd527fcc164c7ea3de8abda474f0768",
+        "bytes": 1789204208
+      },
+      "native_crs": "PROJCS[\"NAD_1983_Canada_Lambert\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-95],PARAMETER[\"standard_parallel_1\",49],PARAMETER[\"standard_parallel_2\",77],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+      "native_overviews": [],
+      "method": "Nearest-neighbour 1 km quadrature in EPSG:3978; 100 samples per cell, not exact full native-pixel area means",
+      "sample_sha256": "1f8c21d5476e8e4fbcb751c0a9a8998b1a318760b393371bdbdd86aedc4b0920"
+    },
+    {
+      "url": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_whiteRedPine_SW_2020_v1.2.tif",
+      "identity": {
+        "ETag": "\"e6478cb-6278fb3866580\"",
+        "Last-Modified": "Sat, 23 Nov 2024 07:46:46 GMT",
+        "Content-Length": "241465547"
+      },
+      "national_source": {
+        "url": "https://ftp.maps.canada.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v1/SCANFI_sps_whiteRedPine_SW_2020_v1.2.tif",
+        "identity": {
+          "ETag": "\"e6478cb-6278fb3866580\"",
+          "Last-Modified": "Sat, 23 Nov 2024 07:46:46 GMT",
+          "Content-Length": "241465547"
+        },
+        "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/scanfi_v1_2_national/SCANFI_sps_whiteRedPine_SW_2020_v1.2.tif",
+        "sha256": "16ff6a51b93914f8d6a8f69476d458c80d858774b1256d726ca98580d955a983",
+        "bytes": 241465547
+      },
+      "native_crs": "PROJCS[\"NAD_1983_Canada_Lambert\",GEOGCS[\"NAD83\",DATUM[\"North_American_Datum_1983\",SPHEROID[\"GRS 1980\",6378137,298.257222101004,AUTHORITY[\"EPSG\",\"7019\"]],AUTHORITY[\"EPSG\",\"6269\"]],PRIMEM[\"Greenwich\",0],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4269\"]],PROJECTION[\"Lambert_Conformal_Conic_2SP\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-95],PARAMETER[\"standard_parallel_1\",49],PARAMETER[\"standard_parallel_2\",77],PARAMETER[\"false_easting\",0],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH]]",
+      "native_overviews": [],
+      "method": "Nearest-neighbour 1 km quadrature in EPSG:3978; 100 samples per cell, not exact full native-pixel area means",
+      "sample_sha256": "275118a777a3f02fdde3ec7fecb3bc419e78b2434acbe6cc0710dde2e8d0777b"
+    }
+  ],
+  "quality": {
+    "missing_fuel_cells": 6,
+    "missing_terrain_cells": 0,
+    "missing_scanfi_cells": 6,
+    "negative_elevation_samples": 358
+  },
+  "output": {
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/selected_provincial_static_2025/static_features.parquet",
+    "sha256": "727697b7762cb74a405b643b05f1576e3ff1dbb34ad453de3fba38871f77ad06",
+    "bytes": 699373
+  },
+  "full_native_area_aggregation": false,
+  "full_remote_source_sha256_available": true
+}

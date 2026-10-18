@@ -1,0 +1,354 @@
+{
+  "original_partitions_hash_only": [
+    {
+      "role": "training",
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_evaluation_v1/training.parquet",
+      "bytes": 433812536,
+      "sha256": "3198dd0152210e9bb7c5172c1fa6b67e8ae51645206c9ffd466f9e3c1af1a8b0",
+      "matched": true
+    },
+    {
+      "role": "validation",
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_evaluation_v1/validation.parquet",
+      "bytes": 94425146,
+      "sha256": "1c1d2feeba4fc6582011f42c514a80d7bcbcbe7bcbf8f853807c24056774501c",
+      "matched": true
+    },
+    {
+      "role": "calibration",
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_evaluation_v1/calibration.parquet",
+      "bytes": 60070934,
+      "sha256": "8cde63a28b4b5f6b7369b63f489c0d9ec2a52de3d9085bd93e448f6331c73d15",
+      "matched": true
+    },
+    {
+      "role": "final_test",
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_evaluation_v1/final_test.parquet",
+      "bytes": 139725513,
+      "sha256": "e37b96286065f0b540a9cd59757ece2f029d2a3b0a2b8048c5794084169a984a",
+      "matched": true
+    }
+  ],
+  "final_test_mode": "0o444",
+  "original_models": [
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/week_3_design_2026-10-15/inner_spatial_histogram_boosting.joblib",
+      "bytes": 317558,
+      "sha256": "1a2560257143dbaef7ee896b6145b8d473cf23c8552ecd07a15d182d8fa3961a",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/week_3_design_2026-10-15/inner_spatial_historical_rate.joblib",
+      "bytes": 2333,
+      "sha256": "580003f716cb27e35c5bf3e4774210f10744ef0adddb0d67780625536cd8f1d6",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/week_3_design_2026-10-15/inner_spatial_lightgbm.joblib",
+      "bytes": 270620,
+      "sha256": "8ccd0f04b889e7b116172f2e2db00ecfb75cbe8a7038b82c28de99b290a3b779",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/week_3_design_2026-10-15/inner_spatial_logistic.joblib",
+      "bytes": 5322,
+      "sha256": "a29cc2ea1371504bb178e8f5a75cc7120d636fc384335a62fe4c807eaaca4365",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/week_3_design_2026-10-15/temporal_histogram_boosting.joblib",
+      "bytes": 321793,
+      "sha256": "050e07f451092b89bc34f27f5cac2e3f2e3a773f94a01b1aeb6d5bb2ba22a0e2",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/week_3_design_2026-10-15/temporal_historical_rate.joblib",
+      "bytes": 2648,
+      "sha256": "cdd51e12214139e0755f80ada5cd73e4ad750c736cee8ffb6313b400a9b53ef8",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/week_3_design_2026-10-15/temporal_lightgbm.joblib",
+      "bytes": 273239,
+      "sha256": "11cf2e7e9f569c2b81b07480f0661d7ecb0291c966ba5c2337a55cdbd1064bb1",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/week_3_design_2026-10-15/temporal_logistic.joblib",
+      "bytes": 5829,
+      "sha256": "57b6c080ec0949dee524deeea720a52bf68f831e2fbd2c71afa44116aecf5060",
+      "matched": true
+    }
+  ],
+  "new_models": [
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/comparison_weather_v2/temporal_historical_rate.joblib",
+      "bytes": 2648,
+      "sha256": "ec51e42671adcfa10128bf124cd655665c2887de35fadf17f615d9ccce65ae1e",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/comparison_weather_v2/temporal_logistic.joblib",
+      "bytes": 5829,
+      "sha256": "fb6c51d813a1680b1cf75aa22daaa71bcea5f02f1a513bdc6f5d3e5106f5255b",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/comparison_weather_v2/temporal_histogram_boosting.joblib",
+      "bytes": 325633,
+      "sha256": "37641ac354acc459bdc5365f478b51f0ccf7c5dbe746394f7a3bb68e15c71d0b",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/comparison_weather_v2/temporal_lightgbm.joblib",
+      "bytes": 273047,
+      "sha256": "9a594aa6eb408a87335255c4c9930b4833a3f6aab5b576f3d88fd9a5b03dd374",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/comparison_weather_v2/inner_spatial_historical_rate.joblib",
+      "bytes": 2333,
+      "sha256": "677728d8c85db90d55cb7bd4138e75650cc3906e06d843f4895a2925e8fa07bf",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/comparison_weather_v2/inner_spatial_logistic.joblib",
+      "bytes": 5322,
+      "sha256": "8e83b9686e483a262653e6c6b1cf0dcdf695e1904b718ae2a9bc26d447d96303",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/comparison_weather_v2/inner_spatial_histogram_boosting.joblib",
+      "bytes": 322262,
+      "sha256": "848bc21a5727baa915fca1e6d50738b661a3809f24d3b2e6b8e591ebc4ac78fc",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/comparison_weather_v2/inner_spatial_lightgbm.joblib",
+      "bytes": 271932,
+      "sha256": "59bc583123fbfc4f3db45df5d1e5936142ee324fce48a79036756fb9fecf538b",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/comparison_weather_v2_boundary/temporal_historical_rate.joblib",
+      "bytes": 2648,
+      "sha256": "a05394a6e81e1485ec82f9acd1c8a1dc0ed92b8382890f5562df26e06e9b59d4",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/comparison_weather_v2_boundary/temporal_logistic.joblib",
+      "bytes": 5765,
+      "sha256": "fb2d8824ac4115ed8d40d2c975b6d0d499a9244962925429c1a12aa03675873d",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/comparison_weather_v2_boundary/temporal_histogram_boosting.joblib",
+      "bytes": 325585,
+      "sha256": "74088e30e530401b1570617812cd1cc7797c348415f7740613831598d41846a8",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/comparison_weather_v2_boundary/temporal_lightgbm.joblib",
+      "bytes": 272503,
+      "sha256": "c71b43662139ab5970e080247281fbb1357e1cab396cd2c62bfff1ddb7018898",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/comparison_weather_v2_boundary/inner_spatial_historical_rate.joblib",
+      "bytes": 2333,
+      "sha256": "b86894c3138861ff60ca5f96b66f6dc8e941c5347d4b95803f8e60c73a557950",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/comparison_weather_v2_boundary/inner_spatial_logistic.joblib",
+      "bytes": 5242,
+      "sha256": "94b5b1471b504f6139ebfc7315ee6b96a077307eb7ec2591a9b6c2d6246a5230",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/comparison_weather_v2_boundary/inner_spatial_histogram_boosting.joblib",
+      "bytes": 322198,
+      "sha256": "cdaf8ccaab983cd1ea218a36ef5969dd9ae9678287b733a2f2636cf7f03ca4f8",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week3_v1/comparison_weather_v2_boundary/inner_spatial_lightgbm.joblib",
+      "bytes": 271676,
+      "sha256": "65ae3ba68cd34d2ce878b2a131183315fd77694df1eabfc8e55da101536fdb9a",
+      "matched": true
+    }
+  ],
+  "source_checks": [
+    {
+      "script": "prepare_provincial_weather.py",
+      "source_sha256_matched": true,
+      "outputs": [
+        {
+          "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/selected_provincial_2025/daily_weather.parquet",
+          "bytes": 203783329,
+          "sha256": "a75f788652ff70a81a420cb5aa76ea9b13dff70e1b4ae979ef8903578b4d5784",
+          "matched": true
+        }
+      ]
+    },
+    {
+      "script": "prepare_provincial_static.py",
+      "source_sha256_matched": true,
+      "outputs": [
+        {
+          "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/selected_provincial_static_2025/static_features.parquet",
+          "bytes": 699373,
+          "sha256": "727697b7762cb74a405b643b05f1576e3ff1dbb34ad453de3fba38871f77ad06",
+          "matched": true
+        }
+      ]
+    },
+    {
+      "script": "refine_provincial_fuel.py",
+      "source_sha256_matched": true,
+      "outputs": [
+        {
+          "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/selected_provincial_static_native_2025/static_features.parquet",
+          "bytes": 1589747,
+          "sha256": "627f1b981659e42403e9ed4e80a4083e6ca3f8d9f0c7fcdd10160c7355dc7ea0",
+          "matched": true
+        }
+      ]
+    },
+    {
+      "script": "build_selected_2025_panel.py",
+      "source_sha256_matched": true,
+      "outputs": [
+        {
+          "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/selected_2025_ignition_panel/cell_days.parquet",
+          "bytes": 201315146,
+          "sha256": "9119010e26b095b7662c8463e73cd678e03e0196292428b4dabcedefbd60ce91",
+          "matched": true
+        },
+        {
+          "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/selected_2025_ignition_panel/fire_source_adjudication.csv",
+          "bytes": 68848,
+          "sha256": "6527a6ae0ee2bc68572b4dad29c3a5f4a15bce798c92704f371dad47310c9b46",
+          "matched": true
+        },
+        {
+          "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/selected_2025_ignition_panel/predictor_contract.json",
+          "bytes": 2327,
+          "sha256": "141eeeda383338c8ad34cfa4847a9094297fed6d921c017b69f2c2a3c89bd0b1",
+          "matched": true
+        }
+      ]
+    },
+    {
+      "script": "hrdps_live_weather.py",
+      "source_sha256_matched": true,
+      "outputs": [
+        {
+          "path": "data/processed/hrdps_live_research_2026-10-16_stateful/hourly_weather.parquet",
+          "bytes": 11010984,
+          "sha256": "8a5fce03190f07ff574aae4970b55664dfd70e0d65eeee396922605106cc0b1f",
+          "matched": true
+        },
+        {
+          "path": "data/processed/hrdps_live_research_2026-10-16_stateful/daily_forecast_fwi.parquet",
+          "bytes": 625643,
+          "sha256": "b09bea19da8de113dd17a68f538ac6459e561d9b3f1aed575880a4e690bafd1f",
+          "matched": true
+        },
+        {
+          "path": "data/processed/hrdps_live_research_2026-10-16_stateful/state_checkpoint.json",
+          "bytes": 3838981,
+          "sha256": "e83343a771658eb1b85f15840bd48a90ed8daf0a3ff3178daabd60b1e16237f7",
+          "matched": true
+        }
+      ]
+    }
+  ],
+  "scanfi_national_sources": [
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/scanfi_v1_2_national/SCANFI_att_closure_SW_2020_v1.2.tif",
+      "bytes": 3863854843,
+      "sha256": "af713e8ee695c17f4dc3963824f570df748aeafee5f3b18aab993729b81181c8",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/scanfi_v1_2_national/SCANFI_sps_balsamFir_SW_2020_v1.2.tif",
+      "bytes": 1028018614,
+      "sha256": "9bff0222d7f7fb0a0151c0f2a401da7affa16bfa3ef5c4e3de08ce53dfeda5dd",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/scanfi_v1_2_national/SCANFI_sps_blackSpruce_SW_2020_v1.2.tif",
+      "bytes": 3296221018,
+      "sha256": "bd7abc90f036cfa66fe6bb08a1ed2d2ba9dbf97ba6ea9e373df8927ae3ffed89",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/scanfi_v1_2_national/SCANFI_sps_douglasFir_SW_2020_v1.2.tif",
+      "bytes": 225529945,
+      "sha256": "780e6d664497ef96607a93a1d813218008f8d0beccbe74a2d2ffcc2589705275",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/scanfi_v1_2_national/SCANFI_sps_jackPine_SW_2020_v1.2.tif",
+      "bytes": 1458197716,
+      "sha256": "cb312a59f55a6e12d862de8b24561e059f6ecba829022d811d5a5c1ddcdde75e",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/scanfi_v1_2_national/SCANFI_sps_lodgepolePine_SW_2020_v1.2.tif",
+      "bytes": 705295828,
+      "sha256": "6ba446c1065faab399c9e6efdbad55cbdcad948c287a136193ef7a91e829fb30",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/scanfi_v1_2_national/SCANFI_sps_ponderosaPine_SW_2020_v1.2.tif",
+      "bytes": 84456123,
+      "sha256": "464d4b7539f110afbb5adb13e30afe2de4193a91ba2cb441bc8e04cfc41b6c3d",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/scanfi_v1_2_national/SCANFI_sps_prcB_SW_2020_v1.2.tif",
+      "bytes": 2582221624,
+      "sha256": "54b8b0a18c6b6b7c6172508583ef9b4944208bfcf5519338e9d988f9cc9997fe",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/scanfi_v1_2_national/SCANFI_sps_prcC_other_SW_2020_v1.2.tif",
+      "bytes": 2387707499,
+      "sha256": "c1dea5f7ef2b38015006c5891453308048437ca405515ffc659be60a5882f377",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/scanfi_v1_2_national/SCANFI_sps_tamarack_SW_2020_v1.2.tif",
+      "bytes": 1789204208,
+      "sha256": "7602d48ab53d7d6dfd64cb8f49cab9feacd527fcc164c7ea3de8abda474f0768",
+      "matched": true
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/scanfi_v1_2_national/SCANFI_sps_whiteRedPine_SW_2020_v1.2.tif",
+      "bytes": 241465547,
+      "sha256": "16ff6a51b93914f8d6a8f69476d458c80d858774b1256d726ca98580d955a983",
+      "matched": true
+    }
+  ],
+  "selected_panel_checks": {
+    "unique_keys": true,
+    "all_weather_before_issue": true,
+    "rows": 1775232,
+    "positive_cell_days": 600,
+    "recorded_instances": 624,
+    "valid_fwi_rows": 1773024,
+    "fuel_share_sums_valid": true,
+    "zero_support_cells": 6
+  },
+  "research_checkpoint_cells": 8526,
+  "checkpoint_all_untrusted": true,
+  "scanfi_conditional_closure": {
+    "closure_valid_points": 962179,
+    "joint_valid_points": 962179,
+    "definition": "Closure mean is conditional on valid closure AND species composition."
+  },
+  "test_evidence": "........................................................................ [ 65%]\n......................................                                   [100%]\n110 passed in 2.40s",
+  "reserved_parquet_content_parsed": false
+}

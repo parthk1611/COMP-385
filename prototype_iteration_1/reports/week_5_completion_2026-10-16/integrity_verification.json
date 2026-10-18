@@ -1,0 +1,61 @@
+{
+  "original_partitions": [
+    {
+      "role": "training",
+      "sha256": "3198dd0152210e9bb7c5172c1fa6b67e8ae51645206c9ffd466f9e3c1af1a8b0",
+      "unchanged": true
+    },
+    {
+      "role": "validation",
+      "sha256": "1c1d2feeba4fc6582011f42c514a80d7bcbcbe7bcbf8f853807c24056774501c",
+      "unchanged": true
+    },
+    {
+      "role": "calibration",
+      "sha256": "8cde63a28b4b5f6b7369b63f489c0d9ec2a52de3d9085bd93e448f6331c73d15",
+      "unchanged": true
+    },
+    {
+      "role": "final_test",
+      "sha256": "e37b96286065f0b540a9cd59757ece2f029d2a3b0a2b8048c5794084169a984a",
+      "unchanged": true
+    }
+  ],
+  "original_development_bundles_unchanged": 24,
+  "original_final_mode": "0o444",
+  "previous_historical_calibrated_models_results_unchanged": true,
+  "selected_support_guards": [
+    {
+      "protocol": "temporal",
+      "positive_support": {
+        "training": 278,
+        "validation": 103,
+        "calibration": 117,
+        "final_test": 102
+      },
+      "declared_minimum_support_passed": true
+    },
+    {
+      "protocol": "spatial",
+      "positive_support": {
+        "training": 226,
+        "validation": 92,
+        "calibration": 86,
+        "final_test": 14
+      },
+      "declared_minimum_support_passed": true
+    }
+  ],
+  "landscapes": {
+    "incidents": 48,
+    "grids": 96,
+    "sources": 66,
+    "all_hashes_matched": true,
+    "minimum_support": 0.9569196352913263
+  },
+  "scientific_spread_source_revisions_preserved": true,
+  "live_status": "unavailable, probabilitynull; unmetM2 acceptance retained",
+  "full_test_output": "........................................................................ [ 57%]\n......................................................                   [100%]\n126 passed in 2.46s",
+  "final_viewer_sha256": "77a35de3fff6cd91705f6847281931fb813bcd7fcfe673fddc1a3651f4111201",
+  "pdf_sha256": "70373c66956973011444e5365384e6480a1ef280be6c9a5af59da6e6b1bf64bf"
+}

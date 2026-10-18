@@ -1,0 +1,166 @@
+{
+  "local_input_groups": [
+    {
+      "group": "ontario_point_area",
+      "files": 3,
+      "bytes": 130710797,
+      "paths": [
+        "data/raw/week_2_completion/fire_disturbance/fire_disturbance_area.geojson",
+        "data/raw/week_2_completion/fire_disturbance/fire_disturbance_point.geojson",
+        "data/raw/week_2_completion/fire_disturbance/manifest.json"
+      ],
+      "scope": "present local inputs only; directory totals include small metadata files"
+    },
+    {
+      "group": "era5_land",
+      "files": 13,
+      "bytes": 5655701,
+      "paths": [
+        "data/raw/ignition_pilot/era5/download_manifest.json",
+        "data/raw/ignition_pilot/era5/era5_land_2025_01.nc",
+        "data/raw/ignition_pilot/era5/era5_land_2025_02.nc",
+        "data/raw/ignition_pilot/era5/era5_land_2025_03.nc",
+        "data/raw/ignition_pilot/era5/era5_land_2025_04.nc",
+        "data/raw/ignition_pilot/era5/era5_land_2025_05.nc",
+        "data/raw/ignition_pilot/era5/era5_land_2025_06.nc",
+        "data/raw/ignition_pilot/era5/era5_land_2025_07.nc",
+        "data/raw/ignition_pilot/era5/era5_land_2025_08.nc",
+        "data/raw/ignition_pilot/era5/era5_land_2025_09.nc",
+        "data/raw/ignition_pilot/era5/era5_land_2025_10.nc",
+        "data/raw/ignition_pilot/era5/era5_land_2025_11.nc",
+        "data/raw/ignition_pilot/era5/requests.json"
+      ],
+      "scope": "present local inputs only; directory totals include small metadata files"
+    },
+    {
+      "group": "hrdps",
+      "files": 6,
+      "bytes": 11374641,
+      "paths": [
+        "data/raw/week_2_audit/hrdps_20261015T00Z_lead001/20261015T00Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT001H.grib2",
+        "data/raw/week_2_audit/hrdps_20261015T00Z_lead001/20261015T00Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT001H.grib2",
+        "data/raw/week_2_audit/hrdps_20261015T00Z_lead001/20261015T00Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT001H.grib2",
+        "data/raw/week_2_audit/hrdps_20261015T00Z_lead001/20261015T00Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT001H.grib2",
+        "data/raw/week_2_audit/hrdps_20261015T00Z_lead001/20261015T00Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT001H.grib2",
+        "data/raw/week_2_audit/hrdps_20261015T00Z_lead001/manifest.json"
+      ],
+      "scope": "present local inputs only; directory totals include small metadata files"
+    },
+    {
+      "group": "scanfi_2020",
+      "files": 11,
+      "bytes": 1805449,
+      "paths": [
+        "data/raw/ignition_pilot/scanfi_balsamFir.tif",
+        "data/raw/ignition_pilot/scanfi_blackSpruce.tif",
+        "data/raw/ignition_pilot/scanfi_closure.tif",
+        "data/raw/ignition_pilot/scanfi_douglasFir.tif",
+        "data/raw/ignition_pilot/scanfi_jackPine.tif",
+        "data/raw/ignition_pilot/scanfi_lodgepolePine.tif",
+        "data/raw/ignition_pilot/scanfi_ponderosaPine.tif",
+        "data/raw/ignition_pilot/scanfi_prcB.tif",
+        "data/raw/ignition_pilot/scanfi_prcC_other.tif",
+        "data/raw/ignition_pilot/scanfi_tamarack.tif",
+        "data/raw/ignition_pilot/scanfi_whiteRedPine.tif"
+      ],
+      "scope": "present local inputs only; directory totals include small metadata files"
+    },
+    {
+      "group": "fbp_2024",
+      "files": 3,
+      "bytes": 6292764,
+      "paths": [
+        "data/raw/samples/red_lake/fbp_2024.tif",
+        "data/raw/samples/thunder_bay/fbp_2024.tif",
+        "data/raw/samples/timmins/fbp_2024.tif"
+      ],
+      "scope": "present local inputs only; directory totals include small metadata files"
+    },
+    {
+      "group": "mrdem_samples",
+      "files": 3,
+      "bytes": 8872113,
+      "paths": [
+        "data/raw/samples/red_lake/mrdem_dtm.tif",
+        "data/raw/samples/thunder_bay/mrdem_dtm.tif",
+        "data/raw/samples/timmins/mrdem_dtm.tif"
+      ],
+      "scope": "present local inputs only; directory totals include small metadata files"
+    },
+    {
+      "group": "viirs_matched_processed",
+      "files": 1,
+      "bytes": 5457714,
+      "paths": [
+        "team_repository/capability_2_fire_spread/data/processed/ontario_fire_spread_detections_v1.csv.gz"
+      ],
+      "scope": "present local inputs only; directory totals include small metadata files"
+    },
+    {
+      "group": "legacy_cwfis",
+      "files": 1,
+      "bytes": 92248430,
+      "paths": [
+        "team_repository/data/raw/cwfis/cwfis_fwi2010sv3.0_ll.csv.bz2"
+      ],
+      "scope": "present local inputs only; directory totals include small metadata files"
+    },
+    {
+      "group": "viirs_raw_ontario_box",
+      "files": 20,
+      "bytes": 17052940,
+      "paths": [
+        "data/raw/week_2_completion/firms/viirs-jpss1_2018_ontario.csv.gz",
+        "data/raw/week_2_completion/firms/viirs-jpss1_2019_ontario.csv.gz",
+        "data/raw/week_2_completion/firms/viirs-jpss1_2020_ontario.csv.gz",
+        "data/raw/week_2_completion/firms/viirs-jpss1_2021_ontario.csv.gz",
+        "data/raw/week_2_completion/firms/viirs-jpss1_2022_ontario.csv.gz",
+        "data/raw/week_2_completion/firms/viirs-jpss1_2023_ontario.csv.gz",
+        "data/raw/week_2_completion/firms/viirs-jpss1_2024_ontario.csv.gz",
+        "data/raw/week_2_completion/firms/viirs-snpp_2012_ontario.csv.gz",
+        "data/raw/week_2_completion/firms/viirs-snpp_2013_ontario.csv.gz",
+        "data/raw/week_2_completion/firms/viirs-snpp_2014_ontario.csv.gz",
+        "data/raw/week_2_completion/firms/viirs-snpp_2015_ontario.csv.gz",
+        "data/raw/week_2_completion/firms/viirs-snpp_2016_ontario.csv.gz",
+        "data/raw/week_2_completion/firms/viirs-snpp_2017_ontario.csv.gz",
+        "data/raw/week_2_completion/firms/viirs-snpp_2018_ontario.csv.gz",
+        "data/raw/week_2_completion/firms/viirs-snpp_2019_ontario.csv.gz",
+        "data/raw/week_2_completion/firms/viirs-snpp_2020_ontario.csv.gz",
+        "data/raw/week_2_completion/firms/viirs-snpp_2021_ontario.csv.gz",
+        "data/raw/week_2_completion/firms/viirs-snpp_2022_ontario.csv.gz",
+        "data/raw/week_2_completion/firms/viirs-snpp_2023_ontario.csv.gz",
+        "data/raw/week_2_completion/firms/viirs-snpp_2024_ontario.csv.gz"
+      ],
+      "scope": "pinned sensor-years 2012-2024; box around Ontario; no 2025 archive claimed"
+    }
+  ],
+  "free_disk_bytes": 306318807040,
+  "observed_at": "2026-10-15",
+  "planning_limit": "Current sample sizes are not estimates of complete Ontario archive size. Acquire in bounded chunks after eligible period/extent is frozen; keep >=3 times projected raw plus derived storage available.",
+  "derived_artifacts": [
+    {
+      "path": "team_repository/data/processed/ontario_fire_region_10km_daily_ignition_labels_2010_2019.csv.gz",
+      "bytes": 44494717
+    },
+    {
+      "path": "team_repository/data/processed/ontario_fire_region_10km_daily_ignition_features_v1.csv.gz",
+      "bytes": 782977405
+    },
+    {
+      "path": "data/processed/ignition_evaluation_v1/training.parquet",
+      "bytes": 433812536
+    },
+    {
+      "path": "data/processed/ignition_evaluation_v1/validation.parquet",
+      "bytes": 94425146
+    },
+    {
+      "path": "data/processed/ignition_evaluation_v1/calibration.parquet",
+      "bytes": 60070934
+    },
+    {
+      "path": "data/processed/ignition_evaluation_v1/final_test.parquet",
+      "bytes": 139725513
+    }
+  ]
+}

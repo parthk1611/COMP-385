@@ -1,0 +1,295 @@
+{
+  "currentVersion": 10.91,
+  "cimVersion": "2.9.0",
+  "id": 30,
+  "name": "Fire Disturbance Point",
+  "type": "Feature Layer",
+  "description": "",
+  "geometryType": "esriGeometryPoint",
+  "sourceSpatialReference": {
+    "wkid": 4269,
+    "latestWkid": 4269,
+    "xyTolerance": 2e-07,
+    "zTolerance": 2e-07,
+    "mTolerance": 2e-07,
+    "falseX": -399.9999999,
+    "falseY": -399.9999999,
+    "xyUnits": 10000000,
+    "falseZ": 0,
+    "zUnits": 1,
+    "falseM": 0,
+    "mUnits": 1
+  },
+  "copyrightText": "",
+  "parentLayer": null,
+  "subLayers": [],
+  "minScale": 0,
+  "maxScale": 0,
+  "referenceScale": 0.0,
+  "drawingInfo": {
+    "renderer": {
+      "type": "simple",
+      "symbol": {
+        "type": "esriSMS",
+        "style": "esriSMSCircle",
+        "color": [
+          58,
+          0,
+          166,
+          255
+        ],
+        "size": 4,
+        "angle": 0,
+        "xoffset": 0,
+        "yoffset": 0,
+        "outline": {
+          "color": [
+            0,
+            0,
+            0,
+            255
+          ],
+          "width": 1
+        }
+      }
+    },
+    "scaleSymbols": true,
+    "transparency": 0,
+    "labelingInfo": null
+  },
+  "defaultVisibility": false,
+  "extent": {
+    "xmin": -95.15366999999999,
+    "ymin": 41.676559999999995,
+    "xmax": -74.32011,
+    "ymax": 56.859359999999995,
+    "spatialReference": {
+      "wkid": 4269,
+      "latestWkid": 4269,
+      "xyTolerance": 2.1999992428278973e-07,
+      "zTolerance": 2,
+      "mTolerance": 0.001,
+      "falseX": -400,
+      "falseY": -400,
+      "xyUnits": 11258999068426.24,
+      "falseZ": 0,
+      "zUnits": 1,
+      "falseM": -100000,
+      "mUnits": 10000
+    }
+  },
+  "hasAttachments": false,
+  "htmlPopupType": "esriServerHTMLPopupTypeAsHTMLText",
+  "displayField": "FIRE_DISTURBANCE_AREA_IDENT",
+  "typeIdField": null,
+  "subtypeFieldName": null,
+  "subtypeField": null,
+  "defaultSubtypeCode": null,
+  "fields": [
+    {
+      "name": "OGF_ID",
+      "type": "esriFieldTypeDouble",
+      "alias": "OGF_ID",
+      "domain": null
+    },
+    {
+      "name": "FIRE_DISTURBANCE_AREA_IDENT",
+      "type": "esriFieldTypeString",
+      "alias": "FIRE_DISTURBANCE_AREA_IDENT",
+      "length": 20,
+      "domain": null
+    },
+    {
+      "name": "FIRE_TYPE_CODE",
+      "type": "esriFieldTypeString",
+      "alias": "FIRE_TYPE_CODE",
+      "length": 3,
+      "domain": null
+    },
+    {
+      "name": "FIRE_YEAR",
+      "type": "esriFieldTypeSmallInteger",
+      "alias": "FIRE_YEAR",
+      "domain": null
+    },
+    {
+      "name": "FIRE_GENERAL_CAUSE_CODE",
+      "type": "esriFieldTypeString",
+      "alias": "FIRE_GENERAL_CAUSE_CODE",
+      "length": 3,
+      "domain": null
+    },
+    {
+      "name": "FIRE_WEATHER_INDEX",
+      "type": "esriFieldTypeSingle",
+      "alias": "FIRE_WEATHER_INDEX",
+      "domain": null
+    },
+    {
+      "name": "FIRE_RESPONSE_OBJ_CODE",
+      "type": "esriFieldTypeString",
+      "alias": "FIRE_RESPONSE_OBJ_CODE",
+      "length": 3,
+      "domain": null
+    },
+    {
+      "name": "FIRE_START_DATE",
+      "type": "esriFieldTypeDate",
+      "alias": "FIRE_START_DATE",
+      "length": 8,
+      "domain": null
+    },
+    {
+      "name": "FIRE_OUT_DATE",
+      "type": "esriFieldTypeDate",
+      "alias": "FIRE_OUT_DATE",
+      "length": 8,
+      "domain": null
+    },
+    {
+      "name": "FIRE_FINAL_SIZE",
+      "type": "esriFieldTypeDouble",
+      "alias": "FIRE_FINAL_SIZE",
+      "domain": null
+    },
+    {
+      "name": "BUSINESS_EFFECTIVE_DATE",
+      "type": "esriFieldTypeDate",
+      "alias": "BUSINESS_EFFECTIVE_DATE",
+      "length": 8,
+      "domain": null
+    },
+    {
+      "name": "GEOMETRY_UPDATE_DATETIME",
+      "type": "esriFieldTypeDate",
+      "alias": "GEOMETRY_UPDATE_DATETIME",
+      "length": 8,
+      "domain": null
+    },
+    {
+      "name": "EFFECTIVE_DATETIME",
+      "type": "esriFieldTypeDate",
+      "alias": "EFFECTIVE_DATETIME",
+      "length": 8,
+      "domain": null
+    },
+    {
+      "name": "SYSTEM_DATETIME",
+      "type": "esriFieldTypeDate",
+      "alias": "SYSTEM_DATETIME",
+      "length": 8,
+      "domain": null
+    },
+    {
+      "name": "SHAPE",
+      "type": "esriFieldTypeGeometry",
+      "alias": "SHAPE",
+      "domain": null
+    },
+    {
+      "name": "OBJECTID",
+      "type": "esriFieldTypeOID",
+      "alias": "OBJECTID",
+      "domain": null
+    }
+  ],
+  "geometryField": {
+    "name": "SHAPE",
+    "type": "esriFieldTypeGeometry",
+    "alias": "SHAPE"
+  },
+  "indexes": [
+    {
+      "name": "FIRE_DISTURBANCE_POINT_PK",
+      "fields": "OGF_ID",
+      "isAscending": true,
+      "isUnique": true,
+      "description": ""
+    },
+    {
+      "name": "FIRE_DISTURBANCE_POINT_UK",
+      "fields": "FIRE_YEAR,FIRE_TYPE_CODE,FIRE_DISTURBANCE_AREA_IDENT",
+      "isAscending": true,
+      "isUnique": true,
+      "description": ""
+    },
+    {
+      "name": "R184_SDE_ROWID_UK",
+      "fields": "OBJECTID",
+      "isAscending": true,
+      "isUnique": true,
+      "description": ""
+    },
+    {
+      "name": "A90_IX1",
+      "fields": "SHAPE",
+      "isAscending": true,
+      "isUnique": true,
+      "description": ""
+    }
+  ],
+  "subtypes": [],
+  "relationships": [],
+  "canModifyLayer": true,
+  "canScaleSymbols": false,
+  "hasLabels": false,
+  "capabilities": "Map,Query,Data",
+  "maxRecordCount": 2000,
+  "supportsStatistics": true,
+  "supportsExceedsLimitStatistics": true,
+  "supportsAdvancedQueries": true,
+  "supportedQueryFormats": "JSON, geoJSON, PBF",
+  "isDataVersioned": false,
+  "ownershipBasedAccessControlForFeatures": {
+    "allowOthersToQuery": true
+  },
+  "useStandardizedQueries": true,
+  "supportedSpatialRelationships": [
+    "esriSpatialRelIntersects",
+    "esriSpatialRelContains",
+    "esriSpatialRelCrosses",
+    "esriSpatialRelEnvelopeIntersects",
+    "esriSpatialRelIndexIntersects",
+    "esriSpatialRelOverlaps",
+    "esriSpatialRelTouches",
+    "esriSpatialRelWithin",
+    "esriSpatialRelRelation"
+  ],
+  "advancedQueryCapabilities": {
+    "useStandardizedQueries": true,
+    "supportsStatistics": true,
+    "supportsPercentileStatistics": true,
+    "supportsHavingClause": true,
+    "supportsOrderBy": true,
+    "supportsDistinct": true,
+    "supportsCountDistinct": true,
+    "supportsPagination": true,
+    "supportsLod": false,
+    "supportsQueryWithLodSR": false,
+    "supportsTrueCurve": true,
+    "supportsQueryWithDatumTransformation": true,
+    "supportsReturningQueryExtent": true,
+    "supportsQueryWithDistance": true,
+    "supportsSqlExpression": true,
+    "supportsTimeRelation": true,
+    "supportsSqlFormat": false,
+    "supportsQueryAnalytic": true
+  },
+  "supportsDatumTransformation": true,
+  "advancedQueryAnalyticCapabilities": {
+    "supportsLinearRegression": true,
+    "supportsAsync": false,
+    "supportsPercentileAnalytic": true
+  },
+  "dateFieldsTimeReference": null,
+  "preferredTimeReference": null,
+  "datesInUnknownTimezone": false,
+  "hasMetadata": true,
+  "isDataArchived": false,
+  "archivingInfo": {
+    "supportsQueryWithHistoricMoment": false,
+    "startArchivingMoment": -1
+  },
+  "supportsCoordinatesQuantization": true,
+  "supportsDynamicLegends": true
+}

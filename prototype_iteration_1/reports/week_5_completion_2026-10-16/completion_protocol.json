@@ -1,0 +1,118 @@
+{
+  "created_utc": "2026-10-16T13:41:44.934177+00:00",
+  "spread_calibration_fires": [
+    "2012_COC32",
+    "2012_RED60",
+    "2012_SLK72",
+    "2012_THU65",
+    "2013_NIP19",
+    "2013_SLK23",
+    "2015_COC6",
+    "2015_RED25",
+    "2015_RED44",
+    "2017_COC10",
+    "2017_COC26",
+    "2017_NIP18",
+    "2017_NIP37",
+    "2018_COC20",
+    "2018_FOR24",
+    "2018_NIP13",
+    "2018_RED103",
+    "2018_RED55",
+    "2018_RED96",
+    "2018_SLK26",
+    "2018_SLK27",
+    "2018_SLK67",
+    "2019_RED44",
+    "2019_RED62"
+  ],
+  "spread_holdout_fires": [
+    "2021_COC26",
+    "2021_FOR38",
+    "2021_FOR56",
+    "2021_NIP37",
+    "2021_RED147",
+    "2021_RED72",
+    "2021_SLK104",
+    "2021_SLK106",
+    "2021_SLK73",
+    "2023_COC20",
+    "2023_COC38",
+    "2023_COC39",
+    "2023_COC49",
+    "2023_COC55",
+    "2023_NIP24",
+    "2023_SLK18",
+    "2023_SLK19",
+    "2024_COC16",
+    "2024_COC17",
+    "2024_COC25",
+    "2024_COC45",
+    "2024_NIP27",
+    "2024_SLK14",
+    "2024_SLK19"
+  ],
+  "spread_source_policy": "Pinned local FBP2024/MRDEM; regenerated90m archived geometry; missingness explicit; new ledger not oldbyteidentity",
+  "spread_evaluation_policy": "Same archived incident selections and4x4calibration settings; corrected-code re-evaluation on previously seenholdout; no untouched/liveclaim",
+  "selected_2025": {
+    "initial_training": [
+      "2025-05-01",
+      "2025-06-30"
+    ],
+    "validation": [
+      "2025-07-01",
+      "2025-07-31"
+    ],
+    "final_refit": [
+      "2025-05-01",
+      "2025-07-31"
+    ],
+    "calibration": [
+      "2025-08-01",
+      "2025-08-31"
+    ],
+    "final_test": [
+      "2025-09-01",
+      "2025-10-31"
+    ],
+    "model": "LightGBM, fixed historicalsettings; no hyperparameter/feature tuning based2025labels",
+    "minimum_positives": {
+      "training": 20,
+      "validation": 5,
+      "calibration": 5,
+      "final_test": 5
+    },
+    "negative_sampling": "all positives + stablekeyhash1%negative,inversepopulationweights",
+    "alert_budget": "ceil1%eligiblecells daily,keyhashties",
+    "calibration_method": "Same frozen monotone logit calibration; naturalprevalence",
+    "spatial_secondary": "Original label-independent block selectors intersect currentgrid; train/cal spatialdevelopment, finalspatialtest, nohistoryfeatures",
+    "scope": "Within-one-season research only; no crossyear or pristineholdoutclaim; prior2025EDA disclosed",
+    "source_manifest_sha256": "42b10640f780570cf49596cf4176d98849b068553bb4ddb94a35b42463aeaa1c",
+    "contract_sha256": "141eeeda383338c8ad34cfa4847a9094297fed6d921c017b69f2c2a3c89bd0b1",
+    "lightgbm_settings": {
+      "boosting_type": "gbdt",
+      "class_weight": null,
+      "colsample_bytree": 1.0,
+      "importance_type": "split",
+      "learning_rate": 0.05,
+      "max_depth": 6,
+      "min_child_samples": 100,
+      "min_child_weight": 0.001,
+      "min_split_gain": 0.0,
+      "n_estimators": 150,
+      "n_jobs": 4,
+      "num_leaves": 15,
+      "objective": null,
+      "random_state": 385,
+      "reg_alpha": 0.0,
+      "reg_lambda": 2.0,
+      "subsample": 1.0,
+      "subsample_for_bin": 200000,
+      "subsample_freq": 0,
+      "deterministic": true,
+      "force_col_wise": true,
+      "verbosity": -1
+    }
+  },
+  "live_acceptance": "No compatible observed/forecast state or parity data may be fabricated; implement and test fail-closed gates and record measured readiness decision, rather than emitting unqualified live predictions"
+}

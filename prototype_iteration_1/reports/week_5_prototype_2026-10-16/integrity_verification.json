@@ -1,0 +1,68 @@
+{
+  "original_partitions": [
+    {
+      "role": "training",
+      "sha256": "3198dd0152210e9bb7c5172c1fa6b67e8ae51645206c9ffd466f9e3c1af1a8b0",
+      "unchanged": true,
+      "mode": "0o644"
+    },
+    {
+      "role": "validation",
+      "sha256": "1c1d2feeba4fc6582011f42c514a80d7bcbcbe7bcbf8f853807c24056774501c",
+      "unchanged": true,
+      "mode": "0o644"
+    },
+    {
+      "role": "calibration",
+      "sha256": "8cde63a28b4b5f6b7369b63f489c0d9ec2a52de3d9085bd93e448f6331c73d15",
+      "unchanged": true,
+      "mode": "0o644"
+    },
+    {
+      "role": "final_test",
+      "sha256": "e37b96286065f0b540a9cd59757ece2f029d2a3b0a2b8048c5794084169a984a",
+      "unchanged": true,
+      "mode": "0o444"
+    }
+  ],
+  "development_model_hashes_unchanged": 24,
+  "frozen_dependencies_match": true,
+  "calibrated_artifacts_match_final_freeze": true,
+  "reserved_years_now_read": "2018 calibration;2019 once for frozen final evaluation",
+  "new_artifacts": [
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week5_v1/spatial_final_predictions.parquet",
+      "bytes": 4672550,
+      "sha256": "7580b0a2e6282e491c6ee0e4cb42b035f59ee1167ec5876459a818299ed15b30"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week5_v1/spatial_first_day_explanations.json",
+      "bytes": 801219,
+      "sha256": "57dc7845bda88f7ce2dc67bc62c2f7fa0c160d17eb37abebe86bd3e9350664c3"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week5_v1/spatial_lightgbm_calibrated.joblib",
+      "bytes": 116901,
+      "sha256": "e7c5c5d11565a5f8502fb8df321dcb187802c86e1237054e4fa2bcea18cd5b5b"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week5_v1/temporal_final_predictions.parquet",
+      "bytes": 31757011,
+      "sha256": "05cfc2406687300c14e9eb85ecd95e35d8a19280601c99a121a2cb4a36da868e"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week5_v1/temporal_first_day_explanations.json",
+      "bytes": 5650219,
+      "sha256": "3ab8d59d681bb2cec85221848c0c4a6419b1e97619a6249b793395aaac1b8028"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week5_v1/temporal_lightgbm_calibrated.joblib",
+      "bytes": 117359,
+      "sha256": "0f879891bf39a45d63de3bd7bef2f2a31be2b98962bf370303a461a271ed514b"
+    }
+  ],
+  "map_sha256_matches": true,
+  "ui_probability_matches_saved_prediction": true,
+  "full_suite": "118 passed in2.29s before mobile-only CSS fix; keyed-map2tests rerun after fix",
+  "readiness": "historical prototype only; overallWeek5 stillinprogress"
+}

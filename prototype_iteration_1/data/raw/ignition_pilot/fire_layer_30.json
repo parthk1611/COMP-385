@@ -1,0 +1,61 @@
+{
+  "source": "https://ws.lioservices.lrc.gov.on.ca/arcgis2/rest/services/LIO_OPEN_DATA/LIO_Open09/MapServer/30",
+  "selection": {
+    "where": "FIRE_YEAR = 2025",
+    "geometry": "{\"xmin\": 410000, \"ymin\": -65000, \"xmax\": 440000, \"ymax\": -35000}",
+    "geometryType": "esriGeometryEnvelope",
+    "inSR": 3978,
+    "spatialRel": "esriSpatialRelIntersects"
+  },
+  "spatialReference": {
+    "wkid": 3978
+  },
+  "features": [
+    {
+      "attributes": {
+        "OGF_ID": 321757229,
+        "FIRE_DISTURBANCE_AREA_IDENT": "THU5",
+        "FIRE_TYPE_CODE": "IFR",
+        "FIRE_YEAR": 2025,
+        "FIRE_GENERAL_CAUSE_CODE": "REC",
+        "FIRE_WEATHER_INDEX": 9.0,
+        "FIRE_RESPONSE_OBJ_CODE": "FUL",
+        "FIRE_START_DATE": 1746835200000,
+        "FIRE_OUT_DATE": 1746921600000,
+        "FIRE_FINAL_SIZE": 0.2,
+        "BUSINESS_EFFECTIVE_DATE": null,
+        "GEOMETRY_UPDATE_DATETIME": 1772097343000,
+        "EFFECTIVE_DATETIME": 1772097180000,
+        "SYSTEM_DATETIME": 1772143499000,
+        "OBJECTID": 939009
+      },
+      "geometry": {
+        "x": 428855.13927009975,
+        "y": -34066.43542551156
+      }
+    },
+    {
+      "attributes": {
+        "OGF_ID": 321756915,
+        "FIRE_DISTURBANCE_AREA_IDENT": "THU9",
+        "FIRE_TYPE_CODE": "IFR",
+        "FIRE_YEAR": 2025,
+        "FIRE_GENERAL_CAUSE_CODE": "RWY",
+        "FIRE_WEATHER_INDEX": 13.0,
+        "FIRE_RESPONSE_OBJ_CODE": "FUL",
+        "FIRE_START_DATE": 1747785600000,
+        "FIRE_OUT_DATE": 1749254400000,
+        "FIRE_FINAL_SIZE": 7.0,
+        "BUSINESS_EFFECTIVE_DATE": null,
+        "GEOMETRY_UPDATE_DATETIME": 1772097343000,
+        "EFFECTIVE_DATETIME": 1772097149000,
+        "SYSTEM_DATETIME": 1772143499000,
+        "OBJECTID": 939457
+      },
+      "geometry": {
+        "x": 419564.9527930044,
+        "y": -51634.02020843141
+      }
+    }
+  ]
+}

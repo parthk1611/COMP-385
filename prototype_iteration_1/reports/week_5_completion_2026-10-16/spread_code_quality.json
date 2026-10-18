@@ -1,0 +1,131 @@
+{
+  "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/scripts/complete_spread_replay.py",
+  "language": "python",
+  "metrics": {
+    "lines": {
+      "total": 144,
+      "code": 119,
+      "blank": 23,
+      "comment": 2
+    },
+    "functions": 9,
+    "classes": 0,
+    "avg_complexity": 6.4
+  },
+  "quality_score": 78,
+  "grade": "C",
+  "smells": [
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'restore' has complexity 12 (max: 10)",
+      "location": "restore"
+    },
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'prepare_perimeters' has complexity 11 (max: 10)",
+      "location": "prepare_perimeters"
+    },
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'run_replay' has complexity 16 (max: 10)",
+      "location": "run_replay"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 3978 should be a named constant",
+      "location": "line 32"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 3978 should be a named constant",
+      "location": "line 44"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2024 should be a named constant",
+      "location": "line 54"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 9999 should be a named constant",
+      "location": "line 58"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 3978 should be a named constant",
+      "location": "line 62"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 375 should be a named constant",
+      "location": "line 136"
+    }
+  ],
+  "solid_violations": [],
+  "function_details": [
+    {
+      "name": "intersects",
+      "parameters": 2,
+      "lines": 4,
+      "complexity": 4
+    },
+    {
+      "name": "source_index",
+      "parameters": 1,
+      "lines": 9,
+      "complexity": 2
+    },
+    {
+      "name": "warped_window",
+      "parameters": 4,
+      "lines": 13,
+      "complexity": 3
+    },
+    {
+      "name": "restore",
+      "parameters": 0,
+      "lines": 28,
+      "complexity": 12
+    },
+    {
+      "name": "prepare_perimeters",
+      "parameters": 0,
+      "lines": 19,
+      "complexity": 11
+    },
+    {
+      "name": "activate_landscapes",
+      "parameters": 0,
+      "lines": 6,
+      "complexity": 1
+    },
+    {
+      "name": "worker",
+      "parameters": 1,
+      "lines": 6,
+      "complexity": 1
+    },
+    {
+      "name": "run_replay",
+      "parameters": 0,
+      "lines": 23,
+      "complexity": 16
+    },
+    {
+      "name": "viewer",
+      "parameters": 0,
+      "lines": 11,
+      "complexity": 8
+    }
+  ],
+  "class_details": []
+}

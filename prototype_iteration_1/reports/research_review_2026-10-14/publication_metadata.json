@@ -1,0 +1,711 @@
+[
+  {
+    "DOI": "10.3389/ffgc.2021.692706",
+    "error": "HTTP Error 429: Too Many Requests"
+  },
+  {
+    "DOI": "10.1038/s41598-025-05706-6",
+    "error": "HTTP Error 429: Too Many Requests"
+  },
+  {
+    "DOI": "10.1016/j.envsoft.2025.106401",
+    "title": [
+      "PyTorchFire: A GPU-accelerated wildfire simulator with Differentiable Cellular Automata"
+    ],
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0003-0234-5857",
+        "authenticated-orcid": false,
+        "given": "Zeyu",
+        "family": "Xia",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-8707-2589",
+        "authenticated-orcid": false,
+        "given": "Sibo",
+        "family": "Cheng",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "container-title": [
+      "Environmental Modelling &amp; Software"
+    ],
+    "volume": "188",
+    "issue": null,
+    "page": "106401",
+    "article-number": "106401",
+    "published": {
+      "date-parts": [
+        [
+          2025,
+          4
+        ]
+      ]
+    },
+    "link": [
+      {
+        "URL": "https://api.elsevier.com/content/article/PII:S1364815225000854?httpAccept=text/xml",
+        "content-type": "text/xml",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://api.elsevier.com/content/article/PII:S1364815225000854?httpAccept=text/plain",
+        "content-type": "text/plain",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      }
+    ],
+    "resource": {
+      "primary": {
+        "URL": "https://linkinghub.elsevier.com/retrieve/pii/S1364815225000854"
+      }
+    },
+    "type": "journal-article"
+  },
+  {
+    "DOI": "10.1016/j.envsoft.2026.107009",
+    "title": [
+      "New extensions of Cell2Fire software for fire risk analysis and evaluation in Chilean forests"
+    ],
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0003-4123-4228",
+        "authenticated-orcid": false,
+        "given": "Jaime",
+        "family": "Carrasco-Barra",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "José Ramón",
+        "family": "González-Olabarria",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Camilo",
+        "family": "Matus-Olivares",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Felipe",
+        "family": "Ulloa-Fierro",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Felipe",
+        "family": "Soto",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "David",
+        "family": "Palacios",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Rodrigo",
+        "family": "Mahaluf",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Felipe",
+        "family": "de la Barra",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Carolina",
+        "family": "Espinoza",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Matías",
+        "family": "Vilches",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Matilde",
+        "family": "Rivas",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Fernando",
+        "family": "Badilla",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Horacio",
+        "family": "Gilabert",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Miguel",
+        "family": "Castillo",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Jorge",
+        "family": "Saavedra",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Fulgencio",
+        "family": "Lisón",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Jordi",
+        "family": "Garcia-Gonzalo",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Andrés",
+        "family": "Weintraub",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "container-title": [
+      "Environmental Modelling &amp; Software"
+    ],
+    "volume": "203",
+    "issue": null,
+    "page": "107009",
+    "article-number": "107009",
+    "published": {
+      "date-parts": [
+        [
+          2026,
+          8
+        ]
+      ]
+    },
+    "link": [
+      {
+        "URL": "https://api.elsevier.com/content/article/PII:S1364815226001568?httpAccept=text/xml",
+        "content-type": "text/xml",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://api.elsevier.com/content/article/PII:S1364815226001568?httpAccept=text/plain",
+        "content-type": "text/plain",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      }
+    ],
+    "resource": {
+      "primary": {
+        "URL": "https://linkinghub.elsevier.com/retrieve/pii/S1364815226001568"
+      }
+    },
+    "type": "journal-article"
+  },
+  {
+    "DOI": "10.1016/j.cor.2021.105252",
+    "title": [
+      "Downstream protection value: Detecting critical zones for effective fuel-treatment under wildfire risk"
+    ],
+    "author": [
+      {
+        "given": "Cristobal",
+        "family": "Pais",
+        "sequence": "first",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Jaime",
+        "family": "Carrasco",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Pelagie",
+        "family": "Elimbi Moudio",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Zuo-Jun Max",
+        "family": "Shen",
+        "sequence": "additional",
+        "affiliation": [],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "container-title": [
+      "Computers &amp; Operations Research"
+    ],
+    "volume": "131",
+    "issue": null,
+    "page": "105252",
+    "article-number": "105252",
+    "published": {
+      "date-parts": [
+        [
+          2021,
+          7
+        ]
+      ]
+    },
+    "link": [
+      {
+        "URL": "https://api.elsevier.com/content/article/PII:S0305054821000447?httpAccept=text/xml",
+        "content-type": "text/xml",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://api.elsevier.com/content/article/PII:S0305054821000447?httpAccept=text/plain",
+        "content-type": "text/plain",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      }
+    ],
+    "resource": {
+      "primary": {
+        "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0305054821000447"
+      }
+    },
+    "type": "journal-article"
+  },
+  {
+    "DOI": "10.1109/tgrs.2022.3192974",
+    "title": [
+      "Next Day Wildfire Spread: A Machine Learning Dataset to Predict Wildfire Spreading From Remote-Sensing Data"
+    ],
+    "author": [
+      {
+        "ORCID": "https://orcid.org/0000-0002-1674-8852",
+        "authenticated-orcid": false,
+        "given": "Fantine",
+        "family": "Huot",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Research Department, Google Inc., Mountain View, CA, USA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "R. Lily",
+        "family": "Hu",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Research Department, Google Inc., Mountain View, CA, USA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Nita",
+        "family": "Goyal",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Research Department, Google Inc., Mountain View, CA, USA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "ORCID": "https://orcid.org/0000-0002-0557-0972",
+        "authenticated-orcid": false,
+        "given": "Tharun",
+        "family": "Sankar",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Research Department, Google Inc., Mountain View, CA, USA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Matthias",
+        "family": "Ihme",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Research Department, Google Inc., Mountain View, CA, USA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Yi-Fan",
+        "family": "Chen",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Research Department, Google Inc., Mountain View, CA, USA"
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "container-title": [
+      "IEEE Transactions on Geoscience and Remote Sensing"
+    ],
+    "volume": "60",
+    "issue": null,
+    "page": "1-13",
+    "article-number": null,
+    "published": {
+      "date-parts": [
+        [
+          2022
+        ]
+      ]
+    },
+    "link": [
+      {
+        "URL": "http://xplorestaging.ieee.org/ielx7/36/9633014/09840400.pdf?arnumber=9840400",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "resource": {
+      "primary": {
+        "URL": "https://ieeexplore.ieee.org/document/9840400/"
+      }
+    },
+    "type": "journal-article"
+  },
+  {
+    "DOI": "10.1139/er-2020-0019",
+    "title": [
+      "A review of machine learning applications in wildfire science and management"
+    ],
+    "author": [
+      {
+        "given": "Piyush",
+        "family": "Jain",
+        "sequence": "first",
+        "affiliation": [
+          {
+            "name": "Natural Resources Canada, Canadian Forest Service, Northern Forestry Centre, Edmonton, AB T6H 3S5, Canada."
+          },
+          {
+            "name": "Canadian Partnership for Wildland Fire Science, University of Alberta, Renewable Resources, Edmonton, AB T6G 2H1, Canada."
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Sean C.P.",
+        "family": "Coogan",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Canadian Partnership for Wildland Fire Science, University of Alberta, Renewable Resources, Edmonton, AB T6G 2H1, Canada."
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Sriram Ganapathi",
+        "family": "Subramanian",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Electrical and Computer Engineering, University of Waterloo, Waterloo, ON N2L 3G1, Canada."
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Mark",
+        "family": "Crowley",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Electrical and Computer Engineering, University of Waterloo, Waterloo, ON N2L 3G1, Canada."
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Steve",
+        "family": "Taylor",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Natural Resources Canada, Canadian Forest Service, Pacific Forestry Centre, Victoria, BC V8Z 1M5, Canada."
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      },
+      {
+        "given": "Mike D.",
+        "family": "Flannigan",
+        "sequence": "additional",
+        "affiliation": [
+          {
+            "name": "Canadian Partnership for Wildland Fire Science, University of Alberta, Renewable Resources, Edmonton, AB T6G 2H1, Canada."
+          }
+        ],
+        "role": [
+          {
+            "vocabulary": "crossref",
+            "role": "author"
+          }
+        ]
+      }
+    ],
+    "container-title": [
+      "Environmental Reviews"
+    ],
+    "volume": "28",
+    "issue": "4",
+    "page": "478-505",
+    "article-number": null,
+    "published": {
+      "date-parts": [
+        [
+          2020,
+          12
+        ]
+      ]
+    },
+    "link": [
+      {
+        "URL": "https://cdnsciencepub.com/doi/full-xml/10.1139/er-2020-0019",
+        "content-type": "application/xml",
+        "content-version": "vor",
+        "intended-application": "text-mining"
+      },
+      {
+        "URL": "https://cdnsciencepub.com/doi/pdf/10.1139/er-2020-0019",
+        "content-type": "unspecified",
+        "content-version": "vor",
+        "intended-application": "similarity-checking"
+      }
+    ],
+    "resource": {
+      "primary": {
+        "URL": "https://cdnsciencepub.com/doi/10.1139/er-2020-0019"
+      }
+    },
+    "type": "journal-article"
+  }
+]

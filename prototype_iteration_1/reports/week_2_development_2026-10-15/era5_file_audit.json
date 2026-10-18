@@ -1,0 +1,917 @@
+{
+  "scope": "All eleven CDS files, all five variables, full 7 by 8 sample grid; development/pilot weather only",
+  "files": [
+    {
+      "path": "data/raw/ignition_pilot/era5/era5_land_2025_01.nc",
+      "bytes": 556515,
+      "sha256": "aa90f72ab5b7d8eb751f02486482603d41d12c16abf9b6be6861edafb11994a7",
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "step_type": "instant",
+          "min": 239.26983642578125,
+          "max": 275.5986328125,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        },
+        "d2m": {
+          "units": "K",
+          "step_type": "instant",
+          "min": 235.9308319091797,
+          "max": 272.4447021484375,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        },
+        "u10": {
+          "units": "m s**-1",
+          "step_type": "instant",
+          "min": -7.00531005859375,
+          "max": 13.84393310546875,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        },
+        "v10": {
+          "units": "m s**-1",
+          "step_type": "instant",
+          "min": -13.40364933013916,
+          "max": 11.865402221679688,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        },
+        "tp": {
+          "units": "m",
+          "step_type": "accum",
+          "min": 0.0,
+          "max": 0.011542409658432007,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        }
+      },
+      "hours": 744,
+      "first_utc": "2025-01-01 00:00:00+00:00",
+      "last_utc": "2025-01-31 23:00:00+00:00",
+      "crs": "None",
+      "bounds": [
+        -89.64999999999999,
+        48.05,
+        -88.85000000000001,
+        48.75
+      ],
+      "grid_shape": [
+        7,
+        8
+      ],
+      "dewpoint_above_temperature_fraction": 0.0
+    },
+    {
+      "path": "data/raw/ignition_pilot/era5/era5_land_2025_02.nc",
+      "bytes": 506972,
+      "sha256": "a0a7d472b7cc02464a2f4961d68b70ceeaa378ffb08989dd8f3e0c8af1e28a59",
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "step_type": "instant",
+          "min": 243.8162078857422,
+          "max": 279.010986328125,
+          "missing_fraction": 0.0,
+          "shape": [
+            672,
+            7,
+            8
+          ]
+        },
+        "d2m": {
+          "units": "K",
+          "step_type": "instant",
+          "min": 240.78433227539062,
+          "max": 273.8824462890625,
+          "missing_fraction": 0.0,
+          "shape": [
+            672,
+            7,
+            8
+          ]
+        },
+        "u10": {
+          "units": "m s**-1",
+          "step_type": "instant",
+          "min": -11.961761474609375,
+          "max": 13.08416748046875,
+          "missing_fraction": 0.0,
+          "shape": [
+            672,
+            7,
+            8
+          ]
+        },
+        "v10": {
+          "units": "m s**-1",
+          "step_type": "instant",
+          "min": -15.586959838867188,
+          "max": 11.021347045898438,
+          "missing_fraction": 0.0,
+          "shape": [
+            672,
+            7,
+            8
+          ]
+        },
+        "tp": {
+          "units": "m",
+          "step_type": "accum",
+          "min": 0.0,
+          "max": 0.017528265714645386,
+          "missing_fraction": 0.0,
+          "shape": [
+            672,
+            7,
+            8
+          ]
+        }
+      },
+      "hours": 672,
+      "first_utc": "2025-02-01 00:00:00+00:00",
+      "last_utc": "2025-02-28 23:00:00+00:00",
+      "crs": "None",
+      "bounds": [
+        -89.64999999999999,
+        48.05,
+        -88.85000000000001,
+        48.75
+      ],
+      "grid_shape": [
+        7,
+        8
+      ],
+      "dewpoint_above_temperature_fraction": 0.0
+    },
+    {
+      "path": "data/raw/ignition_pilot/era5/era5_land_2025_03.nc",
+      "bytes": 522862,
+      "sha256": "c890d282de3d7f18c0a74dff4dff1f4caa331b7ffa97faf9432520ea50e60a4d",
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "step_type": "instant",
+          "min": 252.04518127441406,
+          "max": 282.4964599609375,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        },
+        "d2m": {
+          "units": "K",
+          "step_type": "instant",
+          "min": 248.96771240234375,
+          "max": 279.2735595703125,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        },
+        "u10": {
+          "units": "m s**-1",
+          "step_type": "instant",
+          "min": -11.182291030883789,
+          "max": 11.021224975585938,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        },
+        "v10": {
+          "units": "m s**-1",
+          "step_type": "instant",
+          "min": -14.722503662109375,
+          "max": 10.520782470703125,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        },
+        "tp": {
+          "units": "m",
+          "step_type": "accum",
+          "min": 0.0,
+          "max": 0.017535939812660217,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        }
+      },
+      "hours": 744,
+      "first_utc": "2025-03-01 00:00:00+00:00",
+      "last_utc": "2025-03-31 23:00:00+00:00",
+      "crs": "None",
+      "bounds": [
+        -89.64999999999999,
+        48.05,
+        -88.85000000000001,
+        48.75
+      ],
+      "grid_shape": [
+        7,
+        8
+      ],
+      "dewpoint_above_temperature_fraction": 0.0
+    },
+    {
+      "path": "data/raw/ignition_pilot/era5/era5_land_2025_04.nc",
+      "bytes": 503621,
+      "sha256": "5195ecc7f45b227f66e9b9359365ba6060cb575b94ae9255d92a2610a5d91b7f",
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "step_type": "instant",
+          "min": 255.06484985351562,
+          "max": 286.697509765625,
+          "missing_fraction": 0.0,
+          "shape": [
+            720,
+            7,
+            8
+          ]
+        },
+        "d2m": {
+          "units": "K",
+          "step_type": "instant",
+          "min": 252.972412109375,
+          "max": 282.2337646484375,
+          "missing_fraction": 0.0,
+          "shape": [
+            720,
+            7,
+            8
+          ]
+        },
+        "u10": {
+          "units": "m s**-1",
+          "step_type": "instant",
+          "min": -15.638565063476562,
+          "max": 8.268905639648438,
+          "missing_fraction": 0.0,
+          "shape": [
+            720,
+            7,
+            8
+          ]
+        },
+        "v10": {
+          "units": "m s**-1",
+          "step_type": "instant",
+          "min": -13.58746337890625,
+          "max": 7.914312362670898,
+          "missing_fraction": 0.0,
+          "shape": [
+            720,
+            7,
+            8
+          ]
+        },
+        "tp": {
+          "units": "m",
+          "step_type": "accum",
+          "min": 0.0,
+          "max": 0.02103491500020027,
+          "missing_fraction": 0.0,
+          "shape": [
+            720,
+            7,
+            8
+          ]
+        }
+      },
+      "hours": 720,
+      "first_utc": "2025-04-01 00:00:00+00:00",
+      "last_utc": "2025-04-30 23:00:00+00:00",
+      "crs": "None",
+      "bounds": [
+        -89.64999999999999,
+        48.05,
+        -88.85000000000001,
+        48.75
+      ],
+      "grid_shape": [
+        7,
+        8
+      ],
+      "dewpoint_above_temperature_fraction": 0.0
+    },
+    {
+      "path": "data/raw/ignition_pilot/era5/era5_land_2025_05.nc",
+      "bytes": 502999,
+      "sha256": "2c72b4451d21ce4d675d9850300df498bedc43edefed2e2f3d4956cb2a2de375",
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "step_type": "instant",
+          "min": 270.829833984375,
+          "max": 300.177490234375,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        },
+        "d2m": {
+          "units": "K",
+          "step_type": "instant",
+          "min": 265.6634521484375,
+          "max": 287.1162109375,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        },
+        "u10": {
+          "units": "m s**-1",
+          "step_type": "instant",
+          "min": -11.084182739257812,
+          "max": 8.806396484375,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        },
+        "v10": {
+          "units": "m s**-1",
+          "step_type": "instant",
+          "min": -11.426010131835938,
+          "max": 9.667200088500977,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        },
+        "tp": {
+          "units": "m",
+          "step_type": "accum",
+          "min": 0.0,
+          "max": 0.01857932284474373,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        }
+      },
+      "hours": 744,
+      "first_utc": "2025-05-01 00:00:00+00:00",
+      "last_utc": "2025-05-31 23:00:00+00:00",
+      "crs": "None",
+      "bounds": [
+        -89.64999999999999,
+        48.05,
+        -88.85000000000001,
+        48.75
+      ],
+      "grid_shape": [
+        7,
+        8
+      ],
+      "dewpoint_above_temperature_fraction": 0.0
+    },
+    {
+      "path": "data/raw/ignition_pilot/era5/era5_land_2025_06.nc",
+      "bytes": 505145,
+      "sha256": "282277ba63a572440d72761a89d15207c3df52cee17800973e589775a0e5d4e7",
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "step_type": "instant",
+          "min": 276.579345703125,
+          "max": 301.7646484375,
+          "missing_fraction": 0.0,
+          "shape": [
+            720,
+            7,
+            8
+          ]
+        },
+        "d2m": {
+          "units": "K",
+          "step_type": "instant",
+          "min": 269.279296875,
+          "max": 295.338623046875,
+          "missing_fraction": 0.0,
+          "shape": [
+            720,
+            7,
+            8
+          ]
+        },
+        "u10": {
+          "units": "m s**-1",
+          "step_type": "instant",
+          "min": -9.748077392578125,
+          "max": 8.08758544921875,
+          "missing_fraction": 0.0,
+          "shape": [
+            720,
+            7,
+            8
+          ]
+        },
+        "v10": {
+          "units": "m s**-1",
+          "step_type": "instant",
+          "min": -8.511777877807617,
+          "max": 9.504867553710938,
+          "missing_fraction": 0.0,
+          "shape": [
+            720,
+            7,
+            8
+          ]
+        },
+        "tp": {
+          "units": "m",
+          "step_type": "accum",
+          "min": 0.0,
+          "max": 0.05655679851770401,
+          "missing_fraction": 0.0,
+          "shape": [
+            720,
+            7,
+            8
+          ]
+        }
+      },
+      "hours": 720,
+      "first_utc": "2025-06-01 00:00:00+00:00",
+      "last_utc": "2025-06-30 23:00:00+00:00",
+      "crs": "None",
+      "bounds": [
+        -89.64999999999999,
+        48.05,
+        -88.85000000000001,
+        48.75
+      ],
+      "grid_shape": [
+        7,
+        8
+      ],
+      "dewpoint_above_temperature_fraction": 0.0
+    },
+    {
+      "path": "data/raw/ignition_pilot/era5/era5_land_2025_07.nc",
+      "bytes": 516408,
+      "sha256": "435e9748fbfeb714539ef1bf35e07ea7a25b9deb072b25f4353e4ba6abf5f20c",
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "step_type": "instant",
+          "min": 277.716796875,
+          "max": 301.44091796875,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        },
+        "d2m": {
+          "units": "K",
+          "step_type": "instant",
+          "min": 276.969970703125,
+          "max": 294.90087890625,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        },
+        "u10": {
+          "units": "m s**-1",
+          "step_type": "instant",
+          "min": -7.1112518310546875,
+          "max": 9.226730346679688,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        },
+        "v10": {
+          "units": "m s**-1",
+          "step_type": "instant",
+          "min": -10.657516479492188,
+          "max": 9.447431564331055,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        },
+        "tp": {
+          "units": "m",
+          "step_type": "accum",
+          "min": 0.0,
+          "max": 0.032429520040750504,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        }
+      },
+      "hours": 744,
+      "first_utc": "2025-07-01 00:00:00+00:00",
+      "last_utc": "2025-07-31 23:00:00+00:00",
+      "crs": "None",
+      "bounds": [
+        -89.64999999999999,
+        48.05,
+        -88.85000000000001,
+        48.75
+      ],
+      "grid_shape": [
+        7,
+        8
+      ],
+      "dewpoint_above_temperature_fraction": 0.0
+    },
+    {
+      "path": "data/raw/ignition_pilot/era5/era5_land_2025_08.nc",
+      "bytes": 509420,
+      "sha256": "6fe051e498edb576e870f821f3228f934f3f9df432be30dce113b13ffc6e7067",
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "step_type": "instant",
+          "min": 281.12158203125,
+          "max": 301.616943359375,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        },
+        "d2m": {
+          "units": "K",
+          "step_type": "instant",
+          "min": 273.8367919921875,
+          "max": 294.55279541015625,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        },
+        "u10": {
+          "units": "m s**-1",
+          "step_type": "instant",
+          "min": -8.671432495117188,
+          "max": 8.793594360351562,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        },
+        "v10": {
+          "units": "m s**-1",
+          "step_type": "instant",
+          "min": -8.901535034179688,
+          "max": 9.880556106567383,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        },
+        "tp": {
+          "units": "m",
+          "step_type": "accum",
+          "min": 0.0,
+          "max": 0.019332265481352806,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        }
+      },
+      "hours": 744,
+      "first_utc": "2025-08-01 00:00:00+00:00",
+      "last_utc": "2025-08-31 23:00:00+00:00",
+      "crs": "None",
+      "bounds": [
+        -89.64999999999999,
+        48.05,
+        -88.85000000000001,
+        48.75
+      ],
+      "grid_shape": [
+        7,
+        8
+      ],
+      "dewpoint_above_temperature_fraction": 0.0
+    },
+    {
+      "path": "data/raw/ignition_pilot/era5/era5_land_2025_09.nc",
+      "bytes": 505193,
+      "sha256": "2c95d7b12248afea9848d3f90ce793c5c0233fc0e005d15a168bd4a0d9b64b34",
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "step_type": "instant",
+          "min": 276.7125244140625,
+          "max": 299.90576171875,
+          "missing_fraction": 0.0,
+          "shape": [
+            720,
+            7,
+            8
+          ]
+        },
+        "d2m": {
+          "units": "K",
+          "step_type": "instant",
+          "min": 272.85455322265625,
+          "max": 292.28179931640625,
+          "missing_fraction": 0.0,
+          "shape": [
+            720,
+            7,
+            8
+          ]
+        },
+        "u10": {
+          "units": "m s**-1",
+          "step_type": "instant",
+          "min": -8.9591064453125,
+          "max": 11.159103393554688,
+          "missing_fraction": 0.0,
+          "shape": [
+            720,
+            7,
+            8
+          ]
+        },
+        "v10": {
+          "units": "m s**-1",
+          "step_type": "instant",
+          "min": -13.795150756835938,
+          "max": 9.014053344726562,
+          "missing_fraction": 0.0,
+          "shape": [
+            720,
+            7,
+            8
+          ]
+        },
+        "tp": {
+          "units": "m",
+          "step_type": "accum",
+          "min": 0.0,
+          "max": 0.023740272969007492,
+          "missing_fraction": 0.0,
+          "shape": [
+            720,
+            7,
+            8
+          ]
+        }
+      },
+      "hours": 720,
+      "first_utc": "2025-09-01 00:00:00+00:00",
+      "last_utc": "2025-09-30 23:00:00+00:00",
+      "crs": "None",
+      "bounds": [
+        -89.64999999999999,
+        48.05,
+        -88.85000000000001,
+        48.75
+      ],
+      "grid_shape": [
+        7,
+        8
+      ],
+      "dewpoint_above_temperature_fraction": 0.0
+    },
+    {
+      "path": "data/raw/ignition_pilot/era5/era5_land_2025_10.nc",
+      "bytes": 500811,
+      "sha256": "29bfbd4a3a9a9416a2738f15f01e7d1078cd619a5cf73092e73dfa1d118a6701",
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "step_type": "instant",
+          "min": 272.89794921875,
+          "max": 298.9027099609375,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        },
+        "d2m": {
+          "units": "K",
+          "step_type": "instant",
+          "min": 268.875732421875,
+          "max": 290.12274169921875,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        },
+        "u10": {
+          "units": "m s**-1",
+          "step_type": "instant",
+          "min": -11.45086669921875,
+          "max": 10.049789428710938,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        },
+        "v10": {
+          "units": "m s**-1",
+          "step_type": "instant",
+          "min": -12.765274047851562,
+          "max": 10.730819702148438,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        },
+        "tp": {
+          "units": "m",
+          "step_type": "accum",
+          "min": 0.0,
+          "max": 0.026196613907814026,
+          "missing_fraction": 0.0,
+          "shape": [
+            744,
+            7,
+            8
+          ]
+        }
+      },
+      "hours": 744,
+      "first_utc": "2025-10-01 00:00:00+00:00",
+      "last_utc": "2025-10-31 23:00:00+00:00",
+      "crs": "None",
+      "bounds": [
+        -89.64999999999999,
+        48.05,
+        -88.85000000000001,
+        48.75
+      ],
+      "grid_shape": [
+        7,
+        8
+      ],
+      "dewpoint_above_temperature_fraction": 0.0
+    },
+    {
+      "path": "data/raw/ignition_pilot/era5/era5_land_2025_11.nc",
+      "bytes": 508800,
+      "sha256": "72d4b1aa9406f3ec14ed3a5f129161c7736b44e6371533714172eee084b55967",
+      "variables": {
+        "t2m": {
+          "units": "K",
+          "step_type": "instant",
+          "min": 261.1241455078125,
+          "max": 283.2228698730469,
+          "missing_fraction": 0.0,
+          "shape": [
+            720,
+            7,
+            8
+          ]
+        },
+        "d2m": {
+          "units": "K",
+          "step_type": "instant",
+          "min": 255.3801727294922,
+          "max": 279.01800537109375,
+          "missing_fraction": 0.0,
+          "shape": [
+            720,
+            7,
+            8
+          ]
+        },
+        "u10": {
+          "units": "m s**-1",
+          "step_type": "instant",
+          "min": -8.739608764648438,
+          "max": 12.522323608398438,
+          "missing_fraction": 0.0,
+          "shape": [
+            720,
+            7,
+            8
+          ]
+        },
+        "v10": {
+          "units": "m s**-1",
+          "step_type": "instant",
+          "min": -17.331329345703125,
+          "max": 14.736515998840332,
+          "missing_fraction": 0.0,
+          "shape": [
+            720,
+            7,
+            8
+          ]
+        },
+        "tp": {
+          "units": "m",
+          "step_type": "accum",
+          "min": 0.0,
+          "max": 0.023178905248641968,
+          "missing_fraction": 0.0,
+          "shape": [
+            720,
+            7,
+            8
+          ]
+        }
+      },
+      "hours": 720,
+      "first_utc": "2025-11-01 00:00:00+00:00",
+      "last_utc": "2025-11-30 23:00:00+00:00",
+      "crs": "None",
+      "bounds": [
+        -89.64999999999999,
+        48.05,
+        -88.85000000000001,
+        48.75
+      ],
+      "grid_shape": [
+        7,
+        8
+      ],
+      "dewpoint_above_temperature_fraction": 0.0
+    }
+  ],
+  "time_axis": {
+    "total_hours": 8016,
+    "unique_hours": 8016,
+    "duplicate_hours": 0,
+    "missing_hours": 0,
+    "first_utc": "2025-01-01 00:00:00+00:00",
+    "last_utc": "2025-11-30 23:00:00+00:00"
+  },
+  "precipitation_contract": "Raw tp has stepType accum and metres. Do not sum hourly cumulative values. Reset-aware deaccumulation and previous-day midnight handling must be implemented and verified before feature joins. No rainfall or FWI feature table created here.",
+  "grid_warning": "This is the 2025 Thunder Bay pilot extent, not weather coverage for the 2010-2019 Ontario 10km panel."
+}

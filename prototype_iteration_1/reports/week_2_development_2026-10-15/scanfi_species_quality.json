@@ -1,0 +1,19 @@
+{
+  "files": [
+    "scanfi_prcC_other",
+    "scanfi_prcB",
+    "scanfi_jackPine",
+    "scanfi_tamarack",
+    "scanfi_whiteRedPine",
+    "scanfi_balsamFir",
+    "scanfi_lodgepolePine",
+    "scanfi_douglasFir",
+    "scanfi_blackSpruce",
+    "scanfi_ponderosaPine"
+  ],
+  "sum_min": 0.0,
+  "sum_max": 100.0,
+  "zero_fraction": 0.567705,
+  "positive_not_100_fraction": 0.0,
+  "interpretation": "Downloaded v1.2/2020 species layers sum to 100 where represented; they are composition shares, distinct from v2 crown-closure bands. Zero-sum pixels have undefined percent-conifer."
+}

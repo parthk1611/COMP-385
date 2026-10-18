@@ -1,0 +1,143 @@
+{
+  "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/scripts/hrdps_live_weather.py",
+  "language": "python",
+  "metrics": {
+    "lines": {
+      "total": 197,
+      "code": 172,
+      "blank": 23,
+      "comment": 2
+    },
+    "functions": 9,
+    "classes": 0,
+    "avg_complexity": 7.3
+  },
+  "quality_score": 74,
+  "grade": "C",
+  "smells": [
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'validate_seed' has complexity 11 (max: 10)",
+      "location": "validate_seed"
+    },
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'sample_grib' has complexity 12 (max: 10)",
+      "location": "sample_grib"
+    },
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'run' has complexity 17 (max: 10)",
+      "location": "run"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 101 should be a named constant",
+      "location": "line 70"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 120 should be a named constant",
+      "location": "line 83"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 1024 should be a named constant",
+      "location": "line 85"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 3600 should be a named constant",
+      "location": "line 100"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 4326 should be a named constant",
+      "location": "line 103"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 4326 should be a named constant",
+      "location": "line 111"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 6371229 should be a named constant",
+      "location": "line 112"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 100 should be a named constant",
+      "location": "line 179"
+    }
+  ],
+  "solid_violations": [],
+  "function_details": [
+    {
+      "name": "utc_now",
+      "parameters": 0,
+      "lines": 4,
+      "complexity": 1
+    },
+    {
+      "name": "grid_relative",
+      "parameters": 1,
+      "lines": 15,
+      "complexity": 7
+    },
+    {
+      "name": "rotate_wind",
+      "parameters": 3,
+      "lines": 6,
+      "complexity": 1
+    },
+    {
+      "name": "incremental_rain",
+      "parameters": 4,
+      "lines": 12,
+      "complexity": 6
+    },
+    {
+      "name": "choose_available_run",
+      "parameters": 2,
+      "lines": 9,
+      "complexity": 6
+    },
+    {
+      "name": "validate_seed",
+      "parameters": 3,
+      "lines": 11,
+      "complexity": 11
+    },
+    {
+      "name": "download",
+      "parameters": 5,
+      "lines": 18,
+      "complexity": 5
+    },
+    {
+      "name": "sample_grib",
+      "parameters": 5,
+      "lines": 26,
+      "complexity": 12
+    },
+    {
+      "name": "run",
+      "parameters": 4,
+      "lines": 28,
+      "complexity": 17
+    }
+  ],
+  "class_details": []
+}

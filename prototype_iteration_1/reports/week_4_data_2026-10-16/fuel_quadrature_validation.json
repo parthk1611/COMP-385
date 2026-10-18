@@ -1,0 +1,93 @@
+{
+  "selection": "16 deterministic equally spaced positions in sorted grid; interior single-tile cells only, no label use",
+  "native_reference": "All valid native 30m pixel centres inside each eligible 10km cell; not fractional edge-area weighting",
+  "rows": [
+    {
+      "grid_id": "ofr10km_1050000_320000",
+      "source": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1000000_y+0300000.tif",
+      "native_pixel_centres": 111222,
+      "quadrature_samples": 100,
+      "total_variation_distance": 0.0835381489273705
+    },
+    {
+      "grid_id": "ofr10km_1150000_-50000",
+      "source": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+1100000_y-0100000.tif",
+      "native_pixel_centres": 111222,
+      "quadrature_samples": 100,
+      "total_variation_distance": 0.1536172699645754
+    },
+    {
+      "grid_id": "ofr10km_210000_150000",
+      "source": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0200000_y+0100000.tif",
+      "native_pixel_centres": 110889,
+      "quadrature_samples": 100,
+      "total_variation_distance": 0.057473599725851976
+    },
+    {
+      "grid_id": "ofr10km_280000_80000",
+      "source": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0200000_y+0000000.tif",
+      "native_pixel_centres": 111556,
+      "quadrature_samples": 100,
+      "total_variation_distance": 0.11946287066585391
+    },
+    {
+      "grid_id": "ofr10km_350000_390000",
+      "source": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0300000_y+0300000.tif",
+      "native_pixel_centres": 110889,
+      "quadrature_samples": 100,
+      "total_variation_distance": 0.09070953836719607
+    },
+    {
+      "grid_id": "ofr10km_410000_540000",
+      "source": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0400000_y+0500000.tif",
+      "native_pixel_centres": 110889,
+      "quadrature_samples": 100,
+      "total_variation_distance": 0.1223953683413143
+    },
+    {
+      "grid_id": "ofr10km_480000_740000",
+      "source": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0400000_y+0700000.tif",
+      "native_pixel_centres": 111222,
+      "quadrature_samples": 100,
+      "total_variation_distance": 0.1127827228426031
+    },
+    {
+      "grid_id": "ofr10km_620000_610000",
+      "source": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0600000_y+0600000.tif",
+      "native_pixel_centres": 110889,
+      "quadrature_samples": 100,
+      "total_variation_distance": 0.11978077176275376
+    },
+    {
+      "grid_id": "ofr10km_700000_10000",
+      "source": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0700000_y+0000000.tif",
+      "native_pixel_centres": 111222,
+      "quadrature_samples": 100,
+      "total_variation_distance": 0.0851867436298574
+    },
+    {
+      "grid_id": "ofr10km_760000_480000",
+      "source": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0700000_y+0400000.tif",
+      "native_pixel_centres": 111222,
+      "quadrature_samples": 100,
+      "total_variation_distance": 0.07539048030065995
+    },
+    {
+      "grid_id": "ofr10km_830000_-80000",
+      "source": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0800000_y-0100000.tif",
+      "native_pixel_centres": 110889,
+      "quadrature_samples": 100,
+      "total_variation_distance": 0.17381119858597333
+    },
+    {
+      "grid_id": "ofr10km_910000_-170000",
+      "source": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/ontario/fbp/2024/x+0900000_y-0200000.tif",
+      "native_pixel_centres": 111222,
+      "quadrature_samples": 100,
+      "total_variation_distance": 0.07931506356656057
+    }
+  ],
+  "median_total_variation_distance": 0.10174613060489959,
+  "max_total_variation_distance": 0.17381119858597333,
+  "conclusion": "Quadrature is approximate; record measured error. No untested area-fraction accuracy guarantee."
+}

@@ -1,0 +1,58 @@
+{
+  "config": {
+    "mode": "fixed-landscape_2025_hindcast",
+    "sampling": "nearest source pixel at each existing 10 km cell centre; not whole-cell area averaging",
+    "grid_sha256": "5778abf65a901d5daa771add7a25b7dfb7cdeb3b9b00712e1bb1e94a7dfabd0c",
+    "source_manifest_sha256": "11b469eaa88db9fbd3f01ab804794771ad9729e9724aba36394d486701f25d20",
+    "code_sha256": "f5b472926dd2f5f04cf10dedafff223f7eccb461ff1cafcf04517cb398a0356c",
+    "fwi_reference_code_sha256": "449a207639d98a15811a2dddfe0bb399ab0ab6375cb46d5fb6dfbe2cef339691",
+    "tzfpy_version": "2.1.1",
+    "timezone_boundary_data": "2026e",
+    "startup": "Research April1 FFMC85/DMC6/DC15; no snow/overwintering/trusted operational state claim",
+    "timezone_policy": "Per-centre polygon lookup; fixed standard offset = zone UTC offset minus DST; 2026 boundary lookup is research mapping, not historic-boundary proof",
+    "missing_state": "Invalid update permanently invalidates state until explicit startup",
+    "input_files": [
+      "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/week_2_completion/era5_ontario_2025/era5_land_ontario_2025_01.nc",
+      "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/week_2_completion/era5_ontario_2025/era5_land_ontario_2025_02.nc",
+      "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/week_2_completion/era5_ontario_2025/era5_land_ontario_2025_03.nc",
+      "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/week_2_completion/era5_ontario_2025/era5_land_ontario_2025_04.nc",
+      "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/week_2_completion/era5_ontario_2025/era5_land_ontario_2025_05.nc",
+      "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/week_2_completion/era5_ontario_2025/era5_land_ontario_2025_06.nc",
+      "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/week_2_completion/era5_ontario_2025/era5_land_ontario_2025_07.nc",
+      "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/week_2_completion/era5_ontario_2025/era5_land_ontario_2025_08.nc",
+      "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/week_2_completion/era5_ontario_2025/era5_land_ontario_2025_09.nc",
+      "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/week_2_completion/era5_ontario_2025/era5_land_ontario_2025_10.nc",
+      "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/week_2_completion/era5_ontario_2025/era5_land_ontario_2025_11.nc"
+    ]
+  },
+  "rows": 3222432,
+  "cells": 9648,
+  "dates": 334,
+  "hours": 8016,
+  "valid_fwi_rows": 2351184,
+  "timezone_counts": {
+    "America/Toronto": 7257,
+    "America/Winnipeg": 2270,
+    "America/Atikokan": 117,
+    "America/Detroit": 2,
+    "America/Rankin_Inlet": 1,
+    "America/Iqaluit": 1
+  },
+  "standard_offset_counts": {
+    "-5": 7377,
+    "-6": 2271
+  },
+  "per_field_null_rows": {
+    "temp_c": 4008,
+    "rh_pct": 4008,
+    "wind_kmh": 4008,
+    "rain_24h_mm": 13644,
+    "fwi": 871248
+  },
+  "output": {
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/selected_provincial_2025/daily_weather.parquet",
+    "sha256": "a75f788652ff70a81a420cb5aa76ea9b13dff70e1b4ae979ef8903578b4d5784",
+    "bytes": 203783329
+  },
+  "operational_eligible": false
+}

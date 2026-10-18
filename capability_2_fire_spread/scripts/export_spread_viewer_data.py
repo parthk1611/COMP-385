@@ -21,6 +21,7 @@ from __future__ import annotations
 import argparse
 import base64
 import json
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -216,18 +217,21 @@ def main() -> None:
     parser.add_argument("--fires-per-split", type=int, default=3)
     parser.add_argument("--page-only", action="store_true", help="rebuild the page from the template and the data already exported, without simulating again")
     parser.add_argument("--no-base-map", action="store_true", help="leave out the Canada Base Map images; the viewer then draws the fuel map as its ground")
+    parser.add_argument("--simulation-dir", type=Path, default=PROCESSED / "simulation_surface_v2")
     args = parser.parse_args()
     log = action_log("11 viewer export")
     if args.page_only:
         write_page(OUTPUT.read_text(encoding="utf-8").strip())
         log.info(f"DONE: rebuilt {PAGE.name} from {TEMPLATE.name} and the existing {OUTPUT.name}, {PAGE.stat().st_size / 1_048_576:.2f} MB")
         return
-    scores = json.loads((PROCESSED / "simulation/spread_simulator_v1_scores.json").read_text(encoding="utf-8"))
-    settings = Settings(ros_scale=scores["chosen_ros_scale"], flank_scale=scores["chosen_flank_scale"])
+    scores = json.loads((args.simulation_dir / "spread_simulator_v1_scores.json").read_text(encoding="utf-8"))
+    if scores.get("propagation_revision") != "surface-barrier-clearance-v2":
+        raise ValueError("Replay scores must be rebuilt for the current propagation revision")
+    settings = Settings(ros_scale=scores["chosen_ros_scale"], flank_scale=scores["chosen_flank_scale"], repair_burn_scar=True)
     fires = pd.read_csv(PROCESSED / "ontario_fire_spread_fires_v1.csv", dtype={"fire_id": str}).set_index("fire_id")
     windows = {w["fire_id"]: w["rows"] * w["columns"] for w in json.loads((PROJECT_ROOT / "data/raw/fuel_terrain/fuel_windows_manifest.json").read_text(encoding="utf-8"))["windows"]}
-    holdout = pd.read_csv(PROCESSED / "simulation/spread_simulator_holdout_steps_v1.csv", dtype={"fire_id": str})
-    calibration = pd.read_csv(PROCESSED / "simulation/spread_simulator_calibration_steps_v1.csv", dtype={"fire_id": str})
+    holdout = pd.read_csv(args.simulation_dir / "spread_simulator_holdout_steps_v1.csv", dtype={"fire_id": str})
+    calibration = pd.read_csv(args.simulation_dir / "spread_simulator_calibration_steps_v1.csv", dtype={"fire_id": str})
     calibration = calibration[np.isclose(calibration.ros_scale, settings.ros_scale) & np.isclose(calibration.flank_scale, settings.flank_scale)]
     chosen: list[tuple[str, pd.DataFrame]] = []
     for table in (holdout, calibration):
@@ -238,6 +242,7 @@ def main() -> None:
     replay._shared.setdefault("detections", dict(tuple(pd.read_csv(PROCESSED / "ontario_fire_spread_detections_v1.csv.gz", dtype={"fire_id": str}, usecols=["fire_id", "observation", "x", "y"]).groupby("fire_id"))))
     payload = {
         "settings": {
+            "mode": "retrospective_reconstruction_final_perimeter_assisted", "forecastValidated": False,
             "rosScale": settings.ros_scale, "flankScale": settings.flank_scale, "cell375": CELL_375_M, "detectableShare": replay.DETECTABLE_SHARE,
             "ignitionHours": IGNITION_HOURS, "basemapCredit": basemap.CREDIT,
         },  # fmt: skip

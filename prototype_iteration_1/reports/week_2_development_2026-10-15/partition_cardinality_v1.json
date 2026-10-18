@@ -1,0 +1,26 @@
+{
+  "scope": "Expected key counts from frozen date/cell selectors; no held-out labels or feature values inspected for these calculations",
+  "temporal_dates": {
+    "training": 1104,
+    "validation": 368,
+    "calibration": 184,
+    "final_test": 184
+  },
+  "temporal_rows": {
+    "training": 10678992,
+    "validation": 3559664,
+    "calibration": 1779832,
+    "final_test": 1779832
+  },
+  "spatial_cells": {
+    "spatial_development": 7767,
+    "spatial_test": 1387,
+    "buffer_excluded": 519
+  },
+  "spatial_fit_rows_by_role": {
+    "training": 8574768,
+    "validation": 2858256,
+    "calibration": 1429128
+  },
+  "spatial_final_test_rows": 255208
+}

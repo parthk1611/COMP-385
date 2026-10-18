@@ -37,6 +37,19 @@ MOVES = [(-1, 0), (1, 0), (0, -1), (0, 1), (-1, -1), (-1, 1), (1, -1), (1, 1), (
 MAX_SLOPE = 0.7
 
 
+def move_clearance(dr: int, dc: int) -> tuple[tuple[int, int], ...]:
+    """Cells touched between endpoints, including diagonal corner contacts."""
+    sr, sc = int(np.sign(dr)), int(np.sign(dc))
+    if abs(dr) == 2:
+        return ((sr, 0), (sr, sc))
+    if abs(dc) == 2:
+        return ((0, sc), (sr, sc))
+    return ((dr, 0), (0, dc)) if dr and dc else ()
+
+
+MOVE_CLEARANCE = [move_clearance(dr, dc) for dr, dc in MOVES]
+
+
 @dataclass
 class Settings:
     """The simulator's adjustable settings."""
@@ -44,7 +57,7 @@ class Settings:
     ros_scale: float = 1.0  # multiplies every rate of spread
     flank_scale: float = 1.0  # further multiplies the flank and back rates: below 1 the fire is narrower than the FBP ellipse
     wind_scale: float = 1.0  # multiplies the 10 m wind speed before it is used
-    repair_burn_scar: bool = True  # replace the 2024 map's regrowth inside the perimeter with the fuel around it
+    repair_burn_scar: bool = False  # reconstruction-only opt-in using a final perimeter
     # False: the day's fine fuel moisture code holds all day, so only wind changes hour to hour.
     # True: moisture follows hourly temperature and humidity, which nearly stops spread overnight.
     hourly_moisture: bool = False
@@ -115,7 +128,6 @@ def load_case(fire_id: str, settings: Settings | None = None, shared: dict | Non
     shared = shared if shared is not None else {}
     if "windows" not in shared:
         shared["windows"] = {w["fire_id"]: w for w in json.loads((RAW / "fuel_terrain/fuel_windows_manifest.json").read_text(encoding="utf-8"))["windows"]}
-        shared["perimeters"] = load_perimeters_3978()
         shared["fires"] = pd.read_csv(PROCESSED / "ontario_fire_spread_fires_v1.csv", dtype={"fire_id": str}).set_index("fire_id")
         shared["hourly"] = dict(tuple(pd.read_csv(PROCESSED / "ontario_fire_spread_weather_hourly_v1.csv.gz", dtype={"fire_id": str}, parse_dates=["time_utc", "time_local"]).groupby("fire_id")))
         shared["daily"] = dict(tuple(pd.read_csv(PROCESSED / "ontario_fire_spread_weather_daily_v1.csv", dtype={"fire_id": str}).groupby("fire_id")))
@@ -137,6 +149,8 @@ def load_case(fire_id: str, settings: Settings | None = None, shared: dict | Non
     grid_x, grid_y = np.meshgrid(x, y)
     fuel = mapped
     if settings.repair_burn_scar:
+        if "perimeters" not in shared:
+            shared["perimeters"] = load_perimeters_3978()
         perimeter = shared["perimeters"][fire_id]
         shapely.prepare(perimeter)
         fuel = _repair_burn_scar(mapped, shapely.contains_xy(perimeter, grid_x, grid_y))
@@ -234,7 +248,7 @@ def simulate(
     burning_flat = burning.ravel()
     # Only the edge of the burning area can spread, so only those cells start the search.
     edge = burning & ~ndimage.binary_erosion(burning, structure=np.ones((3, 3), dtype=bool), border_value=0)
-    if active is not None and (edge & active).any():
+    if active is not None:
         edge &= active
     heap = [(0.0, int(index)) for index in np.flatnonzero(edge.ravel())]
     for index in np.flatnonzero(burning_flat):
@@ -257,6 +271,14 @@ def simulate(
             neighbour = next_row * columns + next_column
             target_fuel = fuel_flat[neighbour]
             if target_fuel < 0:
+                continue
+            clear = True
+            for rr, cc in MOVE_CLEARANCE[move]:
+                crossed_fuel = fuel_flat[(row + rr) * columns + column + cc]
+                if crossed_fuel < 0 or table[crossed_fuel][move] <= 0:
+                    clear = False
+                    break
+            if not clear:
                 continue
             rate_here, rate_there = source_rates[move], table[target_fuel][move]
             if rate_here <= 0 or rate_there <= 0:

@@ -1,0 +1,127 @@
+{
+  "source_file": "data/raw/week_2_completion/era5_ontario_2025/era5_land_ontario_2025_01.nc",
+  "sha256": "01fd2915184f2f3123772c9a92728202b37925e78dc616e184ddd55fb2b80da3",
+  "scope": "January 2025 full requested Ontario bounding box; representative month, not a complete year or replacement for 2010-2019 weather",
+  "variables": {
+    "t2m": {
+      "shape": [
+        744,
+        166,
+        221
+      ],
+      "units": "K",
+      "step_type": "instant",
+      "missing_samples": 2772144,
+      "total_samples": 27294384,
+      "min": 233.77835083007812,
+      "max": 286.7994384765625,
+      "mean": 259.90924072265625,
+      "sample_quantiles_1_50_99": [
+        239.9814193725586,
+        260.755126953125,
+        276.6038391113281
+      ],
+      "first_utc": "2025-01-01 00:00:00+00:00",
+      "last_utc": "2025-01-31 23:00:00+00:00",
+      "unique_continuous_hours": true,
+      "grid_centres_inside_bounds": 9673
+    },
+    "d2m": {
+      "shape": [
+        744,
+        166,
+        221
+      ],
+      "units": "K",
+      "step_type": "instant",
+      "missing_samples": 2772144,
+      "total_samples": 27294384,
+      "min": 231.1072235107422,
+      "max": 282.3175048828125,
+      "mean": 255.78298950195312,
+      "sample_quantiles_1_50_99": [
+        236.39879608154297,
+        256.628173828125,
+        272.34803771972656
+      ],
+      "first_utc": "2025-01-01 00:00:00+00:00",
+      "last_utc": "2025-01-31 23:00:00+00:00",
+      "unique_continuous_hours": true,
+      "grid_centres_inside_bounds": 9673
+    },
+    "u10": {
+      "shape": [
+        744,
+        166,
+        221
+      ],
+      "units": "m s**-1",
+      "step_type": "instant",
+      "missing_samples": 2772144,
+      "total_samples": 27294384,
+      "min": -11.469467163085938,
+      "max": 19.18377685546875,
+      "mean": 2.2810823917388916,
+      "sample_quantiles_1_50_99": [
+        -2.827351379394531,
+        1.9524993896484375,
+        10.350898361206061
+      ],
+      "first_utc": "2025-01-01 00:00:00+00:00",
+      "last_utc": "2025-01-31 23:00:00+00:00",
+      "unique_continuous_hours": true,
+      "grid_centres_inside_bounds": 9673
+    },
+    "v10": {
+      "shape": [
+        744,
+        166,
+        221
+      ],
+      "units": "m s**-1",
+      "step_type": "instant",
+      "missing_samples": 2772144,
+      "total_samples": 27294384,
+      "min": -17.06866455078125,
+      "max": 16.62225341796875,
+      "mean": -0.45848143100738525,
+      "sample_quantiles_1_50_99": [
+        -8.727907943725587,
+        -0.7596282958984375,
+        7.753427696228122
+      ],
+      "first_utc": "2025-01-01 00:00:00+00:00",
+      "last_utc": "2025-01-31 23:00:00+00:00",
+      "unique_continuous_hours": true,
+      "grid_centres_inside_bounds": 9673
+    },
+    "tp": {
+      "shape": [
+        744,
+        166,
+        221
+      ],
+      "units": "m",
+      "step_type": "accum",
+      "missing_samples": 2772144,
+      "total_samples": 27294384,
+      "min": 0.0,
+      "max": 0.03649644926190376,
+      "mean": 0.0006566098891198635,
+      "sample_quantiles_1_50_99": [
+        0.0,
+        0.00012189448170829564,
+        0.006472542695701131
+      ],
+      "first_utc": "2025-01-01 00:00:00+00:00",
+      "last_utc": "2025-01-31 23:00:00+00:00",
+      "unique_continuous_hours": true,
+      "grid_centres_inside_bounds": 9673
+    }
+  },
+  "first_hour_grid_centre_probe": {
+    "valid_centres": 9661,
+    "missing_centres": 12,
+    "method": "Nearest containing source pixel, first hour only; all centres inside requested bounding box does not guarantee valid weather"
+  }
+}

@@ -1,0 +1,488 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/comp385/week3/interfaces/v1",
+  "$defs": {
+    "RiskRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "grid_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "mode": {
+          "enum": [
+            "retrospective_development",
+            "fixed_modern_fuel_hindcast",
+            "retrospective_reconstruction",
+            "forecast"
+          ]
+        },
+        "model_version": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "date",
+        "grid_ids",
+        "mode",
+        "model_version"
+      ]
+    },
+    "IgnitionScore": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "grid_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "date": {
+          "type": "string",
+          "format": "date"
+        },
+        "issue_time_utc": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "mode": {
+          "enum": [
+            "retrospective_development",
+            "fixed_modern_fuel_hindcast",
+            "retrospective_reconstruction",
+            "forecast"
+          ]
+        },
+        "model_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "feature_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "status": {
+          "enum": [
+            "ok",
+            "incomplete_input",
+            "unsupported",
+            "failed"
+          ]
+        },
+        "probability": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "probability_status": {
+          "enum": [
+            "uncalibrated_development",
+            "calibrated",
+            "unavailable"
+          ]
+        },
+        "quality_flags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "error": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "required": [
+        "grid_id",
+        "date",
+        "issue_time_utc",
+        "mode",
+        "model_version",
+        "feature_version",
+        "status",
+        "probability",
+        "probability_status",
+        "quality_flags",
+        "error"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "ok"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "probability": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "error": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "probability": {
+                "type": "null"
+              },
+              "probability_status": {
+                "const": "unavailable"
+              },
+              "error": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ]
+    },
+    "WeatherObservation": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "observed_at_utc": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "available_at_utc": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "availability_status": {
+          "enum": [
+            "documented",
+            "historical_archive_unknown"
+          ]
+        },
+        "source_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "temp_c": {
+          "type": [
+            "number",
+            "null"
+          ]
+        },
+        "rh_pct": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "wind_speed_kmh": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "wind_from_degrees_true": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "exclusiveMaximum": 360
+        },
+        "rain_24h_mm": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "state_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "timezone_policy": {
+          "type": "string",
+          "minLength": 1
+        },
+        "observation_date": {
+          "type": "string",
+          "format": "date"
+        },
+        "time_precision": {
+          "enum": [
+            "date_only",
+            "hour"
+          ]
+        }
+      },
+      "required": [
+        "observed_at_utc",
+        "available_at_utc",
+        "availability_status",
+        "source_version",
+        "temp_c",
+        "rh_pct",
+        "wind_speed_kmh",
+        "wind_from_degrees_true",
+        "rain_24h_mm",
+        "state_version",
+        "timezone_policy",
+        "observation_date",
+        "time_precision"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "time_precision": {
+                "const": "date_only"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "observed_at_utc": {
+                "type": "null"
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "observed_at_utc": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "Z$"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "SpreadRequest": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "incident_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "start_time_utc": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "horizon_hours": {
+          "enum": [
+            1,
+            3,
+            6
+          ]
+        },
+        "pixel_size_m": {
+          "const": 90
+        },
+        "crs": {
+          "const": "EPSG:3978"
+        },
+        "mode": {
+          "enum": [
+            "retrospective_development",
+            "fixed_modern_fuel_hindcast",
+            "retrospective_reconstruction",
+            "forecast"
+          ]
+        },
+        "initial_mask_artifact": {
+          "type": "string",
+          "minLength": 1
+        },
+        "fuel_artifact": {
+          "type": "string",
+          "minLength": 1
+        },
+        "terrain_artifact": {
+          "type": "string",
+          "minLength": 1
+        },
+        "weather_artifact": {
+          "type": "string",
+          "minLength": 1
+        },
+        "uses_final_perimeter": {
+          "type": "boolean"
+        },
+        "outcome_conditioned_domain": {
+          "type": "boolean"
+        },
+        "available_at_utc": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "Z$"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "incident_id",
+        "start_time_utc",
+        "horizon_hours",
+        "pixel_size_m",
+        "crs",
+        "mode",
+        "initial_mask_artifact",
+        "fuel_artifact",
+        "terrain_artifact",
+        "weather_artifact",
+        "uses_final_perimeter",
+        "outcome_conditioned_domain",
+        "available_at_utc"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "forecast"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "uses_final_perimeter": {
+                "const": false
+              },
+              "outcome_conditioned_domain": {
+                "const": false
+              },
+              "available_at_utc": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "Z$"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "SpreadResult": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "incident_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "start_time_utc": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "Z$"
+        },
+        "horizon_hours": {
+          "enum": [
+            1,
+            3,
+            6
+          ]
+        },
+        "mode": {
+          "enum": [
+            "retrospective_development",
+            "fixed_modern_fuel_hindcast",
+            "retrospective_reconstruction",
+            "forecast"
+          ]
+        },
+        "propagation_revision": {
+          "const": "surface-barrier-clearance-v2"
+        },
+        "crs": {
+          "const": "EPSG:3978"
+        },
+        "pixel_size_m": {
+          "const": 90
+        },
+        "arrival_minutes_artifact": {
+          "type": "string",
+          "minLength": 1
+        },
+        "validation_status": {
+          "enum": [
+            "unvalidated",
+            "reconstruction_only",
+            "evaluated_hindcast"
+          ]
+        },
+        "operationally_validated": {
+          "const": false
+        },
+        "quality_flags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "required": [
+        "incident_id",
+        "start_time_utc",
+        "horizon_hours",
+        "mode",
+        "propagation_revision",
+        "crs",
+        "pixel_size_m",
+        "arrival_minutes_artifact",
+        "validation_status",
+        "operationally_validated",
+        "quality_flags"
+      ]
+    }
+  }
+}

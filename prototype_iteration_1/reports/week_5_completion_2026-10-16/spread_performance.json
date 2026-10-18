@@ -1,0 +1,170 @@
+{
+  "scope": "Performance only; retrospective final-perimeter-assisted observed initial masks, no forecast skill claim",
+  "requested_cases": 20,
+  "eligible_cases": 20,
+  "completed_cases": 20,
+  "p95_simulation_seconds": 0.006661778449779379,
+  "includes_grid_load": false,
+  "results": [
+    {
+      "fire_id": "2012_COC32",
+      "cells": 14160,
+      "load_seconds": 0.4969054590910673,
+      "simulate_6h_seconds": 0.0020595419919118285,
+      "reached_cells": 98,
+      "status": "completed"
+    },
+    {
+      "fire_id": "2012_RED60",
+      "cells": 22494,
+      "load_seconds": 0.034784791991114616,
+      "simulate_6h_seconds": 0.0039000840624794364,
+      "reached_cells": 278,
+      "status": "completed"
+    },
+    {
+      "fire_id": "2012_SLK72",
+      "cells": 12760,
+      "load_seconds": 0.029705749941058457,
+      "simulate_6h_seconds": 0.00247970805503428,
+      "reached_cells": 129,
+      "status": "completed"
+    },
+    {
+      "fire_id": "2012_THU65",
+      "cells": 14310,
+      "load_seconds": 0.029411124996840954,
+      "simulate_6h_seconds": 0.0017800000496208668,
+      "reached_cells": 50,
+      "status": "completed"
+    },
+    {
+      "fire_id": "2013_NIP19",
+      "cells": 26492,
+      "load_seconds": 0.03828483307734132,
+      "simulate_6h_seconds": 0.00650979089550674,
+      "reached_cells": 692,
+      "status": "completed"
+    },
+    {
+      "fire_id": "2013_SLK23",
+      "cells": 12600,
+      "load_seconds": 0.036137458053417504,
+      "simulate_6h_seconds": 0.002427542000077665,
+      "reached_cells": 103,
+      "status": "completed"
+    },
+    {
+      "fire_id": "2015_COC6",
+      "cells": 31141,
+      "load_seconds": 0.039723417023196816,
+      "simulate_6h_seconds": 0.0049943330232053995,
+      "reached_cells": 653,
+      "status": "completed"
+    },
+    {
+      "fire_id": "2015_RED25",
+      "cells": 25066,
+      "load_seconds": 0.0351322500500828,
+      "simulate_6h_seconds": 0.0016448339447379112,
+      "reached_cells": 104,
+      "status": "completed"
+    },
+    {
+      "fire_id": "2015_RED44",
+      "cells": 17550,
+      "load_seconds": 0.030886542052030563,
+      "simulate_6h_seconds": 0.0012549589155241847,
+      "reached_cells": 20,
+      "status": "completed"
+    },
+    {
+      "fire_id": "2017_COC26",
+      "cells": 20790,
+      "load_seconds": 0.03124387504067272,
+      "simulate_6h_seconds": 0.0014823329402133822,
+      "reached_cells": 56,
+      "status": "completed"
+    },
+    {
+      "fire_id": "2017_NIP18",
+      "cells": 15120,
+      "load_seconds": 0.027905208058655262,
+      "simulate_6h_seconds": 0.004076457931660116,
+      "reached_cells": 579,
+      "status": "completed"
+    },
+    {
+      "fire_id": "2017_NIP37",
+      "cells": 38500,
+      "load_seconds": 0.04599437501747161,
+      "simulate_6h_seconds": 0.0031527080573141575,
+      "reached_cells": 96,
+      "status": "completed"
+    },
+    {
+      "fire_id": "2018_COC20",
+      "cells": 14900,
+      "load_seconds": 0.028767041978426278,
+      "simulate_6h_seconds": 0.002573666046373546,
+      "reached_cells": 153,
+      "status": "completed"
+    },
+    {
+      "fire_id": "2018_FOR24",
+      "cells": 25776,
+      "load_seconds": 0.033883500029332936,
+      "simulate_6h_seconds": 0.0031605419935658574,
+      "reached_cells": 316,
+      "status": "completed"
+    },
+    {
+      "fire_id": "2018_NIP13",
+      "cells": 17908,
+      "load_seconds": 0.030568292015232146,
+      "simulate_6h_seconds": 0.0046581660863012075,
+      "reached_cells": 575,
+      "status": "completed"
+    },
+    {
+      "fire_id": "2018_RED103",
+      "cells": 12753,
+      "load_seconds": 0.025954000069759786,
+      "simulate_6h_seconds": 0.0012764170533046126,
+      "reached_cells": 28,
+      "status": "completed"
+    },
+    {
+      "fire_id": "2018_RED55",
+      "cells": 41067,
+      "load_seconds": 0.04559304204303771,
+      "simulate_6h_seconds": 0.002546666073612869,
+      "reached_cells": 114,
+      "status": "completed"
+    },
+    {
+      "fire_id": "2018_RED96",
+      "cells": 73688,
+      "load_seconds": 0.08930887491442263,
+      "simulate_6h_seconds": 0.0047437920002266765,
+      "reached_cells": 96,
+      "status": "completed"
+    },
+    {
+      "fire_id": "2018_SLK26",
+      "cells": 60016,
+      "load_seconds": 0.07089299999643117,
+      "simulate_6h_seconds": 0.009549541980959475,
+      "reached_cells": 1125,
+      "status": "completed"
+    },
+    {
+      "fire_id": "2018_SLK27",
+      "cells": 43677,
+      "load_seconds": 0.054498541983775795,
+      "simulate_6h_seconds": 0.004548624972812831,
+      "reached_cells": 258,
+      "status": "completed"
+    }
+  ]
+}

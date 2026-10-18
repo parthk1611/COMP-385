@@ -1,0 +1,146 @@
+{
+  "functional": [
+    {
+      "id": "FR-01",
+      "status": "Implemented",
+      "evidence": "Historical/selected studies and supported date selectors; actual browser navigation."
+    },
+    {
+      "id": "FR-02",
+      "status": "Implemented",
+      "evidence": "Unique saved scores, bounded probabilities, all-date issue/model/contract metadata; duplicate and nonfinite score failures tested."
+    },
+    {
+      "id": "FR-03",
+      "status": "Implemented",
+      "evidence": "Separate 10 km grids, transformed map polygons, numeric probability bands; no approved danger categories."
+    },
+    {
+      "id": "FR-04",
+      "status": "Implemented with explicit limits",
+      "evidence": "First-day TreeSHAP factors and values/units; other dates say unavailable. Date/cell changes clear stale details. No causal or probability-additive claim."
+    },
+    {
+      "id": "FR-05",
+      "status": "Implemented",
+      "evidence": "Source and issue/model metadata retained even without explanations; missing weather remains flagged."
+    },
+    {
+      "id": "FR-06",
+      "status": "Implemented",
+      "evidence": "CSV/GeoJSON API and actual browser CSV download; 9,648 unique selected-date keys verified."
+    },
+    {
+      "id": "FR-07",
+      "status": "Implemented for supported reconstruction",
+      "evidence": "Four supported incidents and existing fire-state workflow. Arbitrary live-state forecasting is outside accepted scope."
+    },
+    {
+      "id": "FR-08",
+      "status": "Implemented simulation outputs",
+      "evidence": "1/3/6-hour controls demonstrate simulated progression. Horizon-specific forecasting accuracy remains unestablished."
+    },
+    {
+      "id": "FR-09",
+      "status": "Implemented retrospective comparison",
+      "evidence": "Corrected 150-step/22-fire reconstruction and paired even-growth baseline; below-baseline results retained."
+    },
+    {
+      "id": "FR-10",
+      "status": "Implemented",
+      "evidence": "Final-perimeter assistance, modern fuel vintage and reconstruction banner explicit."
+    },
+    {
+      "id": "FR-11",
+      "status": "Implemented locally",
+      "evidence": "Seven-source audits, versioned transformations, quality/exclusion ledgers and dataset hashes; raw caches retained locally."
+    },
+    {
+      "id": "FR-12",
+      "status": "Implemented",
+      "evidence": "Four candidate comparisons and frozen temporal/geographic protocols; no new final scoring in this closeout."
+    },
+    {
+      "id": "FR-13",
+      "status": "Implemented",
+      "evidence": "Calibrated temporal/geographic model bundles, predictor contracts and reload parity; hashes preserved."
+    },
+    {
+      "id": "FR-14",
+      "status": "M2 acceptance unmet",
+      "evidence": "HRDPS adapter implemented, but no qualified live ignition source/issue compatibility."
+    },
+    {
+      "id": "FR-15",
+      "status": "M2 acceptance unmet",
+      "evidence": "Research FWI state/checkpoint path implemented; zero trusted observed/overwintered-state cells in recorded evidence."
+    },
+    {
+      "id": "FR-16",
+      "status": "Optional later research",
+      "evidence": "Ensembles/DPV are reviewed options; no uncertainty or treatment-priority output invented."
+    }
+  ],
+  "nonfunctional": [
+    {
+      "id": "NFR-01",
+      "status": "Verified in retrospective scope",
+      "evidence": "Key/time/availability guards and frozen role checks; unknown historical publication times remain labelled hindcast."
+    },
+    {
+      "id": "NFR-02",
+      "status": "Verified software contracts",
+      "evidence": "CRS, categorical fuel, wind and unit checks; no independent canonical or field FWI validation claimed."
+    },
+    {
+      "id": "NFR-03",
+      "status": "Verified bounded reproducibility",
+      "evidence": "Hashes, settings, source snapshots and saved/reloaded score checks; no new real-data fit in this closeout."
+    },
+    {
+      "id": "NFR-04",
+      "status": "Reported",
+      "evidence": "Natural final prevalence, AP implementation, precision/recall and Brier retained; previous EDA exposure disclosed."
+    },
+    {
+      "id": "NFR-05",
+      "status": "Reported",
+      "evidence": "Same-target baselines and weak/negative empirical results retained."
+    },
+    {
+      "id": "NFR-06",
+      "status": "Warm local targets passed",
+      "evidence": "20 initialized historical-map reloads: p95 0.4078 s; 20 current cell-detail HTTP requests: p95 0.1142 s. Includes control overhead for map; excludes cold build/download and pixel-paint certification."
+    },
+    {
+      "id": "NFR-07",
+      "status": "Bounded timing target passed",
+      "evidence": "20 existing supported cases <=73,688 cells: load plus six-hour simulation p95 0.1143 s; maximum 0.4990 s. Derived from sequential saved timing evidence, not a new scientific replay."
+    },
+    {
+      "id": "NFR-08",
+      "status": "Tested failure paths",
+      "evidence": "Missing result file now gives JSON503; duplicate/nonfinite score outputs unavailable. Browser request/network errors and a 15 s timeout produce visible messages. Exhaustive fault certification is not claimed."
+    },
+    {
+      "id": "NFR-09",
+      "status": "External acceptance unverified",
+      "evidence": "Implementer completed date/cell/export/reconstruction/live tasks; no independent first-time-user or accessibility acceptance is claimed."
+    },
+    {
+      "id": "NFR-10",
+      "status": "Documented local provenance",
+      "evidence": "Public-source credits, loopback binding and path allowlist retained; no new credential collection or external transmission."
+    },
+    {
+      "id": "NFR-11",
+      "status": "Implemented with maintenance debt",
+      "evidence": "Acquisition/transform/fit/score/simulate/display modules and 129 tests; orchestration and inline dashboard remain long. This is implementer review."
+    },
+    {
+      "id": "NFR-12",
+      "status": "Reproduction documented; broader portability unverified",
+      "evidence": "Existing Mac environment passes pip check; source/environment and start/test commands supplied. Large data remain outside the compact ZIP. No clean-machine or full-pipeline peak-RSS certification claimed."
+    }
+  ]
+}

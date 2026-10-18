@@ -1,0 +1,22 @@
+{
+  "root_new_sources": [
+    "scripts/ignition_comparison.py",
+    "tests/test_ignition_comparison.py",
+    "tests/test_week3_interfaces.py"
+  ],
+  "root_dependencies": "requirements.txt",
+  "team_repo_modified": [
+    "AGENTS.md",
+    "capability_2_fire_spread/docs/fire_spread_simulator.md",
+    "capability_2_fire_spread/scripts/export_spread_viewer_data.py",
+    "capability_2_fire_spread/scripts/run_spread_replay.py",
+    "capability_2_fire_spread/scripts/simulate_spread.py",
+    "capability_2_fire_spread/tests/test_fire_spread_simulator.py"
+  ],
+  "context_notes": [
+    "/Users/parthkevadiya/Documents/ChatGPT/AI CAPSTONE/context.md",
+    "/Users/parthkevadiya/Documents/ChatGPT/AI CAPSTONE/architecture.md"
+  ],
+  "checklist": "reports/week_1_to_5_checklist.md",
+  "remote_mutations": "none; fetch only"
+}

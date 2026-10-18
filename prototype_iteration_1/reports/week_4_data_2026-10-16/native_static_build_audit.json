@@ -1,0 +1,16 @@
+{
+  "rows": 9648,
+  "sampled_static_manifest_sha256": "8f86148bc774a3ec9fca800beeaddb6d00fa393e4b8f08e67323537046065556",
+  "native_fuel_manifest_sha256": "30fbe63703ba2d009db5a5b63c52b534eacf6cd477506254ee40ee37017b616c",
+  "code_sha256": "b1bb6902dc8b197dfdcb21e00471c118442f3cffe5ca4e4f89cd441019043214",
+  "fuel_method": "Exact native pixel intersection area within one nominal source tile per cell; uncovered boundary strips/nodata retained in valid-area coverage; no cross-tile double counting",
+  "forest_terrain_method": "100 deterministic 1 km strata centres per cell; continuous landscape quadrature estimates, not full native-area means",
+  "min_fuel_valid_area_fraction": 0.0,
+  "zero_fuel_support_cells": 6,
+  "output": {
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/selected_provincial_static_native_2025/static_features.parquet",
+    "sha256": "627f1b981659e42403e9ed4e80a4083e6ca3f8d9f0c7fcdd10160c7355dc7ea0",
+    "bytes": 1589747
+  },
+  "operationally_validated": false
+}
