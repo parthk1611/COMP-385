@@ -1,0 +1,44 @@
+{
+  "fire_macro_metrics": {
+    "area_distance_reference": {
+      "iou": 0.10547868784102693,
+      "recall": 0.3900615000805951,
+      "even_growth_iou": 0.09724972298401054,
+      "even_growth_recall": 0.40323676845128154
+    },
+    "fire_balanced_iou": {
+      "iou": 0.11092020263989286,
+      "recall": 0.3476819142909077,
+      "even_growth_iou": 0.10662529592603881,
+      "even_growth_recall": 0.3682501785607127
+    }
+  },
+  "paired_iou_difference": {
+    "mean": 0.005441514798865932,
+    "ci95": [
+      -0.008933160470956693,
+      0.019037443742419533
+    ],
+    "method": "paired bootstrap over entire calibration fires"
+  },
+  "selected_policy": "area_distance_reference",
+  "scoreable_calibration_fires": 22,
+  "setting": [
+    1.2,
+    0.25
+  ],
+  "scoreable_observation_steps": 89,
+  "candidate_settings": 16,
+  "unscoreable_registered_fires": [
+    "2012_COC32",
+    "2017_NIP18"
+  ],
+  "mode": "retrospective_reconstruction_final_perimeter_assisted",
+  "forecast_validation": false,
+  "limitations": [
+    "These calibration fires and candidate settings were already explored previously.",
+    "The old holdout is already exposed and was not reopened or retuned here.",
+    "Matched-area even-growth uses simulator area and is a conditional shape benchmark.",
+    "Perimeter-assisted input and retrospective weather prevent operational forecast claims."
+  ]
+}

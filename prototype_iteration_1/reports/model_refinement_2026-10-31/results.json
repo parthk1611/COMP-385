@@ -1,0 +1,140 @@
+{
+  "results": [
+    {
+      "rows": 1779832,
+      "positives": 736,
+      "prevalence": 0.00041352217512664115,
+      "average_precision": 0.004341545104014784,
+      "roc_auc": 0.8662791345753809,
+      "brier": 0.0004126878119531565,
+      "log_loss": 0.0032456721299645307,
+      "mean_probability": 0.0002368658168308755,
+      "daily_budget_recall": 0.08695652173913043,
+      "daily_budget_precision": 0.003585835948005379,
+      "hits": 64,
+      "alerts": 17848,
+      "protocol": "temporal",
+      "candidate": "lightgbm_reference",
+      "model_sha256": "94cc3531f97153d9ee554cebbabdea4822115d84f36da0937ee47c891c6d09f0",
+      "calibration": {
+        "method": "positive-slope logistic recalibration of clipped raw logit; natural prevalence; no smoothing/weights",
+        "slope": 0.9127552201014203,
+        "intercept": -0.986285236250655,
+        "clip": 1e-12,
+        "optimizer_success": true,
+        "bounds": [
+          [
+            1e-06,
+            20
+          ],
+          [
+            -50,
+            50
+          ]
+        ]
+      },
+      "save_load_parity": true
+    },
+    {
+      "rows": 1779832,
+      "positives": 736,
+      "prevalence": 0.00041352217512664115,
+      "average_precision": 0.004450584712159662,
+      "roc_auc": 0.8652325153904494,
+      "brier": 0.00041264248271298467,
+      "log_loss": 0.0032377537798986547,
+      "mean_probability": 0.0002442728770034296,
+      "daily_budget_recall": 0.07608695652173914,
+      "daily_budget_precision": 0.0031376064545047063,
+      "hits": 56,
+      "alerts": 17848,
+      "protocol": "temporal",
+      "candidate": "lightgbm_dense",
+      "model_sha256": "083f9de65f51b52bb2245674954c4af3c334893cf0dd5c437237e3b9ffc08423",
+      "calibration": {
+        "method": "positive-slope logistic recalibration of clipped raw logit; natural prevalence; no smoothing/weights",
+        "slope": 0.989861369327754,
+        "intercept": -0.40299560609883245,
+        "clip": 1e-12,
+        "optimizer_success": true,
+        "bounds": [
+          [
+            1e-06,
+            20
+          ],
+          [
+            -50,
+            50
+          ]
+        ]
+      },
+      "save_load_parity": true
+    },
+    {
+      "rows": 231656,
+      "positives": 92,
+      "prevalence": 0.0003971405877680699,
+      "average_precision": 0.002139504080267166,
+      "roc_auc": 0.8465060696901898,
+      "brier": 0.0003967381077137312,
+      "log_loss": 0.003191601626548632,
+      "mean_probability": 0.00028101392370018485,
+      "daily_budget_recall": 0.0,
+      "daily_budget_precision": 0.0,
+      "hits": 0,
+      "alerts": 2392,
+      "protocol": "inner_spatial",
+      "candidate": "lightgbm_reference",
+      "model_sha256": "f96870ee50ed9ad09328b0e25441f380c038baea55dcf88e334c06643c7fbe90",
+      "calibration": {
+        "method": "positive-slope logistic recalibration of clipped raw logit; natural prevalence; no smoothing/weights",
+        "slope": 0.9236087773276068,
+        "intercept": -0.9632663680486929,
+        "clip": 1e-12,
+        "optimizer_success": true,
+        "bounds": [
+          [
+            1e-06,
+            20
+          ],
+          [
+            -50,
+            50
+          ]
+        ]
+      },
+      "save_load_parity": true
+    }
+  ],
+  "paired_budget_recall": {
+    "temporal": {
+      "observed_delta": -0.010869565217391304,
+      "ci95": [
+        -0.02560146026721186,
+        0.0014884635839931563
+      ],
+      "week_blocks": 27,
+      "undefined_replicates": 0,
+      "method": "paired seven-day block bootstrap; conditional development uncertainty"
+    },
+    "inner_spatial": {
+      "observed_delta": 0.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "week_blocks": 27,
+      "undefined_replicates": 0,
+      "method": "paired seven-day block bootstrap; conditional development uncertainty"
+    }
+  },
+  "scope": "2017 development confirmation, previously exposed in earlier experiments; not a pristine final test",
+  "selected": {
+    "temporal": "lightgbm_dense",
+    "inner_spatial": "lightgbm_reference"
+  },
+  "elapsed_seconds": 89.00324633298442,
+  "frozen_artifacts_unchanged": true,
+  "reserved_observations_used": false,
+  "model_directory": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_refinement_2026-10-31"
+}

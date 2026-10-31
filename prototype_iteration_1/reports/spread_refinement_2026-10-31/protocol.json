@@ -1,0 +1,15 @@
+{
+  "calibration_source": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/spread_replay_corrected_v2/spread_simulator_calibration_steps_v1.csv",
+  "calibration_sha256": "c5a07bdccece996fb9db426e554c6817c9b2a8e45c6ac04a9fdb3ad6fba9fddd",
+  "source_protocol_sha256": "856001d9d9b5d2724a67b1238936daf5e8ce5a35fea0f7125c2033cf3dde6b64",
+  "policies": [
+    "area_distance_reference",
+    "fire_balanced_iou"
+  ],
+  "selection": "Leave one entire calibration fire out; parameter selection uses remaining fires only",
+  "decision": "Change default only if lower paired fire-bootstrap IoU delta bound exceeds zero",
+  "holdout_observations_read": false,
+  "old_simulator_or_final_outputs_overwritten": false,
+  "scope": "Internal calibration robustness study; no fresh forecast validation",
+  "code_sha256": "544880da1c185b90d577f8d9e2c4c621b7e193106d60988b9e9b2eb959a81203"
+}

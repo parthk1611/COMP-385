@@ -1,0 +1,111 @@
+{
+  "selection_folds": [
+    2014,
+    2015
+  ],
+  "training": "2010 through year before each fold",
+  "selection_rule": "Largest mean AP, mean budget recall not lower than reference, no fold AP below 90% of reference; otherwise retain reference",
+  "negative_sampling": "all positives plus nested key-hash 1% or 5% negatives, inverse sampling weights",
+  "calibration": "2016, natural prevalence; spatial calibration uses inner-training geography only",
+  "confirmation": "2017; historically exposed development data, not an independent final test",
+  "spatial": "existing deterministic 100 km blocks and 20 km centre buffer; no history features",
+  "old_final_observations_used": false,
+  "new_data_sources_or_vintages": false,
+  "daily_budget": "existing ceil(1% of eligible cells), deterministic hash ties",
+  "candidates": [
+    {
+      "name": "historical_rate",
+      "family": "historical_rate",
+      "negative_percent": 1
+    },
+    {
+      "name": "logistic",
+      "family": "logistic",
+      "negative_percent": 1
+    },
+    {
+      "name": "histogram_reference",
+      "family": "histogram_boosting",
+      "negative_percent": 1
+    },
+    {
+      "name": "lightgbm_reference",
+      "family": "lightgbm",
+      "negative_percent": 1
+    },
+    {
+      "name": "lightgbm_dense",
+      "family": "lightgbm",
+      "negative_percent": 5
+    },
+    {
+      "name": "lightgbm_regularized",
+      "family": "lightgbm",
+      "negative_percent": 5,
+      "params": {
+        "n_estimators": 250,
+        "learning_rate": 0.03,
+        "num_leaves": 7,
+        "max_depth": 3,
+        "min_child_samples": 300,
+        "min_child_weight": 5.0,
+        "reg_lambda": 20.0,
+        "reg_alpha": 0.1
+      }
+    },
+    {
+      "name": "lightgbm_nohistory",
+      "family": "lightgbm",
+      "negative_percent": 5,
+      "no_history": true
+    }
+  ],
+  "selector_sha256": "cc6003b321c6b660e766c29b4940829a0fe8b983386a7cb3cd6c041537d9fec0",
+  "manifest_sha256": "0b85423c41993d7571dadb3ffbcf66f83f634b7c53e9fa8a6d22f6160f75aa73",
+  "predictor_contract_sha256": "51e162d6caf8e4242c0a7cc3fff730eefcac036834cbf142aaae7db64e41672c",
+  "code_sha256": "15ba7716a676b4bdff30c8774f1bcbb146f93551b331d006f832d2179ff2b664",
+  "protected_files_before": {
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week5_v1/spatial_final_predictions.parquet": "7580b0a2e6282e491c6ee0e4cb42b035f59ee1167ec5876459a818299ed15b30",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week5_v1/spatial_first_day_explanations.json": "57dc7845bda88f7ce2dc67bc62c2f7fa0c160d17eb37abebe86bd3e9350664c3",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week5_v1/spatial_lightgbm_calibrated.joblib": "e7c5c5d11565a5f8502fb8df321dcb187802c86e1237054e4fa2bcea18cd5b5b",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week5_v1/temporal_final_predictions.parquet": "05cfc2406687300c14e9eb85ecd95e35d8a19280601c99a121a2cb4a36da868e",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week5_v1/temporal_first_day_explanations.json": "3ab8d59d681bb2cec85221848c0c4a6419b1e97619a6249b793395aaac1b8028",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_models_week5_v1/temporal_lightgbm_calibrated.joblib": "0f879891bf39a45d63de3bd7bef2f2a31be2b98962bf370303a461a271ed514b",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/selected_2025_models_v1/spatial_final_predictions.parquet": "a093ad444d268e989e04258246ef12f06ee2a8294e5f1b77df6694ec82048879",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/selected_2025_models_v1/spatial_first_day_explanations.json": "da929dcc9b4bc3e12ecb95cfdf11a09aac0c2ced6400748fccf44f6eae483822",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/selected_2025_models_v1/spatial_selected2025.joblib": "afff99a9225f99030117fd1fb7ede1123cd95bef976878b24fdc630a6f8ece78",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/selected_2025_models_v1/temporal_final_predictions.parquet": "66f23f6e6ccd7c324594f8260dbeec25dd58d2f4e9a51cdb866e5f53ca24fc05",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/selected_2025_models_v1/temporal_first_day_explanations.json": "e3b5b624805ff3cdba459a040cef46e4f08bbce4e7f5f833bf00b70eafbd1c27",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/selected_2025_models_v1/temporal_selected2025.joblib": "a976d748b2e7db978011747b05deab126448ff6ada0b4d6444bdbb9f0f372214",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/spread_replay_corrected_v2/calibration_freeze.json": "1ee80fdc55875a3344ca695481908d8d07366efba0406026726b14821d6ddeb1",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/spread_replay_corrected_v2/spread_simulator_calibration_steps_v1.csv": "c5a07bdccece996fb9db426e554c6817c9b2a8e45c6ac04a9fdb3ad6fba9fddd",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/spread_replay_corrected_v2/spread_simulator_holdout_steps_v1.csv": "49cc78931e8a63fb1d54af5ecb761e943bc8a90477c6c1b4d4aa5ffe914b6adc",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/spread_replay_corrected_v2/spread_simulator_v1_scores.json": "13f224c258c6d1a931682b26dddc9834166998d627042d9488bfc8f3cc51bac3",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/week_5_completion_2026-10-16/corrected_spread_results.json": "13f224c258c6d1a931682b26dddc9834166998d627042d9488bfc8f3cc51bac3",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/week_5_completion_2026-10-16/selected_2025_results.json": "136786b7b4bccfebd0c98dbdb05a789ebe41420b794eee80ea5cc8b988dc0a9f",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/week_5_prototype_2026-10-16/artifact_manifest.json": "cc6733829848807f29e754a084e1c95baf8b396bee542bd3b3fcffdd0534e4c3",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/week_5_prototype_2026-10-16/browser_verification.json": "f405b53d5d9d8e419391f54da912d6245b0db92716a81570da0b08109cb7bb28",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/week_5_prototype_2026-10-16/calibration_report.json": "2a785b4b0d83c889d24698324a7d711aea9a723d365af0c22ab137bee8ea49bb",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/week_5_prototype_2026-10-16/code_quality.json": "47f8e4bb6cb382e34ee02a21f5e12f5252c2ccbcc15589b3e9b47eed11496a0c",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/week_5_prototype_2026-10-16/final_evaluation.json": "69e4d3fac4f825d5c6fcd6bca440b07a481f83f724790c947e8aa16cd8633342",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/week_5_prototype_2026-10-16/final_evaluation_freeze.json": "cdf8ebaa765c3ccb0afe894fe8875764ea017547c7ae54864abd5c3af53c0385",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/week_5_prototype_2026-10-16/final_evaluation_started.json": "47b3712c46e48bbb938b864afe622067c791475a86614ca676e45a20ee3883d6",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/week_5_prototype_2026-10-16/integrity_verification.json": "8940dfbece6d2d70092b1b2a1745a53cb447dad9d54860710ec637a89619e704",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/week_5_prototype_2026-10-16/map_build_audit.json": "56fd52410aff046a9daa3e9de47dc2cd77a08c1d76805f80de21abb6fce147a1",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/week_5_prototype_2026-10-16/map_build_before_mobile_layout.json": "1679ff2f9b2f8e7d16bc7b4f072c2c6b394213012e820792c2a8c3ce8582a5a8",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/week_5_prototype_2026-10-16/map_code_quality.json": "9a90e596f40e2e7cf13026848405f32cdcd31134a05153919bcf0f704ae5eac0",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/week_5_prototype_2026-10-16/package_verification.json": "3b21e7c31adce471a6cdf67c946401228cf3c461f887e18feb9b3bce5c6db29a",
+    "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/week_5_prototype_2026-10-16/protocol_freeze.json": "a6679a4514e46a2dbeab484ba2e32a52cfb250479c9c8f476895a448208b3f9c"
+  },
+  "versions": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scikit-learn": "1.9.1",
+    "lightgbm": "4.7.0",
+    "pyarrow": "25.0.1"
+  },
+  "references": [
+    "https://lightgbm.readthedocs.io/en/latest/Parameters.html",
+    "https://scikit-learn.org/stable/modules/cross_validation.html"
+  ]
+}

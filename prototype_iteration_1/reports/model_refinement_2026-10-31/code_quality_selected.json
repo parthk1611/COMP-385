@@ -1,0 +1,71 @@
+{
+  "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/github_iteration_1/prototype_iteration_1/scripts/selected_model_refinement.py",
+  "language": "python",
+  "metrics": {
+    "lines": {
+      "total": 135,
+      "code": 120,
+      "blank": 14,
+      "comment": 1
+    },
+    "functions": 4,
+    "classes": 0,
+    "avg_complexity": 7.8
+  },
+  "quality_score": 94,
+  "grade": "A",
+  "smells": [
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'run' has complexity 12 (max: 10)",
+      "location": "run"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 100 should be a named constant",
+      "location": "line 92"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2025 should be a named constant",
+      "location": "line 108"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 1000 should be a named constant",
+      "location": "line 115"
+    }
+  ],
+  "solid_violations": [],
+  "function_details": [
+    {
+      "name": "check_development_dates",
+      "parameters": 1,
+      "lines": 8,
+      "complexity": 5
+    },
+    {
+      "name": "fit",
+      "parameters": 4,
+      "lines": 22,
+      "complexity": 5
+    },
+    {
+      "name": "select",
+      "parameters": 1,
+      "lines": 18,
+      "complexity": 9
+    },
+    {
+      "name": "run",
+      "parameters": 3,
+      "lines": 29,
+      "complexity": 12
+    }
+  ],
+  "class_details": []
+}

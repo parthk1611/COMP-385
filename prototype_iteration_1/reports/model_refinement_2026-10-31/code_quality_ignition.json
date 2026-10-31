@@ -1,0 +1,209 @@
+{
+  "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/github_iteration_1/prototype_iteration_1/scripts/model_refinement.py",
+  "language": "python",
+  "metrics": {
+    "lines": {
+      "total": 323,
+      "code": 279,
+      "blank": 43,
+      "comment": 1
+    },
+    "functions": 18,
+    "classes": 0,
+    "avg_complexity": 5.2
+  },
+  "quality_score": 60,
+  "grade": "D",
+  "smells": [
+    {
+      "type": "too_many_parameters",
+      "severity": "low",
+      "message": "Function 'fit_candidate' has 6 parameters (max: 5)",
+      "location": "fit_candidate"
+    },
+    {
+      "type": "too_many_parameters",
+      "severity": "low",
+      "message": "Function 'rolling_comparison' has 6 parameters (max: 5)",
+      "location": "rolling_comparison"
+    },
+    {
+      "type": "too_many_parameters",
+      "severity": "low",
+      "message": "Function 'confirm' has 8 parameters (max: 5)",
+      "location": "confirm"
+    },
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'confirm' has complexity 11 (max: 10)",
+      "location": "confirm"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 385 should be a named constant",
+      "location": "line 22"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2014 should be a named constant",
+      "location": "line 23"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 250 should be a named constant",
+      "location": "line 35"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 300 should be a named constant",
+      "location": "line 36"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 1000 should be a named constant",
+      "location": "line 94"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 200000 should be a named constant",
+      "location": "line 140"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 100 should be a named constant",
+      "location": "line 144"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2015 should be a named constant",
+      "location": "line 156"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2014 should be a named constant",
+      "location": "line 157"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2016 should be a named constant",
+      "location": "line 231"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2017 should be a named constant",
+      "location": "line 232"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2016 should be a named constant",
+      "location": "line 240"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2016 should be a named constant",
+      "location": "line 243"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 1000 should be a named constant",
+      "location": "line 249"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 1000 should be a named constant",
+      "location": "line 250"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2014 should be a named constant",
+      "location": "line 280"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 100 should be a named constant",
+      "location": "line 285"
+    }
+  ],
+  "solid_violations": [],
+  "function_details": [
+    {
+      "name": "candidate_specs",
+      "parameters": 0,
+      "lines": 17,
+      "complexity": 1
+    },
+    {
+      "name": "validate_development",
+      "parameters": 2,
+      "lines": 7,
+      "complexity": 2
+    },
+    {
+      "name": "sampling_mask",
+      "parameters": 2,
+      "lines": 7,
+      "complexity": 2
+    },
+    {
+      "name": "fold_masks",
+      "parameters": 3,
+      "lines": 12,
+      "complexity": 4
+    },
+    {
+      "name": "validate_predictors",
+      "parameters": 3,
+      "lines": 8,
+      "complexity": 6
+    },
+    {
+      "name": "choose_candidate",
+      "parameters": 1,
+      "lines": 22,
+      "complexity": 10
+    },
+    {
+      "name": "paired_recall_interval",
+      "parameters": 3,
+      "lines": 21,
+      "complexity": 4
+    },
+    {
+      "name": "checked_sources",
+      "parameters": 1,
+      "lines": 14,
+      "complexity": 6
+    },
+    {
+      "name": "attach_roles",
+      "parameters": 3,
+      "lines": 11,
+      "complexity": 3
+    },
+    {
+      "name": "load_training",
+      "parameters": 4,
+      "lines": 19,
+      "complexity": 4
+    }
+  ],
+  "class_details": []
+}

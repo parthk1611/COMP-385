@@ -1,0 +1,68 @@
+{
+  "candidates": [
+    {
+      "name": "historical_rate",
+      "family": "historical_rate",
+      "negative_percent": 1
+    },
+    {
+      "name": "logistic",
+      "family": "logistic",
+      "negative_percent": 1
+    },
+    {
+      "name": "histogram_reference",
+      "family": "histogram_boosting",
+      "negative_percent": 1
+    },
+    {
+      "name": "lightgbm_reference",
+      "family": "lightgbm",
+      "negative_percent": 1
+    },
+    {
+      "name": "lightgbm_dense",
+      "family": "lightgbm",
+      "negative_percent": 5
+    },
+    {
+      "name": "lightgbm_regularized",
+      "family": "lightgbm",
+      "negative_percent": 5,
+      "params": {
+        "n_estimators": 250,
+        "learning_rate": 0.03,
+        "num_leaves": 7,
+        "max_depth": 3,
+        "min_child_samples": 300,
+        "min_child_weight": 5.0,
+        "reg_lambda": 20.0,
+        "reg_alpha": 0.1
+      }
+    }
+  ],
+  "predictor_contract_sha256": "141eeeda383338c8ad34cfa4847a9094297fed6d921c017b69f2c2a3c89bd0b1",
+  "source_manifest_sha256": "42b10640f780570cf49596cf4176d98849b068553bb4ddb94a35b42463aeaa1c",
+  "source_panel_sha256": "9119010e26b095b7662c8463e73cd678e03e0196292428b4dabcedefbd60ce91",
+  "folds": [
+    {
+      "fit": [
+        "2025-05-01",
+        "2025-05-31"
+      ],
+      "validate": "2025-06"
+    },
+    {
+      "fit": [
+        "2025-05-01",
+        "2025-06-30"
+      ],
+      "validate": "2025-07"
+    }
+  ],
+  "selection": "Mean AP improvement, no mean 1% budget recall drop, no fold AP below 90% of reference",
+  "scope": "One-season, previously exposed development; no independent confirmation or calibrated probability claim",
+  "reserved_observations_used": false,
+  "separate_from_historical_models": true,
+  "code_sha256": "51cde4e4100949372300dd36c4711e5588b8a06a0635f57d391f775fed886081"
+}

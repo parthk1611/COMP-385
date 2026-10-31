@@ -1,0 +1,24 @@
+{
+  "historical": {
+    "candidate": "lightgbm_dense",
+    "reference": "lightgbm_reference",
+    "promoted": false,
+    "average_precision_improved": true,
+    "fixed_capacity_recall_improved": false,
+    "probability_losses_not_worse": true,
+    "reason": "Recall fell from 64 to 56 hits at the same 17848 selected cell-days; keep existing default."
+  },
+  "selected_source": {
+    "development_choice": "lightgbm_reference",
+    "promoted": false,
+    "reason": "Reference settings retained; new development refit is uncalibrated and not a replacement probability bundle."
+  },
+  "spread": {
+    "selected_policy": "area_distance_reference",
+    "promoted": false,
+    "reason": "Paired fire-bootstrap overlap interval spans zero; recall also declined."
+  },
+  "frontend_changed": false,
+  "old_runtime_model_artifacts_changed": false,
+  "future_evaluation": "New independently reserved data needed before a new final-performance claim."
+}

@@ -1,0 +1,13 @@
+{
+  "prototype_tests": "148 passed in 2.56s",
+  "repository_tests": "56 passed, 12 subtests passed in 1.61s",
+  "protected_artifact_count": 31,
+  "all_protected_hashes_unchanged": true,
+  "exact_run_source_hashes_match_protocols": true,
+  "new_serialized_models": 4,
+  "new_tests": 19,
+  "old_final_observations_used": false,
+  "independent_review": false,
+  "review_method": "local direct scientific/code review plus code-review skill static checks",
+  "static_findings": "Explicit configuration constants, parameter counts and some complexity thresholds remain flagged; no high/critical static findings. See individual JSON reports."
+}

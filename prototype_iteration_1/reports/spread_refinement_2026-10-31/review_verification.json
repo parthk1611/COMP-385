@@ -1,0 +1,6 @@
+{
+  "primary_metric_nan_and_nonpositive_observations_rejected": true,
+  "all_actual_results_identical_after_stricter_validation": true,
+  "reviewed_code_sha256": "ec3a47b8eb635e5dfd38ccf0937d1eb06fae3f1b5d416d492ea9872bfca65e17",
+  "original_run_source_preserved": true
+}

@@ -1,0 +1,8 @@
+{
+  "selected": {
+    "temporal": "lightgbm_dense",
+    "inner_spatial": "lightgbm_reference"
+  },
+  "rolling_results_sha256": "b43f7a8baafa785303bc5223d519d24a174764f1b18fb39aecb2d754ec8e66c8",
+  "confirmation_not_read_before_selection": true
+}

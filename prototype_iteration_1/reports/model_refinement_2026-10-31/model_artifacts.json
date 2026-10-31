@@ -1,0 +1,26 @@
+[
+  {
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_refinement_2026-10-31/temporal_lightgbm_reference.joblib",
+    "sha256": "94cc3531f97153d9ee554cebbabdea4822115d84f36da0937ee47c891c6d09f0",
+    "bytes": 116990,
+    "status": "development research only; not installed in dashboard"
+  },
+  {
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_refinement_2026-10-31/temporal_lightgbm_dense.joblib",
+    "sha256": "083f9de65f51b52bb2245674954c4af3c334893cf0dd5c437237e3b9ffc08423",
+    "bytes": 118134,
+    "status": "development research only; not installed in dashboard"
+  },
+  {
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/ignition_refinement_2026-10-31/inner_spatial_lightgbm_reference.joblib",
+    "sha256": "f96870ee50ed9ad09328b0e25441f380c038baea55dcf88e334c06643c7fbe90",
+    "bytes": 116212,
+    "status": "development research only; not installed in dashboard"
+  },
+  {
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/selected_refinement_2026-10-31/lightgbm_reference_development.joblib",
+    "sha256": "9796089e192dea732e2cb6f1fcb4b075c3a12b2e30e28a4ceb0503951e47e284",
+    "bytes": 112994,
+    "status": "development research only; not installed in dashboard"
+  }
+]

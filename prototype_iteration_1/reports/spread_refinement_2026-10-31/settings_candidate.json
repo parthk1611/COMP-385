@@ -1,0 +1,11 @@
+{
+  "ros_scale": 1.2,
+  "flank_scale": 0.25,
+  "repair_burn_scar": true,
+  "selection_policy": "area_distance_reference",
+  "propagation_revision": "surface-barrier-clearance-v2",
+  "mode": "retrospective_reconstruction_final_perimeter_assisted",
+  "forecast_validated": false,
+  "source_sha256": "c5a07bdccece996fb9db426e554c6817c9b2a8e45c6ac04a9fdb3ad6fba9fddd",
+  "default_runtime_updated": false
+}
