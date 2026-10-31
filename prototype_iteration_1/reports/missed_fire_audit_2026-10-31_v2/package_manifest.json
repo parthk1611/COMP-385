@@ -1,0 +1,18 @@
+{
+  "files": {
+    "README.md": "faca1bdae9d21ecb17f3e3769b45134773a9cadb0beb7e8ae510bc56853d1f05",
+    "code_review.json": "7e0efdabab938df4f2f6d34b05fc5151982cb175c5b8718da549636765a00764",
+    "false_alerts.csv": "33f84c36483ee6bac05a26b81614b801a3fc92ddff5ff8876bc1eae063e15380",
+    "feature_distribution_comparison.csv": "8055f691736db2d194a592f3ab3ef9acdd8dfdadc9d29ea092f20c972f78becb",
+    "integrity.json": "04039023353b8d4db16281b9e22b1cf16829fb85adc0fd5c35e432cf9845c8d3",
+    "monthly_diagnostics.csv": "205fbb56452c8d42f85753e038e2a4434cd8fa364017e2acf728bd2bf2beef3e",
+    "next_feature_experiment.md": "5e888705941201b6173e2e1c093279384fe9adf5c61085956f941f9d760fcdcb",
+    "positive_case_audit.csv": "13b38ac012fc620b3dc39300a0272cecf51500f8d415fb87ab4f20949e800757",
+    "protocol.json": "d5f42e3eb9901ceb9d8ab96fdbf58094e09559973f3457fdab3f4c87ef140efc",
+    "results.json": "36c7030ecea9fb25e6254534b179640fc0922058cf003f9ac9b5968b2dff83e8",
+    "source/missed_fire_audit.py": "028bf0fb40a17ba75d8812ade5701c0d0fdb34604fb336797a12c64589d5141d",
+    "source/test_missed_fire_audit.py": "82fae2bf84b8a97b8b267dcaa1ad2327711bfe851ce083f0cf2fd238dd0cb6a4",
+    "tests.txt": "414e5dcd1170e73cc4f8eb5ba20982ec29f84066bfd47a028abda27f0cfa015f",
+    "verification.json": "f25858fea3bbee1f5ae8b9d660e1d791695a98b7638b7fa3d9913d57a917ea57"
+  }
+}

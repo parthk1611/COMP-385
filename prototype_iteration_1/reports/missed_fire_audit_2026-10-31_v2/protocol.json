@@ -1,0 +1,11 @@
+{
+  "mode": "diagnostic audit of exposed 2017 development observations",
+  "model_sha256": "f96870ee50ed9ad09328b0e25441f380c038baea55dcf88e334c06643c7fbe90",
+  "source_manifest_sha256": "0b85423c41993d7571dadb3ffbcf66f83f634b7c53e9fa8a6d22f6160f75aa73",
+  "selector_sha256": "cc6003b321c6b660e766c29b4940829a0fe8b983386a7cb3cd6c041537d9fec0",
+  "primary_capacity": 0.01,
+  "no_refitting_or_default_changes": true,
+  "final_period_records_used": false,
+  "capacity_sensitivity_is_not_a_new_alert_policy": true,
+  "code_sha256": "028bf0fb40a17ba75d8812ade5701c0d0fdb34604fb336797a12c64589d5141d"
+}

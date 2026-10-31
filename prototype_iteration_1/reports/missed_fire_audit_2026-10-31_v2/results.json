@@ -1,0 +1,124 @@
+{
+  "integrity": {
+    "grid": {
+      "cells": 9673,
+      "duplicate_grid_ids": 0,
+      "key_origin_mismatches": 0,
+      "off_lattice_origins": 0,
+      "max_centroid_coordinate_error_degrees": 7.018219874790794e-07,
+      "origin_semantics": "EPSG:3978 lower-left origin; centroid adds 5000 m to each coordinate"
+    },
+    "event_cell_alignment": {
+      "checked_event_records": 753,
+      "independent_projected_cell_mismatches": 0,
+      "method": "Independent pyproj WGS84 to EPSG:3978 transform and 10000 m floor indexing"
+    },
+    "labels": {
+      "source_events": 753,
+      "source_positive_cell_days": 736,
+      "source_keys_missing_from_panel": 0,
+      "label_mismatches": 0,
+      "event_count_mismatches": 0
+    },
+    "duplicate_cell_days": 0,
+    "eligible_cells": 9673,
+    "eligible_dates": 184,
+    "rows_per_cell_min": 184,
+    "rows_per_cell_max": 184,
+    "weather_prior_day_mismatches": 0,
+    "issue_time_mismatches": 0
+  },
+  "cohorts": {
+    "inner_training": {
+      "rows": 1126816,
+      "positive_cell_days": 442,
+      "selected_cell_days": 11408,
+      "hits": 25,
+      "recall": 0.05656108597285068,
+      "false_alerts": 11383,
+      "positive_weather_supported": 437,
+      "positive_weather_missing": 5,
+      "positive_rank_fraction_min": 0.00016329196603527107,
+      "positive_rank_fraction_median": 0.16353690398432397
+    },
+    "inner_validation": {
+      "rows": 231656,
+      "positive_cell_days": 92,
+      "selected_cell_days": 2392,
+      "hits": 0,
+      "recall": 0.0,
+      "false_alerts": 2392,
+      "positive_weather_supported": 92,
+      "positive_weather_missing": 0,
+      "positive_rank_fraction_min": 0.011119936457505957,
+      "positive_rank_fraction_median": 0.21286735504368548
+    }
+  },
+  "capacity_diagnostic": [
+    {
+      "capacity": 0.01,
+      "selected_cell_days": 2392,
+      "hits": 0,
+      "recall": 0.0,
+      "purpose": "diagnostic only; original primary capacity stays at 1%"
+    },
+    {
+      "capacity": 0.02,
+      "selected_cell_days": 4784,
+      "hits": 4,
+      "recall": 0.043478260869565216,
+      "purpose": "diagnostic only; original primary capacity stays at 1%"
+    },
+    {
+      "capacity": 0.05,
+      "selected_cell_days": 11592,
+      "hits": 9,
+      "recall": 0.09782608695652174,
+      "purpose": "diagnostic only; original primary capacity stays at 1%"
+    },
+    {
+      "capacity": 0.1,
+      "selected_cell_days": 23184,
+      "hits": 24,
+      "recall": 0.2608695652173913,
+      "purpose": "diagnostic only; original primary capacity stays at 1%"
+    },
+    {
+      "capacity": 0.2,
+      "selected_cell_days": 46368,
+      "hits": 41,
+      "recall": 0.44565217391304346,
+      "purpose": "diagnostic only; original primary capacity stays at 1%"
+    }
+  ],
+  "random_capacity_reference": {
+    "expected_hits": 0.9499602859412232,
+    "probability_of_zero_hits": 0.38446384962432667,
+    "assumption": "Independent uniform random sampling without replacement within each day at the same capacity",
+    "interpretation": "Reference calculation, not a model significance test or a new decision threshold"
+  },
+  "held_geography_source_events": 95,
+  "held_geography_cause_counts": {
+    "N": 79,
+    "H": 16
+  },
+  "prescribed_source_records_all_2017": 2,
+  "prescribed_source_records_held_geography": 0,
+  "best_positive_example": {
+    "grid_id": "ofr10km_470000_40000",
+    "ignition_date": "2017-08-09",
+    "daily_rank": 14,
+    "daily_budget": 13,
+    "rank_fraction": 0.011119936457505957,
+    "probability": 0.003417119113477968
+  },
+  "same_model_training_geography_2017_is_not_in_sample_fit": true,
+  "limitations": [
+    "Audit is confined to previously exposed 2017 development observations; not a new final evaluation.",
+    "Reported starts are archive labels; absence of a record is not verified absence of fire.",
+    "Weather-date checks do not establish historical archive publication availability.",
+    "Prescribed-burn flags need a versioned wildfire-only target policy; original labels are unchanged.",
+    "Distribution differences and missed-case descriptions do not establish causes."
+  ],
+  "protected_artifacts_unchanged": true
+}

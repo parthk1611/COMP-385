@@ -1,0 +1,17 @@
+{
+  "files": {
+    "DEMO_GUIDE.md": "d77b14cc66e521b6124252ba3ce2533778788f8afae9f0f5635297016a83ac24",
+    "Ontario_Wildfire_Prototype_Demo.pptx": "f088c7b1f965d2a6af0c08d565c818ce80bb7954d050ee6e47d02544ca93db6c",
+    "backup/README.md": "c95be90840024a82c6490b59db466d6fea244fa5a955fe960f93b35f2e537338",
+    "backup/historical_2019-05-01.csv": "4471243e460e3fd594e6df5f84c2cbaada89bd391574ce809e96c65e2c4ef998",
+    "backup/ignition_ui.png": "69da0ec502b0508d5ac2d3a190f14a6bc1a6dccc2c5139ebc0eb2f8eebe6f772",
+    "backup/live_ui.png": "7ff0ea765c65089549a184e7cd9c12a0e85bf749ea39e61aa1fcbb50daddd750",
+    "backup/model_inference.json": "edeeeedb579372c82d148b928de88e8493643daa578ec350deda48f59f41cc3b",
+    "backup/provenance.json": "575121945b3bdd52353828afa54e91c477c323b6e5e8fc3328849fa948d2731f",
+    "backup/spread_ui.png": "ca39b9a0940dd5d802b37c3944f652807ec49f415b116cb56e922d2e4a2aa26f",
+    "evidence/http_preflight.json": "f97770aa3ef1d7302668c34e9fade0013c3a26ee733a2ab3a7270830a2f09708",
+    "evidence/model_inference.json": "edeeeedb579372c82d148b928de88e8493643daa578ec350deda48f59f41cc3b",
+    "evidence/preparation_verification.json": "f25858fea3bbee1f5ae8b9d660e1d791695a98b7638b7fa3d9913d57a917ea57",
+    "evidence/regression_tests.txt": "414e5dcd1170e73cc4f8eb5ba20982ec29f84066bfd47a028abda27f0cfa015f"
+  }
+}

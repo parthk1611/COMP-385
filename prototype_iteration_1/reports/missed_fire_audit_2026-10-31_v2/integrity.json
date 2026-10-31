@@ -1,0 +1,29 @@
+{
+  "grid": {
+    "cells": 9673,
+    "duplicate_grid_ids": 0,
+    "key_origin_mismatches": 0,
+    "off_lattice_origins": 0,
+    "max_centroid_coordinate_error_degrees": 7.018219874790794e-07,
+    "origin_semantics": "EPSG:3978 lower-left origin; centroid adds 5000 m to each coordinate"
+  },
+  "event_cell_alignment": {
+    "checked_event_records": 753,
+    "independent_projected_cell_mismatches": 0,
+    "method": "Independent pyproj WGS84 to EPSG:3978 transform and 10000 m floor indexing"
+  },
+  "labels": {
+    "source_events": 753,
+    "source_positive_cell_days": 736,
+    "source_keys_missing_from_panel": 0,
+    "label_mismatches": 0,
+    "event_count_mismatches": 0
+  },
+  "duplicate_cell_days": 0,
+  "eligible_cells": 9673,
+  "eligible_dates": 184,
+  "rows_per_cell_min": 184,
+  "rows_per_cell_max": 184,
+  "weather_prior_day_mismatches": 0,
+  "issue_time_mismatches": 0
+}

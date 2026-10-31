@@ -1,0 +1,13 @@
+{
+  "protected_file_count": 31,
+  "protected_artifacts_unchanged": true,
+  "audit_source_matches_executed_hash": true,
+  "tests": "158 passed; full existing combined prototype suite",
+  "local_direct_review": "Reviewed reconciliation, daily capacity, model feature allowlist, hash checks and reserved-period rejection; no independent reviewer claimed.",
+  "static_review": "Only low-severity explicit-constant findings in new audit/inference scripts.",
+  "browser_rehearsal": "pending: browser control disabled in Work settings",
+  "native_powerpoint_open": "not verified",
+  "final_pptx_visual_review": "all six PNGs rendered from final exported PPTX inspected; arrows and chart zero axis checked",
+  "server_status": 200,
+  "server_url": "http://127.0.0.1:8768/"
+}

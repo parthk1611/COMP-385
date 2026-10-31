@@ -1,0 +1,161 @@
+{
+  "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/github_iteration_1/prototype_iteration_1/scripts/missed_fire_audit.py",
+  "language": "python",
+  "metrics": {
+    "lines": {
+      "total": 225,
+      "code": 197,
+      "blank": 27,
+      "comment": 1
+    },
+    "functions": 10,
+    "classes": 0,
+    "avg_complexity": 3.4
+  },
+  "quality_score": 79,
+  "grade": "C",
+  "smells": [
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2017 should be a named constant",
+      "location": "line 1"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 3978 should be a named constant",
+      "location": "line 30"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 5000 should be a named constant",
+      "location": "line 31"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 10000 should be a named constant",
+      "location": "line 35"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 3978 should be a named constant",
+      "location": "line 37"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 4326 should be a named constant",
+      "location": "line 128"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 10000 should be a named constant",
+      "location": "line 130"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 3978 should be a named constant",
+      "location": "line 133"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2017 should be a named constant",
+      "location": "line 150"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2017 should be a named constant",
+      "location": "line 157"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2000 should be a named constant",
+      "location": "line 160"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2016 should be a named constant",
+      "location": "line 195"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2017 should be a named constant",
+      "location": "line 208"
+    }
+  ],
+  "solid_violations": [],
+  "function_details": [
+    {
+      "name": "validate_grid",
+      "parameters": 1,
+      "lines": 14,
+      "complexity": 1
+    },
+    {
+      "name": "audit_labels",
+      "parameters": 2,
+      "lines": 13,
+      "complexity": 1
+    },
+    {
+      "name": "rank_daily",
+      "parameters": 1,
+      "lines": 16,
+      "complexity": 4
+    },
+    {
+      "name": "cohort_summary",
+      "parameters": 1,
+      "lines": 15,
+      "complexity": 7
+    },
+    {
+      "name": "capacity_diagnostic",
+      "parameters": 1,
+      "lines": 12,
+      "complexity": 2
+    },
+    {
+      "name": "random_capacity_reference",
+      "parameters": 1,
+      "lines": 11,
+      "complexity": 2
+    },
+    {
+      "name": "weighted_median",
+      "parameters": 2,
+      "lines": 10,
+      "complexity": 2
+    },
+    {
+      "name": "distribution_comparison",
+      "parameters": 3,
+      "lines": 17,
+      "complexity": 6
+    },
+    {
+      "name": "event_alignment",
+      "parameters": 1,
+      "lines": 10,
+      "complexity": 3
+    },
+    {
+      "name": "run",
+      "parameters": 2,
+      "lines": 27,
+      "complexity": 6
+    }
+  ],
+  "class_details": []
+}
