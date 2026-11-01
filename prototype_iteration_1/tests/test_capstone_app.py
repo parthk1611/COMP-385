@@ -80,3 +80,27 @@ class HttpFailureTests(unittest.TestCase):
             server.shutdown()
             server.server_close()
             thread.join(timeout=5)
+
+
+class LiveEvidenceTests(unittest.TestCase):
+    def test_current_evidence_is_used_and_live_score_remains_unavailable(self):
+        import json
+        from scripts.capstone_app import live_readiness_response
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d)/'live.json';p.write_text(json.dumps({'status':'unavailable','probability':None,'checks':{'matched_post_issue_cell_times':154368}}))
+            with patch('scripts.capstone_app.LIVE_QUALIFICATION',p):
+                self.assertEqual(live_readiness_response()['checks']['matched_post_issue_cell_times'],154368)
+
+    def test_an_edited_evidence_file_cannot_enable_a_live_score(self):
+        from scripts.capstone_app import live_readiness_response
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d)/'live.json';p.write_text('{"status":"ok","probability":0.2}')
+            with patch('scripts.capstone_app.LIVE_QUALIFICATION',p):
+                with self.assertRaises(OSError):live_readiness_response()
+
+    def test_older_package_retains_unavailable_evidence_fallback(self):
+        from scripts.capstone_app import live_readiness_response
+        with tempfile.TemporaryDirectory() as d:
+            p=Path(d);(p/'live_readiness.json').write_text('{"status":"unavailable","probability":null}')
+            with patch('scripts.capstone_app.LIVE_QUALIFICATION',p/'absent'),patch('scripts.capstone_app.REPORT',p):
+                self.assertIsNone(live_readiness_response()['probability'])

@@ -1,0 +1,28 @@
+{
+  "files": {
+    "weather_comparison.png": "665bcac901e732aca2f83af1cbda4d4b049eb923c171bd3ba822564c1f8af4e0",
+    "live_readiness.json": "6ebeb08e596d9f8b03d2560bbb03b47c41385897c366ac37103a73644c2bcc7d",
+    "local_assets_manifest.json": "b5cee0440e0241daf23107294dea08cfad13270f2b3ffbfd69b2512ef85af59c",
+    "era5_acquisition.json": "00aeb005c53283baf2ad7250415764978e833d36c5385477dd873fdc0ea56666",
+    "weather_metrics_by_hour.csv": "d93d8424cf047dd246765d200c1d924410a40986e691767b3913468e6b9d232d",
+    "review_weather_history_experiment.json": "6d1c4db48bc0b078f2034d4552e53681da9632a13beb03df7ce3de19e0a2466c",
+    "cwfis_acquisition.json": "4f05200fed53705d322bcaa52dfd61677ae4f8824103321d49becef0e0dc2897",
+    "regression_tests.txt": "2108eb99708aa1ee2b9aef575d409f1303f4664acc0703028ffd73b3c70d6b35",
+    "README.md": "48c4b6859f34f0a7710d4990122e8b8920ba7fb7a704e81153b6ec6a979aedcb",
+    "station_pair_quality.csv": "8194cd09cc15525a565c6035139d618b731e2fc94e16e6db805ccdab0acb40b5",
+    "review_live_qualification.json": "cc04c080bd506aaa15f11c054a5efb6809dcba6db193cd5ab9e5383249263329",
+    "verification.json": "75f814ab3828b5c13f2bd9b981260befafc933d083291f92532b819982dc8495",
+    "http_preflight.json": "e9635b4bab6472d724a22737bcf8840db919e9e9e346ee2f8239e4a74d8ec19b",
+    "review_capstone_app.json": "0ddbc3bcf82a0f0d48a9ab8e2ae71caacaa27f8c11b69e29b03b29592b1688c5",
+    "qualification_results.json": "1314bc95e1e8d94d84a32c1a7b3c6c164976fbb1c6821d24ae9e6974c03f37e2",
+    "review_acquire_live_reference.json": "9270cd7a802a7f9dff5eda770d79c03368365b335f5da5f2e02c89c90b598b45",
+    "review_hrdps_live_weather.json": "4db603c3a72103312705000ffcf5bc4cbcb31ddb233b73c66b0a064dcb96ba67",
+    "source/capstone_app.py": "27df5aa333cf15ced17f56fc64ae9bc9af40c243d99e824381c61c10428e1db0",
+    "source/test_hrdps_live_weather.py": "b49d253601219d957ae0c1bd7c0e6518c7ada13534f142e626dd01ca481e7b6d",
+    "source/live_qualification.py": "faaf3552977e21f8bae1b8faa50af0a6875550e61f7d10740560f410bd05fe3e",
+    "source/test_live_qualification.py": "f0fbd29713cb80d4022f78b5e6322fb258c628384428bd856bb29f3fdb5df7ca",
+    "source/acquire_live_reference.py": "f344988e2ee8ecd9f86376cf85a8afa16f8314e48af43e8d75e53560871921b1",
+    "source/test_capstone_app.py": "c8fccc00fec2df73003420bd1a9dfcd0735106362fc4016102517706f2ca9aa7",
+    "source/hrdps_live_weather.py": "d51de82d2d6dcfb59d05daa7260e2d4ea2d7eff31a7492762e3424495148f964"
+  }
+}

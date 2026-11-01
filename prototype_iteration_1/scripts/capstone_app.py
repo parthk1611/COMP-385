@@ -14,6 +14,7 @@ REVIEW=ROOT/'reports/week_5_final_review_2026-10-16'
 HISTORICAL=ROOT/'data/processed/ignition_models_week5_v1/temporal_final_predictions.parquet'
 SELECTED=ROOT/'data/processed/selected_2025_models_v1/temporal_final_predictions.parquet'
 LIVE=ROOT/'data/processed/hrdps_live_research_2026-10-16_stateful'
+LIVE_QUALIFICATION=ROOT/'reports/live_qualification_2026-11-01/live_readiness.json'
 
 
 def assess_live_inputs(era_dates,forecast_dates,seeds,model_qualification):
@@ -35,6 +36,14 @@ def readiness_report():
     decision.update(input_hashes={'forecast_manifest':digest(LIVE/'manifest.json'),'state_checkpoint':digest(LIVE/'state_checkpoint.json'),'selected_model_results':digest(REPORT/'selected_2025_results.json')},unit_contract={'ERA5_temperature':'Kelvin to Celsius','HRDPS_temperature':'Celsius checked from GRIB','wind':'Both paths yield earth-relative km/h and meteorological from-bearing; rotated-grid wind requires rotation','rain':'Both yield mm after source-specific reset-aware interval decoding','FWI':'Shared equations with exact standard-noon/state clock, but startup/provenance and source distributions are not interchangeable'},scope='Assessment completed: live acceptance fails. No live ignition prediction may be emitted by this prototype.')
     REVIEW.mkdir(parents=True,exist_ok=True)
     save(REVIEW/'live_readiness.json',decision);return decision
+
+
+def live_readiness_response():
+    source=LIVE_QUALIFICATION if LIVE_QUALIFICATION.exists() else REPORT/'live_readiness.json'
+    result=json.loads(source.read_text())
+    if result.get('status')!='unavailable' or result.get('probability') is not None:
+        raise OSError('Live model qualification is not implemented; probability must remain unavailable')
+    return result
 
 
 def validate_query(query):
@@ -225,7 +234,7 @@ class Handler(BaseHTTPRequestHandler):
                 body,mime,rows=export_predictions(q['study'][0],q['date'][0],q['format'][0])
             except (ValueError,OverflowError):return self.send_json(400,{'status':'invalid_export'})
             self.send_response(200);self.send_header('Content-Type',mime);self.send_header('Content-Length',str(len(body)));self.send_header('Content-Disposition',f'attachment; filename="{q["study"][0]}_{q["date"][0]}.{q["format"][0]}"');self.end_headers();self.wfile.write(body);return
-        if path.path=='/api/live-ignition':return self.send_json(503,json.loads((REPORT/'live_readiness.json').read_text()))
+        if path.path=='/api/live-ignition':return self.send_json(503,live_readiness_response())
         if path.path in ('/api/historical-score','/api/selected-score'):
             try:
                 day,grid=validate_query(parse_qs(path.query,keep_blank_values=True));status,value=score_response(HISTORICAL if path.path=='/api/historical-score' else SELECTED,day,grid)

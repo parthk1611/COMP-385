@@ -82,6 +82,10 @@ def validate_seed(seed,expected_date,allow_research=False,expected_noon=None,iss
     if expected_noon is not None and (not seed.get('noon_time_utc') or pd.Timestamp(seed['noon_time_utc'])!=expected_noon):raise ValueError('Seed must describe the exact previous standard-noon state')
     if issue is not None and (not seed.get('available_at_utc') or pd.Timestamp(seed['available_at_utc'])>issue):raise ValueError('FWI seed availability is unknown or after issue')
     if seed.get('trusted') is not True and not allow_research:raise ValueError('Trusted FWI state required')
+    if seed.get('trusted') is True and seed.get('state_kind') in ('forecast_update','forecast_derived_not_observed','research_startup'):
+        raise ValueError('Forecast or research state cannot be promoted by a trusted flag')
+    if seed.get('trusted') is True and (seed.get('state_kind') not in ('observed','overwintered_observed') or not re.fullmatch('[a-f0-9]{64}',seed.get('source_sha256',''))):
+        raise ValueError('Observed state kind and source hash are required for trusted state')
     for key in ('ffmc','dmc','dc'):
         value=seed[key]
         if not np.isfinite(value) or value<0 or (key=='ffmc' and value>101):raise ValueError('Invalid FWI state')

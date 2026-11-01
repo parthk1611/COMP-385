@@ -1,0 +1,179 @@
+{
+  "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/github_iteration_1/prototype_iteration_1/scripts/weather_history_experiment.py",
+  "language": "python",
+  "metrics": {
+    "lines": {
+      "total": 247,
+      "code": 217,
+      "blank": 27,
+      "comment": 3
+    },
+    "functions": 10,
+    "classes": 0,
+    "avg_complexity": 4.9
+  },
+  "quality_score": 73,
+  "grade": "C",
+  "smells": [
+    {
+      "type": "too_many_parameters",
+      "severity": "low",
+      "message": "Function 'train_bundle' has 6 parameters (max: 5)",
+      "location": "train_bundle"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2014 should be a named constant",
+      "location": "line 20"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 365 should be a named constant",
+      "location": "line 23"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2010 should be a named constant",
+      "location": "line 43"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 10000 should be a named constant",
+      "location": "line 71"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 365 should be a named constant",
+      "location": "line 73"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2015 should be a named constant",
+      "location": "line 95"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2010 should be a named constant",
+      "location": "line 96"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 100 should be a named constant",
+      "location": "line 113"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2000 should be a named constant",
+      "location": "line 163"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2016 should be a named constant",
+      "location": "line 172"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2010 should be a named constant",
+      "location": "line 181"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2015 should be a named constant",
+      "location": "line 187"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2016 should be a named constant",
+      "location": "line 214"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 100 should be a named constant",
+      "location": "line 220"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2017 should be a named constant",
+      "location": "line 235"
+    }
+  ],
+  "solid_violations": [],
+  "function_details": [
+    {
+      "name": "retained_events",
+      "parameters": 1,
+      "lines": 6,
+      "complexity": 1
+    },
+    {
+      "name": "relabel",
+      "parameters": 2,
+      "lines": 10,
+      "complexity": 1
+    },
+    {
+      "name": "weather_history",
+      "parameters": 1,
+      "lines": 20,
+      "complexity": 6
+    },
+    {
+      "name": "history_values",
+      "parameters": 2,
+      "lines": 23,
+      "complexity": 8
+    },
+    {
+      "name": "choose_features",
+      "parameters": 3,
+      "lines": 12,
+      "complexity": 7
+    },
+    {
+      "name": "build_year",
+      "parameters": 5,
+      "lines": 26,
+      "complexity": 7
+    },
+    {
+      "name": "train_bundle",
+      "parameters": 6,
+      "lines": 16,
+      "complexity": 2
+    },
+    {
+      "name": "select_spec",
+      "parameters": 2,
+      "lines": 16,
+      "complexity": 10
+    },
+    {
+      "name": "reliability",
+      "parameters": 2,
+      "lines": 8,
+      "complexity": 1
+    },
+    {
+      "name": "run",
+      "parameters": 3,
+      "lines": 22,
+      "complexity": 6
+    }
+  ],
+  "class_details": []
+}

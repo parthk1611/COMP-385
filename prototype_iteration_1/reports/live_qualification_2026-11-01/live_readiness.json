@@ -1,0 +1,23 @@
+{
+  "status": "unavailable",
+  "probability": null,
+  "operational": false,
+  "checks": {
+    "contemporaneous_ERA5_HRDPS_reference_days": 2,
+    "matched_post_issue_cell_times": 154368,
+    "independent_forecast_runs": 1,
+    "trusted_observed_state_cells": 0,
+    "model_live_qualified": false
+  },
+  "reasons": [
+    "A matched weather case is not model or forecast-skill qualification; independent issue dates and seasons are still needed.",
+    "No grid-matched, exact previous-standard-noon observed/overwintered state with verified issue-time availability is accepted.",
+    "The selected-source model uses prior-day retrospective ERA5 research features. Forecast-day HRDPS features and state lineage require a separate trained/evaluated contract.",
+    "No accepted cross-source/issue-time model validation decision exists."
+  ],
+  "evidence": {
+    "report": "live_qualification_2026-11-01/qualification_results.json",
+    "sha256": "1314bc95e1e8d94d84a32c1a7b3c6c164976fbb1c6821d24ae9e6974c03f37e2"
+  },
+  "scope": "One archived forecast run checked against hindsight ERA5-Land; not live model qualification."
+}

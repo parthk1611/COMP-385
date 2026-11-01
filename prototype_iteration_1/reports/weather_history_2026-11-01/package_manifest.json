@@ -1,0 +1,32 @@
+{
+  "files": {
+    "temporal_history_reliability.csv": "96981d6a6e3f0cfade3dfdb49371d38085a0c759a94f0363120bc63c0e7a7674",
+    "rolling_results.json": "c8d7915503901959c99dc7d0da804493836f9f0c2a635b4ab8bfb68647773da7",
+    "inner_spatial_reference_reliability.csv": "c6a966d078ac03c69d8d0b2f06ecefdca08cfbe0594bb196e5f96343b070c722",
+    "inner_spatial_monthly.csv": "27198568d4f51c6823b495b606d3074d5203a9a7e36340723329ac9cdb33ad9b",
+    "cache_manifest.json": "40b9cd4c25f29b6c341168b5a4980e9000a52693bd2ebe13fb139c37d7da3f49",
+    "code_review.json": "6d1c4db48bc0b078f2034d4552e53681da9632a13beb03df7ce3de19e0a2466c",
+    "results.json": "0bb3f113400464e4e0de65cbf03eb1bacdd944b2fa83da5f0731ebc8d20e74de",
+    "temporal_reference_reliability.csv": "33432b5f385decbf984ccbfffbc5348336d2b4e098feba16b2e9a3cb26630e52",
+    "regression_tests.txt": "2108eb99708aa1ee2b9aef575d409f1303f4664acc0703028ffd73b3c70d6b35",
+    "target_audit.json": "29ae22f0e1788798d241713e3074fd2eb83520776001aa78530ec79aa27a6683",
+    "README.md": "970997f94e4610f776a41c452d732afe9e94b950a81e40984d6c4f9b3df705b0",
+    "temporal_history_quality_daily.csv": "1b4b521090f95ebb4e97ea3336d8ce9700207be00050d62f05a6bc0b8c534129",
+    "temporal_history_daily.csv": "1b4b521090f95ebb4e97ea3336d8ce9700207be00050d62f05a6bc0b8c534129",
+    "temporal_monthly.csv": "2926d22d228d162acbe1991c938a3d363d9b4de13a6bfda99a145504620a6c3d",
+    "selection_freeze.json": "1ed44eef54173adb03ed015dbd778c7356bb6a5d37cc8ffe95bb64506073887a",
+    "inner_spatial_history_reliability.csv": "cdb9548028f6883a877e02cad98384ed095100ff20a3f48362de202c0c88fd56",
+    "protocol.json": "c553d46f10f450e6aabe1fc35c803177e30c9a6e771b6afe8a37f9100e2eb5c9",
+    "verification.json": "75f814ab3828b5c13f2bd9b981260befafc933d083291f92532b819982dc8495",
+    "inner_spatial_history_daily.csv": "dcff46d75f5d128c495517b37622d02e84c349715094707634fd5a86c9bf306d",
+    "inner_spatial_reference_daily.csv": "afa85b6267b3372f8d084a99c593995414efde4ffa359d149acd6ce67b55dd0c",
+    "inner_spatial_history_quality_daily.csv": "dcff46d75f5d128c495517b37622d02e84c349715094707634fd5a86c9bf306d",
+    "fresh_evaluation_reservation.json": "7e7b53514929894819302476430f8f8398d70b586827df9618cd8cfb6958ea5a",
+    "temporal_history_quality_reliability.csv": "96981d6a6e3f0cfade3dfdb49371d38085a0c759a94f0363120bc63c0e7a7674",
+    "inner_spatial_history_quality_reliability.csv": "cdb9548028f6883a877e02cad98384ed095100ff20a3f48362de202c0c88fd56",
+    "calibration.png": "0049d8f31ee0959ebafe379d67d9238590554af81b59ca802e160735a943c45c",
+    "temporal_reference_daily.csv": "cbf302f1edc07204294db46ea0e7f778a3a4efeb18cb7e5dca4e2de23e0224a8",
+    "source/weather_history_experiment.py": "3fbcfafaf5d49329ae4fc96405c82718a00d92eb6ef2856f960249eed8d291ab",
+    "source/test_weather_history_experiment.py": "3af306fb1e196b6dcccfeb6e1b622032158b35bc105c993c397baef22355ac04"
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "results": [
+    {
+      "rows": 1779832,
+      "positives": 734,
+      "prevalence": 0.000412398473563797,
+      "average_precision": 0.004258528837533708,
+      "roc_auc": 0.8674673007997626,
+      "brier": 0.0004115790887900108,
+      "log_loss": 0.0032332745987069963,
+      "mean_probability": 0.0002361698188249278,
+      "daily_budget_recall": 0.08991825613079019,
+      "daily_budget_precision": 0.003697893321380547,
+      "hits": 66,
+      "alerts": 17848,
+      "protocol": "temporal",
+      "candidate": "reference",
+      "model_sha256": "31e65bcb316c702ae498b1fb1aa4888a89748a24af854279540b71415b78e89d",
+      "save_load_parity": true
+    },
+    {
+      "rows": 1779832,
+      "positives": 734,
+      "prevalence": 0.000412398473563797,
+      "average_precision": 0.00443619956431394,
+      "roc_auc": 0.8672836250000279,
+      "brier": 0.0004115570179218705,
+      "log_loss": 0.0032357284345428568,
+      "mean_probability": 0.00023573392723845075,
+      "daily_budget_recall": 0.08991825613079019,
+      "daily_budget_precision": 0.003697893321380547,
+      "hits": 66,
+      "alerts": 17848,
+      "protocol": "temporal",
+      "candidate": "history",
+      "model_sha256": "2f5a336ad1641f265ad49d5154886156a6cb0ee6eda979fb7a8543059b8a0323",
+      "save_load_parity": true
+    },
+    {
+      "rows": 1779832,
+      "positives": 734,
+      "prevalence": 0.000412398473563797,
+      "average_precision": 0.00443619956431394,
+      "roc_auc": 0.8672836250000279,
+      "brier": 0.0004115570179218705,
+      "log_loss": 0.0032357284345428568,
+      "mean_probability": 0.00023573392723845075,
+      "daily_budget_recall": 0.08991825613079019,
+      "daily_budget_precision": 0.003697893321380547,
+      "hits": 66,
+      "alerts": 17848,
+      "protocol": "temporal",
+      "candidate": "history_quality",
+      "model_sha256": "f5bb658a47d131338eae20ff7a1bd58100928d739f4316e3fabba759a9bf6b21",
+      "save_load_parity": true
+    },
+    {
+      "rows": 231656,
+      "positives": 92,
+      "prevalence": 0.0003971405877680699,
+      "average_precision": 0.002324260544534476,
+      "roc_auc": 0.8459834186135414,
+      "brier": 0.00039670586312638554,
+      "log_loss": 0.0031854007909925958,
+      "mean_probability": 0.0002801416421542714,
+      "daily_budget_recall": 0.021739130434782608,
+      "daily_budget_precision": 0.0008361204013377926,
+      "hits": 2,
+      "alerts": 2392,
+      "protocol": "inner_spatial",
+      "candidate": "reference",
+      "model_sha256": "3a4b73ddb0db1d4254712e7bab7b950cf1a7a0e6e9348cac36843857caa66f11",
+      "save_load_parity": true
+    },
+    {
+      "rows": 231656,
+      "positives": 92,
+      "prevalence": 0.0003971405877680699,
+      "average_precision": 0.002845082750356081,
+      "roc_auc": 0.8543648464543185,
+      "brier": 0.0003965781643424955,
+      "log_loss": 0.003147721847731064,
+      "mean_probability": 0.00028322030560068564,
+      "daily_budget_recall": 0.021739130434782608,
+      "daily_budget_precision": 0.0008361204013377926,
+      "hits": 2,
+      "alerts": 2392,
+      "protocol": "inner_spatial",
+      "candidate": "history",
+      "model_sha256": "c00e242a96a0442c0251e75864982c65f787887816747102bad56a1fefa6d423",
+      "save_load_parity": true
+    },
+    {
+      "rows": 231656,
+      "positives": 92,
+      "prevalence": 0.0003971405877680699,
+      "average_precision": 0.002845082750356081,
+      "roc_auc": 0.8543648464543185,
+      "brier": 0.0003965781643424955,
+      "log_loss": 0.003147721847731064,
+      "mean_probability": 0.00028322030560068564,
+      "daily_budget_recall": 0.021739130434782608,
+      "daily_budget_precision": 0.0008361204013377926,
+      "hits": 2,
+      "alerts": 2392,
+      "protocol": "inner_spatial",
+      "candidate": "history_quality",
+      "model_sha256": "66a5fd6d8f204a77e7832ef8d96edfffbc2943e7d398a60ec0e79d274eee746b",
+      "save_load_parity": true
+    }
+  ],
+  "paired_recall_intervals": {
+    "temporal": {
+      "history": {
+        "observed_delta": 0.0,
+        "ci95": [
+          -0.009290469338217125,
+          0.008563119981105335
+        ],
+        "week_blocks": 27,
+        "undefined_replicates": 0,
+        "method": "paired seven-day block bootstrap; conditional development uncertainty"
+      },
+      "history_quality": {
+        "observed_delta": 0.0,
+        "ci95": [
+          -0.009290469338217125,
+          0.008563119981105335
+        ],
+        "week_blocks": 27,
+        "undefined_replicates": 0,
+        "method": "paired seven-day block bootstrap; conditional development uncertainty"
+      }
+    },
+    "inner_spatial": {
+      "history": {
+        "observed_delta": 0.0,
+        "ci95": [
+          -0.03615005476451259,
+          0.030303030303030304
+        ],
+        "week_blocks": 27,
+        "undefined_replicates": 0,
+        "method": "paired seven-day block bootstrap; conditional development uncertainty"
+      },
+      "history_quality": {
+        "observed_delta": 0.0,
+        "ci95": [
+          -0.03615005476451259,
+          0.030303030303030304
+        ],
+        "week_blocks": 27,
+        "undefined_replicates": 0,
+        "method": "paired seven-day block bootstrap; conditional development uncertainty"
+      }
+    }
+  },
+  "selected": {
+    "temporal": "reference",
+    "inner_spatial": "history"
+  },
+  "development_gates_pass": {
+    "temporal": false,
+    "inner_spatial": false
+  },
+  "promoted": false,
+  "promotion_reason": "No untouched evaluation has been scored; serving defaults unchanged regardless of development result.",
+  "protected_artifacts_unchanged": true,
+  "scope": "Previously exposed 2017 development diagnostics; new target differs slightly from old benchmark"
+}

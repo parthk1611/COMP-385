@@ -1,0 +1,771 @@
+{
+  "created_at_utc": "2026-11-01T21:26:45.542545+00:00",
+  "forecast_manifest_sha256": "92c69a04bb579b811500cd17296570a4c5c8eba1c4f6afae8e9cf7b471a0e65a",
+  "grid_sha256": "5778abf65a901d5daa771add7a25b7dfb7cdeb3b9b00712e1bb1e94a7dfabd0c",
+  "station_code_check": {
+    "station_pairs": 2045,
+    "finite_code_pairs": 1894,
+    "diagnostics": [
+      {
+        "code": "ffmc",
+        "pairs": 1894,
+        "mae": 0.05844491348347663,
+        "within_0_15": 1757
+      },
+      {
+        "code": "dmc",
+        "pairs": 1894,
+        "mae": 0.0487945202373269,
+        "within_0_15": 1820
+      },
+      {
+        "code": "dc",
+        "pairs": 1894,
+        "mae": 0.04854632839677381,
+        "within_0_15": 1756
+      },
+      {
+        "code": "fwi",
+        "pairs": 1894,
+        "mae": 0.030531928096813772,
+        "within_0_15": 1854
+      }
+    ],
+    "calcstatus_today": {
+      "1": 1935,
+      "-3": 122,
+      "0": 27,
+      "-99": 3
+    },
+    "canonical_acceptance": false,
+    "trusted_grid_state_cells": 0,
+    "limitations": [
+      "Published rounded codes and weather, unknown code-quality flag semantics, station time/location details and initialization can differ.",
+      "Daily station CSV lacks latitude/longitude and record-level issue-time availability. Archive retrieved today does not prove it was available at the October16 issue.",
+      "This is a station-code consistency diagnostic, not a verified observed grid checkpoint, overwintering qualification or canonical implementation certification."
+    ]
+  },
+  "weather_metrics": [
+    {
+      "field": "temp_c",
+      "finite_pairs": 154176,
+      "missing_or_invalid_pairs": 192,
+      "bias": -0.8696123957633972,
+      "mae": 1.1907058954238892,
+      "rmse": 1.5320454835891724,
+      "units": "degC"
+    },
+    {
+      "field": "rh_pct",
+      "finite_pairs": 154162,
+      "missing_or_invalid_pairs": 206,
+      "bias": 5.690561771392822,
+      "mae": 8.412467956542969,
+      "rmse": 10.705046653747559,
+      "units": "percentage points"
+    },
+    {
+      "field": "wind_kmh",
+      "finite_pairs": 154176,
+      "missing_or_invalid_pairs": 192,
+      "bias": 2.3342421974971717,
+      "mae": 4.310755105032164,
+      "rmse": 5.67139679880076,
+      "units": "km/h"
+    },
+    {
+      "field": "precip_mm",
+      "finite_pairs": 153780,
+      "missing_or_invalid_pairs": 588,
+      "bias": 0.000194865066182373,
+      "mae": 0.08455033374177028,
+      "rmse": 0.20555417965955286,
+      "units": "mm per preceding hour"
+    }
+  ],
+  "weather_metrics_by_valid_hour": [
+    {
+      "valid_time_utc": "2026-10-16T09:00:00+00:00",
+      "metrics": [
+        {
+          "field": "temp_c",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": -0.07021156698465347,
+          "mae": 0.7395531535148621,
+          "rmse": 1.0300158262252808,
+          "units": "degC"
+        },
+        {
+          "field": "rh_pct",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": -1.89898681640625,
+          "mae": 4.3917975425720215,
+          "rmse": 5.987616062164307,
+          "units": "percentage points"
+        },
+        {
+          "field": "wind_kmh",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 2.96658726299148,
+          "mae": 4.366899759087114,
+          "rmse": 5.894036698445421,
+          "units": "km/h"
+        },
+        {
+          "field": "precip_mm",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 0.016428403902092683,
+          "mae": 0.23282589569027914,
+          "rmse": 0.4266103866996978,
+          "units": "mm per preceding hour"
+        }
+      ]
+    },
+    {
+      "valid_time_utc": "2026-10-16T10:00:00+00:00",
+      "metrics": [
+        {
+          "field": "temp_c",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": -0.14800485968589783,
+          "mae": 0.7983107566833496,
+          "rmse": 1.1380290985107422,
+          "units": "degC"
+        },
+        {
+          "field": "rh_pct",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": -1.3518449068069458,
+          "mae": 4.749068260192871,
+          "rmse": 6.603550434112549,
+          "units": "percentage points"
+        },
+        {
+          "field": "wind_kmh",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 3.1822185074424194,
+          "mae": 4.44701012427854,
+          "rmse": 5.896583675166243,
+          "units": "km/h"
+        },
+        {
+          "field": "precip_mm",
+          "finite_pairs": 9284,
+          "missing_or_invalid_pairs": 364,
+          "bias": 0.02341285877544591,
+          "mae": 0.1936905804077226,
+          "rmse": 0.34617277156315196,
+          "units": "mm per preceding hour"
+        }
+      ]
+    },
+    {
+      "valid_time_utc": "2026-10-16T11:00:00+00:00",
+      "metrics": [
+        {
+          "field": "temp_c",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": -0.25488370656967163,
+          "mae": 0.8720196485519409,
+          "rmse": 1.2566781044006348,
+          "units": "degC"
+        },
+        {
+          "field": "rh_pct",
+          "finite_pairs": 9629,
+          "missing_or_invalid_pairs": 19,
+          "bias": -0.46335259079933167,
+          "mae": 5.228543281555176,
+          "rmse": 7.481008052825928,
+          "units": "percentage points"
+        },
+        {
+          "field": "wind_kmh",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 3.083063478814447,
+          "mae": 4.49374548602067,
+          "rmse": 5.91959271226283,
+          "units": "km/h"
+        },
+        {
+          "field": "precip_mm",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 0.0048571087309813655,
+          "mae": 0.15605154237607588,
+          "rmse": 0.2834196523316728,
+          "units": "mm per preceding hour"
+        }
+      ]
+    },
+    {
+      "valid_time_utc": "2026-10-16T12:00:00+00:00",
+      "metrics": [
+        {
+          "field": "temp_c",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": -0.34504738450050354,
+          "mae": 0.9541290402412415,
+          "rmse": 1.3817970752716064,
+          "units": "degC"
+        },
+        {
+          "field": "rh_pct",
+          "finite_pairs": 9630,
+          "missing_or_invalid_pairs": 18,
+          "bias": 0.31947061419487,
+          "mae": 5.723178863525391,
+          "rmse": 8.221349716186523,
+          "units": "percentage points"
+        },
+        {
+          "field": "wind_kmh",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 2.8985614014173637,
+          "mae": 4.591752947558945,
+          "rmse": 6.06683976839739,
+          "units": "km/h"
+        },
+        {
+          "field": "precip_mm",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 0.0032322692325489353,
+          "mae": 0.11401685382625538,
+          "rmse": 0.20768988711586334,
+          "units": "mm per preceding hour"
+        }
+      ]
+    },
+    {
+      "valid_time_utc": "2026-10-16T13:00:00+00:00",
+      "metrics": [
+        {
+          "field": "temp_c",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": -0.45084667205810547,
+          "mae": 1.0195770263671875,
+          "rmse": 1.504747748374939,
+          "units": "degC"
+        },
+        {
+          "field": "rh_pct",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 1.541529893875122,
+          "mae": 6.292732238769531,
+          "rmse": 8.979537963867188,
+          "units": "percentage points"
+        },
+        {
+          "field": "wind_kmh",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 2.5653929008389293,
+          "mae": 4.533366499265326,
+          "rmse": 5.974535458323968,
+          "units": "km/h"
+        },
+        {
+          "field": "precip_mm",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 0.005764024189329368,
+          "mae": 0.09656315770366007,
+          "rmse": 0.2154337616653527,
+          "units": "mm per preceding hour"
+        }
+      ]
+    },
+    {
+      "valid_time_utc": "2026-10-16T14:00:00+00:00",
+      "metrics": [
+        {
+          "field": "temp_c",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": -0.5020009875297546,
+          "mae": 0.9483430981636047,
+          "rmse": 1.3215138912200928,
+          "units": "degC"
+        },
+        {
+          "field": "rh_pct",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 3.4486067295074463,
+          "mae": 7.09326171875,
+          "rmse": 9.366549491882324,
+          "units": "percentage points"
+        },
+        {
+          "field": "wind_kmh",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 1.3390281256132457,
+          "mae": 4.115223234824392,
+          "rmse": 5.4681162979408295,
+          "units": "km/h"
+        },
+        {
+          "field": "precip_mm",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 0.0015436494296020874,
+          "mae": 0.0879043159365625,
+          "rmse": 0.23252751169528738,
+          "units": "mm per preceding hour"
+        }
+      ]
+    },
+    {
+      "valid_time_utc": "2026-10-16T15:00:00+00:00",
+      "metrics": [
+        {
+          "field": "temp_c",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": -0.5492762923240662,
+          "mae": 0.8765252232551575,
+          "rmse": 1.1161556243896484,
+          "units": "degC"
+        },
+        {
+          "field": "rh_pct",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 5.399575233459473,
+          "mae": 8.144733428955078,
+          "rmse": 9.814932823181152,
+          "units": "percentage points"
+        },
+        {
+          "field": "wind_kmh",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 0.4523017192249767,
+          "mae": 4.1194421357085576,
+          "rmse": 5.350985967621901,
+          "units": "km/h"
+        },
+        {
+          "field": "precip_mm",
+          "finite_pairs": 9592,
+          "missing_or_invalid_pairs": 56,
+          "bias": -0.011333229984368679,
+          "mae": 0.07242954213445298,
+          "rmse": 0.13925353521836692,
+          "units": "mm per preceding hour"
+        }
+      ]
+    },
+    {
+      "valid_time_utc": "2026-10-16T16:00:00+00:00",
+      "metrics": [
+        {
+          "field": "temp_c",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": -0.714596152305603,
+          "mae": 0.9593642354011536,
+          "rmse": 1.190527319908142,
+          "units": "degC"
+        },
+        {
+          "field": "rh_pct",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 6.645776748657227,
+          "mae": 8.647727012634277,
+          "rmse": 10.2060546875,
+          "units": "percentage points"
+        },
+        {
+          "field": "wind_kmh",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 0.5406963675838554,
+          "mae": 4.0306739107490985,
+          "rmse": 5.228834537737375,
+          "units": "km/h"
+        },
+        {
+          "field": "precip_mm",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": -0.012860337875620057,
+          "mae": 0.06789037388290114,
+          "rmse": 0.1274610434570108,
+          "units": "mm per preceding hour"
+        }
+      ]
+    },
+    {
+      "valid_time_utc": "2026-10-16T17:00:00+00:00",
+      "metrics": [
+        {
+          "field": "temp_c",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": -0.9654561877250671,
+          "mae": 1.160944938659668,
+          "rmse": 1.4087320566177368,
+          "units": "degC"
+        },
+        {
+          "field": "rh_pct",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 7.919637203216553,
+          "mae": 9.029354095458984,
+          "rmse": 10.834545135498047,
+          "units": "percentage points"
+        },
+        {
+          "field": "wind_kmh",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 0.9526182487753122,
+          "mae": 3.951688873917273,
+          "rmse": 5.146591540218707,
+          "units": "km/h"
+        },
+        {
+          "field": "precip_mm",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": -0.010714480345848551,
+          "mae": 0.05882505949654158,
+          "rmse": 0.1193300302787577,
+          "units": "mm per preceding hour"
+        }
+      ]
+    },
+    {
+      "valid_time_utc": "2026-10-16T18:00:00+00:00",
+      "metrics": [
+        {
+          "field": "temp_c",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": -1.2745530605316162,
+          "mae": 1.425573706626892,
+          "rmse": 1.708735704421997,
+          "units": "degC"
+        },
+        {
+          "field": "rh_pct",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 9.338191032409668,
+          "mae": 10.058584213256836,
+          "rmse": 12.018062591552734,
+          "units": "percentage points"
+        },
+        {
+          "field": "wind_kmh",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 1.4858884856642347,
+          "mae": 3.940616753576549,
+          "rmse": 5.149677079000157,
+          "units": "km/h"
+        },
+        {
+          "field": "precip_mm",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": -0.006454837725198156,
+          "mae": 0.054484384322840126,
+          "rmse": 0.14427939263283848,
+          "units": "mm per preceding hour"
+        }
+      ]
+    },
+    {
+      "valid_time_utc": "2026-10-16T19:00:00+00:00",
+      "metrics": [
+        {
+          "field": "temp_c",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": -1.389875054359436,
+          "mae": 1.4859942197799683,
+          "rmse": 1.8009347915649414,
+          "units": "degC"
+        },
+        {
+          "field": "rh_pct",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 10.489605903625488,
+          "mae": 11.179622650146484,
+          "rmse": 13.213107109069824,
+          "units": "percentage points"
+        },
+        {
+          "field": "wind_kmh",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 1.8727567920322605,
+          "mae": 3.93042741652659,
+          "rmse": 5.219088872965536,
+          "units": "km/h"
+        },
+        {
+          "field": "precip_mm",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": -0.008912071741387586,
+          "mae": 0.04936527694835834,
+          "rmse": 0.13068652269754213,
+          "units": "mm per preceding hour"
+        }
+      ]
+    },
+    {
+      "valid_time_utc": "2026-10-16T20:00:00+00:00",
+      "metrics": [
+        {
+          "field": "temp_c",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": -1.5030730962753296,
+          "mae": 1.5917505025863647,
+          "rmse": 1.8830608129501343,
+          "units": "degC"
+        },
+        {
+          "field": "rh_pct",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 10.885878562927246,
+          "mae": 11.429856300354004,
+          "rmse": 13.487939834594727,
+          "units": "percentage points"
+        },
+        {
+          "field": "wind_kmh",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 2.0978001064025995,
+          "mae": 3.8965026167643706,
+          "rmse": 5.220960361761577,
+          "units": "km/h"
+        },
+        {
+          "field": "precip_mm",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": -0.016619827708520774,
+          "mae": 0.047047716215465364,
+          "rmse": 0.12512389774494553,
+          "units": "mm per preceding hour"
+        }
+      ]
+    },
+    {
+      "valid_time_utc": "2026-10-16T21:00:00+00:00",
+      "metrics": [
+        {
+          "field": "temp_c",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": -1.546692132949829,
+          "mae": 1.6102677583694458,
+          "rmse": 1.872584342956543,
+          "units": "degC"
+        },
+        {
+          "field": "rh_pct",
+          "finite_pairs": 9635,
+          "missing_or_invalid_pairs": 13,
+          "bias": 10.999141693115234,
+          "mae": 11.447724342346191,
+          "rmse": 13.456766128540039,
+          "units": "percentage points"
+        },
+        {
+          "field": "wind_kmh",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 2.6357540314913357,
+          "mae": 4.1629519345976735,
+          "rmse": 5.577691438978557,
+          "units": "km/h"
+        },
+        {
+          "field": "precip_mm",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": -0.006626194064035921,
+          "mae": 0.036651166465546114,
+          "rmse": 0.12215105432006629,
+          "units": "mm per preceding hour"
+        }
+      ]
+    },
+    {
+      "valid_time_utc": "2026-10-16T22:00:00+00:00",
+      "metrics": [
+        {
+          "field": "temp_c",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": -1.5238133668899536,
+          "mae": 1.5893818140029907,
+          "rmse": 1.8463280200958252,
+          "units": "degC"
+        },
+        {
+          "field": "rh_pct",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 10.422018051147461,
+          "mae": 11.05164623260498,
+          "rmse": 12.955438613891602,
+          "units": "percentage points"
+        },
+        {
+          "field": "wind_kmh",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 3.5107177155781883,
+          "mae": 4.650592866278836,
+          "rmse": 6.075235481484586,
+          "units": "km/h"
+        },
+        {
+          "field": "precip_mm",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 0.004240082706012087,
+          "mae": 0.02950490575160976,
+          "rmse": 0.10174090008219315,
+          "units": "mm per preceding hour"
+        }
+      ]
+    },
+    {
+      "valid_time_utc": "2026-10-16T23:00:00+00:00",
+      "metrics": [
+        {
+          "field": "temp_c",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": -1.369153380393982,
+          "mae": 1.5053033828735352,
+          "rmse": 1.7762501239776611,
+          "units": "degC"
+        },
+        {
+          "field": "rh_pct",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 9.15870475769043,
+          "mae": 10.28264331817627,
+          "rmse": 12.278985023498535,
+          "units": "percentage points"
+        },
+        {
+          "field": "wind_kmh",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 3.9722316633179977,
+          "mae": 4.966080800502765,
+          "rmse": 6.269677319847031,
+          "units": "km/h"
+        },
+        {
+          "field": "precip_mm",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 0.007910923884793785,
+          "mae": 0.029711499622258084,
+          "rmse": 0.10177570672094757,
+          "units": "mm per preceding hour"
+        }
+      ]
+    },
+    {
+      "valid_time_utc": "2026-10-17T00:00:00+00:00",
+      "metrics": [
+        {
+          "field": "temp_c",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": -1.3063138723373413,
+          "mae": 1.5142555236816406,
+          "rmse": 1.8088656663894653,
+          "units": "degC"
+        },
+        {
+          "field": "rh_pct",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 8.187768936157227,
+          "mae": 9.845343589782715,
+          "rmse": 11.98310375213623,
+          "units": "percentage points"
+        },
+        {
+          "field": "wind_kmh",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 3.7922583527661082,
+          "mae": 4.775106320857915,
+          "rmse": 6.072673954259642,
+          "units": "km/h"
+        },
+        {
+          "field": "precip_mm",
+          "finite_pairs": 9636,
+          "missing_or_invalid_pairs": 12,
+          "bias": 0.010045005838587168,
+          "mae": 0.029774581333093658,
+          "rmse": 0.11805115456114591,
+          "units": "mm per preceding hour"
+        }
+      ]
+    }
+  ],
+  "qualification": {
+    "status": "unavailable",
+    "probability": null,
+    "operational": false,
+    "checks": {
+      "paired_reference_weather": {
+        "eligible_forecast_rows": 154368,
+        "excluded_pre_issue_valid_rows": 77184,
+        "paired_rows": 154368,
+        "unmatched_eligible_rows": 0,
+        "paired_days": 2,
+        "distinct_runs": 1,
+        "issue_time_utc": "2026-10-16T08:12:37.209535+00:00",
+        "reference_policy": "Independent reanalysis retrieved after issue; used as hindsight reference only, never as a historical input"
+      },
+      "trusted_issue_verified_grid_state_cells": 0,
+      "accepted_model_source_issue_time_qualification": false
+    },
+    "reasons": [
+      "A matched weather case is not model or forecast-skill qualification; independent issue dates and seasons are still needed.",
+      "No grid-matched, exact previous-standard-noon observed/overwintered state with verified issue-time availability is accepted.",
+      "The selected-source model uses prior-day retrospective ERA5 research features. Forecast-day HRDPS features and state lineage require a separate trained/evaluated contract.",
+      "No accepted cross-source/issue-time model validation decision exists."
+    ]
+  },
+  "reference_acquisition_status": "downloaded",
+  "code_sha256": "faaf3552977e21f8bae1b8faa50af0a6875550e61f7d10740560f410bd05fe3e"
+}

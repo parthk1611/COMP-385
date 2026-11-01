@@ -1,0 +1,56 @@
+{
+  "years": [
+    {
+      "year": 2010,
+      "rows": 1779832,
+      "positive_cell_days": 659,
+      "changed_labels": 2
+    },
+    {
+      "year": 2011,
+      "rows": 1779832,
+      "positive_cell_days": 1245,
+      "changed_labels": 0
+    },
+    {
+      "year": 2012,
+      "rows": 1779832,
+      "positive_cell_days": 1406,
+      "changed_labels": 1
+    },
+    {
+      "year": 2013,
+      "rows": 1779832,
+      "positive_cell_days": 527,
+      "changed_labels": 0
+    },
+    {
+      "year": 2014,
+      "rows": 1779832,
+      "positive_cell_days": 291,
+      "changed_labels": 2
+    },
+    {
+      "year": 2015,
+      "rows": 1779832,
+      "positive_cell_days": 583,
+      "changed_labels": 1
+    },
+    {
+      "year": 2016,
+      "rows": 1779832,
+      "positive_cell_days": 572,
+      "changed_labels": 1
+    },
+    {
+      "year": 2017,
+      "rows": 1779832,
+      "positive_cell_days": 734,
+      "changed_labels": 2
+    }
+  ],
+  "excluded_event_records": 9,
+  "unknown_cause_records_retained": 126,
+  "target_source_sha256": "dff9a8cdb0b7e7b96f6210b90642ff4eff4c3be51754261ac07df003f1c4a518",
+  "input_panel_labels_reconciled_to_retained_events": true
+}

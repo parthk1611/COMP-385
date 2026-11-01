@@ -1,0 +1,137 @@
+{
+  "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/github_iteration_1/prototype_iteration_1/scripts/live_qualification.py",
+  "language": "python",
+  "metrics": {
+    "lines": {
+      "total": 257,
+      "code": 225,
+      "blank": 31,
+      "comment": 1
+    },
+    "functions": 12,
+    "classes": 0,
+    "avg_complexity": 8.6
+  },
+  "quality_score": 72,
+  "grade": "C",
+  "smells": [
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'weather_metrics' has complexity 11 (max: 10)",
+      "location": "weather_metrics"
+    },
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'parse_station_file' has complexity 12 (max: 10)",
+      "location": "parse_station_file"
+    },
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'validate_state_lineage' has complexity 13 (max: 10)",
+      "location": "validate_state_lineage"
+    },
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'reference_clock' has complexity 13 (max: 10)",
+      "location": "reference_clock"
+    },
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'run' has complexity 13 (max: 10)",
+      "location": "run"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 100 should be a named constant",
+      "location": "line 66"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 100 should be a named constant",
+      "location": "line 88"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 101 should be a named constant",
+      "location": "line 89"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 101 should be a named constant",
+      "location": "line 108"
+    }
+  ],
+  "solid_violations": [],
+  "function_details": [
+    {
+      "name": "utc_stamp",
+      "parameters": 1,
+      "lines": 8,
+      "complexity": 2
+    },
+    {
+      "name": "check_times",
+      "parameters": 2,
+      "lines": 11,
+      "complexity": 6
+    },
+    {
+      "name": "pair_weather",
+      "parameters": 3,
+      "lines": 19,
+      "complexity": 4
+    },
+    {
+      "name": "weather_metrics",
+      "parameters": 1,
+      "lines": 20,
+      "complexity": 11
+    },
+    {
+      "name": "parse_station_file",
+      "parameters": 2,
+      "lines": 23,
+      "complexity": 12
+    },
+    {
+      "name": "validate_state_lineage",
+      "parameters": 3,
+      "lines": 17,
+      "complexity": 13
+    },
+    {
+      "name": "reference_container",
+      "parameters": 2,
+      "lines": 13,
+      "complexity": 8
+    },
+    {
+      "name": "reference_clock",
+      "parameters": 3,
+      "lines": 17,
+      "complexity": 13
+    },
+    {
+      "name": "sample_reference",
+      "parameters": 2,
+      "lines": 27,
+      "complexity": 9
+    },
+    {
+      "name": "station_code_diagnostic",
+      "parameters": 1,
+      "lines": 25,
+      "complexity": 7
+    }
+  ],
+  "class_details": []
+}

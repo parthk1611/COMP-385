@@ -50,3 +50,12 @@ class HrdpsLiveTest(unittest.TestCase):
   import pandas as pd
   seed={'date':'2026-10-15','ffmc':85.,'dmc':6.,'dc':15.,'trusted':True,'provenance':'fixture','available_at_utc':'2026-10-16T09:00Z'}
   with self.assertRaisesRegex(ValueError,'availability'):validate_seed(seed,'2026-10-15',issue=pd.Timestamp('2026-10-16T08:00Z'))
+
+ def test_a_forecast_checkpoint_cannot_be_promoted_by_setting_trusted_true(self):
+  seed={'date':'2026-10-15','ffmc':85.,'dmc':6.,'dc':15.,'trusted':True,'state_kind':'forecast_update','provenance':'forecast'}
+  with self.assertRaisesRegex(ValueError,'promoted'):validate_seed(seed,'2026-10-15')
+ def test_a_trusted_seed_requires_observed_lineage_and_source_hash(self):
+  seed={'date':'2026-10-15','ffmc':85.,'dmc':6.,'dc':15.,'trusted':True,'provenance':'fixture'}
+  with self.assertRaisesRegex(ValueError,'source hash'):validate_seed(seed,'2026-10-15')
+  seed.update(state_kind='observed',source_sha256='a'*64)
+  self.assertEqual(validate_seed(seed,'2026-10-15')['ffmc'],85.)

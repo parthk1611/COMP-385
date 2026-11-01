@@ -1,0 +1,34 @@
+{
+  "cwfis_fwi_20261015.csv": {
+    "bytes": 401181,
+    "sha256": "a0a8ebd23e147a465c0800174d08b26f7ac3e2b54e4a87ed842de54e4b1816d1"
+  },
+  "cwfis_fwi_20261016.csv": {
+    "bytes": 406007,
+    "sha256": "850225ac318c28901d50e9d96053354c77fc0d88afbb2c93c4fd1dc85590515d"
+  },
+  "cwfis_fwi_20261017.csv": {
+    "bytes": 409095,
+    "sha256": "79b3ecd3fb7f357cc1ffc66e5fa942b78c2c67467698d296fb2542d0d7ee9afe"
+  },
+  "era5_land_20261015_17.nc": {
+    "bytes": 13648297,
+    "sha256": "28b97da6cb1fad753e1e415cc7d0738e8bc1353e4cf1e18f9f4070aac4136d4a"
+  },
+  "hourly_reference.parquet": {
+    "bytes": 10800663,
+    "sha256": "4d1427e0f0c97a8ebac36adf5155b9eb396013f0dc2096d1380e29ca03c02182"
+  },
+  "paired_weather.parquet": {
+    "bytes": 10118385,
+    "sha256": "bb19ccc52cecffae79862a6cf76e82089da6e1be87ef69d224dac8e7265c6b99"
+  },
+  "station_pair_quality.csv": {
+    "bytes": 95618,
+    "sha256": "8194cd09cc15525a565c6035139d618b731e2fc94e16e6db805ccdab0acb40b5"
+  },
+  "weather_metrics_by_hour.csv": {
+    "bytes": 7243,
+    "sha256": "d93d8424cf047dd246765d200c1d924410a40986e691767b3913468e6b9d232d"
+  }
+}

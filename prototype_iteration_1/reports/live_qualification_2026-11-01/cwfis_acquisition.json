@@ -1,0 +1,30 @@
+[
+  {
+    "url": "https://cwfis.cfs.nrcan.gc.ca/downloads/fwi_obs/readme.txt",
+    "status": 200,
+    "bytes": 1117,
+    "retrieved_at_utc": "2026-11-01T21:16:51.717617+00:00",
+    "sha256": "a3c1c67ef2c99c973da8642a1848570a3b0794b10301a0ba62ebce52a164f03d"
+  },
+  {
+    "url": "https://cwfis.cfs.nrcan.gc.ca/downloads/fwi_obs/current/cwfis_fwi_20261015.csv",
+    "status": 200,
+    "bytes": 401181,
+    "retrieved_at_utc": "2026-11-01T21:16:51.912027+00:00",
+    "sha256": "a0a8ebd23e147a465c0800174d08b26f7ac3e2b54e4a87ed842de54e4b1816d1"
+  },
+  {
+    "url": "https://cwfis.cfs.nrcan.gc.ca/downloads/fwi_obs/current/cwfis_fwi_20261016.csv",
+    "status": 200,
+    "bytes": 406007,
+    "retrieved_at_utc": "2026-11-01T21:16:52.116405+00:00",
+    "sha256": "850225ac318c28901d50e9d96053354c77fc0d88afbb2c93c4fd1dc85590515d"
+  },
+  {
+    "url": "https://cwfis.cfs.nrcan.gc.ca/downloads/fwi_obs/current/cwfis_fwi_20261017.csv",
+    "status": 200,
+    "bytes": 409095,
+    "retrieved_at_utc": "2026-11-01T21:16:52.213463+00:00",
+    "sha256": "79b3ecd3fb7f357cc1ffc66e5fa942b78c2c67467698d296fb2542d0d7ee9afe"
+  }
+]

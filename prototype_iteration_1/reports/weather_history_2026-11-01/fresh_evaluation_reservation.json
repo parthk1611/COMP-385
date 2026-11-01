@@ -1,0 +1,12 @@
+{
+  "registered_at_utc": "2026-11-01T21:16:37.584732+00:00",
+  "period": [
+    "2027-05-01",
+    "2027-10-31"
+  ],
+  "scope": "future 10 km Ontario fire-season target under the new policy",
+  "labels_accessed": false,
+  "features_or_outcomes_available": false,
+  "protocol": "Freeze candidate, calibration and target/source contracts before label access; compare all-cell temporal and existing spatial-role subgroups at fixed 1% daily budget. Do not tune after scoring. No fresh generalization claim until completed.",
+  "source_availability": "Future source vintages, reporting completeness and actual availability must be verified; not an acquired evaluation set."
+}

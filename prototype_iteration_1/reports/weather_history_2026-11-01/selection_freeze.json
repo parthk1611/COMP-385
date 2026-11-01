@@ -1,0 +1,7 @@
+{
+  "selected": {
+    "temporal": "reference",
+    "inner_spatial": "history"
+  },
+  "frozen_before_2017_scoring": true
+}

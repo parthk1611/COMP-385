@@ -1,0 +1,35 @@
+{
+  "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/github_iteration_1/prototype_iteration_1/scripts/acquire_live_reference.py",
+  "language": "python",
+  "metrics": {
+    "lines": {
+      "total": 54,
+      "code": 45,
+      "blank": 8,
+      "comment": 1
+    },
+    "functions": 1,
+    "classes": 0,
+    "avg_complexity": 6.0
+  },
+  "quality_score": 98,
+  "grade": "A",
+  "smells": [
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 200 should be a named constant",
+      "location": "line 36"
+    }
+  ],
+  "solid_violations": [],
+  "function_details": [
+    {
+      "name": "run",
+      "parameters": 3,
+      "lines": 31,
+      "complexity": 6
+    }
+  ],
+  "class_details": []
+}

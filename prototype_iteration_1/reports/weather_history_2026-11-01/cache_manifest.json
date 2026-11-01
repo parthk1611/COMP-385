@@ -1,0 +1,58 @@
+{
+  "2010.parquet": {
+    "bytes": 166230104,
+    "sha256": "7e04608d3a6347b2578e0b93a0dc5e9854e73596800032551d45bc3adba0a25a"
+  },
+  "2011.parquet": {
+    "bytes": 161731737,
+    "sha256": "991938a71dd1bc8f32ad4b00cca6508214d539290147df23eb439fd6a6d992ef"
+  },
+  "2012.parquet": {
+    "bytes": 155922094,
+    "sha256": "45652cbe9cbbbc47a6a1aa03ec8c5c226daeebb2b339f007e4060573e1d87768"
+  },
+  "2013.parquet": {
+    "bytes": 156589712,
+    "sha256": "07de57eddce169629f0c632fd9b9fd571406e59563a2ad839384347048da16d3"
+  },
+  "2014.parquet": {
+    "bytes": 166019126,
+    "sha256": "e099535a2553e79fc2fc92f5fb907dfab31ac1607f42a4007252f586f8e02f4c"
+  },
+  "2015.parquet": {
+    "bytes": 170334806,
+    "sha256": "06a5a30b06d10b0d359e33f531944256cc067157a27b0107044480b4e3f7f810"
+  },
+  "2016.parquet": {
+    "bytes": 169568565,
+    "sha256": "d548737ca9f646a002518939526cc2cadb948f1684bb3407dd3ee50520cad8fc"
+  },
+  "2017.parquet": {
+    "bytes": 164195742,
+    "sha256": "300219f0554d1ad0e704970eea8bb01e2d0d967835e536d870746825303a3f21"
+  },
+  "inner_spatial_history.joblib": {
+    "bytes": 117476,
+    "sha256": "c00e242a96a0442c0251e75864982c65f787887816747102bad56a1fefa6d423"
+  },
+  "inner_spatial_history_quality.joblib": {
+    "bytes": 117578,
+    "sha256": "66a5fd6d8f204a77e7832ef8d96edfffbc2943e7d398a60ec0e79d274eee746b"
+  },
+  "inner_spatial_reference.joblib": {
+    "bytes": 116306,
+    "sha256": "3a4b73ddb0db1d4254712e7bab7b950cf1a7a0e6e9348cac36843857caa66f11"
+  },
+  "temporal_history.joblib": {
+    "bytes": 116841,
+    "sha256": "2f5a336ad1641f265ad49d5154886156a6cb0ee6eda979fb7a8543059b8a0323"
+  },
+  "temporal_history_quality.joblib": {
+    "bytes": 116938,
+    "sha256": "f5bb658a47d131338eae20ff7a1bd58100928d739f4316e3fabba759a9bf6b21"
+  },
+  "temporal_reference.joblib": {
+    "bytes": 116040,
+    "sha256": "31e65bcb316c702ae498b1fb1aa4888a89748a24af854279540b71415b78e89d"
+  }
+}
