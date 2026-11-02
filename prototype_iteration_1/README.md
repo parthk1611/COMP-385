@@ -4,7 +4,7 @@ COMP 385 research prototype. This submission includes the team's data and spread
 
 ## Runtime assets
 
-This Git folder contains code, tests, bounded test fixtures and research evidence. Large generated predictions, model bundles, map pages and feature caches are omitted and listed with hashes in runtime_artifacts.json. Before demonstrating saved scores, maps or cell details, extract Code_Iteration_1.zip from the local submission delivery and copy its contents into this folder. The complete local package is at ../reports/submission_iteration_1/Code_Iteration_1.zip relative to the original CAPSTONE workspace, outside this Git checkout. Collaborators need that artifact package or must rebuild the pinned data using the included scripts and documented source access. No model was refit for this commit.
+This Git folder contains code, tests, bounded test fixtures and research evidence. Large generated predictions, model bundles, map pages and feature caches are omitted and listed with hashes in runtime_artifacts.json. Before demonstrating saved scores, maps or cell details, extract Code_Iteration_1.zip from the local submission delivery and copy its contents into this folder. The complete local package is at ../reports/submission_iteration_1/Code_Iteration_1.zip relative to the original CAPSTONE workspace, outside this Git checkout. Collaborators need that artifact package or must rebuild the pinned data using the included scripts and documented source access. The original iteration ZIP predates the November 2 experiments. Their additional panels, models and report artifacts require the separate local assets described below.
 
 ## Run the prototype
 
@@ -68,7 +68,7 @@ This package was tested after relocation on the same Mac with the existing envir
 
 The [missed-fire audit](reports/missed_fire_audit_2026-10-31_v2/README.md) reconciles exposed 2017 development data and diagnoses the 0/92 geographic result at the fixed 1% capacity. It found no checked internal grid, label or date mismatch; all 92 held positive cell-days had declared weather support. No model default or final benchmark changed.
 
-The [class demonstration guide](reports/class_demo_2026-10-31/DEMO_GUIDE.md) gives a timed ten-minute sequence, six-slide editable PowerPoint, commands, dated screenshot backups, current endpoint evidence and rehearsal tasks. `scripts/demo_model_inference.py` executes a pinned development model on an archived 2017 row; it needs the full local workspace assets and is separate from the browser's saved evaluations. The October 31 combined prototype suite passed 158 tests. Fourteen HTTP checks passed at that stage; a fresh visual browser rehearsal is pending because browser control was disabled in Work settings.
+The [class demonstration guide](reports/class_demo_2026-10-31/DEMO_GUIDE.md) now follows the November 2 presentation notice: five slides, a ten-minute demonstration with two minutes each for Parth, Harsh, Rishi, Manav and Jasdish, then five minutes of Q&A. It includes proposed code-running assignments, a team handoff sheet, current measured results and dated backups. The local helper runs archived-data inspection, actual historical model inference, reconstruction areas, source freshness and research evidence. All five steps and 18 HTTP routes were checked; five final slide renders were inspected. Team rehearsal, browser interaction and native PowerPoint/projector checks remain pending. This presentation adjustment is local and has not been published to the remote. `scripts/demo_model_inference.py` still needs the full local development assets; the Git folder alone does not restore them. Earlier October 31 evidence retains its original 158-test/14-route scope; the latest project suite is recorded below.
 
 ## Weather-history and live qualification November 1
 
@@ -84,4 +84,22 @@ Bounded keyed-read caches reduced the median repeated cell-detail lookup from 49
 
 ## Zero-cost source pilots November 1
 
-The [source/access matrix and pilot report](reports/zero_cost_sources_2026-11-01/README.md) verifies free historical CG lightning from ECCC CanCPLD, recent archived HRDPS access, current lightning density and station FWI candidates. The new scripts `lightning_pilot.py` and `archive_weather_pilot.py` validate a 30-row, three-cell lightning feature sample and six additional hindsight weather pairs. They do not fit models or qualify live outputs. No new API key or paid service was needed for these pilots. The combined suite now passes **201 tests**; the prior 18 HTTP checks retain their original workflow-stage scope. Full samples remain local, while compact outputs, hashes, access limits and unresolved temporal/state mapping requirements are included here.
+The [source/access matrix and pilot report](reports/zero_cost_sources_2026-11-01/README.md) verifies free historical CG lightning from ECCC CanCPLD, recent archived HRDPS access, current lightning density and station FWI candidates. The new scripts `lightning_pilot.py` and `archive_weather_pilot.py` validate a 30-row, three-cell lightning feature sample and six additional hindsight weather pairs. They do not fit models or qualify live outputs. No new API key or paid service was needed for these pilots. The source-pilot-stage combined suite passed **201 tests**; the prior 18 HTTP checks retain their original workflow-stage scope. Full samples remain local, while compact outputs, hashes, access limits and unresolved temporal/state mapping requirements are included here.
+
+
+## November 2 geographic experiments and dashboard
+
+[Current evidence and demonstration readiness](reports/demo_readiness_2026-11-02/README.md) records 27 new development fits, full past-lightning features and the updated geographic performance dashboard. At fixed daily 1% capacity, the matching reference finds 2/92 and the constrained LightGBM candidate finds 5/92. The candidate fails earlier-fold selection; defaults remain unchanged. Universal detection and new unseen generalization remain unachieved. The current combined suite passes **212 tests**, and **29 HTTP checks** passed.
+
+The home page now opens the geographic comparison, with explicit misses, precision, review workload, dated grid replay and candidate selection. Existing historical maps, exports, reported-fire/weather context and separate spread reconstruction remain available. The November 2 feed/weather refresh and five-slide demo package are documented in the report.
+
+The new default results page needs `reports/lightning_development_2026-11-02/results.json`, `reports/geographic_transfer_2026-11-02/results.json` and the corresponding local prediction files under `data/processed/`. Large files remain outside Git. The original iteration ZIP alone does not supply these new assets. Source/cache manifests in the experiment reports identify the required files. A fresh clone is not a complete runtime.
+
+On the original demo Mac, use the full CAPSTONE workspace and its existing environment:
+
+```sh
+cd /Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE
+.venv/bin/python -m scripts.capstone_app serve --port 8771
+```
+
+Open http://127.0.0.1:8771/ and reuse the already-running prototype if present. The five-person guide and updated deck are in `reports/class_demo_2026-10-31/`. Code, compact experiment evidence and the updated presentation are packaged on `parth/iteration-1-prototype`; large runtime assets remain local.

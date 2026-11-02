@@ -1,0 +1,33 @@
+{
+  "mode": "display saved development evidence; no training or new evaluation",
+  "geographic_comparison": [
+    {
+      "candidate": "reference",
+      "average_precision": 0.002324260544534476,
+      "hits": 2,
+      "positives": 92
+    },
+    {
+      "candidate": "history",
+      "average_precision": 0.002845082750356081,
+      "hits": 2,
+      "positives": 92
+    }
+  ],
+  "daily_review_capacity_percent": 1,
+  "lightning_pilot": {
+    "rows": 30,
+    "distinct_model_cells": 3,
+    "native_intervals_in_year": 2920,
+    "source_interval_end_min": "2010-01-01T03:00:00+00:00",
+    "source_interval_end_max": "2011-01-01T00:00:00+00:00",
+    "nonzero_24h_rows": 0,
+    "nonzero_168h_rows": 8,
+    "complete_24h_rows": 30,
+    "future_interval_violations": 0,
+    "model_fits": 0,
+    "operational": false,
+    "features_sha256": "4f059085c974d519f609f84442b98b44c75b3c6693caa087ec13ea7db30b7644"
+  },
+  "decision": "Existing models retained; lightning model gain unmeasured"
+}

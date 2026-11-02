@@ -1,0 +1,20 @@
+{
+  "mode": "archived development input inspection",
+  "grid_size_km": 10,
+  "sample": {
+    "grid_id": "ofr10km_470000_40000",
+    "ignition_date": "2017-08-09",
+    "issue_time_utc": "2017-08-09T04:00:00Z",
+    "cwfis_missing": 0,
+    "terrain_elevation_mean_m": 330.222222
+  },
+  "spatial_predictor_count": 31,
+  "target_is_predictor": false,
+  "first_predictors": [
+    "calendar_day_of_year",
+    "calendar_doy_sin",
+    "calendar_doy_cos",
+    "calendar_is_weekend",
+    "calendar_day_length_hours"
+  ]
+}

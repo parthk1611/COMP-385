@@ -1,0 +1,13 @@
+{
+  "comparison": "Full-grid lightning features versus the independent earlier 30-row pilot",
+  "matched_rows": 30,
+  "windows_hours": [
+    24,
+    168
+  ],
+  "numerical_parity": true,
+  "tolerance": {
+    "relative": 1e-05,
+    "absolute": 1e-07
+  }
+}

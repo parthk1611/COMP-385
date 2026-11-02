@@ -1,0 +1,13 @@
+{
+  "positive_cell_days": 92,
+  "weather_missing_positive_days": 0,
+  "with_prior_24h_cg": 12,
+  "with_prior_7d_cg": 59,
+  "diagnostic_only": true,
+  "changes_to_candidates_after_scoring": false,
+  "matched_event_records": 95,
+  "reported_cause_counts": {
+    "N": 79,
+    "H": 16
+  }
+}

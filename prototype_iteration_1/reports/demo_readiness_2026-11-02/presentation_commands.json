@@ -1,0 +1,27 @@
+[
+  {
+    "step": "data",
+    "exit_code": 0,
+    "elapsed_seconds": 0.4601850420003757
+  },
+  {
+    "step": "ignition",
+    "exit_code": 0,
+    "elapsed_seconds": 1.7828814999666065
+  },
+  {
+    "step": "spread",
+    "exit_code": 0,
+    "elapsed_seconds": 1.5173971659969538
+  },
+  {
+    "step": "workflow",
+    "exit_code": 0,
+    "elapsed_seconds": 1.4629538749577478
+  },
+  {
+    "step": "research",
+    "exit_code": 0,
+    "elapsed_seconds": 0.3079676249762997
+  }
+]

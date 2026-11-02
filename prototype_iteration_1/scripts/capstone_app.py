@@ -11,6 +11,9 @@ from scripts.prepare_historical_weather_v2 import ROOT,digest,save
 from scripts.runtime_cache import parquet_lookup,explanation_lookup
 from scripts.live_workflow import read_snapshot
 from scripts.workflow_view import PAGE as WORKFLOW_PAGE
+from scripts.performance_view import PAGE as PERFORMANCE_PAGE
+from scripts.dashboard_view import PAGE as HOME
+from scripts.model_evidence import evidence_response,geographic_cells
 
 REPORT=ROOT/'reports/week_5_completion_2026-10-16'
 REVIEW=ROOT/'reports/week_5_final_review_2026-10-16'
@@ -147,73 +150,6 @@ def export_predictions(study,day,format):
     return json.dumps({'type':'FeatureCollection','features':features,'geometry_crs':'EPSG:4326'},allow_nan=False).encode(),'application/geo+json',len(frame)
 
 
-HOME='''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ontario Wildfire · Capstone</title><style>body{margin:0;font:15px system-ui;background:#f2f5f0;color:#183c32}header{padding:20px 3vw;background:#183c32;color:white}h1{font-size:25px;margin:0}header p{margin:7px 0;color:#c2d7cd}nav{display:flex;gap:8px;padding:14px 3vw;flex-wrap:wrap}button{padding:10px 14px;background:white;border:1px solid #b9cdbf;border-radius:7px;color:#183c32;cursor:pointer}button[aria-pressed=true]{background:#d5e5d7;font-weight:bold}iframe{width:100%;height:calc(100vh - 195px);border:0;background:white}.note{padding:8px 3vw;font-size:12px;color:#566b62}#readiness{padding:25px 3vw;max-width:1000px}li{margin:12px 0}.tag{background:#fff0cc;padding:10px;border-radius:7px}</style><header><h1>Ontario Wildfire Research</h1><p>COMP 385 · 10 km ignition risk and separate 90 m incident spread</p></header><nav aria-label="Capabilities"><button data-view="historical" aria-pressed="true">Historical ignition · 2019</button><button data-view="selected" aria-pressed="false">Selected sources · 2025</button><button data-view="spread" aria-pressed="false">Corrected spread reconstruction</button><button data-view="live" aria-pressed="false">Live readiness</button><a href="/workflow.html" style="padding:10px">Live observations and research notices</a></nav><div style="padding:0 3vw" id="exports"><button id="csv">Export selected date · CSV</button> <button id="geojson">GeoJSON</button> <button id="details-button">Cell details and provenance</button></div><section id="cell-details" class="note" aria-live="polite"></section><div class="note">Research prototype. Recorded calendar-day ignition risk and incident spread are separate tasks. No live warnings are issued. Sources: Ontario MNR fire records; NRCan fuels/forest/terrain; ECCC weather; Copernicus ERA5; NASA VIIRS for spread validation.</div><iframe id="view" title="Historical ignition risk" src="/historical.html"></iframe><section id="readiness" hidden><h2>Live ignition is unavailable</h2><p class="tag">Weather ingestion works. The evidence does not qualify live ignition scoring.</p><ul id="reasons"></ul><p id="checks"></p><p>Forecast-derived FWI is never relabelled as observed state. The app returns an unavailable result rather than a fabricated zero-risk prediction.</p></section><script>
-const routes={historical:['/historical.html','Historical ignition risk'],selected:['/selected.html','Selected-source ignition risk'],spread:['/spread.html','Corrected fire-spread reconstruction']};
-const panel=document.getElementById('cell-details');
-const currentStudy=()=>document.querySelector('nav button[aria-pressed=true]').dataset.view;
-function bindSelectionChanges(){
-  const doc=document.getElementById('view').contentDocument;
-  if(!doc?.getElementById('day'))return;
-  const clear=()=>{panel.textContent='Selection changed. Request cell details again.'};
-  doc.getElementById('day').addEventListener('change',clear);
-  doc.getElementById('next')?.addEventListener('click',clear);
-  doc.getElementById('map')?.addEventListener('click',clear);
-}
-document.getElementById('view').addEventListener('load',bindSelectionChanges);
-bindSelectionChanges();
-async function request(url,format='json',allowUnavailable=false){
-  const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),15000);
-  try{
-    const response=await fetch(url,{signal:controller.signal});
-    const data=format==='blob'&&response.ok?await response.blob():await response.json();
-    if(!response.ok&&!(allowUnavailable&&response.status===503&&data.status==='unavailable'))throw Error(data.message||data.reason||data.status||'Request failed');
-    return data;
-  }finally{clearTimeout(timer)}
-}
-function showError(error){panel.textContent=error.name==='AbortError'?'Request timed out. Please retry.':'Request unavailable: '+error.message}
-document.querySelectorAll('nav button').forEach(button=>button.onclick=async()=>{
-  document.querySelectorAll('nav button').forEach(x=>x.setAttribute('aria-pressed',String(x===button)));
-  const key=button.dataset.view,live=key==='live';
-  document.getElementById('view').hidden=live;
-  document.getElementById('readiness').hidden=!live;
-  document.getElementById('exports').hidden=live||key==='spread';panel.textContent='';
-  if(live){
-    const list=document.getElementById('reasons');list.textContent='Checking saved readiness evidence...';document.getElementById('checks').textContent='';
-    try{
-      const data=await request('/api/live-ignition','json',true);
-      if(!Array.isArray(data.reasons)||!data.checks)throw Error(data.message||'Readiness evidence unavailable');
-      list.textContent='';data.reasons.forEach(text=>{const item=document.createElement('li');item.textContent=text;list.appendChild(item)});
-      document.getElementById('checks').textContent='Reference overlap: '+data.checks.contemporaneous_ERA5_HRDPS_reference_days+' days. Trusted observed-state cells: '+data.checks.trusted_observed_state_cells+'.';
-    }catch(error){list.textContent='Saved readiness evidence is unavailable.';showError(error)}
-  }else{document.getElementById('view').src=routes[key][0];document.getElementById('view').title=routes[key][1]}
-});
-function selectedKey(){
-  const study=currentStudy(),doc=document.getElementById('view').contentDocument;
-  if(!routes[study]||study==='spread'||!doc?.getElementById('day'))throw Error('Wait for an ignition map to load.');
-  return {study,doc,day:doc.getElementById('day').value};
-}
-document.getElementById('details-button').onclick=async()=>{
-  try{
-    const {study,doc,day}=selectedKey(),cell=doc.getElementById('cellname')?.textContent.split(' · ')[0];
-    if(!cell?.startsWith('ofr10km_')){panel.textContent='Select a grid cell on the map first.';return}
-    panel.textContent='Loading cell details...';
-    const data=await request('/api/cell-details?'+new URLSearchParams({study,date:day,grid_id:cell}));
-    if(currentStudy()!==study||doc.getElementById('day').value!==day||doc.getElementById('cellname')?.textContent.split(' · ')[0]!==cell)return;
-    panel.textContent=data.source_versions+' · '+data.mode+' · '+data.issue_time_utc+' · '+data.explanation_scale;
-    const factors=data.factors||[];
-    factors.forEach(factor=>{const item=document.createElement('p');item.textContent=factor.feature+': '+(factor.missing?'unavailable':factor.value.toFixed(3)+' '+factor.unit)+'; contribution '+factor.raw_log_odds_contribution.toFixed(3)+' raw log odds';panel.appendChild(item)});
-    if(!factors.length)panel.appendChild(document.createTextNode(' Factor details unavailable for this date.'));
-  }catch(error){showError(error)}
-};
-['csv','geojson'].forEach(format=>document.getElementById(format).onclick=async()=>{
-  try{
-    const {study,day}=selectedKey();panel.textContent='Preparing export...';
-    const blob=await request('/api/export?'+new URLSearchParams({study,date:day,format}),'blob');
-    const url=URL.createObjectURL(blob),link=document.createElement('a');link.href=url;link.download=study+'_'+day+'.'+format;link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
-    panel.textContent='Export ready: '+study+' '+day+'.';
-  }catch(error){showError(error)}
-});
-</script></html>'''
 
 
 def build():
@@ -233,8 +169,18 @@ class Handler(BaseHTTPRequestHandler):
             self.send_json(503,{'status':'unavailable','probability':None,'reason':'local_artifact_unavailable','message':'A required local result file is missing, unreadable or invalid.'})
     def handle_get(self):
         path=urlsplit(self.path);routes={'/':REPORT/'index.html','/historical.html':ROOT/'reports/week_5_prototype_2026-10-16/historical_ignition_map.html','/selected.html':REPORT/'selected_2025_ignition_map.html','/spread.html':REPORT/'corrected_spread_viewer.html'}
-        if path.path in ('/','/workflow.html'):
-            body=(HOME if path.path=='/' else WORKFLOW_PAGE).encode();self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.send_header('Content-Length',str(len(body)));self.end_headers();self.wfile.write(body);return
+        if path.path in ('/','/workflow.html','/performance.html'):
+            body={'/':HOME,'/workflow.html':WORKFLOW_PAGE,'/performance.html':PERFORMANCE_PAGE}[path.path].encode();self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.send_header('Cache-Control','no-store');self.send_header('Content-Length',str(len(body)));self.end_headers();self.wfile.write(body);return
+        if path.path=='/api/model-evidence':
+            if path.query:return self.send_json(400,{'status':'invalid_request'})
+            return self.send_json(200,evidence_response(ROOT))
+        if path.path=='/api/model-evidence/cells':
+            query=parse_qs(path.query,keep_blank_values=True)
+            try:
+                if set(query)!={'candidate','date'} or any(len(values)!=1 for values in query.values()):raise ValueError('One candidate and date required')
+                result=geographic_cells(ROOT,query['candidate'][0],query['date'][0])
+            except ValueError:return self.send_json(400,{'status':'invalid_request'})
+            return self.send_json(200,result)
         if path.path in ('/api/workflow','/api/workflow/footprints'):
             if path.query:return self.send_json(400,{'status':'invalid_request','probability':None})
             data=workflow_response()

@@ -150,6 +150,7 @@ def sample_grib(path,grid,run,lead,field):
 def run(output,run_time=None,research_startup=False,seed_path=None,report_dir=None):
     output.mkdir(parents=True,exist_ok=True)
     if (output/'manifest.json').exists():raise FileExistsError('Completed live demo exists; use a new output directory')
+    (report_dir or REPORT).mkdir(parents=True,exist_ok=True)
     if run_time:
         run=pd.Timestamp(run_time);selection_trace=[{'selection':'explicit run; completion verified by downloads'}]
     else:run,selection_trace=discover_run(utc_now())

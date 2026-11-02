@@ -1,0 +1,1276 @@
+{
+  "directory": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/demo_readiness_2026-11-02/source",
+  "files_analyzed": 11,
+  "average_score": 78.5,
+  "overall_grade": "C",
+  "total_code_smells": 115,
+  "total_solid_violations": 3,
+  "files": [
+    {
+      "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/demo_readiness_2026-11-02/source/capstone_app.py",
+      "language": "python",
+      "metrics": {
+        "lines": {
+          "total": 225,
+          "code": 193,
+          "blank": 30,
+          "comment": 2
+        },
+        "functions": 14,
+        "classes": 1,
+        "avg_complexity": 7.9
+      },
+      "quality_score": 15,
+      "grade": "F",
+      "smells": [
+        {
+          "type": "high_complexity",
+          "severity": "medium",
+          "message": "Function 'feature_unit' has complexity 19 (max: 10)",
+          "location": "feature_unit"
+        },
+        {
+          "type": "high_complexity",
+          "severity": "medium",
+          "message": "Function 'cell_details' has complexity 17 (max: 10)",
+          "location": "cell_details"
+        },
+        {
+          "type": "high_complexity",
+          "severity": "medium",
+          "message": "Function 'export_predictions' has complexity 14 (max: 10)",
+          "location": "export_predictions"
+        },
+        {
+          "type": "high_complexity",
+          "severity": "medium",
+          "message": "Function 'handle_get' has complexity 14 (max: 10)",
+          "location": "handle_get"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 404 should be a named constant",
+          "location": "line 76"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 503 should be a named constant",
+          "location": "line 77"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 503 should be a named constant",
+          "location": "line 79"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 200 should be a named constant",
+          "location": "line 80"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 2020 should be a named constant",
+          "location": "line 92"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 200 should be a named constant",
+          "location": "line 117"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 200 should be a named constant",
+          "location": "line 121"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 200 should be a named constant",
+          "location": "line 122"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 200 should be a named constant",
+          "location": "line 129"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 2020 should be a named constant",
+          "location": "line 141"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 3978 should be a named constant",
+          "location": "line 144"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 3978 should be a named constant",
+          "location": "line 146"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 10000 should be a named constant",
+          "location": "line 148"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 4326 should be a named constant",
+          "location": "line 150"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 503 should be a named constant",
+          "location": "line 169"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 200 should be a named constant",
+          "location": "line 173"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 400 should be a named constant",
+          "location": "line 175"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 200 should be a named constant",
+          "location": "line 176"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 400 should be a named constant",
+          "location": "line 182"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 200 should be a named constant",
+          "location": "line 183"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 400 should be a named constant",
+          "location": "line 185"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 200 should be a named constant",
+          "location": "line 188"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 200 should be a named constant",
+          "location": "line 190"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 400 should be a named constant",
+          "location": "line 197"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 400 should be a named constant",
+          "location": "line 204"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 200 should be a named constant",
+          "location": "line 205"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 503 should be a named constant",
+          "location": "line 206"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 400 should be a named constant",
+          "location": "line 210"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 200 should be a named constant",
+          "location": "line 211"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 404 should be a named constant",
+          "location": "line 213"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 503 should be a named constant",
+          "location": "line 215"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 200 should be a named constant",
+          "location": "line 216"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 1024 should be a named constant",
+          "location": "line 218"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 8767 should be a named constant",
+          "location": "line 222"
+        }
+      ],
+      "solid_violations": [
+        {
+          "principle": "LSP/ISP",
+          "name": "Liskov/Interface Segregation",
+          "severity": "low",
+          "message": "Found 1 unimplemented methods - may indicate oversized interface"
+        }
+      ],
+      "function_details": [
+        {
+          "name": "assess_live_inputs",
+          "parameters": 4,
+          "lines": 13,
+          "complexity": 10
+        },
+        {
+          "name": "readiness_report",
+          "parameters": 0,
+          "lines": 10,
+          "complexity": 3
+        },
+        {
+          "name": "live_readiness_response",
+          "parameters": 0,
+          "lines": 9,
+          "complexity": 5
+        },
+        {
+          "name": "workflow_response",
+          "parameters": 0,
+          "lines": 11,
+          "complexity": 4
+        },
+        {
+          "name": "validate_query",
+          "parameters": 1,
+          "lines": 9,
+          "complexity": 8
+        },
+        {
+          "name": "score_response",
+          "parameters": 3,
+          "lines": 10,
+          "complexity": 6
+        },
+        {
+          "name": "study_provenance",
+          "parameters": 1,
+          "lines": 14,
+          "complexity": 4
+        },
+        {
+          "name": "feature_unit",
+          "parameters": 1,
+          "lines": 19,
+          "complexity": 19
+        },
+        {
+          "name": "cell_details",
+          "parameters": 3,
+          "lines": 19,
+          "complexity": 17
+        },
+        {
+          "name": "export_predictions",
+          "parameters": 3,
+          "lines": 24,
+          "complexity": 14
+        }
+      ],
+      "class_details": [
+        {
+          "name": "Handler",
+          "methods": 3,
+          "lines": 67
+        }
+      ]
+    },
+    {
+      "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/demo_readiness_2026-11-02/source/lightning_experiment.py",
+      "language": "python",
+      "metrics": {
+        "lines": {
+          "total": 323,
+          "code": 295,
+          "blank": 26,
+          "comment": 2
+        },
+        "functions": 9,
+        "classes": 0,
+        "avg_complexity": 6.8
+      },
+      "quality_score": 58,
+      "grade": "F",
+      "smells": [
+        {
+          "type": "too_many_parameters",
+          "severity": "low",
+          "message": "Function 'build_lightning_year' has 6 parameters (max: 5)",
+          "location": "build_lightning_year"
+        },
+        {
+          "type": "too_many_parameters",
+          "severity": "low",
+          "message": "Function 'fit' has 6 parameters (max: 5)",
+          "location": "fit"
+        },
+        {
+          "type": "high_complexity",
+          "severity": "medium",
+          "message": "Function 'choose_candidate' has complexity 11 (max: 10)",
+          "location": "choose_candidate"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 2010 should be a named constant",
+          "location": "line 26"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 2014 should be a named constant",
+          "location": "line 29"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 168 should be a named constant",
+          "location": "line 38"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 180 should be a named constant",
+          "location": "line 52"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 1024 should be a named constant",
+          "location": "line 57"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 2920 should be a named constant",
+          "location": "line 60"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 10000 should be a named constant",
+          "location": "line 80"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 168 should be a named constant",
+          "location": "line 139"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 3600 should be a named constant",
+          "location": "line 148"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 100 should be a named constant",
+          "location": "line 162"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 2016 should be a named constant",
+          "location": "line 218"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 2017 should be a named constant",
+          "location": "line 219"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 025 should be a named constant",
+          "location": "line 229"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 184 should be a named constant",
+          "location": "line 247"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 2015 should be a named constant",
+          "location": "line 252"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 2016 should be a named constant",
+          "location": "line 279"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 100 should be a named constant",
+          "location": "line 286"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 2017 should be a named constant",
+          "location": "line 308"
+        }
+      ],
+      "solid_violations": [
+        {
+          "principle": "DIP",
+          "name": "Dependency Inversion Principle",
+          "severity": "low",
+          "message": "File has 19 imports - consider dependency injection"
+        }
+      ],
+      "function_details": [
+        {
+          "name": "lightning_features",
+          "parameters": 1,
+          "lines": 8,
+          "complexity": 8
+        },
+        {
+          "name": "acquire",
+          "parameters": 3,
+          "lines": 31,
+          "complexity": 7
+        },
+        {
+          "name": "spatial_weights",
+          "parameters": 3,
+          "lines": 26,
+          "complexity": 9
+        },
+        {
+          "name": "rolling_density",
+          "parameters": 5,
+          "lines": 18,
+          "complexity": 2
+        },
+        {
+          "name": "build_lightning_year",
+          "parameters": 6,
+          "lines": 39,
+          "complexity": 7
+        },
+        {
+          "name": "capacity_curve",
+          "parameters": 2,
+          "lines": 21,
+          "complexity": 4
+        },
+        {
+          "name": "choose_candidate",
+          "parameters": 2,
+          "lines": 18,
+          "complexity": 11
+        },
+        {
+          "name": "fit",
+          "parameters": 6,
+          "lines": 17,
+          "complexity": 7
+        },
+        {
+          "name": "run",
+          "parameters": 3,
+          "lines": 26,
+          "complexity": 6
+        }
+      ],
+      "class_details": []
+    },
+    {
+      "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/demo_readiness_2026-11-02/source/hrdps_live_weather.py",
+      "language": "python",
+      "metrics": {
+        "lines": {
+          "total": 240,
+          "code": 211,
+          "blank": 27,
+          "comment": 2
+        },
+        "functions": 11,
+        "classes": 0,
+        "avg_complexity": 8.5
+      },
+      "quality_score": 65,
+      "grade": "D",
+      "smells": [
+        {
+          "type": "high_complexity",
+          "severity": "high",
+          "message": "Function 'validate_seed' has complexity 26 (max: 10)",
+          "location": "validate_seed"
+        },
+        {
+          "type": "high_complexity",
+          "severity": "medium",
+          "message": "Function 'sample_grib' has complexity 12 (max: 10)",
+          "location": "sample_grib"
+        },
+        {
+          "type": "high_complexity",
+          "severity": "medium",
+          "message": "Function 'run' has complexity 19 (max: 10)",
+          "location": "run"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 024 should be a named constant",
+          "location": "line 71"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 200 should be a named constant",
+          "location": "line 74"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 101 should be a named constant",
+          "location": "line 91"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 120 should be a named constant",
+          "location": "line 116"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 1024 should be a named constant",
+          "location": "line 118"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 3600 should be a named constant",
+          "location": "line 133"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 4326 should be a named constant",
+          "location": "line 136"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 4326 should be a named constant",
+          "location": "line 144"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 6371229 should be a named constant",
+          "location": "line 145"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 100 should be a named constant",
+          "location": "line 220"
+        }
+      ],
+      "solid_violations": [],
+      "function_details": [
+        {
+          "name": "utc_now",
+          "parameters": 0,
+          "lines": 4,
+          "complexity": 1
+        },
+        {
+          "name": "grid_relative",
+          "parameters": 1,
+          "lines": 15,
+          "complexity": 7
+        },
+        {
+          "name": "rotate_wind",
+          "parameters": 3,
+          "lines": 6,
+          "complexity": 1
+        },
+        {
+          "name": "incremental_rain",
+          "parameters": 4,
+          "lines": 12,
+          "complexity": 6
+        },
+        {
+          "name": "choose_available_run",
+          "parameters": 2,
+          "lines": 9,
+          "complexity": 6
+        },
+        {
+          "name": "discover_run",
+          "parameters": 1,
+          "lines": 16,
+          "complexity": 8
+        },
+        {
+          "name": "validate_seed",
+          "parameters": 5,
+          "lines": 17,
+          "complexity": 26
+        },
+        {
+          "name": "state_checkpoint",
+          "parameters": 4,
+          "lines": 13,
+          "complexity": 3
+        },
+        {
+          "name": "download",
+          "parameters": 5,
+          "lines": 18,
+          "complexity": 5
+        },
+        {
+          "name": "sample_grib",
+          "parameters": 5,
+          "lines": 26,
+          "complexity": 12
+        }
+      ],
+      "class_details": []
+    },
+    {
+      "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/demo_readiness_2026-11-02/source/performance_view.py",
+      "language": "python",
+      "metrics": {
+        "lines": {
+          "total": 45,
+          "code": 42,
+          "blank": 2,
+          "comment": 1
+        },
+        "functions": 0,
+        "classes": 0,
+        "avg_complexity": 0.0
+      },
+      "quality_score": 76,
+      "grade": "C",
+      "smells": [
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 700 should be a named constant",
+          "location": "line 5"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 2017 should be a named constant",
+          "location": "line 8"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 900 should be a named constant",
+          "location": "line 12"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 2014 should be a named constant",
+          "location": "line 13"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 100 should be a named constant",
+          "location": "line 18"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 20000 should be a named constant",
+          "location": "line 20"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 184 should be a named constant",
+          "location": "line 24"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 2000 should be a named constant",
+          "location": "line 32"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 10000 should be a named constant",
+          "location": "line 33"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 10000 should be a named constant",
+          "location": "line 34"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 100 should be a named constant",
+          "location": "line 35"
+        }
+      ],
+      "solid_violations": [
+        {
+          "principle": "LSP/ISP",
+          "name": "Liskov/Interface Segregation",
+          "severity": "low",
+          "message": "Found 1 unimplemented methods - may indicate oversized interface"
+        }
+      ],
+      "function_details": [],
+      "class_details": []
+    },
+    {
+      "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/demo_readiness_2026-11-02/source/geographic_transfer.py",
+      "language": "python",
+      "metrics": {
+        "lines": {
+          "total": 173,
+          "code": 159,
+          "blank": 13,
+          "comment": 1
+        },
+        "functions": 3,
+        "classes": 0,
+        "avg_complexity": 10.3
+      },
+      "quality_score": 82,
+      "grade": "B",
+      "smells": [
+        {
+          "type": "high_complexity",
+          "severity": "medium",
+          "message": "Function 'train' has complexity 14 (max: 10)",
+          "location": "train"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 2014 should be a named constant",
+          "location": "line 21"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 2014 should be a named constant",
+          "location": "line 47"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 250 should be a named constant",
+          "location": "line 64"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 300 should be a named constant",
+          "location": "line 65"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 2017 should be a named constant",
+          "location": "line 93"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 2010 should be a named constant",
+          "location": "line 100"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 2016 should be a named constant",
+          "location": "line 122"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 2016 should be a named constant",
+          "location": "line 129"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 100 should be a named constant",
+          "location": "line 135"
+        }
+      ],
+      "solid_violations": [],
+      "function_details": [
+        {
+          "name": "select",
+          "parameters": 1,
+          "lines": 18,
+          "complexity": 9
+        },
+        {
+          "name": "train",
+          "parameters": 5,
+          "lines": 27,
+          "complexity": 14
+        },
+        {
+          "name": "run",
+          "parameters": 3,
+          "lines": 23,
+          "complexity": 8
+        }
+      ],
+      "class_details": []
+    },
+    {
+      "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/demo_readiness_2026-11-02/source/dashboard_view.py",
+      "language": "python",
+      "metrics": {
+        "lines": {
+          "total": 71,
+          "code": 68,
+          "blank": 2,
+          "comment": 1
+        },
+        "functions": 0,
+        "classes": 0,
+        "avg_complexity": 0.0
+      },
+      "quality_score": 92,
+      "grade": "A",
+      "smells": [
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 527466 should be a named constant",
+          "location": "line 3"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 15000 should be a named constant",
+          "location": "line 19"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 503 should be a named constant",
+          "location": "line 23"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 1000 should be a named constant",
+          "location": "line 66"
+        }
+      ],
+      "solid_violations": [],
+      "function_details": [],
+      "class_details": []
+    },
+    {
+      "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/demo_readiness_2026-11-02/source/model_evidence.py",
+      "language": "python",
+      "metrics": {
+        "lines": {
+          "total": 77,
+          "code": 66,
+          "blank": 10,
+          "comment": 1
+        },
+        "functions": 3,
+        "classes": 0,
+        "avg_complexity": 11.7
+      },
+      "quality_score": 93,
+      "grade": "A",
+      "smells": [
+        {
+          "type": "high_complexity",
+          "severity": "high",
+          "message": "Function 'evidence_response' has complexity 24 (max: 10)",
+          "location": "evidence_response"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 3978 should be a named constant",
+          "location": "line 74"
+        }
+      ],
+      "solid_violations": [],
+      "function_details": [
+        {
+          "name": "evidence_response",
+          "parameters": 1,
+          "lines": 37,
+          "complexity": 24
+        },
+        {
+          "name": "_date_rows",
+          "parameters": 4,
+          "lines": 5,
+          "complexity": 1
+        },
+        {
+          "name": "geographic_cells",
+          "parameters": 3,
+          "lines": 23,
+          "complexity": 10
+        }
+      ],
+      "class_details": []
+    },
+    {
+      "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/demo_readiness_2026-11-02/source/test_model_evidence.py",
+      "language": "python",
+      "metrics": {
+        "lines": {
+          "total": 80,
+          "code": 70,
+          "blank": 10,
+          "comment": 0
+        },
+        "functions": 4,
+        "classes": 2,
+        "avg_complexity": 1.5
+      },
+      "quality_score": 93,
+      "grade": "A",
+      "smells": [
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 10000 should be a named constant",
+          "location": "line 44"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 503 should be a named constant",
+          "location": "line 66"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 2019 should be a named constant",
+          "location": "line 67"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 2019 should be a named constant",
+          "location": "line 68"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 2017 should be a named constant",
+          "location": "line 69"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 200 should be a named constant",
+          "location": "line 75"
+        }
+      ],
+      "solid_violations": [],
+      "function_details": [
+        {
+          "name": "test_development_evidence_cannot_claim_live_qualification",
+          "parameters": 1,
+          "lines": 17,
+          "complexity": 1
+        },
+        {
+          "name": "test_only_registered_development_dates_and_candidates_are_accessible",
+          "parameters": 1,
+          "lines": 6,
+          "complexity": 2
+        },
+        {
+          "name": "test_keyed_replay_preserves_saved_scores_labels_and_geometry",
+          "parameters": 1,
+          "lines": 21,
+          "complexity": 1
+        },
+        {
+          "name": "test_bad_queries_are_rejected_and_missing_results_fail_closed",
+          "parameters": 1,
+          "lines": 28,
+          "complexity": 2
+        }
+      ],
+      "class_details": [
+        {
+          "name": "ModelEvidenceTests",
+          "methods": 3,
+          "lines": 42
+        },
+        {
+          "name": "EvidenceHttpTests",
+          "methods": 1,
+          "lines": 29
+        }
+      ]
+    },
+    {
+      "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/demo_readiness_2026-11-02/source/test_lightning_experiment.py",
+      "language": "python",
+      "metrics": {
+        "lines": {
+          "total": 53,
+          "code": 43,
+          "blank": 10,
+          "comment": 0
+        },
+        "functions": 4,
+        "classes": 1,
+        "avg_complexity": 3.0
+      },
+      "quality_score": 93,
+      "grade": "A",
+      "smells": [
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 999 should be a named constant",
+          "location": "line 13"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 100 should be a named constant",
+          "location": "line 29"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 100 should be a named constant",
+          "location": "line 31"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 101 should be a named constant",
+          "location": "line 36"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 101 should be a named constant",
+          "location": "line 38"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 2014 should be a named constant",
+          "location": "line 44"
+        }
+      ],
+      "solid_violations": [],
+      "function_details": [
+        {
+          "name": "test_future_bin_is_excluded_and_missing_coverage_is_not_zero",
+          "parameters": 1,
+          "lines": 14,
+          "complexity": 1
+        },
+        {
+          "name": "test_incomplete_clock_is_rejected",
+          "parameters": 1,
+          "lines": 6,
+          "complexity": 1
+        },
+        {
+          "name": "test_capacity_counts_hits_misses_and_false_positives",
+          "parameters": 1,
+          "lines": 13,
+          "complexity": 2
+        },
+        {
+          "name": "test_selection_cannot_trade_away_fixed_budget_recall",
+          "parameters": 1,
+          "lines": 14,
+          "complexity": 8
+        }
+      ],
+      "class_details": [
+        {
+          "name": "LightningExperimentTests",
+          "methods": 4,
+          "lines": 45
+        }
+      ]
+    },
+    {
+      "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/demo_readiness_2026-11-02/source/workflow_view.py",
+      "language": "python",
+      "metrics": {
+        "lines": {
+          "total": 39,
+          "code": 36,
+          "blank": 2,
+          "comment": 1
+        },
+        "functions": 0,
+        "classes": 0,
+        "avg_complexity": 0.0
+      },
+      "quality_score": 98,
+      "grade": "A",
+      "smells": [
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 100 should be a named constant",
+          "location": "line 5"
+        }
+      ],
+      "solid_violations": [],
+      "function_details": [],
+      "class_details": []
+    },
+    {
+      "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/demo_readiness_2026-11-02/source/test_geographic_transfer.py",
+      "language": "python",
+      "metrics": {
+        "lines": {
+          "total": 28,
+          "code": 21,
+          "blank": 7,
+          "comment": 0
+        },
+        "functions": 3,
+        "classes": 1,
+        "avg_complexity": 4.3
+      },
+      "quality_score": 99,
+      "grade": "A",
+      "smells": [
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 2016 should be a named constant",
+          "location": "line 15"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 2014 should be a named constant",
+          "location": "line 23"
+        },
+        {
+          "type": "magic_number",
+          "severity": "low",
+          "message": "Magic number 2017 should be a named constant",
+          "location": "line 25"
+        }
+      ],
+      "solid_violations": [],
+      "function_details": [
+        {
+          "name": "test_physical_contract_has_no_targets_history_or_reporting_covariates",
+          "parameters": 1,
+          "lines": 6,
+          "complexity": 4
+        },
+        {
+          "name": "test_held_geography_and_reserved_training_cutoffs_are_rejected",
+          "parameters": 1,
+          "lines": 7,
+          "complexity": 2
+        },
+        {
+          "name": "test_selection_rejects_recall_loss_or_exposed_diagnostic_folds",
+          "parameters": 1,
+          "lines": 9,
+          "complexity": 7
+        }
+      ],
+      "class_details": [
+        {
+          "name": "TransferTests",
+          "methods": 3,
+          "lines": 21
+        }
+      ]
+    }
+  ]
+}

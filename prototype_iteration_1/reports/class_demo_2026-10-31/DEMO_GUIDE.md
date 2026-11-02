@@ -1,149 +1,152 @@
-# Professor and class demonstration
+# Prototype presentation — Monday November 2, 2026
 
-Prepared October 31, 2026. Assumption: **10 minutes, six slides and a local live walkthrough**. Adjust after the presentation duration/rubric is confirmed. The working prototype already exists; the first new work completed here is a missed-fire audit and an executable model-inference example.
+**10-minute demonstration, then 5-minute Q&A. Five slides total, including the introduction.** PowerPoint is optional. The live code and prototype are the main demonstration. The schedule below gives Parth, Harsh, Rishi, Manav and Jasdish exactly 120 seconds each. Roles are proposed presentation assignments, not claims of original authorship.
 
-## Main message
+## Begin with the problem in plain language
 
-“Our research prototype estimates recorded fire-start risk on a 10 km Ontario grid and separately reconstructs incident spread at 90 m. We built a versioned data pipeline, compared four ignition model families, calibrated probabilities, tested interfaces and investigated failures. Current results support a research demonstration; live warning capability and forecast skill are not established.”
+“Ontario has many locations to review for wildfire risk. We are testing whether past fire records, weather and landscape data can help rank 10 km cells for a recorded fire start on a day. We also have a separate 90 m research simulator for the spread of a known historical fire. We will run code and show actual outputs. Our current prototype does not issue operational fire warnings.”
 
-The four ignition families are historical fire rate, logistic regression, histogram gradient boosting and LightGBM. Existing calibrated LightGBM bundles remain the application defaults. The spread module is an empirical FBP-inspired simulator, not a fifth ignition classifier. There is no LLM or paid AI inference API.
+Explain a **cell-day** as one grid square on one date. Explain **1% review capacity** as inspecting the highest-ranked 1% of eligible cells each day. A high probability and selection into that small review list are different things. The ignition classifier estimates recorded-start likelihood; it does not infer whether lightning or a person caused a fire. Source-reported cause is a separate attribute.
 
-## Recommended ten-minute order
+## Exact ten-minute order
 
-| Time | Slide/action | What to say or demonstrate |
-|---|---|---|
-| 0:00–0:45 | 1: Problem and scope | A grid-cell/day risk estimate and incident spread answer different questions. State 10 km versus 90 m and historical research scope. |
-| 0:45–1:45 | 2: Architecture | Sources → time/geometry/quality checks → offline fitting/simulation → stored outputs → Python API/browser. Name labels, weather and landscape inputs. Keep the two study contracts separate. |
-| 1:45–2:45 | 3: Models and evidence | Four families; later-year and geographic evaluation; separate calibration. Explain recall at a fixed review budget and AP for rare events. |
-| 2:45–3:30 | Terminal: actual inference | Run the command below. It executes the saved spatial development model on a known 2017 feature row now, without passing the target as an input. The expected calibrated result is about 0.3417%. |
-| 3:30–5:45 | 4: Browser ignition | Open the 2019 view, select a cell on May 1, inspect details, export CSV. Briefly show the separate 2025 view. Describe browser maps as saved evaluations. |
-| 5:45–7:00 | Browser spread | Select a supported incident, replay observations and move the first-six-hours slider. Call it final-perimeter-assisted reconstruction; the displayed horizons are not validated forecasts. |
-| 7:00–7:30 | Browser live readiness | Show the explicit unavailable result. Explain why qualified historical inference does not automatically qualify a live forecast. |
-| 7:30–9:00 | 5: Findings | At equal capacity, the temporal development reference found 64 of 736 positive cell-days; denser negative sampling found 56. Keep the reference. Explain the geographic audit and its limits. |
-| 9:00–10:00 | 6: Next milestone | Version the wildfire-only label policy, test weather-history features and reserve genuinely new evaluation data before claiming improved generalization. Invite questions. |
+Switching screens and handing over the keyboard are included. Keep a visible timer. Do not let one member's overrun consume the next member's slot. Each person opens the indicated source function and runs their assigned command. Stop at 10:00 and begin Q&A.
 
-For a five-minute slot: use slides 1–3 for 90 seconds, show one CLI prediction plus one map/cell/export for 90 seconds, spread for 45 seconds, and findings/next step for 75 seconds. Skip the second study and detailed live-readiness walkthrough; still state both limitations.
+| Clock | Presenter | Live action and explanation |
+| --- | --- | --- |
+| 0:00–0:45 | Parth | Slide 1; introduce the problem, cell-day output and separate spread task using the paragraph above. Hand over to Harsh. |
+| 0:45–1:15 | Harsh | Slide 2; identify recorded-start labels, dated weather, terrain and landscape inputs. Explain the checks in the architecture. |
+| 1:15–1:45 | Harsh | Open `show_data` in `code/presentation_steps.py`; show the exact grid/date filter and target exclusion. |
+| 1:45–2:20 | Harsh | Run `./RUN_DEMO.sh data`. Read the 10 km grid key, midnight issue, 31 allowed spatial predictors and `target_is_predictor: false`. |
+| 2:20–2:45 | Harsh | Explain why future weather, final fire size and final perimeters are excluded from ignition inputs. Hand over. |
+| 2:45–3:05 | Rishi | Slide 3; name historical fire rate, logistic regression, histogram gradient boosting and LightGBM. Explain separate temporal/geographic evaluation and calibration. |
+| 3:05–3:20 | Rishi | Show `demo_model_inference.py::run`, specifically the feature selection and `predict_bundle`/calibration calls. |
+| 3:20–3:45 | Rishi | Run `./RUN_DEMO.sh ignition`. Explain the actual historical inference: 0.3417119%, 31 inputs, target excluded. |
+| 3:45–4:35 | Rishi | In the browser show the stored 2019 map, one first-day cell detail and CSV export. Use the exact detail API as fallback. |
+| 4:35–4:45 | Rishi | State that the CLI development model and browser temporal model are different bundles, then hand over. |
+| 4:45–5:05 | Manav | Slide 4; explain why incident spread is a separate 90 m task. |
+| 5:05–5:30 | Manav | Show `live_workflow.py::reconstruction_footprint`: saved arrival times, horizon filtering, raster-to-polygon area. |
+| 5:30–5:55 | Manav | Run `./RUN_DEMO.sh spread`. Read the 1/3/6-hour reconstructed areas for `2023_COC38`. |
+| 5:55–6:35 | Manav | Open the spread viewer, select the same supported incident and move between the recorded replay and 1/3/6-hour controls. |
+| 6:35–6:45 | Manav | State “final-perimeter-assisted historical reconstruction; future forecast skill is unproven”, then hand over. |
+| 6:45–7:00 | Jasdish | Introduce the reported-fire/weather view as a separate observation pipeline. |
+| 7:00–7:20 | Jasdish | Show `read_snapshot` and `live_readiness_response`: clock checks and rejection of unqualified live probabilities. |
+| 7:20–7:45 | Jasdish | Run `./RUN_DEMO.sh workflow`. Read the source retrieval clock, 9 reported incidents, 12 historical scenarios, 21 local notices, and null live outputs. |
+| 7:45–8:20 | Jasdish | Open `/workflow.html`; point out observation versus reconstruction labels, source age, weather context and local-only drafts. |
+| 8:20–8:35 | Jasdish | Open `/api/live-ignition` and show expected HTTP 503/null; this is unavailable, not zero risk. |
+| 8:35–8:45 | Jasdish | Name missing current perimeter/state/model qualification and hand over. |
+| 8:45–9:00 | Parth | Run `./RUN_DEMO.sh research`. This reads both completed development experiments; it does not train or score a new test. |
+| 9:00–9:10 | Parth | Show `show_research` and the lightning `completed_window` function. Explain the past-only time cutoff. |
+| 9:10–9:35 | Parth | Slide 5 and Geographic performance; reference found 2/92, constrained boosting found 5/92 at 1%. The constrained candidate failed the earlier selection folds; defaults retained. |
+| 9:35–9:50 | Parth | Next: historically dated fuel/access data and an untouched evaluation. Lightning features and two model comparisons are complete; universal detection remains unachieved. |
+| 9:50–10:00 | Parth | State the remaining live/spread validation limits and invite questions. |
 
-## Prepare this Mac
+Total: **Parth 45 + 75 = 120 seconds; Harsh/Rishi/Manav/Jasdish 120 seconds each.** See `TEAM_HANDOFF.md` for source anchors and proposed responsibilities. A pair sharing a module must split that module's illustration equally. The main content can be presented without the slides using this same schedule.
 
-Full runtime workspace:
+## Prepare this Mac before class
 
-```text
-/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE
-```
+Use the original full workspace. A Git-only clone lacks required saved panels/models. Do not install dependencies, train models or download data while presenting.
 
-The local server was started on port 8768 during preparation. First open http://127.0.0.1:8768/ . If it is no longer running, use a terminal:
+Terminal 1 (keep it open):
 
 ```sh
 cd /Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE
-.venv/bin/python -m scripts.capstone_app serve --port 8768
+.venv/bin/python -m scripts.capstone_app serve --port 8771
 ```
 
-Leave that terminal open. Stop with Ctrl+C when the demonstration is finished. Do not launch a second copy on the same port.
+If port 8771 is already serving this prototype, reuse that process; do not start a duplicate or stop another application. Check `http://127.0.0.1:8771/` first. Ctrl+C stops a server launched in that terminal.
 
-Open the six-slide PPTX, browser and a second terminal before class. Keep the model-refinement report and audit report as question-and-answer backups. No training or data download should run during the presentation.
-
-## Actual inference command
-
-In the second terminal:
+Terminal 2 (presenters share the keyboard in schedule order):
 
 ```sh
-cd /Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/github_iteration_1/prototype_iteration_1
-../../.venv/bin/python -m scripts.demo_model_inference --workspace ../..
+cd /Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/class_demo_2026-10-31/output
 ```
 
-Expected stable fields:
+The commands below were executed during package preparation. Run each again in the team rehearsal:
 
-```text
-mode: retrospective development inference; not a current forecast
-cell: ofr10km_470000_40000
-date: 2017-08-09
-features_passed_to_model: 31
-target_passed_to_model: false
-probability_percent: about 0.3417119
-recorded_start: true
+```sh
+./RUN_DEMO.sh data
+./RUN_DEMO.sh ignition
+./RUN_DEMO.sh spread
+./RUN_DEMO.sh workflow
+./RUN_DEMO.sh research
 ```
 
-The timing field varies. It measures scoring only, excluding data/model loading. Do not present it as whole-application latency. The CLI uses an inner-spatial DEVELOPMENT bundle; the 2019 browser map uses a different frozen temporal bundle. Their probabilities are not interchangeable.
+`RUN_DEMO.sh` resolves the original workspace and invokes the local Python environment. `code/presentation_steps.py` is a short read-only helper that calls existing project functions. Open the actual implementation beside it. The ignition step calls the existing inference function; other steps inspect real archived inputs, compute footprint areas or read saved research evidence. No step trains, retunes, changes state trust or contacts an external provider.
 
-Suggested narration: “This executes predict_proba using a saved model and an archived feature row. The observed start is shown only for comparison. This case had positive risk but ranked 14th when the daily review budget was 13, so it was missed by the top-1% policy.”
+Have five browser tabs ready: home, exact historical detail API, spread, workflow and live readiness. Open the source functions in the editor and use one command per presenter. Keep the five-slide deck in presentation mode only when explaining a slide.
 
-This command needs the full local `ignition_weather_v2_development/validation.parquet`, its manifest, and the pinned development model under `ignition_refinement_2026-10-31`. Those are outside Git and are not supplied by a fresh clone. Model/input hashes are checked before scoring. The script restricts demonstration inputs to exposed 2017 data.
+## Stable outputs and browser actions
 
-## Browser sequence and exact examples
+| Step | Expected output and interpretation |
+| --- | --- |
+| Data | `ofr10km_470000_40000`, `2017-08-09`, issue `2017-08-09T04:00:00Z`, 31 allowed spatial predictors; target excluded |
+| Ignition | Calibrated probability **0.0034171191**, or **0.3417119%**, recorded start true. This is an exposed legacy 2017 development example, not a current forecast or the new wildfire-only comparison |
+| Spread | `2023_COC38`; **1.62 / 4.86 / 17.01 ha** at 1/3/6 hours; `forecast_validated: false`. Code computes areas now from saved reconstruction arrival times |
+| Workflow | Captured 9 incidents / 12 historical scenarios / 21 local records; live ignition and spread null. Freshness/remaining weather hours change with the clock |
+| Research | Five matched geographic candidates: reference **2/92**, lightning 24h **2/92**, lightning 24h+7d **3/92**, physical logistic **2/92**, constrained boosting **5/92**. Both registered studies retained the reference; **27 fits** total |
 
-1. Open **Historical ignition · 2019**. Use **2019-05-01**, click a cell and choose **Cell details and provenance**. First-day factor explanations are available; on later dates the app explicitly reports unavailable factors. Factors describe raw model log-odds contributions, not causal effects or contributions to calibrated probability.
-2. Choose **Export selected date · CSV**, then optionally **GeoJSON**. A historical date export contains 9,673 grid rows. Demonstrate that a download exists and show a few rows; do not read the whole file on screen.
-3. Optional exact browser API check for the cell `ofr10km_-10000_100000`:
-   `http://127.0.0.1:8768/api/cell-details?study=historical&date=2019-05-01&grid_id=ofr10km_-10000_100000`
-   Saved probability: 0.0017897933, or about **0.1790%**. This is a negative-label example, not a claimed successful fire detection.
-4. Briefly open **Selected sources · 2025**, using **2025-09-01**. It is a separate population/model/source contract with 9,648 eligible grid cells. The same example cell has a saved probability of 0.0022899407, or about **0.2290%**. This is not a direct comparison of model quality across populations.
-5. Open **Corrected spread reconstruction**. Use the incident dropdown, retain one supported case, choose **Replay between satellite passes**, and move time forward. Then choose **First 6 hours from ignition**. Its 0–200 slider maps to 0–6 hours: roughly 33≈1 hour, 100=3 hours, 200=6 hours. These are saved reconstruction displays, not a fresh simulation server call. Do not promise a basemap without network access; the embedded reconstruction/fuel view is the scientific content.
-6. Open **Live readiness**. The unavailable response is expected. The API returns HTTP 503 with a null probability; null does not mean zero risk. No current wildfire warning is issued.
+Do not describe a console output as proof of an actual team member's prior code authorship. Do not compare the CLI probability to another study's probability as if they were the same model.
 
-If no convenient map cell is selected during rehearsal, keep the exact API URL above open as a backup. UI clicks and animations still require a visual rehearsal; passing an HTTP route is not the same as confirming an interaction.
+In the earlier development audit, the CLI example ranked 14th with 13 daily review slots. It was missed by that top-1% policy; presenting its nonzero probability is not a claim of successful detection.
 
-## Results worth presenting
+Browser sequence:
 
-| Evidence | Result and correct interpretation |
-|---|---|
-| Automated regression suite | 158 tests passed in the existing Mac environment. This is software evidence, not forecast accuracy. |
-| Fresh server/API preflight | 14 checks passed: pages, scores, details, exports, invalid input and unavailable live output. HTTP validation is not a fresh visual click-through. |
-| Temporal 2017 development | Reference AP 0.00434155; ROC AUC 0.866279; recall 8.70% (64/736) at 1% daily capacity. Candidate AP 0.00445058 but recall 7.61% (56/736), so no promotion. Both used 17,848 review slots. |
-| Geographic 2017 development audit | 0/92 positives selected at 1% capacity. All 92 had declared weather support; no internal grid/label/date mismatch was found. This motivates model refinement. |
-| Small-capacity context | Uniform random review at the same capacity expects about 0.95 hits and has about a 38.45% chance of zero, under the stated sampling assumptions. This is context, not a model significance test. |
-| Preservation | Earlier final model/evaluation artifacts remain unchanged. These new checks use exposed development data and are not a new final test. |
+1. Home now opens **Geographic performance**. Show the fixed 1% reference and constrained-model comparison during Parth’s results segment; widening capacity is sensitivity only. For Rishi’s segment choose **Historical ignition · 2019**. Use **2019-05-01** and click one cell. Choose **Cell details and provenance** and export CSV. This date has saved factor explanations; later dates explicitly report unavailable factors. Explain factors as raw log-odds contributions, not causes.
+2. Deterministic detail backup: `http://127.0.0.1:8771/api/cell-details?study=historical&date=2019-05-01&grid_id=ofr10km_-10000_100000`. Saved probability is **0.0017897933**, or **0.1790%**, for a negative-label example. A historical daily CSV contains **9,673 rows**.
+3. Spread: `http://127.0.0.1:8771/spread.html`. Select the supported `2023_COC38` case using its displayed incident label. Choose the first-six-hour mode; its 0–200 slider maps approximately **33→1 hour, 100→3 hours, 200→6 hours**. The replay and first-six-hour reconstruction modes answer different retrospective questions. They do not run a fresh prospective simulation API.
+4. Workflow: `http://127.0.0.1:8771/workflow.html`. The refreshed feed was retrieved **2026-11-02 15:07:12 UTC** (10:07 Toronto); weather uses the November 2 06 UTC run acquired at 15:02 UTC. Read the actual retrieval/freshness label. The feed has points, not verified current perimeters. Districts use a dated 2023 reference. By class, the snapshot/weather context may be stale or expired; that should remain visible. Do not refresh sources during the demo just to remove the label.
+5. Live API: `http://127.0.0.1:8771/api/live-ignition`. **HTTP 503 and null are expected.** No source connection or trusted flag can by itself qualify a model. No public alerts are sent.
 
-The chart is a development comparison, not the frozen 2019 final evaluation. Do not call the 2017 results “accuracy,” and do not combine the 2019 and 2025 study populations. The spread refinement also did not justify replacement: its overlap gain interval included zero and recall fell. Keep current settings and qualify its reconstruction scope.
+Skip the separate 2025 model tab in the core ten minutes. It is a different source/population contract with 9,648 eligible cells and is available only if asked. The historical 2019 map, legacy 2017 inference example and latest wildfire-only 2017 comparison must retain their separate study labels.
 
-## What is ready and what remains
+## Measured results to explain honestly
 
-Ready: six-slide editable deck with notes, executable historical inference example, tested local API, existing dashboard, recorded evidence, dated screenshot backups, audit and a registered next-feature design.
+The updated slide 5 chart compares reference AP **0.0023242605** with constrained-model AP **0.0035090156** on the same exposed 2017 geographic diagnostic. At the fixed daily 1% capacity they find **2/92** and **5/92**, respectively. The constrained model still misses **87/92**. Earlier 2014/2015 folds found reference **0 and 7**, constrained **0 and 4**, so the registered selection rule retained the reference before 2017 scoring. This diagnostic gain does not establish unseen generalization or qualify a replacement. The older **0/92** audit used a different target/refit and remains separate.
 
-Still required before presenting:
+Today’s lightning study completed **18 fits**, and the simpler geographic-transfer comparison completed **9 fits**. Lightning features cover **14,238,656 cell-days** in 2010–2017 with zero future-interval violations. The original 30-row pilot matches the full-grid output. At 1%, the two lightning variants find **2/92** and **3/92**; neither passes earlier-fold selection. Old final artifacts and serving defaults remain unchanged. The older weather-history study and its 2/92 versus 2/92 result remain valid as a separate experiment. Station-to-grid observed FWI startup and operational source timing remain unresolved.
 
-- [ ] Open the PPTX in the actual presentation application and test the projector/text size.
-- [ ] Visually rehearse the map selection, date changes, details, export and spread controls on this Mac.
-- [ ] Time the full talk and practice the switch between slides, terminal and browser.
-- [ ] Confirm the real duration/rubric and divide speaking roles if this is a team presentation.
+The spread simulator has not demonstrated improvement over its baseline overall; supported replay displays are retrospective. No validated 1/3/6-hour future skill or current perimeter prediction is claimed. There is no LLM, paid inference API, cause classifier or public warning delivery in this demonstration.
 
-Browser control was disabled in Work settings during this preparation, so a new automated visual rehearsal could not be completed. The deck was structurally validated and all six exported final slides were inspected; opening it in native PowerPoint was not verified. Current screenshots in the backup folder are explicitly from **October 16, 2026**, not a new capture. A video recording and an offline visual rehearsal were not made.
+The latest combined suite passed **212 tests** in this Mac environment. Those are software checks, not model accuracy or field acceptance. Fresh presentation preflight records verify code/HTTP behavior separately. No full team or native PowerPoint/projector rehearsal has been completed by this preparation.
 
-Modelling work remains after the demo: implement the newly registered label/feature experiment, acquire/reserve fresh evaluation data, and qualify live weather and spread forecast horizons. These are not prerequisites for honestly demonstrating the existing research prototype. New frontend work is not the current priority.
+## Five-minute Q&A, 10:00–15:00
 
-## What I need from you
+Keep slide 5 visible. Answer the question first in about 20–30 seconds, then offer the relevant function or evidence file. Route questions to the assigned module presenter; let another member answer when they have already spoken. A separate five-minute Q&A does not extend the ten-minute demonstration.
 
-Only the presentation duration and any professor rubric/specific instructions are needed to tailor this package. The current 10-minute version is usable for rehearsal now. You can complete the manual visual rehearsal yourself, or enable browser control in Work settings for a fresh automated pass. No additional dataset/provider credentials are needed for this saved-data demonstration on the current Mac.
+| Likely question | Short answer | Suggested first responder |
+| --- | --- | --- |
+| What does the ignition output mean? | Probability of a recorded start in one 10 km cell on a calendar day, under that study's archived inputs. It does not identify the cause | Rishi |
+| Why 10 km instead of 2.5 km? | Ten kilometres is the agreed ignition data/model contract. Finer pixels do not create reliable observations. The 90 m incident spread task is separate | Harsh |
+| Which models did you compare? | Historical fire rate, logistic regression, histogram gradient boosting and LightGBM. Calibrated LightGBM bundles remain the existing app defaults; the spread simulator is separate | Rishi |
+| Why did a higher AP not replace the model? | At the agreed daily 1% review capacity, the constrained model found 5/92 on the exposed diagnostic but had lower recall on earlier selection folds. The full adoption rule did not pass | Parth |
+| Does 2/92 mean zero risk elsewhere? | No. It describes selection into a small review list, not zero predicted risk or guaranteed absence of fire | Parth |
+| Is this live forecasting? | Reported-fire/weather collection works, but live model probabilities remain unavailable. Current perimeters, accepted state mapping and exact source/issue-time qualification are incomplete | Jasdish |
+| Are those six-hour spread forecasts? | They are final-perimeter-assisted historical reconstructions. The controls do not establish future forecast accuracy | Manav |
+| How is future information excluded? | Past-only input windows, training-only transforms, separate calibration and preserved evaluation partitions. Final perimeter/size stays out of ignition predictors; archive receipt timing remains a limitation | Harsh |
+| What is new after the earlier demo? | Full development lightning features, 27 model fits, an interactive geographic-results dashboard and refreshed fire/weather observations. No candidate qualified for promotion | Jasdish or Parth |
+| What will you do next? | Audit historically dated fuel/access sources and reporting coverage, then register the next development study and obtain an untouched evaluation. Qualify issue-time live inputs before live predictions | Parth |
+| Why no accuracy headline? | Fire-positive cell-days are rare; always predicting no fire can look accurate. AP, calibration and recall at a fixed review capacity are more informative | Rishi |
+| What did each person contribute? | State the member's actual work and point to the function/commit they can substantiate. The proposed presentation roles alone do not prove original contributions | Each member |
 
-## Questions you may be asked
+If asked for the exact model/refinement evidence, open `CAPSTONE/reports/geographic_transfer_2026-11-02/results.json` and `CAPSTONE/reports/lightning_development_2026-11-02/results.json`. The full source/access matrix is `CAPSTONE/reports/zero_cost_sources_2026-11-01/README.md`. Existing Lucid diagrams remain available at `https://lucid.app/lucidchart/24bb58c8-fb97-479c-a0a8-9434caf9e283/edit`; do not depend on online Lucid during the ten minutes.
 
-**Why 10 km?** It is the agreed common ignition data/model contract. Finer 2.5 km work was a separate pilot; finer cells do not automatically add reliable observations. The 90 m spread grid serves a different incident-scale task.
+## Rehearsal and fallback
 
-**Why LightGBM?** It is the existing calibrated application choice after model comparisons. Recent candidates did not pass all recall/AP/calibration safeguards. It is not established as universally best.
+- [ ] All five members accept their proposed roles and can explain their own contribution accurately.
+- [ ] Each person opens the assigned function and runs the assigned command on the actual demo Mac.
+- [ ] Run the whole sequence with a timer: 10:00 total and exactly 2:00 per person, including keyboard/window handoffs.
+- [ ] Open the five-slide PPTX in the actual presentation application and test projector readability and speaker notes.
+- [ ] Visually check map selection, date, cell details, CSV download and spread controls. Individual Chrome interaction checks were completed on November 2. The team still needs its timed end-to-end rehearsal and projector check.
+- [ ] Rehearse an offline/failed-UI fallback without changing source freshness or model results.
+- [ ] Confirm all members' attendance and remain for peers' demonstrations. Professor Mayy's notice says absent members lose the presentation grade.
 
-**Why not report only accuracy?** Positive cell-days are rare. A system predicting no starts can appear highly accurate. We examine AP, capacity recall/precision, probability losses and calibration, plus temporal/geographic performance.
+If a command or UI takes longer than 15 seconds, stop troubleshooting in front of the class. Use the corresponding JSON/text output under `backup/`, say it is recorded evidence, and continue within the same member's slot. Use `backup/ignition_ui.png`, `spread_ui.png` and `live_ui.png` only as dated **October 16** screenshots; their live-status text may describe that older build. They are not fresh captures of today's workflow. `backup/RESULTS.txt` contains the latest small verified outputs, and `backup/model_inference_current.json` is the rerun historical inference. The old backup JSON/CSV provenance remains intact.
 
-**Does 0/92 mean zero risk everywhere?** No. It means no held positive made the daily top-1% review set. The best missed positive ranked 14th with 13 slots. The sample and small budget require cautious interpretation.
+If the server is stopped, restart it with the command above before the timed demo. If Python/model assets are missing, use recorded evidence and clearly state the failure; do not improvise a prediction. If PowerPoint fails, use the inspected PNG slide exports and the guide. No internet connection or paid API is required for the saved local code examples. Static inspection found no external `src`/`href` URLs in the two main map/reconstruction pages, but an offline browser rehearsal remains unverified.
 
-**Is this live?** The browser serves archived evaluations and saved spread reconstructions. The terminal recomputes a model score now on archived inputs. Operational live forecasting remains unqualified.
+## Package and verification boundary
 
-**Does the simulator predict a fire six hours ahead?** The viewer displays retrospective, final-perimeter-assisted reconstruction. Its one-, three- and six-hour controls do not establish validated future prediction.
+Authoritative folder: `/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/class_demo_2026-10-31/output`.
 
-**How do you prevent leakage?** Separate issue-day cutoffs, past-only histories, training-only fitted transforms and calibration partitions. Final perimeter data stays in the reconstruction path, not ignition predictors. Modern archive publication timing is still a limitation.
-
-**What is next?** Version the prescribed-burn exclusion policy, test trailing weather features under the same pre-day cutoff, compare against a matching reference, and reserve genuinely untouched evaluation data. See the audit's registration draft.
-
-## Code and diagrams to show if asked
-
-- `prototype_iteration_1/scripts/demo_model_inference.py`: actual model invocation and input/target separation.
-- `prototype_iteration_1/scripts/missed_fire_audit.py`: grid/label/time reconciliation and capacity diagnostics.
-- `prototype_iteration_1/scripts/capstone_app.py`: local serving, stored scores, details and exports.
-- `prototype_iteration_1/scripts/model_refinement.py`: temporal/geographic experiment protocol.
-- `prototype_iteration_1/team_repository/capability_2_fire_spread/scripts`: separate spread methods.
-- Existing [Lucid architecture/use-case/data-flow diagrams](https://lucid.app/lucidchart/24bb58c8-fb97-479c-a0a8-9434caf9e283/edit); local exports are under `prototype_iteration_1/docs/diagrams/lucid`. The new deck includes an editable simplified architecture flow.
-
-## Backup and portability
-
-`backup/` holds three dated screenshot copies and their provenance, the recorded inference JSON and one historical date export. If the UI fails, label the screenshot date and use these examples; do not imply a successful live interaction. `evidence/http_preflight.json` holds the fresh endpoint evidence.
-
-The authoritative local output is in `CAPSTONE/reports/class_demo_2026-10-31/output`. A compact copy is tracked under `github_iteration_1/prototype_iteration_1/reports/class_demo_2026-10-31`. The Git folder alone does not restore large runtime panels or saved models. The original code submission ZIP supplies the old saved-map runtime; the new CLI additionally needs the development files specified above. This preparation is not a clean-machine installation certification.
+The existing deck has been updated to five slides. Today’s code steps, HTTP checks and browser interaction scope are recorded in `evidence/verification_2026-11-02.json`. The November 1 preflight remains historical. Current slide validation is `evidence/slide_validation_2026-11-02.json`. The presentation and code/evidence snapshot are packaged on `parth/iteration-1-prototype`; dated verification records retain their original pre-publication scope. Large runtime data remains outside the presentation folder and Git. This is not a clean-machine installation certification or proof of completed team rehearsal. Today’s development work completed 27 model fits in separate new experiment directories. Protected final results remain unchanged. No public alert, submission, production deployment or paid service was performed. See `CAPSTONE/reports/demo_readiness_2026-11-02/README.md` for today’s evidence.

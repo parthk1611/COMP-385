@@ -1,0 +1,40 @@
+{
+  "mode": "display saved development evidence; no training or new evaluation",
+  "geographic_comparison": [
+    {
+      "candidate": "reference",
+      "average_precision": 0.002324260544534476,
+      "hits": 2,
+      "positives": 92
+    },
+    {
+      "candidate": "lightning_24h",
+      "average_precision": 0.0024014288564903575,
+      "hits": 2,
+      "positives": 92
+    },
+    {
+      "candidate": "lightning_24h_168h",
+      "average_precision": 0.0023086057588760384,
+      "hits": 3,
+      "positives": 92
+    },
+    {
+      "candidate": "physical_logistic",
+      "average_precision": 0.0022394169766668916,
+      "hits": 2,
+      "positives": 92
+    },
+    {
+      "candidate": "physical_monotonic",
+      "average_precision": 0.003509015561797586,
+      "hits": 5,
+      "positives": 92
+    }
+  ],
+  "daily_review_capacity_percent": 1,
+  "completed_development_fits": 27,
+  "earlier_fold_selection": "reference",
+  "development_gate_passed": false,
+  "decision": "Existing models retained. Constrained candidate finds 5/92 on exposed 2017 data but fails earlier selection folds. No live qualification."
+}

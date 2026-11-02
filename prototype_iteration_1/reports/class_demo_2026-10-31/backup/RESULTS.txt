@@ -1,0 +1,12 @@
+RECORDED FALLBACK OUTPUTS — November 2 model and demo update
+
+These are recorded outputs. Run the launcher for a fresh local classroom interaction.
+
+DATA: 10 km cell ofr10km_470000_40000, 2017-08-09, issue 04:00 UTC, 31 spatial predictors, target excluded.
+IGNITION: archived development inference probability 0.003417119113477968 (0.3417119113%). This legacy example was missed at the earlier daily top-1% cutoff.
+SPREAD: 2023_COC38, 90 m historical reconstruction: 1h 1.62 ha, 3h 4.86 ha, 6h 17.01 ha. Forecast validation remains false.
+WORKFLOW: feed retrieved 2026-11-02T15:07:12 UTC, 9 reported incidents, 12 historical scenarios, 21 local notices. HRDPS run November 2 06 UTC. Actual clock determines freshness and remaining valid weather. Live outputs null.
+RESULTS at daily 1%: reference 2/92; 24h lightning 2/92; 24h+7d lightning 3/92; physical logistic 2/92; constrained boosting 5/92, still 87 misses. All candidates fail the registered earlier-fold replacement rule; defaults retained. Old 0/92 used a different study target/refit.
+CHECKS: 212 tests, 29 HTTP checks, five launcher commands and individual Chrome control/export checks. No complete team rehearsal or native PowerPoint/projector verification.
+
+October 16 screenshots remain dated historical fallbacks. No universal detection or operational warning claim.

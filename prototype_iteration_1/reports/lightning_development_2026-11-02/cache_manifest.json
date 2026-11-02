@@ -1,0 +1,102 @@
+{
+  "2010.parquet": {
+    "bytes": 113326791,
+    "sha256": "2a99d55f02779f249cf94327e3e0388d1edaa08efdac580b34ed6aa0a44031bb"
+  },
+  "2011.parquet": {
+    "bytes": 110634257,
+    "sha256": "13d86c9c3ab59d671d5a9a29c3020992837fce333fdd1092a14b8bfaab4ae5b9"
+  },
+  "2012.parquet": {
+    "bytes": 107522513,
+    "sha256": "698898af71a9c2724da0589788c6c1438e54863a1b70a739b97bc31a1f8bc62c"
+  },
+  "2013.parquet": {
+    "bytes": 107044994,
+    "sha256": "4caa905403a38e32311e009c42a7dbbbcf6bcc466e51b4890462bb045d3a38fa"
+  },
+  "2014.parquet": {
+    "bytes": 112379678,
+    "sha256": "32b2f2d5a564e63030ba37b6b40218577da5b2b333ebc6695184d86d6c9fa637"
+  },
+  "2015.parquet": {
+    "bytes": 116110658,
+    "sha256": "454fa158d26855c53003eb0d211cbe5a21ef7dd91c64c17fbb3d5590ed45b647"
+  },
+  "2016.parquet": {
+    "bytes": 115029704,
+    "sha256": "13f372172810d40ad4341c65c7ad351662aa8665d0252a3cab935f57059ad901"
+  },
+  "2017.parquet": {
+    "bytes": 112341937,
+    "sha256": "46d8e75576bac24a26abb3db248e8988dd814cd30f0718ab310e5f5e22852be5"
+  },
+  "inner_spatial_lightning_24h.joblib": {
+    "bytes": 116359,
+    "sha256": "29e5578bb42b96fc5afe6ca5fbb6d9135d698203272f85518c424b115f1da2a3"
+  },
+  "inner_spatial_lightning_24h_168h.joblib": {
+    "bytes": 116525,
+    "sha256": "fdc72f41a61da22eaa2079c3c5248d6abb2ac1145490beac5a190f242edc2b66"
+  },
+  "inner_spatial_lightning_24h_168h_predictions.parquet": {
+    "bytes": 2667550,
+    "sha256": "dbf14b520ce52ab73543c13bc55b2c90204a7af3a0a96178764cef4f562c4e07"
+  },
+  "inner_spatial_lightning_24h_predictions.parquet": {
+    "bytes": 2635562,
+    "sha256": "0c33923a189e86394ad5a1588e56431cef67c2c22b304aa45cc27484ecd4706d"
+  },
+  "inner_spatial_reference.joblib": {
+    "bytes": 116310,
+    "sha256": "7112f300a2b8b0c3daaaea465321faae4025bbd210c45c1d98422acbac25122a"
+  },
+  "inner_spatial_reference_predictions.parquet": {
+    "bytes": 2682841,
+    "sha256": "fe82bb57528733b233085e04aefc5814171952f016bbc85a51f994e0b5298f9d"
+  },
+  "lightning_2010.parquet": {
+    "bytes": 6117993,
+    "sha256": "d5a70252a60cd9b3ebc2d613c90f068728c6b3fbcdf07367d7c86d34dbedb3d6"
+  },
+  "lightning_2011.parquet": {
+    "bytes": 6251316,
+    "sha256": "a105802ab75ccf84b8f9becea99463ad678c241bae4d9f0a00e0c8376f896ac8"
+  },
+  "lightning_2012.parquet": {
+    "bytes": 6323668,
+    "sha256": "11316f97ef317253b121cc9c1479e6b3bbeee68f8b4719fbc7812730c4527001"
+  },
+  "lightning_2013.parquet": {
+    "bytes": 6141456,
+    "sha256": "681e8ecab318ac9e6e52efd83e7009ce58806583997a0fdb372eff54b3bc67b2"
+  },
+  "lightning_2014.parquet": {
+    "bytes": 5633276,
+    "sha256": "b7c20a8c68427761fab46d1bf54571ee0dc3cb0f5952b9f246f2f15236bf5a34"
+  },
+  "lightning_2015.parquet": {
+    "bytes": 6251201,
+    "sha256": "d57951da5aaeb72bb4b895b10489e837191dfd5f1d48171b040f415d4515d093"
+  },
+  "lightning_2016.parquet": {
+    "bytes": 5788215,
+    "sha256": "8d91dd6e5fc4c107b586f71288e0de6cd7f8614762406f8ca570aebf72093574"
+  },
+  "lightning_2017.parquet": {
+    "bytes": 6225277,
+    "sha256": "a14f1509d5d4109360a91ceb15147dea5edc23cfe053e9efc651fda6f1a174b6"
+  },
+  "temporal_lightning_24h.joblib": {
+    "bytes": 116341,
+    "sha256": "1c84026346f11185781acafbe0a04954cf24dc2bdfeec11902974046d6b4e529"
+  },
+  "temporal_lightning_24h_168h.joblib": {
+    "bytes": 116651,
+    "sha256": "d1f28903bd79c28f7f0727377c49db1073a60efadea99291cbe8c00aac11af74"
+  },
+  "temporal_reference.joblib": {
+    "bytes": 116045,
+    "sha256": "4d92d8108722d7b85a88c700ffdaaa60a5d167b68b865c1b368bb3b63139d014"
+  }
+}

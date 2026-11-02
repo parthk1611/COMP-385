@@ -1,0 +1,52 @@
+{
+  "checked_at_utc": "2026-11-02T11:43:07.451605+00:00",
+  "code_steps": [
+    {
+      "step": "data",
+      "exit_code": 0,
+      "elapsed_seconds": 0.3781209159642458
+    },
+    {
+      "step": "ignition",
+      "exit_code": 0,
+      "elapsed_seconds": 1.5385342079680413
+    },
+    {
+      "step": "spread",
+      "exit_code": 0,
+      "elapsed_seconds": 1.3328002920607105
+    },
+    {
+      "step": "workflow",
+      "exit_code": 0,
+      "elapsed_seconds": 1.3064552909927443
+    },
+    {
+      "step": "research",
+      "exit_code": 0,
+      "elapsed_seconds": 0.027635333011858165
+    }
+  ],
+  "http_checks_passed": 18,
+  "planned_presenter_seconds": {
+    "Parth": 120,
+    "Harsh": 120,
+    "Rishi": 120,
+    "Manav": 120,
+    "Jasdish": 120
+  },
+  "planned_demo_seconds": 600,
+  "planned_qa_seconds": 300,
+  "browser_inventory": [],
+  "visual_browser_rehearsal": false,
+  "native_powerpoint_verified": false,
+  "team_rehearsal_completed": false,
+  "attendance_confirmed": false,
+  "deck_slides": 5,
+  "all_five_slides_visually_inspected": true,
+  "final_render_identical_to_reviewed_draft": true,
+  "deck_sha256": "16e43dac7e3a035b959ba20c9743392aa9b2965da131bc74a0de22b7932de836",
+  "model_training_performed": false,
+  "publication_performed": false,
+  "protected_scientific_files_unchanged": 31
+}

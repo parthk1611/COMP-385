@@ -1,0 +1,14 @@
+[
+  {
+    "source": "dashboard_view.py",
+    "syntax_pass": true
+  },
+  {
+    "source": "performance_view.py",
+    "syntax_pass": true
+  },
+  {
+    "source": "workflow_view.py",
+    "syntax_pass": true
+  }
+]

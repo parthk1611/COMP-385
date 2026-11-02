@@ -1,0 +1,12 @@
+{
+  "mode": "historical final-perimeter-assisted reconstruction",
+  "fire": "2023_COC38",
+  "pixel_m": 90.0,
+  "forecast_validated": false,
+  "areas_ha": {
+    "1": 1.62,
+    "3": 4.86,
+    "6": 17.01
+  },
+  "interpretation": "Code decodes saved arrival times and computes areas now; it does not forecast a current fire"
+}

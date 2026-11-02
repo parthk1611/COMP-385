@@ -1,0 +1,14 @@
+{
+  "mode": "saved reported-fire/weather snapshot",
+  "feed_retrieved_at_utc": "2026-11-02T02:29:19.753167+00:00",
+  "freshness": "stale",
+  "reported_incidents": 9,
+  "historical_scenarios": 12,
+  "local_notices": 21,
+  "live_ignition_probability": null,
+  "live_spread": null,
+  "blockers": [
+    "Active feed supplies points, not a verified current perimeter/time.",
+    "Observed/overwintered FWI state and matching model source/issue-time qualification remain incomplete."
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "inner_spatial_reference_predictions.parquet": {
+    "bytes": 2682841,
+    "sha256": "fe82bb57528733b233085e04aefc5814171952f016bbc85a51f994e0b5298f9d"
+  },
+  "inner_spatial_physical_logistic_predictions.parquet": {
+    "bytes": 2778423,
+    "sha256": "0ca6909e65b62ad55375e2416e7e78550e83f3c7ed8ded70590c9195fe584fa7"
+  },
+  "inner_spatial_physical_logistic.joblib": {
+    "bytes": 2366,
+    "sha256": "c23c07367c6341c8ac1fd42f45a8193ceb7b96cbdec6ef5f8e8325b26783d3f2"
+  },
+  "inner_spatial_physical_monotonic_predictions.parquet": {
+    "bytes": 2126233,
+    "sha256": "0ec412c801ffdc99ca842f711d7b9ee8c38048500d8cd9c255c0740f3e0605c7"
+  },
+  "inner_spatial_reference.joblib": {
+    "bytes": 116310,
+    "sha256": "7112f300a2b8b0c3daaaea465321faae4025bbd210c45c1d98422acbac25122a"
+  },
+  "inner_spatial_physical_monotonic.joblib": {
+    "bytes": 81805,
+    "sha256": "c5badde45601183d48831e35098d239192ae363fcb8be1919877345e4127b8f8"
+  }
+}

@@ -3,7 +3,7 @@
 PAGE = """<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Wildfire observations and research notices</title>
 <style>body{font:16px system-ui;margin:0;color:#183c32;background:#f2f5f0}header{background:#183c32;color:white;padding:24px}main{max-width:1150px;margin:auto;padding:20px}a{color:inherit}table{border-collapse:collapse;width:100%;background:white;margin:12px 0 28px}th,td{text-align:left;padding:10px;border-bottom:1px solid #d4ddd5;vertical-align:top}th{background:#e6eee7}p{line-height:1.5}.scroll{overflow:auto}.note{padding:12px;border-left:4px solid #9c6024;background:#fff6e9}#error{color:#8b201c}h2{margin-top:30px}summary{cursor:pointer}small{font-size:13px}</style>
-<header><a href="/">Back to model studies</a><h1>Wildfire observations and research notices</h1><p>Reported incidents, forecast weather context and historical spread examples</p></header>
+<header><a href="/" target="_top">Back to model studies</a><h1>Wildfire observations and research notices</h1><p>Reported incidents, forecast weather context and historical spread examples</p></header>
 <main><p id="status" role="status">Loading the latest saved snapshot…</p><p id="error" role="alert"></p>
 <p class="note">Live ignition and spread predictions are unavailable. Notices stay in this local prototype; public alerts are not sent. Fire causes shown here are reported source attributes.</p>
 <h2>Reported active-fire feed</h2><p>Retrieval time does not establish when a fire’s condition or perimeter was last observed. This feed supplies points. District names use the dated MNR administrative reference package.</p>

@@ -1,0 +1,28 @@
+{
+  "scope": "Local code and scientific-contract review; no independent agent review",
+  "checks": [
+    "Training excludes held geography and buffers",
+    "Earlier-fold choice frozen before diagnostic scoring",
+    "No target/future lightning supplied as predictors",
+    "Training-only logistic transforms and separate calibration",
+    "Matched baseline parity and model save/load parity",
+    "Immutable old final artifacts verified",
+    "Whitelisted API candidates and bounded development dates",
+    "Text-node rendering and loopback-only server",
+    "Bounded identity-keyed date cache",
+    "Frontend syntax and native Chrome state transitions"
+  ],
+  "issues_fixed": [
+    "Report output directory missing in weather collection",
+    "Irrelevant historical detail prompt during geographic date changes",
+    "Nested dashboard navigation from workflow page",
+    "Large dashboard template mixed with request handling"
+  ],
+  "maintainability_notes": [
+    "Research run functions remain linear experiment orchestration",
+    "Heuristic checker flags guard-heavy evidence validation and the existing FWI seed validator; these are not verified correctness/security findings",
+    "HTTP codes and physical units appear as low-severity magic-number findings"
+  ],
+  "verification": "212 tests, 29 HTTP checks, 5 CLI steps, actual Chrome interactions",
+  "model_limitation": "Best exposed diagnostic 5/92; earlier-fold selection fails. No universal or live forecast claim."
+}

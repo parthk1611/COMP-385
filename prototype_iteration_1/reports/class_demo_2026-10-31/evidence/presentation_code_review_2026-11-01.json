@@ -1,0 +1,53 @@
+{
+  "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/class_demo_2026-10-31/source/presentation_steps.py",
+  "language": "python",
+  "metrics": {
+    "lines": {
+      "total": 75,
+      "code": 63,
+      "blank": 11,
+      "comment": 1
+    },
+    "functions": 4,
+    "classes": 0,
+    "avg_complexity": 4.2
+  },
+  "quality_score": 100,
+  "grade": "A",
+  "smells": [
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 10000 should be a named constant",
+      "location": "line 36"
+    }
+  ],
+  "solid_violations": [],
+  "function_details": [
+    {
+      "name": "show_data",
+      "parameters": 1,
+      "lines": 17,
+      "complexity": 2
+    },
+    {
+      "name": "show_spread",
+      "parameters": 1,
+      "lines": 17,
+      "complexity": 6
+    },
+    {
+      "name": "show_workflow",
+      "parameters": 1,
+      "lines": 11,
+      "complexity": 1
+    },
+    {
+      "name": "show_research",
+      "parameters": 1,
+      "lines": 26,
+      "complexity": 8
+    }
+  ],
+  "class_details": []
+}

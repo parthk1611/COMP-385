@@ -1,0 +1,74 @@
+[
+  {
+    "year": 2010,
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/zero_cost_sources_2026-11-01/cg_flashes_3hr_0.1-deg_2010.nc",
+    "url": "https://crd-data-donnees-rdc.ec.gc.ca/CDAS/products/CanCPLD/CLDN/cg/cg_flashes_3hr_0.1-deg_2010.nc",
+    "bytes": 51313637,
+    "sha256": "234b89900619a59651c1e2057cc9928f9bf8a6bb3b1a98516b5dc71083627ea3",
+    "verified_at_utc": "2026-11-02T14:57:08.168691+00:00",
+    "historical_publication_available_at": null
+  },
+  {
+    "year": 2011,
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/lightning_development_2026-11-02/cg_flashes_3hr_0.1-deg_2011.nc",
+    "url": "https://crd-data-donnees-rdc.ec.gc.ca/CDAS/products/CanCPLD/CLDN/cg/cg_flashes_3hr_0.1-deg_2011.nc",
+    "bytes": 51418719,
+    "sha256": "eceea3d0913796fbfce1370651645dc107edf6e6024b994e489b58987a4e66ad",
+    "verified_at_utc": "2026-11-02T14:57:21.450131+00:00",
+    "historical_publication_available_at": null
+  },
+  {
+    "year": 2012,
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/lightning_development_2026-11-02/cg_flashes_3hr_0.1-deg_2012.nc",
+    "url": "https://crd-data-donnees-rdc.ec.gc.ca/CDAS/products/CanCPLD/CLDN/cg/cg_flashes_3hr_0.1-deg_2012.nc",
+    "bytes": 51291407,
+    "sha256": "c2d3132ccafcaa60927b9fa74abd27be78420c64f304d93be50c666fa6b632e3",
+    "verified_at_utc": "2026-11-02T14:57:28.395347+00:00",
+    "historical_publication_available_at": null
+  },
+  {
+    "year": 2013,
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/lightning_development_2026-11-02/cg_flashes_3hr_0.1-deg_2013.nc",
+    "url": "https://crd-data-donnees-rdc.ec.gc.ca/CDAS/products/CanCPLD/CLDN/cg/cg_flashes_3hr_0.1-deg_2013.nc",
+    "bytes": 51555581,
+    "sha256": "80d5e5f2d5af61a78bb60ae66cb57307a39e0f488b89ef87aa9319a4153ff2a0",
+    "verified_at_utc": "2026-11-02T14:57:43.263198+00:00",
+    "historical_publication_available_at": null
+  },
+  {
+    "year": 2014,
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/lightning_development_2026-11-02/cg_flashes_3hr_0.1-deg_2014.nc",
+    "url": "https://crd-data-donnees-rdc.ec.gc.ca/CDAS/products/CanCPLD/CLDN/cg/cg_flashes_3hr_0.1-deg_2014.nc",
+    "bytes": 51486249,
+    "sha256": "d9db89e4caff669699bf4d128b8a0b08b7e181b13cd4b80ff01f7783469aed76",
+    "verified_at_utc": "2026-11-02T14:57:48.345205+00:00",
+    "historical_publication_available_at": null
+  },
+  {
+    "year": 2015,
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/lightning_development_2026-11-02/cg_flashes_3hr_0.1-deg_2015.nc",
+    "url": "https://crd-data-donnees-rdc.ec.gc.ca/CDAS/products/CanCPLD/CLDN/cg/cg_flashes_3hr_0.1-deg_2015.nc",
+    "bytes": 51615553,
+    "sha256": "5dc6aed6cd2c683ce89d526f2d5ea16d81d918b29ed0937fe2a66f790e8100f9",
+    "verified_at_utc": "2026-11-02T14:57:53.964468+00:00",
+    "historical_publication_available_at": null
+  },
+  {
+    "year": 2016,
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/lightning_development_2026-11-02/cg_flashes_3hr_0.1-deg_2016.nc",
+    "url": "https://crd-data-donnees-rdc.ec.gc.ca/CDAS/products/CanCPLD/CLDN/cg/cg_flashes_3hr_0.1-deg_2016.nc",
+    "bytes": 51845292,
+    "sha256": "7739de4a7f67f7842e3ea3c148262c8b51a62da30d1b20c5348b78baeb5462f0",
+    "verified_at_utc": "2026-11-02T14:58:03.327675+00:00",
+    "historical_publication_available_at": null
+  },
+  {
+    "year": 2017,
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/lightning_development_2026-11-02/cg_flashes_3hr_0.1-deg_2017.nc",
+    "url": "https://crd-data-donnees-rdc.ec.gc.ca/CDAS/products/CanCPLD/CLDN/cg/cg_flashes_3hr_0.1-deg_2017.nc",
+    "bytes": 51110147,
+    "sha256": "f8f947ba07619e70306315650690d813bed25063bbc112d47011fd3ea5496789",
+    "verified_at_utc": "2026-11-02T14:58:06.682935+00:00",
+    "historical_publication_available_at": null
+  }
+]

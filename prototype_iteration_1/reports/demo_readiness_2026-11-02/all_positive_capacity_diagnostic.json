@@ -1,0 +1,14 @@
+[
+  {
+    "candidate": "reference",
+    "positive_cell_days": 92,
+    "smallest_whole_percent_daily_budget_covering_all_saved_positives": 94,
+    "scope": "Retrospective capacity diagnostic on exposed 2017 data; no new prediction or model improvement"
+  },
+  {
+    "candidate": "physical_monotonic",
+    "positive_cell_days": 92,
+    "smallest_whole_percent_daily_budget_covering_all_saved_positives": 96,
+    "scope": "Retrospective capacity diagnostic on exposed 2017 data; no new prediction or model improvement"
+  }
+]
