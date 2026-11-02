@@ -1,0 +1,42 @@
+{
+  "days": [
+    {
+      "date": "2026-10-31",
+      "source_rows": 2031,
+      "matched_ontario_rows": 110,
+      "ontario_finite_state_location_clock_rows": 109,
+      "all_source_unmatched_metadata_rows": 16,
+      "calcstatus_counts": {
+        "1": 103,
+        "0": 6,
+        "-3": 1
+      },
+      "reported_interpolation_rows": 32,
+      "receipt_at_utc": "2026-11-02T03:30:53.553903+00:00",
+      "trusted_grid_states": 0
+    },
+    {
+      "date": "2026-11-01",
+      "source_rows": 1843,
+      "matched_ontario_rows": 110,
+      "ontario_finite_state_location_clock_rows": 108,
+      "all_source_unmatched_metadata_rows": 16,
+      "calcstatus_counts": {
+        "1": 106,
+        "0": 2,
+        "-3": 2
+      },
+      "reported_interpolation_rows": 33,
+      "receipt_at_utc": "2026-11-02T03:30:53.647364+00:00",
+      "trusted_grid_states": 0
+    }
+  ],
+  "status": "station_report_candidates_only",
+  "operational": false,
+  "remaining": [
+    "Reviewed station-to-grid/terrain mapping and coverage",
+    "Startup/overwinter and quality interpretation for accepted observed state",
+    "Continuous lineage at each forecast issue",
+    "Exact model source/target contract and validation"
+  ]
+}

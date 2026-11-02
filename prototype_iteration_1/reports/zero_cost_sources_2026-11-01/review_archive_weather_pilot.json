@@ -1,0 +1,47 @@
+{
+  "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/github_iteration_1/prototype_iteration_1/scripts/archive_weather_pilot.py",
+  "language": "python",
+  "metrics": {
+    "lines": {
+      "total": 169,
+      "code": 157,
+      "blank": 11,
+      "comment": 1
+    },
+    "functions": 2,
+    "classes": 0,
+    "avg_complexity": 5.5
+  },
+  "quality_score": 96,
+  "grade": "A",
+  "smells": [
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 1024 should be a named constant",
+      "location": "line 34"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2026 should be a named constant",
+      "location": "line 151"
+    }
+  ],
+  "solid_violations": [],
+  "function_details": [
+    {
+      "name": "acquire",
+      "parameters": 5,
+      "lines": 35,
+      "complexity": 6
+    },
+    {
+      "name": "run",
+      "parameters": 2,
+      "lines": 47,
+      "complexity": 5
+    }
+  ],
+  "class_details": []
+}

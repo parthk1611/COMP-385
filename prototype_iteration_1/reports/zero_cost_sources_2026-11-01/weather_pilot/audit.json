@@ -1,0 +1,50 @@
+{
+  "matched_cell_times": 6,
+  "grid_cells": 3,
+  "valid_hours": 2,
+  "run_time_utc": "2026-10-15T00:00:00+00:00",
+  "independent_from_existing_run": "Existing comparison used 2026-10-16 00 UTC",
+  "historical_receipt_before_issue_verified": false,
+  "operational": false,
+  "warning": "Late archive acquisition supports hindsight weather diagnostics only; no prospective replay claim",
+  "metrics": [
+    {
+      "field": "temp_c",
+      "finite_pairs": 6,
+      "missing_or_invalid_pairs": 0,
+      "bias": -0.41251707077026367,
+      "mae": 0.5573293368021647,
+      "rmse": 0.634692989035494,
+      "units": "degC"
+    },
+    {
+      "field": "rh_pct",
+      "finite_pairs": 6,
+      "missing_or_invalid_pairs": 0,
+      "bias": 0.6360785166422526,
+      "mae": 2.9217637379964194,
+      "rmse": 3.4332999960497856,
+      "units": "percentage points"
+    },
+    {
+      "field": "wind_kmh",
+      "finite_pairs": 6,
+      "missing_or_invalid_pairs": 0,
+      "bias": -1.0042549524761615,
+      "mae": 2.0642438241940364,
+      "rmse": 2.4833432471642767,
+      "units": "km/h"
+    },
+    {
+      "field": "precip_mm",
+      "finite_pairs": 6,
+      "missing_or_invalid_pairs": 0,
+      "bias": 0.42901118596394855,
+      "mae": 0.46801714102427167,
+      "rmse": 0.8990744638625772,
+      "units": "mm per preceding hour"
+    }
+  ],
+  "downloaded_bytes": 41044786,
+  "reference_sha256": "4d1427e0f0c97a8ebac36adf5155b9eb396013f0dc2096d1380e29ca03c02182"
+}

@@ -1,0 +1,126 @@
+{
+  "files": [
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/zero_cost_sources_2026-11-01/20261102T0310Z_MSC_Lightning_2.5km.tif",
+      "bytes": 55565,
+      "sha256": "8eceafc41cd4ccb7c609e9440b48e6d44178486641d357a76ef5e4d6ce447ed4"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/zero_cost_sources_2026-11-01/cwfis_fwi_20261101.csv",
+      "bytes": 358893,
+      "sha256": "57e47a311f332e17ba24e246274981733637fcd03bc82d9625b2582c5a968012"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/zero_cost_sources_2026-11-01/cwfis_fwi_20261031.csv",
+      "bytes": 395184,
+      "sha256": "d803112197e7e2fdda88904bcca7516e7a9f7b6cf5a5460cd20a350c5dd7d06c"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/zero_cost_sources_2026-11-01/cell_area_0.1-deg.nc",
+      "bytes": 2684165,
+      "sha256": "c2d2d4ab7f8a875b132deed11739a3aedad178f39ecdc6334af68a65a910bd4c"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/zero_cost_sources_2026-11-01/20261102T0250Z_MSC_Lightning_2.5km.tif",
+      "bytes": 55565,
+      "sha256": "27af9d533c43b0b59404f0127780e9bccf55f6ea847f44852ae0dc28775d69c8"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/zero_cost_sources_2026-11-01/20261102T0300Z_MSC_Lightning_2.5km.tif",
+      "bytes": 55565,
+      "sha256": "4a82544991828f3e627713ea9a708faf077c1eddcef61df405ab5d8e4090f676"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/zero_cost_sources_2026-11-01/cg_flashes_3hr_0.1-deg_2010.nc",
+      "bytes": 51313637,
+      "sha256": "234b89900619a59651c1e2057cc9928f9bf8a6bb3b1a98516b5dc71083627ea3"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT018H.grib2",
+      "bytes": 2662569,
+      "sha256": "6d76cced47811abd5446ba6c5253dbfa370aebd0666e4627a015a3cc8b339c72"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT020H.grib2",
+      "bytes": 4137050,
+      "sha256": "ec377fbac021f38e883fdcf630c124359acd360d649cd35b16e8bed7cfa157cb"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT018H.grib2",
+      "bytes": 1806949,
+      "sha256": "a0dad831ea8e6d87574c6af4d8262338697fa44f472835dc63e299cad23779cb"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT018H.grib2",
+      "bytes": 1854103,
+      "sha256": "dd7e436cd9e6721ba431216c798d6a00a85a9b6cd16abaa66a7e7f02eefd9490"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT020H.grib2",
+      "bytes": 1867981,
+      "sha256": "25a4d229d8cb03072ef76f7f2faf986d9728210a37418bd41af51bae26ea158b"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT020H.grib2",
+      "bytes": 1810559,
+      "sha256": "0746054a73314257b96e65f79f42d6964bb6b133a8f196815bf6366de1573636"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT018H.grib2",
+      "bytes": 4053625,
+      "sha256": "6d19c7392aa4ef75de7d5227e84b78c88fe78431a75e6b3ffd06115b46fee0a0"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT020H.grib2",
+      "bytes": 2659699,
+      "sha256": "51b71c6be5e8ec43015d52aeac7eb14c2e71848852fc4ace13500c8cf43e9375"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT019H.grib2",
+      "bytes": 3270583,
+      "sha256": "5fe8acd3178566ce325d6f41f599a40e645211c781c1dbfef4adba796903978f"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT019H.grib2",
+      "bytes": 1859461,
+      "sha256": "969101e788925adc1c57ec67aa2e2a1a89a3c1722c3b5bb85cde3c8541a055b0"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT019H.grib2",
+      "bytes": 1804834,
+      "sha256": "5e4645128d13b8b31c41b4f815c9cfcce648aac418254c89d896caf2f59a5746"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT019H.grib2",
+      "bytes": 2664128,
+      "sha256": "63dc712da8ed7971f064dcf9f69b5ea18810cb81bf2771cda9b0f7c6dd46b576"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT019H.grib2",
+      "bytes": 4049903,
+      "sha256": "cad7e25b05619d6f6b3bdc0dcc4c512ed72f7861746c76e1b628f548ba135f36"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT020H.grib2",
+      "bytes": 3259820,
+      "sha256": "401400b2299cbc3d41a7c1b3a2b23e31b5f6c8a22b9053405fc3e95869548105"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT018H.grib2",
+      "bytes": 3283522,
+      "sha256": "aa409d943dacdc43fd79444fec08241f8f77cc8235db13653cfe9405dd2875e9"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/station_2026.csv",
+      "bytes": 559546,
+      "sha256": "8b9f5afbebe657000556cc9e2679980268ec69bd5ba38358b853e3a28d4be861"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/scanfi_readme.txt",
+      "bytes": 5697,
+      "sha256": "996f671e4379fea728274034b4b82858d5008fc04869fa2438a039e9096f11c5"
+    }
+  ],
+  "total_payload_bytes": 96528603,
+  "api_cost_usd": 0
+}

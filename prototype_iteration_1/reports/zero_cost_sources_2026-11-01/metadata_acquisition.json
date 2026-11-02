@@ -1,0 +1,53 @@
+[
+  {
+    "url": "https://cwfis.cfs.nrcan.gc.ca/downloads/cffdrs/fwi_grids_metadata_NAP_ISO_19115_2003.xml",
+    "status": 404,
+    "retrieved_at_utc": "2026-11-02T03:30:23.081005+00:00",
+    "last_modified": null
+  },
+  {
+    "url": "https://cwfis.cfs.nrcan.gc.ca/downloads/fwi_obs/cwfis_allstn2026.csv",
+    "status": 200,
+    "retrieved_at_utc": "2026-11-02T03:30:23.183678+00:00",
+    "last_modified": "Fri, 13 Mar 2026 16:27:39 GMT",
+    "bytes": 559546,
+    "sha256": "8b9f5afbebe657000556cc9e2679980268ec69bd5ba38358b853e3a28d4be861",
+    "path": "station_2026.csv"
+  },
+  {
+    "url": "https://cwfis.cfs.nrcan.gc.ca/downloads/fwi_obs/readme.txt",
+    "status": 200,
+    "retrieved_at_utc": "2026-11-02T03:30:23.249547+00:00",
+    "last_modified": "Wed, 28 Jan 2026 21:33:10 GMT",
+    "bytes": 1117,
+    "sha256": "a3c1c67ef2c99c973da8642a1848570a3b0794b10301a0ba62ebce52a164f03d",
+    "path": "fwi_stations_readme.txt"
+  },
+  {
+    "url": "https://cwfis.cfs.nrcan.gc.ca/downloads/fwi_obs/current/",
+    "status": 200,
+    "retrieved_at_utc": "2026-11-02T03:30:23.351964+00:00",
+    "last_modified": null,
+    "bytes": 35722,
+    "sha256": "449ebd5ffba7a02ca55e219dad82aace337817a417879c3613de9bfbe3d9ed73",
+    "path": "fwi_daily_listing.html"
+  },
+  {
+    "url": "https://dd.weather.gc.ca/today/lightning/",
+    "status": 200,
+    "retrieved_at_utc": "2026-11-02T03:30:23.420706+00:00",
+    "last_modified": null,
+    "bytes": 3881,
+    "sha256": "22909fad008bcafc95310763e66c0b6bf19bb84f6ba151f0bacb100af4243c9b",
+    "path": "lightning_listing.html"
+  },
+  {
+    "url": "https://download-telecharger.services.geo.ca/pub/nrcan_rncan/Forests_Foret/SCANFI/v2/_SCANFI_v2_read_me.txt",
+    "status": 200,
+    "retrieved_at_utc": "2026-11-02T03:30:23.684684+00:00",
+    "last_modified": "Wed, 22 Apr 2026 12:31:16 GMT",
+    "bytes": 5697,
+    "sha256": "996f671e4379fea728274034b4b82858d5008fc04869fa2438a039e9096f11c5",
+    "path": "scanfi_readme.txt"
+  }
+]

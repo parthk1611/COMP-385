@@ -1,0 +1,26 @@
+[
+  {
+    "url": "https://dd.weather.gc.ca/20261015/WXO-DD/model_hrdps/continental/2.5km/00/018/",
+    "status": 200,
+    "bytes": 93298
+  },
+  {
+    "url": "https://dd.weather.gc.ca/20261016/WXO-DD/model_hrdps/continental/2.5km/12/018/",
+    "status": 200,
+    "bytes": 91178
+  },
+  {
+    "url": "https://caspar-data.ca/",
+    "error": "ConnectionError"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/wiki/kckornelsen/CaSPAr_Public/Download-data.md",
+    "status": 200,
+    "bytes": 10821
+  },
+  {
+    "url": "https://raw.githubusercontent.com/wiki/kckornelsen/CaSPAr_Public/Available-products.md",
+    "status": 404,
+    "bytes": 14
+  }
+]

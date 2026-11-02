@@ -1,0 +1,22 @@
+{
+  "mode": "archived_forecast_hindsight_source_comparison",
+  "run_time_utc": "2026-10-15T00:00:00+00:00",
+  "leads_downloaded": [
+    18,
+    19,
+    20
+  ],
+  "leads_compared": [
+    19,
+    20
+  ],
+  "model_fits": 0,
+  "places": [
+    "red_lake",
+    "thunder_bay",
+    "timmins"
+  ],
+  "historical_receipt_before_issue_verified": false,
+  "operational": false,
+  "reference_sha256": "4d1427e0f0c97a8ebac36adf5155b9eb396013f0dc2096d1380e29ca03c02182"
+}

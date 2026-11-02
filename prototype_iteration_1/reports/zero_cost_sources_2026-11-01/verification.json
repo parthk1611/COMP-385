@@ -1,0 +1,13 @@
+{
+  "protected_artifacts": 31,
+  "all_protected_unchanged": true,
+  "additional_prior_audits_unchanged": 2,
+  "cost_usd": 0,
+  "model_fits": 0,
+  "model_promotions": 0,
+  "old_qualification_sha256": "1314bc95e1e8d94d84a32c1a7b3c6c164976fbb1c6821d24ae9e6974c03f37e2",
+  "new_lightning_tests": 4,
+  "combined_tests": 201,
+  "public_delivery": false,
+  "independent_review": false
+}

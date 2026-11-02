@@ -1,0 +1,143 @@
+{
+  "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/github_iteration_1/prototype_iteration_1/scripts/lightning_pilot.py",
+  "language": "python",
+  "metrics": {
+    "lines": {
+      "total": 242,
+      "code": 222,
+      "blank": 18,
+      "comment": 2
+    },
+    "functions": 5,
+    "classes": 0,
+    "avg_complexity": 9.2
+  },
+  "quality_score": 72,
+  "grade": "C",
+  "smells": [
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'density_summary' has complexity 13 (max: 10)",
+      "location": "density_summary"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 1998 should be a named constant",
+      "location": "line 30"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 10800 should be a named constant",
+      "location": "line 42"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 10800 should be a named constant",
+      "location": "line 43"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 168 should be a named constant",
+      "location": "line 51"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 168 should be a named constant",
+      "location": "line 52"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 3978 should be a named constant",
+      "location": "line 92"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 4326 should be a named constant",
+      "location": "line 93"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 168 should be a named constant",
+      "location": "line 119"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 2026 should be a named constant",
+      "location": "line 122"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 4326 should be a named constant",
+      "location": "line 131"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 10000 should be a named constant",
+      "location": "line 155"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 10000 should be a named constant",
+      "location": "line 156"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 168 should be a named constant",
+      "location": "line 175"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 3600 should be a named constant",
+      "location": "line 198"
+    }
+  ],
+  "solid_violations": [],
+  "function_details": [
+    {
+      "name": "interval_clock",
+      "parameters": 1,
+      "lines": 22,
+      "complexity": 7
+    },
+    {
+      "name": "completed_window",
+      "parameters": 3,
+      "lines": 18,
+      "complexity": 9
+    },
+    {
+      "name": "density_summary",
+      "parameters": 3,
+      "lines": 26,
+      "complexity": 13
+    },
+    {
+      "name": "overlap_pixels",
+      "parameters": 2,
+      "lines": 21,
+      "complexity": 7
+    },
+    {
+      "name": "run",
+      "parameters": 4,
+      "lines": 45,
+      "complexity": 10
+    }
+  ],
+  "class_details": []
+}

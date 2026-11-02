@@ -1,0 +1,137 @@
+[
+  {
+    "url": "https://dd.weather.gc.ca/20261015/WXO-DD/model_hrdps/continental/2.5km/00/018/20261015T00Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT018H.grib2",
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT018H.grib2",
+    "bytes": 3283522,
+    "sha256": "aa409d943dacdc43fd79444fec08241f8f77cc8235db13653cfe9405dd2875e9",
+    "retrieved_at_utc": "2026-11-02T03:37:55.468308+00:00",
+    "last_modified": "Thu, 15 Oct 2026 03:04:18 GMT",
+    "cost_usd": 0
+  },
+  {
+    "url": "https://dd.weather.gc.ca/20261015/WXO-DD/model_hrdps/continental/2.5km/00/018/20261015T00Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT018H.grib2",
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT018H.grib2",
+    "bytes": 2662569,
+    "sha256": "6d76cced47811abd5446ba6c5253dbfa370aebd0666e4627a015a3cc8b339c72",
+    "retrieved_at_utc": "2026-11-02T03:37:56.011946+00:00",
+    "last_modified": "Thu, 15 Oct 2026 03:04:18 GMT",
+    "cost_usd": 0
+  },
+  {
+    "url": "https://dd.weather.gc.ca/20261015/WXO-DD/model_hrdps/continental/2.5km/00/018/20261015T00Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT018H.grib2",
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT018H.grib2",
+    "bytes": 1806949,
+    "sha256": "a0dad831ea8e6d87574c6af4d8262338697fa44f472835dc63e299cad23779cb",
+    "retrieved_at_utc": "2026-11-02T03:37:56.289248+00:00",
+    "last_modified": "Thu, 15 Oct 2026 03:04:18 GMT",
+    "cost_usd": 0
+  },
+  {
+    "url": "https://dd.weather.gc.ca/20261015/WXO-DD/model_hrdps/continental/2.5km/00/018/20261015T00Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT018H.grib2",
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT018H.grib2",
+    "bytes": 1854103,
+    "sha256": "dd7e436cd9e6721ba431216c798d6a00a85a9b6cd16abaa66a7e7f02eefd9490",
+    "retrieved_at_utc": "2026-11-02T03:37:56.521937+00:00",
+    "last_modified": "Thu, 15 Oct 2026 03:04:18 GMT",
+    "cost_usd": 0
+  },
+  {
+    "url": "https://dd.weather.gc.ca/20261015/WXO-DD/model_hrdps/continental/2.5km/00/018/20261015T00Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT018H.grib2",
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT018H.grib2",
+    "bytes": 4053625,
+    "sha256": "6d19c7392aa4ef75de7d5227e84b78c88fe78431a75e6b3ffd06115b46fee0a0",
+    "retrieved_at_utc": "2026-11-02T03:37:57.048259+00:00",
+    "last_modified": "Thu, 15 Oct 2026 03:04:17 GMT",
+    "cost_usd": 0
+  },
+  {
+    "url": "https://dd.weather.gc.ca/20261015/WXO-DD/model_hrdps/continental/2.5km/00/019/20261015T00Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT019H.grib2",
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT019H.grib2",
+    "bytes": 3270583,
+    "sha256": "5fe8acd3178566ce325d6f41f599a40e645211c781c1dbfef4adba796903978f",
+    "retrieved_at_utc": "2026-11-02T03:37:57.603418+00:00",
+    "last_modified": "Thu, 15 Oct 2026 03:04:21 GMT",
+    "cost_usd": 0
+  },
+  {
+    "url": "https://dd.weather.gc.ca/20261015/WXO-DD/model_hrdps/continental/2.5km/00/019/20261015T00Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT019H.grib2",
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT019H.grib2",
+    "bytes": 2664128,
+    "sha256": "63dc712da8ed7971f064dcf9f69b5ea18810cb81bf2771cda9b0f7c6dd46b576",
+    "retrieved_at_utc": "2026-11-02T03:37:58.258350+00:00",
+    "last_modified": "Thu, 15 Oct 2026 03:04:21 GMT",
+    "cost_usd": 0
+  },
+  {
+    "url": "https://dd.weather.gc.ca/20261015/WXO-DD/model_hrdps/continental/2.5km/00/019/20261015T00Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT019H.grib2",
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT019H.grib2",
+    "bytes": 1804834,
+    "sha256": "5e4645128d13b8b31c41b4f815c9cfcce648aac418254c89d896caf2f59a5746",
+    "retrieved_at_utc": "2026-11-02T03:37:58.868166+00:00",
+    "last_modified": "Thu, 15 Oct 2026 03:04:21 GMT",
+    "cost_usd": 0
+  },
+  {
+    "url": "https://dd.weather.gc.ca/20261015/WXO-DD/model_hrdps/continental/2.5km/00/019/20261015T00Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT019H.grib2",
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT019H.grib2",
+    "bytes": 1859461,
+    "sha256": "969101e788925adc1c57ec67aa2e2a1a89a3c1722c3b5bb85cde3c8541a055b0",
+    "retrieved_at_utc": "2026-11-02T03:37:59.360726+00:00",
+    "last_modified": "Thu, 15 Oct 2026 03:04:21 GMT",
+    "cost_usd": 0
+  },
+  {
+    "url": "https://dd.weather.gc.ca/20261015/WXO-DD/model_hrdps/continental/2.5km/00/019/20261015T00Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT019H.grib2",
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT019H.grib2",
+    "bytes": 4049903,
+    "sha256": "cad7e25b05619d6f6b3bdc0dcc4c512ed72f7861746c76e1b628f548ba135f36",
+    "retrieved_at_utc": "2026-11-02T03:38:00.554505+00:00",
+    "last_modified": "Thu, 15 Oct 2026 03:04:20 GMT",
+    "cost_usd": 0
+  },
+  {
+    "url": "https://dd.weather.gc.ca/20261015/WXO-DD/model_hrdps/continental/2.5km/00/020/20261015T00Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT020H.grib2",
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT020H.grib2",
+    "bytes": 3259820,
+    "sha256": "401400b2299cbc3d41a7c1b3a2b23e31b5f6c8a22b9053405fc3e95869548105",
+    "retrieved_at_utc": "2026-11-02T03:38:01.579494+00:00",
+    "last_modified": "Thu, 15 Oct 2026 03:04:22 GMT",
+    "cost_usd": 0
+  },
+  {
+    "url": "https://dd.weather.gc.ca/20261015/WXO-DD/model_hrdps/continental/2.5km/00/020/20261015T00Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT020H.grib2",
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT020H.grib2",
+    "bytes": 2659699,
+    "sha256": "51b71c6be5e8ec43015d52aeac7eb14c2e71848852fc4ace13500c8cf43e9375",
+    "retrieved_at_utc": "2026-11-02T03:38:02.422191+00:00",
+    "last_modified": "Thu, 15 Oct 2026 03:04:22 GMT",
+    "cost_usd": 0
+  },
+  {
+    "url": "https://dd.weather.gc.ca/20261015/WXO-DD/model_hrdps/continental/2.5km/00/020/20261015T00Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT020H.grib2",
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT020H.grib2",
+    "bytes": 1810559,
+    "sha256": "0746054a73314257b96e65f79f42d6964bb6b133a8f196815bf6366de1573636",
+    "retrieved_at_utc": "2026-11-02T03:38:03.184009+00:00",
+    "last_modified": "Thu, 15 Oct 2026 03:04:22 GMT",
+    "cost_usd": 0
+  },
+  {
+    "url": "https://dd.weather.gc.ca/20261015/WXO-DD/model_hrdps/continental/2.5km/00/020/20261015T00Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT020H.grib2",
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT020H.grib2",
+    "bytes": 1867981,
+    "sha256": "25a4d229d8cb03072ef76f7f2faf986d9728210a37418bd41af51bae26ea158b",
+    "retrieved_at_utc": "2026-11-02T03:38:03.865409+00:00",
+    "last_modified": "Thu, 15 Oct 2026 03:04:22 GMT",
+    "cost_usd": 0
+  },
+  {
+    "url": "https://dd.weather.gc.ca/20261015/WXO-DD/model_hrdps/continental/2.5km/00/020/20261015T00Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT020H.grib2",
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/zero_cost_sources_2026-11-01/weather_pilot/raw/20261015T00Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT020H.grib2",
+    "bytes": 4137050,
+    "sha256": "ec377fbac021f38e883fdcf630c124359acd360d649cd35b16e8bed7cfa157cb",
+    "retrieved_at_utc": "2026-11-02T03:38:05.633239+00:00",
+    "last_modified": "Thu, 15 Oct 2026 03:04:22 GMT",
+    "cost_usd": 0
+  }
+]

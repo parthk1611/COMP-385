@@ -1,0 +1,67 @@
+[
+  {
+    "url": "https://crd-data-donnees-rdc.ec.gc.ca/CDAS/products/CanCPLD/CLDN/fixed/cell_area_0.1-deg.nc",
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/zero_cost_sources_2026-11-01/cell_area_0.1-deg.nc",
+    "bytes": 2684165,
+    "sha256": "c2d2d4ab7f8a875b132deed11739a3aedad178f39ecdc6334af68a65a910bd4c",
+    "retrieved_at_utc": "2026-11-02T03:28:27.108870+00:00",
+    "last_modified": "Sun, 06 Sep 2026 17:56:21 GMT",
+    "license": "Open Government Licence - Canada",
+    "cost_usd": 0
+  },
+  {
+    "url": "https://crd-data-donnees-rdc.ec.gc.ca/CDAS/products/CanCPLD/CLDN/cg/cg_flashes_3hr_0.1-deg_2010.nc",
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/zero_cost_sources_2026-11-01/cg_flashes_3hr_0.1-deg_2010.nc",
+    "bytes": 51313637,
+    "sha256": "234b89900619a59651c1e2057cc9928f9bf8a6bb3b1a98516b5dc71083627ea3",
+    "retrieved_at_utc": "2026-11-02T03:28:40.932844+00:00",
+    "last_modified": "Sun, 06 Sep 2026 18:19:02 GMT",
+    "license": "Open Government Licence - Canada",
+    "cost_usd": 0
+  },
+  {
+    "url": "https://cwfis.cfs.nrcan.gc.ca/downloads/fwi_obs/current/cwfis_fwi_20261031.csv",
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/zero_cost_sources_2026-11-01/cwfis_fwi_20261031.csv",
+    "bytes": 395184,
+    "sha256": "d803112197e7e2fdda88904bcca7516e7a9f7b6cf5a5460cd20a350c5dd7d06c",
+    "retrieved_at_utc": "2026-11-02T03:30:53.553903+00:00",
+    "last_modified": "Sun, 01 Nov 2026 00:19:44 GMT",
+    "cost_usd": 0
+  },
+  {
+    "url": "https://cwfis.cfs.nrcan.gc.ca/downloads/fwi_obs/current/cwfis_fwi_20261101.csv",
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/zero_cost_sources_2026-11-01/cwfis_fwi_20261101.csv",
+    "bytes": 358893,
+    "sha256": "57e47a311f332e17ba24e246274981733637fcd03bc82d9625b2582c5a968012",
+    "retrieved_at_utc": "2026-11-02T03:30:53.647364+00:00",
+    "last_modified": "Mon, 02 Nov 2026 00:19:31 GMT",
+    "cost_usd": 0
+  },
+  {
+    "url": "https://dd.weather.gc.ca/today/lightning/20261102T0250Z_MSC_Lightning_2.5km.tif",
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/zero_cost_sources_2026-11-01/20261102T0250Z_MSC_Lightning_2.5km.tif",
+    "bytes": 55565,
+    "sha256": "27af9d533c43b0b59404f0127780e9bccf55f6ea847f44852ae0dc28775d69c8",
+    "retrieved_at_utc": "2026-11-02T03:30:53.811663+00:00",
+    "last_modified": "Mon, 02 Nov 2026 03:00:14 GMT",
+    "cost_usd": 0
+  },
+  {
+    "url": "https://dd.weather.gc.ca/today/lightning/20261102T0300Z_MSC_Lightning_2.5km.tif",
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/zero_cost_sources_2026-11-01/20261102T0300Z_MSC_Lightning_2.5km.tif",
+    "bytes": 55565,
+    "sha256": "4a82544991828f3e627713ea9a708faf077c1eddcef61df405ab5d8e4090f676",
+    "retrieved_at_utc": "2026-11-02T03:30:53.914463+00:00",
+    "last_modified": "Mon, 02 Nov 2026 03:10:13 GMT",
+    "cost_usd": 0
+  },
+  {
+    "url": "https://dd.weather.gc.ca/today/lightning/20261102T0310Z_MSC_Lightning_2.5km.tif",
+    "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/zero_cost_sources_2026-11-01/20261102T0310Z_MSC_Lightning_2.5km.tif",
+    "bytes": 55565,
+    "sha256": "8eceafc41cd4ccb7c609e9440b48e6d44178486641d357a76ef5e4d6ce447ed4",
+    "retrieved_at_utc": "2026-11-02T03:30:54.017165+00:00",
+    "last_modified": "Mon, 02 Nov 2026 03:20:14 GMT",
+    "cost_usd": 0
+  }
+]

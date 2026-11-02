@@ -1,0 +1,119 @@
+{
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 16938,
+      "sha256": "b73efa6ea1519df1e948f409763bc930e22cd59f42138c1280910c22a541014b"
+    },
+    {
+      "path": "archive_access.json",
+      "bytes": 649,
+      "sha256": "57323bb750011e5f7565da301df7eefa5b465adf877132001504a1f3dcf6fd3a"
+    },
+    {
+      "path": "cancpld_access_probe.json",
+      "bytes": 1427,
+      "sha256": "84f51cc25105675055a45fb510ee6b9b90dd0c74af0c79212ffa12e240ead439"
+    },
+    {
+      "path": "cancpld_catalogue.json",
+      "bytes": 10615,
+      "sha256": "c995abfffbbc02d4cee94751f5ed44a58d5ab5caf917a472aca613dbbd6f4e09"
+    },
+    {
+      "path": "caspar_repo_probe.json",
+      "bytes": 156,
+      "sha256": "577bfdd0bcc8a4228683b782285011206822c1c9283a0d2c2ec81c2fcda89112"
+    },
+    {
+      "path": "current_lightning_audit.json",
+      "bytes": 1326,
+      "sha256": "b7a9049b245763666e3799694a7f3e13078d62d544d716dd8ebe3e0010dfad02"
+    },
+    {
+      "path": "download_manifest.json",
+      "bytes": 3471,
+      "sha256": "0cceac040e49b90fa3f07980c6c7645fbcb6a8e75323bd37f808d6142f94a145"
+    },
+    {
+      "path": "lightning_pilot_v2/audit.json",
+      "bytes": 443,
+      "sha256": "6e0e6ce3e76751a785ee99b1c7fd3e14217c75c4d8a25f22044ba8002d9bb83a"
+    },
+    {
+      "path": "lightning_pilot_v2/lightning_features.csv",
+      "bytes": 3793,
+      "sha256": "4f059085c974d519f609f84442b98b44c75b3c6693caa087ec13ea7db30b7644"
+    },
+    {
+      "path": "lightning_pilot_v2/protocol.json",
+      "bytes": 773,
+      "sha256": "63675ca601ea1a0a0f9dee279f6fa40ee1b6b98f731f7ea8486f894b896642f2"
+    },
+    {
+      "path": "metadata_acquisition.json",
+      "bytes": 1964,
+      "sha256": "36117232d1b5ec9e7f936e44c5468f5ce6161f88247a450018e3c13b45585a68"
+    },
+    {
+      "path": "regression_tests.txt",
+      "bytes": 260,
+      "sha256": "91b6f218b238b6cf3a52dfbefef45b0044a75d1ca12177f56e28d34ef5d066bc"
+    },
+    {
+      "path": "review_archive_weather_pilot.json",
+      "bytes": 1009,
+      "sha256": "0bb085890d9b060f5738a4436fae1d36fa4f3b3d55bef69ff1cc5f566403545c"
+    },
+    {
+      "path": "review_lightning_pilot.json",
+      "bytes": 3465,
+      "sha256": "9de031bbd11f3d5567713972e9f750dd925a980ae34073ca83db23517f174457"
+    },
+    {
+      "path": "runtime_inventory.json",
+      "bytes": 7006,
+      "sha256": "2018323d1a80fe108e04f2d37adcb3bdfb6447e7dbc2392586dbac450e9c6502"
+    },
+    {
+      "path": "station_candidates_2026-10-31.csv",
+      "bytes": 15963,
+      "sha256": "002c429e3c644fb5f8fde2a807379f03f78b68762b41a4d829c2ce7aa7a34da4"
+    },
+    {
+      "path": "station_candidates_2026-11-01.csv",
+      "bytes": 15965,
+      "sha256": "b6e7c0efc709541eda435c6dd638d1c3d78212262460eda688742e17fe8ae22c"
+    },
+    {
+      "path": "station_state_audit.json",
+      "bytes": 1210,
+      "sha256": "d28ce17561a08be8faf73d966bf76512b696b2a372283ceda7f1803c50ef90db"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 380,
+      "sha256": "fdffa6b5dc59e0cf84dcbb2b86338347e234b407e7f53b9afe59291fd8bef7e2"
+    },
+    {
+      "path": "weather_pilot/audit.json",
+      "bytes": 1460,
+      "sha256": "6a127d9d3d6f6bed16db3da86417a9f2f875aaf19c4cf4d2d64142ffbdc54890"
+    },
+    {
+      "path": "weather_pilot/download_manifest.json",
+      "bytes": 8769,
+      "sha256": "e876528588358e3f550a8d7fbbde419a456dfcf7e147f182f4dc620d47a83de2"
+    },
+    {
+      "path": "weather_pilot/paired_weather.csv",
+      "bytes": 1624,
+      "sha256": "2d6cce19b7210b51afdde88cdb21043404c0bc53272fb31aae463684404d71fc"
+    },
+    {
+      "path": "weather_pilot/protocol.json",
+      "bytes": 457,
+      "sha256": "efd5fa0470d2eac880e668c0ed10adb18398cee256e7495dfce290d95af2f64a"
+    }
+  ]
+}

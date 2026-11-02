@@ -1,0 +1,31 @@
+{
+  "scope": "Acquisition/feature validation only; no model fit or promotion",
+  "places": {
+    "red_lake": [
+      -93.82,
+      51.03
+    ],
+    "thunder_bay": [
+      -89.25,
+      48.38
+    ],
+    "timmins": [
+      -81.33,
+      48.48
+    ]
+  },
+  "target_dates": [
+    "2010-06-01",
+    "2010-06-10"
+  ],
+  "windows_hours": [
+    24,
+    168
+  ],
+  "issue": "00:00 America/Toronto",
+  "aggregation": "Area-weighted native CG flash density across the existing 10 km cell",
+  "availability": "Processed archive retrieved in 2026; historical issue-time receipt unknown",
+  "operational": false,
+  "archive_sha256": "234b89900619a59651c1e2057cc9928f9bf8a6bb3b1a98516b5dc71083627ea3",
+  "area_sha256": "c2d2d4ab7f8a875b132deed11739a3aedad178f39ecdc6334af68a65a910bd4c"
+}

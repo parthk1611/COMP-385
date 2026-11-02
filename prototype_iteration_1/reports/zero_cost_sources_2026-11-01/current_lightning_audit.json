@@ -1,0 +1,46 @@
+{
+  "files": [
+    {
+      "file": "20261102T0250Z_MSC_Lightning_2.5km.tif",
+      "crs": "EPSG:4326",
+      "units": "flashes per square km per minute, ten-minute product",
+      "native_shape": [
+        1834,
+        3506
+      ],
+      "ontario_bbox_valid_pixels": 364107,
+      "ontario_bbox_nonzero_pixels": 0,
+      "sample_max": 0.0,
+      "missing_value": -999.0
+    },
+    {
+      "file": "20261102T0300Z_MSC_Lightning_2.5km.tif",
+      "crs": "EPSG:4326",
+      "units": "flashes per square km per minute, ten-minute product",
+      "native_shape": [
+        1834,
+        3506
+      ],
+      "ontario_bbox_valid_pixels": 364107,
+      "ontario_bbox_nonzero_pixels": 0,
+      "sample_max": 0.0,
+      "missing_value": -999.0
+    },
+    {
+      "file": "20261102T0310Z_MSC_Lightning_2.5km.tif",
+      "crs": "EPSG:4326",
+      "units": "flashes per square km per minute, ten-minute product",
+      "native_shape": [
+        1834,
+        3506
+      ],
+      "ontario_bbox_valid_pixels": 364107,
+      "ontario_bbox_nonzero_pixels": 0,
+      "sample_max": 0.0,
+      "missing_value": -999.0
+    }
+  ],
+  "scope": "Observed density sample; bounding box is not Ontario boundary; total lightning not CG-only",
+  "source_interval": "10 minutes as documented; emission/retrieval clocks retained",
+  "operational": false
+}
