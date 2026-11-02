@@ -8,6 +8,9 @@ from urllib.parse import parse_qs,urlsplit
 import numpy as np
 import pandas as pd
 from scripts.prepare_historical_weather_v2 import ROOT,digest,save
+from scripts.runtime_cache import parquet_lookup,explanation_lookup
+from scripts.live_workflow import read_snapshot
+from scripts.workflow_view import PAGE as WORKFLOW_PAGE
 
 REPORT=ROOT/'reports/week_5_completion_2026-10-16'
 REVIEW=ROOT/'reports/week_5_final_review_2026-10-16'
@@ -15,6 +18,7 @@ HISTORICAL=ROOT/'data/processed/ignition_models_week5_v1/temporal_final_predicti
 SELECTED=ROOT/'data/processed/selected_2025_models_v1/temporal_final_predictions.parquet'
 LIVE=ROOT/'data/processed/hrdps_live_research_2026-10-16_stateful'
 LIVE_QUALIFICATION=ROOT/'reports/live_qualification_2026-11-01/live_readiness.json'
+WORKFLOW=ROOT/'data/processed/live_workflow'
 
 
 def assess_live_inputs(era_dates,forecast_dates,seeds,model_qualification):
@@ -46,6 +50,16 @@ def live_readiness_response():
     return result
 
 
+def workflow_response():
+    try:
+        result=read_snapshot(WORKFLOW/'latest.json')
+        refresh=WORKFLOW/'refresh_status.json'
+        result['last_refresh']=json.loads(refresh.read_text()) if refresh.exists() else {'status':'unknown'}
+        return result
+    except (ValueError,KeyError,TypeError) as error:
+        raise OSError('Workflow snapshot is invalid') from error
+
+
 def validate_query(query):
     if set(query)!={'date','grid_id'} or any(len(v)!=1 for v in query.values()):raise ValueError('One date and grid_id are required')
     day=query['date'][0];grid=query['grid_id'][0]
@@ -55,7 +69,7 @@ def validate_query(query):
 
 
 def score_response(source,day,grid):
-    frame=pd.read_parquet(source,filters=[('ignition_date','=',day),('grid_id','=',grid)],columns=['grid_id','ignition_date','probability','raw_probability','ignition','cwfis_missing'])
+    frame=parquet_lookup(source,('grid_id','ignition_date','probability','raw_probability','ignition','cwfis_missing'),day,grid)
     if frame.empty:return 404,{'status':'not_found','probability':None}
     if len(frame)!=1:return 503,{'status':'unavailable','probability':None,'reason':'duplicate_saved_key'}
     r=frame.iloc[0];p=float(r.probability);raw=float(r.raw_probability)
@@ -99,13 +113,12 @@ def cell_details(study,day,grid):
     code,score=score_response(HISTORICAL if study=='historical' else SELECTED,day,grid)
     if code!=200:return code,score
     directory=ROOT/('data/processed/ignition_models_week5_v1' if study=='historical' else 'data/processed/selected_2025_models_v1')
-    document=json.loads((directory/'temporal_first_day_explanations.json').read_text())
+    explanation_day,explanation=explanation_lookup(directory/'temporal_first_day_explanations.json',grid)
     score.update(study_provenance(study),issue_time_utc=pd.Timestamp(day,tz='America/Toronto').tz_convert('UTC').isoformat(),explanation_scale='raw model log odds; not causal or calibrated probability contributions')
-    if day!=document['date']:return 200,{**score,'explanation_status':'unavailable_for_this_date','factors':[]}
-    explanation=next((r for r in document['rows'] if r['grid_id']==grid),None)
+    if day!=explanation_day:return 200,{**score,'explanation_status':'unavailable_for_this_date','factors':[]}
     if explanation is None:return 200,{**score,'explanation_status':'unavailable_for_this_cell','factors':[]}
     names=[r['feature'] for r in explanation['top_factors']];source=ROOT/('data/processed/ignition_weather_v2_reserved/final_test.parquet' if study=='historical' else 'data/processed/selected_2025_ignition_panel/cell_days.parquet')
-    frame=pd.read_parquet(source,filters=[('ignition_date','=',day),('grid_id','=',grid)],columns=names+['issue_time_utc'])
+    frame=parquet_lookup(source,names+['issue_time_utc'],day,grid)
     if len(frame)!=1:raise ValueError('Detail feature key mismatch')
     factors=[]
     for f in explanation['top_factors']:
@@ -134,7 +147,7 @@ def export_predictions(study,day,format):
     return json.dumps({'type':'FeatureCollection','features':features,'geometry_crs':'EPSG:4326'},allow_nan=False).encode(),'application/geo+json',len(frame)
 
 
-HOME='''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ontario Wildfire · Capstone</title><style>body{margin:0;font:15px system-ui;background:#f2f5f0;color:#183c32}header{padding:20px 3vw;background:#183c32;color:white}h1{font-size:25px;margin:0}header p{margin:7px 0;color:#c2d7cd}nav{display:flex;gap:8px;padding:14px 3vw;flex-wrap:wrap}button{padding:10px 14px;background:white;border:1px solid #b9cdbf;border-radius:7px;color:#183c32;cursor:pointer}button[aria-pressed=true]{background:#d5e5d7;font-weight:bold}iframe{width:100%;height:calc(100vh - 195px);border:0;background:white}.note{padding:8px 3vw;font-size:12px;color:#566b62}#readiness{padding:25px 3vw;max-width:1000px}li{margin:12px 0}.tag{background:#fff0cc;padding:10px;border-radius:7px}</style><header><h1>Ontario Wildfire Research</h1><p>COMP 385 · 10 km ignition risk and separate 90 m incident spread</p></header><nav aria-label="Capabilities"><button data-view="historical" aria-pressed="true">Historical ignition · 2019</button><button data-view="selected" aria-pressed="false">Selected sources · 2025</button><button data-view="spread" aria-pressed="false">Corrected spread reconstruction</button><button data-view="live" aria-pressed="false">Live readiness</button></nav><div style="padding:0 3vw" id="exports"><button id="csv">Export selected date · CSV</button> <button id="geojson">GeoJSON</button> <button id="details-button">Cell details and provenance</button></div><section id="cell-details" class="note" aria-live="polite"></section><div class="note">Research prototype. Recorded calendar-day ignition risk and incident spread are separate tasks. No live warnings are issued. Sources: Ontario MNR fire records; NRCan fuels/forest/terrain; ECCC weather; Copernicus ERA5; NASA VIIRS for spread validation.</div><iframe id="view" title="Historical ignition risk" src="/historical.html"></iframe><section id="readiness" hidden><h2>Live ignition is unavailable</h2><p class="tag">Weather ingestion works. The evidence does not qualify live ignition scoring.</p><ul id="reasons"></ul><p id="checks"></p><p>Forecast-derived FWI is never relabelled as observed state. The app returns an unavailable result rather than a fabricated zero-risk prediction.</p></section><script>
+HOME='''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ontario Wildfire · Capstone</title><style>body{margin:0;font:15px system-ui;background:#f2f5f0;color:#183c32}header{padding:20px 3vw;background:#183c32;color:white}h1{font-size:25px;margin:0}header p{margin:7px 0;color:#c2d7cd}nav{display:flex;gap:8px;padding:14px 3vw;flex-wrap:wrap}button{padding:10px 14px;background:white;border:1px solid #b9cdbf;border-radius:7px;color:#183c32;cursor:pointer}button[aria-pressed=true]{background:#d5e5d7;font-weight:bold}iframe{width:100%;height:calc(100vh - 195px);border:0;background:white}.note{padding:8px 3vw;font-size:12px;color:#566b62}#readiness{padding:25px 3vw;max-width:1000px}li{margin:12px 0}.tag{background:#fff0cc;padding:10px;border-radius:7px}</style><header><h1>Ontario Wildfire Research</h1><p>COMP 385 · 10 km ignition risk and separate 90 m incident spread</p></header><nav aria-label="Capabilities"><button data-view="historical" aria-pressed="true">Historical ignition · 2019</button><button data-view="selected" aria-pressed="false">Selected sources · 2025</button><button data-view="spread" aria-pressed="false">Corrected spread reconstruction</button><button data-view="live" aria-pressed="false">Live readiness</button><a href="/workflow.html" style="padding:10px">Live observations and research notices</a></nav><div style="padding:0 3vw" id="exports"><button id="csv">Export selected date · CSV</button> <button id="geojson">GeoJSON</button> <button id="details-button">Cell details and provenance</button></div><section id="cell-details" class="note" aria-live="polite"></section><div class="note">Research prototype. Recorded calendar-day ignition risk and incident spread are separate tasks. No live warnings are issued. Sources: Ontario MNR fire records; NRCan fuels/forest/terrain; ECCC weather; Copernicus ERA5; NASA VIIRS for spread validation.</div><iframe id="view" title="Historical ignition risk" src="/historical.html"></iframe><section id="readiness" hidden><h2>Live ignition is unavailable</h2><p class="tag">Weather ingestion works. The evidence does not qualify live ignition scoring.</p><ul id="reasons"></ul><p id="checks"></p><p>Forecast-derived FWI is never relabelled as observed state. The app returns an unavailable result rather than a fabricated zero-risk prediction.</p></section><script>
 const routes={historical:['/historical.html','Historical ignition risk'],selected:['/selected.html','Selected-source ignition risk'],spread:['/spread.html','Corrected fire-spread reconstruction']};
 const panel=document.getElementById('cell-details');
 const currentStudy=()=>document.querySelector('nav button[aria-pressed=true]').dataset.view;
@@ -208,8 +221,11 @@ def build():
 
 
 class Handler(BaseHTTPRequestHandler):
-    def send_json(self,status,value):
-        body=json.dumps(value,allow_nan=False).encode();self.send_response(status);self.send_header('Content-Type','application/json');self.send_header('Content-Length',str(len(body)));self.end_headers();self.wfile.write(body)
+    def send_json(self,status,value,content_type="application/json",filename=None):
+        body=json.dumps(value,allow_nan=False).encode();self.send_response(status);self.send_header('Content-Type',content_type)
+        self.send_header('Cache-Control','no-store');self.send_header('Content-Length',str(len(body)))
+        if filename:self.send_header('Content-Disposition',f'attachment; filename="{filename}"')
+        self.end_headers();self.wfile.write(body)
     def do_GET(self):
         try:self.handle_get()
         except (OSError,json.JSONDecodeError) as error:
@@ -217,8 +233,15 @@ class Handler(BaseHTTPRequestHandler):
             self.send_json(503,{'status':'unavailable','probability':None,'reason':'local_artifact_unavailable','message':'A required local result file is missing, unreadable or invalid.'})
     def handle_get(self):
         path=urlsplit(self.path);routes={'/':REPORT/'index.html','/historical.html':ROOT/'reports/week_5_prototype_2026-10-16/historical_ignition_map.html','/selected.html':REPORT/'selected_2025_ignition_map.html','/spread.html':REPORT/'corrected_spread_viewer.html'}
-        if path.path=='/':
-            body=HOME.encode();self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.send_header('Content-Length',str(len(body)));self.end_headers();self.wfile.write(body);return
+        if path.path in ('/','/workflow.html'):
+            body=(HOME if path.path=='/' else WORKFLOW_PAGE).encode();self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.send_header('Content-Length',str(len(body)));self.end_headers();self.wfile.write(body);return
+        if path.path in ('/api/workflow','/api/workflow/footprints'):
+            if path.query:return self.send_json(400,{'status':'invalid_request','probability':None})
+            data=workflow_response()
+            if path.path.endswith('/footprints'):
+                return self.send_json(200,data['footprints'],content_type='application/geo+json',filename='reconstruction_footprints.geojson')
+            data.pop('footprints',None)
+            return self.send_json(200,data)
         if path.path=='/api/cell-details':
             q=parse_qs(path.query,keep_blank_values=True)
             try:

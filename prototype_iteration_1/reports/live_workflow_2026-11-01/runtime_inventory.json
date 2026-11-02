@@ -1,0 +1,781 @@
+{
+  "artifacts": [
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/state_checkpoint.json",
+      "bytes": 4091277,
+      "sha256": "9dfe64f71350f35a832fe1f6fba351a2cbab2dfc6fd0c2fb9c1480e3e12e894e"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/hourly_weather.parquet",
+      "bytes": 9706241,
+      "sha256": "f9b994e6c445aa334612ed6fbff3b9f801de66d75289c8e410e2e3e987f1519b"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/manifest.json",
+      "bytes": 11482,
+      "sha256": "be8c2fc33ad57979b92848a946e17bcb21cb6281588f25bd18ce712ed2cf8cec"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/daily_forecast_fwi.parquet",
+      "bytes": 630370,
+      "sha256": "5ae8c0a7e14c15a3fe4febf97bc199233d63e74e67e9cfc6a5f969d84b742f38"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261031T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT024H.grib2",
+      "bytes": 3410051,
+      "sha256": "ab2f30e5554d49a62d1598a28475acad181c27143840786a084a3b7bc92501f0"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT002H.grib2",
+      "bytes": 2279456,
+      "sha256": "c3705bb90e1c06358d1b00a947ae940d8fc96599489659be31d5c3acba996353"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT021H.grib2",
+      "bytes": 2543129,
+      "sha256": "6d7d56073618ddfa318a6354b5aca954d4da850a333f760eb63b50fa80d655ec"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT010H.grib2",
+      "bytes": 3331623,
+      "sha256": "b3c1f29e66abefb6611fb1f97a3b5b07c988e7c2d8036eb47c54c3f0f1bb9b19"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT017H.grib2",
+      "bytes": 2516263,
+      "sha256": "8e864570dfd1f65c8ef07a48b935aa5121140b9e86312283f230a3aca0991e0e"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT009H.grib2",
+      "bytes": 2607086,
+      "sha256": "2faffe0aca767ce61e08c3cfcf3d9b8b0c8125bb6922c010edcc175b1c639317"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT005H.grib2",
+      "bytes": 2659492,
+      "sha256": "9d8d49ec18bb7ae04f33a700371f5c4edf16f000c02d3856f3d4893522f21631"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261031T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT012H.grib2",
+      "bytes": 2902976,
+      "sha256": "1e4a619a7b29454cd2c47d86d36739d1827f66357d6c80a0260ae3ecdf88e2cf"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT006H.grib2",
+      "bytes": 1877303,
+      "sha256": "a937f21302f02a3ad88c674506bccc678bef291cd37fedc262159ab057a80920"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT018H.grib2",
+      "bytes": 1895305,
+      "sha256": "ad4fb1f7cb988d68af3052922463984ac5a792c373b62ce0da3d0b1d5e9ce59c"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT014H.grib2",
+      "bytes": 1898770,
+      "sha256": "1f9bd89a65dd5aab083da7bcb58a11d2af9b41cce150255d8cfa3e57a8d5f202"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT022H.grib2",
+      "bytes": 1872290,
+      "sha256": "82302376b312bac55771d5c0b81c4784bb01b7c7f82fe322bdd50d5c8e887aed"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT023H.grib2",
+      "bytes": 3331271,
+      "sha256": "82acbd7582700a727cc290ef9eef0b91be1a3f8974cff48bd9d9768182f41b6c"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT022H.grib2",
+      "bytes": 1854886,
+      "sha256": "a22895b87f9e0d29f15e5a30638a0f24af1da4a80a8ea9c9b409431f6a624087"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT015H.grib2",
+      "bytes": 3414357,
+      "sha256": "e3b62f6ea5941b13f4e7fe97ab9fc3acf83299a6a0c8f8412478905970080879"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT014H.grib2",
+      "bytes": 1922066,
+      "sha256": "57077c5707e0000841edc514e40ed99150256c7e982f7640e5e07f649c67d042"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/download_manifest.json",
+      "bytes": 74091,
+      "sha256": "2eb0e304257597c62a50e60cbcde5ff6052967171774d45bc5cdc1b22319c503"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT019H.grib2",
+      "bytes": 3367239,
+      "sha256": "5299c0da9bcb6c80b206dac152b6b736007fe1b88e629a275a7d967b33485663"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT018H.grib2",
+      "bytes": 1905717,
+      "sha256": "4a421a366dbf21a2be306df93ff3e192058adb3d2b28c40afe9fdbbc0f6dbb73"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT007H.grib2",
+      "bytes": 3426149,
+      "sha256": "237b437241ec3a585fe65251e159b06543941f70042cbe94e27e21580cb9b3ae"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT006H.grib2",
+      "bytes": 1892450,
+      "sha256": "cb4543673832b85d72bc074e211490dd691ed24e60f769fc290e56db062f7c44"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT020H.grib2",
+      "bytes": 1907301,
+      "sha256": "43436f67bbdb7fe83a4764ad871f742560d653564bdb445e2c59873d013713a7"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT021H.grib2",
+      "bytes": 3353476,
+      "sha256": "96688041195e4e1968c7037a118aa5e644865917fff2ba1a8ab65b57beb8a59a"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT008H.grib2",
+      "bytes": 1884537,
+      "sha256": "81393bc7185e098ab47807a313a76b6834bb8f3fe263b18859e52cccc9d2008c"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT016H.grib2",
+      "bytes": 1899298,
+      "sha256": "111e3b2c517efd5794ddcff9242d6e3955adc33cd2b437bcdedc4a9bf534c2d9"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT004H.grib2",
+      "bytes": 1896240,
+      "sha256": "b2857b4779bd3ae10c675779f175f73c67eea6ca822913dc65c7e88e184d07e9"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT005H.grib2",
+      "bytes": 3396317,
+      "sha256": "6ee0620b6b20ea63a9273356345f2fd087fdadfb1dba5da173e1e0680f5c5b0f"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT004H.grib2",
+      "bytes": 1884243,
+      "sha256": "3844df2b40c65482156ecd2999b9fa075a047dbb9ff8b486f69fbc8fbb0829aa"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT017H.grib2",
+      "bytes": 3394622,
+      "sha256": "950aa4ca53a5812406d859d0a38eedd6bedd5e5cd4da74b36b033dd74a7ea2fb"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT016H.grib2",
+      "bytes": 1911489,
+      "sha256": "5e09398d867d9631947c01b2fef386a746ac8ada10b66d78386bbfa055fb9554"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT009H.grib2",
+      "bytes": 3427035,
+      "sha256": "df350e42d81056aaa3cbbd15ef650d70be0b19328849373a2fdd1cdd663b0f52"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT008H.grib2",
+      "bytes": 1889717,
+      "sha256": "00a699fd4e6b979fee7ab9f6eb02f66797903a6925375537a7de7f508485b06a"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT020H.grib2",
+      "bytes": 1888749,
+      "sha256": "d76cd27fbd0a1f3cf36ed3b8cf3dde12352d124df054c18f3c661951047be6fa"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT012H.grib2",
+      "bytes": 3584712,
+      "sha256": "1d502c3ad79cd5a5f8dc876c4cbb3f628edb3e5e8637b610a33b9be9c7587c9d"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT023H.grib2",
+      "bytes": 2594889,
+      "sha256": "cac9230131e5ab068cf103753fa21cac8b7120b608014c8685eb45bcb29b0463"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT019H.grib2",
+      "bytes": 2503517,
+      "sha256": "55bb5f3cfd8e5d6a6aff788b14fd992d0c30f8f60b02ec5d2c82273e86901fb2"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT007H.grib2",
+      "bytes": 2627861,
+      "sha256": "0f7bc3a01527bbe8981758bce576e8c3e30a9f0c9277ba642e314c8196efeec3"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261031T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT010H.grib2",
+      "bytes": 2963184,
+      "sha256": "7b075f419522c48dfb7b199910b6cebe6e021d1486811b2caa838462d89e5b62"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT024H.grib2",
+      "bytes": 4418569,
+      "sha256": "b61fc8f54963df36f40681512626fd622f6b11d98331661a733b6bb4a34c3273"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261031T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT002H.grib2",
+      "bytes": 1960279,
+      "sha256": "fd6c02034ad07c6a64697a6a8e6d5dfd08809ac5a64353f2baa9f39497d4b3a7"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT015H.grib2",
+      "bytes": 2541169,
+      "sha256": "0e46998f2ea17bc55f0f39d5f908a8203caa36e7a684d88507a85ef565c9dc46"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT013H.grib2",
+      "bytes": 3418804,
+      "sha256": "5de18da520fc4736299d9c4ba30692acd0f834a8214402635a52834bfa475092"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT012H.grib2",
+      "bytes": 1892779,
+      "sha256": "d27e00018065a5443464218d49332d2909fb7f4639bd717e09ecd3e278371703"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT024H.grib2",
+      "bytes": 1839621,
+      "sha256": "ca758ce10d56b1d521c999ffdb98344483fea746e6795a42cdbc8d94b33f8841"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT001H.grib2",
+      "bytes": 3370418,
+      "sha256": "11bc0f5223db7c7347abd1b289472b6f1e1aa2c6cb01d47ef8df191a7e9a42de"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT024H.grib2",
+      "bytes": 1856938,
+      "sha256": "2ec7d25bb0490e287b6eded6c5ca0a11771fc36546589e5ce0d245d68ef70de6"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT012H.grib2",
+      "bytes": 1895103,
+      "sha256": "1cc2d548d853d6e85ef39426ea884515f6f427eb3eb47287479e4edb497c2e84"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261031T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT018H.grib2",
+      "bytes": 3428029,
+      "sha256": "d5d2c720c636bde07046de67cf6e86abc332f80d490a26793d6be8c48c6f4ddb"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT020H.grib2",
+      "bytes": 4126632,
+      "sha256": "8441f79a5c9b742082219cbbe8696d9e94b5443b772ba170cf4b7165cc5d5b10"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261031T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT006H.grib2",
+      "bytes": 2484989,
+      "sha256": "6f252378bce1846e1d70bf1d614c371408afede845794bca15ebc4da79460157"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT011H.grib2",
+      "bytes": 2588868,
+      "sha256": "42ffde1960402d7e193bc42c4c1b7c0d65b9fd0cde4238c989a933a9c21904c4"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT003H.grib2",
+      "bytes": 2714216,
+      "sha256": "763478c7ff5c99d301bf0f03b8818a410ab15fa7f81db4beb1c7db922474b10a"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261031T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT014H.grib2",
+      "bytes": 3088466,
+      "sha256": "d3147adbcea6708ab605ebc72ee0505ff475936e9a9a805304c3b4b21ce69553"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT004H.grib2",
+      "bytes": 2479977,
+      "sha256": "8b231bee232e942b92fb0e7d751dcaa863642acab3f2dd9c384a4aa8afdfe089"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261031T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT022H.grib2",
+      "bytes": 3616746,
+      "sha256": "0096a11e1f3bcf42ec5c7be7712ce8fa08bed2bf94a943d912eea8522c6c2d05"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT016H.grib2",
+      "bytes": 3754252,
+      "sha256": "84d0a0acf478e60da92fbcaaed909933d9fdc13b72294bffc7d2a2695a1eecbf"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT008H.grib2",
+      "bytes": 3077685,
+      "sha256": "8ec451437acf91daad6e463ec588332b2e89cb099ee8f469707be5f4643c1dfe"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT001H.grib2",
+      "bytes": 2730878,
+      "sha256": "55dc9c4efd8e1655926f3ded9f5562f7c53a6d5dd4d86647cdec5625d875ff5f"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261031T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT016H.grib2",
+      "bytes": 3263472,
+      "sha256": "7be4dd0e8cbdcf53b4fe12af0e9b36d838325484d1859becb662b9b2c6b8116b"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261031T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT008H.grib2",
+      "bytes": 2740891,
+      "sha256": "02d46db2014a92a911c0e1ffa5bb8cd2b257a9734c6c87a6737ebbfdd0e51405"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261031T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT004H.grib2",
+      "bytes": 2179446,
+      "sha256": "75a9e201c7c546a17806cba0df785a2474e44f8f7157f6ccc7f7a0a42cb3f5b9"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT013H.grib2",
+      "bytes": 2566328,
+      "sha256": "9416261d65994a21cdb20996a331e06c3fd38237e027fdfa33a8725180d62f6a"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT022H.grib2",
+      "bytes": 4288540,
+      "sha256": "dd67f3c0e5e8caf9fb04d3a15e5dd6c83658a07ced9d6b6494558d24743f730a"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT014H.grib2",
+      "bytes": 3838049,
+      "sha256": "7f0405a606da8a269fab57ac78a489622503038ca732cca3d1f97de8bda5a462"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT018H.grib2",
+      "bytes": 3952402,
+      "sha256": "fbb539c57cc19a88e3cad5dc4cc2476dd2c5f392b0149c50bbc7802485286e5b"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261031T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT020H.grib2",
+      "bytes": 3477075,
+      "sha256": "5f543bd13ea697c86e0c761ccb3c58118c4b60154c76df17077021e1cc865455"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT006H.grib2",
+      "bytes": 2805650,
+      "sha256": "53bdc5ec56d861214dbb243986d346765a76dc55d2ba804a8965963c465150ce"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT003H.grib2",
+      "bytes": 3376611,
+      "sha256": "f4427e9129235dbd76b41e8df9e284621fc0720c6c25911f28a5c8c3f892862d"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT002H.grib2",
+      "bytes": 1889179,
+      "sha256": "6bd83a270a3a54b3c08843f481d781ee6682f02b0b1df60dd19a0b865b60f6db"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT011H.grib2",
+      "bytes": 3421980,
+      "sha256": "e205422869c3d098b68b3eab6fd6895ce7811c9c6c1f72ab2e03a21aba8b8e53"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT010H.grib2",
+      "bytes": 1893250,
+      "sha256": "3ab0ddd86c8a57237423f722c47a7482548961a3812cc09fef75c4e1e63982db"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT010H.grib2",
+      "bytes": 1891750,
+      "sha256": "38f22b9943d8de1897bd6643ac44cc0328ac98c7e931bdf2b45b77ed4cbe75d6"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT002H.grib2",
+      "bytes": 1873769,
+      "sha256": "854b2238317c097721ff0217f5b3d3d86d0987950232d562da4a25158b315d7d"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT014H.grib2",
+      "bytes": 3417960,
+      "sha256": "174a0d1784233047885d16a32c0be000253391a7a776ce2954be57a481a246fb"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT015H.grib2",
+      "bytes": 1915729,
+      "sha256": "9e31a2519d140951da7a2b0f225effcb63ce9582800c69b9aadb28c0eeaa2102"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT023H.grib2",
+      "bytes": 1847636,
+      "sha256": "77ca26f80a5d60af75f27717e9cec4edc4a8797360b12e0711df173e62955bc4"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT006H.grib2",
+      "bytes": 3412764,
+      "sha256": "4cd68dba6d7642b23645fdaa2b1c80c607a0805cbd28a929026cc64e69de8066"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT007H.grib2",
+      "bytes": 1887614,
+      "sha256": "1b337a049265a08c1a848398234265434e4e56e2795a4421613f82dfa13961d3"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT018H.grib2",
+      "bytes": 3382414,
+      "sha256": "d81eebc9833dc1d795de716b472834e00b5a8775bf175cb48cbd44be1f1fc425"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT019H.grib2",
+      "bytes": 1912460,
+      "sha256": "32e6b5f378ab8a7f0d217d8fbb11eecb1d6280da6f01c8883c228e9e6d91caaa"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT019H.grib2",
+      "bytes": 1899476,
+      "sha256": "ab372bbc7ec5bb9dff5ff9c5173b69c256eb2ce5abecd596152d3b46c4318efa"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT007H.grib2",
+      "bytes": 1877653,
+      "sha256": "c6b514310b2d26c60868492c1e8be6d7bb3e5d8631a2c8bae939656ddb9a323f"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT023H.grib2",
+      "bytes": 1864410,
+      "sha256": "afc7537232e5c626b967410f6531c0eb48d8304e434e34511a4b5d06e7b89b7f"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT022H.grib2",
+      "bytes": 3326693,
+      "sha256": "47ba88fc0beb90333df4d343f73adee58dbb4d52f20d451e808009aabcf5a140"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT015H.grib2",
+      "bytes": 1899052,
+      "sha256": "de86fd473a14a90eb2f27a96b61ad5ae36af17464edf14c8164ae211de564a44"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT008H.grib2",
+      "bytes": 2617428,
+      "sha256": "4f036ed5e2689634fa607b9b49219f99aec5a4b638438082d47615651dfdecf3"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261031T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT001H.grib2",
+      "bytes": 1826494,
+      "sha256": "5f0a2d4ceb29473957eeade762027047978553739af49bc23fa98188892c3207"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT016H.grib2",
+      "bytes": 2529318,
+      "sha256": "9963a24a0f83ac8ef9b29d5db884f04d2fa618c20c460f10a05ff17664757fed"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT004H.grib2",
+      "bytes": 2686172,
+      "sha256": "6d95b2c625b632de22f0f3f860aaa7d0bb83ee95a3f277b837c04e24572c3912"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261031T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT013H.grib2",
+      "bytes": 2996369,
+      "sha256": "d9a0a5f7b9dab1e5f2cb369bbc662bf530321d83a6bd46f42416231447ba70b5"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT003H.grib2",
+      "bytes": 2515126,
+      "sha256": "6de96303bb3a6c7c012c7f8026ae21be1d59a38107f5bb1cb55ba5e824e44736"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT011H.grib2",
+      "bytes": 3456694,
+      "sha256": "bd4cd1e58e58bcceddfe5243238af3096f67f5825924088d9596e41f79e0d94d"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT020H.grib2",
+      "bytes": 2519094,
+      "sha256": "a80f500bfc22049875349421d5a34c6f6bdfd893602cbf576ffc354ad58e8daf"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT006H.grib2",
+      "bytes": 2640468,
+      "sha256": "6971ba6f579d4a294cffecc8dfc2247d67267377d755f9c0d5d12887b1999278"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261031T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT011H.grib2",
+      "bytes": 2804400,
+      "sha256": "b8f6c137b87aee9ec1ea22a8fb9d18b206dd3d5bc8367e06d814448e928aa05a"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT018H.grib2",
+      "bytes": 2504647,
+      "sha256": "1c39d660681ee91f45c1e5367f831ad7fbeb20d3d3d07b9e658e14f8c8e798c6"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261031T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT003H.grib2",
+      "bytes": 2194909,
+      "sha256": "9998c25d1183fbea940b67f235133610e18df7eda162380d8a124f42880fce5b"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT014H.grib2",
+      "bytes": 2553083,
+      "sha256": "4c53358ec687ca05d9c61e77c18fc8992546e6c56c204f81166c0609329f0be9"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT022H.grib2",
+      "bytes": 2564737,
+      "sha256": "e0d4b87352aa4b9aa132c0654008b6a68356d994ea89924897131abf3c70563d"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT013H.grib2",
+      "bytes": 3710850,
+      "sha256": "1c3966188c270f5098b152e81dbe600180b7089fdccc36827e97958d1a8db053"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT001H.grib2",
+      "bytes": 2228917,
+      "sha256": "627b31938aa1a7da2ed69965a60bf3536b50fdb5b5c383b5ce3023d371daaad0"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT004H.grib2",
+      "bytes": 3390540,
+      "sha256": "5e35a2a78ac87212690a377d36d3e1095b34800518a4d8024fdd4df92caef625"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT005H.grib2",
+      "bytes": 1887969,
+      "sha256": "81268dc65d2af04d4a711d7e45cbbccde35eca5c3c434f8d5fe57b3a36159a3d"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT008H.grib2",
+      "bytes": 3430049,
+      "sha256": "38787dca3b0a7afb01646234dd25c29af0d43c4b919f3f29dc877383ca88bcc5"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT009H.grib2",
+      "bytes": 1892762,
+      "sha256": "e2cf55d9afa4ad7bbe123f576ffbcf606c3561be9a6a1fd9b320ced318681de4"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT021H.grib2",
+      "bytes": 1869719,
+      "sha256": "95a8c42df070bdd63feb7c3294b799841b534c68386ceb2db1fd6d05bc05b110"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT016H.grib2",
+      "bytes": 3404903,
+      "sha256": "01be48bd70da9de07fc791cee2c406a07511a2430db4bd3e1685f77865882c62"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT017H.grib2",
+      "bytes": 1907907,
+      "sha256": "56630ddf4f55b74a1e2b7f346fb7a43767ec56348be5d3e5071015939c5a2ffe"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT017H.grib2",
+      "bytes": 1930932,
+      "sha256": "9ba58a69330833d9fde3827185eda4181cf02431137347b8c735f2a5ceb56a06"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT021H.grib2",
+      "bytes": 1888734,
+      "sha256": "846062ef3150c21e3001a6fc3fd3416a680dd64ac9cb253247e404edfd31ac6b"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT020H.grib2",
+      "bytes": 3348778,
+      "sha256": "539d3b8971622b42dcefd5d8afe69353d315f2f88ef4a594a230be9cd051d2d1"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT009H.grib2",
+      "bytes": 1888879,
+      "sha256": "e57e4b31f085358caaaf4ac5e31ff92603c5ea8055dfd0b51508882c90adf377"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT005H.grib2",
+      "bytes": 1903625,
+      "sha256": "f7422ccaec1fbf39d33e1fe7296ba7cf643428b465a48843f5775587db635aef"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261031T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT023H.grib2",
+      "bytes": 3678426,
+      "sha256": "96bb49d4e038ca1d0bdb41a0f6ac249891e9c084bea6b51e736a36a80ee59c42"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT005H.grib2",
+      "bytes": 2651315,
+      "sha256": "6993ef11cd8cf9a7456afa333d57284c94070bfc23bf5fb0e81f14e30355d3bc"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT009H.grib2",
+      "bytes": 3203797,
+      "sha256": "1f12d3658ac462fb372dcb3eb2b6b30d309f87e5bd633d368aa779644c9c900e"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT017H.grib2",
+      "bytes": 3857063,
+      "sha256": "6e76e08323f0bcbc27cbf8a5b2d8ebb801487a61b5523410b6e5a178217ee949"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261031T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT007H.grib2",
+      "bytes": 2618346,
+      "sha256": "951b6a7abfff3f37d5402d2264adac6b48937a215e919255bc8a241eec23104d"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT010H.grib2",
+      "bytes": 2598276,
+      "sha256": "0e126cf08f75ae846aa04f260f88a0805a9f4c86604275603e852f7d44a4b676"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261031T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT019H.grib2",
+      "bytes": 3504900,
+      "sha256": "f280ce77f9df5f90a91c92b6e9245d63b06993f910ce2e29c36166da991233f9"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT021H.grib2",
+      "bytes": 4210203,
+      "sha256": "59fae288fe12ab6ea5dc633a7311e57d3e8966f1572f2b001e08c08ce16a7bcc"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT002H.grib2",
+      "bytes": 2724084,
+      "sha256": "f395687403ac503ab63df7df9f2f9682e4f08cbb02c4bcf0ebd7902b3e5e0f63"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261031T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT015H.grib2",
+      "bytes": 3176545,
+      "sha256": "f0b522bf4e42b410f797d268914cdb355e3969cfdc4ca36f6a10b74ddbf7e942"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT001H.grib2",
+      "bytes": 1849095,
+      "sha256": "68192ae3fca06650f2e31d9b27c2758a761a607db4cc4387cb5478f635d72f39"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT013H.grib2",
+      "bytes": 1898111,
+      "sha256": "67b74e1d788782fcb43dcf1dcbccd9844ccb5bc0945b3853171409c62264a26b"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT024H.grib2",
+      "bytes": 3303331,
+      "sha256": "e91497f9dd6148d9c185c39723e0ee09e50e14d9af019268bd9a46eded1c69a3"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT012H.grib2",
+      "bytes": 3420282,
+      "sha256": "4e38bc61377ece749ce6796ac77436aad6c50789fd1c262d4abc07478a3f4706"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT013H.grib2",
+      "bytes": 1892872,
+      "sha256": "060c36eaedb0c212fa3e509357f941718e10f06c3a55bdd1f5cb58d6b54fe29d"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT001H.grib2",
+      "bytes": 1870152,
+      "sha256": "dee6df7db27a96423da3f5c6aabf6dd934c399cb2d76e1acfca6f9ac8790b8bd"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT011H.grib2",
+      "bytes": 1892626,
+      "sha256": "008b9a29e78d928471f463b99cd7a993f09912187501a16473c9b7a720ace8c1"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_UGRD_AGL-10m_RLatLon0.0225_PT003H.grib2",
+      "bytes": 1900836,
+      "sha256": "ba22cef6b8032830260e9fdefb93d30f145639e378714139e6e6d6f5d09cbb88"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT002H.grib2",
+      "bytes": 3369563,
+      "sha256": "0df487637eb70a0c9d63db19b1c9a38f6e17a1199adf1bd068419978fb23391b"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT003H.grib2",
+      "bytes": 1916369,
+      "sha256": "9055d32f4c80d8adfae5e1a3c4a372d8548578cca15a615e50f76dbd16a4e673"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_TMP_AGL-2m_RLatLon0.0225_PT010H.grib2",
+      "bytes": 3423497,
+      "sha256": "77c8b758a563d14660abd74c142a6d1207f9a94dc87f5ba6450eb97333f4c2fe"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_VGRD_AGL-10m_RLatLon0.0225_PT011H.grib2",
+      "bytes": 1893427,
+      "sha256": "a6be57c42e01516871ee6e0975b996348d087f3a836ac3a90a94c0b4b7998413"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT015H.grib2",
+      "bytes": 3964983,
+      "sha256": "ba6f9c9601b988fb11c4bd88a9e5d50e63c16814f4952cbc07b6cfa77b00577d"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT024H.grib2",
+      "bytes": 2600864,
+      "sha256": "65b3fac0e4287fecde4c2615fca06c5c95bc5997961ab36787c3706065151410"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT007H.grib2",
+      "bytes": 2945821,
+      "sha256": "40654a505e6d5b959f8b68926de568df1328e0700a0ee69e1ed984f3f47b5a73"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT019H.grib2",
+      "bytes": 4041562,
+      "sha256": "ba400943af7ec2d8c2644240e5e2f500474e37fff4983f61badd2859d21971b7"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261031T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT021H.grib2",
+      "bytes": 3547971,
+      "sha256": "3b1e0e363b3dc2952f0eaf7a876670010f7bfca4d8b0ecc9e1c41ff032a29420"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261031T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT009H.grib2",
+      "bytes": 2856746,
+      "sha256": "a3e3dca3204c384f14b383dcc8036183a83d63eb288250878c0be923b3aa76fc"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261031T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT017H.grib2",
+      "bytes": 3347248,
+      "sha256": "fdcb7e2d78e4c57a8817e35d1a42aaba8c421a0689988dbddaef51b0a10f6a57"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT023H.grib2",
+      "bytes": 4357900,
+      "sha256": "f2d50e1485e40bdadd11f6c3b663d2e796433cb714dae74d4535a72fe1ea5c71"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261031T18Z_MSC_HRDPS_APCP_Sfc_RLatLon0.0225_PT005H.grib2",
+      "bytes": 2342812,
+      "sha256": "c9ef48b1920af735e131d8429960944ac4fbd68f749e230d8afb7b8c734ef18a"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/hrdps_live_workflow_2026-11-01/raw/20261101T18Z_MSC_HRDPS_RH_AGL-2m_RLatLon0.0225_PT012H.grib2",
+      "bytes": 2577699,
+      "sha256": "55b36f330b0ce3fda760023c1631bc8cb2fd17196d3730d3fb5060e5f001460f"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/workflow_reference_districts/MNRDIST.zip",
+      "bytes": 24567490,
+      "sha256": "b3974dd8a4b21650051817ae292db8695bbd5bc5d7520d10b631aa2a5121ff90"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/raw/workflow_reference_districts/manifest.json",
+      "bytes": 363,
+      "sha256": "f1038320916fa66874a386ee62fdf2c01704c34f3d0694fd864228ddd0b9c6fb"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/live_workflow/notices.sqlite",
+      "bytes": 24576,
+      "sha256": "67b598e43a0a34aeb11d229e4eef2e01c047cdd2e8c2b115c261c757acf82ea8"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/live_workflow/latest.json",
+      "bytes": 101269,
+      "sha256": "12677cd7043e05d23395278c8c49b38b08046116395a6b8354fc69f2dc35c8c5"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/live_workflow_2026-11-01_v3/raw/fires.geojson",
+      "bytes": 5609,
+      "sha256": "262649dccfe7dae71c61a54d27f64d82ed1bf2d116e744940ac18c6c0cc6fa91"
+    },
+    {
+      "path": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/data/processed/live_workflow_2026-11-01_v3/raw/districts.geojson",
+      "bytes": 210796125,
+      "sha256": "249c7f673116666762c7ec927776f4215944b1818a29f2fbabf14a3c98f9f3bb"
+    }
+  ],
+  "total_bytes": 637840855,
+  "scope": "Full local assets; these paths are not portable installation instructions"
+}

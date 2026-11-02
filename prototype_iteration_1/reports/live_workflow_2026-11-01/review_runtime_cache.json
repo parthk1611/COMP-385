@@ -1,0 +1,65 @@
+{
+  "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/github_iteration_1/prototype_iteration_1/scripts/runtime_cache.py",
+  "language": "python",
+  "metrics": {
+    "lines": {
+      "total": 63,
+      "code": 48,
+      "blank": 14,
+      "comment": 1
+    },
+    "functions": 6,
+    "classes": 0,
+    "avg_complexity": 2.5
+  },
+  "quality_score": 100,
+  "grade": "A",
+  "smells": [
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 256 should be a named constant",
+      "location": "line 15"
+    }
+  ],
+  "solid_violations": [],
+  "function_details": [
+    {
+      "name": "identity",
+      "parameters": 1,
+      "lines": 7,
+      "complexity": 1
+    },
+    {
+      "name": "_parquet",
+      "parameters": 5,
+      "lines": 12,
+      "complexity": 2
+    },
+    {
+      "name": "parquet_lookup",
+      "parameters": 4,
+      "lines": 12,
+      "complexity": 2
+    },
+    {
+      "name": "index_explanations",
+      "parameters": 1,
+      "lines": 10,
+      "complexity": 3
+    },
+    {
+      "name": "_explanations",
+      "parameters": 2,
+      "lines": 8,
+      "complexity": 2
+    },
+    {
+      "name": "explanation_lookup",
+      "parameters": 2,
+      "lines": 10,
+      "complexity": 5
+    }
+  ],
+  "class_details": []
+}

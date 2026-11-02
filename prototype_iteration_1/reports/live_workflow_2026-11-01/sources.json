@@ -1,0 +1,27 @@
+{
+  "fires": {
+    "url": "https://ws.lioservices.lrc.gov.on.ca/arcgis3/rest/services/FFIM/Forest_Fire_Info_Map/MapServer/1",
+    "retrieved_at_utc": "2026-11-02T02:29:19.753167+00:00",
+    "features": 9,
+    "sha256": "262649dccfe7dae71c61a54d27f64d82ed1bf2d116e744940ac18c6c0cc6fa91",
+    "geometry_type": "esriGeometryPoint",
+    "service_last_edit": null,
+    "retrieval_is_not_incident_observation_time": true
+  },
+  "districts": {
+    "url": "https://ws.gisetl.lrc.gov.on.ca/fmedatadownload/Packages/MNRDIST.zip",
+    "retrieved_at_utc": "2026-11-02T02:29:22.010022+00:00",
+    "archive_sha256": "b3974dd8a4b21650051817ae292db8695bbd5bc5d7520d10b631aa2a5121ff90",
+    "package_directories": [
+      "LIO-2023-01-25"
+    ],
+    "role": "Dated administrative reference; not verified evacuation boundaries",
+    "features": 18,
+    "geometry_record_dates": [
+      "20230125135113",
+      "20230125135114",
+      "20230125135115"
+    ],
+    "sha256": "249c7f673116666762c7ec927776f4215944b1818a29f2fbabf14a3c98f9f3bb"
+  }
+}

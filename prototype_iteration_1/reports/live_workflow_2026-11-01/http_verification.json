@@ -1,0 +1,134 @@
+{
+  "checks_passed": 18,
+  "base_url": "http://127.0.0.1:8771",
+  "checks": [
+    {
+      "route": "/",
+      "status": 200,
+      "bytes": 7307,
+      "seconds": 0.005471125012263656,
+      "sha256": "3315abff901692bdbed08cd17be2e45c77d96474f3c53163c8d0575b41935046"
+    },
+    {
+      "route": "/historical.html",
+      "status": 200,
+      "bytes": 51615289,
+      "seconds": 0.0369279159931466,
+      "sha256": "73641b5c274bb2cefa001712a3fb3e178c6abf91dbde2b563e55000d668aa222"
+    },
+    {
+      "route": "/selected.html",
+      "status": 200,
+      "bytes": 19910529,
+      "seconds": 0.015490082907490432,
+      "sha256": "b7d4337cb327efb8db89755d39f453bd523bac12ee77aba8764ee1892697940a"
+    },
+    {
+      "route": "/spread.html",
+      "status": 200,
+      "bytes": 1203899,
+      "seconds": 0.0020473329350352287,
+      "sha256": "77a35de3fff6cd91705f6847281931fb813bcd7fcfe673fddc1a3651f4111201"
+    },
+    {
+      "route": "/api/historical-score?date=2019-05-01&grid_id=ofr10km_-10000_100000",
+      "status": 200,
+      "bytes": 572,
+      "seconds": 0.08225474995560944,
+      "sha256": "54c3714e26937b9d450b0dfbdaac3bc82a6d53485035938ec72eb356aecd8738"
+    },
+    {
+      "route": "/api/selected-score?date=2025-09-01&grid_id=ofr10km_-10000_100000",
+      "status": 200,
+      "bytes": 613,
+      "seconds": 0.013762457994744182,
+      "sha256": "acfb23cd84f497c2151f8000e9d9dfb0dc30aa8c797e1efaaf269e392955e750"
+    },
+    {
+      "route": "/api/cell-details?study=historical&date=2019-05-01&grid_id=ofr10km_-10000_100000",
+      "status": 200,
+      "bytes": 1142,
+      "seconds": 0.049368334002792835,
+      "sha256": "ccbbfeabc9079b7d55bbba91065c6de87c98fe90123981fe6b67e1de6649cbc3"
+    },
+    {
+      "route": "/api/cell-details?study=historical&date=2019-06-02&grid_id=ofr10km_-10000_100000",
+      "status": 200,
+      "bytes": 734,
+      "seconds": 0.018548542051576078,
+      "sha256": "a8ab41eadbafe944cc3cc23883c61021abafac179120aa07763a8a1171306eef"
+    },
+    {
+      "route": "/api/cell-details?study=selected&date=2025-09-01&grid_id=ofr10km_-10000_100000",
+      "status": 200,
+      "bytes": 1188,
+      "seconds": 0.031738667050376534,
+      "sha256": "5171d9832bc744052bee9ac8f89aa53dc87f995dc95314e691cc732d474bd545"
+    },
+    {
+      "route": "/api/export?study=historical&date=2019-05-01&format=csv",
+      "status": 200,
+      "bytes": 4136793,
+      "seconds": 0.07880754198413342,
+      "sha256": "4471243e460e3fd594e6df5f84c2cbaada89bd391574ce809e96c65e2c4ef998"
+    },
+    {
+      "route": "/api/export?study=selected&date=2025-09-01&format=csv",
+      "status": 200,
+      "bytes": 4366572,
+      "seconds": 0.06705604190938175,
+      "sha256": "7e90d480e8d8e85255a393fd78cdea931848f3949342decf1077a10270ef110e"
+    },
+    {
+      "route": "/api/export?study=selected&date=2025-09-01&format=geojson",
+      "status": 200,
+      "bytes": 10184684,
+      "seconds": 0.18591700005345047,
+      "sha256": "61f8dfe03de4d46b69c62ae1ae03bb087e58a3f79afa911c865f9fc98598ccfc"
+    },
+    {
+      "route": "/api/live-ignition",
+      "status": 503,
+      "bytes": 1049,
+      "seconds": 0.0016505829989910126,
+      "sha256": "e1cea5b8d53a069169d900729b31276dd9cd329425bc5b29ab8179649e8a5909"
+    },
+    {
+      "route": "/api/historical-score?date=2019-02-30&grid_id=ofr10km_0_0",
+      "status": 400,
+      "bytes": 50,
+      "seconds": 0.0011492910562083125,
+      "sha256": "c8e87c0d3e938c1d57546618026b0a09597bd6d57bb550e69244672f3728c14d"
+    },
+    {
+      "route": "/workflow.html",
+      "status": 200,
+      "bytes": 5277,
+      "seconds": 0.0006747079314664006,
+      "sha256": "b69d232f994ff139e467777f65b97c8db923e1a09d6c9af08f04fbbcfd38090d"
+    },
+    {
+      "route": "/api/workflow",
+      "status": 200,
+      "bytes": 38724,
+      "seconds": 0.0028179169166833162,
+      "sha256": "2d7b960b86309ccddf7e7b0ae7bce5a5c484226eda9121a18672734480859f04"
+    },
+    {
+      "route": "/api/workflow/footprints",
+      "status": 200,
+      "bytes": 11336,
+      "seconds": 0.0018002090509980917,
+      "sha256": "4be9dc2335bbf694de1d59628b770972be5effabac07b6470043b3eb2a757aaf"
+    },
+    {
+      "route": "/api/workflow?path=../../x",
+      "status": 400,
+      "bytes": 50,
+      "seconds": 0.0007402499904856086,
+      "sha256": "c8e87c0d3e938c1d57546618026b0a09597bd6d57bb550e69244672f3728c14d"
+    }
+  ],
+  "visual_rehearsal": false,
+  "verified_at_utc": "2026-11-02T02:47:45.892947+00:00"
+}

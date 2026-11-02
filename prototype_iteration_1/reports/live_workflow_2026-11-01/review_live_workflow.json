@@ -1,0 +1,204 @@
+{
+  "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/github_iteration_1/prototype_iteration_1/scripts/live_workflow.py",
+  "language": "python",
+  "metrics": {
+    "lines": {
+      "total": 483,
+      "code": 456,
+      "blank": 26,
+      "comment": 1
+    },
+    "functions": 11,
+    "classes": 1,
+    "avg_complexity": 9.3
+  },
+  "quality_score": 47,
+  "grade": "F",
+  "smells": [
+    {
+      "type": "long_function",
+      "severity": "medium",
+      "message": "Function 'weather_context' has 84 lines (max: 50)",
+      "location": "weather_context"
+    },
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'reconstruction_footprint' has complexity 15 (max: 10)",
+      "location": "reconstruction_footprint"
+    },
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'weather_context' has complexity 18 (max: 10)",
+      "location": "weather_context"
+    },
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'refresh_weather_context' has complexity 11 (max: 10)",
+      "location": "refresh_weather_context"
+    },
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'read_snapshot' has complexity 13 (max: 10)",
+      "location": "read_snapshot"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 4326 should be a named constant",
+      "location": "line 27"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 4326 should be a named constant",
+      "location": "line 55"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 10000 should be a named constant",
+      "location": "line 69"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 180 should be a named constant",
+      "location": "line 83"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 200000 should be a named constant",
+      "location": "line 115"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 3978 should be a named constant",
+      "location": "line 155"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 10000 should be a named constant",
+      "location": "line 165"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 3600 should be a named constant",
+      "location": "line 206"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 4326 should be a named constant",
+      "location": "line 232"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 20000 should be a named constant",
+      "location": "line 241"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 1000 should be a named constant",
+      "location": "line 260"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 3600 should be a named constant",
+      "location": "line 321"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 3600 should be a named constant",
+      "location": "line 356"
+    }
+  ],
+  "solid_violations": [
+    {
+      "principle": "DIP",
+      "name": "Dependency Inversion Principle",
+      "severity": "low",
+      "message": "File has 18 imports - consider dependency injection"
+    }
+  ],
+  "function_details": [
+    {
+      "name": "__init__",
+      "parameters": 3,
+      "lines": 29,
+      "complexity": 6
+    },
+    {
+      "name": "locate",
+      "parameters": 3,
+      "lines": 10,
+      "complexity": 2
+    },
+    {
+      "name": "overlaps",
+      "parameters": 2,
+      "lines": 12,
+      "complexity": 3
+    },
+    {
+      "name": "normalize_incidents",
+      "parameters": 1,
+      "lines": 38,
+      "complexity": 9
+    },
+    {
+      "name": "reconstruction_footprint",
+      "parameters": 2,
+      "lines": 30,
+      "complexity": 15
+    },
+    {
+      "name": "replay_regions",
+      "parameters": 2,
+      "lines": 45,
+      "complexity": 9
+    },
+    {
+      "name": "weather_context",
+      "parameters": 4,
+      "lines": 84,
+      "complexity": 18
+    },
+    {
+      "name": "build_notices",
+      "parameters": 2,
+      "lines": 48,
+      "complexity": 6
+    },
+    {
+      "name": "refresh_weather_context",
+      "parameters": 2,
+      "lines": 26,
+      "complexity": 11
+    },
+    {
+      "name": "read_snapshot",
+      "parameters": 2,
+      "lines": 28,
+      "complexity": 13
+    }
+  ],
+  "class_details": [
+    {
+      "name": "DistrictIndex",
+      "methods": 11,
+      "lines": 459
+    }
+  ]
+}

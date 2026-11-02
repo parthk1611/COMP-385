@@ -1,0 +1,63 @@
+HRDPS lead 6 complete
+HRDPS lead 12 complete
+HRDPS lead 18 complete
+HRDPS lead 24 complete
+{
+  "state_checkpoint_valid_cells": 9111,
+  "seed_path": null,
+  "bundle": {
+    "run_time_utc": "2026-11-01T18:00:00+00:00",
+    "available_at_utc": "2026-11-02T02:16:51.296528+00:00"
+  },
+  "run_selection_trace": [
+    {
+      "run_time_utc": "2026-11-02T00:00:00+00:00",
+      "listing_status": 404,
+      "surface_lead24_listed": false
+    },
+    {
+      "run_time_utc": "2026-11-01T18:00:00+00:00",
+      "listing_status": 200,
+      "surface_lead24_listed": true
+    }
+  ],
+  "issue_time_utc": "2026-11-02T02:16:51.296528+00:00",
+  "next_six_hours_covered": true,
+  "grid_cells": 9648,
+  "hourly_rows": 231552,
+  "fwi_rows": 9648,
+  "fwi_status_counts": {
+    "research_startup_forecast_update": 9111,
+    "incomplete_weather": 537
+  },
+  "hourly_null_rows": {
+    "temp_c": 0,
+    "rh_pct": 0,
+    "wind_kmh": 0,
+    "precip_mm": 241
+  },
+  "research_startup": true,
+  "operationally_validated": false,
+  "code_sha256": "e4ecb71824a936f73bdfba38efe8c8028f42938870e30a036e5c8e9763d5e6b2",
+  "download_files": 144,
+  "wind_policy": "GRIB2 Section3 template3.1 component bit5; grid-relative U/V rotated using geodesic grid-north bearing",
+  "rain_policy": "Accumulation intervals validated from metadata; difference only consecutive values with same accumulation start; reset 1h values used directly; unknown gaps remain null. Prior-run history is model forecast, not observed rain",
+  "ignition_model_compatibility": "Not interchangeable with CWFIS benchmark; no ignition model invoked",
+  "outputs": [
+    {
+      "path": "data/processed/hrdps_live_workflow_2026-11-01/hourly_weather.parquet",
+      "sha256": "f9b994e6c445aa334612ed6fbff3b9f801de66d75289c8e410e2e3e987f1519b",
+      "bytes": 9706241
+    },
+    {
+      "path": "data/processed/hrdps_live_workflow_2026-11-01/daily_forecast_fwi.parquet",
+      "sha256": "5ae8c0a7e14c15a3fe4febf97bc199233d63e74e67e9cfc6a5f969d84b742f38",
+      "bytes": 630370
+    },
+    {
+      "path": "data/processed/hrdps_live_workflow_2026-11-01/state_checkpoint.json",
+      "sha256": "9dfe64f71350f35a832fe1f6fba351a2cbab2dfc6fd0c2fb9c1480e3e12e894e",
+      "bytes": 4091277
+    }
+  ]
+}

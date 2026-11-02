@@ -1,0 +1,21 @@
+{
+  "tests_passed": 197,
+  "http_checks_passed": 18,
+  "original_protected_artifacts": 31,
+  "protected_hashes_unchanged": true,
+  "additional_prior_reports_unchanged": 2,
+  "runtime_copies_equal": {
+    "capstone_app.py": true,
+    "runtime_cache.py": true,
+    "live_workflow.py": true,
+    "workflow_sources.py": true,
+    "research_alerts.py": true,
+    "workflow_view.py": true,
+    "hrdps_live_weather.py": true
+  },
+  "snapshot_code_sha256": "50aa26c3fed8ea3e7f9fcdd089b4af0739d320fce2c21f492f112bf84dddb398",
+  "ledger_records": 21,
+  "browser_rehearsal": false,
+  "model_promoted": false,
+  "public_delivery": false
+}

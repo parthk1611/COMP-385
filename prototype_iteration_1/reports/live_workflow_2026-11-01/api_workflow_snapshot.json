@@ -1,0 +1,1339 @@
+{
+  "schema_version": 1,
+  "collected_at_utc": "2026-11-02T02:29:19.753167+00:00",
+  "built_at_utc": "2026-11-02T02:45:31.836542+00:00",
+  "sources": {
+    "fires": {
+      "url": "https://ws.lioservices.lrc.gov.on.ca/arcgis3/rest/services/FFIM/Forest_Fire_Info_Map/MapServer/1",
+      "retrieved_at_utc": "2026-11-02T02:29:19.753167+00:00",
+      "features": 9,
+      "sha256": "262649dccfe7dae71c61a54d27f64d82ed1bf2d116e744940ac18c6c0cc6fa91",
+      "geometry_type": "esriGeometryPoint",
+      "service_last_edit": null,
+      "retrieval_is_not_incident_observation_time": true
+    },
+    "districts": {
+      "url": "https://ws.gisetl.lrc.gov.on.ca/fmedatadownload/Packages/MNRDIST.zip",
+      "retrieved_at_utc": "2026-11-02T02:29:22.010022+00:00",
+      "archive_sha256": "b3974dd8a4b21650051817ae292db8695bbd5bc5d7520d10b631aa2a5121ff90",
+      "package_directories": [
+        "LIO-2023-01-25"
+      ],
+      "role": "Dated administrative reference; not verified evacuation boundaries",
+      "features": 18,
+      "geometry_record_dates": [
+        "20230125135113",
+        "20230125135114",
+        "20230125135115"
+      ],
+      "sha256": "249c7f673116666762c7ec927776f4215944b1818a29f2fbabf14a3c98f9f3bb"
+    }
+  },
+  "source_mode": "reused_snapshot",
+  "code_sha256": "50aa26c3fed8ea3e7f9fcdd089b4af0739d320fce2c21f492f112bf84dddb398",
+  "model_readiness": {
+    "status": "unavailable",
+    "probability": null,
+    "operational": false,
+    "checks": {
+      "contemporaneous_ERA5_HRDPS_reference_days": 2,
+      "matched_post_issue_cell_times": 154368,
+      "independent_forecast_runs": 1,
+      "trusted_observed_state_cells": 0,
+      "model_live_qualified": false
+    },
+    "reasons": [
+      "A matched weather case is not model or forecast-skill qualification; independent issue dates and seasons are still needed.",
+      "No grid-matched, exact previous-standard-noon observed/overwintered state with verified issue-time availability is accepted.",
+      "The selected-source model uses prior-day retrospective ERA5 research features. Forecast-day HRDPS features and state lineage require a separate trained/evaluated contract.",
+      "No accepted cross-source/issue-time model validation decision exists."
+    ],
+    "evidence": {
+      "report": "live_qualification_2026-11-01/qualification_results.json",
+      "sha256": "1314bc95e1e8d94d84a32c1a7b3c6c164976fbb1c6821d24ae9e6974c03f37e2"
+    },
+    "scope": "One archived forecast run checked against hindsight ERA5-Land; not live model qualification.",
+    "assessment_sha256": "6ebeb08e596d9f8b03d2560bbb03b47c41385897c366ac37103a73644c2bcc7d"
+  },
+  "incidents": [
+    {
+      "incident_id": "32535",
+      "name": "DRY034",
+      "longitude": -90.171708,
+      "latitude": 49.982809,
+      "reported_condition": "Under Control",
+      "reported_size_ha": 45800,
+      "reported_district": "Dryden",
+      "reported_cause": null,
+      "confirmed_at_utc": "2026-07-13T21:52:00+00:00",
+      "state_observed_at_utc": null,
+      "perimeter": null,
+      "mode": "reported_observation",
+      "districts": [
+        {
+          "district_id": "7",
+          "district": "Thunder Bay Ignace District",
+          "region": "Northwest"
+        }
+      ],
+      "weather_context": {
+        "grid_id": "ofr10km_340000_120000",
+        "centroid_distance_km": 2.826098865878154,
+        "sampling": "Nearest 10 km model-grid centroid; not a measurement at the fire",
+        "hours": [
+          {
+            "valid_time_utc": "2026-11-02T03:00:00+00:00",
+            "temp_c": 9.277002334594727,
+            "rh_pct": 98.77196502685547,
+            "wind_kmh": 9.235245475162598,
+            "wind_from_degrees": 211.53126444652986,
+            "precip_mm": 4.999999873689376e-06
+          },
+          {
+            "valid_time_utc": "2026-11-02T04:00:00+00:00",
+            "temp_c": 9.048028945922852,
+            "rh_pct": 99.1114273071289,
+            "wind_kmh": 8.625737750292572,
+            "wind_from_degrees": 203.67667833790946,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T05:00:00+00:00",
+            "temp_c": 9.004999160766602,
+            "rh_pct": 99.19359588623047,
+            "wind_kmh": 7.822029843932704,
+            "wind_from_degrees": 196.70618772226698,
+            "precip_mm": 9.999999747378752e-06
+          },
+          {
+            "valid_time_utc": "2026-11-02T06:00:00+00:00",
+            "temp_c": 8.830011367797852,
+            "rh_pct": 99.45584869384766,
+            "wind_kmh": 7.475267907535406,
+            "wind_from_degrees": 175.14130848506878,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T07:00:00+00:00",
+            "temp_c": 9.006006240844727,
+            "rh_pct": 99.66089630126953,
+            "wind_kmh": 9.277947653354506,
+            "wind_from_degrees": 174.83295856345765,
+            "precip_mm": 0.0013449999169097282
+          },
+          {
+            "valid_time_utc": "2026-11-02T08:00:00+00:00",
+            "temp_c": 9.218011856079102,
+            "rh_pct": 99.65825653076172,
+            "wind_kmh": 9.808992420955459,
+            "wind_from_degrees": 178.97821851476363,
+            "precip_mm": 0.0069949994795024395
+          }
+        ],
+        "six_hours_covered": true
+      }
+    },
+    {
+      "incident_id": "32537",
+      "name": "DRY035",
+      "longitude": -90.098008,
+      "latitude": 49.630109,
+      "reported_condition": "Under Control",
+      "reported_size_ha": 30158.600000000002,
+      "reported_district": "Dryden",
+      "reported_cause": null,
+      "confirmed_at_utc": "2026-07-13T22:07:00+00:00",
+      "state_observed_at_utc": null,
+      "perimeter": null,
+      "mode": "reported_observation",
+      "districts": [
+        {
+          "district_id": "7",
+          "district": "Thunder Bay Ignace District",
+          "region": "Northwest"
+        }
+      ],
+      "weather_context": {
+        "grid_id": "ofr10km_350000_80000",
+        "centroid_distance_km": 2.4872808496444785,
+        "sampling": "Nearest 10 km model-grid centroid; not a measurement at the fire",
+        "hours": [
+          {
+            "valid_time_utc": "2026-11-02T03:00:00+00:00",
+            "temp_c": 8.552026748657227,
+            "rh_pct": 99.24696350097656,
+            "wind_kmh": 8.522272770777462,
+            "wind_from_degrees": 214.36795505981408,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T04:00:00+00:00",
+            "temp_c": 8.082025527954102,
+            "rh_pct": 99.6864242553711,
+            "wind_kmh": 7.14334675378446,
+            "wind_from_degrees": 203.44244052156495,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T05:00:00+00:00",
+            "temp_c": 7.886010646820068,
+            "rh_pct": 99.69359588623047,
+            "wind_kmh": 6.681079948442837,
+            "wind_from_degrees": 186.9227741912573,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T06:00:00+00:00",
+            "temp_c": 8.330011367797852,
+            "rh_pct": 99.55584716796875,
+            "wind_kmh": 7.843043959972418,
+            "wind_from_degrees": 184.24634214176513,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T07:00:00+00:00",
+            "temp_c": 9.077020645141602,
+            "rh_pct": 99.03589630126953,
+            "wind_kmh": 8.37996157353088,
+            "wind_from_degrees": 195.00410960968784,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T08:00:00+00:00",
+            "temp_c": 9.365015029907227,
+            "rh_pct": 98.45825958251953,
+            "wind_kmh": 8.32542302662238,
+            "wind_from_degrees": 196.95967687513203,
+            "precip_mm": 0.0
+          }
+        ],
+        "six_hours_covered": true
+      }
+    },
+    {
+      "incident_id": "32371",
+      "name": "FOR015",
+      "longitude": -91.415408,
+      "latitude": 48.542909,
+      "reported_condition": "Being Observed",
+      "reported_size_ha": 42273,
+      "reported_district": "Fort Frances",
+      "reported_cause": "LIGHTNING",
+      "confirmed_at_utc": "2026-06-30T23:23:00+00:00",
+      "state_observed_at_utc": null,
+      "perimeter": null,
+      "mode": "reported_observation",
+      "districts": [
+        {
+          "district_id": "17",
+          "district": "Dryden Fort Frances Atikokan District",
+          "region": "Northwest"
+        }
+      ],
+      "weather_context": {
+        "grid_id": "ofr10km_260000_-50000",
+        "centroid_distance_km": 1.5933740470722855,
+        "sampling": "Nearest 10 km model-grid centroid; not a measurement at the fire",
+        "hours": [
+          {
+            "valid_time_utc": "2026-11-02T03:00:00+00:00",
+            "temp_c": 10.769006729125977,
+            "rh_pct": 96.79695892333984,
+            "wind_kmh": 7.729946970907024,
+            "wind_from_degrees": 163.70025031792633,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T04:00:00+00:00",
+            "temp_c": 10.391016006469727,
+            "rh_pct": 96.96142578125,
+            "wind_kmh": 7.128090547853511,
+            "wind_from_degrees": 162.06802279515233,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T05:00:00+00:00",
+            "temp_c": 10.161005020141602,
+            "rh_pct": 97.4186019897461,
+            "wind_kmh": 6.895855946788706,
+            "wind_from_degrees": 158.30680286152423,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T06:00:00+00:00",
+            "temp_c": 10.185998916625977,
+            "rh_pct": 97.50585174560547,
+            "wind_kmh": 7.050579262367125,
+            "wind_from_degrees": 160.49132512676752,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T07:00:00+00:00",
+            "temp_c": 10.427026748657227,
+            "rh_pct": 97.16089630126953,
+            "wind_kmh": 7.064260170180527,
+            "wind_from_degrees": 162.77144583962283,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T08:00:00+00:00",
+            "temp_c": 10.665002822875977,
+            "rh_pct": 97.00826263427734,
+            "wind_kmh": 7.591477120139447,
+            "wind_from_degrees": 163.30038194747473,
+            "precip_mm": 0.0
+          }
+        ],
+        "six_hours_covered": true
+      }
+    },
+    {
+      "incident_id": "32247",
+      "name": "FOR013",
+      "longitude": -91.307808,
+      "latitude": 48.276809,
+      "reported_condition": "Being Observed",
+      "reported_size_ha": 25476,
+      "reported_district": "Fort Frances",
+      "reported_cause": "LIGHTNING",
+      "confirmed_at_utc": "2026-06-20T19:09:00+00:00",
+      "state_observed_at_utc": null,
+      "perimeter": null,
+      "mode": "reported_observation",
+      "districts": [
+        {
+          "district_id": "17",
+          "district": "Dryden Fort Frances Atikokan District",
+          "region": "Northwest"
+        }
+      ],
+      "weather_context": {
+        "grid_id": "ofr10km_270000_-80000",
+        "centroid_distance_km": 2.459747708904779,
+        "sampling": "Nearest 10 km model-grid centroid; not a measurement at the fire",
+        "hours": [
+          {
+            "valid_time_utc": "2026-11-02T03:00:00+00:00",
+            "temp_c": 10.958002090454102,
+            "rh_pct": 96.37196350097656,
+            "wind_kmh": 11.448000045992295,
+            "wind_from_degrees": 166.84930353342156,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T04:00:00+00:00",
+            "temp_c": 11.218011856079102,
+            "rh_pct": 96.63642883300781,
+            "wind_kmh": 11.927088085480975,
+            "wind_from_degrees": 169.46712421507522,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T05:00:00+00:00",
+            "temp_c": 11.396020889282227,
+            "rh_pct": 96.84359741210938,
+            "wind_kmh": 12.703154283998204,
+            "wind_from_degrees": 172.6833566794441,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T06:00:00+00:00",
+            "temp_c": 11.476007461547852,
+            "rh_pct": 96.33084869384766,
+            "wind_kmh": 12.736573474960093,
+            "wind_from_degrees": 173.11660726206424,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T07:00:00+00:00",
+            "temp_c": 11.451013565063477,
+            "rh_pct": 96.11089324951172,
+            "wind_kmh": 11.962946712699514,
+            "wind_from_degrees": 172.86903708124038,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T08:00:00+00:00",
+            "temp_c": 11.310022354125977,
+            "rh_pct": 95.98326110839844,
+            "wind_kmh": 11.367110165349857,
+            "wind_from_degrees": 172.8242584736619,
+            "precip_mm": 0.0
+          }
+        ],
+        "six_hours_covered": true
+      }
+    },
+    {
+      "incident_id": "32368",
+      "name": "FOR014",
+      "longitude": -90.986908,
+      "latitude": 48.893409,
+      "reported_condition": "Under Control",
+      "reported_size_ha": 51928.3,
+      "reported_district": "Fort Frances",
+      "reported_cause": "LIGHTNING",
+      "confirmed_at_utc": "2026-06-30T21:24:00+00:00",
+      "state_observed_at_utc": null,
+      "perimeter": null,
+      "mode": "reported_observation",
+      "districts": [
+        {
+          "district_id": "17",
+          "district": "Dryden Fort Frances Atikokan District",
+          "region": "Northwest"
+        }
+      ],
+      "weather_context": {
+        "grid_id": "ofr10km_290000_-10000",
+        "centroid_distance_km": 2.556742499383654,
+        "sampling": "Nearest 10 km model-grid centroid; not a measurement at the fire",
+        "hours": [
+          {
+            "valid_time_utc": "2026-11-02T03:00:00+00:00",
+            "temp_c": 8.023004531860352,
+            "rh_pct": 99.02196502685547,
+            "wind_kmh": 7.465899945767665,
+            "wind_from_degrees": 156.52629011088484,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T04:00:00+00:00",
+            "temp_c": 8.200006484985352,
+            "rh_pct": 98.33642578125,
+            "wind_kmh": 7.43467534370386,
+            "wind_from_degrees": 169.06888273639203,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T05:00:00+00:00",
+            "temp_c": 8.335016250610352,
+            "rh_pct": 98.09359741210938,
+            "wind_kmh": 7.435634127355424,
+            "wind_from_degrees": 175.8965053657922,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T06:00:00+00:00",
+            "temp_c": 8.896020889282227,
+            "rh_pct": 98.00585174560547,
+            "wind_kmh": 7.7023175611067725,
+            "wind_from_degrees": 178.1790319799401,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T07:00:00+00:00",
+            "temp_c": 9.539026260375977,
+            "rh_pct": 98.01089477539062,
+            "wind_kmh": 7.341264127281573,
+            "wind_from_degrees": 176.19305612242374,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T08:00:00+00:00",
+            "temp_c": 9.728021621704102,
+            "rh_pct": 97.83325958251953,
+            "wind_kmh": 7.263975467550664,
+            "wind_from_degrees": 174.07185572351136,
+            "precip_mm": 0.0
+          }
+        ],
+        "six_hours_covered": true
+      }
+    },
+    {
+      "incident_id": "32397",
+      "name": "NIP025",
+      "longitude": -88.751607,
+      "latitude": 49.598009,
+      "reported_condition": "Being Observed",
+      "reported_size_ha": 254,
+      "reported_district": "Nipigon",
+      "reported_cause": "LIGHTNING",
+      "confirmed_at_utc": "2026-07-04T21:28:00+00:00",
+      "state_observed_at_utc": null,
+      "perimeter": null,
+      "mode": "reported_observation",
+      "districts": [
+        {
+          "district_id": "18",
+          "district": "Nipigon Geraldton District",
+          "region": "Northwest"
+        }
+      ],
+      "weather_context": {
+        "grid_id": "ofr10km_440000_80000",
+        "centroid_distance_km": 6.09621346099422,
+        "sampling": "Nearest 10 km model-grid centroid; not a measurement at the fire",
+        "hours": [
+          {
+            "valid_time_utc": "2026-11-02T03:00:00+00:00",
+            "temp_c": 9.760004043579102,
+            "rh_pct": 93.62196350097656,
+            "wind_kmh": 12.608482389228497,
+            "wind_from_degrees": 186.1003898304153,
+            "precip_mm": 5.499999679159373e-05
+          },
+          {
+            "valid_time_utc": "2026-11-02T04:00:00+00:00",
+            "temp_c": 9.501001358032227,
+            "rh_pct": 95.1864242553711,
+            "wind_kmh": 12.590945116830119,
+            "wind_from_degrees": 182.32109992024402,
+            "precip_mm": 2.5000001187436283e-05
+          },
+          {
+            "valid_time_utc": "2026-11-02T05:00:00+00:00",
+            "temp_c": 9.487024307250977,
+            "rh_pct": 96.4186019897461,
+            "wind_kmh": 12.68656489520743,
+            "wind_from_degrees": 186.695062468451,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T06:00:00+00:00",
+            "temp_c": 9.295007705688477,
+            "rh_pct": 97.15584564208984,
+            "wind_kmh": 10.938551043672474,
+            "wind_from_degrees": 177.8004932796049,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T07:00:00+00:00",
+            "temp_c": 9.127008438110352,
+            "rh_pct": 97.61089324951172,
+            "wind_kmh": 10.42049170987487,
+            "wind_from_degrees": 164.93068047596225,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T08:00:00+00:00",
+            "temp_c": 9.119012832641602,
+            "rh_pct": 97.60826110839844,
+            "wind_kmh": 10.948972441652977,
+            "wind_from_degrees": 156.98466233997428,
+            "precip_mm": 0.0
+          }
+        ],
+        "six_hours_covered": true
+      }
+    },
+    {
+      "incident_id": "32989",
+      "name": "SLK118",
+      "longitude": -89.805708,
+      "latitude": 52.913709,
+      "reported_condition": "Being Observed",
+      "reported_size_ha": 1,
+      "reported_district": "Sioux Lookout",
+      "reported_cause": null,
+      "confirmed_at_utc": "2026-10-23T18:25:00+00:00",
+      "state_observed_at_utc": null,
+      "perimeter": null,
+      "mode": "reported_observation",
+      "districts": [
+        {
+          "district_id": "3",
+          "district": "Far North District",
+          "region": "Northwest"
+        }
+      ],
+      "weather_context": {
+        "grid_id": "ofr10km_340000_440000",
+        "centroid_distance_km": 1.5515039823774133,
+        "sampling": "Nearest 10 km model-grid centroid; not a measurement at the fire",
+        "hours": [
+          {
+            "valid_time_utc": "2026-11-02T03:00:00+00:00",
+            "temp_c": 0.20900878310203552,
+            "rh_pct": 97.77196502685547,
+            "wind_kmh": 10.407175904536647,
+            "wind_from_degrees": 217.20367593225546,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T04:00:00+00:00",
+            "temp_c": -0.17099609971046448,
+            "rh_pct": 98.7364273071289,
+            "wind_kmh": 9.766355773062395,
+            "wind_from_degrees": 215.72630011470437,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T05:00:00+00:00",
+            "temp_c": -0.2849792540073395,
+            "rh_pct": 98.9186019897461,
+            "wind_kmh": 9.185574696607613,
+            "wind_from_degrees": 208.91626731185076,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T06:00:00+00:00",
+            "temp_c": -0.2569946348667145,
+            "rh_pct": 99.08084869384766,
+            "wind_kmh": 8.628366687432289,
+            "wind_from_degrees": 204.2039775830752,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T07:00:00+00:00",
+            "temp_c": 0.06801757961511612,
+            "rh_pct": 99.03589630126953,
+            "wind_kmh": 9.207558490147086,
+            "wind_from_degrees": 193.1609344255355,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T08:00:00+00:00",
+            "temp_c": 0.7620178461074829,
+            "rh_pct": 99.30825805664062,
+            "wind_kmh": 7.93781588660057,
+            "wind_from_degrees": 184.915312116427,
+            "precip_mm": 0.0
+          }
+        ],
+        "six_hours_covered": true
+      }
+    },
+    {
+      "incident_id": "32655",
+      "name": "THU060",
+      "longitude": -88.901707,
+      "latitude": 49.587909,
+      "reported_condition": "Being Observed",
+      "reported_size_ha": 419,
+      "reported_district": "Thunder Bay",
+      "reported_cause": "LIGHTNING",
+      "confirmed_at_utc": "2026-07-19T01:13:00+00:00",
+      "state_observed_at_utc": null,
+      "perimeter": null,
+      "mode": "reported_observation",
+      "districts": [
+        {
+          "district_id": "7",
+          "district": "Thunder Bay Ignace District",
+          "region": "Northwest"
+        }
+      ],
+      "weather_context": {
+        "grid_id": "ofr10km_430000_80000",
+        "centroid_distance_km": 4.505914690696385,
+        "sampling": "Nearest 10 km model-grid centroid; not a measurement at the fire",
+        "hours": [
+          {
+            "valid_time_utc": "2026-11-02T03:00:00+00:00",
+            "temp_c": 8.434015274047852,
+            "rh_pct": 97.79695892333984,
+            "wind_kmh": 6.984834778459881,
+            "wind_from_degrees": 201.43136036104332,
+            "precip_mm": 0.00010999999358318746
+          },
+          {
+            "valid_time_utc": "2026-11-02T04:00:00+00:00",
+            "temp_c": 9.055017471313477,
+            "rh_pct": 97.8114242553711,
+            "wind_kmh": 7.173039556315253,
+            "wind_from_degrees": 197.66864887332744,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T05:00:00+00:00",
+            "temp_c": 8.738000869750977,
+            "rh_pct": 98.64360046386719,
+            "wind_kmh": 7.063434566323738,
+            "wind_from_degrees": 203.17449563988734,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T06:00:00+00:00",
+            "temp_c": 7.700006008148193,
+            "rh_pct": 99.33084869384766,
+            "wind_kmh": 6.247114845824074,
+            "wind_from_degrees": 192.928951694027,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T07:00:00+00:00",
+            "temp_c": 7.191003322601318,
+            "rh_pct": 99.68589782714844,
+            "wind_kmh": 6.090067750484404,
+            "wind_from_degrees": 178.681110323884,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T08:00:00+00:00",
+            "temp_c": 7.724999904632568,
+            "rh_pct": 99.28325653076172,
+            "wind_kmh": 6.608721351280048,
+            "wind_from_degrees": 176.7730640150088,
+            "precip_mm": 1.4999997802078724e-05
+          }
+        ],
+        "six_hours_covered": true
+      }
+    },
+    {
+      "incident_id": "32484",
+      "name": "THU036",
+      "longitude": -89.468008,
+      "latitude": 50.682809,
+      "reported_condition": "Under Control",
+      "reported_size_ha": 301240,
+      "reported_district": "Thunder Bay",
+      "reported_cause": "LIGHTNING",
+      "confirmed_at_utc": "2026-07-12T16:57:00+00:00",
+      "state_observed_at_utc": null,
+      "perimeter": null,
+      "mode": "reported_observation",
+      "districts": [
+        {
+          "district_id": "7",
+          "district": "Thunder Bay Ignace District",
+          "region": "Northwest"
+        }
+      ],
+      "weather_context": {
+        "grid_id": "ofr10km_380000_200000",
+        "centroid_distance_km": 3.4290717016528243,
+        "sampling": "Nearest 10 km model-grid centroid; not a measurement at the fire",
+        "hours": [
+          {
+            "valid_time_utc": "2026-11-02T03:00:00+00:00",
+            "temp_c": 6.201013088226318,
+            "rh_pct": 98.79695892333984,
+            "wind_kmh": 8.095598868505837,
+            "wind_from_degrees": 207.5238661624208,
+            "precip_mm": 0.0
+          },
+          {
+            "valid_time_utc": "2026-11-02T04:00:00+00:00",
+            "temp_c": 6.198022365570068,
+            "rh_pct": 99.4864273071289,
+            "wind_kmh": 7.095288251488378,
+            "wind_from_degrees": 198.36991782148766,
+            "precip_mm": 0.0001849999916885281
+          },
+          {
+            "valid_time_utc": "2026-11-02T05:00:00+00:00",
+            "temp_c": 5.993005275726318,
+            "rh_pct": 99.31859588623047,
+            "wind_kmh": 6.746998983836839,
+            "wind_from_degrees": 190.9034012363907,
+            "precip_mm": 0.0024349999730475247
+          },
+          {
+            "valid_time_utc": "2026-11-02T06:00:00+00:00",
+            "temp_c": 6.078027248382568,
+            "rh_pct": 99.40584564208984,
+            "wind_kmh": 7.268256427190891,
+            "wind_from_degrees": 194.71445432285276,
+            "precip_mm": 0.0006849998608231544
+          },
+          {
+            "valid_time_utc": "2026-11-02T07:00:00+00:00",
+            "temp_c": 6.265008449554443,
+            "rh_pct": 99.58589935302734,
+            "wind_kmh": 6.924738167381528,
+            "wind_from_degrees": 191.14180150474013,
+            "precip_mm": 0.0004950000438839197
+          },
+          {
+            "valid_time_utc": "2026-11-02T08:00:00+00:00",
+            "temp_c": 6.490014553070068,
+            "rh_pct": 99.80825805664062,
+            "wind_kmh": 7.286688120651188,
+            "wind_from_degrees": 178.36558308850604,
+            "precip_mm": 0.0006050001829862595
+          }
+        ],
+        "six_hours_covered": true
+      }
+    }
+  ],
+  "weather": {
+    "available_at_utc": "2026-11-02T02:16:51.296528+00:00",
+    "run_time_utc": "2026-11-01T18:00:00+00:00",
+    "age_hours": 0.5151647041666666,
+    "future_six_hours_covered": true,
+    "valid_until_utc": "2026-11-02T18:00:00+00:00",
+    "source": "HRDPS",
+    "source_manifest_sha256": "be8c2fc33ad57979b92848a946e17bcb21cb6281588f25bd18ce712ed2cf8cec",
+    "mode": "forecast_weather_research",
+    "fwi_state": "forecast-derived research state; not accepted observed state"
+  },
+  "scenarios": [
+    {
+      "incident_id": "2023_COC38",
+      "start_local": "2023-07-04 13:00",
+      "horizon_hours": 1,
+      "footprint_ha": 1.62,
+      "districts": [
+        {
+          "district_id": "3",
+          "district": "Far North District",
+          "region": "Northwest",
+          "overlap_ha": 1.62
+        }
+      ],
+      "mode": "historical_reconstruction",
+      "forecast_validated": false,
+      "uncertainty": "not_estimated",
+      "assumptions": "Final-perimeter-assisted inputs; approximate start clock and possible ignition-cell relocation",
+      "ignition_relocation_m": 0
+    },
+    {
+      "incident_id": "2023_COC38",
+      "start_local": "2023-07-04 13:00",
+      "horizon_hours": 3,
+      "footprint_ha": 4.86,
+      "districts": [
+        {
+          "district_id": "3",
+          "district": "Far North District",
+          "region": "Northwest",
+          "overlap_ha": 4.86
+        }
+      ],
+      "mode": "historical_reconstruction",
+      "forecast_validated": false,
+      "uncertainty": "not_estimated",
+      "assumptions": "Final-perimeter-assisted inputs; approximate start clock and possible ignition-cell relocation",
+      "ignition_relocation_m": 0
+    },
+    {
+      "incident_id": "2023_COC38",
+      "start_local": "2023-07-04 13:00",
+      "horizon_hours": 6,
+      "footprint_ha": 17.01,
+      "districts": [
+        {
+          "district_id": "3",
+          "district": "Far North District",
+          "region": "Northwest",
+          "overlap_ha": 17.01
+        }
+      ],
+      "mode": "historical_reconstruction",
+      "forecast_validated": false,
+      "uncertainty": "not_estimated",
+      "assumptions": "Final-perimeter-assisted inputs; approximate start clock and possible ignition-cell relocation",
+      "ignition_relocation_m": 0
+    },
+    {
+      "incident_id": "2021_RED72",
+      "start_local": "2021-07-06 13:00",
+      "horizon_hours": 1,
+      "footprint_ha": 0.81,
+      "districts": [
+        {
+          "district_id": "5",
+          "district": "Red Lake Sioux Lookout District",
+          "region": "Northwest",
+          "overlap_ha": 0.81
+        }
+      ],
+      "mode": "historical_reconstruction",
+      "forecast_validated": false,
+      "uncertainty": "not_estimated",
+      "assumptions": "Final-perimeter-assisted inputs; approximate start clock and possible ignition-cell relocation",
+      "ignition_relocation_m": 0
+    },
+    {
+      "incident_id": "2021_RED72",
+      "start_local": "2021-07-06 13:00",
+      "horizon_hours": 3,
+      "footprint_ha": 0.81,
+      "districts": [
+        {
+          "district_id": "5",
+          "district": "Red Lake Sioux Lookout District",
+          "region": "Northwest",
+          "overlap_ha": 0.81
+        }
+      ],
+      "mode": "historical_reconstruction",
+      "forecast_validated": false,
+      "uncertainty": "not_estimated",
+      "assumptions": "Final-perimeter-assisted inputs; approximate start clock and possible ignition-cell relocation",
+      "ignition_relocation_m": 0
+    },
+    {
+      "incident_id": "2021_RED72",
+      "start_local": "2021-07-06 13:00",
+      "horizon_hours": 6,
+      "footprint_ha": 1.62,
+      "districts": [
+        {
+          "district_id": "5",
+          "district": "Red Lake Sioux Lookout District",
+          "region": "Northwest",
+          "overlap_ha": 1.62
+        }
+      ],
+      "mode": "historical_reconstruction",
+      "forecast_validated": false,
+      "uncertainty": "not_estimated",
+      "assumptions": "Final-perimeter-assisted inputs; approximate start clock and possible ignition-cell relocation",
+      "ignition_relocation_m": 0
+    },
+    {
+      "incident_id": "2017_COC10",
+      "start_local": "2017-07-07 13:00",
+      "horizon_hours": 1,
+      "footprint_ha": 0.81,
+      "districts": [
+        {
+          "district_id": "3",
+          "district": "Far North District",
+          "region": "Northwest",
+          "overlap_ha": 0.81
+        }
+      ],
+      "mode": "historical_reconstruction",
+      "forecast_validated": false,
+      "uncertainty": "not_estimated",
+      "assumptions": "Final-perimeter-assisted inputs; approximate start clock and possible ignition-cell relocation",
+      "ignition_relocation_m": 0
+    },
+    {
+      "incident_id": "2017_COC10",
+      "start_local": "2017-07-07 13:00",
+      "horizon_hours": 3,
+      "footprint_ha": 0.81,
+      "districts": [
+        {
+          "district_id": "3",
+          "district": "Far North District",
+          "region": "Northwest",
+          "overlap_ha": 0.81
+        }
+      ],
+      "mode": "historical_reconstruction",
+      "forecast_validated": false,
+      "uncertainty": "not_estimated",
+      "assumptions": "Final-perimeter-assisted inputs; approximate start clock and possible ignition-cell relocation",
+      "ignition_relocation_m": 0
+    },
+    {
+      "incident_id": "2017_COC10",
+      "start_local": "2017-07-07 13:00",
+      "horizon_hours": 6,
+      "footprint_ha": 0.81,
+      "districts": [
+        {
+          "district_id": "3",
+          "district": "Far North District",
+          "region": "Northwest",
+          "overlap_ha": 0.81
+        }
+      ],
+      "mode": "historical_reconstruction",
+      "forecast_validated": false,
+      "uncertainty": "not_estimated",
+      "assumptions": "Final-perimeter-assisted inputs; approximate start clock and possible ignition-cell relocation",
+      "ignition_relocation_m": 0
+    },
+    {
+      "incident_id": "2019_RED44",
+      "start_local": "2019-07-01 13:00",
+      "horizon_hours": 1,
+      "footprint_ha": 0.81,
+      "districts": [
+        {
+          "district_id": "3",
+          "district": "Far North District",
+          "region": "Northwest",
+          "overlap_ha": 0.81
+        }
+      ],
+      "mode": "historical_reconstruction",
+      "forecast_validated": false,
+      "uncertainty": "not_estimated",
+      "assumptions": "Final-perimeter-assisted inputs; approximate start clock and possible ignition-cell relocation",
+      "ignition_relocation_m": 0
+    },
+    {
+      "incident_id": "2019_RED44",
+      "start_local": "2019-07-01 13:00",
+      "horizon_hours": 3,
+      "footprint_ha": 2.43,
+      "districts": [
+        {
+          "district_id": "3",
+          "district": "Far North District",
+          "region": "Northwest",
+          "overlap_ha": 2.43
+        }
+      ],
+      "mode": "historical_reconstruction",
+      "forecast_validated": false,
+      "uncertainty": "not_estimated",
+      "assumptions": "Final-perimeter-assisted inputs; approximate start clock and possible ignition-cell relocation",
+      "ignition_relocation_m": 0
+    },
+    {
+      "incident_id": "2019_RED44",
+      "start_local": "2019-07-01 13:00",
+      "horizon_hours": 6,
+      "footprint_ha": 8.91,
+      "districts": [
+        {
+          "district_id": "3",
+          "district": "Far North District",
+          "region": "Northwest",
+          "overlap_ha": 8.91
+        }
+      ],
+      "mode": "historical_reconstruction",
+      "forecast_validated": false,
+      "uncertainty": "not_estimated",
+      "assumptions": "Final-perimeter-assisted inputs; approximate start clock and possible ignition-cell relocation",
+      "ignition_relocation_m": 0
+    }
+  ],
+  "notices": [
+    {
+      "actionable": false,
+      "delivery": "local_only",
+      "district": "Thunder Bay Ignace District",
+      "id": "11e21d5d4a8c0f70c65ff167",
+      "incident_id": "32535",
+      "kind": "reported_fire",
+      "message": "The active-fire feed reports DRY034 in Thunder Bay Ignace District. Current perimeter and observation time are unavailable.",
+      "mode": "reported_observation",
+      "reported_condition": "Under Control",
+      "reported_size_ha": 45800,
+      "revision": "8683cbea8f70f857688083eda4a90f8f20c2d4e7e7669ba01c11183b6ec8f379",
+      "first_seen_utc": "2026-11-02T02:29:32.221069+00:00",
+      "last_seen_utc": "2026-11-02T02:45:31.836542+00:00"
+    },
+    {
+      "actionable": false,
+      "delivery": "local_only",
+      "district": "Thunder Bay Ignace District",
+      "id": "ef76dbb8043e831945f12493",
+      "incident_id": "32537",
+      "kind": "reported_fire",
+      "message": "The active-fire feed reports DRY035 in Thunder Bay Ignace District. Current perimeter and observation time are unavailable.",
+      "mode": "reported_observation",
+      "reported_condition": "Under Control",
+      "reported_size_ha": 30158.600000000002,
+      "revision": "6e64013534f172b37c41adf7bc3afae3a675fcb3ba5309d15adbe3230d68f81e",
+      "first_seen_utc": "2026-11-02T02:29:32.221069+00:00",
+      "last_seen_utc": "2026-11-02T02:45:31.836542+00:00"
+    },
+    {
+      "actionable": false,
+      "delivery": "local_only",
+      "district": "Dryden Fort Frances Atikokan District",
+      "id": "d4da7b3ac1495d32167bf351",
+      "incident_id": "32371",
+      "kind": "reported_fire",
+      "message": "The active-fire feed reports FOR015 in Dryden Fort Frances Atikokan District. Current perimeter and observation time are unavailable.",
+      "mode": "reported_observation",
+      "reported_condition": "Being Observed",
+      "reported_size_ha": 42273,
+      "revision": "287acd5c126ae2075c4745a8c8387431db92d9b1b30551ff497518397a3d7074",
+      "first_seen_utc": "2026-11-02T02:29:32.221069+00:00",
+      "last_seen_utc": "2026-11-02T02:45:31.836542+00:00"
+    },
+    {
+      "actionable": false,
+      "delivery": "local_only",
+      "district": "Dryden Fort Frances Atikokan District",
+      "id": "33cfe79239bff8efb8408bcc",
+      "incident_id": "32247",
+      "kind": "reported_fire",
+      "message": "The active-fire feed reports FOR013 in Dryden Fort Frances Atikokan District. Current perimeter and observation time are unavailable.",
+      "mode": "reported_observation",
+      "reported_condition": "Being Observed",
+      "reported_size_ha": 25476,
+      "revision": "6f934725eb9d7a5206cd49c2b7877d4c728459ba141ae271f3a9a702f6669528",
+      "first_seen_utc": "2026-11-02T02:29:32.221069+00:00",
+      "last_seen_utc": "2026-11-02T02:45:31.836542+00:00"
+    },
+    {
+      "actionable": false,
+      "delivery": "local_only",
+      "district": "Dryden Fort Frances Atikokan District",
+      "id": "2936e54e254ecb5917e50755",
+      "incident_id": "32368",
+      "kind": "reported_fire",
+      "message": "The active-fire feed reports FOR014 in Dryden Fort Frances Atikokan District. Current perimeter and observation time are unavailable.",
+      "mode": "reported_observation",
+      "reported_condition": "Under Control",
+      "reported_size_ha": 51928.3,
+      "revision": "e6ac138ac28898ad5daef28a4cdfc976c682677553d4b6ce2a4dfe6765ae811e",
+      "first_seen_utc": "2026-11-02T02:29:32.221069+00:00",
+      "last_seen_utc": "2026-11-02T02:45:31.836542+00:00"
+    },
+    {
+      "actionable": false,
+      "delivery": "local_only",
+      "district": "Nipigon Geraldton District",
+      "id": "6a7f6b71d00344ad6ed1dff2",
+      "incident_id": "32397",
+      "kind": "reported_fire",
+      "message": "The active-fire feed reports NIP025 in Nipigon Geraldton District. Current perimeter and observation time are unavailable.",
+      "mode": "reported_observation",
+      "reported_condition": "Being Observed",
+      "reported_size_ha": 254,
+      "revision": "02b14b24027c7a4a9ae2b1a5771196104514d62c31c2bef2677e510a42b48ab9",
+      "first_seen_utc": "2026-11-02T02:29:32.221069+00:00",
+      "last_seen_utc": "2026-11-02T02:45:31.836542+00:00"
+    },
+    {
+      "actionable": false,
+      "delivery": "local_only",
+      "district": "Far North District",
+      "id": "e6c65e4a6ffb48efe3d96409",
+      "incident_id": "32989",
+      "kind": "reported_fire",
+      "message": "The active-fire feed reports SLK118 in Far North District. Current perimeter and observation time are unavailable.",
+      "mode": "reported_observation",
+      "reported_condition": "Being Observed",
+      "reported_size_ha": 1,
+      "revision": "c687de8365f3613cc2add48c822daafacb069f5f6b5669170362b6a471573fb7",
+      "first_seen_utc": "2026-11-02T02:29:32.221069+00:00",
+      "last_seen_utc": "2026-11-02T02:45:31.836542+00:00"
+    },
+    {
+      "actionable": false,
+      "delivery": "local_only",
+      "district": "Thunder Bay Ignace District",
+      "id": "dc22e25b47f003574e0b19a5",
+      "incident_id": "32655",
+      "kind": "reported_fire",
+      "message": "The active-fire feed reports THU060 in Thunder Bay Ignace District. Current perimeter and observation time are unavailable.",
+      "mode": "reported_observation",
+      "reported_condition": "Being Observed",
+      "reported_size_ha": 419,
+      "revision": "5afb77446a21a143adb7e1bcec6f0f664b558c783089e2365a23372132a44647",
+      "first_seen_utc": "2026-11-02T02:29:32.221069+00:00",
+      "last_seen_utc": "2026-11-02T02:45:31.836542+00:00"
+    },
+    {
+      "actionable": false,
+      "delivery": "local_only",
+      "district": "Thunder Bay Ignace District",
+      "id": "b763d9d0b0c9db33b2130582",
+      "incident_id": "32484",
+      "kind": "reported_fire",
+      "message": "The active-fire feed reports THU036 in Thunder Bay Ignace District. Current perimeter and observation time are unavailable.",
+      "mode": "reported_observation",
+      "reported_condition": "Under Control",
+      "reported_size_ha": 301240,
+      "revision": "19a15b7bfd7538c3a89123ed2de5057291fd1a07c447d9ca2321124b258d6ee7",
+      "first_seen_utc": "2026-11-02T02:29:32.221069+00:00",
+      "last_seen_utc": "2026-11-02T02:45:31.836542+00:00"
+    },
+    {
+      "actionable": false,
+      "delivery": "local_only",
+      "district": "Far North District",
+      "horizon_hours": 1,
+      "id": "34b28163ae34dcb6893a875a",
+      "incident_id": "2023_COC38",
+      "kind": "reconstruction_draft",
+      "message": "Historical 1-hour reconstruction overlaps Far North District. This is a demonstration draft.",
+      "mode": "historical_reconstruction",
+      "overlap_ha": 1.62,
+      "scenario_start_local": "2023-07-04 13:00",
+      "revision": "d6fdc958bdab88bdcfe9c055f3150d4d692e1cceefd3488dc56331a4d6ba5f60",
+      "first_seen_utc": "2026-11-02T02:29:32.221069+00:00",
+      "last_seen_utc": "2026-11-02T02:45:31.836542+00:00"
+    },
+    {
+      "actionable": false,
+      "delivery": "local_only",
+      "district": "Far North District",
+      "horizon_hours": 3,
+      "id": "33f800f954b85d246c2ada56",
+      "incident_id": "2023_COC38",
+      "kind": "reconstruction_draft",
+      "message": "Historical 3-hour reconstruction overlaps Far North District. This is a demonstration draft.",
+      "mode": "historical_reconstruction",
+      "overlap_ha": 4.86,
+      "scenario_start_local": "2023-07-04 13:00",
+      "revision": "d2cb4e3e2601323dda6a51ad683e88ef626ecaf9f509acb0dd07f78b79962943",
+      "first_seen_utc": "2026-11-02T02:29:32.221069+00:00",
+      "last_seen_utc": "2026-11-02T02:45:31.836542+00:00"
+    },
+    {
+      "actionable": false,
+      "delivery": "local_only",
+      "district": "Far North District",
+      "horizon_hours": 6,
+      "id": "0d2139d1d09146ffe68f9c96",
+      "incident_id": "2023_COC38",
+      "kind": "reconstruction_draft",
+      "message": "Historical 6-hour reconstruction overlaps Far North District. This is a demonstration draft.",
+      "mode": "historical_reconstruction",
+      "overlap_ha": 17.01,
+      "scenario_start_local": "2023-07-04 13:00",
+      "revision": "e077244a702db315e108012afa5ffe37b8403ae6bbda017b085b5eacfb8080a5",
+      "first_seen_utc": "2026-11-02T02:29:32.221069+00:00",
+      "last_seen_utc": "2026-11-02T02:45:31.836542+00:00"
+    },
+    {
+      "actionable": false,
+      "delivery": "local_only",
+      "district": "Red Lake Sioux Lookout District",
+      "horizon_hours": 1,
+      "id": "9fd36fe9d9c5ac9b748591d1",
+      "incident_id": "2021_RED72",
+      "kind": "reconstruction_draft",
+      "message": "Historical 1-hour reconstruction overlaps Red Lake Sioux Lookout District. This is a demonstration draft.",
+      "mode": "historical_reconstruction",
+      "overlap_ha": 0.81,
+      "scenario_start_local": "2021-07-06 13:00",
+      "revision": "c220e9c465c28014e2761d714c4e4007f0e2de987c2caea1c9a12f05d0e84ba9",
+      "first_seen_utc": "2026-11-02T02:29:32.221069+00:00",
+      "last_seen_utc": "2026-11-02T02:45:31.836542+00:00"
+    },
+    {
+      "actionable": false,
+      "delivery": "local_only",
+      "district": "Red Lake Sioux Lookout District",
+      "horizon_hours": 3,
+      "id": "85429956be719e6e4b08fb49",
+      "incident_id": "2021_RED72",
+      "kind": "reconstruction_draft",
+      "message": "Historical 3-hour reconstruction overlaps Red Lake Sioux Lookout District. This is a demonstration draft.",
+      "mode": "historical_reconstruction",
+      "overlap_ha": 0.81,
+      "scenario_start_local": "2021-07-06 13:00",
+      "revision": "afd5bce63fccf4a712e40042b945122ca1d982ec2c04c228243d6df1ade3dce5",
+      "first_seen_utc": "2026-11-02T02:29:32.221069+00:00",
+      "last_seen_utc": "2026-11-02T02:45:31.836542+00:00"
+    },
+    {
+      "actionable": false,
+      "delivery": "local_only",
+      "district": "Red Lake Sioux Lookout District",
+      "horizon_hours": 6,
+      "id": "624debda04bf9abbd41f6488",
+      "incident_id": "2021_RED72",
+      "kind": "reconstruction_draft",
+      "message": "Historical 6-hour reconstruction overlaps Red Lake Sioux Lookout District. This is a demonstration draft.",
+      "mode": "historical_reconstruction",
+      "overlap_ha": 1.62,
+      "scenario_start_local": "2021-07-06 13:00",
+      "revision": "933b3c081f5150fa2b56e608bb63db463cf2d57237e942278cea9a2d69bfa5c7",
+      "first_seen_utc": "2026-11-02T02:29:32.221069+00:00",
+      "last_seen_utc": "2026-11-02T02:45:31.836542+00:00"
+    },
+    {
+      "actionable": false,
+      "delivery": "local_only",
+      "district": "Far North District",
+      "horizon_hours": 1,
+      "id": "ec27370e10b5be83696b2107",
+      "incident_id": "2017_COC10",
+      "kind": "reconstruction_draft",
+      "message": "Historical 1-hour reconstruction overlaps Far North District. This is a demonstration draft.",
+      "mode": "historical_reconstruction",
+      "overlap_ha": 0.81,
+      "scenario_start_local": "2017-07-07 13:00",
+      "revision": "8d6e9c53cdaacaa9af078f8260271ba9714a9c48d334fda09fea7c543c78a7ef",
+      "first_seen_utc": "2026-11-02T02:29:32.221069+00:00",
+      "last_seen_utc": "2026-11-02T02:45:31.836542+00:00"
+    },
+    {
+      "actionable": false,
+      "delivery": "local_only",
+      "district": "Far North District",
+      "horizon_hours": 3,
+      "id": "af48541420fec3e451e5d2cb",
+      "incident_id": "2017_COC10",
+      "kind": "reconstruction_draft",
+      "message": "Historical 3-hour reconstruction overlaps Far North District. This is a demonstration draft.",
+      "mode": "historical_reconstruction",
+      "overlap_ha": 0.81,
+      "scenario_start_local": "2017-07-07 13:00",
+      "revision": "f4e7df2dd6b9053d99429f9a67d6e0f26db43846b9e52fd369b9bb6286a9bc48",
+      "first_seen_utc": "2026-11-02T02:29:32.221069+00:00",
+      "last_seen_utc": "2026-11-02T02:45:31.836542+00:00"
+    },
+    {
+      "actionable": false,
+      "delivery": "local_only",
+      "district": "Far North District",
+      "horizon_hours": 6,
+      "id": "21cd18a136ad856befea4817",
+      "incident_id": "2017_COC10",
+      "kind": "reconstruction_draft",
+      "message": "Historical 6-hour reconstruction overlaps Far North District. This is a demonstration draft.",
+      "mode": "historical_reconstruction",
+      "overlap_ha": 0.81,
+      "scenario_start_local": "2017-07-07 13:00",
+      "revision": "d024d0cb8e264313c75c054c8b7bd6d8d58df4b907ac66661fb8881a7c22d8f0",
+      "first_seen_utc": "2026-11-02T02:29:32.221069+00:00",
+      "last_seen_utc": "2026-11-02T02:45:31.836542+00:00"
+    },
+    {
+      "actionable": false,
+      "delivery": "local_only",
+      "district": "Far North District",
+      "horizon_hours": 1,
+      "id": "6eb5c2bddabd728f35396b89",
+      "incident_id": "2019_RED44",
+      "kind": "reconstruction_draft",
+      "message": "Historical 1-hour reconstruction overlaps Far North District. This is a demonstration draft.",
+      "mode": "historical_reconstruction",
+      "overlap_ha": 0.81,
+      "scenario_start_local": "2019-07-01 13:00",
+      "revision": "dcdf5c755d3a4c78bbca3622fa7374abea19c69eed989c08cc64f907ecc05e99",
+      "first_seen_utc": "2026-11-02T02:29:32.221069+00:00",
+      "last_seen_utc": "2026-11-02T02:45:31.836542+00:00"
+    },
+    {
+      "actionable": false,
+      "delivery": "local_only",
+      "district": "Far North District",
+      "horizon_hours": 3,
+      "id": "4cdd1bc699a722b16b8eee35",
+      "incident_id": "2019_RED44",
+      "kind": "reconstruction_draft",
+      "message": "Historical 3-hour reconstruction overlaps Far North District. This is a demonstration draft.",
+      "mode": "historical_reconstruction",
+      "overlap_ha": 2.43,
+      "scenario_start_local": "2019-07-01 13:00",
+      "revision": "a72bf591ea8d54cd90b0db8b269b4a77b2d58c7de14124de76aeb4b659ec4643",
+      "first_seen_utc": "2026-11-02T02:29:32.221069+00:00",
+      "last_seen_utc": "2026-11-02T02:45:31.836542+00:00"
+    },
+    {
+      "actionable": false,
+      "delivery": "local_only",
+      "district": "Far North District",
+      "horizon_hours": 6,
+      "id": "94ae4301fb3dc9efbe73c851",
+      "incident_id": "2019_RED44",
+      "kind": "reconstruction_draft",
+      "message": "Historical 6-hour reconstruction overlaps Far North District. This is a demonstration draft.",
+      "mode": "historical_reconstruction",
+      "overlap_ha": 8.91,
+      "scenario_start_local": "2019-07-01 13:00",
+      "revision": "e1104fc8dfc57d28a79136c9c30c6a0992d868d72406be409cbce635eb625b28",
+      "first_seen_utc": "2026-11-02T02:29:32.221069+00:00",
+      "last_seen_utc": "2026-11-02T02:45:31.836542+00:00"
+    }
+  ],
+  "live_ignition_probability": null,
+  "live_spread": null,
+  "region_scope": "Dated MNR administrative reference districts, not community or evacuation boundaries",
+  "live_blockers": [
+    "Active feed supplies points, not a verified current perimeter/time.",
+    "Observed/overwintered FWI state and matching model source/issue-time qualification remain incomplete."
+  ],
+  "reconstruction_viewer_sha256": "77a35de3fff6cd91705f6847281931fb813bcd7fcfe673fddc1a3651f4111201",
+  "repaired_district_ids": [],
+  "snapshot_age_hours": 0.3072600822222222,
+  "freshness": "fresh",
+  "freshness_scope": "Feed retrieval only; incident observation age is unknown",
+  "last_refresh": {
+    "status": "ok",
+    "completed_at_utc": "2026-11-02T02:45:31.836542+00:00"
+  }
+}

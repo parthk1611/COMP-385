@@ -1,0 +1,107 @@
+{
+  "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/github_iteration_1/prototype_iteration_1/scripts/workflow_sources.py",
+  "language": "python",
+  "metrics": {
+    "lines": {
+      "total": 203,
+      "code": 183,
+      "blank": 19,
+      "comment": 1
+    },
+    "functions": 7,
+    "classes": 0,
+    "avg_complexity": 5.9
+  },
+  "quality_score": 85,
+  "grade": "B",
+  "smells": [
+    {
+      "type": "long_function",
+      "severity": "medium",
+      "message": "Function 'collect_layer' has 73 lines (max: 50)",
+      "location": "collect_layer"
+    },
+    {
+      "type": "high_complexity",
+      "severity": "medium",
+      "message": "Function 'collect_layer' has complexity 18 (max: 10)",
+      "location": "collect_layer"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 20000 should be a named constant",
+      "location": "line 75"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 500 should be a named constant",
+      "location": "line 78"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 500 should be a named constant",
+      "location": "line 85"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 4326 should be a named constant",
+      "location": "line 91"
+    },
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 4326 should be a named constant",
+      "location": "line 182"
+    }
+  ],
+  "solid_violations": [],
+  "function_details": [
+    {
+      "name": "now_utc",
+      "parameters": 0,
+      "lines": 5,
+      "complexity": 1
+    },
+    {
+      "name": "atomic_json",
+      "parameters": 2,
+      "lines": 22,
+      "complexity": 3
+    },
+    {
+      "name": "arcgis_json",
+      "parameters": 3,
+      "lines": 12,
+      "complexity": 2
+    },
+    {
+      "name": "collect_layer",
+      "parameters": 3,
+      "lines": 73,
+      "complexity": 18
+    },
+    {
+      "name": "district_archive",
+      "parameters": 2,
+      "lines": 31,
+      "complexity": 6
+    },
+    {
+      "name": "load_district_archive",
+      "parameters": 2,
+      "lines": 38,
+      "complexity": 10
+    },
+    {
+      "name": "collect",
+      "parameters": 2,
+      "lines": 11,
+      "complexity": 1
+    }
+  ],
+  "class_details": []
+}

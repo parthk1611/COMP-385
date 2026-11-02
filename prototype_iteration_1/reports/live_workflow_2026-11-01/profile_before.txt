@@ -1,0 +1,24 @@
+         45707 function calls (44816 primitive calls) in 0.450 seconds
+
+   Ordered by: cumulative time
+   List reduced from 636 to 18 due to restriction <18>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        8    0.001    0.000    0.450    0.056 /Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/live_workflow_2026-11-01/before_app_source.py:97(cell_details)
+       16    0.000    0.000    0.294    0.018 /Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/.venv/lib/python3.13/site-packages/pandas/io/parquet.py:508(read_parquet)
+       16    0.001    0.000    0.292    0.018 /Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/.venv/lib/python3.13/site-packages/pandas/io/parquet.py:240(read)
+       16    0.000    0.000    0.279    0.017 /Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/.venv/lib/python3.13/site-packages/pyarrow/parquet/core.py:1884(read_table)
+       16    0.228    0.014    0.229    0.014 /Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/.venv/lib/python3.13/site-packages/pyarrow/parquet/core.py:1525(read)
+        8    0.001    0.000    0.172    0.022 /Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/reports/live_workflow_2026-11-01/before_app_source.py:57(score_response)
+       40    0.000    0.000    0.133    0.003 /Users/parthkevadiya/miniconda3/lib/python3.13/json/__init__.py:304(loads)
+       40    0.000    0.000    0.133    0.003 /Users/parthkevadiya/miniconda3/lib/python3.13/json/decoder.py:340(decode)
+       40    0.133    0.003    0.133    0.003 /Users/parthkevadiya/miniconda3/lib/python3.13/json/decoder.py:351(raw_decode)
+       16    0.005    0.000    0.050    0.003 /Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/.venv/lib/python3.13/site-packages/pyarrow/parquet/core.py:1387(__init__)
+    48/35    0.000    0.000    0.044    0.001 <frozen importlib._bootstrap>:1349(_find_and_load)
+     16/3    0.000    0.000    0.044    0.015 <frozen importlib._bootstrap>:1304(_find_and_load_unlocked)
+     15/3    0.000    0.000    0.044    0.015 <frozen importlib._bootstrap>:911(_load_unlocked)
+      6/3    0.000    0.000    0.044    0.015 <frozen importlib._bootstrap_external>:1017(exec_module)
+     40/6    0.000    0.000    0.043    0.007 <frozen importlib._bootstrap>:480(_call_with_frames_removed)
+      6/3    0.000    0.000    0.043    0.014 {built-in method builtins.exec}
+        1    0.000    0.000    0.043    0.043 /Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/.venv/lib/python3.13/site-packages/pyarrow/dataset.py:1(<module>)
+       15    0.000    0.000    0.041    0.003 <frozen importlib._bootstrap>:806(module_from_spec)

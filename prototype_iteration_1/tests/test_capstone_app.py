@@ -104,3 +104,32 @@ class LiveEvidenceTests(unittest.TestCase):
             p=Path(d);(p/'live_readiness.json').write_text('{"status":"unavailable","probability":null}')
             with patch('scripts.capstone_app.LIVE_QUALIFICATION',p/'absent'),patch('scripts.capstone_app.REPORT',p):
                 self.assertIsNone(live_readiness_response()['probability'])
+
+class WorkflowHttpTests(unittest.TestCase):
+    def test_workflow_api_download_and_invalid_state_fail_closed(self):
+        from http.server import ThreadingHTTPServer
+        from threading import Thread
+        from urllib.request import urlopen
+        from urllib.error import HTTPError
+        from scripts.capstone_app import Handler
+        import json
+        server=ThreadingHTTPServer(('127.0.0.1',0),Handler);thread=Thread(target=server.serve_forever,daemon=True);thread.start()
+        base=f'http://127.0.0.1:{server.server_port}'
+        try:
+            with tempfile.TemporaryDirectory() as d,patch('scripts.capstone_app.WORKFLOW',Path(d)),patch.object(Handler,'log_message'):
+                with self.assertRaises(HTTPError) as error:urlopen(base+'/api/workflow')
+                self.assertEqual(error.exception.code,503)
+                value={'schema_version':1,'collected_at_utc':'2020-01-01T00:00Z','live_ignition_probability':None,'live_spread':None,'notices':[],
+                       'footprints':{'type':'FeatureCollection','features':[]}}
+                p=Path(d)/'latest.json';p.write_text(json.dumps(value))
+                with urlopen(base+'/api/workflow') as response:
+                    result=json.loads(response.read());self.assertIsNone(result['live_ignition_probability']);self.assertEqual(result['freshness'],'stale');self.assertNotIn('footprints',result)
+                with urlopen(base+'/api/workflow/footprints') as response:
+                    self.assertEqual(response.headers['Content-Type'],'application/geo+json');self.assertIn('attachment',response.headers['Content-Disposition'])
+                with self.assertRaises(HTTPError) as error:urlopen(base+'/api/workflow?path=../../x')
+                self.assertEqual(error.exception.code,400)
+                value['live_ignition_probability']=.5;p.write_text(json.dumps(value))
+                with self.assertRaises(HTTPError) as error:urlopen(base+'/api/workflow')
+                self.assertEqual(error.exception.code,503)
+        finally:
+            server.shutdown();server.server_close();thread.join(timeout=5)

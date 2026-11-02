@@ -1,0 +1,28 @@
+{
+  "file": "/Users/parthkevadiya/Desktop/Centennial/sem-6/CAPSTONE/github_iteration_1/prototype_iteration_1/scripts/workflow_view.py",
+  "language": "python",
+  "metrics": {
+    "lines": {
+      "total": 39,
+      "code": 36,
+      "blank": 2,
+      "comment": 1
+    },
+    "functions": 0,
+    "classes": 0,
+    "avg_complexity": 0.0
+  },
+  "quality_score": 98,
+  "grade": "A",
+  "smells": [
+    {
+      "type": "magic_number",
+      "severity": "low",
+      "message": "Magic number 100 should be a named constant",
+      "location": "line 5"
+    }
+  ],
+  "solid_violations": [],
+  "function_details": [],
+  "class_details": []
+}

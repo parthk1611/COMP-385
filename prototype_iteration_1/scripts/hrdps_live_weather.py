@@ -147,7 +147,7 @@ def sample_grib(path,grid,run,lead,field):
         return values,bearing,meta
 
 
-def run(output,run_time=None,research_startup=False,seed_path=None):
+def run(output,run_time=None,research_startup=False,seed_path=None,report_dir=None):
     output.mkdir(parents=True,exist_ok=True)
     if (output/'manifest.json').exists():raise FileExistsError('Completed live demo exists; use a new output directory')
     if run_time:
@@ -230,9 +230,9 @@ def run(output,run_time=None,research_startup=False,seed_path=None):
              'rain_policy':'Accumulation intervals validated from metadata; difference only consecutive values with same accumulation start; reset 1h values used directly; unknown gaps remain null. Prior-run history is model forecast, not observed rain',
              'ignition_model_compatibility':'Not interchangeable with CWFIS benchmark; no ignition model invoked',
              'outputs':[{'path':str(p),'sha256':digest(p),'bytes':p.stat().st_size} for p in (output/'hourly_weather.parquet',output/'daily_forecast_fwi.parquet',output/'state_checkpoint.json')]}
-    save(output/'manifest.json',summary);save(REPORT/'hrdps_live_integration_audit.json',summary)
+    save(output/'manifest.json',summary);save((report_dir or REPORT)/'hrdps_live_integration_audit.json',summary)
     print(json.dumps({k:v for k,v in summary.items() if k!='input_metadata'},indent=2))
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output-dir',type=Path,default=ROOT/'data/processed/hrdps_live_research_2026-10-16');parser.add_argument('--run-time');parser.add_argument('--research-startup',action='store_true');parser.add_argument('--seed-path',type=Path)
-    a=parser.parse_args();run(a.output_dir,a.run_time,a.research_startup,a.seed_path)
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--output-dir',type=Path,default=ROOT/'data/processed/hrdps_live_research_2026-10-16');parser.add_argument('--run-time');parser.add_argument('--research-startup',action='store_true');parser.add_argument('--seed-path',type=Path);parser.add_argument('--report-dir',type=Path)
+    a=parser.parse_args();run(a.output_dir,a.run_time,a.research_startup,a.seed_path,a.report_dir)
