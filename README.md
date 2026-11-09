@@ -19,6 +19,16 @@ verification, threshold tradeoffs and reproduction commands. The modelling
 cache corrects v1 weather station selection and source-date joins; the original
 v1 EDA below describes the uncorrected download.
 
+The [Ontario Ignition Atlas](ignition_demo/README.md) turns the verified model
+into a local historical risk-map demo. Double-click `Start-IgnitionDemo.cmd`
+on a prepared Windows checkout. It includes date-based predictions, cell
+inspection, validation-selected alert controls and CSV exports. Read the
+[implementation report](docs/ignition_demo/report.md),
+[learning guide](docs/ignition_demo/learning_guide.md), and
+[presentation](docs/ignition_demo/presentation.pptx).
+The [interactive architecture map](docs/ignition_demo/architecture.html) also
+shows the API, frontend wiring, reconstruction, launcher and capstone tools.
+
 See [the ignition EDA](docs/eda/README.md) for full-panel counts and missingness,
 feature explanations, figures, the notebook, and commands to reproduce the
 analysis. Its 36 recommended source predictors are recorded in
