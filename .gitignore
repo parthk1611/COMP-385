@@ -29,3 +29,10 @@ __pycache__/
 .venv-modeling/
 artifacts/ignition_modeling/
 data/interim/ignition_modeling_cache/
+
+# Local ignition demonstration environment and reproducible generated outputs.
+.venv-demo/
+artifacts/ignition_demo/
+output/playwright/
+.playwright-cli/
+/ontario_fire_region_10km_daily_ignition_features_v1.csv.gz
