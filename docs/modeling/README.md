@@ -62,3 +62,27 @@ probability-producing bundle; `final_logistic.joblib` and `final_hgb.joblib`
 retain both fitted model-family pipelines. Use `predict_bundle` from
 `scripts.ignition_modeling.run` with the exact 36-column schema and corrected
 past-only inputs. No operating threshold has been selected.
+
+## Follow-up ignition experiment archive
+
+The [chronological experiment overview](../../experiments/ignition/README.md)
+explains the ten modelling investigations and two saved-prediction analyses.
+Each experiment has its own script, requirements, detailed historical
+`results.json`, and readable report under `experiments/ignition/`.
+
+The retained development candidate is **coordinate HGB with 80 iterations,
+15 maximum leaves, minimum leaf size 100, learning rate 0.1 and L2 1**.
+The overview distinguishes that retained choice from the small, inconsistent
+numerical AP gain in the 24-hour-lightning ablation.
+
+The follow-up scripts now use straightforward fresh-run orchestration instead
+of source fingerprints, protected-file inventories and checkpoint resumption.
+Their scientific settings, folds, feature semantics, metrics and selection
+rules are retained. Use each experiment's README for actual commands and its
+generated-input prerequisites; default reruns write new ignored directories
+under `artifacts/ignition_modeling/reruns/` and never replace historical results.
+
+The [saved coordinate-model bundle](../../experiments/ignition/coordinates/README.md#saved-model-pickle)
+is a separate 2010--2016 development refit. Its export and this script cleanup
+do not replace the original final-study artifacts or add 2017--2019 evaluation.
+The original pipeline and evaluation protocol above remain unchanged.

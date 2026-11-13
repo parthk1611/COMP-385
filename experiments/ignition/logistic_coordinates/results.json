@@ -1,0 +1,398 @@
+{
+  "status": "complete",
+  "variants": {
+    "logistic_baseline": {
+      "variant": "logistic_baseline",
+      "params": {
+        "alpha": 0.001,
+        "class_weight": "balanced",
+        "epochs": 3,
+        "batch_size": 50000
+      },
+      "mean_fold_average_precision": 0.003373221975618225,
+      "fold_average_precision": {
+        "2012": 0.0064511676434942065,
+        "2013": 0.0026681492982247278,
+        "2014": 0.0011473315925096448,
+        "2015": 0.002533689265943806,
+        "2016": 0.004065772077918738
+      },
+      "mean_fold_roc_auc": 0.865078965432603,
+      "mean_fold_brier_score": 0.14598476906959595,
+      "mean_fold_log_loss": 0.46262881470375766
+    },
+    "logistic_coordinates": {
+      "variant": "logistic_coordinates",
+      "params": {
+        "alpha": 0.001,
+        "class_weight": "balanced",
+        "epochs": 3,
+        "batch_size": 50000
+      },
+      "mean_fold_average_precision": 0.0033912823432157846,
+      "fold_average_precision": {
+        "2012": 0.006373487474112921,
+        "2013": 0.0026486082795526954,
+        "2014": 0.0011689139153810727,
+        "2015": 0.002704033388976593,
+        "2016": 0.0040613686580556405
+      },
+      "mean_fold_roc_auc": 0.8649471618711126,
+      "mean_fold_brier_score": 0.1451333224787094,
+      "mean_fold_log_loss": 0.4608031718197262
+    },
+    "hgb_baseline": {
+      "variant": "hgb_baseline",
+      "params": {
+        "max_iter": 80,
+        "class_weight": null,
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 100,
+        "l2_regularization": 1.0
+      },
+      "mean_fold_average_precision": 0.006865465957835044,
+      "fold_average_precision": {
+        "2012": 0.008893499998883404,
+        "2013": 0.011528905554848416,
+        "2014": 0.0013902110965160453,
+        "2015": 0.003845180907927679,
+        "2016": 0.008669532230999677
+      },
+      "mean_fold_roc_auc": 0.8696736890434804,
+      "mean_fold_brier_score": 0.00037901413062392845,
+      "mean_fold_log_loss": 0.0029079115313490997
+    },
+    "hgb_coordinates": {
+      "variant": "hgb_coordinates",
+      "params": {
+        "max_iter": 80,
+        "class_weight": null,
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 100,
+        "l2_regularization": 1.0
+      },
+      "mean_fold_average_precision": 0.006965525097349347,
+      "fold_average_precision": {
+        "2012": 0.010238445335159507,
+        "2013": 0.009042434402703234,
+        "2014": 0.001749552313396256,
+        "2015": 0.004511448819081327,
+        "2016": 0.009285744616406409
+      },
+      "mean_fold_roc_auc": 0.8724773143932307,
+      "mean_fold_brier_score": 0.0003788769892459241,
+      "mean_fold_log_loss": 0.002892797322143867
+    }
+  },
+  "logistic_coordinate_relative_ap_gain": 0.005354040655521697,
+  "hgb_coordinate_relative_ap_gain": 0.014574267810637531,
+  "preferred_by_mean_ap": "hgb_coordinates",
+  "baseline_evidence": "Archived original logistic fold metrics; original per-row logistic predictions are not present locally",
+  "scope": "Five fixed logistic fits, no tuning/calibration/resampling/2017--2019 evaluation or final-model refit",
+  "original_and_prior_outputs_unchanged": {
+    "docs/modeling/final_test.json": "db8efbdd7b851a6cec972d5fd9a5cc44969aefb4e36710e10d1ef751dffc37c6",
+    "docs/modeling/final_freeze.json": "4fe95c2f0888d4e80d80faf364310359f710a30580a609b27063bcd487a0d5bc",
+    "docs/modeling/final_report.md": "79e77c0cdc156af232acd9a999cd6d1cb6c442fb9c6ab5781cc0412f97617b76",
+    "docs/modeling/configuration.json": "0cced9a08c90ebf26e9694846081804dab74a8fb54949c53c3e12f0c3d93aa6b",
+    "docs/modeling/calibration_decision.json": "6999a90d4719d7b306b56187d0894cdd3e4e19f9bc3acd9d1fe530ecf0c92482",
+    "docs/modeling/tuning/results.json": "375e68f0079aba6e33ed9a116a8da7fcb7f266fc8f2c3894eb5f3c854ef17bf1",
+    "docs/modeling/coordinates/results.json": "2bd67dea0cb3c8e6c3ae7902e5b728feb7ded3050a8d129959fc097c5270c74a",
+    "docs/modeling/coordinate_capacity/results.json": "3def05257a7bfb2e0a1296a52e84f4caa504d88b20471e70abf8a03dfec7c1e8",
+    "artifacts/ignition_modeling/hgb_tuning/results.json": "375e68f0079aba6e33ed9a116a8da7fcb7f266fc8f2c3894eb5f3c854ef17bf1",
+    "artifacts/ignition_modeling/hgb_coordinates/results.json": "2bd67dea0cb3c8e6c3ae7902e5b728feb7ded3050a8d129959fc097c5270c74a",
+    "artifacts/ignition_modeling/hgb_coordinate_capacity/results.json": "3def05257a7bfb2e0a1296a52e84f4caa504d88b20471e70abf8a03dfec7c1e8",
+    "artifacts/ignition_modeling/hgb_randomized/results.json": "55435379adc9b629e2b3927cb4d359586c15e1992eaccd5bee193aac952ab665",
+    "docs/modeling/randomized/results.json": "55435379adc9b629e2b3927cb4d359586c15e1992eaccd5bee193aac952ab665",
+    "docs/modeling/local_search/results.json": "8255353f7cab03b4ce8eada8543b00665d1268b1d53ddda395286ebb92742ffc",
+    "artifacts/ignition_modeling/hgb_local_search/results.json": "8255353f7cab03b4ce8eada8543b00665d1268b1d53ddda395286ebb92742ffc",
+    "docs/modeling/development_comparison.json": "211d0551bb4b2fc906b09b9161761d174841597e08adb9f04f51344781ab383f"
+  },
+  "recorded_configuration": {
+    "experiment": "fixed-logistic-cell-centres-v1",
+    "params": {
+      "alpha": 0.001,
+      "class_weight": "balanced",
+      "epochs": 3,
+      "batch_size": 50000
+    },
+    "seed": 385,
+    "fold_years": [
+      [
+        2010,
+        2011,
+        2012
+      ],
+      [
+        2010,
+        2012,
+        2013
+      ],
+      [
+        2010,
+        2013,
+        2014
+      ],
+      [
+        2010,
+        2014,
+        2015
+      ],
+      [
+        2010,
+        2015,
+        2016
+      ]
+    ],
+    "threads": 2,
+    "python": "3.12.16",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "3.0.1",
+      "scipy": "1.16.2",
+      "scikit-learn": "1.7.2",
+      "joblib": "1.5.2",
+      "threadpoolctl": "3.6.0",
+      "psutil": "7.1.0"
+    },
+    "cache_files_sha256": {
+      "X.f64": "fb5e5443c47658f0cc79505d80a4d9f669b5d395bb90f769015d20949c0b48eb",
+      "y.u8": "5751eef8fd39b7f4bddc7b2c9555edf7f237ef6d4bc6f5306109ccbc4ab96fac",
+      "grid.u16": "e4ecb367eb3d99b88cbe99724b32d51624bc8d0e3686e4d8694deab2f78b3b03"
+    },
+    "cache_manifest_sha256": "7832fb5ae3070a59f5cbadbaf79d04af55cebc57e3ce122542c6697d865af69f",
+    "source_code_sha256": {
+      "tuning.py": "f8d14754740dfc49659310047fad75264763994fa2a5bf746b6f42677b8b943f",
+      "histogram.py": "665c433e9447814b4250ebdf4f00557341f910d5751159802ae1d68640bc080b",
+      "preprocessing.py": "53d27d8a2518ad1baba079d32cf79dce6aece01fe93a9c4de6c6035f9e0e05ab",
+      "contract.py": "a0d10323bc9155a9504956afb2bf497703522dd0ad110e06fce56a5dfc56bfa7",
+      "data.py": "46a0db6df03ac3457e44bd27b789e5b9252ef97e92982e78cddd3ef29367ef58",
+      "weather.py": "95cc7a4349793e8b5cf0ccd3a19ed4011498d824ad7287677ec8cc171686b1f4",
+      "evaluation.py": "bd2ab19d8acca9f807ee35a6fbc55f052cd15903d3918c1174b4d66fd80f0880",
+      "splits.py": "696a35593b2dca24e4c9974731185136ba69d72cd12f8941e203f4d3fae0af21",
+      "run.py": "85df55c7a1cb0b72941cd0e71c61ed069adc35813578296e64f78c2878904949",
+      "coordinates.py": "839ab52b4b4eab600b59bca9d4b165ac81ca98b96312a5eb758d4572f807260d",
+      "randomized.py": "86acb3840157d7ca7332a0f032c44532034def579991d2866a355930e37db8af",
+      "local_search.py": "006add3f2a1317d753efb06bc3e256436b0aad92603801b2e8961572004219cd",
+      "logistic.py": "0cab1f8abb998b3295d96a0216a4a4ffbc261aa24af414530cc49009016a653c",
+      "logistic_coordinates.py": "58bd95851dd352f2e0d9302ec80edfed40fc08c4c8b6ef29dafb6be794838aae"
+    },
+    "baseline_comparison_sha256": "211d0551bb4b2fc906b09b9161761d174841597e08adb9f04f51344781ab383f",
+    "cache_equivalence_sha256": "fcfeb957fae27194cdc23192081370d63f11a4c56edaabb7359410b9c4e64ec2",
+    "coordinate_feature_manifest": {
+      "feature_set_version": "ignition-weather-v2-cell-centres-v1",
+      "crs": "EPSG:3978",
+      "units": "metres",
+      "raw_features": [
+        "calendar_day_of_year",
+        "calendar_doy_sin",
+        "calendar_doy_cos",
+        "calendar_is_weekend",
+        "calendar_day_length_hours",
+        "terrain_elevation_mean_m",
+        "terrain_slope_deg",
+        "terrain_aspect_sin",
+        "terrain_aspect_cos",
+        "terrain_ruggedness_m",
+        "terrain_sample_count",
+        "terrain_coverage_fraction",
+        "cwfis_station_count",
+        "cwfis_nearest_station_km",
+        "cwfis_observation_coverage_fraction",
+        "cwfis_imputed_station_fraction",
+        "cwfis_calcstatus_nonzero_fraction",
+        "cwfis_missing",
+        "cwfis_temp_c",
+        "cwfis_rh_pct",
+        "cwfis_wind_speed_kmh",
+        "cwfis_precip_mm",
+        "cwfis_ffmc",
+        "cwfis_dmc",
+        "cwfis_dc",
+        "cwfis_isi",
+        "cwfis_bui",
+        "cwfis_fwi",
+        "cwfis_dsr",
+        "cwfis_precip_7d_mm",
+        "cwfis_precip_7d_coverage_days",
+        "fire_history_same_cell_30d",
+        "fire_history_neighborhood_30d",
+        "fire_history_same_cell_365d",
+        "fire_history_neighborhood_365d",
+        "fire_history_days_since_same_cell",
+        "cell_centroid_easting_m",
+        "cell_centroid_northing_m"
+      ],
+      "transformed_features": [
+        "calendar_day_of_year",
+        "calendar_doy_sin",
+        "calendar_doy_cos",
+        "calendar_is_weekend",
+        "calendar_day_length_hours",
+        "terrain_elevation_mean_m",
+        "terrain_slope_deg",
+        "terrain_aspect_sin",
+        "terrain_aspect_cos",
+        "terrain_ruggedness_m",
+        "terrain_sample_count",
+        "terrain_coverage_fraction",
+        "cwfis_station_count",
+        "cwfis_nearest_station_km",
+        "cwfis_observation_coverage_fraction",
+        "cwfis_imputed_station_fraction",
+        "cwfis_calcstatus_nonzero_fraction",
+        "cwfis_missing",
+        "cwfis_temp_c",
+        "cwfis_rh_pct",
+        "cwfis_wind_speed_kmh",
+        "cwfis_precip_mm",
+        "cwfis_ffmc",
+        "cwfis_dmc",
+        "cwfis_dc",
+        "cwfis_isi",
+        "cwfis_bui",
+        "cwfis_fwi",
+        "cwfis_dsr",
+        "cwfis_precip_7d_mm",
+        "cwfis_precip_7d_coverage_days",
+        "fire_history_same_cell_30d",
+        "fire_history_neighborhood_30d",
+        "fire_history_same_cell_365d",
+        "fire_history_neighborhood_365d",
+        "fire_history_days_since_same_cell",
+        "fire_history_days_since_same_cell__censored",
+        "cell_centroid_easting_m",
+        "cell_centroid_northing_m"
+      ],
+      "added_features": {
+        "cell_centroid_easting_m": "grid_x_m + 5000",
+        "cell_centroid_northing_m": "grid_y_m + 5000"
+      },
+      "join": "cache grid.u16 -> checksum-pinned grid-file row order",
+      "timing": "Static cell geometry, identical on every date; no ignition-point coordinates",
+      "source_grid_sha256": "b22741d83b64c2b78c19fbf182848566644a23fad4aeef3301ff25ef7c6c3f35"
+    },
+    "protected_outputs_before": {
+      "docs/modeling/final_test.json": "db8efbdd7b851a6cec972d5fd9a5cc44969aefb4e36710e10d1ef751dffc37c6",
+      "docs/modeling/final_freeze.json": "4fe95c2f0888d4e80d80faf364310359f710a30580a609b27063bcd487a0d5bc",
+      "docs/modeling/final_report.md": "79e77c0cdc156af232acd9a999cd6d1cb6c442fb9c6ab5781cc0412f97617b76",
+      "docs/modeling/configuration.json": "0cced9a08c90ebf26e9694846081804dab74a8fb54949c53c3e12f0c3d93aa6b",
+      "docs/modeling/calibration_decision.json": "6999a90d4719d7b306b56187d0894cdd3e4e19f9bc3acd9d1fe530ecf0c92482",
+      "docs/modeling/tuning/results.json": "375e68f0079aba6e33ed9a116a8da7fcb7f266fc8f2c3894eb5f3c854ef17bf1",
+      "docs/modeling/coordinates/results.json": "2bd67dea0cb3c8e6c3ae7902e5b728feb7ded3050a8d129959fc097c5270c74a",
+      "docs/modeling/coordinate_capacity/results.json": "3def05257a7bfb2e0a1296a52e84f4caa504d88b20471e70abf8a03dfec7c1e8",
+      "artifacts/ignition_modeling/hgb_tuning/results.json": "375e68f0079aba6e33ed9a116a8da7fcb7f266fc8f2c3894eb5f3c854ef17bf1",
+      "artifacts/ignition_modeling/hgb_coordinates/results.json": "2bd67dea0cb3c8e6c3ae7902e5b728feb7ded3050a8d129959fc097c5270c74a",
+      "artifacts/ignition_modeling/hgb_coordinate_capacity/results.json": "3def05257a7bfb2e0a1296a52e84f4caa504d88b20471e70abf8a03dfec7c1e8",
+      "artifacts/ignition_modeling/hgb_randomized/results.json": "55435379adc9b629e2b3927cb4d359586c15e1992eaccd5bee193aac952ab665",
+      "docs/modeling/randomized/results.json": "55435379adc9b629e2b3927cb4d359586c15e1992eaccd5bee193aac952ab665",
+      "docs/modeling/local_search/results.json": "8255353f7cab03b4ce8eada8543b00665d1268b1d53ddda395286ebb92742ffc",
+      "artifacts/ignition_modeling/hgb_local_search/results.json": "8255353f7cab03b4ce8eada8543b00665d1268b1d53ddda395286ebb92742ffc",
+      "docs/modeling/development_comparison.json": "211d0551bb4b2fc906b09b9161761d174841597e08adb9f04f51344781ab383f"
+    },
+    "new_fit_years": [
+      2012,
+      2013,
+      2014,
+      2015,
+      2016
+    ],
+    "input_features": [
+      "calendar_day_of_year",
+      "calendar_doy_sin",
+      "calendar_doy_cos",
+      "calendar_is_weekend",
+      "calendar_day_length_hours",
+      "terrain_elevation_mean_m",
+      "terrain_slope_deg",
+      "terrain_aspect_sin",
+      "terrain_aspect_cos",
+      "terrain_ruggedness_m",
+      "terrain_sample_count",
+      "terrain_coverage_fraction",
+      "cwfis_station_count",
+      "cwfis_nearest_station_km",
+      "cwfis_observation_coverage_fraction",
+      "cwfis_imputed_station_fraction",
+      "cwfis_calcstatus_nonzero_fraction",
+      "cwfis_missing",
+      "cwfis_temp_c",
+      "cwfis_rh_pct",
+      "cwfis_wind_speed_kmh",
+      "cwfis_precip_mm",
+      "cwfis_ffmc",
+      "cwfis_dmc",
+      "cwfis_dc",
+      "cwfis_isi",
+      "cwfis_bui",
+      "cwfis_fwi",
+      "cwfis_dsr",
+      "cwfis_precip_7d_mm",
+      "cwfis_precip_7d_coverage_days",
+      "fire_history_same_cell_30d",
+      "fire_history_neighborhood_30d",
+      "fire_history_same_cell_365d",
+      "fire_history_neighborhood_365d",
+      "fire_history_days_since_same_cell",
+      "cell_centroid_easting_m",
+      "cell_centroid_northing_m"
+    ],
+    "transformed_features": "57 legacy numeric/missing/censor fields plus two training-standardized cell-centre coordinates",
+    "baseline_evidence": "Archived original logistic fold metrics; original per-row logistic predictions are not present locally",
+    "scope": "Five fixed logistic fits, no tuning/calibration/resampling/2017--2019 evaluation or final-model refit"
+  },
+  "supporting_results": {},
+  "tables": {
+    "development_comparison.csv": [
+      {
+        "variant": "logistic_baseline",
+        "mean_ap": "0.003373221975618225",
+        "ap_2012": "0.0064511676434942065",
+        "ap_2013": "0.0026681492982247278",
+        "ap_2014": "0.0011473315925096448",
+        "ap_2015": "0.002533689265943806",
+        "ap_2016": "0.004065772077918738",
+        "mean_roc_auc": "0.865078965432603",
+        "mean_brier": "0.14598476906959595",
+        "mean_log_loss": "0.46262881470375766"
+      },
+      {
+        "variant": "logistic_coordinates",
+        "mean_ap": "0.0033912823432157846",
+        "ap_2012": "0.006373487474112921",
+        "ap_2013": "0.0026486082795526954",
+        "ap_2014": "0.0011689139153810727",
+        "ap_2015": "0.002704033388976593",
+        "ap_2016": "0.0040613686580556405",
+        "mean_roc_auc": "0.8649471618711126",
+        "mean_brier": "0.1451333224787094",
+        "mean_log_loss": "0.4608031718197262"
+      },
+      {
+        "variant": "hgb_baseline",
+        "mean_ap": "0.006865465957835044",
+        "ap_2012": "0.008893499998883404",
+        "ap_2013": "0.011528905554848416",
+        "ap_2014": "0.0013902110965160453",
+        "ap_2015": "0.003845180907927679",
+        "ap_2016": "0.008669532230999677",
+        "mean_roc_auc": "0.8696736890434804",
+        "mean_brier": "0.00037901413062392845",
+        "mean_log_loss": "0.0029079115313490997"
+      },
+      {
+        "variant": "hgb_coordinates",
+        "mean_ap": "0.006965525097349347",
+        "ap_2012": "0.010238445335159507",
+        "ap_2013": "0.009042434402703234",
+        "ap_2014": "0.001749552313396256",
+        "ap_2015": "0.004511448819081327",
+        "ap_2016": "0.009285744616406409",
+        "mean_roc_auc": "0.8724773143932307",
+        "mean_brier": "0.0003788769892459241",
+        "mean_log_loss": "0.002892797322143867"
+      }
+    ]
+  }
+}

@@ -18,6 +18,8 @@ logistic regression and histogram gradient boosting results, independent
 verification, threshold tradeoffs and reproduction commands. The modelling
 cache corrects v1 weather station selection and source-date joins; the original
 v1 EDA below describes the uncorrected download.
+The [development-only HGB tuning guide](docs/modeling/README.md#development-only-hgb-tuning)
+describes the bounded follow-up experiments without reusing the 2019 test.
 
 See [the ignition EDA](docs/eda/README.md) for full-panel counts and missingness,
 feature explanations, figures, the notebook, and commands to reproduce the
