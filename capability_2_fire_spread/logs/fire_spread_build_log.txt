@@ -255,3 +255,138 @@
 2026-10-09 13:46:03 | 12 dataset eda | DONE: wrote 10 figures and eda_numbers.json to docs/eda
 2026-10-09 13:47:15 | 12 dataset eda | START: charts from 752 fires and 6,249 observations
 2026-10-09 13:47:23 | 12 dataset eda | DONE: wrote 10 figures and eda_numbers.json to docs/eda
+2026-11-06 13:30:30 | 11 learned-model table | START: per-cell table for 8 fires ({'calibration': 4, 'holdout': 4}); candidates within 6000 m of the burned area; simulator at rate 0.8, flank 0.25
+2026-11-06 13:30:53 | 11 learned-model table | DONE: 1 steps, 358 rows; 100.0% of observed new cells lie within the candidate radius
+2026-11-06 13:31:05 | 11 learned-model table | START: per-cell table for 352 fires ({'calibration': 207, 'holdout': 145}); candidates within 6000 m of the burned area; simulator at rate 0.8, flank 0.25
+2026-11-06 13:31:31 | 11 learned-model table | 20 of 352 fires done
+2026-11-06 13:31:33 | 11 learned-model table | 40 of 352 fires done
+2026-11-06 13:31:35 | 11 learned-model table | 60 of 352 fires done
+2026-11-06 13:31:36 | 11 learned-model table | 80 of 352 fires done
+2026-11-06 13:31:37 | 11 learned-model table | 100 of 352 fires done
+2026-11-06 13:31:38 | 11 learned-model table | 120 of 352 fires done
+2026-11-06 13:31:38 | 11 learned-model table | 140 of 352 fires done
+2026-11-06 13:31:39 | 11 learned-model table | 160 of 352 fires done
+2026-11-06 13:31:39 | 11 learned-model table | 180 of 352 fires done
+2026-11-06 13:31:40 | 11 learned-model table | 200 of 352 fires done
+2026-11-06 13:31:40 | 11 learned-model table | 220 of 352 fires done
+2026-11-06 13:31:40 | 11 learned-model table | 240 of 352 fires done
+2026-11-06 13:31:41 | 11 learned-model table | 260 of 352 fires done
+2026-11-06 13:31:41 | 11 learned-model table | 280 of 352 fires done
+2026-11-06 13:31:41 | 11 learned-model table | 300 of 352 fires done
+2026-11-06 13:31:42 | 11 learned-model table | 320 of 352 fires done
+2026-11-06 13:31:42 | 11 learned-model table | 340 of 352 fires done
+2026-11-06 13:31:48 | 11 learned-model table | DONE: 1426 steps, 2,387,424 rows; 96.5% of observed new cells lie within the candidate radius
+2026-11-06 13:32:20 | 12 train learned spread models | START: 1,062,522 candidate rows, 15,913 positives, 656 steps, 149 fires, years [np.int64(2012), np.int64(2013), np.int64(2014), np.int64(2015), np.int64(2016), np.int64(2017), np.int64(2018), np.int64(2019), np.int64(2020)]
+2026-11-06 13:35:10 | 12 train learned spread models | ml candidate 0 {'max_iter': 200, 'learning_rate': 0.05, 'max_leaf_nodes': 15, 'min_samples_leaf': 100, 'l2_regularization': 1.0}: mean per-step AP 0.2487 (170.6s)
+2026-11-06 13:39:34 | 12 train learned spread models | ml candidate 1 {'max_iter': 200, 'learning_rate': 0.05, 'max_leaf_nodes': 31, 'min_samples_leaf': 100, 'l2_regularization': 1.0}: mean per-step AP 0.2517 (263.8s)
+2026-11-06 13:45:19 | 12 train learned spread models | ml candidate 2 {'max_iter': 400, 'learning_rate': 0.05, 'max_leaf_nodes': 15, 'min_samples_leaf': 100, 'l2_regularization': 1.0}: mean per-step AP 0.2525 (344.9s)
+2026-11-06 13:52:57 | 12 train learned spread models | ml candidate 3 {'max_iter': 400, 'learning_rate': 0.05, 'max_leaf_nodes': 31, 'min_samples_leaf': 100, 'l2_regularization': 1.0}: mean per-step AP 0.2501 (458.3s)
+2026-11-06 13:54:14 | 12 train learned spread models | ml: chose candidate 2, area scale 1.177; refitted on all calibration fires
+2026-11-06 13:58:56 | 12 train learned spread models | ml_no_fuel candidate 0 {'max_iter': 200, 'learning_rate': 0.05, 'max_leaf_nodes': 15, 'min_samples_leaf': 100, 'l2_regularization': 1.0}: mean per-step AP 0.2315 (281.6s)
+2026-11-06 14:01:32 | 12 train learned spread models | ml_no_fuel candidate 1 {'max_iter': 200, 'learning_rate': 0.05, 'max_leaf_nodes': 31, 'min_samples_leaf': 100, 'l2_regularization': 1.0}: mean per-step AP 0.2363 (156.1s)
+2026-11-06 14:06:07 | 12 train learned spread models | ml_no_fuel candidate 2 {'max_iter': 400, 'learning_rate': 0.05, 'max_leaf_nodes': 15, 'min_samples_leaf': 100, 'l2_regularization': 1.0}: mean per-step AP 0.2331 (275.3s)
+2026-11-06 14:11:51 | 12 train learned spread models | ml_no_fuel candidate 3 {'max_iter': 400, 'learning_rate': 0.05, 'max_leaf_nodes': 31, 'min_samples_leaf': 100, 'l2_regularization': 1.0}: mean per-step AP 0.2409 (344.0s)
+2026-11-06 14:12:19 | 12 train learned spread models | ml_no_fuel: chose candidate 3, area scale 1.312; refitted on all calibration fires
+2026-11-06 14:17:37 | 12 train learned spread models | hybrid candidate 0 {'max_iter': 200, 'learning_rate': 0.05, 'max_leaf_nodes': 15, 'min_samples_leaf': 100, 'l2_regularization': 1.0}: mean per-step AP 0.2493 (318.6s)
+2026-11-06 14:25:25 | 12 train learned spread models | hybrid candidate 1 {'max_iter': 200, 'learning_rate': 0.05, 'max_leaf_nodes': 31, 'min_samples_leaf': 100, 'l2_regularization': 1.0}: mean per-step AP 0.2466 (467.8s)
+2026-11-06 14:49:06 | 12 train learned spread models | hybrid candidate 2 {'max_iter': 400, 'learning_rate': 0.05, 'max_leaf_nodes': 15, 'min_samples_leaf': 100, 'l2_regularization': 1.0}: mean per-step AP 0.2553 (1420.6s)
+2026-11-06 15:26:30 | 12 train learned spread models | hybrid candidate 3 {'max_iter': 400, 'learning_rate': 0.05, 'max_leaf_nodes': 31, 'min_samples_leaf': 100, 'l2_regularization': 1.0}: mean per-step AP 0.2483 (2246.8s)
+2026-11-06 15:27:20 | 12 train learned spread models | hybrid: chose candidate 2, area scale 1.168; refitted on all calibration fires
+2026-11-06 15:27:20 | 12 train learned spread models | DONE: wrote spread_models_v1_training.json and models in artifacts/spread_models/
+2026-11-15 03:24:00 | 12 train learned spread models | START: ['logistic', 'random_forest', 'mlp'] on 1,062,522 candidate rows, 15,913 positives, 656 steps, 149 fires, years [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020]
+2026-11-15 03:24:52 | 12 train learned spread models | logistic candidate 0 {'C': 0.1}: mean per-step AP 0.2445 (50.9s)
+2026-11-15 03:25:42 | 12 train learned spread models | logistic candidate 1 {'C': 1.0}: mean per-step AP 0.2446 (49.5s)
+2026-11-15 03:25:47 | 12 train learned spread models | logistic: chose candidate 1, area scale 1.136; refitted on all calibration fires
+2026-11-15 03:32:22 | 12 train learned spread models | random_forest candidate 0 {'min_samples_leaf': 20, 'n_estimators': 200, 'max_features': 'sqrt', 'max_samples': 0.25}: mean per-step AP 0.2532 (394.9s)
+2026-11-15 03:38:58 | 12 train learned spread models | random_forest candidate 1 {'min_samples_leaf': 100, 'n_estimators': 200, 'max_features': 'sqrt', 'max_samples': 0.25}: mean per-step AP 0.2495 (396.2s)
+2026-11-15 03:39:44 | 12 train learned spread models | random_forest: chose candidate 0, area scale 0.894; refitted on all calibration fires
+2026-11-15 03:46:24 | 12 train learned spread models | mlp candidate 0 {'hidden_layer_sizes': (64, 32), 'alpha': 0.0001, 'batch_size': 4096, 'max_iter': 20, 'learning_rate_init': 0.001}: mean per-step AP 0.2185 (399.8s)
+2026-11-15 03:53:00 | 12 train learned spread models | mlp candidate 1 {'hidden_layer_sizes': (64, 32), 'alpha': 0.001, 'batch_size': 4096, 'max_iter': 20, 'learning_rate_init': 0.001}: mean per-step AP 0.2175 (395.5s)
+2026-11-15 03:54:01 | 12 train learned spread models | mlp: chose candidate 0, area scale 1.194; refitted on all calibration fires
+2026-11-15 03:54:01 | 12 train learned spread models | DONE: wrote spread_models_v1_training.json and models in artifacts/spread_models/
+2026-11-15 03:54:52 | 13 compare learned models with the simulator | START: 125 holdout fires, 770 steps, models ['simulator', 'even_growth_rank', 'hgb_matched', 'hgb_own', 'hgb_hybrid_matched', 'hgb_hybrid_own', 'hgb_no_fuel_matched', 'hgb_no_fuel_own', 'logistic_matched', 'logistic_own', 'mlp_matched', 'mlp_own', 'random_forest_matched', 'random_forest_own']
+2026-11-15 03:54:59 | 13 compare learned models with the simulator | 10 of 125 holdout fires scored
+2026-11-15 03:55:01 | 13 compare learned models with the simulator | 20 of 125 holdout fires scored
+2026-11-15 03:55:04 | 13 compare learned models with the simulator | 30 of 125 holdout fires scored
+2026-11-15 03:55:09 | 13 compare learned models with the simulator | 40 of 125 holdout fires scored
+2026-11-15 03:55:14 | 13 compare learned models with the simulator | 50 of 125 holdout fires scored
+2026-11-15 03:55:18 | 13 compare learned models with the simulator | 60 of 125 holdout fires scored
+2026-11-15 03:55:22 | 13 compare learned models with the simulator | 70 of 125 holdout fires scored
+2026-11-15 03:55:26 | 13 compare learned models with the simulator | 80 of 125 holdout fires scored
+2026-11-15 03:55:31 | 13 compare learned models with the simulator | 90 of 125 holdout fires scored
+2026-11-15 03:55:35 | 13 compare learned models with the simulator | 100 of 125 holdout fires scored
+2026-11-15 03:55:37 | 13 compare learned models with the simulator | 110 of 125 holdout fires scored
+2026-11-15 03:55:41 | 13 compare learned models with the simulator | 120 of 125 holdout fires scored
+2026-11-15 03:55:45 | 13 compare learned models with the simulator | simulator check on its published 24 fires: 150 steps, recall 0.302 (published 0.302)
+2026-11-15 03:55:45 | 13 compare learned models with the simulator | all holdout, hgb_hybrid_matched: recall 0.444, IoU 0.142, step AP 0.304, direction within 45 deg 55.2%
+2026-11-15 03:55:45 | 13 compare learned models with the simulator | all holdout, hgb_hybrid_own: recall 0.349, IoU 0.175, step AP 0.304, direction within 45 deg 61.3%
+2026-11-15 03:55:45 | 13 compare learned models with the simulator | all holdout, hgb_matched: recall 0.441, IoU 0.141, step AP 0.307, direction within 45 deg 57.4%
+2026-11-15 03:55:45 | 13 compare learned models with the simulator | all holdout, hgb_no_fuel_matched: recall 0.423, IoU 0.133, step AP 0.279, direction within 45 deg 53.6%
+2026-11-15 03:55:45 | 13 compare learned models with the simulator | all holdout, hgb_no_fuel_own: recall 0.343, IoU 0.160, step AP 0.279, direction within 45 deg 55.8%
+2026-11-15 03:55:45 | 13 compare learned models with the simulator | all holdout, hgb_own: recall 0.345, IoU 0.174, step AP 0.307, direction within 45 deg 60.8%
+2026-11-15 03:55:45 | 13 compare learned models with the simulator | all holdout, logistic_matched: recall 0.401, IoU 0.125, step AP 0.272, direction within 45 deg 57.9%
+2026-11-15 03:55:45 | 13 compare learned models with the simulator | all holdout, logistic_own: recall 0.323, IoU 0.149, step AP 0.272, direction within 45 deg 61.0%
+2026-11-15 03:55:45 | 13 compare learned models with the simulator | all holdout, mlp_matched: recall 0.383, IoU 0.120, step AP 0.252, direction within 45 deg 52.1%
+2026-11-15 03:55:45 | 13 compare learned models with the simulator | all holdout, mlp_own: recall 0.249, IoU 0.120, step AP 0.252, direction within 45 deg 54.7%
+2026-11-15 03:55:45 | 13 compare learned models with the simulator | all holdout, random_forest_matched: recall 0.444, IoU 0.144, step AP 0.309, direction within 45 deg 58.1%
+2026-11-15 03:55:45 | 13 compare learned models with the simulator | all holdout, random_forest_own: recall 0.380, IoU 0.175, step AP 0.309, direction within 45 deg 60.1%
+2026-11-15 03:55:45 | 13 compare learned models with the simulator | all holdout, simulator: recall 0.356, IoU 0.113, step AP 0.221, direction within 45 deg 53.0%
+2026-11-15 03:55:45 | 13 compare learned models with the simulator | DONE: wrote spread_models_v1_comparison.json and spread_models_v1_holdout_steps.csv
+2026-11-15 03:57:25 | 14 CNN patches | START: 96 x 96 patches of 375 m cells for 1426 steps of 274 fires; channels ['burned', 'active', 'inside_window', 'fuel_conifer_share', 'fuel_mixedwood_share', 'fuel_deciduous_share', 'fuel_grass_share', 'fuel_non_fuel_share', 'fuel_water_share', 'fbp_head_ros', 'elevation_anomaly', 'distance_to_burned', 'distance_to_active', 'wind_east', 'wind_north', 'wind_max', 'ffmc', 'bui', 'isi', 'step_hours', 'night_share', 'rh_min', 'temp_mean', 'precip_total', 'previous_head_east', 'previous_head_north', 'previous_new_cells', 'previous_known', 'sim_reached_share']
+2026-11-15 03:57:58 | 14 CNN patches | DONE: 1426 patches; 97.4% of candidate cells and 99.8% of newly burning ones fall inside the patches
+2026-11-15 04:02:02 | 15 train CNN | START: ['cnn', 'cnn_hybrid'] on 656 calibration patches ([2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020]); 770 holdout patches predicted after selection
+2026-11-15 04:06:20 | 15 train CNN | cnn candidate 0 {'width': 32, 'epochs': 20, 'learning_rate': 0.001, 'weight_decay': 0.0001, 'batch_size': 16}: mean per-step AP 0.2701 (258.8s)
+2026-11-15 04:14:41 | 15 train CNN | cnn candidate 1 {'width': 32, 'epochs': 40, 'learning_rate': 0.001, 'weight_decay': 0.0001, 'batch_size': 16}: mean per-step AP 0.2742 (501.0s)
+2026-11-15 04:15:50 | 15 train CNN | cnn: chose candidate 1, area scale 1.086; refitted on all calibration fires and predicted the holdout fires
+2026-11-15 04:20:12 | 15 train CNN | cnn_hybrid candidate 0 {'width': 32, 'epochs': 20, 'learning_rate': 0.001, 'weight_decay': 0.0001, 'batch_size': 16}: mean per-step AP 0.2666 (262.0s)
+2026-11-15 04:31:59 | 15 train CNN | cnn_hybrid candidate 1 {'width': 32, 'epochs': 40, 'learning_rate': 0.001, 'weight_decay': 0.0001, 'batch_size': 16}: mean per-step AP 0.2784 (707.2s)
+2026-11-15 04:34:04 | 15 train CNN | cnn_hybrid: chose candidate 1, area scale 0.994; refitted on all calibration fires and predicted the holdout fires
+2026-11-15 04:34:04 | 15 train CNN | DONE: CNN models, holdout predictions and spread_cnn_v1_training.json written
+2026-11-15 04:34:26 | 12 train learned spread models | START: ['xgboost', 'xgboost_hybrid'] on 1,062,522 candidate rows, 15,913 positives, 656 steps, 149 fires, years [2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020]
+2026-11-15 04:35:30 | 12 train learned spread models | xgboost candidate 0 {'n_estimators': 300, 'max_depth': 6, 'learning_rate': 0.05, 'subsample': 0.8, 'colsample_bytree': 0.8, 'min_child_weight': 5, 'reg_lambda': 1.0}: mean per-step AP 0.2501 (60.8s)
+2026-11-15 04:36:39 | 12 train learned spread models | xgboost candidate 1 {'n_estimators': 300, 'max_depth': 8, 'learning_rate': 0.05, 'subsample': 0.8, 'colsample_bytree': 0.8, 'min_child_weight': 5, 'reg_lambda': 1.0}: mean per-step AP 0.2478 (69.3s)
+2026-11-15 04:38:05 | 12 train learned spread models | xgboost candidate 2 {'n_estimators': 600, 'max_depth': 6, 'learning_rate': 0.05, 'subsample': 0.8, 'colsample_bytree': 0.8, 'min_child_weight': 5, 'reg_lambda': 1.0}: mean per-step AP 0.2504 (85.2s)
+2026-11-15 04:39:52 | 12 train learned spread models | xgboost candidate 3 {'n_estimators': 600, 'max_depth': 8, 'learning_rate': 0.05, 'subsample': 0.8, 'colsample_bytree': 0.8, 'min_child_weight': 5, 'reg_lambda': 1.0}: mean per-step AP 0.2441 (107.4s)
+2026-11-15 04:40:02 | 12 train learned spread models | xgboost: chose candidate 2, area scale 1.408; refitted on all calibration fires
+2026-11-15 04:41:03 | 12 train learned spread models | xgboost_hybrid candidate 0 {'n_estimators': 300, 'max_depth': 6, 'learning_rate': 0.05, 'subsample': 0.8, 'colsample_bytree': 0.8, 'min_child_weight': 5, 'reg_lambda': 1.0}: mean per-step AP 0.2532 (60.3s)
+2026-11-15 04:42:14 | 12 train learned spread models | xgboost_hybrid candidate 1 {'n_estimators': 300, 'max_depth': 8, 'learning_rate': 0.05, 'subsample': 0.8, 'colsample_bytree': 0.8, 'min_child_weight': 5, 'reg_lambda': 1.0}: mean per-step AP 0.2563 (72.0s)
+2026-11-15 04:43:44 | 12 train learned spread models | xgboost_hybrid candidate 2 {'n_estimators': 600, 'max_depth': 6, 'learning_rate': 0.05, 'subsample': 0.8, 'colsample_bytree': 0.8, 'min_child_weight': 5, 'reg_lambda': 1.0}: mean per-step AP 0.2523 (89.9s)
+2026-11-15 04:45:34 | 12 train learned spread models | xgboost_hybrid candidate 3 {'n_estimators': 600, 'max_depth': 8, 'learning_rate': 0.05, 'subsample': 0.8, 'colsample_bytree': 0.8, 'min_child_weight': 5, 'reg_lambda': 1.0}: mean per-step AP 0.2576 (109.3s)
+2026-11-15 04:45:46 | 12 train learned spread models | xgboost_hybrid: chose candidate 3, area scale 1.660; refitted on all calibration fires
+2026-11-15 04:45:46 | 12 train learned spread models | DONE: wrote spread_models_v1_training.json and models in artifacts/spread_models/
+2026-11-15 04:47:04 | 13 compare learned models with the simulator | START: 125 holdout fires, 770 steps, models ['simulator', 'even_growth_rank', 'hgb_matched', 'hgb_own', 'hgb_hybrid_matched', 'hgb_hybrid_own', 'hgb_no_fuel_matched', 'hgb_no_fuel_own', 'logistic_matched', 'logistic_own', 'mlp_matched', 'mlp_own', 'random_forest_matched', 'random_forest_own', 'xgboost_matched', 'xgboost_own', 'xgboost_hybrid_matched', 'xgboost_hybrid_own', 'cnn_matched', 'cnn_own', 'cnn_hybrid_matched', 'cnn_hybrid_own']
+2026-11-15 04:47:23 | 13 compare learned models with the simulator | 10 of 125 holdout fires scored
+2026-11-15 04:47:29 | 13 compare learned models with the simulator | 20 of 125 holdout fires scored
+2026-11-15 04:47:41 | 13 compare learned models with the simulator | 30 of 125 holdout fires scored
+2026-11-15 04:47:57 | 13 compare learned models with the simulator | 40 of 125 holdout fires scored
+2026-11-15 04:48:14 | 13 compare learned models with the simulator | 50 of 125 holdout fires scored
+2026-11-15 04:48:28 | 13 compare learned models with the simulator | 60 of 125 holdout fires scored
+2026-11-15 04:48:38 | 13 compare learned models with the simulator | 70 of 125 holdout fires scored
+2026-11-15 04:48:53 | 13 compare learned models with the simulator | 80 of 125 holdout fires scored
+2026-11-15 04:49:06 | 13 compare learned models with the simulator | 90 of 125 holdout fires scored
+2026-11-15 04:49:17 | 13 compare learned models with the simulator | 100 of 125 holdout fires scored
+2026-11-15 04:49:24 | 13 compare learned models with the simulator | 110 of 125 holdout fires scored
+2026-11-15 04:49:34 | 13 compare learned models with the simulator | 120 of 125 holdout fires scored
+2026-11-15 04:49:48 | 13 compare learned models with the simulator | simulator check on its published 24 fires: 150 steps, recall 0.302 (published 0.302)
+2026-11-15 04:49:48 | 13 compare learned models with the simulator | all holdout, cnn_hybrid_matched: recall 0.456, IoU 0.152, step AP 0.332, direction within 45 deg 60.1%
+2026-11-15 04:49:48 | 13 compare learned models with the simulator | all holdout, cnn_hybrid_own: recall 0.352, IoU 0.181, step AP 0.332, direction within 45 deg 62.1%
+2026-11-15 04:49:48 | 13 compare learned models with the simulator | all holdout, cnn_matched: recall 0.456, IoU 0.150, step AP 0.330, direction within 45 deg 58.6%
+2026-11-15 04:49:48 | 13 compare learned models with the simulator | all holdout, cnn_own: recall 0.374, IoU 0.185, step AP 0.330, direction within 45 deg 62.2%
+2026-11-15 04:49:48 | 13 compare learned models with the simulator | all holdout, hgb_hybrid_matched: recall 0.444, IoU 0.142, step AP 0.304, direction within 45 deg 55.2%
+2026-11-15 04:49:48 | 13 compare learned models with the simulator | all holdout, hgb_hybrid_own: recall 0.349, IoU 0.175, step AP 0.304, direction within 45 deg 61.3%
+2026-11-15 04:49:48 | 13 compare learned models with the simulator | all holdout, hgb_matched: recall 0.441, IoU 0.141, step AP 0.307, direction within 45 deg 57.4%
+2026-11-15 04:49:48 | 13 compare learned models with the simulator | all holdout, hgb_no_fuel_matched: recall 0.423, IoU 0.133, step AP 0.279, direction within 45 deg 53.6%
+2026-11-15 04:49:48 | 13 compare learned models with the simulator | all holdout, hgb_no_fuel_own: recall 0.343, IoU 0.160, step AP 0.279, direction within 45 deg 55.8%
+2026-11-15 04:49:48 | 13 compare learned models with the simulator | all holdout, hgb_own: recall 0.345, IoU 0.174, step AP 0.307, direction within 45 deg 60.8%
+2026-11-15 04:49:48 | 13 compare learned models with the simulator | all holdout, logistic_matched: recall 0.401, IoU 0.125, step AP 0.272, direction within 45 deg 57.9%
+2026-11-15 04:49:48 | 13 compare learned models with the simulator | all holdout, logistic_own: recall 0.323, IoU 0.149, step AP 0.272, direction within 45 deg 61.0%
+2026-11-15 04:49:48 | 13 compare learned models with the simulator | all holdout, mlp_matched: recall 0.383, IoU 0.120, step AP 0.252, direction within 45 deg 52.1%
+2026-11-15 04:49:48 | 13 compare learned models with the simulator | all holdout, mlp_own: recall 0.249, IoU 0.120, step AP 0.252, direction within 45 deg 54.7%
+2026-11-15 04:49:48 | 13 compare learned models with the simulator | all holdout, random_forest_matched: recall 0.444, IoU 0.144, step AP 0.309, direction within 45 deg 58.1%
+2026-11-15 04:49:48 | 13 compare learned models with the simulator | all holdout, random_forest_own: recall 0.380, IoU 0.175, step AP 0.309, direction within 45 deg 60.1%
+2026-11-15 04:49:48 | 13 compare learned models with the simulator | all holdout, simulator: recall 0.356, IoU 0.113, step AP 0.221, direction within 45 deg 53.0%
+2026-11-15 04:49:48 | 13 compare learned models with the simulator | all holdout, xgboost_hybrid_matched: recall 0.441, IoU 0.141, step AP 0.297, direction within 45 deg 54.8%
+2026-11-15 04:49:48 | 13 compare learned models with the simulator | all holdout, xgboost_hybrid_own: recall 0.346, IoU 0.168, step AP 0.297, direction within 45 deg 56.5%
+2026-11-15 04:49:48 | 13 compare learned models with the simulator | all holdout, xgboost_matched: recall 0.446, IoU 0.144, step AP 0.307, direction within 45 deg 55.3%
+2026-11-15 04:49:48 | 13 compare learned models with the simulator | all holdout, xgboost_own: recall 0.349, IoU 0.172, step AP 0.307, direction within 45 deg 57.7%
+2026-11-15 04:49:48 | 13 compare learned models with the simulator | DONE: wrote spread_models_v1_comparison.json and spread_models_v1_holdout_steps.csv

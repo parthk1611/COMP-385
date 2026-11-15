@@ -31,6 +31,7 @@ from __future__ import annotations
 import argparse
 import json
 import math
+from dataclasses import dataclass
 from datetime import UTC, datetime
 from multiprocessing import Pool
 
@@ -127,17 +128,37 @@ def score_step(case, layout: Layout, start: np.ndarray, active: np.ndarray, obse
     return result
 
 
-def replay_fire(fire_id: str, settings: Settings, keep_grids: bool = False):
-    """Score every usable step of one fire.  With `keep_grids`, also return what the viewer needs."""
-    case = load_case(fire_id, settings, _shared)
+@dataclass
+class Step:
+    """One pair of consecutive satellite observations of a fire, as both the simulator and the learned models see it.
+
+    Everything here is known at the first observation except `observed_new`, the cells first seen at the second.
+    """
+
+    case: object
+    layout: Layout
+    observation: int
+    next_observation: int
+    start_utc: pd.Timestamp
+    hours: float
+    start: np.ndarray  # 375 m cells burned by the first observation (gaps closed, holes filled)
+    active: np.ndarray  # stretch of that perimeter where flames were seen at the latest pass
+    observed_new: np.ndarray  # 375 m cells first seen burning at the second observation
+    usable: bool  # inside the scored step length and with enough new cells
+
+
+def iter_steps(fire_id: str, settings: Settings, include_unusable: bool = False, shared: dict | None = None):
+    """Yield every consecutive-observation step of one fire; scored steps only unless `include_unusable`."""
+    shared = _shared if shared is None else shared
+    case = load_case(fire_id, settings, shared)
     lookup = {key: index for index, key in enumerate(case.cell375_keys)}
     cells = case.arrival[[key in lookup for key in zip(case.arrival.cell_x, case.arrival.cell_y)]]
     cell_index = np.array([lookup[key] for key in zip(cells.cell_x, cells.cell_y)], dtype=int)
     first_seen = cells.first_observation.values
-    if "detections" not in _shared:
+    if "detections" not in shared:
         table = pd.read_csv(PROCESSED / "ontario_fire_spread_detections_v1.csv.gz", dtype={"fire_id": str}, usecols=["fire_id", "observation", "x", "y"])
-        _shared["detections"] = dict(tuple(table.groupby("fire_id")))
-    seen = _shared["detections"][fire_id]
+        shared["detections"] = dict(tuple(table.groupby("fire_id")))
+    seen = shared["detections"][fire_id]
     seen_keys = list(zip(np.floor(seen.x / CELL_375_M).astype(int), np.floor(seen.y / CELL_375_M).astype(int)))
     in_window = np.array([key in lookup for key in seen_keys])
     seen_index = np.array([lookup[key] for key, keep in zip(seen_keys, in_window) if keep], dtype=int)
@@ -145,9 +166,6 @@ def replay_fire(fire_id: str, settings: Settings, keep_grids: bool = False):
     times = case.observation_times
     layout = Layout(case.cell375_keys)
     square = np.ones((3, 3), dtype=bool)
-    rows = []
-    stitched = np.full(case.shape, np.inf, dtype=np.float32) if keep_grids else None
-    origin = times.iloc[0]
     for observation in times.index[:-1]:
         nxt = observation + 1
         if nxt not in times.index:
@@ -159,8 +177,8 @@ def replay_fire(fire_id: str, settings: Settings, keep_grids: bool = False):
         observed_new = np.zeros_like(start)
         observed_new[cell_index[first_seen == nxt]] = True
         observed_new &= ~start
-        usable = MIN_HOURS <= hours <= MAX_HOURS and observed_new.sum() >= MIN_NEW_CELLS and start.any()
-        if not usable and not keep_grids:
+        usable = bool(MIN_HOURS <= hours <= MAX_HOURS and observed_new.sum() >= MIN_NEW_CELLS and start.any())
+        if not usable and not include_unusable:
             continue
         # Fire spreads from the stretch of perimeter near where the last passes saw flames, not from
         # edges that burned out days ago.
@@ -170,15 +188,34 @@ def replay_fire(fire_id: str, settings: Settings, keep_grids: bool = False):
         active = edge & layout.flat(ndimage.binary_dilation(layout.grid(recent), structure=square, iterations=ACTIVE_REACH_CELLS))
         if not active.any():
             active = edge
-        burning = start[case.cell375]
-        arrival = simulate(case, burning, times[observation], min(hours, MAX_HOURS), settings, active=active[case.cell375])
+        yield Step(case, layout, int(observation), int(nxt), times[observation], hours, start, active, observed_new, usable)
+
+
+def simulate_step(step: Step, settings: Settings) -> np.ndarray:
+    """The simulator's arrival time (minutes, 90 m grid; infinity where not reached) over one step."""
+    return simulate(step.case, step.start[step.case.cell375], step.start_utc, min(step.hours, MAX_HOURS), settings, active=step.active[step.case.cell375])
+
+
+def replay_fire(fire_id: str, settings: Settings, keep_grids: bool = False):
+    """Score every usable step of one fire.  With `keep_grids`, also return what the viewer needs."""
+    rows = []
+    case = stitched = origin = None
+    for step in iter_steps(fire_id, settings, include_unusable=keep_grids):
+        if case is None:
+            case = step.case
+            stitched = np.full(case.shape, np.inf, dtype=np.float32) if keep_grids else None
+            origin = case.observation_times.iloc[0]
+        arrival = simulate_step(step, settings)
         reached = np.isfinite(arrival)
         if keep_grids:
-            since_origin = (times[observation] - origin).total_seconds() / 3600 + arrival / 60.0
+            since_origin = (step.start_utc - origin).total_seconds() / 3600 + arrival / 60.0
             stitched = np.minimum(stitched, np.where(reached, since_origin, np.inf).astype(np.float32))
-        if usable:
-            simulated_new = case.burned_375(reached, DETECTABLE_SHARE) & ~start
-            rows.append({"fire_id": fire_id, "from_observation": int(observation), "to_observation": int(nxt), "hours": round(hours, 2), **score_step(case, layout, start, active, observed_new, simulated_new)})
+        if step.usable:
+            simulated_new = case.burned_375(reached, DETECTABLE_SHARE) & ~step.start
+            rows.append({"fire_id": fire_id, "from_observation": step.observation, "to_observation": step.next_observation, "hours": round(step.hours, 2), **score_step(case, step.layout, step.start, step.active, step.observed_new, simulated_new)})
+    if keep_grids and case is None:  # a fire with a single observation still needs its grids for the viewer
+        case = load_case(fire_id, settings, _shared)
+        stitched = np.full(case.shape, np.inf, dtype=np.float32)
     return (rows, case, stitched) if keep_grids else rows
 
 

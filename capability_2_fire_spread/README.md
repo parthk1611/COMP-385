@@ -22,6 +22,8 @@ none of its columns may be used as ignition predictors.
 | `tests/` | Unit tests for the builders and the simulator |
 | `scripts/fbp_spread.py`, `scripts/simulate_spread.py` | The spread simulator: Canadian FBP rates of spread on a 90 m grid |
 | `scripts/run_spread_replay.py`, `data/processed/simulation/` | Tuning on 2012–2020 fires, scoring on 2021–2024 fires, and the results |
+| `docs/fire_spread_learned_models.md` | Ten learned spread models (logistic regression, random forest, neural networks, gradient boosting, a spatial CNN on the GPU) against the FBP simulator on 2021–2024 fires: method, results, limits |
+| `scripts/spread_ml.py`, `build_spread_ml_table.py`, `train_spread_models.py`, `spread_cnn.py`, `compare_spread_models.py` | The learned models: feature contract, per-cell table, training, the CNN, and the holdout comparison |
 | `viewer/fire_spread_viewer.html` | Interface: replay fires through the simulator on a zoomable map and compare with satellite passes |
 | `scripts/spread_basemap.py`, `data/raw/basemap/manifest.json` | The viewer's base map (Canada Base Map, Natural Resources Canada) and the record of what was fetched |
 | `docs/fire_spread_simulator.md` | How the simulator works, its scores and its limits |

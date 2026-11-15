@@ -8,3 +8,8 @@ pyproj
 Pillow
 matplotlib  # only for eda_fire_spread.py
 rasterio  # for download_spread_terrain_windows.py and build_spread_terrain_summary.py (windowed reads of the MRDEM cloud-optimised GeoTIFF), and for loading a fire's grids into the simulator
+scikit-learn  # learned spread models: train_spread_models.py, compare_spread_models.py
+joblib
+pyarrow  # the learned-model cell table is Parquet
+xgboost  # GPU gradient boosting (train_spread_models.py)
+torch  # the spatial CNN (spread_cnn.py); install a CUDA build to train on an NVIDIA GPU
