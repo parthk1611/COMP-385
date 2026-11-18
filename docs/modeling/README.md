@@ -66,14 +66,18 @@ past-only inputs. No operating threshold has been selected.
 ## Follow-up ignition experiment archive
 
 The [chronological experiment overview](../../experiments/ignition/README.md)
-explains the ten modelling investigations and two saved-prediction analyses.
-Each experiment has its own script, requirements, detailed historical
+explains eleven modelling investigations and two saved-prediction analyses.
+Each experiment has its own script, requirements, detailed recorded
 `results.json`, and readable report under `experiments/ignition/`.
 
 The retained development candidate is **coordinate HGB with 80 iterations,
 15 maximum leaves, minimum leaf size 100, learning rate 0.1 and L2 1**.
 The overview distinguishes that retained choice from the small, inconsistent
-numerical AP gain in the 24-hour-lightning ablation.
+numerical AP gain in the 24-hour-lightning ablation and the subsequent
+[Bayesian tuning experiment](../../experiments/ignition/bayesian/README.md).
+That history-seeded search completed 80 new fits and found a 1.28% relative
+mean-development-AP gain, with three yearly wins and two losses; it does not
+automatically replace the exported model or add independent test evidence.
 
 The follow-up scripts now use straightforward fresh-run orchestration instead
 of source fingerprints, protected-file inventories and checkpoint resumption.

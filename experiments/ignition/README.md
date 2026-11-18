@@ -7,8 +7,8 @@ at least one ignition occurs on a calendar day. It is not a fire-spread model.
 **Our retained project configuration is histogram gradient boosting (HGB) with
 cell-centre coordinates and 80 boosting iterations, using 15 maximum leaves.**
 The clearest retained changes were increasing the original 40-iteration HGB to
-80 iterations, then adding coordinates. Later investigations did not establish
-a sufficiently consistent improvement to replace that configuration.
+80 iterations, then adding coordinates. A new Bayesian search found a small
+development AP gain; it does not automatically replace the exported model.
 
 ## Shared evaluation context
 
@@ -28,7 +28,7 @@ a sufficiently consistent improvement to replace that configuration.
 ## Investigation history — chronological order
 
 The order below follows the work as it happened, rather than alphabetical
-folder order. There are **10 modelling-experiment groups and two analysis-only
+folder order. There are **11 modelling-experiment groups and two analysis-only
 investigations**. Percentage changes describe relative mean yearly AP against
 that investigation's stated baseline, not percentage-point gains.
 
@@ -46,6 +46,7 @@ that investigation's stated baseline, not percentage-point gains.
 | 10 | [Combined lightning features](lightning/README.md) | After auditing source availability and timing, added permitted trailing 24-hour and seven-day cloud-to-ground lightning densities. Stored development coverage was complete, but mean AP fell **2.91%**; only 2013 improved. Complete stored coverage does not establish detector uptime. |
 | 11 | [Separate lightning-window ablations](lightning_windows/README.md) | Tested 24-hour-only and seven-day-only inputs separately. The 24-hour variant achieved **0.77% higher** mean AP, driven by 2013 while the other four years worsened; seven-day only lost **5.90%**. We did not promote the small, uneven numerical winner as an established improvement. |
 | 12 | [Lightning diagnosis — analysis only](lightning_diagnosis/README.md) | Checked natural/human cause groups, permitted exposure and paired global daily ranks. Only **17.2%** of natural-only positive cell-days had 24-hour exposure and **52.7%** had seven-day exposure. Recent-exposure rank gains were modest, not a large hidden natural-fire benefit cancelled by human-fire losses. No new models were fitted. |
+| 13 | [History-seeded Bayesian HGB optimization](bayesian/README.md) | Initialized multivariate TPE with the baseline and 16 comparable historical trials, then evaluated 16 new configurations (80 fits). B9 achieved mean AP **0.007055028**, **1.28% higher** than the retained coordinate baseline, improving three years and worsening two. It is the experiment's numerical winner, not an automatic replacement for the exported model or independent generalization evidence. |
 
 ## Retained configuration and conclusion
 
@@ -60,15 +61,16 @@ indicator, this gives 38 raw predictors and 39 transformed HGB inputs.
 - Recorded mean development AP: **0.006965525**.
 
 **Retained choice does not mean strict numerical winner across every trial.**
-The 24-hour-lightning variant recorded mean AP **0.007019494**, slightly higher
-than coordinate-only HGB, but its improvement was small and concentrated in one
-year. We retained the simpler coordinate/80-iteration HGB for this project;
-these reused development results do not establish statistical significance or
-universal superiority over other models.
+The 24-hour-lightning variant improved mean AP slightly but benefited only one
+year. The subsequent Bayesian search found a higher coordinate-only score with
+three improving years and two declining years. Neither experiment automatically
+replaces the exported coordinate/80-iteration HGB; reused development results
+do not establish statistical significance or universal model superiority.
 
 The experiments support a limited risk-ranking use, not reliable prediction of
-individual ignitions. Further model complexity and the tested feature additions
-did not establish a consistent upgrade within this project's scope. The original
+individual ignitions. Most extra complexity and the tested feature additions
+did not establish a consistent upgrade; Bayesian tuning added a small numerical
+gain requiring cautious interpretation. The original
 frozen model and evaluation artifacts remain unchanged. A separate **2010–2016
 development refit** of the retained configuration is now available as a
 [verified model pickle](coordinates/README.md#saved-model-pickle); exporting it
@@ -104,7 +106,7 @@ staged iteration scores and preprocessing. A one-iteration chronological search
 adapter probe also matched all 1,779,832 validation probabilities exactly.
 Both saved-prediction analyses reproduced their original aggregate results.
 
-All twelve command entry points were exercised. Archived results, core pipeline
+All twelve original command entry points were exercised. Archived results, core pipeline
 files and the selected model pickle remained unchanged. These are refactor
 parity checks, not new performance claims: the complete tuning searches were
 not rerun and no 2017–2019 fitting or scoring was introduced.
