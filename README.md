@@ -37,5 +37,7 @@ analysis. Its 36 recommended source predictors are recorded in
 The second AI capability, wind-driven fire spread, has its own folder:
 [`capability_2_fire_spread/`](capability_2_fire_spread/README.md). It holds a
 separate dataset of 752 Ontario fires from 2012–2025 with their growth rebuilt
-from satellite passes, hourly wind and fire-weather codes, fuel and terrain.
-It is a replay set for the spread simulator and is never an ignition input.
+from satellite passes, hourly wind and fire-weather codes, fuel and terrain,
+the Canadian FBP spread simulator, and ten learned models compared with it on
+2021–2024 fires. Its README gives the results of every experiment. It is never
+an ignition input.

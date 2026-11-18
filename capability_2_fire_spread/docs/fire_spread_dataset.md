@@ -226,5 +226,5 @@ python scripts/validate_spread_master.py
 python -m unittest discover -s tests -v
 ```
 
-Every script appends what it did, with counts, to
-`logs/fire_spread_build_log.txt`.
+Every script prints what it did, with counts, as it runs; the audit JSON files
+under `data/` keep the counts that matter.

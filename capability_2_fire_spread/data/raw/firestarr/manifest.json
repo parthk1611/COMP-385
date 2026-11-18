@@ -1,0 +1,13 @@
+{
+  "source_name": "FireSTARR fire growth model",
+  "publisher": "Canadian Wildland Fire Modelling Framework (CWFMF); originally the fire growth model of Ontario's FireGUARD",
+  "repository": "https://github.com/CWFMF/FireSTARR",
+  "version": "v0.9.29",
+  "release_date": "2026-10-23",
+  "asset": "firestarr-windows-x64-cl-Release.zip",
+  "url": "https://github.com/CWFMF/FireSTARR/releases/download/v0.9.29/firestarr-windows-x64-cl-Release.zip",
+  "bytes": 7309808,
+  "sha256": "5457336e452312eaa5e1123d018b34af28f321c5a3a1074b2d5b435c44c81427",
+  "license": "AGPL-3.0-or-later, with the added condition that covered works include ORIGIN.md (credits); this project runs the release and does not redistribute it",
+  "downloaded_at_utc": "2026-11-17T19:46:00+00:00"
+}

@@ -1,44 +1,41 @@
-<title>Fire Spread Replay</title>
+<meta charset="utf-8">
+<title>Fire Spread: AI vs Physics</title>
 <style>
-  /* Look: a weather-app precipitation map. A real base map you can drag and zoom, muted so the data stands out;
-     the simulated fire as a soft blue-to-purple radar layer; frosted controls on the map; grouped cards beside it. */
+  /* Series colours are the first two slots of the validated categorical palette (blue, orange), checked for
+     colour-vision separation and contrast in both modes.  Actual new burning uses the reserved status colours:
+     green (good) where the shown model predicted it, red (critical) where it missed.  Missed squares also carry
+     a white cross, so the two never differ by colour alone. */
   :root {
     --bg: #f2f2f7; --surface: #ffffff; --fg: #1c1c1e; --muted: #636366; --border: #d1d1d6; --hair: rgba(60, 60, 67, 0.16); --accent: #0071e3;
     --track: #e4e4ea; --thumb: #ffffff; --glass: rgba(255, 255, 255, 0.8); --glass-edge: rgba(0, 0, 0, 0.1);
-    --map-mode: light; --map-void: #e6e6eb; --map-veil: rgba(255, 255, 255, 0.3);
-    --map-water: #b9d6ee; --map-nonfuel: #e4e2dc; --map-conifer: #9fc48d; --map-mixed: #c3d68a; --map-decid: #e3d98a; --map-open: #ecc98f;
-    --r1: #6ac4ff; --r2: #2a8cff; --r3: #2456e8; --r4: #6b34d9; --r5: #c034c0;
-    --burned: #3a3a3c; --hit: #1f8a3b; --miss: #c2410c; --cell-edge: rgba(255, 255, 255, 0.9); --pin: #ff3b30;
+    --map-mode: light; --map-void: #e6e6eb; --map-veil: rgba(255, 255, 255, 0.3); --grid: #e5e5ea;
+    --burned: #3a3a3c; --cnn: #2a78d6; --fbp: #eb6834; --hit: #0ca30c; --miss: #d03b3b; --cell-edge: rgba(255, 255, 255, 0.9); --pin: #ff3b30;
     --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
   }
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) {
       --bg: #000000; --surface: #1c1c1e; --fg: #f5f5f7; --muted: #98989f; --border: #38383a; --hair: rgba(84, 84, 88, 0.6); --accent: #0a84ff;
       --track: #2c2c2e; --thumb: #636366; --glass: rgba(30, 30, 32, 0.74); --glass-edge: rgba(255, 255, 255, 0.14);
-      --map-mode: dark; --map-void: #0c0c0e; --map-veil: rgba(0, 0, 0, 0.12);
-      --map-water: #16324d; --map-nonfuel: #2a2b2e; --map-conifer: #2c5a3a; --map-mixed: #4d6130; --map-decid: #6b6430; --map-open: #7a5a30;
-      --r1: #7fd0ff; --r2: #2f95ff; --r3: #2c5cff; --r4: #7d42f5; --r5: #e04ad6;
-      --burned: #e5e5ea; --hit: #30d158; --miss: #ffd60a; --cell-edge: rgba(0, 0, 0, 0.55); --pin: #ff453a;
+      --map-mode: dark; --map-void: #0c0c0e; --map-veil: rgba(0, 0, 0, 0.12); --grid: #2c2c2e;
+      --burned: #e5e5ea; --cnn: #3987e5; --fbp: #d95926; --hit: #0ca30c; --miss: #d03b3b; --cell-edge: rgba(0, 0, 0, 0.55); --pin: #ff453a;
       color-scheme: dark;
     }
   }
   :root[data-theme="dark"] {
     --bg: #000000; --surface: #1c1c1e; --fg: #f5f5f7; --muted: #98989f; --border: #38383a; --hair: rgba(84, 84, 88, 0.6); --accent: #0a84ff;
     --track: #2c2c2e; --thumb: #636366; --glass: rgba(30, 30, 32, 0.74); --glass-edge: rgba(255, 255, 255, 0.14);
-    --map-mode: dark; --map-void: #0c0c0e; --map-veil: rgba(0, 0, 0, 0.12);
-    --map-water: #16324d; --map-nonfuel: #2a2b2e; --map-conifer: #2c5a3a; --map-mixed: #4d6130; --map-decid: #6b6430; --map-open: #7a5a30;
-    --r1: #7fd0ff; --r2: #2f95ff; --r3: #2c5cff; --r4: #7d42f5; --r5: #e04ad6;
-    --burned: #e5e5ea; --hit: #30d158; --miss: #ffd60a; --cell-edge: rgba(0, 0, 0, 0.55); --pin: #ff453a;
+    --map-mode: dark; --map-void: #0c0c0e; --map-veil: rgba(0, 0, 0, 0.12); --grid: #2c2c2e;
+    --burned: #e5e5ea; --cnn: #3987e5; --fbp: #d95926; --hit: #0ca30c; --miss: #d03b3b; --cell-edge: rgba(0, 0, 0, 0.55); --pin: #ff453a;
     color-scheme: dark;
   }
   * { box-sizing: border-box; }
   [hidden] { display: none !important; }
-  body { background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 15px; line-height: 1.4; -webkit-font-smoothing: antialiased; }
-  .page { max-width: 1180px; margin: 0 auto; padding-block: 24px 44px; padding-inline: 16px; display: flex; flex-direction: column; gap: 18px; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--sans); font-size: 15px; line-height: 1.4; -webkit-font-smoothing: antialiased; }
+  .page { max-width: 1180px; margin: 0 auto; padding: 24px 16px 44px; display: flex; flex-direction: column; gap: 18px; }
   h1 { font-size: 30px; font-weight: 700; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
   h2 { font-size: 13px; font-weight: 600; color: var(--muted); margin: 0; }
   p { margin: 0; }
-  .lede { color: var(--muted); max-width: 68ch; }
+  .lede { color: var(--muted); max-width: 72ch; }
   .controls { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: end; }
   .field { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
   .field label, .field .label { font-size: 13px; color: var(--muted); }
@@ -47,8 +44,9 @@
   .segmented { display: inline-flex; flex-wrap: wrap; gap: 2px; padding: 2px; border-radius: 10px; background: var(--track); }
   .segmented button { border: 0; background: transparent; padding: 6px 14px; border-radius: 8px; cursor: pointer; }
   .segmented button[aria-pressed="true"] { background: var(--thumb); font-weight: 600; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.16), 0 0 0 0.5px rgba(0, 0, 0, 0.06); }
-  button:focus-visible, select:focus-visible, input:focus-visible, tr:focus-visible, canvas:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-  .workspace { display: grid; grid-template-columns: minmax(0, 1fr) 310px; gap: 16px; align-items: start; }
+  button:focus-visible, select:focus-visible, input:focus-visible, canvas:focus-visible, svg:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .key { display: inline-block; width: 14px; height: 3px; border-radius: 2px; vertical-align: middle; margin-right: 6px; }
+  .workspace { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 16px; align-items: start; }
   .card { background: var(--surface); border-radius: 16px; }
   .map-panel { overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
   .map-title { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 16px; padding: 12px 16px; }
@@ -61,11 +59,6 @@
     position: absolute; background: var(--glass); border: 0.5px solid var(--glass-edge); border-radius: 12px; font-size: 12px;
     -webkit-backdrop-filter: blur(18px) saturate(180%); backdrop-filter: blur(18px) saturate(180%); box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
   }
-  .ramp-chip { top: 10px; left: 10px; width: 190px; max-width: calc(100% - 76px); display: grid; gap: 5px; padding: 8px 10px; pointer-events: none; }
-  .chip-title { font-weight: 600; }
-  .ramp { height: 6px; border-radius: 3px; background: linear-gradient(90deg, var(--r5), var(--r4), var(--r3), var(--r2), var(--r1)); }
-  .ramp-labels { position: relative; height: 14px; color: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
-  .ramp-labels span { position: absolute; top: 0; white-space: nowrap; }
   .zoom { top: 10px; right: 10px; display: grid; overflow: hidden; }
   .zoom button { width: 36px; height: 36px; border: 0; background: transparent; display: grid; place-items: center; cursor: pointer; padding: 0; }
   .zoom button + button { border-top: 0.5px solid var(--hair); }
@@ -73,55 +66,55 @@
   .north text { font: 700 8px var(--sans); fill: var(--fg); }
   .scale-chip { left: 10px; bottom: 10px; padding: 5px 8px; display: grid; gap: 3px; font-variant-numeric: tabular-nums; pointer-events: none; }
   .scale-chip i { display: block; height: 3px; border-radius: 2px; background: var(--fg); }
+  .phase-chip { top: 10px; left: 10px; padding: 6px 10px; font-size: 13px; font-weight: 600; pointer-events: none; }
   .credit { right: 10px; bottom: 10px; padding: 3px 7px; border-radius: 8px; font-size: 10px; color: var(--muted); max-width: calc(100% - 150px); pointer-events: none; }
-  .scrubber { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 10px 16px; border-top: 0.5px solid var(--hair); }
+  .player { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 10px 16px 12px; border-top: 0.5px solid var(--hair); }
   .play { width: 36px; height: 36px; border-radius: 50%; border: 0; background: var(--accent); color: #ffffff; display: grid; place-items: center; cursor: pointer; padding: 0; }
-  .scrubber output { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .player output { color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; white-space: nowrap; }
   input[type="range"] { -webkit-appearance: none; appearance: none; width: 100%; height: 28px; margin: 0; background: transparent; cursor: pointer; }
-  input[type="range"]::-webkit-slider-runnable-track { height: 4px; border-radius: 2px; background: linear-gradient(90deg, var(--accent) var(--p, 100%), var(--track) var(--p, 100%)); }
+  input[type="range"]::-webkit-slider-runnable-track { height: 4px; border-radius: 2px; background: linear-gradient(90deg, var(--accent) var(--p, 0%), var(--track) var(--p, 0%)); }
   input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; margin-top: -9px; border-radius: 50%; background: #ffffff; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35), 0 0 0 0.5px rgba(0, 0, 0, 0.12); }
   input[type="range"]::-moz-range-track { height: 4px; border-radius: 2px; background: var(--track); }
   input[type="range"]::-moz-range-progress { height: 4px; border-radius: 2px; background: var(--accent); }
   input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; border: 0; border-radius: 50%; background: #ffffff; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35), 0 0 0 0.5px rgba(0, 0, 0, 0.12); }
-  .step-nav { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; padding: 0 16px 10px; }
-  .step-nav button { background: var(--track); border: 0; border-radius: 999px; padding: 6px 14px; cursor: pointer; }
-  .step-nav span { font-size: 13px; color: var(--muted); }
-  .map-hint { padding: 0 16px 14px; font-size: 13px; color: var(--muted); }
   .side { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
   .block { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
   .block > h2 { padding-inline: 16px; }
   .side .card { padding: 6px 16px; }
-  .wind { display: flex; gap: 12px; align-items: center; padding: 8px 0; border-bottom: 0.5px solid var(--hair); }
-  .wind svg { flex: none; }
-  .wind svg text { font: 600 9px var(--sans); fill: var(--muted); }
-  .wind-text { font-size: 22px; font-weight: 600; font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
-  .wind-text small { display: block; color: var(--muted); font-size: 13px; font-weight: 400; letter-spacing: 0; }
   dl { display: grid; grid-template-columns: minmax(0, 1fr) auto; margin: 0; }
   dt, dd { padding: 9px 0; border-bottom: 0.5px solid var(--hair); }
-  dt { color: var(--fg); }
   dd { margin: 0; color: var(--muted); font-variant-numeric: tabular-nums; text-align: right; padding-left: 12px; }
   dl dt:last-of-type, dl dd:last-of-type { border-bottom: 0; }
+  dd strong { color: var(--fg); font-weight: 600; }
   .legend { display: grid; }
   .legend > div { display: flex; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 0.5px solid var(--hair); font-size: 14px; }
   .legend > div:last-child { border-bottom: 0; }
   .swatch { width: 16px; height: 16px; border-radius: 4px; flex: none; }
-  .swatch.ground { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -1px; border: 0.5px solid var(--glass-edge); }
-  .note { font-size: 13px; color: var(--muted); padding-inline: 16px; }
-  .legend .note { padding-inline: 0; display: block; line-height: 1.8; }
   .scores { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-  .score { padding: 14px 16px; }
-  .score b { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; display: block; }
-  .score span { color: var(--muted); font-size: 14px; }
-  .table-wrap { overflow-x: auto; }
+  .score { padding: 14px 16px; display: grid; gap: 6px; }
+  .score .pair { display: flex; gap: 6px 18px; align-items: baseline; flex-wrap: wrap; }
+  .score b { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+  .score small { color: var(--muted); font-size: 13px; }
+  .score > span { color: var(--muted); font-size: 14px; }
+  .chart-card { padding: 14px 16px 10px; display: grid; gap: 8px; }
+  .chart-legend { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 13px; color: var(--muted); }
+  .chart-wrap { position: relative; }
+  .chart-wrap svg { display: block; width: 100%; height: 240px; overflow: visible; cursor: pointer; }
+  .chart-wrap text { font: 12px var(--sans); fill: var(--muted); font-variant-numeric: tabular-nums; }
+  .chart-wrap text.end { fill: var(--fg); font-weight: 600; }
+  .tip {
+    position: absolute; top: 0; pointer-events: none; background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.16); padding: 8px 10px; font-size: 13px; white-space: nowrap; display: grid; gap: 2px; font-variant-numeric: tabular-nums;
+  }
+  .tip strong { font-weight: 600; }
+  details { font-size: 14px; }
+  summary { cursor: pointer; color: var(--accent); padding: 4px 0; }
+  .table-wrap { overflow-x: auto; margin-top: 6px; }
   table { border-collapse: collapse; width: 100%; font-size: 14px; }
-  th, td { padding: 9px 12px; text-align: right; white-space: nowrap; border-bottom: 0.5px solid var(--hair); font-variant-numeric: tabular-nums; }
+  th, td { padding: 8px 12px; text-align: right; white-space: nowrap; border-bottom: 0.5px solid var(--hair); font-variant-numeric: tabular-nums; }
   th { font-weight: 500; color: var(--muted); font-size: 12px; }
   th:first-child, td:first-child, th:nth-child(2), td:nth-child(2) { text-align: left; }
-  th:first-child, td:first-child { padding-left: 16px; }
-  th:last-child, td:last-child { padding-right: 16px; }
-  tbody tr { cursor: pointer; }
   tbody tr:last-child td { border-bottom: 0; }
-  tbody tr[aria-selected="true"] { background: color-mix(in srgb, var(--accent) 16%, transparent); }
   @media (max-width: 860px) {
     .workspace { grid-template-columns: minmax(0, 1fr); }
     .scores { grid-template-columns: minmax(0, 1fr); }
@@ -129,17 +122,21 @@
   @media (max-width: 520px) {
     h1 { font-size: 26px; }
     .map-wrap { aspect-ratio: 1 / 1; }
-    .scrubber { grid-template-columns: auto minmax(0, 1fr); }
-    .scrubber output { grid-column: 1 / -1; }
-    .ramp-chip { width: 150px; }
+    .player { grid-template-columns: auto minmax(0, 1fr); }
+    .player output { grid-column: 1 / -1; }
   }
 </style>
 
 <div class="page">
   <header class="block">
-    <h1>Fire Spread Replay</h1>
-    <p class="lede">Real Ontario wildfires run through the wind-driven spread simulator. Each step starts from where satellites last saw the fire, runs forward on that day's wind and fuel moisture, and is then compared with what the next satellite pass saw.</p>
+    <h1>Fire Spread: AI vs Physics</h1>
+    <p class="lede">Ontario wildfires from 2021 to 2024 that neither model saw while it was built. At each step, both the AI model (a CNN) and the FBP physics simulator start from where satellites last saw the fire and predict the same number of 375 m cells. The next satellite pass then shows where the fire actually spread.</p>
   </header>
+
+  <section class="block">
+    <h2 id="summary-heading"></h2>
+    <div class="scores" id="scores"></div>
+  </section>
 
   <div class="controls">
     <div class="field">
@@ -147,17 +144,10 @@
       <select id="fire-select"></select>
     </div>
     <div class="field">
-      <span class="label" id="mode-label">View</span>
-      <div class="segmented" role="group" aria-labelledby="mode-label">
-        <button type="button" id="mode-replay" aria-pressed="true">Replay between satellite passes</button>
-        <button type="button" id="mode-ignition" aria-pressed="false">First 6 hours from ignition</button>
-      </div>
-    </div>
-    <div class="field">
-      <span class="label" id="ground-label">Ground</span>
-      <div class="segmented" role="group" aria-labelledby="ground-label">
-        <button type="button" id="ground-map" aria-pressed="true">Map</button>
-        <button type="button" id="ground-fuel" aria-pressed="false">Fuel types</button>
+      <span class="label" id="model-label">Show the prediction of</span>
+      <div class="segmented" role="group" aria-labelledby="model-label">
+        <button type="button" id="model-cnn" aria-pressed="true">AI model (CNN)</button>
+        <button type="button" id="model-fbp" aria-pressed="false">FBP simulator</button>
       </div>
     </div>
   </div>
@@ -166,12 +156,8 @@
     <section class="card map-panel" aria-label="Map">
       <div class="map-title"><strong id="map-heading"></strong><span id="map-clock"></span></div>
       <div class="map-wrap">
-        <canvas id="map" tabindex="0" role="img" aria-label="Map of simulated and observed fire spread. Drag to move, use the zoom buttons or the plus and minus keys to zoom."></canvas>
-        <div class="chip ramp-chip">
-          <span class="chip-title">Simulated spread</span>
-          <span class="ramp" aria-hidden="true"></span>
-          <span class="ramp-labels" id="ramp-labels"></span>
-        </div>
+        <canvas id="map" tabindex="0" role="img" aria-label="Map of predicted and actual fire spread. Drag to move, use the zoom buttons or the plus and minus keys to zoom."></canvas>
+        <div class="chip phase-chip" id="phase" aria-live="polite"></div>
         <div class="chip zoom" role="group" aria-label="Map zoom">
           <button type="button" id="zoom-in" aria-label="Zoom in"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3 8h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg></button>
           <button type="button" id="zoom-out" aria-label="Zoom out"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg></button>
@@ -183,68 +169,26 @@
         <div class="chip scale-chip" aria-hidden="true"><span id="scale-text"></span><i id="scale-line"></i></div>
         <div class="chip credit" id="credit" hidden></div>
       </div>
-      <div class="scrubber">
+      <div class="player">
         <button type="button" class="play" id="play" aria-label="Play"></button>
-        <input type="range" id="hour" min="0" max="200" step="1" value="200" aria-label="Time within the step">
-        <output id="hour-label" for="hour"></output>
+        <input type="range" id="step-range" min="0" max="1" step="1" value="0" aria-label="Step">
+        <output id="step-label" for="step-range"></output>
       </div>
-      <div class="step-nav" id="step-nav">
-        <button type="button" id="step-prev">Previous step</button>
-        <button type="button" id="step-next">Next step</button>
-        <span id="step-label"></span>
-      </div>
-      <p class="map-hint">Drag to move the map. Zoom with the buttons, a pinch, or Ctrl + scroll.</p>
     </section>
 
     <aside class="side">
       <div class="block">
-        <h2>Wind and fuel moisture</h2>
-        <div class="card">
-          <div class="wind">
-            <svg width="56" height="56" viewBox="-32 -32 64 64" aria-hidden="true">
-              <circle r="29" fill="none" stroke="var(--border)" stroke-width="1.5"></circle>
-              <g id="wind-north"><text y="-19" text-anchor="middle">N</text></g>
-              <g id="wind-arrow"><path d="M0 16 L0 -12 M-6 -5 L0 -13 L6 -5" fill="none" stroke="var(--fg)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path></g>
-            </svg>
-            <div class="wind-text"><span id="wind-speed"></span><small id="wind-from"></small></div>
-          </div>
-          <dl>
-            <dt>Fine Fuel Moisture Code</dt><dd id="c-ffmc"></dd>
-            <dt>Buildup Index</dt><dd id="c-bui"></dd>
-            <dt>Warmest hour</dt><dd id="c-temp"></dd>
-            <dt>Driest hour</dt><dd id="c-rh"></dd>
-          </dl>
-        </div>
-        <p class="note">The arrow points where the wind pushes the fire, turned to match the map.</p>
-      </div>
-
-      <div class="block" id="step-block">
-        <h2>This step against the next pass</h2>
+        <h2>This step</h2>
         <div class="card">
           <dl>
-            <dt>New cells the pass saw</dt><dd id="s-observed"></dd>
-            <dt>Reached by the simulator</dt><dd id="s-recall"></dd>
-            <dt>Reached by even growth</dt><dd id="s-even"></dd>
-            <dt>Head ran, observed</dt><dd id="s-dobs"></dd>
-            <dt>Head ran, simulated</dt><dd id="s-dsim"></dd>
-            <dt>Direction off by</dt><dd id="s-dir"></dd>
+            <dt>Time to the next pass</dt><dd id="s-hours"></dd>
+            <dt>Wind</dt><dd id="s-wind"></dd>
+            <dt>Newly burning cells seen</dt><dd id="s-observed"></dd>
+            <dt><span class="key" style="background:var(--cnn)"></span>AI model predicted</dt><dd id="s-cnn"></dd>
+            <dt><span class="key" style="background:var(--fbp)"></span>Simulator predicted</dt><dd id="s-fbp"></dd>
           </dl>
         </div>
-        <p class="note">Even growth spreads the same area equally in all directions from the same stretch of fire edge. It is the bar the simulator has to beat.</p>
       </div>
-
-      <div class="block" id="ignition-block" hidden>
-        <h2>From the reported ignition point</h2>
-        <div class="card">
-          <dl>
-            <dt>After 1 hour</dt><dd id="i-1"></dd>
-            <dt>After 3 hours</dt><dd id="i-3"></dd>
-            <dt>After 6 hours</dt><dd id="i-6"></dd>
-          </dl>
-        </div>
-        <p class="note" id="ignition-note"></p>
-      </div>
-
       <div class="block">
         <h2>Map key</h2>
         <div class="card"><div class="legend" id="legend"></div></div>
@@ -252,20 +196,24 @@
     </aside>
   </div>
 
-  <section class="block" id="steps-section">
-    <h2>Every scored step of this fire</h2>
-    <div class="card table-wrap">
-      <table>
-        <thead><tr><th>Step</th><th>Starts (local)</th><th>Hours</th><th>New cells seen</th><th>Simulator reached</th><th>Even growth reached</th><th>Head ran, observed</th><th>Head ran, simulated</th><th>Direction off by</th></tr></thead>
-        <tbody id="steps-body"></tbody>
-      </table>
-    </div>
-  </section>
-
   <section class="block">
-    <h2>How the simulator scores on fires it was not tuned on</h2>
-    <div class="scores" id="scores"></div>
-    <p class="note" id="scores-note"></p>
+    <h2>How much of the actual new burning each model predicted, step by step</h2>
+    <div class="card chart-card">
+      <div class="chart-legend"><span><span class="key" style="background:var(--cnn)"></span>AI model (CNN)</span><span><span class="key" style="background:var(--fbp)"></span>FBP simulator</span><span>Click a step to show it on the map</span></div>
+      <div class="chart-wrap" id="chart-wrap">
+        <svg id="chart" tabindex="0" role="img" aria-label="Line chart: for each step, the percentage of the actual newly burning cells that each model predicted."></svg>
+        <div class="tip" id="tip" hidden></div>
+      </div>
+      <details>
+        <summary>Show as a table</summary>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Step</th><th>Starts (local)</th><th>Hours</th><th>New cells seen</th><th>AI model predicted</th><th>Simulator predicted</th></tr></thead>
+            <tbody id="steps-body"></tbody>
+          </table>
+        </div>
+      </details>
+    </div>
   </section>
 </div>
 
@@ -275,13 +223,15 @@
   const DATA = window.SPREAD_VIEWER_DATA;
   const $ = (id) => document.getElementById(id);
   const canvas = $("map"), ctx = canvas.getContext("2d");
-  const state = { fire: 0, mode: "replay", ground: "map", step: 0, hour: 0, playing: false, timer: null, sized: false, queued: false };
-  const cam = { x: 0, y: 0, k: 1 };  // the grid cell at the centre of the map, and canvas pixels per 90 m cell
-  const cache = new Map(), memo = {}, touches = new Map();
+  const state = { fire: 0, model: "cnn", step: 0, reveal: true, playing: false, timer: null, hover: null, sized: false, queued: false };
+  const cam = { x: 0, y: 0, k: 1 };  // the 90 m grid position at the centre of the map, and canvas pixels per 90 m cell
+  const cache = new Map(), touches = new Map();
   const COMPASS = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
-  const GROUND_TOKENS = ["--map-water", "--map-nonfuel", "--map-conifer", "--map-mixed", "--map-decid", "--map-open"];
-  const RAMP_TOKENS = ["--r5", "--r4", "--r3", "--r2", "--r1"];  // reached first -> reached last
   const SCALE_BARS = [50000, 20000, 10000, 5000, 2000, 1000, 500, 200, 100, 50];  // metres
+  const NAMES = { cnn: "AI model (CNN)", fbp: "FBP simulator" };
+  const SERIES = [["cnn", "cnnRecall", "AI model"], ["fbp", "fbpRecall", "Simulator"]];
+  const PREDICT_MS = 1000, REVEAL_MS = 1300;  // how long each step shows the prediction, then the answer
+  const REDUCED_MOTION = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const ICONS = {
     play: '<svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3.5 1.5v11l9-5.5z" fill="currentColor"></path></svg>',
     pause: '<svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 2h3v10H3zM8 2h3v10H8z" fill="currentColor"></path></svg>',
@@ -293,13 +243,13 @@
     return out.buffer;
   }
   function token(name) { return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
-  function rgb(hex) { const n = parseInt(hex.slice(1), 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; }
-  function number(value, digits) { return value == null ? "none" : value.toLocaleString("en-CA", { maximumFractionDigits: digits || 0 }); }
-  function percent(value) { return value == null ? "none" : Math.round(value * 100) + "%"; }
+  function number(value, digits) { return value.toLocaleString("en-CA", { maximumFractionDigits: digits || 0 }); }
+  function percent(value) { return Math.round(value * 100) + "%"; }
   function clamp(value, low, high) { return Math.max(low, Math.min(high, value)); }
   function ratio() { return window.devicePixelRatio || 1; }
+  function fireNow() { return DATA.fires[state.fire]; }
 
-  // A base-map picture loads in the background; the map is redrawn when it is ready.
+  // ---- base map ----
   function picture(source) {
     if (!source) return null;
     const item = { image: new Image(), ready: false, dark: null };
@@ -330,58 +280,34 @@
 
   function prepare(index) {
     if (cache.has(index)) return cache.get(index);
-    const fire = DATA.fires[index], pixel = fire.pixel, size = DATA.settings.cell375;
-    const cellX = new Int32Array(bytes(fire.cellX)), cellY = new Int32Array(bytes(fire.cellY));
-    const key = (x, y) => x + "," + y, lookup = new Map();
-    for (let i = 0; i < cellX.length; i++) lookup.set(key(cellX[i], cellY[i]), i);
-    // which 375 m cell each 90 m cell belongs to
-    const owner = new Int32Array(fire.rows * fire.columns), total = new Uint16Array(cellX.length);
-    for (let r = 0; r < fire.rows; r++) {
-      const y = Math.floor((fire.north - (r + 0.5) * pixel) / size);
-      for (let c = 0; c < fire.columns; c++) {
-        const i = lookup.get(key(Math.floor((fire.west + (c + 0.5) * pixel) / size), y));
-        owner[r * fire.columns + c] = i === undefined ? -1 : i;
-        if (i !== undefined) total[i]++;
-      }
-    }
+    const fire = DATA.fires[index];
+    const list = (text) => new Uint32Array(bytes(text));
     const item = {
-      fire, cellX, cellY, owner, total,
-      fuel: new Uint8Array(bytes(fire.fuel)),
-      firstDetected: new Uint16Array(bytes(fire.firstDetected)),
-      firstInArea: new Uint16Array(bytes(fire.firstInArea)),
-      steps: fire.steps.map((s) => ({ cells: new Uint32Array(bytes(s.cells)), minutes: new Uint16Array(bytes(s.minutes)) })),
-      ignition: fire.ignition ? { cells: new Uint32Array(bytes(fire.ignition.cells)), minutes: new Uint16Array(bytes(fire.ignition.minutes)) } : null,
-      maps: { window: picture(fire.basemap && fire.basemap.src), detail: picture(fire.ignition && fire.ignition.basemap && fire.ignition.basemap.src) },
+      fire, cellX: new Int32Array(bytes(fire.cellX)), cellY: new Int32Array(bytes(fire.cellY)), map: picture(fire.basemap && fire.basemap.src),
+      steps: fire.steps.map((s) => ({ burned: list(s.burned), observed: list(s.observed), cnn: new Set(list(s.cnn)), fbp: new Set(list(s.fbp)) })),
     };
-    // the part of the window the satellite record covers, with room around it: where the map opens
+    // the box the fire's steps cover, with room around it: where the map opens
     let c0 = Infinity, r0 = Infinity, c1 = -Infinity, r1 = -Infinity;
-    for (let i = 0; i < cellX.length; i++) {
-      if (!item.firstDetected[i] && !item.firstInArea[i]) continue;
-      const [x, y, s] = rect375(item, i);
-      c0 = Math.min(c0, x); r0 = Math.min(r0, y); c1 = Math.max(c1, x + s); r1 = Math.max(r1, y + s);
+    for (const s of item.steps) for (const group of [s.burned, s.observed, s.cnn, s.fbp]) for (const i of group) {
+      const [x, y, size] = rect375(item, i);
+      c0 = Math.min(c0, x); r0 = Math.min(r0, y); c1 = Math.max(c1, x + size); r1 = Math.max(r1, y + size);
     }
     const room = Math.max(8, 0.15 * Math.max(c1 - c0, r1 - r0));
-    item.home = c0 === Infinity ? { c0: 0, r0: 0, c1: fire.columns, r1: fire.rows }
-      : { c0: Math.max(0, c0 - room), r0: Math.max(0, r0 - room), c1: Math.min(fire.columns, c1 + room), r1: Math.min(fire.rows, r1 + room) };
+    item.home = { c0: c0 - room, r0: r0 - room, c1: c1 + room, r1: r1 + room };
     cache.set(index, item);
     return item;
   }
-
+  // a 375 m cell as [column, row, size] on the 90 m grid the map is laid out on
   function rect375(item, i) {
     const fire = item.fire, size = DATA.settings.cell375;
     return [(item.cellX[i] * size - fire.west) / fire.pixel, (fire.north - (item.cellY[i] + 1) * size) / fire.pixel, size / fire.pixel];
   }
 
   // ---- where the map is looking ----
-  function corners(b) { return { c0: b.c0, r0: b.r0, c1: b.c0 + b.columns, r1: b.r0 + b.rows }; }
-  // the box the map may show (as far as its ground reaches), and the box it opens on
   function extent(item) {
-    const fire = item.fire;
-    if (state.mode === "ignition" && fire.ignition) return corners(fire.ignition.view);
-    return corners(fire.basemap || { c0: 0, r0: 0, columns: fire.columns, rows: fire.rows });
+    const b = item.fire.basemap;
+    return b ? { c0: b.c0, r0: b.r0, c1: b.c0 + b.columns, r1: b.r0 + b.rows } : { c0: 0, r0: 0, c1: item.fire.columns, r1: item.fire.rows };
   }
-  function home(item) { return state.mode === "ignition" && item.fire.ignition ? corners(item.fire.ignition.view) : item.home; }
-  // keep the view filled with map: never zoomed out or moved past the edge of the ground
   function hold() {
     const e = extent(prepare(state.fire)), least = Math.max(canvas.width / (e.c1 - e.c0), canvas.height / (e.r1 - e.r0));
     cam.k = clamp(cam.k, least, Math.max(least, 24 * ratio()));
@@ -408,106 +334,57 @@
     if (width === canvas.width && height === canvas.height && state.sized) return;
     const before = canvas.width;
     canvas.width = width; canvas.height = height;
-    if (state.sized) { cam.k *= width / before; hold(); } else { state.sized = true; fit(home(prepare(state.fire))); }
+    if (state.sized) { cam.k *= width / before; hold(); } else { state.sized = true; fit(prepare(state.fire).home); }
     draw();
   }
 
-  // ---- drawing ----
-  // A sheet is painted one pixel per 90 m cell and stretched over the map with smoothing, so its edges are soft.
-  function sheet(fire, paint) {
-    const page = document.createElement("canvas");
-    page.width = fire.columns; page.height = fire.rows;
-    const pageCtx = page.getContext("2d"), image = pageCtx.createImageData(fire.columns, fire.rows);
-    paint(image.data);
-    pageCtx.putImageData(image, 0, 0);
-    return page;
-  }
-  // Draw a picture over a box of grid cells; `soft` blurs it by that many cells.
-  function lay(image, c0, r0, columns, rows, soft) {
+  // ---- drawing the map ----
+  function requestDraw() { if (!state.queued) { state.queued = true; requestAnimationFrame(draw); } }
+  function lay(image, b) {
     ctx.setTransform(1, 0, 0, 1, 0, 0);
-    if (soft && "filter" in ctx) ctx.filter = "blur(" + Math.min(28, soft * cam.k).toFixed(1) + "px)";
-    ctx.drawImage(image, canvas.width / 2 + (c0 - cam.x) * cam.k, canvas.height / 2 + (r0 - cam.y) * cam.k, columns * cam.k, rows * cam.k);
-    if ("filter" in ctx) ctx.filter = "none";
+    ctx.drawImage(image, canvas.width / 2 + (b.c0 - cam.x) * cam.k, canvas.height / 2 + (b.r0 - cam.y) * cam.k, b.columns * cam.k, b.rows * cam.k);
   }
   function grid() { ctx.setTransform(cam.k, 0, 0, cam.k, canvas.width / 2 - cam.x * cam.k, canvas.height / 2 - cam.y * cam.k); }
-  function ramp() {
-    // 256 colours, from the cells reached first (deep purple, solid) to those reached last (light blue, sheer)
-    const stops = RAMP_TOKENS.map((name) => rgb(token(name))), out = new Uint8ClampedArray(256 * 4);
-    for (let i = 0; i < 256; i++) {
-      const p = i / 255 * (stops.length - 1), k = Math.min(stops.length - 2, Math.floor(p)), f = p - k;
-      for (let j = 0; j < 3; j++) out[i * 4 + j] = stops[k][j] + (stops[k + 1][j] - stops[k][j]) * f;
-      out[i * 4 + 3] = 238 - 78 * i / 255;
-    }
-    return out;
+  function fillCells(item, cells, colour, alpha) {
+    ctx.fillStyle = colour; ctx.globalAlpha = alpha; ctx.beginPath();
+    for (const i of cells) { const [x, y, s] = rect375(item, i); ctx.rect(x, y, s, s); }
+    ctx.fill(); ctx.globalAlpha = 1;
   }
-  // The simulated cells reached by `limit` minutes, coloured by when in the span each was reached.
-  function spreadSheet(item, grids, limit, span, each) {
-    const colours = ramp();
-    return sheet(item.fire, (data) => {
-      for (let k = 0; k < grids.cells.length; k++) {
-        const minutes = grids.minutes[k];
-        if (minutes > limit) continue;
-        const cell = grids.cells[k], o = cell * 4, q = Math.min(255, Math.round(minutes / span * 255)) * 4;
-        if (each) each(cell);
-        data[o] = colours[q]; data[o + 1] = colours[q + 1]; data[o + 2] = colours[q + 2]; data[o + 3] = colours[q + 3];
-      }
-    });
-  }
-  function fuelSheet(item) {
-    const key = state.fire + "|" + token("--map-conifer");
-    if (item.fuelKey !== key) {
-      const palette = GROUND_TOKENS.map((name) => rgb(token(name)));
-      item.fuelSheet = sheet(item.fire, (data) => {
-        for (let i = 0; i < item.fuel.length; i++) {
-          const colour = palette[item.fuel[i]] || palette[1];
-          data[i * 4] = colour[0]; data[i * 4 + 1] = colour[1]; data[i * 4 + 2] = colour[2]; data[i * 4 + 3] = 255;
-        }
-      });
-      item.fuelKey = key;
-    }
-    return item.fuelSheet;
-  }
-  function box(x, y, size, radius) {
+  function rounded(x, y, size, radius) {
     ctx.beginPath();
     if (ctx.roundRect) ctx.roundRect(x, y, size, size, radius); else ctx.rect(x, y, size, size);
   }
-
-  function requestDraw() { if (!state.queued) { state.queued = true; requestAnimationFrame(draw); } }
-
   function draw() {
     state.queued = false;
-    const item = prepare(state.fire), fire = item.fire;
+    const item = prepare(state.fire), fire = item.fire, step = item.steps[state.step];
     ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.globalAlpha = 1;
     ctx.fillStyle = token("--map-void"); ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = "high";
-
-    // ground: the base map, muted so the fire stands out, with the fuel types over it when asked for
-    const base = themed(item.maps.window), close = state.mode === "ignition" && fire.ignition ? themed(item.maps.detail) : null;
+    const base = themed(item.map);
     if (base) {
-      lay(base, fire.basemap.c0, fire.basemap.r0, fire.basemap.columns, fire.basemap.rows, 0);
-      if (close) lay(close, fire.ignition.basemap.c0, fire.ignition.basemap.r0, fire.ignition.basemap.columns, fire.ignition.basemap.rows, 0);
+      lay(base, fire.basemap);
       ctx.setTransform(1, 0, 0, 1, 0, 0); ctx.fillStyle = token("--map-veil"); ctx.fillRect(0, 0, canvas.width, canvas.height);
     }
-    if (state.ground === "fuel" || !fire.basemap) {
-      ctx.globalAlpha = base ? 0.62 : 1;
-      lay(fuelSheet(item), 0, 0, fire.columns, fire.rows, 0);
-      ctx.globalAlpha = 1;
-    }
-
-    if (state.mode === "ignition") drawIgnition(item); else drawReplay(item);
-
-    // reported ignition point: a white pin with a red centre
-    if (fire.ignition) {
-      grid();
-      const x = fire.ignition.column + 0.5, y = fire.ignition.row + 0.5, unit = ratio() / cam.k;
-      ctx.shadowColor = "rgba(0, 0, 0, 0.5)"; ctx.shadowBlur = 6 * ratio();
-      ctx.fillStyle = "#ffffff"; ctx.beginPath(); ctx.arc(x, y, 8 * unit, 0, 2 * Math.PI); ctx.fill();
-      ctx.shadowColor = "transparent"; ctx.shadowBlur = 0;
-      ctx.fillStyle = token("--pin"); ctx.beginPath(); ctx.arc(x, y, 4.5 * unit, 0, 2 * Math.PI); ctx.fill();
+    // burned before the step, then the selected model's prediction, then (once revealed) where the fire actually went
+    grid();
+    fillCells(item, step.burned, token("--burned"), 0.38);
+    const predicted = step[state.model];
+    fillCells(item, predicted, token("--" + state.model), 0.45);
+    if (state.reveal) {
+      const unit = ratio() / cam.k, hit = token("--hit"), miss = token("--miss"), edge = token("--cell-edge");
+      for (const i of step.observed) {
+        const [x, y, s] = rect375(item, i), inset = s * 0.18;
+        rounded(x + inset, y + inset, s - 2 * inset, s * 0.18);
+        ctx.fillStyle = predicted.has(i) ? hit : miss; ctx.fill();
+        ctx.lineWidth = 0.6 * unit; ctx.strokeStyle = edge; ctx.stroke();
+        if (!predicted.has(i)) {  // a white cross on missed squares, so hit and miss never differ by colour alone
+          const a = x + s * 0.39, b = x + s * 0.61, c = y + s * 0.39, d = y + s * 0.61;
+          ctx.beginPath(); ctx.moveTo(a, c); ctx.lineTo(b, d); ctx.moveTo(b, c); ctx.lineTo(a, d);
+          ctx.lineWidth = Math.min(1.2 * unit, s * 0.06); ctx.strokeStyle = "#ffffff"; ctx.lineCap = "round"; ctx.stroke();
+        }
+      }
     }
     ctx.setTransform(1, 0, 0, 1, 0, 0);
-
-    // scale bar, north arrow and the base map's credit
     const metres = fire.pixel * ratio() / cam.k, bar = SCALE_BARS.find((length) => length / metres <= 110) || 50;
     $("scale-text").textContent = bar >= 1000 ? bar / 1000 + " km" : bar + " m";
     $("scale-line").style.width = Math.round(bar / metres) + "px";
@@ -515,178 +392,158 @@
     $("credit").hidden = !fire.basemap; $("credit").textContent = DATA.settings.basemapCredit || "";
   }
 
-  function drawReplay(item) {
-    const fire = item.fire, step = fire.steps[state.step], grids = item.steps[state.step], limit = state.hour * 60, unit = ratio() / cam.k;
-    // the area burned before this step: a soft neutral wash
-    const burnedKey = [state.fire, state.step, token("--burned")].join("|");
-    if (memo.burnedKey !== burnedKey) {
-      const colour = rgb(token("--burned"));
-      memo.burned = sheet(fire, (data) => {
-        for (let cell = 0; cell < item.owner.length; cell++) {
-          const i = item.owner[cell];
-          if (i < 0 || item.firstInArea[i] === 0 || item.firstInArea[i] > step.from) continue;
-          data[cell * 4] = colour[0]; data[cell * 4 + 1] = colour[1]; data[cell * 4 + 2] = colour[2]; data[cell * 4 + 3] = 96;
-        }
-      });
-      memo.burnedKey = burnedKey;
+  // ---- the chart: share of the actual new burning each model predicted, per step ----
+  const SVG = "http://www.w3.org/2000/svg";
+  function chart() {
+    const svg = $("chart"), fire = fireNow(), n = fire.steps.length, W = Math.max(280, svg.clientWidth), H = 240;
+    const m = { l: 40, r: 92, t: 12, b: 28 }, iw = W - m.l - m.r, ih = H - m.t - m.b;
+    const x = (i) => m.l + (n === 1 ? iw / 2 : (i * iw) / (n - 1));
+    const y = (v) => m.t + (1 - v) * ih;
+    svg.setAttribute("viewBox", "0 0 " + W + " " + H);
+    const parts = [];
+    for (const v of [0, 0.25, 0.5, 0.75, 1]) {
+      parts.push('<line x1="' + m.l + '" x2="' + (W - m.r) + '" y1="' + y(v) + '" y2="' + y(v) + '" stroke="var(--grid)" stroke-width="1"/>');
+      parts.push('<text x="' + (m.l - 8) + '" y="' + (y(v) + 4) + '" text-anchor="end">' + v * 100 + "%</text>");
     }
-    lay(memo.burned, 0, 0, fire.columns, fire.rows, 1.6);
-
-    const spreadKey = [state.fire, "replay", state.step, limit.toFixed(1), token("--r1")].join("|");
-    if (memo.spreadKey !== spreadKey) {
-      memo.covered = new Uint16Array(item.cellX.length);
-      memo.spread = spreadSheet(item, grids, limit, Math.max(1, step.hours * 60), (cell) => { if (item.owner[cell] >= 0) memo.covered[item.owner[cell]]++; });
-      memo.spreadKey = spreadKey;
+    const every = Math.max(1, Math.ceil(n / Math.max(2, Math.floor(iw / 44))));
+    for (let i = 0; i < n; i += every) parts.push('<text x="' + x(i) + '" y="' + (H - 8) + '" text-anchor="middle">' + (i + 1) + "</text>");
+    // the current step: a band behind the lines
+    parts.push('<line x1="' + x(state.step) + '" x2="' + x(state.step) + '" y1="' + m.t + '" y2="' + (m.t + ih) + '" stroke="var(--muted)" stroke-width="1" opacity="0.5"/>');
+    for (const [key, field] of SERIES) {
+      const d = fire.steps.map((s, i) => (i ? "L" : "M") + x(i).toFixed(1) + " " + y(s.score[field]).toFixed(1)).join(" ");
+      parts.push('<path d="' + d + '" fill="none" stroke="var(--' + key + ')" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>');
     }
-    lay(memo.spread, 0, 0, fire.columns, fire.rows, 0.6);
-
-    if (state.hour >= step.hours - 1e-6) {
-      // the answer: new cells at the next pass. Filled where the simulator got there, hollow where it did not.
-      grid();
-      const hit = token("--hit"), miss = token("--miss"), edge = token("--cell-edge");
-      for (let i = 0; i < item.cellX.length; i++) {
-        if (item.firstDetected[i] !== step.to || (item.firstInArea[i] > 0 && item.firstInArea[i] <= step.from)) continue;
-        const [x, y, s] = rect375(item, i), inset = s * 0.1;
-        box(x + inset, y + inset, s - 2 * inset, s * 0.2);
-        if (memo.covered[i] >= DATA.settings.detectableShare * item.total[i]) {
-          ctx.fillStyle = hit; ctx.fill();
-          ctx.lineWidth = unit; ctx.strokeStyle = edge; ctx.stroke();
-        } else {
-          ctx.fillStyle = miss; ctx.globalAlpha = 0.16; ctx.fill(); ctx.globalAlpha = 1;
-          ctx.lineWidth = 2 * unit; ctx.strokeStyle = miss; ctx.stroke();
-        }
-      }
+    // end labels: name and value at the right of each line, spread at least 16 px apart, with a leader where moved
+    const ends = SERIES.map(([key, field, label]) => ({ key, label, value: fire.steps[n - 1].score[field], at: y(fire.steps[n - 1].score[field]) }));
+    ends.sort((a, b) => a.at - b.at);
+    ends.forEach((e, i) => { e.label_at = i ? Math.max(e.at, ends[i - 1].label_at + 16) : e.at; });
+    const overshoot = ends[ends.length - 1].label_at - (m.t + ih);
+    if (overshoot > 0) ends.forEach((e) => { e.label_at -= overshoot; });
+    for (const e of ends) {
+      const ly = e.label_at;
+      if (ly !== e.at) parts.push('<line x1="' + (x(n - 1) + 4) + '" y1="' + e.at + '" x2="' + (x(n - 1) + 10) + '" y2="' + ly + '" stroke="var(--muted)" stroke-width="1"/>');
+      parts.push('<text class="end" x="' + (x(n - 1) + 12) + '" y="' + (ly + 4) + '">' + e.label + " " + percent(e.value) + "</text>");
     }
+    // markers on the current step and, when hovering, on the hovered one: 8px dots with a surface ring
+    for (const i of new Set([state.step, state.hover].filter((v) => v != null))) {
+      for (const [key, field] of SERIES) parts.push('<circle cx="' + x(i) + '" cy="' + y(fire.steps[i].score[field]) + '" r="5" fill="var(--' + key + ')" stroke="var(--surface)" stroke-width="2"/>');
+    }
+    svg.innerHTML = parts.join("");
+    svg.dataset.geometry = JSON.stringify({ l: m.l, iw, n });
+    const tip = $("tip");
+    if (state.hover == null) { tip.hidden = true; return; }
+    const s = fire.steps[state.hover];
+    tip.innerHTML = "<strong>Step " + (state.hover + 1) + "</strong><span>" + s.startLocal + ", " + number(s.score.observed) + " new cells</span>"
+      + SERIES.map(([key, field, label]) => '<span><span class="key" style="background:var(--' + key + ')"></span>' + label + " " + percent(s.score[field]) + "</span>").join("");
+    tip.hidden = false;
+    const left = x(state.hover) / W * svg.clientWidth, width = tip.offsetWidth;
+    tip.style.left = clamp(left + 12 + width > svg.clientWidth ? left - width - 12 : left + 12, 0, svg.clientWidth - width) + "px";
+  }
+  function stepAt(clientX) {
+    const svg = $("chart"), g = JSON.parse(svg.dataset.geometry || "{}"), box = svg.getBoundingClientRect();
+    const px = (clientX - box.left) * (svg.viewBox.baseVal.width / box.width);
+    return g.n === 1 ? 0 : clamp(Math.round((px - g.l) / g.iw * (g.n - 1)), 0, g.n - 1);
   }
 
-  function drawIgnition(item) {
-    if (!item.ignition) return;
-    const limit = state.hour * 60, spreadKey = [state.fire, "ignition", limit.toFixed(1), token("--r1")].join("|");
-    if (memo.spreadKey !== spreadKey) {
-      memo.spread = spreadSheet(item, item.ignition, limit, DATA.settings.ignitionHours * 60, null);
-      memo.spreadKey = spreadKey;
-    }
-    lay(memo.spread, 0, 0, item.fire.columns, item.fire.rows, 0.6);
-  }
-
-  // ---- readouts beside the map ----
-  function windAt(list, hour) { return list[Math.min(list.length - 1, Math.max(0, Math.floor(hour)))]; }
-
-  function readouts() {
-    const item = prepare(state.fire), fire = item.fire, replay = state.mode === "replay";
-    const source = replay ? fire.steps[state.step] : fire.ignition;
-    $("step-block").hidden = !replay; $("ignition-block").hidden = replay; $("step-nav").hidden = !replay; $("steps-section").hidden = !replay;
-    $("map-heading").textContent = fire.id + ", " + number(fire.sizeHa) + " ha, " + fire.cause + ", " + (fire.split === "holdout" ? "not used for tuning" : "used for tuning");
-    legend(replay, fire);
-    if (!source) { $("map-clock").textContent = "No reported ignition point"; return; }
-    const start = new Date(source.startLocal.replace(" ", "T") + ":00Z"), now = new Date(start.getTime() + state.hour * 3600e3);
-    $("map-clock").textContent = now.toISOString().slice(0, 16).replace("T", " ") + " local";
-    const wind = windAt(source.wind, state.hour);
-    // the map's "up" is a few degrees off true north this far from the projection's centre line, so turn the compass to match
-    $("wind-north").setAttribute("transform", "rotate(" + (-fire.convergence) + ")");
-    $("wind-arrow").setAttribute("transform", "rotate(" + (wind[1] + 180 - fire.convergence) + ")");
-    $("wind-speed").textContent = wind[0].toFixed(0) + " km/h";
-    $("wind-from").textContent = "from the " + COMPASS[Math.round(wind[1] / 45) % 8] + " (" + wind[1] + "\u00b0)";
-    $("c-ffmc").textContent = source.ffmc.toFixed(1); $("c-bui").textContent = source.bui.toFixed(0);
-    $("c-temp").textContent = source.tempMax.toFixed(0) + " \u00b0C"; $("c-rh").textContent = source.rhMin + "% humidity";
-    if (replay) {
-      const s = source.score, ended = state.hour >= source.hours - 1e-6;
-      $("step-label").textContent = "Step " + (state.step + 1) + " of " + fire.steps.length + ", pass " + source.from + " to pass " + source.to + (ended ? ". Next pass shown." : ". Run to the end to see the next pass.");
-      $("hour-label").textContent = state.hour.toFixed(1) + " of " + source.hours.toFixed(1) + " h";
-      $("s-observed").textContent = number(s.observedNew);
-      $("s-recall").textContent = percent(s.recall); $("s-even").textContent = percent(s.evenRecall);
-      $("s-dobs").textContent = number(s.observedDistance) + " m"; $("s-dsim").textContent = s.simulatedDistance == null ? "no growth" : number(s.simulatedDistance) + " m";
-      $("s-dir").textContent = s.directionError == null ? "none" : s.directionError + "\u00b0";
-      document.querySelectorAll("#steps-body tr").forEach((row, i) => row.setAttribute("aria-selected", i === state.step ? "true" : "false"));
-    } else {
-      $("hour-label").textContent = state.hour.toFixed(1) + " of " + DATA.settings.ignitionHours + " h";
-      const areaAt = (m) => { let n = 0; for (const v of item.ignition.minutes) if (v <= m) n++; return number(n * fire.pixel * fire.pixel / 10000, 1) + " ha"; };
-      $("i-1").textContent = areaAt(60); $("i-3").textContent = areaAt(180); $("i-6").textContent = areaAt(360);
-      $("ignition-note").textContent = "Started at 13:00 local on the day satellites first saw this fire, in that afternoon's weather. The reported start has no time of day, so this shows the kind of run the simulator predicts, not a scored result." + (fire.ignition.movedMetres ? " The reported point falls on water or non-fuel in the fuel map, so the start was moved " + fire.ignition.movedMetres + " m to the nearest fuel." : "");
-    }
-    const share = Math.round(state.hour / limit() * 200);
-    $("hour").value = share; $("hour").style.setProperty("--p", share / 2 + "%");
-  }
-
-  function legend(replay, fire) {
-    const hours = DATA.settings.ignitionHours;
-    const ticks = replay ? [[0, "Start of step"], [100, "End of step"]] : [[0, "0"], [100 / hours, "1 h"], [300 / hours, "3 h"], [100, hours + " h"]];
-    $("ramp-labels").innerHTML = ticks.map((t) => '<span style="left:' + t[0] + "%;transform:translateX(-" + t[0] + '%)">' + t[1] + "</span>").join("");
-    const gradient = "background:linear-gradient(90deg,var(--r5),var(--r3),var(--r1))";
-    const pin = '<div><span class="swatch" style="border-radius:50%;background:radial-gradient(var(--pin) 38%,#ffffff 42%);box-shadow:0 0 0 0.5px var(--border)"></span>Reported ignition point</div>';
-    const rows = replay
-      ? [["background:var(--burned);opacity:0.4", "Burned before this step (satellite record)"], [gradient, "Simulated growth, purple where it burned first"],
-        ["background:var(--hit)", "Seen by the next pass, and the simulator reached it"], ["border:2px solid var(--miss)", "Seen by the next pass, and the simulator missed it"]]
-      : [[gradient, "Simulated growth, purple in the first hour, light blue by the sixth"]];
-    const fuels = [["--map-conifer", "Conifer"], ["--map-mixed", "Mixedwood"], ["--map-decid", "Aspen"], ["--map-open", "Grass"], ["--map-water", "Water"], ["--map-nonfuel", "Non-fuel"]];
-    const ground = state.ground === "fuel" || !fire.basemap
-      ? "Fuel types: " + fuels.map((f) => '<span class="swatch ground" style="background:var(' + f[0] + ')"></span> ' + f[1]).join(" &nbsp;")
-      : "Ground: Canada Base Map, with rivers, lakes, wetlands and height contours in metres.";
-    $("legend").innerHTML = rows.map((r) => '<div><span class="swatch" style="' + r[0] + '"></span>' + r[1] + "</div>").join("") + pin + '<div><span class="note">' + ground + "</span></div>";
-  }
-
-  function table() {
-    const fire = DATA.fires[state.fire];
-    $("steps-body").innerHTML = fire.steps.map((s, i) => "<tr tabindex=\"0\" data-step=\"" + i + "\"><td>" + s.from + " to " + s.to + "</td><td>" + s.startLocal + "</td><td>" + s.hours.toFixed(1)
-      + "</td><td>" + number(s.score.observedNew) + "</td><td>" + percent(s.score.recall) + "</td><td>" + percent(s.score.evenRecall) + "</td><td>" + number(s.score.observedDistance) + " m</td><td>"
-      + (s.score.simulatedDistance == null ? "no growth" : number(s.score.simulatedDistance) + " m") + "</td><td>" + (s.score.directionError == null ? "none" : s.score.directionError + "\u00b0") + "</td></tr>").join("");
-  }
-
-  function scores() {
-    const all = DATA.scores.holdout, long = DATA.scores.longRuns;
-    const items = [
-      [percent(all.share_direction_within_45_deg), "of steps, the simulated fire head ran within 45\u00b0 of the observed one. Guessing would score 25%."],
-      [percent(long.mean_recall) + " against " + percent(long.mean_even_growth_recall), "of newly burning cells reached on long runs (head ran 1.5 km or more), simulator against even growth."],
-      [percent(all.mean_recall) + " against " + percent(all.mean_even_growth_recall), "across all steps, where even growth does better. Most steps move only a cell or two, too little for wind to show at 375 m."],
+  // ---- text beside and below the map ----
+  function summary() {
+    const s = DATA.summary;
+    $("summary-heading").textContent = "On all " + s.steps + " steps of " + s.fires + " test fires";
+    const cards = [
+      ["recall", percent, "of the actual new burning predicted, with both models predicting the same number of cells"],
+      ["iou", (v) => v.toFixed(3), "overlap of predicted and actual new burning (IoU)"],
+      ["direction45", percent, "of steps with the predicted fire head within 45° of the actual one"],
     ];
-    $("scores").innerHTML = items.map((i) => '<div class="card score"><b>' + i[0] + "</b><span>" + i[1] + "</span></div>").join("");
-    $("scores-note").textContent = "Scored on " + all.steps + " steps from " + all.fires + " fires from 2021 to 2024, after tuning two settings (a scale on every rate of spread, " + DATA.settings.rosScale + ", and a further scale on the flanks and back, " + DATA.settings.flankScale + ") on " + DATA.scores.calibrationFires + " fires from 2012 to 2020. Satellites see only where fire is active at a pass, so what they record is a lower bound on what burned.";
+    const who = [["cnn", "AI model"], ["fbp", "simulator"]];
+    $("scores").innerHTML = cards.map(([key, show, text]) => '<div class="card score"><div class="pair">'
+      + who.map(([m, label]) => '<span><b>' + show(s[m][key]) + '</b> <small><span class="key" style="background:var(--' + m + ')"></span>' + label + "</small></span>").join("")
+      + "</div><span>" + text + "</span></div>").join("");
+  }
+  function legend() {
+    const rows = [
+      ["background:var(--burned);opacity:0.45", "Burned before this step"],
+      ["background:var(--" + state.model + ");opacity:0.6", "Predicted by the " + NAMES[state.model]],
+      ["background:var(--hit)", "Actually burned next, and predicted"],
+      ["background:var(--miss)", "Actually burned next, but missed", true],
+    ];
+    const cross = '<svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 5l6 6M11 5l-6 6" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/></svg>';
+    $("legend").innerHTML = rows.map((r) => '<div><span class="swatch" style="' + r[0] + '">' + (r[2] ? cross : "") + "</span>" + r[1] + "</div>").join("");
+  }
+  function table() {
+    $("steps-body").innerHTML = fireNow().steps.map((s, i) => "<tr><td>" + (i + 1) + "</td><td>" + s.startLocal + "</td><td>" + s.hours.toFixed(1) + "</td><td>"
+      + number(s.score.observed) + "</td><td>" + percent(s.score.cnnRecall) + "</td><td>" + percent(s.score.fbpRecall) + "</td></tr>").join("");
+  }
+  function readouts() {
+    const fire = fireNow(), step = fire.steps[state.step], s = step.score, n = fire.steps.length;
+    $("map-heading").textContent = fire.id + ", " + number(fire.sizeHa) + " ha, " + fire.cause;
+    $("map-clock").textContent = step.startLocal + " local";
+    $("phase").textContent = state.reveal ? "Where it actually burned next" : NAMES[state.model] + " prediction";
+    $("step-label").textContent = "Step " + (state.step + 1) + " of " + n + " · " + number(s.predicted) + " cells predicted";
+    $("step-range").max = n - 1; $("step-range").value = state.step;
+    $("step-range").style.setProperty("--p", (n === 1 ? 100 : state.step / (n - 1) * 100) + "%");
+    $("s-hours").textContent = step.hours.toFixed(1) + " h";
+    $("s-wind").textContent = step.windKmh + " km/h from the " + COMPASS[Math.round(step.windFrom / 45) % 8];
+    $("s-observed").textContent = number(s.observed);
+    for (const [key, field] of SERIES) {
+      const text = percent(s[field]) + " of them";
+      $("s-" + key).innerHTML = state.model === key ? "<strong>" + text + "</strong>" : text;
+    }
+    legend();
+    chart();
   }
 
-  // ---- controls ----
+  // ---- playing through the steps ----
   function render() { readouts(); requestDraw(); }
   function showPlaying(playing) { $("play").innerHTML = playing ? ICONS.pause : ICONS.play; $("play").setAttribute("aria-label", playing ? "Pause" : "Play"); }
-  function stop() { state.playing = false; clearInterval(state.timer); showPlaying(false); }
-  function limit() { return state.mode === "replay" ? DATA.fires[state.fire].steps[state.step].hours : DATA.settings.ignitionHours; }
+  function stop() { state.playing = false; clearTimeout(state.timer); state.reveal = true; showPlaying(false); render(); }
+  function advance() {
+    // each step: the prediction first, then where the fire actually went, then the next step
+    state.reveal = false; render();
+    state.timer = setTimeout(() => {
+      state.reveal = true; render();
+      state.timer = setTimeout(() => {
+        if (state.step >= fireNow().steps.length - 1) return stop();
+        state.step++; advance();
+      }, REVEAL_MS);
+    }, PREDICT_MS);
+  }
   function play() {
     if (state.playing) return stop();
-    if (state.hour >= limit() - 1e-6) state.hour = 0;
-    state.playing = true; showPlaying(true);
-    state.timer = setInterval(() => {
-      state.hour = Math.min(limit(), state.hour + 0.25);
-      render();
-      if (state.hour >= limit() - 1e-6) stop();
-    }, 90);
+    if (state.step >= fireNow().steps.length - 1) state.step = 0;
+    state.playing = true; showPlaying(true); advance();
   }
-  function setStep(index) { stop(); state.step = clamp(index, 0, DATA.fires[state.fire].steps.length - 1); state.hour = limit(); render(); }
-  function setMode(mode) {
-    stop(); state.mode = mode; state.hour = limit();
-    $("mode-replay").setAttribute("aria-pressed", mode === "replay"); $("mode-ignition").setAttribute("aria-pressed", mode === "ignition");
-    fit(home(prepare(state.fire))); render();
-  }
-  function setGround(ground) {
-    state.ground = ground;
-    $("ground-map").setAttribute("aria-pressed", ground === "map"); $("ground-fuel").setAttribute("aria-pressed", ground === "fuel");
+  function setStep(index) { if (state.playing) { state.playing = false; clearTimeout(state.timer); showPlaying(false); } state.reveal = true; state.step = clamp(index, 0, fireNow().steps.length - 1); render(); }
+  function setModel(model) {
+    state.model = model;
+    for (const key of ["cnn", "fbp"]) $("model-" + key).setAttribute("aria-pressed", model === key);
     render();
   }
+  function setFire(index) {
+    clearTimeout(state.timer); state.playing = false;
+    state.fire = index; state.step = 0; state.reveal = true; state.hover = null;
+    table(); fit(prepare(state.fire).home); render();
+    if (!REDUCED_MOTION) play(); else showPlaying(false);
+  }
 
-  $("fire-select").innerHTML = DATA.fires.map((f, i) => '<option value="' + i + '">' + f.id + " \u00b7 " + number(f.sizeHa) + " ha \u00b7 " + (f.split === "holdout" ? "not used for tuning" : "used for tuning") + "</option>").join("");
-  $("fire-select").addEventListener("change", (e) => { stop(); state.fire = +e.target.value; state.step = 0; table(); state.hour = limit(); fit(home(prepare(state.fire))); render(); });
-  $("mode-replay").addEventListener("click", () => setMode("replay"));
-  $("mode-ignition").addEventListener("click", () => setMode("ignition"));
-  $("ground-map").addEventListener("click", () => setGround("map"));
-  $("ground-fuel").addEventListener("click", () => setGround("fuel"));
-  $("step-prev").addEventListener("click", () => setStep(state.step - 1));
-  $("step-next").addEventListener("click", () => setStep(state.step + 1));
+  $("fire-select").innerHTML = DATA.fires.map((f, i) => '<option value="' + i + '">' + f.id + " · " + number(f.sizeHa) + " ha · " + f.steps.length + " steps</option>").join("");
+  $("fire-select").addEventListener("change", (e) => setFire(+e.target.value));
+  $("model-cnn").addEventListener("click", () => setModel("cnn"));
+  $("model-fbp").addEventListener("click", () => setModel("fbp"));
   $("play").addEventListener("click", play);
-  $("hour").addEventListener("input", (e) => { stop(); state.hour = +e.target.value / 200 * limit(); render(); });
-  $("steps-body").addEventListener("click", (e) => { const row = e.target.closest("tr"); if (row) setStep(+row.dataset.step); });
-  $("steps-body").addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { const row = e.target.closest("tr"); if (row) { e.preventDefault(); setStep(+row.dataset.step); } } });
+  $("step-range").addEventListener("input", (e) => setStep(+e.target.value));
+  const svg = $("chart");
+  svg.addEventListener("pointermove", (e) => { const i = stepAt(e.clientX); if (i !== state.hover) { state.hover = i; chart(); } });
+  svg.addEventListener("pointerleave", () => { state.hover = null; chart(); });
+  svg.addEventListener("click", (e) => setStep(stepAt(e.clientX)));
+  svg.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") setStep(state.step - 1); else if (e.key === "ArrowRight") setStep(state.step + 1); else return;
+    e.preventDefault();
+  });
 
   // moving the map: drag, pinch, Ctrl + scroll, double-click, buttons and keys
   $("zoom-in").addEventListener("click", () => zoomBy(1.5));
   $("zoom-out").addEventListener("click", () => zoomBy(1 / 1.5));
-  $("zoom-fit").addEventListener("click", () => { fit(home(prepare(state.fire))); requestDraw(); });
+  $("zoom-fit").addEventListener("click", () => { fit(prepare(state.fire).home); requestDraw(); });
   canvas.addEventListener("pointerdown", (e) => { canvas.setPointerCapture(e.pointerId); touches.set(e.pointerId, [e.clientX, e.clientY]); canvas.classList.add("dragging"); });
   canvas.addEventListener("pointermove", (e) => {
     const last = touches.get(e.pointerId);
@@ -710,14 +567,17 @@
     if (keys[e.key]) { cam.x += keys[e.key][0]; cam.y += keys[e.key][1]; hold(); requestDraw(); }
     else if (e.key === "+" || e.key === "=") zoomBy(1.5);
     else if (e.key === "-") zoomBy(1 / 1.5);
-    else if (e.key === "0") { fit(home(prepare(state.fire))); requestDraw(); }
+    else if (e.key === "0") { fit(prepare(state.fire).home); requestDraw(); }
     else return;
     e.preventDefault();
   });
-  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", requestDraw);
-  new MutationObserver(requestDraw).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
-  if (window.ResizeObserver) new ResizeObserver(sizeCanvas).observe(canvas); else window.addEventListener("resize", sizeCanvas);
+  const repaint = () => { requestDraw(); chart(); };
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", repaint);
+  new MutationObserver(repaint).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+  if (window.ResizeObserver) { new ResizeObserver(sizeCanvas).observe(canvas); new ResizeObserver(() => chart()).observe($("chart-wrap")); }
+  else window.addEventListener("resize", () => { sizeCanvas(); chart(); });
 
-  showPlaying(false); table(); scores(); state.hour = limit(); readouts(); sizeCanvas();
+  summary(); table(); readouts(); sizeCanvas();
+  if (!REDUCED_MOTION) play(); else showPlaying(false);
 })();
 </script>

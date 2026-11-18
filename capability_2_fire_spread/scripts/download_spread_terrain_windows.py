@@ -8,7 +8,7 @@ fire's window are read over HTTP.  Each window is the bare-earth terrain model
 (DTM) resampled bilinearly from 30 m (EPSG:3979) onto exactly the same 90 m
 EPSG:3978 grid as that fire's fuel window, so the two line up cell for cell.
 
-Needs rasterio (see requirements-spread.txt).
+Needs rasterio (see requirements.txt).
 """
 
 from __future__ import annotations
@@ -17,7 +17,6 @@ import argparse
 import json
 from datetime import UTC, datetime
 
-import numpy as np
 import rasterio
 from rasterio.enums import Resampling
 from rasterio.transform import from_origin
