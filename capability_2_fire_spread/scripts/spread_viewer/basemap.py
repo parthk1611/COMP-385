@@ -18,7 +18,7 @@ import urllib.request
 from datetime import UTC, datetime
 from pathlib import Path
 
-from spread_common import RAW, USER_AGENT, sha256
+from scripts.spread_common import RAW, USER_AGENT, sha256
 
 
 SERVICE = "https://maps.geogratis.gc.ca/wms/CBMT"

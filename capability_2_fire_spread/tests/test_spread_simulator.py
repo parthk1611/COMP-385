@@ -12,9 +12,9 @@ import pandas as pd
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(PROJECT_ROOT / "scripts"))
-import fbp_spread as FBP  # noqa: E402
-import simulate_spread as SIM  # noqa: E402
+sys.path.insert(0, str(PROJECT_ROOT))
+from scripts.spread_modeling import fbp as FBP  # noqa: E402
+from scripts.spread_modeling import simulator as SIM  # noqa: E402
 
 
 START = pd.Timestamp("2019-07-10 18:00")

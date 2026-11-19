@@ -3,7 +3,7 @@
 
 Draws ten figures from the fire list and the master table into `docs/eda/`
 and writes the numbers behind them to `docs/eda/eda_numbers.json`.  The
-explanations that go with the figures are in `docs/fire_spread_eda.md`.
+explanations that go with the figures are in `docs/eda/README.md`.
 Needs numpy, pandas and matplotlib.
 """
 

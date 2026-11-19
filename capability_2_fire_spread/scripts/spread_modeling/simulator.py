@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 """Wind-driven fire-spread simulator on a 90 m grid.
 
 The fire spreads from burning cells to their neighbours.  How fast it crosses
@@ -27,8 +26,9 @@ import shapely
 from pyproj import Geod, Transformer
 from scipy import ndimage
 
-from fbp_spread import MAP_CODES, directional_rate, ellipse_rates, hourly_ffmc
-from spread_common import INTERIM, PROCESSED, RAW, load_perimeters_3978
+from scripts.spread_common import PROCESSED, RAW, load_perimeters_3978
+
+from .fbp import MAP_CODES, directional_rate, ellipse_rates, hourly_ffmc
 
 
 CELL_375_M = 375.0
@@ -43,11 +43,7 @@ class Settings:
 
     ros_scale: float = 1.0  # multiplies every rate of spread
     flank_scale: float = 1.0  # further multiplies the flank and back rates: below 1 the fire is narrower than the FBP ellipse
-    wind_scale: float = 1.0  # multiplies the 10 m wind speed before it is used
     repair_burn_scar: bool = True  # replace the 2024 map's regrowth inside the perimeter with the fuel around it
-    # False: the day's fine fuel moisture code holds all day, so only wind changes hour to hour.
-    # True: moisture follows hourly temperature and humidity, which nearly stops spread overnight.
-    hourly_moisture: bool = False
 
 
 @dataclass
@@ -208,7 +204,8 @@ def simulate(
     weather_times = case.weather.time_utc.values
     first_hour = int(np.searchsorted(weather_times, np.datetime64(start_utc.floor("h")), side="left"))
     minute_offset = (start_utc - start_utc.floor("h")).total_seconds() / 60.0
-    moisture_column = "ffmc" if settings.hourly_moisture or "ffmc_daily" not in case.weather else "ffmc_daily"
+    # The day's fine fuel moisture code holds all day, so only wind changes hour to hour.
+    moisture_column = "ffmc_daily" if "ffmc_daily" in case.weather else "ffmc"
     weather_rows = case.weather[["wind_speed_kmh", "wind_direction_deg", moisture_column, "bui", "day_of_year"]].values.tolist()
     rate_cache: dict[int, list[list[float]] | None] = {}
 
@@ -219,7 +216,6 @@ def simulate(
                 rate_cache[hour] = None
             else:
                 wind, wind_from, ffmc, bui, day_of_year = weather_rows[hour]
-                wind *= settings.wind_scale
                 head_grid_bearing = (wind_from + 180.0 - case.convergence_deg) % 360
                 table = []
                 for code in codes:

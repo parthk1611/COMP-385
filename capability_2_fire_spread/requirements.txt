@@ -1,10 +1,17 @@
-# Fire-spread dataset build (capability_2_fire_spread/scripts).
-# The ignition scripts in the repository root need none of these except shapely.
-numpy
-pandas
-scipy
-shapely
-pyproj
-Pillow
-matplotlib  # only for eda_fire_spread.py
-rasterio  # for download_spread_terrain_windows.py and build_spread_terrain_summary.py (windowed reads of the MRDEM cloud-optimised GeoTIFF), and for loading a fire's grids into the simulator
+# Capability 2 (fire spread), Python 3.12.  Versions are the ones every result in the README was produced with.
+# PyTorch: install the CUDA build to train the CNN on an NVIDIA GPU, e.g.
+#   pip install torch==2.11.0 --index-url https://download.pytorch.org/whl/cu128
+# Everything also runs on a CPU, the CNN and XGBoost much more slowly.
+numpy==2.5.4
+pandas==3.1.1
+scipy==1.18.1
+shapely==2.2.0
+pyproj==3.8.0
+rasterio==1.5.2
+pillow==13.0.0
+matplotlib==3.11.2
+scikit-learn==1.7.2
+joblib==1.6.0
+pyarrow==26.0.1
+xgboost==3.4.1
+torch==2.11.0

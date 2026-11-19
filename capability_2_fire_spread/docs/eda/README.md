@@ -33,7 +33,7 @@ The figures are written to `docs/eda/`, and every number quoted below is in
 
 ## 1. Fires by year
 
-![Fires of 40 ha or more, by year](eda/01_fires_per_year.png)
+![Fires of 40 ha or more, by year](01_fires_per_year.png)
 
 **What it shows.** The dataset has 752 fires of 40 ha or more from 2012 to
 2025. Fire years are very uneven: 2021 (111 fires), 2018 (101), 2023 (81),
@@ -49,7 +49,7 @@ satellite record is released.
 
 ## 2. Fire sizes
 
-![Fire sizes](eda/02_fire_sizes.png)
+![Fire sizes](02_fire_sizes.png)
 
 **What it shows.** Most fires are small: 299 (40%) are between 40 and 200 ha,
 and the median fire is 344 ha. But the area burned is almost all in the
@@ -63,7 +63,7 @@ should say which of the two they are.
 
 ## 3. Where the fires are
 
-![Where the fires are](eda/03_fire_locations.png)
+![Where the fires are](03_fire_locations.png)
 
 **What it shows.** Each circle is a fire, sized by the area it burned. The
 fires are concentrated in the northwest: the Sioux Lookout, Red Lake,
@@ -77,7 +77,7 @@ to hold there.
 
 ## 4. Season and cause
 
-![When the fires start, and what starts them](eda/04_season_and_cause.png)
+![When the fires start, and what starts them](04_season_and_cause.png)
 
 **What it shows.** The season peaks sharply in July (355 fires, 47%), with
 June second (219). Lightning starts 681 of the fires (91%) and people 68
@@ -92,7 +92,7 @@ the spring rules.
 
 ## 5. The satellite record
 
-![What the satellite record looks like](eda/05_satellite_record.png)
+![What the satellite record looks like](05_satellite_record.png)
 
 **What it shows.** Left: the time between one satellite observation of a fire
 and the next. Observations come in clumps: about 100 minutes apart on
@@ -115,7 +115,7 @@ above the observed area.
 
 ## 6. Growth between observations
 
-![How much a fire grows between two looks](eda/06_growth_per_step.png)
+![How much a fire grows between two looks](06_growth_per_step.png)
 
 **What it shows.** How much new area was seen burning at each observation,
 for the 88% of observations that showed any growth. Growth is usually small:
@@ -139,7 +139,7 @@ contradict what the satellites saw.
 
 ## 7. Growth and fire weather
 
-![Growth and fire weather](eda/07_growth_vs_weather.png)
+![Growth and fire weather](07_growth_vs_weather.png)
 
 **What it shows.** Growth grouped by the Initial Spread Index (left) and by
 mean wind speed (right). Each dot is the median growth in that group and each
@@ -160,7 +160,7 @@ from a coarse grid with one series per fire, not from the fire front.
 
 ## 8. Spread direction and wind
 
-![Spread direction and wind](eda/08_direction_vs_wind.png)
+![Spread direction and wind](08_direction_vs_wind.png)
 
 **What it shows.** The angle between the direction each fire's head ran and
 the direction the wind was blowing towards, over 5,418 observations. The bars
@@ -178,7 +178,7 @@ observed direction.
 
 ## 9. Fuel inside and around the fires
 
-![Fuel inside and around the fires](eda/09_fuel_inside_and_around.png)
+![Fuel inside and around the fires](09_fuel_inside_and_around.png)
 
 **What it shows.** The average share of land in each fuel class, for a ring
 of land around each fire (blue) and for the land inside its final perimeter
@@ -196,7 +196,7 @@ burned, and it says these are mostly conifer fires.
 
 ## 10. What goes with bigger growth
 
-![What goes with bigger growth](eda/10_what_tracks_growth.png)
+![What goes with bigger growth](10_what_tracks_growth.png)
 
 **What it shows.** How strongly each factor goes with the area newly burning
 at an observation, as a rank correlation (0 means no link, 1 a perfect one).

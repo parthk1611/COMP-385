@@ -1,8 +1,7 @@
-"""Shared paths and the action log for the fire-spread dataset build.
+"""Shared paths, logging and small helpers for capability 2 (fire spread).
 
-Every spread script records what it did, with counts, through `action_log`.
-Entries are appended to `logs/fire_spread_build_log.txt` so the whole build can
-be read back in order.
+Every script reports what it did, with counts, through `action_log`, which
+prints `time | step | message` lines to the console.
 """
 
 from __future__ import annotations
@@ -17,20 +16,19 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 RAW = PROJECT_ROOT / "data/raw"
 INTERIM = PROJECT_ROOT / "data/interim"
 PROCESSED = PROJECT_ROOT / "data/processed"
-LOG_FILE = PROJECT_ROOT / "logs/fire_spread_build_log.txt"
+MODELING_DOCS = PROJECT_ROOT / "docs/modeling"  # tracked results of the simulator and learned models
+ARTIFACTS = PROJECT_ROOT / "artifacts"  # generated tables, patches and fitted models; not in git
 USER_AGENT = "COMP-385-spread-dataset-builder/1.0 (+educational-research)"
 DATASET_VERSION = "fire-spread-v1.0.0"
 
 
 def action_log(step: str) -> logging.Logger:
-    """A logger that writes `time | step | message` to the console and the build log."""
-    LOG_FILE.parent.mkdir(parents=True, exist_ok=True)
+    """A console logger that prefixes each message with the time and the build step."""
     logger = logging.getLogger(f"spread.{step}")
     if not logger.handlers:
-        formatter = logging.Formatter(f"%(asctime)s | {step} | %(message)s", datefmt="%Y-%m-%d %H:%M:%S")
-        for handler in (logging.FileHandler(LOG_FILE, encoding="utf-8"), logging.StreamHandler()):
-            handler.setFormatter(formatter)
-            logger.addHandler(handler)
+        handler = logging.StreamHandler()
+        handler.setFormatter(logging.Formatter(f"%(asctime)s | {step} | %(message)s", datefmt="%Y-%m-%d %H:%M:%S"))
+        logger.addHandler(handler)
         logger.setLevel(logging.INFO)
         logger.propagate = False
     return logger

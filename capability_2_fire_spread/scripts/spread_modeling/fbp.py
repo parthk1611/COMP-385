@@ -14,7 +14,7 @@ from __future__ import annotations
 
 import math
 
-from fire_weather_index import fine_fuel_moisture
+from scripts.fire_weather_index import fine_fuel_moisture
 
 
 # fuel type -> (a, b, c) of RSI = a * (1 - exp(-b * ISI)) ** c, and (q, BUI0) of the buildup effect

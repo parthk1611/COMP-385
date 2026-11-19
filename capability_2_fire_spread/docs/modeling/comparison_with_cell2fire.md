@@ -1,7 +1,7 @@
 # Our spread simulator compared with Cell2Fire
 
-A side-by-side of the simulator in this folder (`scripts/simulate_spread.py`,
-`scripts/fbp_spread.py`) and Cell2Fire, the open-source simulator the team
+A side-by-side of our simulator (`scripts/spread_modeling/simulator.py`,
+`scripts/spread_modeling/fbp.py`) and Cell2Fire, the open-source simulator the team
 notes named as a candidate. It is a comparison of how the two work, from
 Cell2Fire's paper, README and source code. Cell2Fire has not been run on our
 fires, so this note does not say which one predicts them better.
@@ -58,7 +58,7 @@ from 22 Ontario fires from 2021–2024 that played no part in tuning. It put 56%
 of fire runs within 45° of the observed direction (25% by chance), reached 30%
 of newly burning cells against 33% for a simple even-growth baseline, and
 beat that baseline only on the larger runs (27% against 19%). Details are in
-`fire_spread_simulator.md`.
+[simulator.md](simulator.md).
 
 So Cell2Fire is shown to reproduce an established simulator closely, and ours
 is shown to have modest skill against real observations. Neither result says
@@ -92,7 +92,7 @@ elevation grid per fire, hourly weather with the fire-weather codes, and
 ignition points. The work would be to write those out in Cell2Fire's file
 formats, build it (it compiles under Linux with g++, Boost and Eigen; this
 machine would use its Ubuntu subsystem), run it over the same steps, and pass
-its burned cells through the scoring in `run_spread_replay.py`. That would
+its burned cells through the scoring in `scripts/spread_modeling/replay.py`. That would
 answer the open question directly. The repository also points to C2FK as a
 more actively maintained fork, which would be worth considering.
 
