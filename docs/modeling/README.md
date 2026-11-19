@@ -7,7 +7,10 @@ is recorded in `run_status.json`.
 
 The target is at least one recorded ignition in a frozen v1 10 km cell during
 the local date, with issue cutoff 00:00 America/Toronto and a one-day horizon.
-Use exactly the 36 fields in `data/metadata/ignition_feature_selection_v1.json`.
+Use exactly the 36 fields in `docs/modeling/feature_manifest.json`, the canonical
+frozen core contract. Current dataset selection metadata
+(`data/metadata/ignition_feature_selection_v1.json`) now lists 39 predictors
+and must not expand the original model/cache matrix.
 Keep keys and dates outside the model matrix. The frozen study universe includes
 edge cells selected using study-period ignition events, so evaluation is
 conditional on this universe and does not establish unbiased province-wide or
@@ -22,6 +25,25 @@ labels, calendar, terrain and history values are retained. The original CSV and
 EDA remain unchanged. The corrected cache has its own version and source audit.
 First valid FWI wins duplicated station/day records; archive revision and
 publication times remain unknown. This is a retrospective hindcast.
+
+The main dataset builder now emits `ignition-feature-v1.1.0` (51 columns),
+appending `fire_history_days_since_same_cell__censored`, then
+`cell_centroid_easting_m = grid_x_m + 5000` and
+`cell_centroid_northing_m = grid_y_m + 5000` in EPSG:3978 metres. The flag is
+1 exactly when days-since is blank, otherwise 0; the available history starts
+in 2010. These static full-cell centres are not ignition points,
+longitude/latitude, or clipped polygon centroids. The selected 39 predictors
+exactly match the coordinate experiment's transformed column order.
+The original core cache/model still selects only its frozen 36 predictors,
+derives history censoring, and coordinate experiments append coordinates
+once. Do not append these fields again to a persisted 39-column matrix.
+
+The 2026-10-05 full rebuild and missingness evidence remain historical v1.0.0,
+48-column results. Local panels remain unchanged until deliberate regeneration
+with `python scripts/build_ignition_feature_panel.py` (`--force` to overwrite,
+then review the panel and audit, including coordinate semantics/grid checksum).
+Filenames remain `_v1`. This static-geometry contract change does not rerun the
+historical models or add operational forecasting evidence.
 
 Development uses five expanding chronological folds ending in validation years
 2012 through 2016. Calibration is held out in 2017; threshold tradeoffs use 2018;

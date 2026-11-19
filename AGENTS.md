@@ -12,14 +12,20 @@ products, or future detections as ignition predictors.
 The established label universe is the Ontario Fire Region 10 km, fire-season
 cell-day ignition panel for 2010--2019: 9,673 cells, 1,840 dates, and
 17,798,320 rows. Its key is `(grid_id, ignition_date)`, with `ignition_date` a
-local `America/Toronto` date. The validated v1 feature layer retains that exact
-row universe and labels and provides 48 time-safe columns:
+local `America/Toronto` date. The current `ignition-feature-v1.1.0` builder
+retains that exact row universe and labels and provides 51 columns:
 
 - calendar/solar variables computed at a 00:00 local issue time;
 - static CDEM terrain summaries;
+- static full-cell centre coordinates: `cell_centroid_easting_m = grid_x_m + 5000`
+  and `cell_centroid_northing_m = grid_y_m + 5000`, in EPSG:3978 metres, fixed
+  per cell (not ignition points, longitude/latitude, or clipped centroids);
 - CWFIS weather/FWI features from only the prior-day observation; and
 - NFDB ignition-history features based only on records strictly before the
   issue date.
+  `fire_history_days_since_same_cell__censored` is persisted as `1` exactly
+  when days-since is blank (no earlier observed same-cell event in the
+  available 2010+ history), otherwise `0`; the original blank remains blank.
 
 Preserve source quality rather than filling it away. The feature output carries
 missingness, station coverage/distance, interpolation and `calcstatus` flags,
@@ -31,12 +37,14 @@ The full feature output is
 `data/processed/ontario_fire_region_10km_daily_ignition_features_v1.csv.gz`
 and its matching audit is
 `data/processed/ontario_fire_region_10km_daily_ignition_features_v1_audit.json`.
-Both are generated artifacts and may be absent in a fresh clone. The 2026-10-05
-full rebuild wrote all 17,798,320 expected rows, matched the current pinned
-CWFIS archive checksum, and recorded zero prior-day weather timing violations.
-Consult that output's audit before relying on a particular local rebuild.
+Both are generated artifacts and may be absent in a fresh clone. The historical
+2026-10-05 v1.0.0 full rebuild wrote 48 columns and all 17,798,320 expected rows,
+matched the pinned CWFIS archive checksum, and recorded zero prior-day weather
+timing violations. No new full rebuild is claimed by the v1.1.0 contract change.
+Existing local outputs remain old until deliberate regeneration. Consult that
+output's audit, including coordinate semantics and grid checksum, before use.
 
-Current v1 source coverage is deliberately imperfect: CWFIS weather/FWI values
+Historical v1.0.0 source coverage is deliberately imperfect: CWFIS weather/FWI values
 are unavailable on 9,340,916 rows (52.482010%), and seven-day precipitation is
 unavailable on 62.610842% of rows. These are source-coverage states, not zeroes
 or values to silently fill in the dataset. Retain `cwfis_missing`, station
@@ -49,6 +57,17 @@ CWFIS and NFDB archives do not give per-record `available_at` timestamps. Do
 not claim that a modern archive download was known at the historical issue
 time. CDEM is allowed only as static ground terrain, not as a proxy for
 vegetation, fuels, roads, settlement, or disturbance.
+The new coordinates add static grid geometry only, not dynamic observations or
+operational forecasting evidence. The static CDEM source retains its
+`terrain_feature_version` of `ignition-feature-v1.0.0`.
+
+Current selection metadata lists 39 predictors in the coordinate experiment's
+transformed order: original 36, history-censor flag, then two coordinates.
+Frozen original modelling and cache inputs retain the canonical 36 fields in
+`docs/modeling/feature_manifest.json`; their preprocessing derives the flag
+and coordinate experiments append coordinates once. Do not append either to
+an already materialized 39-column matrix. Do not expand the frozen core or
+claim historical model results were rerun.
 
 ## Leakage rules
 
@@ -97,6 +116,11 @@ python scripts/build_ignition_feature_panel.py
 python -m unittest discover -s tests -v
 ```
 
+The feature build command is unchanged; existing output replacement requires
+`python scripts/build_ignition_feature_panel.py --force` and deliberate review
+of the generated panel and matching audit. Output and metadata filenames retain
+the `_v1` family suffix even though the current feature contract is v1.1.0.
+
 `data/interim/cdem_terrain_10km_summary.csv` is tracked and normally reused.
 Only run `python scripts/build_cdem_terrain_summary.py` when deliberately
 regenerating that static CDEM summary; it queries the elevation source and must
@@ -112,6 +136,6 @@ validation. Use explicit output/audit paths for any date-range test subset so
 it cannot be mistaken for the full panel.
 
 `ABOUT.md` is the human-facing project reference: it contains the complete
-48-column dictionary, null semantics, rebuild summary, validation snapshot,
-training guidance, and planned work. Read it together with this file before
-altering the feature contract.
+51-column dictionary, null semantics, historical v1.0.0 rebuild summary and
+validation snapshot, training guidance, and planned work. Read it together
+with this file before altering the feature contract.

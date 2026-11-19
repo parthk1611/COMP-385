@@ -20,7 +20,7 @@ from threadpoolctl import threadpool_limits
 
 from scripts.build_ignition_feature_panel import FireHistory, GridCell
 from scripts.ignition_modeling import contract, data, evaluation, splits, weather
-from scripts.ignition_modeling import histogram, logistic, run
+from scripts.ignition_modeling import histogram, logistic, run, validation
 from scripts.ignition_modeling.preprocessing import HistoryIndicator, NumericPreprocessor
 
 
@@ -353,6 +353,92 @@ class ContractAcceptanceTest(unittest.TestCase):
         for value in (np.zeros((2, 35)), np.zeros((2, 37)), np.zeros(36)):
             with self.assertRaises(ValueError):
                 contract.check_matrix(value)
+        from experiments.ignition.common import RAW_FEATURES, TRANSFORMED_FEATURES
+        self.assertEqual(RAW_FEATURES, (*EXPECTED_FEATURES, *validation.COORDINATES))
+        self.assertEqual(len(RAW_FEATURES), 38)
+        self.assertEqual(len(set(TRANSFORMED_FEATURES)), 39)
+        selection = json.loads((contract.ROOT / "data/metadata/ignition_feature_selection_v1.json").read_text())
+        self.assertEqual(tuple(selection["predictors"]), TRANSFORMED_FEATURES)
+
+    def test_current_panel_coordinates_and_historical_provenance_are_versioned(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary)
+            selection = json.loads((contract.ROOT / "data/metadata/ignition_feature_selection_v1.json").read_text())
+            selection.update(feature_set_version="ignition-feature-v1.1.0",
+                             predictors=[*EXPECTED_FEATURES, validation.HISTORY_CENSOR, *validation.COORDINATES])
+            selection_path = root / "selection.json"
+            selection_path.write_text(json.dumps(selection))
+            grid = pd.DataFrame({"grid_id": ["a", "b"], "centroid_latitude": [48., 49.],
+                                 "grid_x_m": [-20000, 30000], "grid_y_m": [40000, -50000]})
+            grid_path = root / "grid.csv"
+            grid.to_csv(grid_path, index=False)
+            header = [selection["target"], *selection["other_labels"],
+                      *selection["predictors"], *selection["metadata"]]
+            rows = []
+            for cell in grid.itertuples():
+                row = dict.fromkeys(header, "0")
+                row.update(validation.EXPECTED_METADATA)
+                row.update(grid_id=cell.grid_id, ignition_date="2010-05-01",
+                           issue_time_utc="2010-05-01T04:00:00Z",
+                           cwfis_observation_date="2010-04-30",
+                           cell_centroid_easting_m=str(cell.grid_x_m + 5000),
+                           cell_centroid_northing_m=str(cell.grid_y_m + 5000))
+                rows.append(row)
+            rows[0][contract.HISTORY_FEATURE] = ""
+            rows[0][validation.HISTORY_CENSOR] = "1"
+            rows[1][contract.HISTORY_FEATURE] = "5"
+            rows[1][validation.HISTORY_CENSOR] = "0"
+            # Deliberately tiny fixture: universe/other scientific checks still run,
+            # but only schema, coordinates and provenance applicability are under test.
+            provenance = json.loads((contract.ROOT / "docs/eda/source_provenance.json").read_text())
+            source = root / provenance["source_file_name"]
+
+            def scan():
+                with source.open("w", newline="") as stream:
+                    writer = csv.DictWriter(stream, fieldnames=header)
+                    writer.writeheader()
+                    writer.writerows(rows)
+                return validation.validate_dataset(source, chunk_size=1,
+                                                   feature_selection_path=selection_path,
+                                                   grid_path=grid_path)
+
+            report = scan()
+            self.assertEqual(len(report["schema"]["columns"]), 51)
+            self.assertEqual(report["schema"]["predictor_count"], 39)
+            self.assertFalse(report["source"]["pinned_checksum_applicable"])
+            self.assertFalse(report["source"]["source_column_order_applicable"])
+            self.assertEqual(report["source"]["provenance_feature_set_version"], "ignition-feature-v1.0.0")
+            for column in validation.COORDINATES:
+                key = f"cell_centroid_mismatch_rows:{column}"
+                self.assertEqual(report["validation_violation_counts"][key], 0)
+                original = rows[0][column]
+                for wrong in ("", "NA", "nan", "inf", str(-float(original)),
+                              str(float(original) + .0001), rows[1][column]):
+                    with self.subTest(column=column, wrong=wrong):
+                        rows[0][column] = wrong
+                        self.assertEqual(scan()["validation_violation_counts"][key], 1)
+                rows[0][column] = original
+            self.assertEqual(report["validation_violation_counts"]["history_censor_flag_mismatch_rows"], 0)
+            for row in rows:
+                original = row[validation.HISTORY_CENSOR]
+                for wrong in ("", "NA", "nan", "inf", "2", "-1", ".5", str(1 - int(original))):
+                    with self.subTest(censor=original, wrong=wrong):
+                        row[validation.HISTORY_CENSOR] = wrong
+                        self.assertEqual(scan()["validation_violation_counts"]["history_censor_flag_mismatch_rows"], 1)
+                row[validation.HISTORY_CENSOR] = original
+            selection.update(feature_set_version="ignition-feature-v1.0.0",
+                             predictors=list(EXPECTED_FEATURES))
+            selection_path.write_text(json.dumps(selection))
+            header = [name for name in header if name not in {*validation.COORDINATES, validation.HISTORY_CENSOR}]
+            rows = [{name: value for name, value in row.items() if name in header}
+                    for row in rows]
+            for row in rows:
+                row["feature_set_version"] = "ignition-feature-v1.0.0"
+            historical = scan()
+            self.assertTrue(historical["source"]["pinned_checksum_applicable"])
+            self.assertTrue(historical["source"]["source_column_order_applicable"])
+            self.assertEqual(historical["validation_violation_counts"]["pinned_source_sha256_mismatch"], 1)
+            self.assertEqual(historical["validation_violation_counts"]["source_column_order_mismatch"], 1)
 
     def test_partition_is_date_only_and_complete_dates_stay_together(self):
         dates = np.array(["2019-05-01", "2010-10-31", "2017-05-01",

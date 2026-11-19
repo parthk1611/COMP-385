@@ -3,8 +3,8 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-SELECTION_PATH = ROOT / "data/metadata/ignition_feature_selection_v1.json"
-FEATURE_NAMES = tuple(json.loads(SELECTION_PATH.read_text())["predictors"])
+MANIFEST_PATH = ROOT / "docs/modeling/feature_manifest.json"
+FEATURE_NAMES = tuple(json.loads(MANIFEST_PATH.read_text())["predictors"])
 assert len(FEATURE_NAMES) == 36 and len(set(FEATURE_NAMES)) == 36
 WEATHER_FEATURES = tuple(n for n in FEATURE_NAMES if n in {
     "cwfis_temp_c", "cwfis_rh_pct", "cwfis_wind_speed_kmh", "cwfis_precip_mm",

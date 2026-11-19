@@ -17,13 +17,17 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+from .contract import FEATURE_NAMES, HISTORY_FEATURE
+
 ROOT = Path(__file__).resolve().parents[2]
 NA_TOKENS = {"", "NA", "N/A", "NULL", "NaN", "nan", "null"}
 DAILY_WEATHER = ["cwfis_temp_c", "cwfis_rh_pct", "cwfis_wind_speed_kmh", "cwfis_precip_mm", "cwfis_ffmc", "cwfis_dmc", "cwfis_dc", "cwfis_isi", "cwfis_bui", "cwfis_fwi", "cwfis_dsr"]
 WEATHER_QUALITY = ["cwfis_nearest_station_km", "cwfis_imputed_station_fraction", "cwfis_calcstatus_nonzero_fraction"]
 TERRAIN = ["terrain_elevation_mean_m", "terrain_slope_deg", "terrain_aspect_sin", "terrain_aspect_cos", "terrain_ruggedness_m", "terrain_sample_count", "terrain_coverage_fraction"]
 HISTORY = ["fire_history_same_cell_30d", "fire_history_neighborhood_30d", "fire_history_same_cell_365d", "fire_history_neighborhood_365d", "fire_history_days_since_same_cell"]
-EXPECTED_METADATA = {"feature_set_version": "ignition-feature-v1.0.0", "terrain_source_id": "nrcan_cdem_1945_2011", "terrain_source_vintage_end_year": "2011", "cwfis_source_id": "cwfis_fwi_2010s_v3_ll", "fire_history_source_id": "nfdb_ontario_ignition_labels"}
+COORDINATES = {"cell_centroid_easting_m": "grid_x_m", "cell_centroid_northing_m": "grid_y_m"}
+HISTORY_CENSOR = f"{HISTORY_FEATURE}__censored"
+EXPECTED_METADATA = {"feature_set_version": "ignition-feature-v1.1.0", "terrain_source_id": "nrcan_cdem_1945_2011", "terrain_source_vintage_end_year": "2011", "cwfis_source_id": "cwfis_fwi_2010s_v3_ll", "fire_history_source_id": "nfdb_ontario_ignition_labels"}
 BOUNDS = {"calendar_day_of_year": (1, 366), "calendar_day_length_hours": (0, 24), "terrain_slope_deg": (0, 90), "terrain_sample_count": (0, 9), "cwfis_station_count": (0, 4), "cwfis_precip_7d_coverage_days": (0, 7), "cwfis_rh_pct": (0, 100), "cwfis_ffmc": (0, 101)}
 BOUNDS.update({column: (-1, 1) for column in ["calendar_doy_sin", "calendar_doy_cos", "terrain_aspect_sin", "terrain_aspect_cos"]})
 BOUNDS.update({column: (0, 1) for column in ["terrain_coverage_fraction", "cwfis_observation_coverage_fraction", "cwfis_imputed_station_fraction", "cwfis_calcstatus_nonzero_fraction"]})
@@ -59,7 +63,7 @@ def file_sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
-def numeric_values(raw: pd.DataFrame, columns: list[str], checks: Counter) -> tuple[dict[str, np.ndarray], dict[str, np.ndarray]]:
+def numeric_values(raw: pd.DataFrame, columns: list[str], checks: Counter, *, coordinate_expected: dict[str, np.ndarray] | None = None) -> tuple[dict[str, np.ndarray], dict[str, np.ndarray]]:
     """Check original numeric precision before converting bounded model inputs to float32."""
     values, nulls = {}, {}
     integers = {"ignition", "ignition_count", "large_fire_200ha", "calendar_day_of_year", "calendar_is_weekend", "terrain_sample_count", "cwfis_station_count", "cwfis_missing", "cwfis_precip_7d_coverage_days", "terrain_source_vintage_end_year", *HISTORY}
@@ -68,6 +72,8 @@ def numeric_values(raw: pd.DataFrame, columns: list[str], checks: Counter) -> tu
         original = pd.to_numeric(raw[column].mask(missing), errors="coerce").to_numpy(dtype="float64", na_value=np.nan)
         checks[f"numeric_conversion_failure_cells:{column}"] += int((~missing & np.isnan(original)).sum())
         checks[f"numeric_infinite_cells:{column}"] += int(np.isinf(original).sum())
+        if coordinate_expected is not None and column in coordinate_expected:
+            checks[f"cell_centroid_mismatch_rows:{column}"] += int((~np.isfinite(original) | (original != coordinate_expected[column])).sum())
         finite = np.isfinite(original)
         checks[f"float32_overflow_cells:{column}"] += int((finite & (np.abs(original) > np.finfo(np.float32).max)).sum())
         if column in BOUNDS:
@@ -105,8 +111,14 @@ def validate_dataset(input_path: str | Path, output_dir: str | Path | None = Non
     selection_path = Path(feature_selection_path or ROOT / "data/metadata/ignition_feature_selection_v1.json")
     selection = json.loads(selection_path.read_text(encoding="utf-8"))
     predictors = selection["predictors"]
-    if selection["target"] != "ignition" or len(predictors) != 36 or len(set(predictors)) != 36:
-        raise ValueError("Expected the frozen v1 target and unique 36-column allowlist")
+    feature_version = selection.get("feature_set_version", EXPECTED_METADATA["feature_set_version"])
+    version_predictors = {
+        "ignition-feature-v1.0.0": list(FEATURE_NAMES),
+        "ignition-feature-v1.1.0": [*FEATURE_NAMES, HISTORY_CENSOR, *COORDINATES],
+    }
+    if selection["target"] != "ignition" or predictors != version_predictors.get(feature_version):
+        raise ValueError("Expected the versioned ignition target and ordered predictor allowlist")
+    expected_metadata = {**EXPECTED_METADATA, "feature_set_version": feature_version}
     labels = [selection["target"], *selection["other_labels"]]
     if set(predictors) & set(labels + selection["metadata"]):
         raise ValueError("Label/metadata leakage in predictor allowlist")
@@ -115,14 +127,23 @@ def validate_dataset(input_path: str | Path, output_dir: str | Path | None = Non
     with opener(source, "rt", newline="", encoding="utf-8") as stream:
         header = next(csv.reader(stream))
     expected_columns = set(labels + predictors + selection["metadata"])
-    if len(header) != 48 or len(set(header)) != 48 or set(header) != expected_columns:
-        raise ValueError(f"Expected unique 48-column schema; missing={expected_columns - set(header)}, extra={set(header) - expected_columns}")
+    expected_count = len(labels) + len(predictors) + len(selection["metadata"])
+    if len(header) != expected_count or len(set(header)) != expected_count or set(header) != expected_columns:
+        raise ValueError(f"Expected unique {expected_count}-column schema; missing={expected_columns - set(header)}, extra={set(header) - expected_columns}")
     provenance_path = ROOT / "docs/eda/source_provenance.json"
     provenance = json.loads(provenance_path.read_text(encoding="utf-8")) if provenance_path.exists() else {}
     grid = pd.read_csv(grid_path or ROOT / "data/interim/ontario_fire_region_10km_grid.csv", dtype={"grid_id": "string"})
     if grid.grid_id.isna().any() or grid.grid_id.duplicated().any():
         raise ValueError("Reference grid keys must be non-null and unique")
     grid_index = pd.Index(grid.grid_id)
+    coordinate_reference = {}
+    for column, dimension in COORDINATES.items():
+        if column not in predictors:
+            continue
+        lower_edge = pd.to_numeric(grid[dimension], errors="raise").to_numpy(dtype=np.float64)
+        if not np.isfinite(lower_edge).all():
+            raise ValueError(f"Reference grid {dimension} must be finite and non-null")
+        coordinate_reference[column] = lower_edge + 5000
     dates = pd.DatetimeIndex([date for year in range(2010, 2020) for date in pd.date_range(f"{year}-05-01", f"{year}-10-31")])
     date_index = pd.Index(dates.strftime("%Y-%m-%d"))
     prior = (dates - pd.Timedelta(days=1)).strftime("%Y-%m-%d").to_numpy()
@@ -149,13 +170,15 @@ def validate_dataset(input_path: str | Path, output_dir: str | Path | None = Non
         n = len(raw)
         rows += n
         max_chunk_bytes = max(max_chunk_bytes, int(raw.memory_usage(index=True, deep=True).sum()))
-        value, nulls = numeric_values(raw, numeric, checks)
+        gi = grid_index.get_indexer(raw.grid_id)
+        coordinate_expected = {column: centers[np.maximum(gi, 0)] for column, centers in coordinate_reference.items()}
+        value, nulls = numeric_values(raw, numeric, checks, coordinate_expected=coordinate_expected)
         for column in header:
             null = nulls[column] if column in nulls else raw[column].isin(NA_TOKENS).to_numpy(dtype=bool)
             missing_counts[column] += int(null.sum())
             if column not in nullable:
                 record(f"required_null_cells:{column}", null)
-        for column, expected in EXPECTED_METADATA.items():
+        for column, expected in expected_metadata.items():
             record(f"metadata_value_mismatch_rows:{column}", raw[column].ne(expected).to_numpy(dtype=bool))
         for column, values in value.items():
             finite = values[np.isfinite(values)]
@@ -170,7 +193,7 @@ def validate_dataset(input_path: str | Path, output_dir: str | Path | None = Non
         for target in (0, 1):
             for missing in (0, 1):
                 status_counts[f"ignition={target},cwfis_missing={missing}"] += int(((y == target) & (weather_missing == missing)).sum())
-        gi, di = grid_index.get_indexer(raw.grid_id), date_index.get_indexer(raw.ignition_date)
+        di = date_index.get_indexer(raw.ignition_date)
         valid = (gi >= 0) & (di >= 0)
         record("unknown_grid_id_rows", gi < 0)
         record("date_outside_expected_fire_seasons_rows", di < 0)
@@ -209,6 +232,9 @@ def validate_dataset(input_path: str | Path, output_dir: str | Path | None = Non
             record(f"history_30d_exceeds_365d_rows:{area}", value[f"fire_history_{area}_30d"] > value[f"fire_history_{area}_365d"])
         days_since = value["fire_history_days_since_same_cell"]
         record("days_since_nonpositive_observed_rows", ~nulls["fire_history_days_since_same_cell"] & (days_since <= 0))
+        if HISTORY_CENSOR in predictors:
+            record(f"nonbinary_rows:{HISTORY_CENSOR}", ~np.isin(value[HISTORY_CENSOR], (0, 1)))
+            record("history_censor_flag_mismatch_rows", value[HISTORY_CENSOR] != nulls[HISTORY_FEATURE])
         for window in (30, 365):
             same_count = value[f"fire_history_same_cell_{window}d"]
             record(f"history_days_since_window_mismatch_rows:{window}d", ((same_count > 0) & (np.isnan(days_since) | (days_since > window))) | ((same_count == 0) & (days_since <= window)))
@@ -243,10 +269,12 @@ def validate_dataset(input_path: str | Path, output_dir: str | Path | None = Non
 
     checks.update({"duplicate_key_excess_rows": duplicates, "expected_keys_missing": int((seen == 0).sum()), "row_count_mismatch": int(rows != expected_rows), "reference_grid_cell_count_mismatch": int(len(grid) != 9673), "dates_with_incorrect_cell_count": int((date_rows != len(grid)).sum()), "cells_with_incorrect_date_count": int((cell_rows != len(dates)).sum())})
     digest = file_sha256(source)
-    pinned_checksum_applicable = source.name == provenance.get("source_file_name") and "sha256" in provenance
+    provenance_feature_version = "ignition-feature-v1.0.0"
+    provenance_version_applicable = feature_version == provenance_feature_version
+    pinned_checksum_applicable = provenance_version_applicable and source.name == provenance.get("source_file_name") and "sha256" in provenance
+    column_order_applicable = provenance_version_applicable and bool(provenance.get("columns"))
     checks["pinned_source_sha256_mismatch"] = int(pinned_checksum_applicable and digest != provenance["sha256"])
-    if provenance.get("columns"):
-        checks["source_column_order_mismatch"] = int(header != provenance["columns"])
+    checks["source_column_order_mismatch"] = int(column_order_applicable and header != provenance["columns"])
     after = memory_snapshot()
     annual_rows = []
     for year, counts in annual.items():
@@ -256,6 +284,13 @@ def validate_dataset(input_path: str | Path, output_dir: str | Path | None = Non
         row["weather_missing_pct"] = 100 * row["weather_missing_rows"] / row["rows"] if row["rows"] else 0
         annual_rows.append(row)
     report = {"status": "PASS" if not any(checks.values()) else "FAIL", "created_at_utc": datetime.now(timezone.utc).isoformat(), "full_scan_completed": True, "source": {"filename": source.name, "bytes": source.stat().st_size, "sha256": digest, "pinned_checksum_applicable": pinned_checksum_applicable, "matches_pinned_eda_sha256": digest == provenance.get("sha256")}, "schema": {"columns": header, "predictors": predictors, "predictor_count": len(predictors), "target": "ignition", "excluded_labels": selection["other_labels"], "metadata_excluded_from_predictors": selection["metadata"], "numeric_columns": numeric, "missing_tokens": sorted(NA_TOKENS)}, "totals": {"rows": rows, "expected_rows": expected_rows, "grid_cells": len(grid), "fire_season_dates": len(dates), "positive_cell_days": positives, "negative_cell_days": rows - positives, "event_records": events, "large_fire_positive_cell_days": large, "ignition_prevalence_pct": 100 * positives / rows if rows else 0, "weather_label_counts": dict(status_counts)}, "annual": annual_rows, "missingness": {column: {"rows": missing_counts[column], "pct": 100 * missing_counts[column] / rows if rows else 0} for column in header}, "numeric_ranges_float32": ranges, "validation_violation_counts": dict(sorted(checks.items())), "memory": {"chunk_rows": chunk_size, "maximum_raw_string_chunk_bytes": max_chunk_bytes, "key_bitmap_bytes": seen.nbytes, "numeric_chunk_float32_bytes_upper_bound": chunk_size * len(numeric) * 4, "available_physical_bytes_before": before["available_physical_bytes"], "available_physical_bytes_after": after["available_physical_bytes"], "observed_process_peak_working_set_bytes": after["process_peak_working_set_bytes"], "full_predictor_float32_bytes": rows * len(predictors) * 4, "full_predictor_float64_bytes": rows * len(predictors) * 8}, "library_versions": {"python": sys.version.split()[0], "pandas": pd.__version__, "numpy": np.__version__}, "scan_seconds": round(time.monotonic() - start, 2), "audit_limits": ["Checks validate the downloaded panel and internal contracts; NFDB labels/history, raw station selection, and precipitation sums are not independently rebuilt.", "Archives lack per-record historical available_at timestamps. This is a retrospective hindcast, not an operational forecast replay.", "The station candidate set and study-period grid universe may introduce selection effects; full source-level sensitivity analysis remains outstanding.", "Numeric ranges are reported after float32 conversion; token conversion, infinities, integer validity and overflow were checked at original float64 precision first. Continuous-value float32 rounding is expected.", "No rows are deleted, no imputation/scaling or model fitting is performed; invalid data cause FAIL. Source parsing/schema exceptions terminate the CLI with a nonzero exit.", "Peak working set covers this process only, including imports/parser/transient arrays. Model matrix estimates exclude copies, missingness indicators, transformed arrays and fitting workspace."]}
+    report["schema"]["feature_set_version"] = feature_version
+    report["source"].update(
+        provenance_feature_set_version=provenance_feature_version,
+        source_column_order_applicable=column_order_applicable,
+        provenance_version_applicable=provenance_version_applicable,
+        historical_provenance_path=str(provenance_path),
+    )
     if output_dir is not None:
         output = Path(output_dir)
         output.mkdir(parents=True, exist_ok=True)

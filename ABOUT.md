@@ -17,11 +17,13 @@ The generated v1 feature panel is:
 `data/processed/ontario_fire_region_10km_daily_ignition_features_v1.csv.gz`
 
 It is deliberately ignored by Git because it is a large deterministic build
-artifact (about 747 MB compressed in the 2026-10-05 rebuild). It has:
+artifact. The current builder contract is below; the approximately 747 MB
+compressed output from the 2026-10-05 rebuild is historical v1.0.0 evidence,
+not a regenerated v1.1.0 panel.
 
 | Property | Value |
 | --- | --- |
-| Feature version | `ignition-feature-v1.0.0` |
+| Feature version | `ignition-feature-v1.1.0` (51 columns; 39 selected predictors) |
 | Geography | Ontario Fire Region: official response-plan sectors where `RES_SECTOR != OFR` |
 | Spatial unit | Existing 10 km EPSG:3978 grid cell |
 | Time unit | Local `America/Toronto` calendar day, issued at 00:00 local time |
@@ -35,7 +37,8 @@ artifact (about 747 MB compressed in the 2026-10-05 rebuild). It has:
 The matching build audit is
 `data/processed/ontario_fire_region_10km_daily_ignition_features_v1_audit.json`.
 Read it before using a rebuilt panel: it records paths, row counts, coverage,
-and time-safety validations for that exact output.
+and time-safety validations for that exact output, including grid-derived
+coordinate semantics and the source grid checksum.
 
 ## Column dictionary
 
@@ -56,12 +59,25 @@ silently changed to zero or globally imputed.
 
 | Column | Meaning |
 | --- | --- |
-| `feature_set_version` | Feature-contract identifier, currently `ignition-feature-v1.0.0`. |
+| `feature_set_version` | Feature-contract identifier, currently `ignition-feature-v1.1.0`. |
 | `issue_time_utc` | UTC instant corresponding to 00:00 local time on `ignition_date`; daylight-saving-aware. All dynamic input must precede this instant. |
 | `calendar_day_of_year` | Day number within the calendar year. |
 | `calendar_doy_sin`, `calendar_doy_cos` | Cyclical sine/cosine encoding of day of year. Use together rather than interpreting either alone. |
 | `calendar_is_weekend` | `1` for Saturday/Sunday, otherwise `0`. |
 | `calendar_day_length_hours` | Astronomical day length calculated from the cell-centroid latitude and target date. |
+
+### Static cell-centre coordinates
+
+| Column | Meaning |
+| --- | --- |
+| `cell_centroid_easting_m` | `grid_x_m + 5000` from `data/interim/ontario_fire_region_10km_grid.csv`, in EPSG:3978 metres. |
+| `cell_centroid_northing_m` | `grid_y_m + 5000` from the same grid, in EPSG:3978 metres. |
+
+The history-censor flag followed by these two fields is appended to the
+original 48 columns. Coordinates are fixed per 10 km cell: the centre of the
+full square, not an ignition point, longitude/latitude, or the centroid of a
+region-clipped polygon. They add static grid geometry only, not a new dynamic
+source or operational forecasting evidence.
 
 ### Static terrain features
 
@@ -133,11 +149,14 @@ inventing pre-2010 fires.
 | `fire_history_same_cell_365d` | Earlier selected ignitions in the same cell during the completed 365-day lookback window. |
 | `fire_history_neighborhood_365d` | Earlier selected ignitions in the 3 × 3 neighbourhood during the completed 365-day lookback window. |
 | `fire_history_days_since_same_cell` | Days since an earlier selected ignition in the same cell. Blank means no earlier event exists in the available 2010+ history; it does not mean zero days. |
+| `fire_history_days_since_same_cell__censored` | Binary flag: `1` exactly when `fire_history_days_since_same_cell` is blank (no earlier observed same-cell event in the available 2010+ history), otherwise `0`. Computed before the issue date without fitting; not a claim that no earlier fire ever occurred. |
 
-## Missingness in the 2026-10-05 full rebuild
+## Historical missingness in the 2026-10-05 full rebuild
 
-The full scan covered all 17,798,320 rows and found no malformed rows. Blank
-cells, plus `NA`, `N/A`, and `NULL` tokens, were counted as nulls.
+This historical `ignition-feature-v1.0.0`, 48-column full scan covered all
+17,798,320 rows and found no malformed rows. Blank cells, plus `NA`, `N/A`,
+and `NULL` tokens, were counted as nulls. These statistics do not certify a
+new v1.1.0 rebuild or measure the newly persisted coordinates/history-censor flag.
 
 | Fields | Null rate | Interpretation |
 | --- | ---: | --- |
@@ -177,12 +196,15 @@ the missingness flags are currently part of the honest source-quality record.
 7. **Validated the build.** The feature builder checks complete label schema,
    row universe, daily cell set, key ordering/uniqueness, terrain alignment,
    exact output row count, prior-day CWFIS timing, and history leakage. The
-   current audit reports zero CWFIS timing violations and no prohibited
+   historical v1.0.0 audit reports zero CWFIS timing violations and no prohibited
    spread/post-event predictors.
-8. **Rebuilt the full panel on 2026-10-05.** Official NFDB, Ontario Fire
+8. **Rebuilt the full v1.0.0 panel on 2026-10-05.** Official NFDB, Ontario Fire
    Region, and CWFIS inputs were downloaded; the CWFIS archive matched its
    pinned SHA-256 (`67e706…0329246`); the labels, feature panel, audit, and
    full column-wise null scan were generated.
+9. **Extended the builder contract to v1.1.0.** The main builder now persists
+   the history-censor flag and two static cell-centre coordinates; no new full
+   rebuild or model evaluation is claimed by this change.
 
 ## Reproducing the dataset
 
@@ -204,7 +226,21 @@ used an isolated Python environment with `shapely` installed. The feature
 builder itself streams by date but the full output is large; do not commit it
 without an explicit team decision.
 
+Existing local panels and audits remain old until deliberately regenerated.
+The build command is unchanged; replacing existing outputs requires
+`python scripts/build_ignition_feature_panel.py --force`. Review the generated
+panel and matching audit before use. Output, audit, registry, and selection
+filenames retain the `_v1` family suffix despite the v1.1.0 feature version.
+
 ## Training guidance
+
+The current `data/metadata/ignition_feature_selection_v1.json` lists exactly
+the coordinate experiment's 39 transformed predictors, in order: the original
+36, `fire_history_days_since_same_cell__censored`, then the two coordinates.
+Frozen original models and their cache retain exactly the 36 predictors in
+`docs/modeling/feature_manifest.json`. Their preprocessing still derives the
+censor flag and coordinate experiments append coordinates once. When using
+all 39 persisted predictors, do not append the flag or coordinates again.
 
 - Use a chronological holdout and preferably a spatial block as well. A random
   row split leaks nearby dates and recurrent-cell patterns.
@@ -213,8 +249,8 @@ without an explicit team decision.
   without it, fit median imputation and missing indicators on the training
   split only; never fit them on all years.
 - Treat `fire_history_days_since_same_cell` as a censored “no earlier observed
-  event” state, not ordinary weather missingness. Add a training-derived
-  indicator before any numeric imputation.
+  event” state, not ordinary weather missingness. Retain its persisted censor
+  flag before any training-only numeric imputation; do not duplicate it.
 - Train with class weighting or negative downsampling if needed, but preserve
   natural prevalence in validation/test data. Accuracy is misleading at this
   target prevalence; report precision–recall, recall at an operational alert

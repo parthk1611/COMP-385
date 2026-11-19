@@ -5,9 +5,12 @@ Ontario wildfire ignition modelling data for COMP-385.
 The established baseline is a 2010–2019 Ontario Fire Region 10 km fire-season
 cell/day ignition label panel. The large label and feature panels are
 reproducible build artifacts, while their compact inputs, manifests, audits, and
-the v1 feature implementation are tracked. The feature build adds time-bounded
-calendar, static CDEM terrain, prior-day CWFIS weather/FWI, and past-only
-ignition-history features without changing that panel's row universe.
+the v1 feature implementation are tracked. The current `ignition-feature-v1.1.0`
+build has 51 columns and 39 selected predictors: calendar, static CDEM terrain,
+prior-day CWFIS weather/FWI, past-only ignition history with its explicit
+censor flag, and two static cell-centre coordinates, without changing the panel's row universe. The
+coordinates are `grid_x_m + 5000` and `grid_y_m + 5000` in EPSG:3978 metres,
+fixed per full 10 km cell, not ignition locations or clipped centroids.
 
 See [the ignition feature documentation](docs/ignition_features.md) for source
 provenance, leakage boundaries, deferred feature families, and reproducible
@@ -34,10 +37,20 @@ development branch, and the learned fire-spread pipeline. Open **Architecture**
 in the demo site's header, or open the standalone HTML directly. Component
 source links point to the verified 18 November 2026 code snapshot.
 
-See [the ignition EDA](docs/eda/README.md) for full-panel counts and missingness,
-feature explanations, figures, the notebook, and commands to reproduce the
-analysis. Its 36 recommended source predictors are recorded in
-`data/metadata/ignition_feature_selection_v1.json`.
+See [the ignition EDA](docs/eda/README.md) for historical v1.0.0 (48-column)
+full-panel counts and missingness from the 2026-10-05 rebuild, feature
+explanations, figures, the notebook, and reproduction commands. The current
+`data/metadata/ignition_feature_selection_v1.json` lists 39 predictors in the
+coordinate experiment's transformed order: 36 base features, history-censor
+flag, then two coordinates. Frozen original modelling uses the 36 in
+`docs/modeling/feature_manifest.json` and derives the extra fields once.
+
+Existing local outputs remain old until deliberate regeneration with the same
+`python scripts/build_ignition_feature_panel.py` command (`--force` is required
+to overwrite existing outputs). Review the output and matching audit, including
+coordinate semantics and grid checksum. Filenames remain `_v1`; this contract
+update claims neither a new full rebuild nor rerun model results. Static
+geometry adds no dynamic source or operational forecasting claim.
 
 The second AI capability, wind-driven fire spread, has its own folder:
 [`capability_2_fire_spread/`](capability_2_fire_spread/README.md). It holds a
