@@ -2,8 +2,9 @@
 
 Completed: all 16 new configurations and 80 chronological fits. **B9 is the
 numerical winner, improving mean yearly AP by 1.28% relative to the retained
-coordinate baseline.** It improves three years and worsens two; this is a small
-development gain, not an established generalization improvement.
+coordinate baseline.** It improves three years and worsens two. A paired
+whole-day bootstrap gives a 95% AP-difference interval spanning zero: the gain
+is not established, and neither is deterioration.
 
 ## Question
 
@@ -129,6 +130,94 @@ a modest numerical tuning gain, not a claim that Bayesian optimization is
 generally superior to random search: this run used more new trials, prior
 observations, and a different search domain.
 
+
+## Paired whole-day bootstrap uncertainty
+
+The saved baseline and B9 validation predictions were compared on all five
+development years, **2012--2016 inclusive**, without fitting or selecting models
+again. Each year has 184 fire-season days, 9,673 cells per day and 1,779,832
+rows. Both prediction vectors matched the same cached labels exactly, and all
+ten original APs matched the experiment archive within absolute tolerance
+`1e-12`. Cache-manifest hashes matched both source runs; cached labels also
+matched the baseline's recorded label-file checksum.
+
+Protocol: **2,000 resamples, fixed seed 385**, NumPy `default_rng`/PCG64.
+For each year independently, draw 184 days uniformly with replacement. Include
+every cell on each selected day, duplicating the complete day when drawn more
+than once. Use exactly the same day multiplicities for baseline and B9.
+Compute AP over the resulting full yearly cell-day sample, then take the
+unweighted mean of the five yearly APs for each model and subtract baseline
+from B9. This is neither pooled five-year AP nor mean daily AP.
+
+| Quantity | Result |
+| --- | ---: |
+| Original baseline mean yearly AP | 0.00696552510 |
+| Original B9 mean yearly AP | 0.00705502772 |
+| Original B9 minus baseline AP | +0.00008950262 |
+| Original relative change | +1.2849% |
+| Bootstrap mean AP difference | +0.00020364823 |
+| Bootstrap standard error of AP difference | 0.00067029403 |
+| 95% percentile interval, AP difference | [-0.00117028690, +0.00149563767] |
+| 95% percentile interval, relative change | [-13.6201%, +21.4437%] |
+| Resamples with B9 better | 1,264 / 2,000 (63.2%) |
+| Resamples with B9 worse | 736 / 2,000 (36.8%) |
+
+Intervals use the 2.5th and 97.5th percentiles with linear interpolation.
+Relative change is recomputed as B9 mean AP / baseline mean AP minus one in
+each resample; the interval is not an absolute AP interval expressed in percent.
+The bootstrap mean need not equal the original difference because AP is
+nonlinear; the original +1.2849% remains the observed point estimate.
+
+| Year | Original AP difference | 95% percentile interval |
+| --- | ---: | --- |
+| 2012 | +0.00042188993 | [-0.00223175902, +0.00276994328] |
+| 2013 | -0.00028245245 | [-0.00440238089, +0.00459108868] |
+| 2014 | +0.00018043547 | [-0.00039213361, +0.00106425621] |
+| 2015 | +0.00023638972 | [-0.00065952870, +0.00144913373] |
+| 2016 | -0.00010874955 | [-0.00456618895, +0.00368010922] |
+
+**Interpretation:** the observed improvement is small relative to sampling
+uncertainty. These results do not establish that B9 is better or worse, and
+they do not establish equivalence. Retain the existing baseline rather than
+promote B9 on this evidence alone. The 63.2% win fraction is a descriptive
+bootstrap frequency, not a posterior probability that B9 is better or a
+selection-adjusted p-value.
+
+This analysis conditions on the saved fitted models and five fixed years.
+It does not measure retraining variability or variation across new years, and
+does not correct selection optimism from choosing B9 after adaptive search on
+these repeatedly reused folds. Whole-day resampling preserves within-day
+spatial dependence, **not serial dependence between neighbouring days**;
+multi-day clustering could change the uncertainty. No 2017--2019 predictions,
+new final refit, calibration, or retained-model replacement were performed.
+
+Reproduce from the repository root using the existing modelling environment:
+
+```sh
+.venv-modeling/bin/python -m experiments.ignition.bayesian.bootstrap
+```
+
+Inputs default to the original corrected cache, `hgb_coordinates` baseline,
+and `reruns/bayesian` predictions. `--cache`, `--baseline`, `--bayesian`,
+`--output`, `--resamples` (1,000--2,000), and `--seed` allow explicit reruns.
+Use a new output directory for reruns; existing directories are rejected.
+The default generated output is
+`artifacts/ignition_modeling/reruns/bayesian/paired_day_bootstrap/`.
+
+`bootstrap_results.json` archives the summary, provenance/checksums, per-year
+results and all 2,000 mean-AP differences. Generated `replicates.npz` retains
+the day multiplicities, both models' AP for every replicate/year, and mean
+APs/differences; it is not committed. The original search `results.json` is
+unchanged.
+
+AP uses exact day-weighted score-threshold counts, including ties and all
+negative rows, rather than re-sorting millions of duplicated rows per draw.
+For each model/year, the original AP and first bootstrap draw were independently
+checked against sklearn, including full-row sample weights. Two regression
+tests also passed against literal duplicated-day samples, covering unequal day
+sizes, tied scores, negative-only days, zero-positive draws, and paired
+five-year averaging. No actual resample in this run had zero positives.
+If such a draw occurs, AP is zero as in sklearn; it is not discarded/redrawn.
 
 ## Reproduction
 
