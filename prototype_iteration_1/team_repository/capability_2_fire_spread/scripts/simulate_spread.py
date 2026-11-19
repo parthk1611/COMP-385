@@ -61,6 +61,7 @@ class Settings:
     # False: the day's fine fuel moisture code holds all day, so only wind changes hour to hour.
     # True: moisture follows hourly temperature and humidity, which nearly stops spread overnight.
     hourly_moisture: bool = False
+    integrate_hourly_travel: bool = False  # retain fractional progress across forecast hours
 
 
 @dataclass
@@ -196,6 +197,33 @@ def load_case(fire_id: str, settings: Settings | None = None, shared: dict | Non
     )  # fmt: skip
 
 
+def hourly_crossing(start, limit, offset, rates, move, source, target, clearance, half_distance, slope):
+    """Earliest arrival with piecewise-hourly weather, preserving progress through both fuels."""
+    minute = start
+    for fuel in (source, target):
+        remaining = half_distance
+        while remaining > 0 and minute < limit:
+            hour = int((minute + offset) // 60)
+            end = min(limit, (hour + 1) * 60 - offset)
+            table = rates(hour)
+            if table is None:
+                return math.inf
+            speed = table[fuel][move] * slope
+            if speed <= 0 or any(table[code][move] <= 0 for code in clearance):
+                minute = end
+                continue
+            capacity = speed * (end - minute)
+            if capacity >= remaining:
+                minute += remaining / speed
+                remaining = 0
+            else:
+                remaining -= capacity
+                minute = end
+        if remaining > 0:
+            return math.inf
+    return minute
+
+
 def simulate(
     case: FireCase, burning: np.ndarray, start_utc: pd.Timestamp, hours: float, settings: Settings | None = None, active: np.ndarray | None = None
 ) -> np.ndarray:
@@ -205,7 +233,7 @@ def simulate(
     again.  Fire spreads from the edge of that area, or only from the part of
     the edge inside `active` when it is given (the stretch of perimeter still
     alight).  Weather is taken hour by hour; a move between two cells uses the
-    hour in which it begins.
+    hour in which it begins unless hourly travel integration is enabled.
     """
     settings = settings or Settings()
     rows, columns = case.shape
@@ -220,7 +248,7 @@ def simulate(
     grid_bearings = [math.degrees(math.atan2(dc, -dr)) % 360 for dr, dc in MOVES]
 
     weather_times = case.weather.time_utc.values
-    first_hour = int(np.searchsorted(weather_times, np.datetime64(start_utc.floor("h")), side="left"))
+    first_hour = int(np.searchsorted(weather_times, start_utc.floor("h").to_datetime64(), side="left"))
     minute_offset = (start_utc - start_utc.floor("h")).total_seconds() / 60.0
     moisture_column = "ffmc" if settings.hourly_moisture or "ffmc_daily" not in case.weather else "ffmc_daily"
     weather_rows = case.weather[["wind_speed_kmh", "wind_direction_deg", moisture_column, "bui", "day_of_year"]].values.tolist()
@@ -272,21 +300,20 @@ def simulate(
             target_fuel = fuel_flat[neighbour]
             if target_fuel < 0:
                 continue
-            clear = True
-            for rr, cc in MOVE_CLEARANCE[move]:
-                crossed_fuel = fuel_flat[(row + rr) * columns + column + cc]
-                if crossed_fuel < 0 or table[crossed_fuel][move] <= 0:
-                    clear = False
-                    break
-            if not clear:
-                continue
-            rate_here, rate_there = source_rates[move], table[target_fuel][move]
-            if rate_here <= 0 or rate_there <= 0:
+            clearance = [fuel_flat[(row + rr) * columns + column + cc] for rr, cc in MOVE_CLEARANCE[move]]
+            if any(code < 0 for code in clearance):
                 continue
             rise = (elevation_flat[neighbour] - elevation_flat[cell]) / distances[move]
             uphill = math.exp(3.533 * min(rise, MAX_SLOPE) ** 1.2) if rise > 0 else 1.0
-            # half the move in each cell's fuel
-            arrive = time_now + distances[move] / 2.0 * (1.0 / rate_here + 1.0 / rate_there) / uphill
+            half_distance = distances[move] / 2.0
+            if settings.integrate_hourly_travel:
+                arrive = hourly_crossing(time_now, limit, minute_offset, lambda h: rates_for(first_hour + h),
+                                         move, source_fuel, target_fuel, clearance, half_distance, uphill)
+            else:
+                rate_here, rate_there = source_rates[move], table[target_fuel][move]
+                if rate_here <= 0 or rate_there <= 0 or any(table[code][move] <= 0 for code in clearance):
+                    continue
+                arrive = time_now + half_distance * (1.0 / rate_here + 1.0 / rate_there) / uphill
             if arrive < arrival[neighbour] and arrive <= limit:
                 arrival[neighbour] = arrive
                 heapq.heappush(heap, (arrive, neighbour))

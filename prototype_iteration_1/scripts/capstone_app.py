@@ -14,6 +14,11 @@ from scripts.workflow_view import PAGE as WORKFLOW_PAGE
 from scripts.performance_view import PAGE as PERFORMANCE_PAGE
 from scripts.dashboard_view import PAGE as HOME
 from scripts.model_evidence import evidence_response,geographic_cells
+from scripts.forecast_overview import build_overview
+from scripts.forecast_view import PAGE as FORECAST_HOME
+from scripts.moisture_state import coverage as moisture_coverage
+from scripts.range_predictions import range_response, cell_response, daily_csv
+from scripts.seven_day_ignition import outlook, start_worker
 
 REPORT=ROOT/'reports/week_5_completion_2026-10-16'
 REVIEW=ROOT/'reports/week_5_final_review_2026-10-16'
@@ -157,20 +162,113 @@ def build():
 
 
 class Handler(BaseHTTPRequestHandler):
+    def send_response(self,code,message=None):
+        self._response_started=True
+        super().send_response(code,message)
+    def write_body(self,body):
+        for offset in range(0,len(body),64*1024):self.wfile.write(body[offset:offset+64*1024])
     def send_json(self,status,value,content_type="application/json",filename=None):
         body=json.dumps(value,allow_nan=False).encode();self.send_response(status);self.send_header('Content-Type',content_type)
         self.send_header('Cache-Control','no-store');self.send_header('Content-Length',str(len(body)))
         if filename:self.send_header('Content-Disposition',f'attachment; filename="{filename}"')
-        self.end_headers();self.wfile.write(body)
+        self.end_headers();self.write_body(body)
     def do_GET(self):
+        self._response_started=False
         try:self.handle_get()
         except (OSError,json.JSONDecodeError) as error:
             self.log_error('Local artifact unavailable: %s',error)
+            if self._response_started:
+                self.close_connection=True
+                return
             self.send_json(503,{'status':'unavailable','probability':None,'reason':'local_artifact_unavailable','message':'A required local result file is missing, unreadable or invalid.'})
     def handle_get(self):
         path=urlsplit(self.path);routes={'/':REPORT/'index.html','/historical.html':ROOT/'reports/week_5_prototype_2026-10-16/historical_ignition_map.html','/selected.html':REPORT/'selected_2025_ignition_map.html','/spread.html':REPORT/'corrected_spread_viewer.html'}
-        if path.path in ('/','/workflow.html','/performance.html'):
-            body={'/':HOME,'/workflow.html':WORKFLOW_PAGE,'/performance.html':PERFORMANCE_PAGE}[path.path].encode();self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.send_header('Cache-Control','no-store');self.send_header('Content-Length',str(len(body)));self.end_headers();self.wfile.write(body);return
+        if path.path in ('/','/forecast.html','/research.html','/workflow.html','/performance.html'):
+            body={'/':FORECAST_HOME,'/forecast.html':FORECAST_HOME,'/research.html':HOME,'/workflow.html':WORKFLOW_PAGE,'/performance.html':PERFORMANCE_PAGE}[path.path].encode();self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.send_header('Cache-Control','no-store');self.send_header('Content-Length',str(len(body)));self.end_headers();self.wfile.write(body);return
+        if path.path == '/range.html':
+            self.send_response(302)
+            self.send_header('Location', '/#predict')
+            self.send_header('Content-Length', '0')
+            self.send_header('Cache-Control', 'no-store')
+            self.end_headers()
+            return
+        if path.path in ('/api/prediction-range', '/api/prediction-cells', '/api/ignition-outlook', '/api/ignition-cells'):
+            query = parse_qs(path.query, keep_blank_values=True)
+            formats = query.pop('format', ['json'])
+            if formats not in (['json'], ['csv']):
+                return self.send_json(400, {'message': 'Choose JSON or CSV output'})
+            try:
+                seven_day = path.path.startswith('/api/ignition-')
+                if seven_day:
+                    result, frame = outlook(ROOT, query)
+                if path.path in ('/api/prediction-range', '/api/ignition-outlook'):
+                    if not seven_day:
+                        result = range_response(ROOT, query)
+                    if formats == ['json']:
+                        return self.send_json(200, result)
+                    body = daily_csv(result)
+                else:
+                    if not seven_day:
+                        frame = cell_response(ROOT, query)
+                    if formats == ['json']:
+                        records = frame.astype(object).where(pd.notna(frame), None).to_dict('records')
+                        return self.send_json(200, {'cells': records})
+                    body = frame.to_csv(index=False).encode('utf-8')
+            except (ValueError, OverflowError) as error:
+                return self.send_json(400, {'message': str(error)})
+            self.send_response(200)
+            self.send_header('Content-Type', 'text/csv; charset=utf-8')
+            self.send_header('Content-Length', str(len(body)))
+            self.send_header('Content-Disposition', 'attachment; filename="ontario_estimates.csv"')
+            self.send_header('Cache-Control', 'no-store')
+            self.end_headers()
+            self.write_body(body)
+            return
+        if path.path == '/spread-outlook.html':
+            from scripts.spread_outlook_view import page
+            body = page().encode()
+            self.send_response(200)
+            self.send_header('Content-Type', 'text/html; charset=utf-8')
+            self.send_header('Cache-Control', 'no-store')
+            self.send_header('Content-Length', str(len(body)))
+            self.end_headers()
+            return self.write_body(body)
+        if path.path == '/api/spread-outlook':
+            import requests
+            from scripts.spread_outlook import outlook as spread_outlook, scenario_request
+            query = parse_qs(path.query, keep_blank_values=True)
+            try:
+                scenario_request(query, pd.Timestamp.now(tz='UTC'))
+            except (ValueError, TypeError) as error:
+                return self.send_json(400, {'message': str(error)})
+            try:
+                result = spread_outlook(ROOT, query)
+            except ValueError as error:
+                return self.send_json(503, {'message': str(error)})
+            except (OSError, KeyError, TypeError, requests.RequestException) as error:
+                self.log_error('Spread outlook unavailable: %s', error)
+                return self.send_json(503, {'message': 'Weather, fuel moisture or landscape data could not be loaded.'})
+            return self.send_json(200, result)
+        if path.path == '/forecast-spread.html':
+            routes[path.path] = Path(__file__).with_name('forecast_spread_view.html')
+        if path.path == '/api/forecast-spread':
+            if path.query:
+                return self.send_json(400, {'status': 'invalid_request'})
+            from scripts.spread_forecast import read_result
+            try:
+                result = read_result(ROOT)
+            except (ValueError, TypeError, KeyError) as error:
+                raise OSError('Saved forecast-spread research result is invalid') from error
+            return self.send_json(200, result)
+        if path.path=='/api/forecast-overview':
+            if path.query:return self.send_json(400,{'status':'invalid_request','probability':None})
+            try:result=build_overview(ROOT,workflow_response(),live_readiness_response())
+            except (ValueError,KeyError,TypeError) as error:
+                raise OSError('Forecast overview evidence is invalid') from error
+            return self.send_json(200,result)
+        if path.path=='/api/moisture-state':
+            if path.query:return self.send_json(400,{'status':'invalid_request'})
+            return self.send_json(200,moisture_coverage(ROOT))
         if path.path=='/api/model-evidence':
             if path.query:return self.send_json(400,{'status':'invalid_request'})
             return self.send_json(200,evidence_response(ROOT))
@@ -202,7 +300,7 @@ class Handler(BaseHTTPRequestHandler):
                 if set(q)!={'study','date','format'} or any(len(v)!=1 for v in q.values()):raise ValueError('Invalid export query')
                 body,mime,rows=export_predictions(q['study'][0],q['date'][0],q['format'][0])
             except (ValueError,OverflowError):return self.send_json(400,{'status':'invalid_export'})
-            self.send_response(200);self.send_header('Content-Type',mime);self.send_header('Content-Length',str(len(body)));self.send_header('Content-Disposition',f'attachment; filename="{q["study"][0]}_{q["date"][0]}.{q["format"][0]}"');self.end_headers();self.wfile.write(body);return
+            self.send_response(200);self.send_header('Content-Type',mime);self.send_header('Content-Length',str(len(body)));self.send_header('Content-Disposition',f'attachment; filename="{q["study"][0]}_{q["date"][0]}.{q["format"][0]}"');self.end_headers();self.write_body(body);return
         if path.path=='/api/live-ignition':return self.send_json(503,live_readiness_response())
         if path.path in ('/api/historical-score','/api/selected-score'):
             try:
@@ -215,10 +313,15 @@ class Handler(BaseHTTPRequestHandler):
         if not file.exists():return self.send_json(503,{'status':'unavailable','probability':None})
         self.send_response(200);self.send_header('Content-Type','text/html; charset=utf-8');self.send_header('Content-Length',str(file.stat().st_size));self.end_headers()
         with file.open('rb') as f:
-            for chunk in iter(lambda:f.read(1024*1024),b''):self.wfile.write(chunk)
+            for chunk in iter(lambda:f.read(64*1024),b''):self.wfile.write(chunk)
 
 
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('mode',choices=['build','serve']);p.add_argument('--port',type=int,default=8767);a=p.parse_args()
     if a.mode=='build':build()
-    else:ThreadingHTTPServer(('127.0.0.1',a.port),Handler).serve_forever()
+    else:
+        stop, workers = start_worker(ROOT)
+        try:ThreadingHTTPServer(('127.0.0.1',a.port),Handler).serve_forever()
+        finally:
+            stop.set()
+            for worker in workers:worker.join(timeout=2)

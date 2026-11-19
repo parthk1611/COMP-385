@@ -73,6 +73,8 @@
   .north text { font: 700 8px var(--sans); fill: var(--fg); }
   .scale-chip { left: 10px; bottom: 10px; padding: 5px 8px; display: grid; gap: 3px; font-variant-numeric: tabular-nums; pointer-events: none; }
   .scale-chip i { display: block; height: 3px; border-radius: 2px; background: var(--fg); }
+  .forecast-wind { right: 10px; bottom: 10px; padding: 4px 8px; display: flex; gap: 5px; align-items: center; pointer-events: none; }
+  .forecast-wind .arrow { display: inline-block; font-weight: 700; font-size: 16px; }
   .credit { right: 10px; bottom: 10px; padding: 3px 7px; border-radius: 8px; font-size: 10px; color: var(--muted); max-width: calc(100% - 150px); pointer-events: none; }
   .scrubber { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 12px; align-items: center; padding: 10px 16px; border-top: 0.5px solid var(--hair); }
   .play { width: 36px; height: 36px; border-radius: 50%; border: 0; background: var(--accent); color: #ffffff; display: grid; place-items: center; cursor: pointer; padding: 0; }
@@ -137,11 +139,11 @@
 
 <div class="page">
   <header class="block">
-    <h1>Fire Spread Replay</h1>
-    <p class="lede">Real Ontario wildfires run through the wind-driven spread simulator. Each step starts from where satellites last saw the fire, runs forward on that day's wind and fuel moisture, and is then compared with what the next satellite pass saw.</p>
+    <h1 id="viewer-title">Fire Spread Replay</h1>
+    <p class="lede" id="viewer-lede">Real Ontario wildfires run through the wind-driven spread simulator. Each step starts from where satellites last saw the fire, runs forward on that day's wind and fuel moisture, and is then compared with what the next satellite pass saw.</p>
   </header>
 
-  <div class="controls">
+  <div class="controls" id="viewer-controls">
     <div class="field">
       <label for="fire-select">Fire</label>
       <select id="fire-select"></select>
@@ -168,8 +170,8 @@
       <div class="map-wrap">
         <canvas id="map" tabindex="0" role="img" aria-label="Map of simulated and observed fire spread. Drag to move, use the zoom buttons or the plus and minus keys to zoom."></canvas>
         <div class="chip ramp-chip">
-          <span class="chip-title">Simulated spread</span>
-          <span class="ramp" aria-hidden="true"></span>
+          <span class="chip-title" id="spread-ramp-title">Simulated spread</span>
+          <span class="ramp" id="spread-ramp" aria-hidden="true"></span>
           <span class="ramp-labels" id="ramp-labels"></span>
         </div>
         <div class="chip zoom" role="group" aria-label="Map zoom">
@@ -181,6 +183,10 @@
           <svg width="26" height="26" viewBox="-13 -13 26 26"><g id="north-arrow"><path d="M0 -11 L3.6 -2 L0 -4 L-3.6 -2 Z" fill="var(--pin)"></path><text y="8" text-anchor="middle">N</text></g></svg>
         </div>
         <div class="chip scale-chip" aria-hidden="true"><span id="scale-text"></span><i id="scale-line"></i></div>
+        <div class="chip forecast-wind" id="forecast-map-wind" hidden>
+          <span class="arrow" id="forecast-map-arrow" aria-hidden="true">↑</span>
+          <span id="forecast-map-wind-label"></span>
+        </div>
         <div class="chip credit" id="credit" hidden></div>
       </div>
       <div class="scrubber">
@@ -213,6 +219,7 @@
             <dt>Buildup Index</dt><dd id="c-bui"></dd>
             <dt>Warmest hour</dt><dd id="c-temp"></dd>
             <dt>Driest hour</dt><dd id="c-rh"></dd>
+            <dt id="forecast-rain-label" hidden>Forecast rain</dt><dd id="forecast-rain" hidden></dd>
           </dl>
         </div>
         <p class="note">The arrow points where the wind pushes the fire, turned to match the map.</p>
@@ -234,7 +241,7 @@
       </div>
 
       <div class="block" id="ignition-block" hidden>
-        <h2>From the reported ignition point</h2>
+        <h2 id="ignition-heading">From the reported ignition point</h2>
         <div class="card">
           <dl>
             <dt>After 1 hour</dt><dd id="i-1"></dd>
@@ -243,6 +250,10 @@
           </dl>
         </div>
         <p class="note" id="ignition-note"></p>
+        <div class="card" id="forecast-reach" hidden><dl>
+          <dt>Farthest modeled reach · 6 h</dt><dd id="forecast-distance"></dd>
+          <dt>Leading direction · 6 h</dt><dd id="forecast-bearing"></dd>
+        </dl></div>
       </div>
 
       <div class="block">
@@ -262,7 +273,7 @@
     </div>
   </section>
 
-  <section class="block">
+  <section class="block" id="scores-section">
     <h2>How the simulator scores on fires it was not tuned on</h2>
     <div class="scores" id="scores"></div>
     <p class="note" id="scores-note"></p>
@@ -271,11 +282,11 @@
 
 <script src="spread_viewer_data.js"></script>
 <script>
-(function () {
-  const DATA = window.SPREAD_VIEWER_DATA;
+window.mountSpreadViewer = function (DATA) {
+  const forecast = DATA.settings.forecastScenario === true;
   const $ = (id) => document.getElementById(id);
   const canvas = $("map"), ctx = canvas.getContext("2d");
-  const state = { fire: 0, mode: "replay", ground: "map", step: 0, hour: 0, playing: false, timer: null, sized: false, queued: false };
+  const state = { fire: 0, mode: forecast ? "ignition" : "replay", ground: "map", step: 0, hour: 0, playing: false, timer: null, sized: false, queued: false };
   const cam = { x: 0, y: 0, k: 1 };  // the grid cell at the centre of the map, and canvas pixels per 90 m cell
   const cache = new Map(), memo = {}, touches = new Map();
   const COMPASS = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
@@ -380,7 +391,15 @@
     if (state.mode === "ignition" && fire.ignition) return corners(fire.ignition.view);
     return corners(fire.basemap || { c0: 0, r0: 0, columns: fire.columns, rows: fire.rows });
   }
-  function home(item) { return state.mode === "ignition" && item.fire.ignition ? corners(item.fire.ignition.view) : item.home; }
+  function home(item) {
+    const source = item.fire.ignition;
+    if (state.mode !== "ignition" || !source) return item.home;
+    const reach = forecast ? source.frames.at(-1).reach_m : 0;
+    if (!reach) return corners(source.view);
+    const radius = Math.max(10, 1.25 * reach / item.fire.pixel);
+    const x = source.column + 0.5, y = source.row + 0.5;
+    return { c0: x - radius, r0: y - radius, c1: x + radius, r1: y + radius };
+  }
   // keep the view filled with map: never zoomed out or moved past the edge of the ground
   function hold() {
     const e = extent(prepare(state.fire)), least = Math.max(canvas.width / (e.c1 - e.c0), canvas.height / (e.r1 - e.r0));
@@ -566,7 +585,8 @@
       memo.spread = spreadSheet(item, item.ignition, limit, DATA.settings.ignitionHours * 60, null);
       memo.spreadKey = spreadKey;
     }
-    lay(memo.spread, 0, 0, item.fire.columns, item.fire.rows, 0.6);
+    ctx.imageSmoothingEnabled = !forecast;
+    lay(memo.spread, 0, 0, item.fire.columns, item.fire.rows, forecast ? 0 : 0.6);
   }
 
   // ---- readouts beside the map ----
@@ -576,16 +596,28 @@
     const item = prepare(state.fire), fire = item.fire, replay = state.mode === "replay";
     const source = replay ? fire.steps[state.step] : fire.ignition;
     $("step-block").hidden = !replay; $("ignition-block").hidden = replay; $("step-nav").hidden = !replay; $("steps-section").hidden = !replay;
-    $("map-heading").textContent = fire.id + ", " + number(fire.sizeHa) + " ha, " + fire.cause + ", " + (fire.split === "holdout" ? "not used for tuning" : "used for tuning");
+    const risk = fire.ignitionRisk;
+    $("map-heading").textContent = forecast ? (risk ? "Ignition rank #" + risk.rank : fire.id) + " · " + fire.day : fire.id + ", " + number(fire.sizeHa) + " ha, " + fire.cause + ", " + (fire.split === "holdout" ? "not used for tuning" : "used for tuning");
     legend(replay, fire);
     if (!source) { $("map-clock").textContent = "No reported ignition point"; return; }
     const start = new Date(source.startLocal.replace(" ", "T") + ":00Z"), now = new Date(start.getTime() + state.hour * 3600e3);
-    $("map-clock").textContent = now.toISOString().slice(0, 16).replace("T", " ") + " local";
-    const wind = windAt(source.wind, state.hour);
+    const ontarioClock = new Intl.DateTimeFormat("en-CA", {timeZone: "America/Toronto",
+      dateStyle: "short", timeStyle: "short"});
+    $("map-clock").textContent = forecast ?
+      ontarioClock.format(new Date(Date.parse(source.startUtc) + state.hour * 3600e3)) + " Ontario time" :
+      now.toISOString().slice(0, 16).replace("T", " ") + " local";
+    const wind = windAt(source.wind, state.hour + (source.offsetHours || 0));
     // the map's "up" is a few degrees off true north this far from the projection's centre line, so turn the compass to match
     $("wind-north").setAttribute("transform", "rotate(" + (-fire.convergence) + ")");
     $("wind-arrow").setAttribute("transform", "rotate(" + (wind[1] + 180 - fire.convergence) + ")");
     $("wind-speed").textContent = wind[0].toFixed(0) + " km/h";
+    if (forecast) {
+      const toward = (wind[1] + 180) % 360;
+      $("forecast-map-arrow").hidden = wind[0] === 0;
+      $("forecast-map-arrow").style.transform = "rotate(" + (toward - fire.convergence) + "deg)";
+      $("forecast-map-wind-label").textContent = wind[0] === 0 ? "Calm" :
+        "Wind toward " + COMPASS[Math.round(toward / 45) % 8] + " · " + number(wind[0], 1) + " km/h";
+    }
     $("wind-from").textContent = "from the " + COMPASS[Math.round(wind[1] / 45) % 8] + " (" + wind[1] + "\u00b0)";
     $("c-ffmc").textContent = source.ffmc.toFixed(1); $("c-bui").textContent = source.bui.toFixed(0);
     $("c-temp").textContent = source.tempMax.toFixed(0) + " \u00b0C"; $("c-rh").textContent = source.rhMin + "% humidity";
@@ -602,7 +634,33 @@
       $("hour-label").textContent = state.hour.toFixed(1) + " of " + DATA.settings.ignitionHours + " h";
       const areaAt = (m) => { let n = 0; for (const v of item.ignition.minutes) if (v <= m) n++; return number(n * fire.pixel * fire.pixel / 10000, 1) + " ha"; };
       $("i-1").textContent = areaAt(60); $("i-3").textContent = areaAt(180); $("i-6").textContent = areaAt(360);
-      $("ignition-note").textContent = "Started at 13:00 local on the day satellites first saw this fire, in that afternoon's weather. The reported start has no time of day, so this shows the kind of run the simulator predicts, not a scored result." + (fire.ignition.movedMetres ? " The reported point falls on water or non-fuel in the fuel map, so the start was moved " + fire.ignition.movedMetres + " m to the nearest fuel." : "");
+      if (forecast) {
+        const end = source.frames.at(-1);
+        const coordinates = fire.coords.map(v => v.toFixed(4)).join(", ");
+        const parts = [
+          "Scenario starts " + ontarioClock.format(new Date(source.startUtc)) + " Ontario time. Area includes the starting cell.",
+          "Weather received " + ontarioClock.format(new Date(fire.weatherReceived)) + " Ontario time.",
+          "CWFIS moisture from " + fire.moistureDate + ", advanced with hourly weather.",
+          (risk ? "Assumed start " : "Report coordinates ") + coordinates + "."
+        ];
+        if (risk) {
+          const estimate = (risk.probability * 100).toPrecision(3) + "%";
+          const method = risk.method === "weather_plus_history_research" ? "weather and fire history" : "historical fire patterns";
+          parts.unshift("Cell " + fire.id + " · Daily ignition estimate " + estimate + " using " + method + ".");
+        }
+        if (fire.confirmation) parts.push("Report confirmed " + ontarioClock.format(new Date(fire.confirmation)) + " Ontario time.");
+        if (source.movedMetres) parts.push("Start moved " + number(source.movedMetres) + " m to burnable fuel.");
+        if (source.snowM >= 0.01) parts.push("Forecast snow is present. This fire model does not represent snow cover.");
+        if (end.reach_m === 0) parts.unshift("No modeled growth beyond the starting cell during these six hours.");
+        if (end.clipped) parts.push("The simulated fire reached the edge of the map.");
+        $("ignition-note").textContent = parts.join(" ");
+        $("forecast-rain").textContent = number(source.rainMm, 1) + " mm";
+        $("forecast-distance").textContent = number(end.reach_m) + " m";
+        $("forecast-bearing").textContent = end.direction_deg == null ? "No clear direction" :
+          COMPASS[Math.round(end.direction_deg / 45) % 8];
+      } else {
+        $("ignition-note").textContent = "Started at 13:00 local on the day satellites first saw this fire, in that afternoon's weather. The reported start has no time of day, so this shows the kind of run the simulator predicts, not a scored result." + (fire.ignition.movedMetres ? " The reported point falls on water or non-fuel in the fuel map, so the start was moved " + fire.ignition.movedMetres + " m to the nearest fuel." : "");
+      }
     }
     const share = Math.round(state.hour / limit() * 200);
     $("hour").value = share; $("hour").style.setProperty("--p", share / 2 + "%");
@@ -611,13 +669,18 @@
   function legend(replay, fire) {
     const hours = DATA.settings.ignitionHours;
     const ticks = replay ? [[0, "Start of step"], [100, "End of step"]] : [[0, "0"], [100 / hours, "1 h"], [300 / hours, "3 h"], [100, hours + " h"]];
+    const noGrowth = forecast && fire.ignition.frames.at(-1).reach_m === 0;
+    $("spread-ramp-title").textContent = noGrowth ? "No modeled spread beyond start" : "Simulated spread";
+    $("spread-ramp").hidden = noGrowth;
+    $("ramp-labels").hidden = noGrowth;
     $("ramp-labels").innerHTML = ticks.map((t) => '<span style="left:' + t[0] + "%;transform:translateX(-" + t[0] + '%)">' + t[1] + "</span>").join("");
     const gradient = "background:linear-gradient(90deg,var(--r5),var(--r3),var(--r1))";
-    const pin = '<div><span class="swatch" style="border-radius:50%;background:radial-gradient(var(--pin) 38%,#ffffff 42%);box-shadow:0 0 0 0.5px var(--border)"></span>Reported ignition point</div>';
+    const pointLabel = fire.ignitionRisk ? "Assumed ignition point" : "Reported ignition point";
+    const pin = '<div><span class="swatch" style="border-radius:50%;background:radial-gradient(var(--pin) 38%,#ffffff 42%);box-shadow:0 0 0 0.5px var(--border)"></span>' + pointLabel + '</div>';
     const rows = replay
       ? [["background:var(--burned);opacity:0.4", "Burned before this step (satellite record)"], [gradient, "Simulated growth, purple where it burned first"],
         ["background:var(--hit)", "Seen by the next pass, and the simulator reached it"], ["border:2px solid var(--miss)", "Seen by the next pass, and the simulator missed it"]]
-      : [[gradient, "Simulated growth, purple in the first hour, light blue by the sixth"]];
+      : noGrowth ? [] : [[gradient, "Simulated growth, purple in the first hour, light blue by the sixth"]];
     const fuels = [["--map-conifer", "Conifer"], ["--map-mixed", "Mixedwood"], ["--map-decid", "Aspen"], ["--map-open", "Grass"], ["--map-water", "Water"], ["--map-nonfuel", "Non-fuel"]];
     const ground = state.ground === "fuel" || !fire.basemap
       ? "Fuel types: " + fuels.map((f) => '<span class="swatch ground" style="background:var(' + f[0] + ')"></span> ' + f[1]).join(" &nbsp;")
@@ -670,7 +733,23 @@
     render();
   }
 
-  $("fire-select").innerHTML = DATA.fires.map((f, i) => '<option value="' + i + '">' + f.id + " \u00b7 " + number(f.sizeHa) + " ha \u00b7 " + (f.split === "holdout" ? "not used for tuning" : "used for tuning") + "</option>").join("");
+  if (forecast) {
+    const ranked = Boolean(DATA.fires[0].ignitionRisk);
+    document.title = "Forecast Spread · Ontario Wildfire";
+    $("viewer-title").textContent = "Forecast spread simulation";
+    $("viewer-lede").textContent = ranked ?
+      "Six-hour scenario from an assumed start near the centre of the highest-ranked 10 km cell with usable data. The pin marks the assumed start." :
+      "Six-hour point-start scenario using current hourly weather. The reported location sets the starting point. The present fire perimeter is unknown.";
+    if (ranked) $("ignition-heading").textContent = "From the assumed ignition point";
+    $("viewer-controls").hidden = true;
+    $("scores-section").hidden = true;
+    $("forecast-reach").hidden = false;
+    $("forecast-rain").hidden = false;
+    $("forecast-rain-label").hidden = false;
+    $("forecast-map-wind").hidden = false;
+    canvas.setAttribute("aria-label", "Spread scenario map with the " + (ranked ? "assumed" : "reported") + " starting point. Drag to move or use the zoom controls.");
+  }
+  $("fire-select").innerHTML = forecast ? "" : DATA.fires.map((f, i) => '<option value="' + i + '">' + f.id + " \u00b7 " + number(f.sizeHa) + " ha \u00b7 " + (f.split === "holdout" ? "not used for tuning" : "used for tuning") + "</option>").join("");
   $("fire-select").addEventListener("change", (e) => { stop(); state.fire = +e.target.value; state.step = 0; table(); state.hour = limit(); fit(home(prepare(state.fire))); render(); });
   $("mode-replay").addEventListener("click", () => setMode("replay"));
   $("mode-ignition").addEventListener("click", () => setMode("ignition"));
@@ -718,6 +797,9 @@
   new MutationObserver(requestDraw).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
   if (window.ResizeObserver) new ResizeObserver(sizeCanvas).observe(canvas); else window.addEventListener("resize", sizeCanvas);
 
-  showPlaying(false); table(); scores(); state.hour = limit(); readouts(); sizeCanvas();
-})();
+  showPlaying(false);
+  if (!forecast) { table(); scores(); }
+  state.hour = forecast ? 0 : limit(); readouts(); sizeCanvas();
+};
+if (window.SPREAD_VIEWER_DATA) window.mountSpreadViewer(window.SPREAD_VIEWER_DATA);
 </script>

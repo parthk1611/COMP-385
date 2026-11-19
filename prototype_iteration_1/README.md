@@ -21,6 +21,16 @@ Open http://127.0.0.1:8768/ . If another application uses that port, stop your p
 
 On macOS, LightGBM can require the OpenMP runtime. If its import reports libomp missing, install the official Homebrew libomp package (`brew install libomp`) and retry. Dependency installation needs Internet access. Existing model artifacts were created with the exact versions in requirements-lock.txt. The saved-result demo does not require weather-provider credentials or downloads.
 
+## Ignition outlook and forecast spread
+
+The Predict tab ranks 10,414 Ontario 10 km cells for each of the next seven days. In **Maps → Forecast Spread**, select a day to run the spread simulator from the highest-ranked cell with usable inputs. The scenario assumes a start near the cell centre and uses hourly forecast weather and wind, fuel type, terrain, and CWFIS fuel moisture. Press **Play** to follow six hours of spread on the purple-to-blue map. The map labels scenarios that stay within their starting cell. These are research scenarios, and accuracy against real fire outcomes remains unmeasured.
+
+Restore the following inputs into this folder from the CAPSTONE workspace before running Forecast Spread:
+
+- `data/processed/ontario_range_v1/` with `runtime_manifest.json`, `grid.parquet`, and `seasonal_2026.npy`. The stored seven-day weather model requires `data/processed/ontario_7day_v1/model.json` and the model file it names. With no saved model, the ranking uses historical patterns.
+- `team_repository/data/interim/cdem_terrain_10km_summary.csv` for the saved weather model. This file is tracked in the outer repository under `data/interim/` and can be copied to the nested path.
+- `data/raw/ontario/fbp/2024/` and `data/raw/ontario/mrdem_30m/` for fuel and elevation coverage. Hourly weather and CWFIS fuel moisture require network access.
+
 ## What to demonstrate
 
 1. Historical ignition: select a supported date from May to October 2019, click a 10 km cell and inspect the probability.

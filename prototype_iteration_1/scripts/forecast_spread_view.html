@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Forecast spread replay · Ontario Wildfire</title>
+<link rel="icon" href="data:,">
+<style>
+:root{color-scheme:light;font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:#f3f5f1;color:#18251d;--border:#d8e0d9;--ink:#18251d;--muted:#506155;--green:#234c39;--paper:white}
+*{box-sizing:border-box}body{margin:0}main{width:min(1190px,calc(100% - 2rem));margin:0 auto 2rem}a{color:var(--green);text-underline-offset:.2em}
+header{background:#e8eee7;border-bottom:1px solid var(--border);margin-bottom:1.3rem;padding:1.4rem max(1rem,calc((100% - 1190px)/2))}h1{font-size:clamp(1.7rem,4vw,2.5rem);line-height:1.1;margin:.4rem 0 .5rem;letter-spacing:-.045em}h2{font-size:1.13rem;margin:0 0 .65rem}p{margin:.45rem 0;color:var(--muted)}[hidden]{display:none!important}
+select,button,input{font:inherit}select,button{min-height:44px;border-radius:.6rem;border:1px solid var(--border);background:white;color:var(--ink);padding:.48rem .8rem}button{cursor:pointer}button[aria-pressed="true"]{background:var(--green);color:white;border-color:var(--green)}button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid #6a9c82;outline-offset:2px}
+.controls,.map-controls,.legend{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}.controls{margin-bottom:1rem}.controls label{font-weight:650}
+.layout{display:grid;gap:1rem;grid-template-columns:minmax(0,2.05fr) minmax(17.5rem,1fr)}.panel{border:1px solid var(--border);background:var(--paper);border-radius:.95rem;overflow:hidden}.aside{display:grid;gap:1rem;align-content:start}.aside section,.map-controls,.legend,.details{padding:1rem}.map-shell{height:clamp(340px,54vh,565px);background:#edf0e8;position:relative}.map-shell canvas{display:block;width:100%;height:100%}
+.elapsed{font-variant-numeric:tabular-nums;margin-left:auto;font-weight:650}.legend{font-size:.85rem;color:var(--muted);padding-top:.25rem;gap:.55rem 1.15rem}.swatch{display:inline-block;width:.9rem;height:.9rem;border:2px solid transparent;margin-right:.35rem;vertical-align:-.12em}.seed{background:#202a24;border-radius:50%}.growth{background:#dc6119}.water{background:#a3c6db}.observed{border-color:#205b9f}
+dl{margin:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(4rem,auto);gap:.5rem .75rem;font-size:.92rem}dt{color:var(--muted)}dd{margin:0;text-align:right;font-variant-numeric:tabular-nums;font-weight:640}.form-check{display:flex;align-items:center;gap:.4rem;margin:.7rem 0 0}.form-check input{width:1.1rem;height:1.1rem;accent-color:var(--green)}
+.details{margin-top:1rem}summary{cursor:pointer;font-weight:650}.small{font-size:.85rem}.status{padding:.8rem 1rem;background:#eaf0e9;border-radius:.6rem}
+@media(max-width:780px){.layout{grid-template-columns:1fr}.map-shell{height:390px}.elapsed{margin-left:0}.controls label{flex-basis:100%}}
+</style>
+</head>
+<body>
+<header><a href="/#spread">← Ontario dashboard</a><h1>Forecast spread replay</h1><p>Historical research using a reported location and archived weather forecasts.</p></header>
+<main>
+<p id="status" role="status" class="status">Loading saved simulations…</p>
+<div id="content" hidden>
+<div class="controls"><label for="case">Reported fire</label><select id="case"></select></div>
+<div class="layout">
+<section class="panel" aria-label="Spread playback">
+  <div class="map-shell"><canvas id="map" role="img" aria-label="Simulated fire footprint on a fuel map"></canvas></div>
+  <div class="map-controls" aria-label="Simulation time">
+    <button id="play" type="button">Play</button>
+    <button type="button" data-hours="1">1 hour</button><button type="button" data-hours="3">3 hours</button><button type="button" data-hours="6">6 hours</button>
+    <span id="elapsed" class="elapsed"></span>
+  </div>
+  <div class="legend"><span><i class="swatch seed"></i>Simulation start</span><span><i class="swatch growth"></i>Simulated spread</span><span><i class="swatch water"></i>Water</span><span id="observation-key" hidden><i class="swatch observed"></i>Later satellite cells</span></div>
+</section>
+<div class="aside">
+  <section class="panel"><h2>Simulated spread</h2><dl><dt>Reached area including start</dt><dd id="area"></dd><dt>Farthest edge from start</dt><dd id="reach"></dd><dt>Direction of the leading edge</dt><dd id="bearing"></dd></dl><p id="direction-note" class="small"></p></section>
+  <section class="panel"><h2>Satellite comparison</h2><p id="comparison" class="small"></p><label id="comparison-label" class="form-check" hidden><input id="show-observed" type="checkbox">Show later satellite cells</label></section>
+  <section class="panel"><h2>Conditions at the start</h2><dl><dt>Forecast cycle (UTC)</dt><dd id="cycle"></dd><dt>Wind from</dt><dd id="wind"></dd><dt>Temperature</dt><dd id="temp"></dd><dt>Relative humidity</dt><dd id="humidity"></dd><dt>Starting fine fuel moisture code</dt><dd id="ffmc"></dd><dt>Buildup index</dt><dd id="bui"></dd></dl></section>
+</div>
+</div>
+<details class="panel details">
+  <summary>Starting point, timing and sources</summary>
+  <p id="provenance"></p><p id="landscape"></p><p>Water and missing terrain block simulated spread. Archived fuel moisture and landscape layers have unverified publication times. Short time steps are simulation outputs.</p>
+  <p><a href="/spread.html">Open the original satellite-pass replay</a> · <a href="/api/forecast-spread">Download pilot data (JSON)</a></p>
+</details>
+</div>
+</main>
+<script>
+"use strict";
+const $ = id => document.getElementById(id);
+const canvas = $("map"), ctx = canvas.getContext("2d");
+const profiles = ["#a3c6db","#d9dcd2","#386555","#719361","#9fb177","#c6aa71"];
+const fmt = new Intl.NumberFormat("en-CA",{maximumFractionDigits:1});
+const clock = value => value.slice(0, 16).replace("T", " ");
+const heading = degrees => ["N","NE","E","SE","S","SW","W","NW"][Math.round(degrees / 45) % 8];
+const buttons = [...document.querySelectorAll("[data-hours]")];
+let cases, current, arrivals, terrain, minute = 360, animation = 0;
+function draw() {
+  if (!current) return;
+  const m = current.map, dpr = Math.min(window.devicePixelRatio || 1, 2);
+  const w = canvas.clientWidth, h = canvas.clientHeight;
+  canvas.width = Math.round(w * dpr); canvas.height = Math.round(h * dpr);
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+  const scale = Math.min(w / m.columns,h / m.rows);
+  const left = (w - scale * m.columns) / 2, top = (h - scale * m.rows) / 2;
+  const x = east => left + (east - m.west) / m.pixel * scale;
+  const y = north => top + (m.north - north) / m.pixel * scale;
+  ctx.imageSmoothingEnabled = false;
+  ctx.drawImage(terrain,left,top,scale*m.columns,scale*m.rows);
+  let reached = 0;
+  ctx.fillStyle = "#ea7528";
+  for (let i = 0; i < arrivals.length; i++) {
+    if (arrivals[i] > minute * 10) continue;
+    ctx.fillRect(left + i % m.columns * scale,top + Math.floor(i / m.columns) * scale,scale+.15,scale+.15);
+    reached++;
+  }
+  if ($("show-observed").checked && current.next_pass) {
+    ctx.strokeStyle = "#205b9f"; ctx.lineWidth = 1.8;
+    for (const [col,row] of current.next_pass.seen_cells) {
+      const cell = 375 / m.pixel * scale;
+      ctx.strokeRect(x(col*375),y((row+1)*375),cell,cell);
+    }
+  }
+  const [east,north] = m.origin;
+  ctx.beginPath(); ctx.arc(x(east),y(north),4.2,0,2*Math.PI);
+  ctx.fillStyle="#202a24"; ctx.fill(); ctx.strokeStyle="white"; ctx.lineWidth=1.5; ctx.stroke();
+  const endpoint = current.frames.find(frame => frame.hours*60 === minute);
+  const deg = endpoint?.direction_deg;
+  if (deg != null) {
+    const theta = (deg - m.convergence_deg) * Math.PI / 180;
+    const radius = endpoint.reach_m / m.pixel * scale;
+    const ex = x(east)+radius*Math.sin(theta), ey = y(north)-radius*Math.cos(theta);
+    ctx.strokeStyle="#432310"; ctx.lineWidth=1.6; ctx.beginPath(); ctx.moveTo(x(east),y(north)); ctx.lineTo(ex,ey); ctx.stroke();
+    ctx.beginPath(); ctx.arc(ex,ey,3,0,2*Math.PI); ctx.fillStyle="#432310"; ctx.fill();
+  }
+  ctx.fillStyle="#202a24"; ctx.font="600 12px system-ui";
+  const bar = 1000 / m.pixel * scale;
+  ctx.fillRect(18,h-24,bar,2); ctx.fillText("1 km",18,h-31);
+  const elapsed = Math.floor(minute / 60) + " h " + String(minute % 60).padStart(2,"0") + " min";
+  $("elapsed").textContent = elapsed;
+  $("area").textContent = fmt.format(reached*m.pixel*m.pixel/10000) + " ha";
+  $("reach").textContent = endpoint ? fmt.format(endpoint.reach_m) + " m" : "—";
+  $("bearing").textContent = deg == null ? "—" : heading(deg);
+  $("direction-note").textContent = !endpoint ? "Distance and bearing are shown at the saved 1-, 3- and 6-hour checkpoints." :
+    endpoint.reach_m === 0 ? "No modeled growth beyond the starting cell." :
+    deg == null ? "Spread is too short or dispersed for one clear direction." : endpoint.clipped ? "The footprint reached the simulation boundary." :
+    endpoint.reach_m < 375 ? "Short modeled advance. The direction is only an estimate." : "";
+  buttons.forEach(b => b.setAttribute("aria-pressed",Number(b.dataset.hours)*60 === minute));
+  canvas.setAttribute("aria-label","Simulated fire footprint at "+elapsed+" for "+current.name);
+}
+function stop() {
+  cancelAnimationFrame(animation); animation = 0; $("play").textContent = "Play";
+}
+function selectCase(index) {
+  stop(); current = cases[index]; minute = 360;
+  $("show-observed").checked = false; $("observation-key").hidden = true;
+  const m = current.map;
+  const raw = Uint8Array.from(atob(m.arrival_tenths_u16),c=>c.charCodeAt(0));
+  const view = new DataView(raw.buffer);
+  arrivals = Array.from({length:raw.length/2},(_,i)=>view.getUint16(i*2,true));
+  const fuel = atob(m.fuel_u8);
+  terrain = document.createElement("canvas"); terrain.width=m.columns; terrain.height=m.rows;
+  const surface = terrain.getContext("2d");
+  for (let i=0;i<fuel.length;i++) {
+    surface.fillStyle = profiles[fuel.charCodeAt(i)] || profiles[1];
+    surface.fillRect(i%m.columns,Math.floor(i/m.columns),1,1);
+  }
+  const target = current.next_pass, score = target?.scores.forecast_hourly_moisture;
+  $("comparison-label").hidden = !target?.seen_cells.length;
+  $("comparison").textContent = score?.observed_cells ? "At the "+fmt.format(target.simulation_hours)+"-hour pass, the model reached "+score.hits+" of "+score.observed_cells+" newly detected cells." :
+    "No qualifying incident-linked pass for this case. The 1-, 3- and 6-hour views show simulated growth.";
+  const weather = current.weather[0], moisture = current.moisture, land = current.landscape;
+  $("cycle").textContent = clock(current.forecast.run_utc);
+  $("wind").textContent = heading(weather.wind_direction_deg)+" · "+fmt.format(weather.wind_speed_kmh)+" km/h";
+  $("temp").textContent = fmt.format(weather.temp_c)+" °C"; $("humidity").textContent = fmt.format(weather.rh_pct)+"%";
+  $("ffmc").textContent = fmt.format(moisture.ffmc); $("bui").textContent = fmt.format(moisture.bui);
+  $("provenance").textContent = current.start_clock+" ("+clock(current.start_utc)+" UTC) sets the simulation clock. The exact ignition time and starting extent are unknown. NOAA GFS supplies the forecast. CWFIS fuel moisture is from "+moisture.date+".";
+  $("landscape").textContent = "Fuel and elevation use FBP 2024 and MRDEM. The 90 m window had "+fmt.format(100*land.covered_share)+"% coverage."+(land.seed_snap_m ? " The reported point moved "+fmt.format(land.seed_snap_m)+" m to the nearest burnable grid cell." : "");
+  draw();
+}
+$("case").addEventListener("change",()=>selectCase(Number($("case").value)));
+buttons.forEach(b=>b.addEventListener("click",()=>{stop();minute=Number(b.dataset.hours)*60;draw()}));
+$("show-observed").addEventListener("change",()=>{$("observation-key").hidden=!$("show-observed").checked;draw()});
+$("play").addEventListener("click",()=>{
+  if (animation) {stop();return}
+  if (matchMedia("(prefers-reduced-motion: reduce)").matches) {minute=360;draw();return}
+  $("play").textContent="Pause"; const start=performance.now();
+  function play(now) {
+    minute=Math.min(360,Math.floor((now-start)/18000*360));draw();
+    if(minute<360) animation=requestAnimationFrame(play);else stop();
+  }
+  animation=requestAnimationFrame(play);
+});
+new ResizeObserver(draw).observe(canvas.parentElement);
+fetch("/api/forecast-spread").then(response=>{
+  if(!response.ok) throw new Error("Unusable saved replay");
+  return response.json();
+}).then(result=>{
+  if(result.operational !== false || !result.cases?.length) throw new Error("Unusable saved replay");
+  cases=result.cases;cases.forEach((item,i)=>$("case").add(new Option(item.name,i)));
+  $("content").hidden=false;selectCase(0);$("status").hidden=true;
+}).catch(()=>{
+  $("content").hidden=true;$("status").textContent="The saved forecast replay is unavailable.";
+});
+</script>
+</body>
+</html>
