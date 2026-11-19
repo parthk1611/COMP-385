@@ -18,9 +18,9 @@ universe.
 
 The current contract is `ignition-feature-v1.1.0`: 51 columns and 39 selected
 predictors. Output, audit, registry, and selection filenames remain in the
-`_v1` family. The 2026-10-05 full rebuild and its missingness evidence describe
-historical v1.0.0 (48 columns), not a new v1.1.0 rebuild. Existing local
-artifacts remain old until deliberately regenerated.
+`_v1` family. The 2026-11-19 full rebuild wrote all 17,798,320 rows with the
+51-column contract. The 2026-10-05 rebuild and its original missingness table
+remain historical v1.0.0 evidence, not corrected-cache coverage statistics.
 
 This is a hindcast/explanatory dataset, not an operational forecast. In
 particular, the CWFIS archive and NFDB archive do not retain a per-record
@@ -46,13 +46,13 @@ registry and generated audit add source URLs, checksums/retrieval metadata,
 coverage, historical semantics, and availability limitations.
 
 The history-censor flag and coordinates are appended to the original 48 output
-columns. The selected 39-column order exactly matches the coordinate
-experiment's transformed matrix: original 36, censor flag, easting, northing.
-Do not append another censor flag or coordinates when using all 39 fields.
-Frozen original modelling/cache inputs instead use the canonical 36-field
-`docs/modeling/feature_manifest.json`; their existing preprocessing derives
-history censoring and coordinate experiments append coordinates once. No
-historical model results are rerun by this schema change.
+columns. The selected 39-column order matches the coordinate experiment's
+model matrix: original 36, censor flag, easting, northing.
+`data/metadata/ignition_feature_selection_v1.json` is the only authoritative
+list for the panel, corrected cache and models. HGB preprocessing preserves
+these fields and native NaNs without adding anything. The v3 cache contract
+rejects the old 36-column layout. Historical results remain archives; current
+training/export and demo serving use the retained 80-iteration coordinate HGB.
 
 ## Source choices and time semantics
 

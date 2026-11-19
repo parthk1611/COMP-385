@@ -1,5 +1,5 @@
 {
-  "status": "39 persisted predictors in experiment matrix order: 36 base inputs, the history-censor flag, then two grid-derived coordinates; frozen historical models retain the 36-predictor docs/modeling/feature_manifest.json schema",
+  "status": "Single authoritative ordered input contract for panel, corrected-weather cache, preprocessing, retained HGB, experiments and demo: 39 persisted predictors with no duplicate censor flag or coordinates",
   "feature_set_version": "ignition-feature-v1.1.0",
   "target": "ignition",
   "predictors": [

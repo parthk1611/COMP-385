@@ -12,9 +12,9 @@ development AP gain; it does not automatically replace the exported model.
 
 ## Shared evaluation context
 
-- Follow-up modelling uses the **corrected-weather cache**, not the original
-  uncorrected v1 weather values. The original panel's grid, labels and rows are
-  retained; experimental features are added separately.
+- Modelling uses the **corrected-weather cache**, not the original uncorrected
+  v1 weather values. The current main cache persists the complete ordered 39
+  inputs, including history censoring and coordinates; helpers do not append duplicates.
 - Five expanding chronological folds validate on **2012–2016**. Every cell-day
   is retained, including negatives and rows with missing weather.
 - The main comparison metric is **unweighted mean yearly average precision
@@ -50,9 +50,10 @@ that investigation's stated baseline, not percentage-point gains.
 
 ## Retained configuration and conclusion
 
-The retained candidate uses the corrected predictors plus the two static
-**EPSG:3978 cell-centre coordinates in metres**. With the existing history-censor
-indicator, this gives 38 raw predictors and 39 transformed HGB inputs.
+The retained candidate uses corrected predictors, the persisted history-censor
+indicator and two static **EPSG:3978 cell-centre coordinates in metres**.
+The current main pipeline consumes all 39 stored inputs directly. Historical
+experiment records described these as 38 raw predictors and 39 transformed inputs.
 
 - `max_iter=80`, `max_leaf_nodes=15`, `min_samples_leaf=100`.
 - `learning_rate=0.1`, `l2_regularization=1.0`.

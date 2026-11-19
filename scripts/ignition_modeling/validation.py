@@ -17,7 +17,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from .contract import FEATURE_NAMES, HISTORY_FEATURE
+from scripts.build_ignition_feature_panel import output_fields
+from .contract import FEATURE_NAMES, FEATURE_SELECTION, FEATURE_SET_VERSION, HISTORY_CENSOR_FEATURE, HISTORY_FEATURE
 
 ROOT = Path(__file__).resolve().parents[2]
 NA_TOKENS = {"", "NA", "N/A", "NULL", "NaN", "nan", "null"}
@@ -26,8 +27,8 @@ WEATHER_QUALITY = ["cwfis_nearest_station_km", "cwfis_imputed_station_fraction",
 TERRAIN = ["terrain_elevation_mean_m", "terrain_slope_deg", "terrain_aspect_sin", "terrain_aspect_cos", "terrain_ruggedness_m", "terrain_sample_count", "terrain_coverage_fraction"]
 HISTORY = ["fire_history_same_cell_30d", "fire_history_neighborhood_30d", "fire_history_same_cell_365d", "fire_history_neighborhood_365d", "fire_history_days_since_same_cell"]
 COORDINATES = {"cell_centroid_easting_m": "grid_x_m", "cell_centroid_northing_m": "grid_y_m"}
-HISTORY_CENSOR = f"{HISTORY_FEATURE}__censored"
-EXPECTED_METADATA = {"feature_set_version": "ignition-feature-v1.1.0", "terrain_source_id": "nrcan_cdem_1945_2011", "terrain_source_vintage_end_year": "2011", "cwfis_source_id": "cwfis_fwi_2010s_v3_ll", "fire_history_source_id": "nfdb_ontario_ignition_labels"}
+HISTORY_CENSOR = HISTORY_CENSOR_FEATURE
+EXPECTED_METADATA = {"feature_set_version": FEATURE_SET_VERSION, "terrain_source_id": "nrcan_cdem_1945_2011", "terrain_source_vintage_end_year": "2011", "cwfis_source_id": "cwfis_fwi_2010s_v3_ll", "fire_history_source_id": "nfdb_ontario_ignition_labels"}
 BOUNDS = {"calendar_day_of_year": (1, 366), "calendar_day_length_hours": (0, 24), "terrain_slope_deg": (0, 90), "terrain_sample_count": (0, 9), "cwfis_station_count": (0, 4), "cwfis_precip_7d_coverage_days": (0, 7), "cwfis_rh_pct": (0, 100), "cwfis_ffmc": (0, 101)}
 BOUNDS.update({column: (-1, 1) for column in ["calendar_doy_sin", "calendar_doy_cos", "terrain_aspect_sin", "terrain_aspect_cos"]})
 BOUNDS.update({column: (0, 1) for column in ["terrain_coverage_fraction", "cwfis_observation_coverage_fraction", "cwfis_imputed_station_fraction", "cwfis_calcstatus_nonzero_fraction"]})
@@ -66,7 +67,7 @@ def file_sha256(path: Path) -> str:
 def numeric_values(raw: pd.DataFrame, columns: list[str], checks: Counter, *, coordinate_expected: dict[str, np.ndarray] | None = None) -> tuple[dict[str, np.ndarray], dict[str, np.ndarray]]:
     """Check original numeric precision before converting bounded model inputs to float32."""
     values, nulls = {}, {}
-    integers = {"ignition", "ignition_count", "large_fire_200ha", "calendar_day_of_year", "calendar_is_weekend", "terrain_sample_count", "cwfis_station_count", "cwfis_missing", "cwfis_precip_7d_coverage_days", "terrain_source_vintage_end_year", *HISTORY}
+    integers = {"ignition", "ignition_count", "large_fire_200ha", "calendar_day_of_year", "calendar_is_weekend", "terrain_sample_count", "cwfis_station_count", "cwfis_missing", "cwfis_precip_7d_coverage_days", "terrain_source_vintage_end_year", HISTORY_CENSOR, *HISTORY}
     for column in columns:
         missing = raw[column].isin(NA_TOKENS).to_numpy(dtype=bool)
         original = pd.to_numeric(raw[column].mask(missing), errors="coerce").to_numpy(dtype="float64", na_value=np.nan)
@@ -111,14 +112,14 @@ def validate_dataset(input_path: str | Path, output_dir: str | Path | None = Non
     selection_path = Path(feature_selection_path or ROOT / "data/metadata/ignition_feature_selection_v1.json")
     selection = json.loads(selection_path.read_text(encoding="utf-8"))
     predictors = selection["predictors"]
-    feature_version = selection.get("feature_set_version", EXPECTED_METADATA["feature_set_version"])
-    version_predictors = {
-        "ignition-feature-v1.0.0": list(FEATURE_NAMES),
-        "ignition-feature-v1.1.0": [*FEATURE_NAMES, HISTORY_CENSOR, *COORDINATES],
-    }
-    if selection["target"] != "ignition" or predictors != version_predictors.get(feature_version):
-        raise ValueError("Expected the versioned ignition target and ordered predictor allowlist")
-    expected_metadata = {**EXPECTED_METADATA, "feature_set_version": feature_version}
+    feature_version = selection.get("feature_set_version")
+    if (feature_version != FEATURE_SET_VERSION or selection["target"] != "ignition"
+            or predictors != list(FEATURE_NAMES)
+            or selection.get("predictor_count_before_preprocessing") != len(FEATURE_NAMES)
+            or selection["other_labels"] != FEATURE_SELECTION["other_labels"]
+            or selection["metadata"] != FEATURE_SELECTION["metadata"]):
+        raise ValueError("Expected the canonical ignition target and ordered predictor schema")
+    expected_metadata = EXPECTED_METADATA
     labels = [selection["target"], *selection["other_labels"]]
     if set(predictors) & set(labels + selection["metadata"]):
         raise ValueError("Label/metadata leakage in predictor allowlist")
@@ -126,13 +127,11 @@ def validate_dataset(input_path: str | Path, output_dir: str | Path | None = Non
     opener = gzip.open if source.suffix == ".gz" else open
     with opener(source, "rt", newline="", encoding="utf-8") as stream:
         header = next(csv.reader(stream))
-    expected_columns = set(labels + predictors + selection["metadata"])
-    expected_count = len(labels) + len(predictors) + len(selection["metadata"])
-    if len(header) != expected_count or len(set(header)) != expected_count or set(header) != expected_columns:
-        raise ValueError(f"Expected unique {expected_count}-column schema; missing={expected_columns - set(header)}, extra={set(header) - expected_columns}")
-    provenance_path = ROOT / "docs/eda/source_provenance.json"
-    provenance = json.loads(provenance_path.read_text(encoding="utf-8")) if provenance_path.exists() else {}
-    grid = pd.read_csv(grid_path or ROOT / "data/interim/ontario_fire_region_10km_grid.csv", dtype={"grid_id": "string"})
+    expected_columns = output_fields()
+    if header != expected_columns:
+        raise ValueError(f"Expected the canonical ordered {len(expected_columns)}-column panel schema")
+    grid_source = Path(grid_path or ROOT / "data/interim/ontario_fire_region_10km_grid.csv")
+    grid = pd.read_csv(grid_source, dtype={"grid_id": "string"})
     if grid.grid_id.isna().any() or grid.grid_id.duplicated().any():
         raise ValueError("Reference grid keys must be non-null and unique")
     grid_index = pd.Index(grid.grid_id)
@@ -232,9 +231,8 @@ def validate_dataset(input_path: str | Path, output_dir: str | Path | None = Non
             record(f"history_30d_exceeds_365d_rows:{area}", value[f"fire_history_{area}_30d"] > value[f"fire_history_{area}_365d"])
         days_since = value["fire_history_days_since_same_cell"]
         record("days_since_nonpositive_observed_rows", ~nulls["fire_history_days_since_same_cell"] & (days_since <= 0))
-        if HISTORY_CENSOR in predictors:
-            record(f"nonbinary_rows:{HISTORY_CENSOR}", ~np.isin(value[HISTORY_CENSOR], (0, 1)))
-            record("history_censor_flag_mismatch_rows", value[HISTORY_CENSOR] != nulls[HISTORY_FEATURE])
+        record(f"nonbinary_rows:{HISTORY_CENSOR}", ~np.isin(value[HISTORY_CENSOR], (0, 1)))
+        record("history_censor_flag_mismatch_rows", value[HISTORY_CENSOR] != nulls[HISTORY_FEATURE])
         for window in (30, 365):
             same_count = value[f"fire_history_same_cell_{window}d"]
             record(f"history_days_since_window_mismatch_rows:{window}d", ((same_count > 0) & (np.isnan(days_since) | (days_since > window))) | ((same_count == 0) & (days_since <= window)))
@@ -269,12 +267,6 @@ def validate_dataset(input_path: str | Path, output_dir: str | Path | None = Non
 
     checks.update({"duplicate_key_excess_rows": duplicates, "expected_keys_missing": int((seen == 0).sum()), "row_count_mismatch": int(rows != expected_rows), "reference_grid_cell_count_mismatch": int(len(grid) != 9673), "dates_with_incorrect_cell_count": int((date_rows != len(grid)).sum()), "cells_with_incorrect_date_count": int((cell_rows != len(dates)).sum())})
     digest = file_sha256(source)
-    provenance_feature_version = "ignition-feature-v1.0.0"
-    provenance_version_applicable = feature_version == provenance_feature_version
-    pinned_checksum_applicable = provenance_version_applicable and source.name == provenance.get("source_file_name") and "sha256" in provenance
-    column_order_applicable = provenance_version_applicable and bool(provenance.get("columns"))
-    checks["pinned_source_sha256_mismatch"] = int(pinned_checksum_applicable and digest != provenance["sha256"])
-    checks["source_column_order_mismatch"] = int(column_order_applicable and header != provenance["columns"])
     after = memory_snapshot()
     annual_rows = []
     for year, counts in annual.items():
@@ -283,14 +275,12 @@ def validate_dataset(input_path: str | Path, output_dir: str | Path | None = Non
         row["ignition_prevalence_pct"] = 100 * row["positive_cell_days"] / row["rows"] if row["rows"] else 0
         row["weather_missing_pct"] = 100 * row["weather_missing_rows"] / row["rows"] if row["rows"] else 0
         annual_rows.append(row)
-    report = {"status": "PASS" if not any(checks.values()) else "FAIL", "created_at_utc": datetime.now(timezone.utc).isoformat(), "full_scan_completed": True, "source": {"filename": source.name, "bytes": source.stat().st_size, "sha256": digest, "pinned_checksum_applicable": pinned_checksum_applicable, "matches_pinned_eda_sha256": digest == provenance.get("sha256")}, "schema": {"columns": header, "predictors": predictors, "predictor_count": len(predictors), "target": "ignition", "excluded_labels": selection["other_labels"], "metadata_excluded_from_predictors": selection["metadata"], "numeric_columns": numeric, "missing_tokens": sorted(NA_TOKENS)}, "totals": {"rows": rows, "expected_rows": expected_rows, "grid_cells": len(grid), "fire_season_dates": len(dates), "positive_cell_days": positives, "negative_cell_days": rows - positives, "event_records": events, "large_fire_positive_cell_days": large, "ignition_prevalence_pct": 100 * positives / rows if rows else 0, "weather_label_counts": dict(status_counts)}, "annual": annual_rows, "missingness": {column: {"rows": missing_counts[column], "pct": 100 * missing_counts[column] / rows if rows else 0} for column in header}, "numeric_ranges_float32": ranges, "validation_violation_counts": dict(sorted(checks.items())), "memory": {"chunk_rows": chunk_size, "maximum_raw_string_chunk_bytes": max_chunk_bytes, "key_bitmap_bytes": seen.nbytes, "numeric_chunk_float32_bytes_upper_bound": chunk_size * len(numeric) * 4, "available_physical_bytes_before": before["available_physical_bytes"], "available_physical_bytes_after": after["available_physical_bytes"], "observed_process_peak_working_set_bytes": after["process_peak_working_set_bytes"], "full_predictor_float32_bytes": rows * len(predictors) * 4, "full_predictor_float64_bytes": rows * len(predictors) * 8}, "library_versions": {"python": sys.version.split()[0], "pandas": pd.__version__, "numpy": np.__version__}, "scan_seconds": round(time.monotonic() - start, 2), "audit_limits": ["Checks validate the downloaded panel and internal contracts; NFDB labels/history, raw station selection, and precipitation sums are not independently rebuilt.", "Archives lack per-record historical available_at timestamps. This is a retrospective hindcast, not an operational forecast replay.", "The station candidate set and study-period grid universe may introduce selection effects; full source-level sensitivity analysis remains outstanding.", "Numeric ranges are reported after float32 conversion; token conversion, infinities, integer validity and overflow were checked at original float64 precision first. Continuous-value float32 rounding is expected.", "No rows are deleted, no imputation/scaling or model fitting is performed; invalid data cause FAIL. Source parsing/schema exceptions terminate the CLI with a nonzero exit.", "Peak working set covers this process only, including imports/parser/transient arrays. Model matrix estimates exclude copies, missingness indicators, transformed arrays and fitting workspace."]}
+    report = {"status": "PASS" if not any(checks.values()) else "FAIL", "created_at_utc": datetime.now(timezone.utc).isoformat(), "full_scan_completed": True, "source": {"filename": source.name, "bytes": source.stat().st_size, "sha256": digest}, "schema": {"columns": header, "predictors": predictors, "predictor_count": len(predictors), "target": "ignition", "excluded_labels": selection["other_labels"], "metadata_excluded_from_predictors": selection["metadata"], "numeric_columns": numeric, "missing_tokens": sorted(NA_TOKENS)}, "totals": {"rows": rows, "expected_rows": expected_rows, "grid_cells": len(grid), "fire_season_dates": len(dates), "positive_cell_days": positives, "negative_cell_days": rows - positives, "event_records": events, "large_fire_positive_cell_days": large, "ignition_prevalence_pct": 100 * positives / rows if rows else 0, "weather_label_counts": dict(status_counts)}, "annual": annual_rows, "missingness": {column: {"rows": missing_counts[column], "pct": 100 * missing_counts[column] / rows if rows else 0} for column in header}, "numeric_ranges_float32": ranges, "validation_violation_counts": dict(sorted(checks.items())), "memory": {"chunk_rows": chunk_size, "maximum_raw_string_chunk_bytes": max_chunk_bytes, "key_bitmap_bytes": seen.nbytes, "numeric_chunk_float32_bytes_upper_bound": chunk_size * len(numeric) * 4, "available_physical_bytes_before": before["available_physical_bytes"], "available_physical_bytes_after": after["available_physical_bytes"], "observed_process_peak_working_set_bytes": after["process_peak_working_set_bytes"], "full_predictor_float32_bytes": rows * len(predictors) * 4, "full_predictor_float64_bytes": rows * len(predictors) * 8}, "library_versions": {"python": sys.version.split()[0], "pandas": pd.__version__, "numpy": np.__version__}, "scan_seconds": round(time.monotonic() - start, 2), "audit_limits": ["Checks validate the downloaded panel and internal contracts; NFDB labels/history, raw station selection, and precipitation sums are not independently rebuilt.", "Archives lack per-record historical available_at timestamps. This is a retrospective hindcast, not an operational forecast replay.", "The station candidate set and study-period grid universe may introduce selection effects; full source-level sensitivity analysis remains outstanding.", "Numeric ranges are reported after float32 conversion; token conversion, infinities, integer validity and overflow were checked at original float64 precision first. Continuous-value float32 rounding is expected.", "No rows are deleted, no imputation/scaling or model fitting is performed; invalid data cause FAIL. Source parsing/schema exceptions terminate the CLI with a nonzero exit.", "Peak working set covers this process only, including imports/parser/transient arrays. Model matrix estimates exclude copies, missingness indicators, transformed arrays and fitting workspace."]}
     report["schema"]["feature_set_version"] = feature_version
-    report["source"].update(
-        provenance_feature_set_version=provenance_feature_version,
-        source_column_order_applicable=column_order_applicable,
-        provenance_version_applicable=provenance_version_applicable,
-        historical_provenance_path=str(provenance_path),
-    )
+    report["inputs"] = {
+        "feature_selection": {"path": str(selection_path.resolve()), "sha256": file_sha256(selection_path)},
+        "reference_grid": {"path": str(grid_source.resolve()), "sha256": file_sha256(grid_source)},
+    }
     if output_dir is not None:
         output = Path(output_dir)
         output.mkdir(parents=True, exist_ok=True)
@@ -302,7 +292,7 @@ def validate_dataset(input_path: str | Path, output_dir: str | Path | None = Non
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input", type=Path, default=ROOT / "data/processed/ontario_fire_region_10km_daily_ignition_features_v1.csv.gz")
-    parser.add_argument("--output-dir", type=Path, default=ROOT / "docs/modeling")
+    parser.add_argument("--output-dir", type=Path, default=ROOT / "data/interim/ignition_modeling_cache/panel_validation")
     parser.add_argument("--chunk-size", type=int, default=100_000)
     parser.add_argument("--feature-selection", type=Path)
     parser.add_argument("--grid", type=Path)

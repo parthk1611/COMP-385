@@ -37,12 +37,13 @@ The full feature output is
 `data/processed/ontario_fire_region_10km_daily_ignition_features_v1.csv.gz`
 and its matching audit is
 `data/processed/ontario_fire_region_10km_daily_ignition_features_v1_audit.json`.
-Both are generated artifacts and may be absent in a fresh clone. The historical
-2026-10-05 v1.0.0 full rebuild wrote 48 columns and all 17,798,320 expected rows,
-matched the pinned CWFIS archive checksum, and recorded zero prior-day weather
-timing violations. No new full rebuild is claimed by the v1.1.0 contract change.
-Existing local outputs remain old until deliberate regeneration. Consult that
-output's audit, including coordinate semantics and grid checksum, before use.
+Both are generated artifacts and may be absent in a fresh clone. The
+2026-11-19 v1.1.0 full rebuild wrote 51 columns and all 17,798,320 expected
+rows, with zero prior-day weather timing violations. Old 48-column panel
+copies were preserved under `_legacy_48cols` names; the old 36-column cache
+was preserved as `data/interim/ignition_modeling_cache_legacy_v2`.
+Consult the current output's audit, including coordinate semantics and grid
+checksum, before use. Modelling still uses separately corrected CWFIS values.
 
 Historical v1.0.0 source coverage is deliberately imperfect: CWFIS weather/FWI values
 are unavailable on 9,340,916 rows (52.482010%), and seven-day precipitation is
@@ -61,13 +62,16 @@ The new coordinates add static grid geometry only, not dynamic observations or
 operational forecasting evidence. The static CDEM source retains its
 `terrain_feature_version` of `ignition-feature-v1.0.0`.
 
-Current selection metadata lists 39 predictors in the coordinate experiment's
-transformed order: original 36, history-censor flag, then two coordinates.
-Frozen original modelling and cache inputs retain the canonical 36 fields in
-`docs/modeling/feature_manifest.json`; their preprocessing derives the flag
-and coordinate experiments append coordinates once. Do not append either to
-an already materialized 39-column matrix. Do not expand the frozen core or
-claim historical model results were rerun.
+`data/metadata/ignition_feature_selection_v1.json` is the only authoritative
+39-predictor list for the panel, corrected-weather cache, main model and demo.
+Order: original 36, persisted history-censor flag, then two coordinates.
+HGB preprocessing preserves all 39 inputs; it must not append another flag
+or coordinates. Cache version `ignition-v1-weather-asof-global-date-coordinates-v3`
+rejects old 36-column caches. `docs/modeling/feature_manifest.json` references
+the canonical list; it is not another source. Historical model results remain
+archived, but the current main training path fits the retained 80-iteration
+coordinate HGB on 2010–2016 only. Export settings, ordered inputs, cache/source
+checksums, commit, dirty-tree state and source hashes beside the joblib model.
 
 ## Leakage rules
 
@@ -139,3 +143,19 @@ it cannot be mistaken for the full panel.
 51-column dictionary, null semantics, historical v1.0.0 rebuild summary and
 validation snapshot, training guidance, and planned work. Read it together
 with this file before altering the feature contract.
+
+## Verified main export and demo
+
+The 2026-11-19 main-pipeline rebuild completed the full panel and corrected
+39-column v3 cache. `artifacts/ignition_modeling/retained_coordinate_hgb/`
+contains the joblib export, settings/feature/training/cache/commit provenance
+and verification JSON. All 12,458,824 2010–2016 development predictions
+match the original experiment pickle bit-for-bit, with maximum difference 0.
+The metadata explicitly records the base commit plus a dirty source tree and
+source-file hashes; no new commit was made for this rebuild.
+
+The demo loads that main export and shows the frozen 10 km grid footprint.
+The pinned Ontario boundary asset is unavailable; do not substitute a
+checksum-mismatched boundary. Its manifest remains unchanged. Score cutoffs
+are illustrative, not the old 40-iteration model's validated policy. No
+2017–2019 fitting, calibration or global reserved-year scoring was added.

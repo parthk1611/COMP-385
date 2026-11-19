@@ -1,114 +1,101 @@
-# Retrospective ignition model comparison
+# Retained coordinate ignition model
 
-Status: training and independent verification completed. Read
-[the final report](final_report.md), open [the portable report](report.html), or
-inspect [verification evidence](verification_report.md). Exact execution state
-is recorded in `run_status.json`.
+The main pipeline trains the retained **80-iteration coordinate HGB** on
+2010–2016 only: learning rate 0.1, L2 1.0, 15 leaves, minimum leaf size 100,
+seed 385, no class weighting or early stopping.
 
-The target is at least one recorded ignition in a frozen v1 10 km cell during
-the local date, with issue cutoff 00:00 America/Toronto and a one-day horizon.
-Use exactly the 36 fields in `docs/modeling/feature_manifest.json`, the canonical
-frozen core contract. Current dataset selection metadata
-(`data/metadata/ignition_feature_selection_v1.json`) now lists 39 predictors
-and must not expand the original model/cache matrix.
-Keep keys and dates outside the model matrix. The frozen study universe includes
-edge cells selected using study-period ignition events, so evaluation is
-conditional on this universe and does not establish unbiased province-wide or
-operational forecasting performance.
+## One input contract
 
-The downloaded v1 panel has a source-selection defect: all-time nearest stations
-are selected before filtering by first observation date. It also joins an archive
-whose date segments are not globally sorted. Modelling uses a separate disk cache
-with globally indexed date/station records, nearest eligible stations selected
-before top-k, and reconstructed prior-seven-day precipitation. All original rows,
-labels, calendar, terrain and history values are retained. The original CSV and
-EDA remain unchanged. The corrected cache has its own version and source audit.
-First valid FWI wins duplicated station/day records; archive revision and
-publication times remain unknown. This is a retrospective hindcast.
+`data/metadata/ignition_feature_selection_v1.json` is the only authoritative
+ordered feature list. The panel, cache, preprocessing, experiments and demo
+consume its 39 predictors: the original 36, the persisted history-censor flag,
+then EPSG:3978 cell-centre easting and northing. HGB preserves all 39 columns
+and native NaNs; it does not append another flag or coordinates.
 
-The main dataset builder now emits `ignition-feature-v1.1.0` (51 columns),
-appending `fire_history_days_since_same_cell__censored`, then
-`cell_centroid_easting_m = grid_x_m + 5000` and
-`cell_centroid_northing_m = grid_y_m + 5000` in EPSG:3978 metres. The flag is
-1 exactly when days-since is blank, otherwise 0; the available history starts
-in 2010. These static full-cell centres are not ignition points,
-longitude/latitude, or clipped polygon centroids. The selected 39 predictors
-exactly match the coordinate experiment's transformed column order.
-The original core cache/model still selects only its frozen 36 predictors,
-derives history censoring, and coordinate experiments append coordinates
-once. Do not append these fields again to a persisted 39-column matrix.
+`docs/modeling/feature_manifest.json` is a reference to that contract, not a
+second predictor list. Old 36-column caches are rejected. The current cache
+version is `ignition-v1-weather-asof-global-date-coordinates-v3`.
 
-The 2026-10-05 full rebuild and missingness evidence remain historical v1.0.0,
-48-column results. Local panels remain unchanged until deliberate regeneration
-with `python scripts/build_ignition_feature_panel.py` (`--force` to overwrite,
-then review the panel and audit, including coordinate semantics/grid checksum).
-Filenames remain `_v1`. This static-geometry contract change does not rerun the
-historical models or add operational forecasting evidence.
+The main panel remains a retrospective hindcast on the frozen 10 km grid.
+The corrected cache globally indexes the pinned CWFIS archive, selects
+eligible stations before top-k, and reconstructs prior-seven-day rain.
+It retains every row, label, calendar, terrain and history value and all
+coverage/missingness states. Archive publication times are unknown.
 
-Development uses five expanding chronological folds ending in validation years
-2012 through 2016. Calibration is held out in 2017; threshold tradeoffs use 2018;
-the final test is 2019. No labels overlap future dates, so no purge gap is needed.
-All fitted preprocessing stays within each training partition. No resampling is
-applied; validation/test retain every row and their natural prevalence.
+## Rebuild and train
 
-Numeric caches and model binaries are ignored generated artifacts. Compact
-manifests, reports, reproduction commands and verification evidence are tracked.
-Only the coordinator edits shared configuration, orchestration and this guide.
+Use Python 3.12 and the isolated `requirements-modeling.txt` environment.
+Recover the pinned source artifacts using `ABOUT.md` first. Existing panel
+replacement requires deliberate `--force`; preserve old caches or select a
+new `--cache` directory instead of mixing versions.
 
-## Reproduction
-
-Use Python 3.12 and install `requirements-modeling.txt` in an isolated environment.
-The original audited CSV is supplied through `--input`; it is not stored in Git.
-Recover the exact CWFIS archive URL and checksum from
-`data/raw/cwfis/manifest.json` before cache preparation. From the repository root:
-
-```powershell
-python -m scripts.ignition_modeling.validation --input '<original audited CSV>' --chunk-size 50000
-python -m scripts.ignition_modeling.data --input '<original audited CSV>'
-python -m unittest discover -s tests -v
-python -m scripts.ignition_modeling.run --smoke --output artifacts/ignition_modeling/smoke
-python -m scripts.ignition_modeling.run
-python scripts/publish_ignition_modeling_report.py
+```sh
+python scripts/build_ignition_feature_panel.py
+python -m scripts.ignition_modeling.validation \
+  --input data/processed/ontario_fire_region_10km_daily_ignition_features_v1.csv.gz \
+  --output-dir artifacts/ignition_modeling/panel_validation
+python -m scripts.ignition_modeling.data \
+  --input data/processed/ontario_fire_region_10km_daily_ignition_features_v1.csv.gz \
+  --audit artifacts/ignition_modeling/panel_validation/data_quality_report.json
+python -m scripts.ignition_modeling.run \
+  --reference-pickle artifacts/ignition_modeling/selected_coordinate_hgb/model.pkl
 ```
 
-The training runner checks the audited data contract and immutable configuration,
-and refuses to overwrite a completed final test. A fresh reproduction uses a new
-`--output` directory; preserve the recorded test results and document any
-correctness-defect rerun. Report packaging does not train or alter selection.
-The publication wrapper is outside the frozen training-module hash set, so the
-executed training code and its original fingerprints remain unchanged.
+The optional `--reference-pickle` accepts only a trusted local experiment
+pickle and compares all 2010–2016 predictions. Its classifier consumes the
+same 39 inputs directly; the legacy 36-column pickle preprocessor is not
+used. This is a reproducibility comparison, not a new performance estimate.
+No 2017–2019 fitting, calibration, threshold tuning or global scoring occurs.
 
-Models and all validation/test prediction vectors are saved locally under
-`artifacts/ignition_modeling/full_run/`. `selected_system.joblib` is the final
-probability-producing bundle; `final_logistic.joblib` and `final_hgb.joblib`
-retain both fitted model-family pipelines. Use `predict_bundle` from
-`scripts.ignition_modeling.run` with the exact 36-column schema and corrected
-past-only inputs. No operating threshold has been selected.
+Output: `artifacts/ignition_modeling/retained_coordinate_hgb/`.
 
-## Follow-up ignition experiment archive
+- `selected_system.joblib`: the 39-input pipeline and its feature/cache contract.
+- `model_metadata.json`: full settings, ordered features, 2010–2016 fit scope,
+  cache/source/model checksums, package versions, commit, dirty-tree state and
+  source-file hashes. A dirty tree is disclosed, not attributed to the commit alone.
+- `training.json`: actual row counts, classifier width and fitting diagnostics.
+- `verification.json`: reload evidence and the optional full pickle comparison.
 
-The [chronological experiment overview](../../experiments/ignition/README.md)
-explains eleven modelling investigations and two saved-prediction analyses.
-Each experiment has its own script, requirements, detailed recorded
-`results.json`, and readable report under `experiments/ignition/`.
+The cache's audit is generated beside the cache, not over the archived
+`docs/modeling/corrected_weather_audit.json`. Exports refuse existing output
+directories; choose `--output` explicitly for another run.
 
-The retained development candidate is **coordinate HGB with 80 iterations,
-15 maximum leaves, minimum leaf size 100, learning rate 0.1 and L2 1**.
-The overview distinguishes that retained choice from the small, inconsistent
-numerical AP gain in the 24-hour-lightning ablation and the subsequent
-[Bayesian tuning experiment](../../experiments/ignition/bayesian/README.md).
-That history-seeded search completed 80 new fits and found a 1.28% relative
-mean-development-AP gain, with three yearly wins and two losses; it does not
-automatically replace the exported model or add independent test evidence.
+## Demo
 
-The follow-up scripts now use straightforward fresh-run orchestration instead
-of source fingerprints, protected-file inventories and checkpoint resumption.
-Their scientific settings, folds, feature semantics, metrics and selection
-rules are retained. Use each experiment's README for actual commands and its
-generated-input prerequisites; default reruns write new ignored directories
-under `artifacts/ignition_modeling/reruns/` and never replace historical results.
+`python -m scripts.ignition_demo.server` loads this main-pipeline export and
+the current cache. `scripts.ignition_demo.reconstruct` delegates to the same
+cache builder and main trainer; it does not recreate the old 40-iteration
+model. Demo score cutoffs are explicitly illustrative, not the old model's
+validated threshold policy. Historical performance is not relabelled as the
+new model's test result.
 
-The [saved coordinate-model bundle](../../experiments/ignition/coordinates/README.md#saved-model-pickle)
-is a separate 2010--2016 development refit. Its export and this script cleanup
-do not replace the original final-study artifacts or add 2017--2019 evaluation.
-The original pipeline and evaluation protocol above remain unchanged.
+## Historical evaluation and experiments
+
+The [original final report](final_report.md), [portable report](report.html),
+and [verification report](verification_report.md) describe the earlier
+36-input model comparison and its original 2017/2018/2019 evaluation protocol.
+Those scientific results are historical, not rerun by the retained-model
+export. The [experiment overview](../../experiments/ignition/README.md) records
+the retained configuration's development evidence and later unsuccessful or
+inconclusive alternatives. The original experiment pickle remains unchanged.
+
+## Verified 2026-11-19 main-pipeline rebuild
+
+Rebuilt the complete 51-column panel and corrected 39-column v3 cache:
+17,798,320 rows, full validation `PASS`, no nonzero validation checks.
+The main joblib export fits all 12,458,824 development rows from 2010–2016.
+Every prediction matches the experiment pickle bit-for-bit; maximum absolute
+difference is **0.0**, and both prediction streams hash to
+`96093ef5fcd34f494c864b09287b86170ecfc1a16fa2c64c20986b3118c4dc43`.
+
+The export JSON records base commit
+`3de2c4277ab02787ca9f452a7fe8560eb670c601`, `working_tree_dirty: true`,
+and hashes of the actual uncommitted source used. No new commit is implied.
+Full evidence is in the export's `verification.json` and
+`artifacts/ignition_modeling/main_pipeline_rebuild_20261119/rebuild_verification.json`.
+
+The live browser replay scored all 9,673 cells for 2019-07-01, displayed
+80 iterations and 39 inspector inputs, and reported no page errors. The map
+shows the frozen 10 km grid footprint, not a substituted official boundary.
+The original boundary asset is unavailable and its current download differs
+from the pinned checksum; the pinned manifest was left unchanged.

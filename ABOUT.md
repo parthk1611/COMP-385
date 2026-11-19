@@ -16,10 +16,11 @@ The generated v1 feature panel is:
 
 `data/processed/ontario_fire_region_10km_daily_ignition_features_v1.csv.gz`
 
-It is deliberately ignored by Git because it is a large deterministic build
-artifact. The current builder contract is below; the approximately 747 MB
-compressed output from the 2026-10-05 rebuild is historical v1.0.0 evidence,
-not a regenerated v1.1.0 panel.
+The panel is a large deterministic artifact and is deliberately ignored by
+Git. The 2026-11-19 full v1.1.0 rebuild wrote all 17,798,320 expected rows
+with 51 columns and zero prior-day weather timing violations. Its source
+quality states remain explicit; corrected modelling weather is built in the
+separate 39-column cache.
 
 | Property | Value |
 | --- | --- |
@@ -202,9 +203,17 @@ the missingness flags are currently part of the honest source-quality record.
    Region, and CWFIS inputs were downloaded; the CWFIS archive matched its
    pinned SHA-256 (`67e706…0329246`); the labels, feature panel, audit, and
    full column-wise null scan were generated.
-9. **Extended the builder contract to v1.1.0.** The main builder now persists
-   the history-censor flag and two static cell-centre coordinates; no new full
-   rebuild or model evaluation is claimed by this change.
+9. **Rebuilt the full v1.1.0 panel on 2026-11-19.** The main builder persisted
+   the history-censor flag and two static cell-centre coordinates on all
+   17,798,320 rows. The audit retained the original labels/universe and
+   recorded zero prior-day weather timing violations.
+10. **Rebuilt and trained through the main pipeline on 2026-11-19.** Full panel
+    validation passed; the corrected v3 cache retains all 39 predictors.
+    The 80-iteration main joblib model, fitted on all 12,458,824 2010–2016 rows,
+    matches the experiment pickle bit-for-bit on every development input.
+    Maximum absolute prediction difference is 0.0. The demo serves this export
+    with 39 inputs and the frozen grid footprint. See `docs/modeling/README.md`
+    for generated evidence paths and commit/dirty-tree provenance.
 
 ## Reproducing the dataset
 
@@ -226,21 +235,27 @@ used an isolated Python environment with `shapely` installed. The feature
 builder itself streams by date but the full output is large; do not commit it
 without an explicit team decision.
 
-Existing local panels and audits remain old until deliberately regenerated.
-The build command is unchanged; replacing existing outputs requires
+The current compressed local panel is rebuilt; preserved old 48-column panel
+copies have `_legacy_48cols` filenames. Replacing an existing output requires
 `python scripts/build_ignition_feature_panel.py --force`. Review the generated
 panel and matching audit before use. Output, audit, registry, and selection
 filenames retain the `_v1` family suffix despite the v1.1.0 feature version.
 
 ## Training guidance
 
-The current `data/metadata/ignition_feature_selection_v1.json` lists exactly
-the coordinate experiment's 39 transformed predictors, in order: the original
-36, `fire_history_days_since_same_cell__censored`, then the two coordinates.
-Frozen original models and their cache retain exactly the 36 predictors in
-`docs/modeling/feature_manifest.json`. Their preprocessing still derives the
-censor flag and coordinate experiments append coordinates once. When using
-all 39 persisted predictors, do not append the flag or coordinates again.
+`data/metadata/ignition_feature_selection_v1.json` is the only authoritative
+ordered feature list: the original 36, the persisted history-censor flag,
+then two coordinates. The main pipeline and corrected-weather cache both
+retain all 39 fields. HGB preprocessing preserves those fields without
+appending anything. Old 36-column caches are rejected by the v3 cache version.
+`docs/modeling/feature_manifest.json` now references the canonical metadata
+rather than defining a second list. Historical model results remain archives.
+
+The retained main model is trained on 2010–2016 with 80 iterations, learning
+rate 0.1, L2 1.0, 15 leaves, minimum leaf size 100 and seed 385, without class
+weighting or early stopping. Follow `docs/modeling/README.md` to validate the
+rebuilt panel, rebuild the corrected 39-column cache, export the model with
+joblib and provenance JSON, and compare it with the experiment pickle.
 
 - Use a chronological holdout and preferably a spatial block as well. A random
   row split leaks nearby dates and recurrent-cell patterns.

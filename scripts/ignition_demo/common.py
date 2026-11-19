@@ -1,5 +1,4 @@
 """Small, independently testable contracts shared by reconstruction and serving."""
-import csv
 import json
 from datetime import date
 from pathlib import Path
@@ -8,7 +7,7 @@ import numpy as np
 
 from scripts.ignition_modeling.contract import ROOT, FEATURE_NAMES
 
-OUTPUT = ROOT / "artifacts/ignition_demo/reconstruction"
+OUTPUT = ROOT / "artifacts/ignition_modeling/retained_coordinate_hgb"
 CACHE = ROOT / "data/interim/ignition_modeling_cache"
 WEB = ROOT / "ignition_demo/web"
 
@@ -26,26 +25,14 @@ def write_json(path, value):
 
 
 def alert_policy():
-    """Choose using validation counts only; retain manifest precision, not CSV rounding."""
-    freeze = read_json(ROOT / "docs/modeling/final_freeze.json")
-    with (ROOT / "docs/modeling/threshold_tradeoffs_2018.csv").open(newline="") as stream:
-        rows = list(csv.DictReader(stream))
-    if len(rows) != len(freeze["thresholds"]):
-        raise ValueError("Frozen threshold table and manifest differ")
-    choices = []
-    for index, (row, threshold) in enumerate(zip(rows, freeze["thresholds"])):
-        if not np.isclose(float(row["threshold"]), threshold, rtol=0, atol=1e-14):
-            raise ValueError("Frozen threshold order differs")
-        tp, fn, fp = (int(row[key]) for key in ("true_positive", "false_negative", "false_positive"))
-        choices.append({"index": index, "threshold": threshold,
-                        "f2": 5 * tp / (5 * tp + 4 * fn + fp) if 5 * tp + 4 * fn + fp else 0,
-                        "validation": {key: float(row[key]) for key in
-                            ("precision", "recall", "alerts_per_day", "false_alerts_per_day")}})
-    selected = max(choices, key=lambda item: (item["f2"], item["threshold"]))
-    return {"selection_year": 2018, "metric": "F2", "default_index": selected["index"],
-            "threshold": selected["threshold"], "choices": choices,
-            "rule": "Maximum validation F2 among eight frozen cutoffs; ties choose the higher cutoff",
-            "scope": "Recall-focused demonstration policy; operational costs and capacity unspecified"}
+    """Illustrative score cutoffs, never selected using replay-year labels."""
+    thresholds = [1e-5, 5e-5, .0001, .0005, .001, .005, .01, .05]
+    return {"selection_year": None, "metric": None, "default_index": 4,
+            "threshold": thresholds[4],
+            "choices": [{"index": index, "threshold": value, "f2": None, "validation": None}
+                        for index, value in enumerate(thresholds)],
+            "rule": "Illustrative fixed probability cutoffs; default 0.001; no labels-based tuning",
+            "scope": "Not a validated operational policy; daily counts are descriptive replay only"}
 
 
 def validate_date(value):

@@ -2,13 +2,13 @@
 
 The original numerical results and tables below predate the orchestration refactor. They are preserved; the fresh five-fold reproduction is documented at the end of this report.
 
-This experiment adds exactly two static geometry predictors to the tuned HGB
-baseline's frozen 36-input cache, after its existing history-censor indicator.
-The main dataset builder now persists the same 39-column predictor order;
-this experiment still uses corrected-weather cache values, not uncorrected
-panel weather. Labels, timing semantics and the original frozen evaluation
-remain unchanged. This is a retrospective ignition hindcast, not a fire-spread
-or operational forecast model.
+This experiment uses the canonical 39-input corrected-weather cache: the
+original 36 predictors, persisted history-censor indicator and two static
+geometry predictors. Its helper no longer appends these fields. The historical
+experiment below compared adding coordinates to the tuned no-coordinate
+baseline. Labels, timing semantics and archived evaluation results are
+unchanged. This is retrospective ignition hindcast, not fire spread or an
+operational forecast.
 
 ## Results
 

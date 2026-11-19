@@ -28,7 +28,9 @@ from zoneinfo import ZoneInfo
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-FEATURE_SET_VERSION = "ignition-feature-v1.1.0"
+FEATURE_SELECTION_PATH = PROJECT_ROOT / "data/metadata/ignition_feature_selection_v1.json"
+FEATURE_SELECTION = json.loads(FEATURE_SELECTION_PATH.read_text(encoding="utf-8"))
+FEATURE_SET_VERSION = FEATURE_SELECTION["feature_set_version"]
 TERRAIN_FEATURE_VERSION = "ignition-feature-v1.0.0"
 LOCAL_TIMEZONE = ZoneInfo("America/Toronto")
 FIRE_SEASON_START = (5, 1)
@@ -505,43 +507,8 @@ def calendar_features(issue_date: date, latitude: float) -> dict[str, str]:
 
 def output_fields() -> list[str]:
     return LABEL_FIELDS + [
-        "feature_set_version",
-        "issue_time_utc",
-        "calendar_day_of_year",
-        "calendar_doy_sin",
-        "calendar_doy_cos",
-        "calendar_is_weekend",
-        "calendar_day_length_hours",
-        "terrain_elevation_mean_m",
-        "terrain_slope_deg",
-        "terrain_aspect_sin",
-        "terrain_aspect_cos",
-        "terrain_ruggedness_m",
-        "terrain_sample_count",
-        "terrain_coverage_fraction",
-        "terrain_source_id",
-        "terrain_source_vintage_end_year",
-        "cwfis_source_id",
-        "cwfis_observation_date",
-        "cwfis_station_count",
-        "cwfis_nearest_station_km",
-        "cwfis_observation_coverage_fraction",
-        "cwfis_imputed_station_fraction",
-        "cwfis_calcstatus_nonzero_fraction",
-        "cwfis_missing",
-        *CWFIS_OUTPUT_FIELDS.values(),
-        "cwfis_precip_7d_mm",
-        "cwfis_precip_7d_coverage_days",
-        "fire_history_source_id",
-        "fire_history_same_cell_30d",
-        "fire_history_neighborhood_30d",
-        "fire_history_same_cell_365d",
-        "fire_history_neighborhood_365d",
-        "fire_history_days_since_same_cell",
-        "fire_history_days_since_same_cell__censored",
-        "cell_centroid_easting_m",
-        "cell_centroid_northing_m",
-    ]
+        field for field in FEATURE_SELECTION["metadata"] if field not in LABEL_FIELDS
+    ] + FEATURE_SELECTION["predictors"]
 
 
 def selected_panel_dates(profile: LabelProfile, start: str | None, end: str | None) -> list[date]:

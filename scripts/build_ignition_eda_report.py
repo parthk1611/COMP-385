@@ -30,9 +30,9 @@ positive = pd.read_csv(OUT / "positive_cell_days.csv.gz")
 selection = json.loads(args.feature_selection.read_text(encoding="utf-8"))
 if list(correlations.columns) != selection["predictors"]:
     raise ValueError(
-        "Saved EDA predictors do not match --feature-selection; use a selection matching "
-        "these EDA outputs (docs/modeling/feature_manifest.json for the historical "
-        "36-predictor EDA), or regenerate EDA for the current panel in a separate directory."
+        "Saved EDA predictors do not match the canonical selection; regenerate EDA "
+        "for the current 39-feature panel in a separate directory. Historical "
+        "36-predictor reports remain archives, not current pipeline inputs."
     )
 FWI_URL = "https://natural-resources.canada.ca/forest-forestry/wildland-fires/canada-fire-weather-index-system"
 plt.rcParams.update({"font.family":"DejaVu Sans", "font.size":10, "axes.spines.top":False, "axes.spines.right":False, "axes.titleweight":"bold", "figure.facecolor":"white", "axes.facecolor":"white", "savefig.facecolor":"white"})

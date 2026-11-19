@@ -29,6 +29,7 @@ __pycache__/
 .venv-modeling/
 artifacts/ignition_modeling/
 data/interim/ignition_modeling_cache/
+data/interim/ignition_modeling_cache_legacy_v2/
 
 # Local ignition demonstration environment and reproducible generated outputs.
 .venv-demo/

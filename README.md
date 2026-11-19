@@ -40,17 +40,17 @@ source links point to the verified 18 November 2026 code snapshot.
 See [the ignition EDA](docs/eda/README.md) for historical v1.0.0 (48-column)
 full-panel counts and missingness from the 2026-10-05 rebuild, feature
 explanations, figures, the notebook, and reproduction commands. The current
-`data/metadata/ignition_feature_selection_v1.json` lists 39 predictors in the
-coordinate experiment's transformed order: 36 base features, history-censor
-flag, then two coordinates. Frozen original modelling uses the 36 in
-`docs/modeling/feature_manifest.json` and derives the extra fields once.
+`data/metadata/ignition_feature_selection_v1.json` is the only authoritative
+39-predictor list: 36 original fields, history-censor flag, then coordinates.
+The main corrected-weather cache, HGB and demo all consume these persisted
+fields without appending duplicates; old 36-column caches are rejected.
 
-Existing local outputs remain old until deliberate regeneration with the same
-`python scripts/build_ignition_feature_panel.py` command (`--force` is required
-to overwrite existing outputs). Review the output and matching audit, including
-coordinate semantics and grid checksum. Filenames remain `_v1`; this contract
-update claims neither a new full rebuild nor rerun model results. Static
-geometry adds no dynamic source or operational forecasting claim.
+The 2026-11-19 main-pipeline rebuild completed the 51-column panel and
+39-column corrected-weather cache. Its retained 80-iteration joblib model
+matches the experiment pickle bit-for-bit on all 2010–2016 development rows.
+The demo serves that export and displays the frozen 10 km grid footprint.
+See `docs/modeling/README.md` for commands, provenance and verification.
+Static geometry adds no dynamic source or operational forecasting claim.
 
 The second AI capability, wind-driven fire spread, has its own folder:
 [`capability_2_fire_spread/`](capability_2_fire_spread/README.md). It holds a

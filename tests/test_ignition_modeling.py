@@ -11,14 +11,13 @@ from contextlib import closing
 from datetime import date, timedelta
 from pathlib import Path
 from unittest.mock import patch
-from importlib.metadata import version
 
 import numpy as np
 import pandas as pd
 import joblib
 from threadpoolctl import threadpool_limits
 
-from scripts.build_ignition_feature_panel import FireHistory, GridCell
+from scripts.build_ignition_feature_panel import FireHistory, GridCell, output_fields
 from scripts.ignition_modeling import contract, data, evaluation, splits, weather
 from scripts.ignition_modeling import histogram, logistic, run, validation
 from scripts.ignition_modeling.preprocessing import HistoryIndicator, NumericPreprocessor
@@ -38,6 +37,8 @@ EXPECTED_FEATURES = (
     "fire_history_same_cell_30d", "fire_history_neighborhood_30d",
     "fire_history_same_cell_365d", "fire_history_neighborhood_365d",
     "fire_history_days_since_same_cell",
+    "fire_history_days_since_same_cell__censored",
+    "cell_centroid_easting_m", "cell_centroid_northing_m",
 )
 
 
@@ -86,16 +87,19 @@ def audit_corrected_cache(directory, quality_path):
     original = json.loads(Path(quality_path).read_text())
     n, grid_count = len(y), original["totals"]["grid_cells"]
     ids = np.memmap(directory / "grid.u16", dtype="uint16", mode="r", shape=(n,))
+    grid = pd.read_csv(contract.ROOT / "data/interim/ontario_fire_region_10km_grid.csv")
+    expected_centroids = grid[["grid_x_m", "grid_y_m"]].to_numpy(dtype=np.float64) + 5000
 
     def require(condition, reason):
         if not condition:
             raise ValueError(reason)
 
     require(original["status"] == "PASS" and original["full_scan_completed"], "Original integrity gate failed")
-    require(manifest["features"] == list(EXPECTED_FEATURES), "Exact 36-column order differs")
+    require(manifest["features"] == list(EXPECTED_FEATURES), "Exact 39-column order differs")
+    require(manifest["cache_version"] == contract.CACHE_VERSION, "Cache version differs")
     require(n == original["totals"]["rows"] == 17798320, "Row universe differs")
     require(grid_count == 9673, "Grid universe differs")
-    for filename, width in (("X.f64", 288), ("y.u8", 1), ("grid.u16", 2)):
+    for filename, width in (("X.f64", len(EXPECTED_FEATURES) * 8), ("y.u8", 1), ("grid.u16", 2)):
         require((directory / filename).stat().st_size == n * width, f"Binary storage size differs: {filename}")
     require(manifest["original_panel_sha256"] == original["source"]["sha256"], "Original checksum differs")
     expected_dates = [(date(year, 5, 1) + timedelta(days=offset)).isoformat()
@@ -111,6 +115,10 @@ def audit_corrected_cache(directory, quality_path):
         block, labels = X[start:start + 50000], y[start:start + 50000]
         require(not np.isinf(block).any(), f"Infinite numeric cache input near row {start}")
         require(np.isin(labels, [0, 1]).all(), f"Nonbinary labels near row {start}")
+        require(np.array_equal(block[:, column["fire_history_days_since_same_cell__censored"]],
+                               np.isnan(block[:, column["fire_history_days_since_same_cell"]])),
+                f"History censor flag disagrees with missing history near row {start}")
+        require(np.isfinite(block[:, -2:]).all(), f"Missing coordinates near row {start}")
         for name in daily[1:]:
             values = block[:, column[name]]
             require(not np.any(values < 0), f"Negative physical weather {name} near row {start}")
@@ -139,6 +147,8 @@ def audit_corrected_cache(directory, quality_path):
         grid_ids = np.asarray(ids[start:end])
         require(np.array_equal(np.sort(grid_ids), np.arange(grid_count)), f"Grid ID permutation invalid on {day}")
         values = X[start:end]
+        require(np.allclose(values[:, -2:], expected_centroids[grid_ids], atol=1e-6, rtol=0),
+                f"Independent grid centroid mismatch {day}")
         row = annual.setdefault(day[:4], {"rows": 0, "positives": 0, "weather_missing": 0, "rain_7d_missing": 0})
         row["rows"] += end - start
         row["positives"] += int(y[start:end].sum())
@@ -163,7 +173,6 @@ def audit_corrected_cache(directory, quality_path):
         require(result["rows"] == row["rows"] and result["positives"] == row["positive_cell_days"], "Annual labels/rows changed")
     require(sum(row["positives"] for row in annual.values()) == 7785, "Total labels changed")
     representative = []
-    grid = pd.read_csv(contract.ROOT / "data/interim/ontario_fire_region_10km_grid.csv")
     with closing(sqlite3.connect(directory / "cwfis.sqlite")) as db:
         stations = db.execute("SELECT key,lon,lat,MIN(day) FROM records GROUP BY key ORDER BY MIN(day),key").fetchall()
         for issue in ("2010-05-01", "2015-05-01", "2016-07-15", "2019-10-31"):
@@ -222,158 +231,37 @@ def independent_metrics(labels, probability):
             "log_loss": float(np.mean(-labels * np.log(clipped) - (1 - labels) * np.log1p(-clipped)))}
 
 
-def audit_production_artifacts(directory, cache_directory):
-    """Read-only production acceptance; never refits, chooses or retunes models."""
-    directory = Path(directory)
-    X, y, manifest = data.load_cache(cache_directory)
-    config = json.loads((directory / "configuration.json").read_text())
-    compare = json.loads((directory / "development_comparison.json").read_text())
-    freeze = json.loads((directory / "final_freeze.json").read_text())
-
-    def require(condition, reason):
-        if not condition:
-            raise ValueError(reason)
-
-    def match_metrics(actual, reported):
-        for name, value in actual.items():
-            require(reported[name] is None if value is None else np.isclose(reported[name], value, atol=1e-12, rtol=0), f"Metric differs: {name}")
-
-    require(config["features"] == list(EXPECTED_FEATURES) and config["seed"] == 385, "Run schema/seed differs")
-    require(config["cache_manifest_sha256"] == weather.sha256(Path(cache_directory) / "manifest.json"), "Cache fingerprint differs")
-    for name, digest in config["source_code_sha256"].items():
-        require(weather.sha256(contract.ROOT / "scripts/ignition_modeling" / name) == digest, f"Code fingerprint differs: {name}")
-    for package, recorded in config["packages"].items():
-        require(version(package) == recorded, f"Package version differs: {package}")
-    paths = sorted(directory.glob("fold_*.json"))
-    require(len(paths) == 40 and len(compare["fold_results"]) == 40, "Development checkpoints incomplete")
-    records = {}
-    for path in paths:
-        record = json.loads(path.read_text())
-        family, candidate, year = record["family"], record["candidate"], record["fold"]
-        require(year in range(2012, 2017) and family in ("logistic", "hgb") and candidate in range(4), "Unexpected fold identity")
-        require(record["params"] == config[f"{'logistic' if family == 'logistic' else 'hgb'}_candidates"][candidate], "Candidate parameters differ")
-        valid, train = data.year_slice(manifest, year), data.year_slice(manifest, 2010, year - 1)
-        with np.load(path.with_suffix(".npz")) as predictions:
-            labels, probability = predictions["y"], predictions["p"]
-            require(np.array_equal(labels, y[valid]), "Validation labels/order or prevalence changed")
-            require(probability.shape == labels.shape, "Validation prediction schema differs")
-            metrics = independent_metrics(labels, probability)
-            match_metrics(metrics, record["metrics"])
-        diag = record["diagnostics"]
-        total, positive = train.stop - train.start, int(y[train].sum())
-        require(diag.get("training_rows", diag.get("n_rows")) == total, "Training row count differs")
-        require(diag["class_counts"] == {"0": total - positive, "1": positive}, "Training class counts differ")
-        expected_weights = ({"0": total / (2 * (total - positive)), "1": total / (2 * positive)}
-                            if record["params"]["class_weight"] == "balanced" else {"0": 1.0, "1": 1.0})
-        require(diag.get("training_class_weights", diag.get("effective_class_weights")) == expected_weights, "Fold-derived weights differ")
-        if family == "hgb":
-            require(diag["raw_feature_schema"] == list(EXPECTED_FEATURES) and diag["n_features_transformed"] == 37, "Histogram schema differs")
-            require(not diag["early_stopping"] and not diag["internal_random_validation"], "Random validation used")
-            require(diag["n_iter"] == record["params"]["max_iter"], "Histogram iteration count differs")
-        else:
-            require(diag["input_features"] == list(EXPECTED_FEATURES) and len(diag["transformed_features"]) == 57, "Logistic schema differs")
-            require(not diag["resampling"] and diag["estimator_class_weight"] is None, "Logistic weighting applied twice")
-            require(all(epoch["rows_seen"] == total and epoch["positives_seen"] == positive for epoch in diag["epochs"]), "Logistic epoch lost rows")
-        key = (family, candidate, year)
-        require(key not in records, "Duplicate fold identity")
-        records[key] = record
-    for record in compare["fold_results"]:
-        require(record == records[(record["family"], record["candidate"], record["fold"])], "Comparison differs from saved checkpoint")
-    for summary in compare["candidate_summary"]:
-        values = {str(year): records[(summary["family"], summary["candidate"], year)]["metrics"]["average_precision"] for year in range(2012, 2017)}
-        require(summary["fold_average_precision"] == values, "Candidate fold summary differs")
-        require(abs(summary["mean_fold_average_precision"] - np.mean(list(values.values()))) < 1e-12, "Mean AP differs")
-    selected = max(compare["candidate_summary"], key=lambda row: row["mean_fold_average_precision"])
-    require(selected == compare["selected"] == freeze["selected"], "Final choice not development winner")
-    require(freeze["system_sha256"] == weather.sha256(directory / "selected_system.joblib"), "Frozen model hash differs")
-    require(freeze["configuration_sha256"] == weather.sha256(directory / "configuration.json"), "Frozen config hash differs")
-    bundle = joblib.load(directory / "selected_system.joblib")
-    require(bundle["features"] == list(EXPECTED_FEATURES) and bundle["cache_version"] == manifest["cache_version"], "Saved system schema differs")
-    require(bundle["calibrator"] is None and not freeze["calibration_used"], "Unexpected final calibration")
-    require(all(bundle["pipeline"]["classifier"].get_params()[name] == value for name, value in selected["params"].items()), "Saved selected classifier parameters differ")
-    final_train = data.year_slice(manifest, 2010, 2016)
-    for family, count in (("logistic", 57), ("hgb", 37)):
-        pipeline = joblib.load(directory / f"final_{family}.joblib")
-        require(list(pipeline["preprocessor"].feature_names_in_) == list(EXPECTED_FEATURES), "Final raw pipeline schema differs")
-        require(len(pipeline["preprocessor"].output_names_) == count, "Final derived schema differs")
-        require(pipeline["preprocessor"].n_samples_seen_ == final_train.stop - final_train.start, "Final preprocessor fit period differs")
-        chosen = max((row for row in compare["candidate_summary"] if row["family"] == family), key=lambda row: row["mean_fold_average_precision"])
-        diag = json.loads((directory / f"final_{family}_training.json").read_text())
-        total, positive = final_train.stop - final_train.start, int(y[final_train].sum())
-        require(diag["params"] == chosen["params"] and diag.get("training_rows", diag.get("n_rows")) == total, "Final training configuration/counts differ")
-        require(diag["class_counts"] == {"0": total - positive, "1": positive}, "Final training class counts differ")
-    threshold_slice = data.year_slice(manifest, 2018)
-    with threadpool_limits(limits=2):
-        p2018 = run.predict_bundle(bundle, X[threshold_slice])
-    expected_thresholds = np.unique(np.quantile(p2018, [.5, .9, .95, .99, .995, .999, .9995, .9999]))
-    require(np.array_equal(expected_thresholds, freeze["thresholds"]) and freeze["thresholds"] == bundle["thresholds"], "Thresholds do not originate from frozen 2018 scores")
-    decision = json.loads((directory / "calibration_decision.json").read_text())
-    match_metrics(independent_metrics(y[threshold_slice], p2018), decision["raw"])
-    require(decision["fit_year"] == 2017 and decision["decision_year"] == 2018 and not decision["used"], "Calibration selection timing differs")
-    require(decision["sigmoid"]["log_loss"] >= decision["raw"]["log_loss"], "Recorded calibration rejection rule disagrees")
-    test = data.year_slice(manifest, 2019)
-    report = json.loads((directory / "final_test.json").read_text())
-    with np.load(directory / "test_predictions_2019.npz") as saved:
-        labels, probability = saved["y"], saved["p"]
-        require(np.array_equal(labels, y[test]), "Test rows/order/prevalence changed")
-        require(np.array_equal(saved["dates"], data.dates_for(manifest, test)), "Test dates differ")
-        missing = saved["weather_missing"]
-        require(np.array_equal(missing, X[test, EXPECTED_FEATURES.index("cwfis_missing")]), "Test weather strata differ")
-        metrics = independent_metrics(labels, probability)
-        match_metrics(metrics, report)
-        for flag in (0, 1):
-            group = missing == flag
-            match_metrics(independent_metrics(labels[group], probability[group]), report["by_weather_missing"][str(flag)])
-        positions = np.unique(np.linspace(0, len(labels) - 1, 512, dtype=int))
-        with threadpool_limits(limits=2):
-            predicted = run.predict_bundle(bundle, X[test][positions])
-        require(np.allclose(predicted, probability[positions], atol=1e-14, rtol=0), "Reloaded final test subset differs")
-        for row, threshold in zip(report["threshold_tradeoffs"], expected_thresholds):
-            alerted = probability >= threshold
-            tp, fp = int(labels[alerted].sum()), int(alerted.sum() - labels[alerted].sum())
-            require(row["threshold"] == threshold and row["true_positive"] == tp and row["false_positive"] == fp, "Frozen test threshold counts differ")
-            require(np.isclose(row["false_alerts_per_10000_cell_days"], 10000 * fp / len(labels)), "False-alert denominator differs")
-    require(report["final_system_freeze"] == freeze and report["n_dates"] == 184, "Final report freeze/date count differs")
-    times = [(directory / name).stat().st_mtime_ns for name in ("selected_system.joblib", "final_freeze.json", "test_predictions_2019.npz", "final_test.json")]
-    require(times == sorted(times), "Artifact write order does not support freeze before test outputs")
-    return {"status": "PASS", "folds_verified": 40, "selected": selected,
-            "final_test_metrics": metrics, "test_subset_reload_rows": len(positions),
-            "threshold_origin": "2018 raw selected-system score quantiles; no operating threshold selected",
-            "calibration_used": False, "system_sha256": freeze["system_sha256"]}
-
-
 class ContractAcceptanceTest(unittest.TestCase):
     def test_exact_allowlist_and_labels_excluded(self):
         self.assertEqual(contract.FEATURE_NAMES, EXPECTED_FEATURES)
-        self.assertEqual(len(set(contract.FEATURE_NAMES)), 36)
+        self.assertEqual(len(set(contract.FEATURE_NAMES)), 39)
         self.assertFalse(set(contract.FEATURE_NAMES) & {
             "ignition", "ignition_count", "large_fire_200ha", "grid_id",
             "ignition_date", "issue_time_utc", "cwfis_observation_date"})
-        contract.check_matrix(np.zeros((2, 36)))
-        for value in (np.zeros((2, 35)), np.zeros((2, 37)), np.zeros(36)):
+        contract.check_matrix(np.zeros((2, 39)))
+        for value in (np.zeros((2, 36)), np.zeros((2, 38)), np.zeros((2, 40)), np.zeros(39)):
             with self.assertRaises(ValueError):
                 contract.check_matrix(value)
         from experiments.ignition.common import RAW_FEATURES, TRANSFORMED_FEATURES
-        self.assertEqual(RAW_FEATURES, (*EXPECTED_FEATURES, *validation.COORDINATES))
-        self.assertEqual(len(RAW_FEATURES), 38)
+        self.assertEqual(RAW_FEATURES, EXPECTED_FEATURES)
+        self.assertEqual(TRANSFORMED_FEATURES, EXPECTED_FEATURES)
         self.assertEqual(len(set(TRANSFORMED_FEATURES)), 39)
         selection = json.loads((contract.ROOT / "data/metadata/ignition_feature_selection_v1.json").read_text())
         self.assertEqual(tuple(selection["predictors"]), TRANSFORMED_FEATURES)
 
-    def test_current_panel_coordinates_and_historical_provenance_are_versioned(self):
+    def test_current_panel_coordinates_censor_and_source_are_validated(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
             selection = json.loads((contract.ROOT / "data/metadata/ignition_feature_selection_v1.json").read_text())
             selection.update(feature_set_version="ignition-feature-v1.1.0",
-                             predictors=[*EXPECTED_FEATURES, validation.HISTORY_CENSOR, *validation.COORDINATES])
+                             predictors=list(EXPECTED_FEATURES))
             selection_path = root / "selection.json"
             selection_path.write_text(json.dumps(selection))
             grid = pd.DataFrame({"grid_id": ["a", "b"], "centroid_latitude": [48., 49.],
                                  "grid_x_m": [-20000, 30000], "grid_y_m": [40000, -50000]})
             grid_path = root / "grid.csv"
             grid.to_csv(grid_path, index=False)
-            header = [selection["target"], *selection["other_labels"],
-                      *selection["predictors"], *selection["metadata"]]
+            header = output_fields()
             rows = []
             for cell in grid.itertuples():
                 row = dict.fromkeys(header, "0")
@@ -388,10 +276,9 @@ class ContractAcceptanceTest(unittest.TestCase):
             rows[0][validation.HISTORY_CENSOR] = "1"
             rows[1][contract.HISTORY_FEATURE] = "5"
             rows[1][validation.HISTORY_CENSOR] = "0"
-            # Deliberately tiny fixture: universe/other scientific checks still run,
-            # but only schema, coordinates and provenance applicability are under test.
-            provenance = json.loads((contract.ROOT / "docs/eda/source_provenance.json").read_text())
-            source = root / provenance["source_file_name"]
+            # Tiny fixture isolates schema, coordinates and censor consistency;
+            # full-universe scientific checks still run and report violations.
+            source = root / "panel.csv"
 
             def scan():
                 with source.open("w", newline="") as stream:
@@ -405,9 +292,7 @@ class ContractAcceptanceTest(unittest.TestCase):
             report = scan()
             self.assertEqual(len(report["schema"]["columns"]), 51)
             self.assertEqual(report["schema"]["predictor_count"], 39)
-            self.assertFalse(report["source"]["pinned_checksum_applicable"])
-            self.assertFalse(report["source"]["source_column_order_applicable"])
-            self.assertEqual(report["source"]["provenance_feature_set_version"], "ignition-feature-v1.0.0")
+            self.assertEqual(report["source"]["sha256"], weather.sha256(source))
             for column in validation.COORDINATES:
                 key = f"cell_centroid_mismatch_rows:{column}"
                 self.assertEqual(report["validation_violation_counts"][key], 0)
@@ -427,18 +312,10 @@ class ContractAcceptanceTest(unittest.TestCase):
                         self.assertEqual(scan()["validation_violation_counts"]["history_censor_flag_mismatch_rows"], 1)
                 row[validation.HISTORY_CENSOR] = original
             selection.update(feature_set_version="ignition-feature-v1.0.0",
-                             predictors=list(EXPECTED_FEATURES))
+                             predictors=list(EXPECTED_FEATURES[:36]))
             selection_path.write_text(json.dumps(selection))
-            header = [name for name in header if name not in {*validation.COORDINATES, validation.HISTORY_CENSOR}]
-            rows = [{name: value for name, value in row.items() if name in header}
-                    for row in rows]
-            for row in rows:
-                row["feature_set_version"] = "ignition-feature-v1.0.0"
-            historical = scan()
-            self.assertTrue(historical["source"]["pinned_checksum_applicable"])
-            self.assertTrue(historical["source"]["source_column_order_applicable"])
-            self.assertEqual(historical["validation_violation_counts"]["pinned_source_sha256_mismatch"], 1)
-            self.assertEqual(historical["validation_violation_counts"]["source_column_order_mismatch"], 1)
+            with self.assertRaises(ValueError):
+                scan()
 
     def test_partition_is_date_only_and_complete_dates_stay_together(self):
         dates = np.array(["2019-05-01", "2010-10-31", "2017-05-01",
@@ -472,7 +349,7 @@ class ContractAcceptanceTest(unittest.TestCase):
     def test_cache_reload_preserves_schema_rows_labels_and_nan(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
-            matrix = np.arange(108, dtype=np.float64).reshape(3, 36)
+            matrix = np.arange(117, dtype=np.float64).reshape(3, 39)
             matrix[1, 18] = np.nan
             matrix.tofile(root / "X.f64")
             np.array([0, 1, 0], dtype=np.uint8).tofile(root / "y.u8")
@@ -680,10 +557,11 @@ class EvaluationAcceptanceTest(unittest.TestCase):
 
 class PreprocessingAcceptanceTest(unittest.TestCase):
     def fixture(self):
-        values = np.full((4, 36), 2.0)
+        values = np.full((4, 39), 2.0)
         values[:, EXPECTED_FEATURES.index("cwfis_temp_c")] = [1, 3, np.nan, 5]
         values[:, EXPECTED_FEATURES.index("cwfis_wind_speed_kmh")] = np.nan
         values[:, EXPECTED_FEATURES.index("fire_history_days_since_same_cell")] = [np.nan, 1, 3, 5]
+        values[:, EXPECTED_FEATURES.index("fire_history_days_since_same_cell__censored")] = [1, 0, 0, 0]
         values[:, EXPECTED_FEATURES.index("calendar_doy_sin")] = [0.1, 0.2, 0.3, 0.4]
         return values
 
@@ -694,7 +572,7 @@ class PreprocessingAcceptanceTest(unittest.TestCase):
         temp = EXPECTED_FEATURES.index("cwfis_temp_c")
         wind = EXPECTED_FEATURES.index("cwfis_wind_speed_kmh")
         history = EXPECTED_FEATURES.index("fire_history_days_since_same_cell")
-        self.assertEqual(transformed.shape, (4, 57))
+        self.assertEqual(transformed.shape, (4, 59))
         self.assertEqual(fitted.n_samples_seen_, 4)
         self.assertEqual(fitted.medians_[temp], 3)
         self.assertEqual(fitted.training_mean_[temp], 3)
@@ -705,13 +583,18 @@ class PreprocessingAcceptanceTest(unittest.TestCase):
         np.testing.assert_equal(transformed[:, wind], np.zeros(4))
         self.assertEqual(fitted.medians_[history], 3)
         names = list(fitted.get_feature_names_out())
+        self.assertEqual(names[:39], list(EXPECTED_FEATURES))
+        self.assertEqual(names.count("fire_history_days_since_same_cell__censored"), 1)
+        self.assertEqual(len(set(names)), 59)
         np.testing.assert_array_equal(transformed[:, names.index("cwfis_temp_c__missing")], [0, 0, 1, 0])
         np.testing.assert_array_equal(transformed[:, names.index("cwfis_wind_speed_kmh__missing")], [1, 1, 1, 1])
         np.testing.assert_array_equal(transformed[:, names.index("fire_history_days_since_same_cell__censored")], [1, 0, 0, 0])
+        censor = EXPECTED_FEATURES.index("fire_history_days_since_same_cell__censored")
+        self.assertEqual((fitted.mean_[censor], fitted.scale_[censor]), (0, 1))
         sine = EXPECTED_FEATURES.index("calendar_doy_sin")
         np.testing.assert_array_equal(transformed[:, sine], X[:, sine])
         self.assertTrue(np.isfinite(transformed).all())
-        self.assertTrue(np.isin(transformed[:, 36:], [0, 1]).all())
+        self.assertTrue(np.isin(transformed[:, 39:], [0, 1]).all())
 
     def test_holdout_mutation_cannot_change_fitted_training_statistics(self):
         fitted = NumericPreprocessor(chunk_size=1).fit(self.fixture())
@@ -721,17 +604,21 @@ class PreprocessingAcceptanceTest(unittest.TestCase):
         held_out = self.fixture() * 1000
         held_out[0, :] = np.nan
         held_out[:, EXPECTED_FEATURES.index("cwfis_wind_speed_kmh")] = [11, 22, 33, 44]
+        censor = EXPECTED_FEATURES.index("fire_history_days_since_same_cell__censored")
+        held_out[:, censor] = np.isnan(held_out[:, EXPECTED_FEATURES.index("fire_history_days_since_same_cell")])
         output = fitted.transform(held_out)
         self.assertEqual(output[0, EXPECTED_FEATURES.index("cwfis_temp_c")], 0)
         self.assertEqual(output[0, EXPECTED_FEATURES.index("cwfis_wind_speed_kmh")], 11)
-        fitted.transform(np.full((3, 36), -1e8))
+        extreme = np.full((3, 39), -1e8)
+        extreme[:, censor] = 0
+        fitted.transform(extreme)
         for name in names:
             np.testing.assert_array_equal(getattr(fitted, name), before[name])
         self.assertEqual(fitted.n_samples_seen_, 4)
 
     def test_schema_errors_infinite_values_and_empty_training_fail(self):
         X = pd.DataFrame(self.fixture(), columns=EXPECTED_FEATURES)
-        for invalid in (X.iloc[:, ::-1], X.assign(ignition=1), X.astype(str), np.empty((0, 36))):
+        for invalid in (X.iloc[:, ::-1], X.assign(ignition=1), X.astype(str), np.empty((0, 39))):
             with self.subTest(shape=invalid.shape), self.assertRaises(ValueError):
                 NumericPreprocessor().fit(invalid)
         for transformer in (NumericPreprocessor(), HistoryIndicator()):
@@ -743,12 +630,29 @@ class PreprocessingAcceptanceTest(unittest.TestCase):
             with self.assertRaises(ValueError):
                 transformer.transform(invalid)
 
-    def test_native_missing_transform_retains_values_and_adds_only_history_flag(self):
+    def test_native_missing_transform_preserves_exact_selected_schema_and_censor(self):
         X = self.fixture()
-        transformed = HistoryIndicator(chunk_size=1).fit_transform(X)
-        self.assertEqual(transformed.shape, (4, 37))
-        np.testing.assert_equal(transformed[:, :36], X)
-        np.testing.assert_array_equal(transformed[:, 36], [1, 0, 0, 0])
+        fitted = HistoryIndicator(chunk_size=1)
+        transformed = fitted.fit_transform(X)
+        self.assertEqual(transformed.shape, (4, 39))
+        np.testing.assert_equal(transformed, X)
+        np.testing.assert_array_equal(fitted.get_feature_names_out(), EXPECTED_FEATURES)
+
+    def test_persisted_censor_must_be_binary_and_match_history_in_fit_and_transform(self):
+        for transformer in (NumericPreprocessor(), HistoryIndicator()):
+            transformer.fit(self.fixture())
+            for wrong in (np.nan, np.inf, -1, .5, 2, 0):
+                invalid = self.fixture()
+                invalid[0, EXPECTED_FEATURES.index("fire_history_days_since_same_cell__censored")] = wrong
+                with self.subTest(transformer=type(transformer).__name__, wrong=wrong):
+                    with self.assertRaises(ValueError):
+                        transformer.transform(invalid)
+                    with self.assertRaises(ValueError):
+                        type(transformer)().fit(invalid)
+            invalid = self.fixture()
+            invalid[1, EXPECTED_FEATURES.index("fire_history_days_since_same_cell__censored")] = 1
+            with self.assertRaises(ValueError):
+                transformer.transform(invalid)
 
     def test_disk_chunking_and_reload_preserve_transform_and_schema(self):
         X = self.fixture()
@@ -769,10 +673,11 @@ class PreprocessingAcceptanceTest(unittest.TestCase):
 
 class ModelIntegrationAcceptanceTest(unittest.TestCase):
     def fixture(self):
-        X = np.full((200, 36), 2.0)
+        X = np.full((200, 39), 2.0)
         X[:, EXPECTED_FEATURES.index("cwfis_temp_c")] = np.linspace(5, 30, 200)
         X[::3, EXPECTED_FEATURES.index("cwfis_precip_mm")] = np.nan
         X[::2, EXPECTED_FEATURES.index("fire_history_days_since_same_cell")] = np.nan
+        X[:, EXPECTED_FEATURES.index("fire_history_days_since_same_cell__censored")] = (np.arange(200) % 2 == 0)
         y = (np.arange(200) % 10 == 0).astype(np.uint8)
         return X, y
 
@@ -789,9 +694,14 @@ class ModelIntegrationAcceptanceTest(unittest.TestCase):
         np.testing.assert_allclose(restored.predict_proba(frame), expected, atol=1e-14, rtol=0)
         with self.assertRaises(ValueError):
             restored.predict_proba(frame.iloc[:, ::-1])
-        bundle = {"pipeline": restored, "calibrator": None, "features": list(EXPECTED_FEATURES)}
+        bundle = {"pipeline": restored, "calibrator": None, "features": list(EXPECTED_FEATURES),
+                  "cache_version": contract.CACHE_VERSION}
         np.testing.assert_allclose(run.predict_bundle(bundle, X), expected[:, 1], atol=1e-14, rtol=0)
         bundle["features"] = list(reversed(EXPECTED_FEATURES))
+        with self.assertRaises(ValueError):
+            run.predict_bundle(bundle, X)
+        bundle["features"] = list(EXPECTED_FEATURES)
+        bundle["cache_version"] = "obsolete"
         with self.assertRaises(ValueError):
             run.predict_bundle(bundle, X)
 
@@ -816,6 +726,9 @@ class ModelIntegrationAcceptanceTest(unittest.TestCase):
             np.testing.assert_array_equal(weights, np.where(labels == 1, 5, 200 / 360))
         self.assertEqual(pipeline["preprocessor"].n_samples_seen_, 200)
         self.assertEqual(pipeline["classifier"].loss, "log_loss")
+        self.assertEqual(pipeline["classifier"].n_features_in_, 59)
+        self.assertEqual(list(pipeline["preprocessor"].get_feature_names_out()).count(
+            "fire_history_days_since_same_cell__censored"), 1)
         self.assertFalse(report["resampling"])
         self.assertFalse(report["convergence_proven"])
         for epoch in report["epochs"]:
@@ -834,32 +747,30 @@ class ModelIntegrationAcceptanceTest(unittest.TestCase):
             self.assertFalse(classifier.early_stopping)
             self.assertEqual(classifier.class_weight, "balanced")
             self.assertEqual(classifier.n_iter_, 4)
-            self.assertEqual(classifier.n_features_in_, 37)
+            self.assertEqual(classifier.n_features_in_, 39)
             self.assertEqual(report["class_counts"], {"0": 180, "1": 20})
             self.assertEqual(report["effective_class_weights"], {"0": 200 / 360, "1": 5})
             self.assertEqual(report["n_rows"], 200)
             self.assertFalse(report["internal_random_validation"])
-            np.testing.assert_equal(pipeline["preprocessor"].transform(X)[:, :36], X)
+            np.testing.assert_equal(pipeline["preprocessor"].transform(X), X)
+            self.assertEqual(report["memory_estimate"]["transformed_disk_bytes"], len(X) * 39 * 8)
             self.assertFalse(list(root.glob("HistoryIndicator-*.f64")))
             self.assert_reload(pipeline, root, X)
 
-    def test_resume_rejects_stale_run_configuration_before_any_fit(self):
-        X, y = self.fixture()
-        manifest = {"features": list(EXPECTED_FEATURES), "cache_version": contract.CACHE_VERSION,
-                    "original_panel_sha256": "fixture"}
+    def test_existing_output_is_refused_before_any_fit(self):
         with tempfile.TemporaryDirectory() as temporary:
             root = Path(temporary)
-            (root / "manifest.json").write_text("{}")
             output = root / "run"
             output.mkdir()
-            stale = {"seed": -1, "features": list(EXPECTED_FEATURES)}
-            (output / "configuration.json").write_text(json.dumps(stale))
-            with patch.object(run, "load_cache", return_value=(X, y, manifest)), \
-                 patch.object(run, "check_gate"), patch.object(run, "train_model") as trainer:
-                with self.assertRaisesRegex(ValueError, "configuration/code/cache differs"):
+            marker = output / "model_metadata.json"
+            marker.write_text('{"original": true}')
+            with patch.object(run, "load_cache") as loader, \
+                 patch.object(run, "train_hgb") as trainer:
+                with self.assertRaises(FileExistsError):
                     run.execute(root, output)
+                loader.assert_not_called()
                 trainer.assert_not_called()
-            self.assertEqual(json.loads((output / "configuration.json").read_text()), stale)
+            self.assertEqual(marker.read_text(), '{"original": true}')
 
 
 if __name__ == "__main__":
