@@ -11,21 +11,27 @@ Training learns a rule from labelled historical examples. Prediction applies
 that learned rule to the required inputs. A saved model lets us reuse the rule
 without repeating training whenever someone changes the date in the app.
 
-The original experiment compared logistic regression and histogram gradient
-boosting across five chronological development folds. The selected boosting
-model has 40 iterations. This demo reconstructs that selected model using all
-12,458,824 training rows from 2010–2016 and seed 385. It adds one explicit
-history-censor indicator to the 36 source features, giving 37 transformed
-features. Missing numerical values remain missing for the boosting model.
+The current retained model is coordinate HGB from experiment 2, trained
+through the main pipeline: **80 iterations and 39 inputs**, seed 385,
+12,458,824 training rows from 2010–2016, learning rate 0.1, L2 1.0,
+15 leaves and minimum leaf size 100. There is no class weighting,
+early stopping or calibration.
 
-Reconstruction happens in `scripts/ignition_demo/reconstruct.py`. Read its
-`reconstruct` function in this order: prepare cache, verify cache, train,
-save/reload, freeze, evaluate. The freeze records what existed before test
-evaluation. The original experiment's records remain the reference.
+The ordered inputs are the original 36 fields, the persisted history-censor
+flag, then cell-centre easting/northing. The only feature list is
+`data/metadata/ignition_feature_selection_v1.json`. HGB preprocessing
+preserves all 39 fields and native NaNs; it does not add a 40th input.
 
-**Try it:** Open the reconstruction's `training.json`. Locate `n_rows`,
-`n_features_raw`, `n_features_transformed` and `n_iter`. Explain why 36 inputs
-become 37 features and why changing the map date does not train another model.
+`scripts/ignition_demo/reconstruct.py` delegates to panel validation, the
+corrected-cache builder and `scripts/ignition_modeling/run.py`.
+The main runner fits 2010–2016, saves a joblib bundle, checks reload agreement
+and optionally compares every development prediction with the experiment
+pickle. It records metadata rather than rerunning the old final-test protocol.
+
+**Try it:** Open `artifacts/ignition_modeling/retained_coordinate_hgb/training.json`.
+Find `n_rows`, `n_features_raw`, `n_features_transformed` and `n_iter`.
+Explain why both widths are 39 and why changing the replay date does not fit
+another model.
 
 ## 2. Trace a request
 
@@ -46,13 +52,15 @@ and the `weather_missing` array. Try an unsupported date and read the error.
 
 ## 3. Read the map correctly
 
-Each square is one 10 km cell in Canada Atlas Lambert coordinates. The service
-supplies the cell origins and a simplified study boundary. The browser draws
-them on a canvas. Panning and zooming change only the view.
+Each square is one frozen 10 km cell in Canada Atlas Lambert coordinates.
+The service supplies cell origins and their grid footprint, not an official
+sector boundary. The pinned Ontario boundary asset is unavailable; a
+checksum-mismatched substitute must not be used. Panning/zooming affects only
+the view, not the data or model.
 
-The colour boundaries come from fixed 2018 score cutoffs and stay identical
-across dates. A darker cell has a larger model score, which can still be a
-small probability. White cell outlines indicate alerts at the selected cutoff.
+Fixed illustrative cutoffs define colours consistently across dates. A darker
+cell has a larger model score, which can still be a small probability.
+White cell outlines indicate alerts at the selected cutoff.
 Black circles, when enabled, show recorded ignitions. A diagonal mark at close
 zoom indicates missing weather. The table provides a keyboard-accessible way
 to select cells without clicking the canvas.
@@ -79,42 +87,44 @@ usually catches more recorded ignitions and creates more false alerts.
 | False negative | An unflagged cell-day with a recorded ignition |
 | True negative | An unflagged cell-day without a recorded ignition |
 
-Precision = true positives / all alerts. Recall = true positives / all recorded
-ignition cell-days. F2 = `5 TP / (5 TP + 4 FN + FP)`. It favours recall more
-heavily than precision. We maximise it only among the eight pre-existing
-cutoffs using 2018 validation data. The result is approximately 0.015024, or
-**1.5024%** when displayed as a probability percentage.
+Precision = true positives / all alerts. Recall = true positives / all
+recorded ignition cell-days. An undefined denominator is shown as unknown.
 
-For 2019, this default flags 1,886 cell-days: 15 correct alerts and 1,871 false
-alerts. It misses 494 of the 509 positive cell-days. These counts explain why
-the app exposes the full tradeoff rather than implying reliable alerts.
+The current app does not select cutoffs by F2 or reuse the old model's 2018
+threshold policy. Its eight cutoffs are illustrative; the default **0.001**
+is displayed as **0.1%**. It was not chosen using replay-year labels.
 
-The final test has 1,779,832 rows but only 509 positives. Always predicting
-"no ignition" would have very high accuracy while catching no ignitions.
-ROC-AUC of 0.8892 describes ranking, not 88.92% alert correctness. Average
-precision of 0.007275 exceeds the prevalence baseline of 0.000286, while
-absolute precision remains low.
+Counts refer only to the displayed day. The old 40-iteration model's 2019
+AP, ROC-AUC and confusion counts are not results for this model. No new global
+reserved-year evaluation is displayed. High accuracy on a rare target can
+still mean missing nearly every ignition; ranking and calibration need
+separate chronological/spatial evaluation.
 
-**Try it:** Record the default's correct alerts, false alerts and missed
-ignitions for a day. Choose a lower cutoff. Explain the changes. Then compare
-the 2018 validation row with the 2019 test row. Why would selecting the best
-2019 cutoff make the reported test evaluation less trustworthy?
+**Try it:** Record one day's correct alerts, false alerts and missed ignitions.
+Choose a lower cutoff and explain the changes. Explain why choosing a policy
+using the displayed day's labels would not establish future-day performance.
 
 ## 5. Verify and explain your implementation
 
-The reconstruction checks all 1,840 dates and 17,798,320 rows. It verifies
-daily grid permutations, labels, missing-weather states, rainfall coverage and
-annual totals. The model's four aggregate 2019 metrics and all eight confusion
-tables match the published experiment. Model reload predictions agree within
-an absolute tolerance of 1e-14. The model was rebuilt rather than recovered
-byte-for-byte from the original machine.
+The full rebuild validated 17,798,320 rows across 1,840 dates. The v3 corrected
+cache keeps the ordered 39 columns, full daily grid, labels, weather quality
+and native history censoring. Old 36-column caches are rejected.
 
-The new tests cover both small independent fixtures and the real artifacts.
-The latter compare served first/middle/last-season days against saved frozen
-prediction vectors, including grid ordering and full-precision CSV output.
+The current model export records clean commit
+`1cff710d4ea388acfeefa72cdbd7bd17696db61d` and `working_tree_dirty: false`.
+All 12,458,824 development predictions match the experiment pickle
+bit-for-bit, with maximum difference 0.0; the 1,024-row reload check also
+matches exactly. This is reproducibility evidence, not a new test score.
 
-**Try it:** Run the test suite. Choose one policy test and explain its expected
-answer by hand. Then use the demo script to give a three-minute walkthrough.
+Tests cover independent fixtures and real artifacts. API checks compare
+served scores with the main joblib model, preserving grid order, missing
+values and full-precision CSV output. The updated browser verifier exercises
+the 39-input inspector and responsive interaction flow.
+
+**Try it:** Read `model_metadata.json` and `verification.json` in the retained
+export directory. Distinguish the model's clean training commit from later
+documentation edits. Explain why equal development predictions do not prove
+performance on unseen years or geography.
 
 ## How to discuss future work
 

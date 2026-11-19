@@ -151,8 +151,10 @@ The 2026-11-19 main-pipeline rebuild completed the full panel and corrected
 contains the joblib export, settings/feature/training/cache/commit provenance
 and verification JSON. All 12,458,824 2010–2016 development predictions
 match the original experiment pickle bit-for-bit, with maximum difference 0.
-The metadata explicitly records the base commit plus a dirty source tree and
-source-file hashes; no new commit was made for this rebuild.
+The current model was re-exported from clean commit
+`1cff710d4ea388acfeefa72cdbd7bd17696db61d` with `working_tree_dirty: false`;
+its predictions remain bit-identical. Later browser-verifier/documentation
+edits are separate from that model-training snapshot.
 
 The demo loads that main export and shows the frozen 10 km grid footprint.
 The pinned Ontario boundary asset is unavailable; do not substitute a

@@ -76,7 +76,7 @@ retained export, not `artifacts/ignition_demo/reconstruction/`.
 | --- | --- |
 | `data/interim/ignition_modeling_cache/` | Corrected 39-feature memory-mapped inputs, labels, grid indices, date slices and weather index; v3 rejects old caches |
 | `artifacts/ignition_modeling/retained_coordinate_hgb/` | Main joblib model, settings/ordered features/training scope/commit/checksums JSON, training diagnostics and verification |
-| `docs/ignition_demo/` | Historical report, learning materials and presentation; their old 40-iteration performance is not attributed to the new model |
+| `docs/ignition_demo/` | Current 80-iteration/39-input report, learning guide, walkthrough and verification plan; presentation files and `reconstruction_evidence.json` are historical 40-iteration materials |
 
 ## Prediction interface
 
@@ -87,7 +87,7 @@ numeric values are JSON `null`. Scores are fractions between 0 and 1.
 | --- | --- |
 | `/architecture` | Full interactive architecture of both AI capabilities |
 | `/api/metadata` | Date range, 80-iteration model provenance, ordered 39 features, illustrative cutoffs and limitations |
-| `/api/grid` | EPSG:3978 cell origins, geographic centroids and simplified study boundary |
+| `/api/grid` | EPSG:3978 cell origins, geographic centroids and the frozen 10 km grid footprint (not an official boundary) |
 | `/api/predictions?date=2019-07-01` | Scores, recorded labels, weather quality and all eight daily confusion tables |
 | `/api/cell?date=2019-07-01&grid_id=...` | Score and exact ordered 39 inputs for a cell |
 | `/api/download?date=2019-07-01` | Full-precision CSV containing all 9,673 cells |
@@ -112,8 +112,10 @@ previous model's validated policy; daily observed counts are descriptive.
 ## Learning materials
 
 Read `docs/ignition_demo/learning_guide.md`, then follow
-`docs/ignition_demo/demo_script.md`. The capstone report records both the
-original results and this reconstruction's evidence.
+`docs/ignition_demo/demo_script.md`. The current report and verification plan
+describe the retained 80-iteration, 39-input model and clean export provenance.
+The existing presentation and its generator remain historical materials, not
+current-model performance evidence.
 
 The shared `docs/ignition_demo/architecture.html` map includes the API and
 frontend connections, the separate ignition development branch, and the

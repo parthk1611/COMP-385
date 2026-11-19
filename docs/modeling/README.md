@@ -88,11 +88,12 @@ Every prediction matches the experiment pickle bit-for-bit; maximum absolute
 difference is **0.0**, and both prediction streams hash to
 `96093ef5fcd34f494c864b09287b86170ecfc1a16fa2c64c20986b3118c4dc43`.
 
-The export JSON records base commit
-`3de2c4277ab02787ca9f452a7fe8560eb670c601`, `working_tree_dirty: true`,
-and hashes of the actual uncommitted source used. No new commit is implied.
-Full evidence is in the export's `verification.json` and
-`artifacts/ignition_modeling/main_pipeline_rebuild_20261119/rebuild_verification.json`.
+The current model was re-exported from clean commit
+`1cff710d4ea388acfeefa72cdbd7bd17696db61d`, with `working_tree_dirty: false`.
+The earlier dirty-tree export is preserved separately. Current settings and
+comparison evidence are in the export's `model_metadata.json` and
+`verification.json`; `docs/ignition_demo/verification.md` cites their checksums
+and the executed 39-input browser verification.
 
 The live browser replay scored all 9,673 cells for 2019-07-01, displayed
 80 iterations and 39 inspector inputs, and reported no page errors. The map

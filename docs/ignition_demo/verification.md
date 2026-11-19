@@ -1,67 +1,82 @@
-# Executed verification
+# Executed verification: retained coordinate model
 
-The reconstructed model's AP, ROC-AUC, Brier score and log loss have zero
-numerical difference from the original published 2019 metrics. All eight
-frozen-cutoff confusion tables match. The original model bytes were not
-available; this is a separately saved reconstruction.
+## Clean model export
 
-## Data and model
+The current joblib export was recreated from clean commit
+`1cff710d4ea388acfeefa72cdbd7bd17696db61d` before editing the browser verifier
+or documentation. `model_metadata.json` records `working_tree_dirty: false`.
+The updated verifier and learning-material edits are later working-tree changes,
+not part of that model-training commit.
 
-- Audited uncompressed source checksum and pinned CWFIS archive match.
-- Independently scanned all 17,798,320 cache rows across 1,840 dates.
-- Each date contains exactly one permutation of the 9,673 grid cells.
-- The exact feature schema, binary labels, chronological slices, station and
-  missing-weather consistency, seven-day rain coverage and annual counts pass.
-- Fitted all 12,458,824 training rows from 2010–2016, using the frozen HGB
-  settings and seed. Saved the model/policy freeze before test evaluation.
-- Model reloads reproduce 512 fixed training examples within 1e-14.
-- Compact fingerprints and metrics are in `reconstruction_evidence.json`.
+- Settings: 80 iterations, learning rate 0.1, L2 1.0, 15 leaves,
+  minimum leaf size 100, seed 385; no class weighting, early stopping or calibration.
+- Inputs: the ordered 39 persisted fields from
+  `data/metadata/ignition_feature_selection_v1.json`; no appended duplicates.
+- Training: all 12,458,824 development rows from 2010–2016.
+- Corrected-cache version: `ignition-v1-weather-asof-global-date-coordinates-v3`.
+- Full experiment-pickle comparison: zero differing predictions across all
+  12,458,824 development inputs; maximum absolute difference **0.0**.
+- Joblib reload probe: 1,024 inputs, maximum absolute difference **0.0**.
 
-## Automated checks
+| Record | SHA-256 |
+| --- | --- |
+| Joblib model | `5dd1c909a9d0ea4903567ee66f4831d9e687e62156b6288812888ec3e830cb89` |
+| Clean export metadata | `8f9a276cdd7d06b6a2eb52ae8d300381ba867656e5aecf136db70ae51c795e52` |
+| Corrected-cache manifest | `ebc13ce6b473eebe1696ce571bba884a4408a01e60176062894ff3297282f696` |
+| Both development prediction streams | `96093ef5fcd34f494c864b09287b86170ecfc1a16fa2c64c20986b3118c4dc43` |
 
-Executed `.venv-demo/Scripts/python.exe -m unittest discover -s tests -v`:
-**44 tests passed**, including original modelling/feature regressions, the
-existing coverage-diagnosis test, 14 new demo policy/HTTP/real-artifact checks.
-HTTP checks require the test process to have permission to connect to its own
-loopback server. The suite passed after enabling that access.
+Settings, features, source/cache hashes and environment are recorded under
+`artifacts/ignition_modeling/retained_coordinate_hgb/` in
+`model_metadata.json`, `training.json` and `verification.json`.
+Matching development predictions establish reproduction, not held-out quality.
+No 2017–2019 fitting, calibration, policy tuning or global scoring was added.
 
-Real-artifact integration checks compare served May 1, July 1 and October 31
-predictions against the frozen 2019 vector, check grid ordering and missing
-weather, and verify full-precision CSV output. JavaScript syntax and Python
-compilation checks passed.
+## Data and serving contract
 
-The Windows PowerShell launcher also started the app on an alternate port;
-its metadata response confirmed 9,673 cells and reconstruction status PASS.
+The completed main-pipeline rebuild validated all 17,798,320 rows and 1,840
+dates in the 51-column panel, then preserved all 39 inputs in the corrected
+cache. The main pipeline and demo reject old 36-column caches and mismatched
+model feature order/version. Earlier independent fixture and real-artifact
+tests cover cache persistence, missingness/censoring, model parameters,
+grid ordering, API behavior and full-precision CSV output.
 
-## Browser checks
+The browser run below used the actual clean-export model and full cache.
+Its metadata response confirmed 80 iterations, 39 inputs, the clean commit,
+and `model_metadata.working_tree_dirty: false`.
 
-Executed the reproducible `ignition_demo/verify_browser.js` using a local
-Chrome test browser:
+## Executed browser checks
 
-- Date stepping and both fire-season boundaries passed.
-- Cell inspection showed all 36 inputs and retained selection across dates.
-- Lowering the cutoff increased or preserved alert counts.
-- Observed-ignition and alert-only overlays, zoom and reset passed.
-- Recorded-ignition ranking filter passed.
-- The downloaded July 2 CSV contains 9,673 rows, 9,673 unique cells and the
-  correct single date.
-- Unsupported API dates returned 400.
-- Widths of 1440, 1024 and 390 pixels showed no page-level horizontal overflow.
-  Wide tables scroll within their own containers.
-- No JavaScript page errors occurred. Desktop and phone screenshots were
-  visually inspected. These checks use actual reconstructed predictions.
+Ran the updated `ignition_demo/verify_browser.js` against the local server
+using Playwright with system Chromium. Result: **PASS**.
 
-## Presentation
+- Retained 80-iteration/39-input model and illustrative cutoff policy.
+- All 39 inspector inputs; selected cell retained across date changes.
+- Next-day navigation and both May/October fire-season limits.
+- Lower cutoffs preserved or increased alert counts.
+- Observed/alert-only overlays, zoom/reset and recorded-ignition filter.
+- July 2 CSV: 9,673 rows, 9,673 unique cells and the correct date throughout.
+- Invalid API date returned 400.
+- No JavaScript page errors.
 
-The seven-slide deck contains editable text, two native tables, one editable
-chart with an embedded data workbook, and an actual app screenshot. Chart
-values use six-decimal display precision; full-precision metrics remain in
-the report/evidence. Package, geometry, fonts, chart data and import checks
-passed. Each slide was rendered and visually reviewed. Native PowerPoint
-opening/editing was not checked.
+| Viewport width | Page width | Map width |
+| ---: | ---: | ---: |
+| 1440 | 1440 | 1000 |
+| 1024 | 1024 | 684 |
+| 390 | 390 | 352 |
 
-## Preserved state
+No page-level horizontal overflow occurred. Desktop and mobile screenshots
+were visually inspected. Generated evidence: `output/playwright/verification.json`,
+`desktop.png`, `map-inspector.png`, `mobile.png` and the downloaded CSV.
+These files are ignored generated artifacts.
 
-The frozen modelling implementation and published modelling reports have no
-diffs. Existing unrelated untracked files remain untouched. Generated model,
-cache, environments and private browser/presentation build files stay ignored.
+## Known map limitation and historical evidence
+
+The pinned Ontario boundary asset is unavailable. The map displays the
+existing **frozen 10 km grid footprint**, explicitly labelled as such.
+No checksum-mismatched boundary was substituted; the pinned manifest is unchanged.
+
+`reconstruction_evidence.json`, the earlier presentation and the original
+published 2019 metrics describe the historical 40-iteration reconstruction.
+They are not current retained-model performance results. The current app
+uses illustrative fixed cutoffs (default 0.001, or 0.1%), not the old F2 policy.
+The old deck was not regenerated as part of this verification.
