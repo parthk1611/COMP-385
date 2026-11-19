@@ -10,7 +10,7 @@ import sklearn
 from sklearn.ensemble import HistGradientBoostingClassifier
 from sklearn.pipeline import Pipeline
 
-from .contract import FEATURE_NAMES, HISTORY_FEATURE
+from .contract import FEATURE_NAMES, HISTORY_CENSOR_FEATURE
 from .preprocessing import HistoryIndicator
 
 DEFAULT_PARAMS = {
@@ -77,11 +77,11 @@ def _class_counts(y, n_rows):
 
 
 def _memory_estimate(n_rows, balanced):
-    features = len(FEATURE_NAMES) + 1
+    features = len(FEATURE_NAMES)
     # Binned uint8 data and its temporary missing mask, then labels, predictions,
     # gradients/hessians, row indices and (only if requested) class weights.
     estimator = n_rows * (2 * features + 32 + (8 if balanced else 0))
-    chunk_buffers = min(n_rows, 50000) * (36 + features) * 8
+    chunk_buffers = min(n_rows, 50000) * features * 8
     binning_sample = min(n_rows, 200000) * features * 8
     return {
         "transformed_disk_bytes": n_rows * features * 8,
@@ -103,7 +103,7 @@ def _remove_owned_mapping(mapped, directory):
 
 
 def train_hgb(X, y, params, *, scratch_dir, seed=385):
-    """Fit all supplied rows and return a fitted raw-36-input pipeline plus JSON diagnostics."""
+    """Fit all supplied rows and return a selected-input pipeline plus JSON diagnostics."""
     unknown = set(params) - DEFAULT_PARAMS.keys()
     if unknown:
         raise ValueError(f"Unsupported histogram parameters: {sorted(unknown)}")
@@ -152,7 +152,7 @@ def train_hgb(X, y, params, *, scratch_dir, seed=385):
         "n_features_raw": len(FEATURE_NAMES), "n_features_transformed": int(classifier.n_features_in_),
         "raw_feature_schema": list(FEATURE_NAMES),
         "transformed_feature_schema": preprocessor.get_feature_names_out().tolist(),
-        "history_censor_feature": f"{HISTORY_FEATURE}__censored",
+        "history_censor_feature": HISTORY_CENSOR_FEATURE,
         "native_nan": True, "scaling": False, "imputation": False,
         "early_stopping": False, "categorical_features": None,
         "internal_random_validation": False,

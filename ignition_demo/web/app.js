@@ -45,8 +45,8 @@ async function loadDay(day) {
     state.day = data;
     $('date').value = day;
     $('download').href = `/api/download?date=${day}`;
-    text('map-date', new Intl.DateTimeFormat('en-CA', {dateStyle: 'long', timeZone: 'UTC'}).format(new Date(`${day}T12:00:00Z`)) + ' · America/Toronto');
-    text('status', `${number(data.summary.cells)} cells scored · ${number(data.summary.weather_missing)} with missing prior-day weather · Reconstructed model`);
+    text('map-date', new Intl.DateTimeFormat('en-CA', {dateStyle: 'long', timeZone: 'UTC'}).format(new Date(`${day}T12:00:00Z`)) + ' · America/Toronto · Frozen 10 km grid footprint');
+    text('status', `${number(data.summary.cells)} cells scored · ${number(data.summary.weather_missing)} with missing prior-day weather · ${state.meta.model}`);
     renderMetrics(); renderRanking(); draw();
     if (state.selected != null) await selectCell(state.selected, false);
   } catch (cause) {
@@ -71,21 +71,11 @@ function renderMetrics() {
     metric('Flagged cells today', number(m.alerts)), metric('Recorded ignitions', number(m.observed)),
     metric('Correct alerts', number(m.true_positive)), metric('False alerts', number(m.false_positive)),
     metric('Missed ignitions', number(m.false_negative)), metric('Recall today', pct(m.recall, 1)));
-  const rows = [];
-  for (const year of ['2018', '2019']) {
-    const full = state.meta.results[year];
-    const value = full.thresholds[state.threshold];
-    const tr = node('tr');
-    for (const cell of [year === '2018' ? '2018 validation · reconstructed' : '2019 test · reconstructed',
-      pct(value.precision), pct(value.recall), number(value.alerts / 184), number(value.false_positive / 184)]) tr.append(node('td', cell));
-    rows.push(tr);
-  }
-  const published = state.meta.published_2019.threshold_tradeoffs[state.threshold];
   const tr = node('tr');
-  for (const cell of ['2019 test · original published', pct(published.precision), pct(published.recall),
-    number(published.alerts_per_day), number(published.false_alerts_per_day)]) tr.append(node('td', cell));
-  rows.push(tr);
-  $('year-comparison').replaceChildren(...rows);
+  const unavailable = node('td', state.meta.performance_note);
+  unavailable.colSpan = 5;
+  tr.append(unavailable);
+  $('year-comparison').replaceChildren(tr);
 }
 
 function renderRanking() {
@@ -282,13 +272,12 @@ async function boot() {
     state.meta = meta; state.grid = grid; state.threshold = meta.policy.default_index;
     state.positions = new Map(grid.cells.map((cell, index) => [`${cell.x},${cell.y}`, index]));
     $('threshold').replaceChildren(...meta.policy.choices.map(choice => {
-      const option = node('option', `${pct(choice.threshold, 4)}${choice.index === meta.policy.default_index ? ' · Default F2' : ''}`);
+      const option = node('option', `${pct(choice.threshold, 4)}${choice.index === meta.policy.default_index ? ' · Illustrative default' : ''}`);
       option.value = choice.index; return option;
     }));
     $('threshold').value = state.threshold;
     $('limitations').replaceChildren(...meta.limitations.map(item => node('li', item)));
-    text('verification', meta.verification.status === 'PASS' ? 'Reconstruction verified: published 2019 metrics and all eight confusion tables match.' : 'Reconstruction discrepancy: results differ from the published experiment. Compare the separately labelled rows above.');
-    if (meta.verification.status !== 'PASS') error('The reconstructed model differs from the original report. Its results are shown separately.');
+    text('verification', `${meta.model} · ${meta.feature_count} inputs · main export integrity verified. This is not a claim of validated replay-year performance.`);
     text('attribution', grid.attribution);
     const ranges = ['< ' + pct(meta.colour_breaks[0], 3), ...meta.colour_breaks.map(value => '≥ ' + pct(value, 3))];
     $('legend').replaceChildren(...colours.map((colour, i) => {

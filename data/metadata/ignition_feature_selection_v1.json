@@ -1,5 +1,6 @@
 {
-  "status": "Approved 36 source predictors; trained models use separately versioned corrected weather cache (docs/modeling/feature_manifest.json)",
+  "status": "Single authoritative ordered input contract for panel, corrected-weather cache, preprocessing, retained HGB, experiments and demo: 39 persisted predictors with no duplicate censor flag or coordinates",
+  "feature_set_version": "ignition-feature-v1.1.0",
   "target": "ignition",
   "predictors": [
     "calendar_day_of_year",
@@ -37,9 +38,12 @@
     "fire_history_neighborhood_30d",
     "fire_history_same_cell_365d",
     "fire_history_neighborhood_365d",
-    "fire_history_days_since_same_cell"
+    "fire_history_days_since_same_cell",
+    "fire_history_days_since_same_cell__censored",
+    "cell_centroid_easting_m",
+    "cell_centroid_northing_m"
   ],
-  "predictor_count_before_preprocessing": 36,
+  "predictor_count_before_preprocessing": 39,
   "other_labels": [
     "ignition_count",
     "large_fire_200ha"
@@ -56,5 +60,5 @@
     "terrain_source_vintage_end_year"
   ],
   "historical_rate_baseline_predictors": [],
-  "preprocessing": "Fit all transformations on training only; logistic regression additionally needs missingness/censoring indicators and scaling."
+  "preprocessing": "The history-censor flag is already materialized; do not append it again when using all 39 predictors. Fit learned transformations on training only; logistic regression additionally needs weather/terrain missingness indicators and scaling."
 }

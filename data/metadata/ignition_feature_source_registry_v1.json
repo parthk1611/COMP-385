@@ -1,5 +1,5 @@
 {
-  "feature_set_version": "ignition-feature-v1.0.0",
+  "feature_set_version": "ignition-feature-v1.1.0",
   "created_at_utc": "2026-10-02T00:00:00Z",
   "issue_contract": {
     "timezone": "America/Toronto",
@@ -8,6 +8,22 @@
     "operational_forecast_claim": false
   },
   "sources": [
+    {
+      "source_id": "ontario_fire_region_10km_grid",
+      "role": "static cell-centre coordinate predictors",
+      "local_artifacts": [
+        "data/interim/ontario_fire_region_10km_grid.csv"
+      ],
+      "crs": "EPSG:3978",
+      "units": "metres",
+      "derivation": {
+        "cell_centroid_easting_m": "grid_x_m + 5000",
+        "cell_centroid_northing_m": "grid_y_m + 5000"
+      },
+      "historical_semantics": "Static geometry of the existing 10 km square cells; identical on every date, not ignition-point locations or clipped-boundary centroids.",
+      "operational_eligible": false,
+      "quality_notes": "The frozen grid includes event-selected edge cells. Evaluation is conditional on this grid, not evidence of generalization to unseen geography. The build audit pins the grid checksum."
+    },
     {
       "source_id": "nfdb_ontario_ignition_labels",
       "role": "label and retrospective past-only ignition history",
@@ -19,7 +35,7 @@
       "observation_coverage": "Ontario records with dates in the committed panel, 2010-05-01 through 2019-10-31",
       "retrieved_at_utc": "2026-10-02T17:37:05.192810+00:00",
       "publication_or_availability_timestamp": null,
-      "historical_semantics": "retrospective recorded incident dates; the build only counts records whose ignition_date is strictly earlier than the issue date",
+      "historical_semantics": "retrospective recorded incident dates; the build only counts records whose ignition_date is strictly earlier than the issue date. fire_history_days_since_same_cell__censored is 1 when no earlier same-cell event exists in the available 2010+ history, otherwise 0; the days-since value remains blank for censored rows",
       "operational_eligible": false,
       "quality_notes": "NFDB point positions and dates have variable precision. The source does not establish historical report/discovery availability."
     },

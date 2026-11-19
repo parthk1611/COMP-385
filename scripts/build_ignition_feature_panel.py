@@ -14,6 +14,7 @@ import argparse
 import bz2
 import csv
 import gzip
+import hashlib
 import heapq
 import json
 import math
@@ -27,7 +28,10 @@ from zoneinfo import ZoneInfo
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
-FEATURE_SET_VERSION = "ignition-feature-v1.0.0"
+FEATURE_SELECTION_PATH = PROJECT_ROOT / "data/metadata/ignition_feature_selection_v1.json"
+FEATURE_SELECTION = json.loads(FEATURE_SELECTION_PATH.read_text(encoding="utf-8"))
+FEATURE_SET_VERSION = FEATURE_SELECTION["feature_set_version"]
+TERRAIN_FEATURE_VERSION = "ignition-feature-v1.0.0"
 LOCAL_TIMEZONE = ZoneInfo("America/Toronto")
 FIRE_SEASON_START = (5, 1)
 FIRE_SEASON_END = (10, 31)
@@ -186,8 +190,8 @@ def load_terrain(path: Path, grid_ids: set[str]) -> dict[str, dict[str, str]]:
     extra = set(terrain) - grid_ids
     if missing or extra:
         raise ValueError(f"Terrain spatial alignment failed: missing={len(missing)}, extra={len(extra)}")
-    if any(row["terrain_feature_version"] != FEATURE_SET_VERSION for row in terrain.values()):
-        raise ValueError("Terrain feature version does not match the ignition feature set version.")
+    if any(row["terrain_feature_version"] != TERRAIN_FEATURE_VERSION for row in terrain.values()):
+        raise ValueError("Terrain feature version does not match the supported CDEM summary version.")
     return terrain
 
 
@@ -479,6 +483,7 @@ class FireHistory:
             output[f"fire_history_neighborhood_{days}d"] = str(neighbourhood_counts[grid_id])
         prior = self.last_same_cell.get(grid_id)
         output["fire_history_days_since_same_cell"] = "" if prior is None else str((issue_date - prior).days)
+        output["fire_history_days_since_same_cell__censored"] = "1" if prior is None else "0"
         return output
 
 
@@ -502,40 +507,8 @@ def calendar_features(issue_date: date, latitude: float) -> dict[str, str]:
 
 def output_fields() -> list[str]:
     return LABEL_FIELDS + [
-        "feature_set_version",
-        "issue_time_utc",
-        "calendar_day_of_year",
-        "calendar_doy_sin",
-        "calendar_doy_cos",
-        "calendar_is_weekend",
-        "calendar_day_length_hours",
-        "terrain_elevation_mean_m",
-        "terrain_slope_deg",
-        "terrain_aspect_sin",
-        "terrain_aspect_cos",
-        "terrain_ruggedness_m",
-        "terrain_sample_count",
-        "terrain_coverage_fraction",
-        "terrain_source_id",
-        "terrain_source_vintage_end_year",
-        "cwfis_source_id",
-        "cwfis_observation_date",
-        "cwfis_station_count",
-        "cwfis_nearest_station_km",
-        "cwfis_observation_coverage_fraction",
-        "cwfis_imputed_station_fraction",
-        "cwfis_calcstatus_nonzero_fraction",
-        "cwfis_missing",
-        *CWFIS_OUTPUT_FIELDS.values(),
-        "cwfis_precip_7d_mm",
-        "cwfis_precip_7d_coverage_days",
-        "fire_history_source_id",
-        "fire_history_same_cell_30d",
-        "fire_history_neighborhood_30d",
-        "fire_history_same_cell_365d",
-        "fire_history_neighborhood_365d",
-        "fire_history_days_since_same_cell",
-    ]
+        field for field in FEATURE_SELECTION["metadata"] if field not in LABEL_FIELDS
+    ] + FEATURE_SELECTION["predictors"]
 
 
 def selected_panel_dates(profile: LabelProfile, start: str | None, end: str | None) -> list[date]:
@@ -567,6 +540,13 @@ def build(args: argparse.Namespace) -> dict[str, object]:
     dates = selected_panel_dates(profile, args.start_date, args.end_date)
     selected_dates = set(dates)
     terrain = load_terrain(args.terrain, set(grid))
+    coordinates = {
+        grid_id: {
+            "cell_centroid_easting_m": str(cell.x_m + 5000),
+            "cell_centroid_northing_m": str(cell.y_m + 5000),
+        }
+        for grid_id, cell in grid.items()
+    }
     registry = source_metadata(args.source_registry)
     if registry is None or registry.get("feature_set_version") != FEATURE_SET_VERSION:
         raise ValueError("Feature source registry is missing or has the wrong feature_set_version.")
@@ -660,6 +640,7 @@ def build(args: argparse.Namespace) -> dict[str, object]:
                     row.update(
                         {
                             "feature_set_version": FEATURE_SET_VERSION,
+                            **coordinates[grid_id],
                             **{field: terrain[grid_id][field] for field in TERRAIN_FIELDS if field not in {"grid_id", "terrain_feature_version"}},
                             **weather,
                             "cwfis_precip_7d_mm": precip_7d[grid_id][0],
@@ -688,6 +669,7 @@ def build(args: argparse.Namespace) -> dict[str, object]:
         "mode": "retrospective_hindcast_not_operational_forecast",
         "inputs": {
             "grid": display_path(args.grid),
+            "grid_sha256": hashlib.sha256(args.grid.read_bytes()).hexdigest(),
             "labels": display_path(args.labels),
             "events": display_path(args.events),
             "terrain": display_path(args.terrain),
@@ -726,8 +708,15 @@ def build(args: argparse.Namespace) -> dict[str, object]:
             "prohibited_spread_or_post_event_predictors_included": False,
         },
         "source_semantics": {
+            "cell_coordinates": {
+                "crs": "EPSG:3978",
+                "units": "metres",
+                "cell_centroid_easting_m": "grid_x_m + 5000",
+                "cell_centroid_northing_m": "grid_y_m + 5000",
+                "timing": "Static geometric centres of existing 10 km square cells, identical on every date; not ignition-point locations or clipped-boundary centroids.",
+            },
             "cwfis": "CWFIS archive values are t-1 retrospective hindcast features; per-record available-at timestamps are unavailable.",
-            "fire_history": "Only label-source records dated strictly before the issue date are counted; source reporting availability is retrospective.",
+            "fire_history": "Only label-source records dated strictly before the issue date are counted; source reporting availability is retrospective. fire_history_days_since_same_cell__censored is 1 exactly when no earlier same-cell event is observed in the available 2010+ history; the corresponding days-since value remains blank.",
             "terrain": "CDEM is static terrain with vintage end year 2011; no land-cover, fuel, road, settlement, perimeter, or burn-product proxy is substituted.",
         },
     }

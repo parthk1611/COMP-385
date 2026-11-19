@@ -16,7 +16,9 @@ from sklearn.utils.validation import check_is_fitted
 from threadpoolctl import threadpool_limits
 
 from scripts.build_ignition_feature_panel import load_grid
-from scripts.ignition_modeling.contract import FEATURE_NAMES, HISTORY_FEATURE, ROOT, SEED
+from scripts.ignition_modeling.contract import (
+    COORDINATE_FEATURES, FEATURE_NAMES, RETAINED_HGB_PARAMS, ROOT, SEED,
+)
 from scripts.ignition_modeling.data import dates_for, load_cache, year_slice
 from scripts.ignition_modeling.evaluation import evaluate_predictions
 from scripts.ignition_modeling.preprocessing import HistoryIndicator
@@ -29,11 +31,10 @@ DEFAULT_CACHE = ROOT / "data/interim/ignition_modeling_cache"
 GRID_PATH = ROOT / "data/interim/ontario_fire_region_10km_grid.csv"
 GRID_SHA256 = "b22741d83b64c2b78c19fbf182848566644a23fad4aeef3301ff25ef7c6c3f35"
 BATCH_SIZE = 50000
-COORDINATE_NAMES = ("cell_centroid_easting_m", "cell_centroid_northing_m")
-RAW_FEATURES = (*FEATURE_NAMES, *COORDINATE_NAMES)
-TRANSFORMED_FEATURES = (*FEATURE_NAMES, f"{HISTORY_FEATURE}__censored", *COORDINATE_NAMES)
-PARAMS = dict(max_iter=80, class_weight=None, learning_rate=0.1,
-              max_leaf_nodes=15, min_samples_leaf=100, l2_regularization=1.0)
+COORDINATE_NAMES = COORDINATE_FEATURES
+RAW_FEATURES = FEATURE_NAMES
+TRANSFORMED_FEATURES = FEATURE_NAMES
+PARAMS = RETAINED_HGB_PARAMS
 
 
 def cell_centres(path=GRID_PATH):
@@ -85,16 +86,12 @@ def feature_block(preprocessor, X, grid_indices, centres, *, coordinates=True, e
     base = preprocessor.transform(X)
     if extra is not None and (extra.ndim != 2 or len(extra) != len(X) or np.isinf(extra).any()):
         raise ValueError("Extra feature columns must align with rows and use NaN for missingness")
-    n_extra = 0 if extra is None else extra.shape[1]
-    values = np.empty((len(X), len(FEATURE_NAMES) + 1 + 2 * coordinates + n_extra))
-    values[:, :len(FEATURE_NAMES) + 1] = base
-    stop = len(FEATURE_NAMES) + 1
-    if coordinates:
-        values[:, stop:stop + 2] = centres[grid_indices]
-        stop += 2
-    if extra is not None:
-        values[:, stop:] = extra
-    return values
+    coordinate_columns = [FEATURE_NAMES.index(name) for name in COORDINATE_NAMES]
+    if not np.array_equal(base[:, coordinate_columns], centres[grid_indices]):
+        raise ValueError("Persisted coordinates do not match the row's grid cell")
+    if not coordinates:
+        base = base[:, :-len(COORDINATE_NAMES)]
+    return base if extra is None else np.column_stack((base, extra))
 
 
 def coordinate_block(preprocessor, X, grid_indices, centres):
@@ -110,7 +107,7 @@ def fit_hgb(X, y, grid_indices, centres, *, scratch_dir, params=None, coordinate
     if extra is not None and (extra.ndim != 2 or len(extra) != len(X)):
         raise ValueError("Extra training features do not align")
     preprocessor = HistoryIndicator().fit(X)
-    columns = len(FEATURE_NAMES) + 1 + 2 * coordinates + (0 if extra is None else extra.shape[1])
+    columns = len(FEATURE_NAMES) - (0 if coordinates else len(COORDINATE_NAMES)) + (0 if extra is None else extra.shape[1])
     scratch = Path(scratch_dir)
     scratch.mkdir(parents=True, exist_ok=True)
     if shutil.disk_usage(scratch).free < len(X) * columns * 8 + 64 * 1024**2:

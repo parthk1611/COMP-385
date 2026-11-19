@@ -5,12 +5,15 @@ async (page) => {
   await page.setViewportSize({width: 1440, height: 1000});
   await page.goto('http://127.0.0.1:8766/');
   await page.locator('#status').filter({hasText: '9,673 cells scored'}).waitFor();
-  assert(await page.locator('#threshold').inputValue() === '4', 'Default F2 cutoff not selected');
+  const metadata = await (await page.request.get('http://127.0.0.1:8766/api/metadata')).json();
+  assert(metadata.params.max_iter === 80 && metadata.feature_count === 39, 'Retained 80-iteration, 39-input model not served');
+  assert(metadata.policy.metric === null && metadata.policy.selection_year === null, 'Cutoffs must remain illustrative');
+  assert(await page.locator('#threshold').inputValue() === String(metadata.policy.default_index), 'Illustrative default cutoff not selected');
   assert(await page.locator('#ranking-body button').count() === 30, 'Top-30 ranking absent');
   await page.locator('#ranking-body button').first().click();
   await page.locator('#cell-detail').waitFor({state: 'visible'});
   const selected = await page.locator('#cell-title').innerText();
-  assert(await page.locator('#all-features > div').count() === 36, 'Inspector input count differs');
+  assert(await page.locator('#all-features > div').count() === 39, 'Inspector must show all 39 persisted inputs');
   await page.getByRole('button', {name: 'Next day', exact: true}).click();
   await page.locator('#status').filter({hasText: '9,673 cells scored'}).waitFor();
   await page.locator('#cell-detail').waitFor({state: 'visible'});
@@ -64,7 +67,7 @@ async (page) => {
   await page.setViewportSize({width: 1440, height: 1000});
   await page.evaluate(() => scrollTo(0, 0));
   assert(errors.length === 0, errors.join('\n'));
-  return {status: 'PASS', checks: ['date selection and boundaries', '36-input cell inspection', 'selection retained across dates',
+  return {status: 'PASS', checks: ['80-iteration retained model', 'illustrative cutoff policy', 'date selection and boundaries', '39-input cell inspection', 'selection retained across dates',
     'threshold changes counts', 'observed and alert-only overlays', 'zoom/reset', 'recorded ignition filter',
     'full-day CSV download', 'invalid API date', 'three responsive layouts', 'no page errors'], layouts, errors};
 }

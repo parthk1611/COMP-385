@@ -16,6 +16,12 @@ contains 9,673 cells × 1,840 fire-season dates = 17,798,320 rows. A date-range
 option exists only for reproducibility tests; it is not a different row
 universe.
 
+The current contract is `ignition-feature-v1.1.0`: 51 columns and 39 selected
+predictors. Output, audit, registry, and selection filenames remain in the
+`_v1` family. The 2026-11-19 full rebuild wrote all 17,798,320 rows with the
+51-column contract. The 2026-10-05 rebuild and its original missingness table
+remain historical v1.0.0 evidence, not corrected-cache coverage statistics.
+
 This is a hindcast/explanatory dataset, not an operational forecast. In
 particular, the CWFIS archive and NFDB archive do not retain a per-record
 historical `available_at` timestamp. The output and audit report retain that
@@ -27,9 +33,11 @@ was necessarily available in 2010.
 | Family | Output fields | Time rule and QA |
 | --- | --- | --- |
 | Calendar / solar | `calendar_day_of_year`, `calendar_doy_sin`, `calendar_doy_cos`, `calendar_is_weekend`, `calendar_day_length_hours` | Computed from the issue date and grid latitude. `issue_time_utc` records the daylight-saving-aware issue timestamp. |
+| Static cell-centre geometry | `cell_centroid_easting_m`, `cell_centroid_northing_m` | Respectively `grid_x_m + 5000` and `grid_y_m + 5000` from `data/interim/ontario_fire_region_10km_grid.csv`, in EPSG:3978 metres. Fixed per full 10 km square, not ignition points, longitude/latitude, or region-clipped polygon centroids. |
 | CDEM terrain | `terrain_elevation_mean_m`, `terrain_slope_deg`, `terrain_aspect_sin`, `terrain_aspect_cos`, `terrain_ruggedness_m`, `terrain_sample_count`, `terrain_coverage_fraction` | Nine equal-area sample locations are generated inside each existing EPSG:3978 10 km cell and queried from legacy CDEM. This is static ground terrain only. Coverage and missing slope are retained rather than imputed. |
 | CWFIS weather/FWI | `cwfis_temp_c`, `cwfis_rh_pct`, `cwfis_wind_speed_kmh`, `cwfis_precip_mm`, `cwfis_ffmc`, `cwfis_dmc`, `cwfis_dc`, `cwfis_isi`, `cwfis_bui`, `cwfis_fwi`, `cwfis_dsr`, `cwfis_precip_7d_mm` | The only dynamic source date used for issue date *t* is *t − 1*. Four nearest archived stations are inverse-distance weighted only when their FWI is present and the station had already appeared in the archive. `cwfis_station_count`, `cwfis_nearest_station_km`, `cwfis_observation_coverage_fraction`, `cwfis_imputed_station_fraction`, `cwfis_calcstatus_nonzero_fraction`, `cwfis_missing`, and `cwfis_precip_7d_coverage_days` retain quality/coverage. |
 | Past-only ignition history | `fire_history_same_cell_30d`, `fire_history_neighborhood_30d`, `fire_history_same_cell_365d`, `fire_history_neighborhood_365d`, `fire_history_days_since_same_cell` | Counts are updated only with records whose `ignition_date < issue_date`. A neighbourhood is the existing 3 × 3 grid topology. The committed event subset starts in 2010, so early-period history is intentionally incomplete rather than fabricated. |
+| History censoring | `fire_history_days_since_same_cell__censored` | `1` exactly when days-since is blank (no earlier observed same-cell event in the available 2010+ history), otherwise `0`. Computed from strictly past history, without fitting or filling the original blank. |
 
 `feature_set_version`, `terrain_source_id`, `terrain_source_vintage_end_year`,
 `cwfis_source_id`, `cwfis_observation_date`, and
@@ -37,11 +45,24 @@ was necessarily available in 2010.
 registry and generated audit add source URLs, checksums/retrieval metadata,
 coverage, historical semantics, and availability limitations.
 
+The history-censor flag and coordinates are appended to the original 48 output
+columns. The selected 39-column order matches the coordinate experiment's
+model matrix: original 36, censor flag, easting, northing.
+`data/metadata/ignition_feature_selection_v1.json` is the only authoritative
+list for the panel, corrected cache and models. HGB preprocessing preserves
+these fields and native NaNs without adding anything. The v3 cache contract
+rejects the old 36-column layout. Historical results remain archives; current
+training/export and demo serving use the retained 80-iteration coordinate HGB.
+
 ## Source choices and time semantics
 
 The machine-readable decisions are in
 [`data/metadata/ignition_feature_source_registry_v1.json`](../data/metadata/ignition_feature_source_registry_v1.json).
 
+
+- **Grid geometry** — the two persisted centre coordinates come only from the
+  existing EPSG:3978 grid origins. They are static geometry, not a new dynamic
+  observation source and not evidence of operational forecast availability.
 - **CDEM terrain** — NRCan's legacy CDEM has 1945–2011 coverage and is used only
   for low-change ground-terrain summaries. The extractor uses the documented
   CDEM profile API; it does not use a newer lidar/DSM/land-cover product as a
@@ -110,9 +131,12 @@ python scripts/build_ignition_feature_panel.py
 The feature panel is intentionally ignored because it is a large deterministic
 build artifact. Its audit JSON records source paths, date coverage, output and
 input row counts, source-station coverage, terrain missingness, key/spatial
-alignment checks, and leakage checks. To make a small reproducibility subset,
-use `--start-date YYYY-MM-DD --end-date YYYY-MM-DD` with a distinct output and
-audit path.
+alignment checks, grid-derived coordinate semantics and grid checksum, and
+leakage checks. Overwriting existing outputs requires
+`python scripts/build_ignition_feature_panel.py --force`; deliberately review
+the resulting panel and matching audit before use. To make a small
+reproducibility subset, use `--start-date YYYY-MM-DD --end-date YYYY-MM-DD`
+with a distinct output and audit path.
 
 Run the executable contract test with:
 

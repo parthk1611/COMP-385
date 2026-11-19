@@ -35,8 +35,9 @@ opener = gzip.open if SOURCE.suffix == ".gz" else open
 with opener(SOURCE, "rt", newline="", encoding="utf-8") as f:
     header = next(csv.reader(f))
 expected_columns = set(numeric + selection["metadata"])
-if len(header) != 48 or len(set(header)) != 48 or set(header) != expected_columns:
-    raise ValueError(f"Expected the unique 48-column v1 schema; missing={expected_columns-set(header)}, extra={set(header)-expected_columns}")
+expected_count = len(numeric) + len(selection["metadata"])
+if len(header) != expected_count or len(set(header)) != expected_count or set(header) != expected_columns:
+    raise ValueError(f"Expected the unique {expected_count}-column v1 schema; missing={expected_columns-set(header)}, extra={set(header)-expected_columns}")
 dtypes = {c: "float64" if c in numeric else "string" for c in header}
 stats = {g: {k: np.zeros(len(numeric)) for k in ["count", "sum", "sumsq"]} for g in ["all", "positive", "negative"]}
 stats["all"].update(min=np.full(len(numeric), np.inf), max=np.full(len(numeric), -np.inf))
@@ -119,6 +120,10 @@ for part, df in enumerate(pd.read_csv(SOURCE, dtype=dtypes, chunksize=CHUNK_SIZE
         vals = df[c]
         record(f"{c}_negative_or_noninteger_rows", vals.lt(0) | (vals.notna() & vals.ne(np.floor(vals))))
     record("days_since_fire_nonpositive_observed_rows", df.fire_history_days_since_same_cell.notna() & df.fire_history_days_since_same_cell.le(0))
+    censor = "fire_history_days_since_same_cell__censored"
+    if censor in predictors:
+        record("nonbinary_history_censor_rows", ~df[censor].isin([0, 1]))
+        record("history_censor_flag_mismatch_rows", df[censor].ne(df.fire_history_days_since_same_cell.isna()))
     if pos.any():
         positive_parts.append(df.loc[pos, ["grid_id", "ignition_date", *numeric]].copy())
     priorities = rng.random(n)

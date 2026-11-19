@@ -45,7 +45,7 @@ class IgnitionFeaturePanelTest(unittest.TestCase):
         audit_path = root / "audit.json"
         cells = [
             {"grid_id": "ofr10km_0_0", "grid_x_m": "0", "grid_y_m": "0", "centroid_longitude": "-85.000000", "centroid_latitude": "48.000000"},
-            {"grid_id": "ofr10km_10000_0", "grid_x_m": "10000", "grid_y_m": "0", "centroid_longitude": "-84.850000", "centroid_latitude": "48.000000"},
+            {"grid_id": "ofr10km_10000_-10000", "grid_x_m": "10000", "grid_y_m": "-10000", "centroid_longitude": "-84.850000", "centroid_latitude": "48.000000"},
         ]
         with grid_path.open("w", encoding="utf-8", newline="") as destination:
             writer = csv.DictWriter(destination, fieldnames=FEATURES.GRID_FIELDS)
@@ -67,7 +67,7 @@ class IgnitionFeaturePanelTest(unittest.TestCase):
                         "terrain_coverage_fraction": "1",
                         "terrain_source_id": "nrcan_cdem_1945_2011",
                         "terrain_source_vintage_end_year": "2011",
-                        "terrain_feature_version": FEATURES.FEATURE_SET_VERSION,
+                        "terrain_feature_version": CDEM.FEATURE_VERSION,
                     }
                 )
         with gzip.open(labels_path, "wt", encoding="utf-8", newline="") as destination:
@@ -148,10 +148,25 @@ class IgnitionFeaturePanelTest(unittest.TestCase):
                 rows = list(csv.DictReader(source))
             self.assertEqual(len(rows), 2 * len(all_panel_dates()))
             self.assertEqual(len({(row["grid_id"], row["ignition_date"]) for row in rows}), len(rows))
+            expected_centres = {
+                "ofr10km_0_0": (5000, 5000),
+                "ofr10km_10000_-10000": (15000, -5000),
+            }
+            for row in rows:
+                self.assertEqual(
+                    (int(row["cell_centroid_easting_m"]), int(row["cell_centroid_northing_m"])),
+                    expected_centres[row["grid_id"]],
+                )
+                self.assertEqual(
+                    row["fire_history_days_since_same_cell__censored"],
+                    "1" if row["fire_history_days_since_same_cell"] == "" else "0",
+                )
             first_day = [row for row in rows if row["ignition_date"] == "2010-05-01" and row["grid_id"] == "ofr10km_0_0"][0]
             second_day = [row for row in rows if row["ignition_date"] == "2010-05-02" and row["grid_id"] == "ofr10km_0_0"][0]
             self.assertEqual(first_day["fire_history_same_cell_30d"], "0")
             self.assertEqual(second_day["fire_history_same_cell_30d"], "1")
+            self.assertEqual(first_day["fire_history_days_since_same_cell__censored"], "1")
+            self.assertEqual(second_day["fire_history_days_since_same_cell__censored"], "0")
             self.assertEqual(second_day["cwfis_observation_date"], "2010-05-01")
             self.assertLess(second_day["cwfis_observation_date"], second_day["ignition_date"])
             persisted_audit = json.loads(args.audit.read_text(encoding="utf-8"))

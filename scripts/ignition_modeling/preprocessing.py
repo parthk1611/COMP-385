@@ -8,15 +8,17 @@ from pandas.api.types import is_numeric_dtype
 from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.utils.validation import check_is_fitted
 
-from .contract import FEATURE_NAMES, HISTORY_FEATURE, INDICATOR_FEATURES, check_matrix
+from .contract import (
+    FEATURE_NAMES, HISTORY_CENSOR_FEATURE, HISTORY_FEATURE, INDICATOR_FEATURES, check_matrix,
+)
 
 INDICATOR_INDICES = tuple(FEATURE_NAMES.index(name) for name in INDICATOR_FEATURES)
 HISTORY_INDEX = FEATURE_NAMES.index(HISTORY_FEATURE)
+HISTORY_CENSOR_INDEX = FEATURE_NAMES.index(HISTORY_CENSOR_FEATURE)
 UNSCALED_FEATURES = (
     "calendar_doy_sin", "calendar_doy_cos", "calendar_is_weekend",
-    "terrain_aspect_sin", "terrain_aspect_cos", "cwfis_missing",
+    "terrain_aspect_sin", "terrain_aspect_cos", "cwfis_missing", HISTORY_CENSOR_FEATURE,
 )
-assert len(INDICATOR_INDICES) == 21
 
 
 def _validate_input(X):
@@ -37,6 +39,9 @@ def _block(X, start, stop):
         values = np.array(X[start:stop], dtype=np.float64, copy=True)
     if np.isinf(values).any():
         raise ValueError("Infinite feature values are invalid; missing values must use NaN")
+    censor = values[:, HISTORY_CENSOR_INDEX]
+    if not np.array_equal(censor, np.isnan(values[:, HISTORY_INDEX])):
+        raise ValueError("History censor flag must be binary and match missing history values")
     return values
 
 
@@ -104,7 +109,7 @@ class _DiskTransformer(TransformerMixin, BaseEstimator):
 
 
 class NumericPreprocessor(_DiskTransformer):
-    """36 imputed inputs plus 21 fixed missing/censor indicators for logistic fitting."""
+    """Impute and scale selected inputs, preserving the persisted censor flag."""
 
     def fit(self, X, y=None):
         self._check(X, fitting=True)
@@ -145,8 +150,7 @@ class NumericPreprocessor(_DiskTransformer):
         for name in UNSCALED_FEATURES:
             i = FEATURE_NAMES.index(name)
             self.mean_[i], self.scale_[i] = 0, 1
-        indicators = tuple(f"{name}__{'censored' if name == HISTORY_FEATURE else 'missing'}"
-                           for name in INDICATOR_FEATURES)
+        indicators = tuple(f"{name}__missing" for name in INDICATOR_FEATURES)
         self._record_schema(X, (*FEATURE_NAMES, *indicators))
         return self
 
@@ -165,14 +169,14 @@ class NumericPreprocessor(_DiskTransformer):
 
 
 class HistoryIndicator(_DiskTransformer):
-    """36 unscaled inputs, retaining native NaN, plus explicit history censoring."""
+    """Preserve selected inputs and native NaN without adding derived columns."""
 
     def fit(self, X, y=None):
         self._check(X, fitting=True)
         for start in range(0, len(X), self.chunk_size):
             _block(X, start, min(start + self.chunk_size, len(X)))
-        self._record_schema(X, (*FEATURE_NAMES, f"{HISTORY_FEATURE}__censored"))
+        self._record_schema(X, FEATURE_NAMES)
         return self
 
     def _transform_block(self, values):
-        return np.column_stack((values, np.isnan(values[:, HISTORY_INDEX]).astype(np.float64)))
+        return values

@@ -28,46 +28,32 @@ PARAMS = {"alpha": 0.001, "class_weight": "balanced", "epochs": 3, "batch_size":
 
 
 class CoordinateLogisticPreprocessor(BaseEstimator):
-    """Legacy 36-to-57 transform, then two training-standardized coordinates."""
+    """Training-fitted scaling of the persisted inputs, without duplicate coordinates."""
     def __init__(self, chunk_size=50000):
         self.chunk_size = chunk_size
 
     def fit(self, X, row_ids, centres):
         check_join(X, row_ids, centres)
         self.numeric_ = NumericPreprocessor(chunk_size=self.chunk_size).fit(X)
-        counts = np.bincount(row_ids, minlength=len(centres)).astype(np.float64)
-        observed = counts > 0
-        training_centres = centres[observed]
-        frequency = counts[observed] / len(X)
-        anchor = training_centres[0]
-        offsets = training_centres - anchor
-        mean_offset = frequency @ offsets
-        self.coordinate_mean_ = anchor + mean_offset
-        self.coordinate_variance_ = frequency @ np.square(offsets - mean_offset)
-        self.coordinate_scale_ = np.sqrt(self.coordinate_variance_)
-        self.coordinate_scale_[self.coordinate_scale_ == 0] = 1
+        coordinate_columns = [FEATURE_NAMES.index(name) for name in COORDINATE_NAMES]
+        self.coordinate_mean_ = self.numeric_.mean_[coordinate_columns]
+        self.coordinate_scale_ = self.numeric_.scale_[coordinate_columns]
         self.n_samples_seen_ = len(X)
         self.n_features_in_ = len(FEATURE_NAMES)
-        self.output_names_ = np.asarray([*self.numeric_.output_names_, *COORDINATE_NAMES], dtype=object)
+        self.output_names_ = self.numeric_.output_names_.copy()
         return self
 
     def transform(self, X, row_ids, centres):
         check_is_fitted(self, "output_names_")
         check_join(X, row_ids, centres)
-        result = np.empty((len(X), len(self.output_names_)), dtype=np.float64)
-        result[:, :-2] = self.numeric_.transform(X)
-        result[:, -2:] = (centres[row_ids] - self.coordinate_mean_) / self.coordinate_scale_
+        result = self.numeric_.transform(X)
         if not np.isfinite(result).all():
             raise FloatingPointError("Nonfinite coordinate logistic input")
         return result
 
 
 def fit_logistic_coordinates(X, y, row_ids, centres, *, params=None, seed=SEED):
-    """Preserve the frozen SGD update/weight/shuffle rules, extending 57 to 59 inputs.
-
-    The historical trainer deliberately rejects anything except its 36-to-57
-    schema. This local extension retains its optimizer and preprocessing rules.
-    """
+    """Preserve fixed SGD update/weight/shuffle rules using the canonical inputs."""
     started = time.perf_counter()
     config = _configuration(PARAMS if params is None else params)
     y = np.asarray(y)

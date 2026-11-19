@@ -1,11 +1,14 @@
 # Cell-centre coordinate experiment
 
-Historical numerical results and tables below predate the orchestration refactor; they are preserved, not a claim of a new full-data reproduction. Historical verification conclusions remain evidence about that original run.
+The original numerical results and tables below predate the orchestration refactor. They are preserved; the fresh five-fold reproduction is documented at the end of this report.
 
-This experiment adds exactly two static geometry predictors to the tuned HGB
-baseline. It leaves the v1 panel, its approved 36-predictor schema, labels,
-weather/history semantics, and original frozen evaluation unchanged. This is a
-retrospective ignition hindcast, not a fire-spread or operational forecast model.
+This experiment uses the canonical 39-input corrected-weather cache: the
+original 36 predictors, persisted history-censor indicator and two static
+geometry predictors. Its helper no longer appends these fields. The historical
+experiment below compared adding coordinates to the tuned no-coordinate
+baseline. Labels, timing semantics and archived evaluation results are
+unchanged. This is retrospective ignition hindcast, not fire spread or an
+operational forecast.
 
 ## Results
 
@@ -165,3 +168,56 @@ python -m experiments.ignition.coordinates.experiment
 Default output: `artifacts/ignition_modeling/reruns/coordinates/`. Use `--cache` and `--output` for explicit paths; `--help` lists the real input options without reading data. Choose a new output directory for each invocation. Archived results and the saved selected-model pickle are not overwritten. Results include full candidate/fold metrics and the original probability NPZ basenames. No reserved-year (2017--2019) fitting or evaluation occurs.
 
 Shared `common.py` handles bounded disk-backed fitting, batched prediction and scientific input checks. Script hashes, environment-equality gates, protected-file inventories and checkpoint/model replay for resuming runs have been removed. Each invocation is fresh; existing output directories are rejected.
+
+## 2026-11-19 reproduction
+
+Completed all five chronological fits with the retained settings: 80
+iterations, learning rate 0.1, L2 1.0, 15 leaves, minimum leaf size 100,
+seed 385, no class weighting or early stopping, and two threads. Used the
+existing corrected-weather cache and all 39 transformed inputs; no row
+sampling or weather-missingness deletion.
+
+```sh
+.venv-modeling/bin/python -u -m experiments.ignition.coordinates.experiment \
+  --cache data/interim/ignition_modeling_cache \
+  --baseline artifacts/ignition_modeling/hgb_tuning \
+  --output artifacts/ignition_modeling/reruns/coordinates_20261119
+```
+
+The new `results.json` reproduces the original mean yearly AP exactly:
+**0.006965525097349347**. Independently recomputed AP for every year and
+compared every saved label and probability with the archived coordinate
+predictions: all **8,899,160 validation predictions are bit-identical**.
+The cache-manifest checksum also matches the original run configuration.
+The output directory contains the five prediction NPZ files, `results.json`,
+and `verification.json` recording settings, environment, checksums, feature
+order and per-year comparison evidence.
+
+The five-fold run reproduces experiment 2, not a new independent performance
+estimate. It performed no 2017–2019 fitting/scoring, calibration or selected-model
+refit. The separate full-development refit below verifies the saved pickle;
+neither run replaces original archived results or models.
+
+### Selected-model pickle comparison
+
+Separately reproduced the full **2010–2016 development refit** to match the
+training scope of `artifacts/ignition_modeling/selected_coordinate_hgb/model.pkl`.
+The five fold models above train on smaller expanding windows; they should
+not be compared directly with that full-development model.
+
+All **12,458,824 development predictions are bit-identical** to the verified
+pickle: zero differing predictions and maximum absolute difference **0.0**.
+This includes 654,916 missing-weather rows and 10,121,604 censored-history
+rows. Full classifier parameters, feature order and bundled grid lookup also
+match. Both chronological prediction streams have SHA-256
+`96093ef5fcd34f494c864b09287b86170ecfc1a16fa2c64c20986b3118c4dc43`.
+
+The reproduced `model.pkl`, its metadata, full comparison evidence
+(`verification.json`), and fresh-process serialization evidence
+(`serialization_verification.json`) are in
+`artifacts/ignition_modeling/reruns/coordinates_20261119/development_refit/`.
+A fresh process loaded the new pickle without importing an experiment module
+and matched the original on 1,024 evenly spaced development inputs exactly.
+The original pickle's checksum is unchanged. This is a reproducibility check
+on development inputs, not a held-out performance estimate; no 2017–2019
+fitting or scoring was performed.

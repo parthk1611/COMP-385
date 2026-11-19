@@ -8,7 +8,7 @@ from sklearn.linear_model import SGDClassifier
 from sklearn.pipeline import Pipeline
 from sklearn.utils.validation import check_is_fitted
 
-from .contract import FEATURE_NAMES, SEED, check_matrix
+from .contract import FEATURE_NAMES, INDICATOR_FEATURES, SEED, check_matrix
 from .preprocessing import NumericPreprocessor
 
 
@@ -87,8 +87,9 @@ def train_logistic(X, y, params, *, seed=SEED, preprocessor=None):
             raise ValueError("Supplied preprocessing has a different training row count")
         fitted = deepcopy(preprocessor)
         preprocessing_source = "deepcopy_of_caller_training_partition_fit"
-    if tuple(fitted.feature_names_in_) != FEATURE_NAMES or len(fitted.output_names_) != 57:
-        raise ValueError("Preprocessing must preserve the fixed 36-to-57 feature schema")
+    expected_output = (*FEATURE_NAMES, *(f"{name}__missing" for name in INDICATOR_FEATURES))
+    if tuple(fitted.feature_names_in_) != FEATURE_NAMES or tuple(fitted.output_names_) != expected_output:
+        raise ValueError("Preprocessing must preserve the selected inputs and fixed missing-indicator schema")
     sample_memory()
     preprocessing_seconds = perf_counter() - started
 
