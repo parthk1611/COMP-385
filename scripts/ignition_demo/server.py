@@ -173,6 +173,9 @@ def make_handler(store):
                     filename = {"/": "index.html", "/app.js": "app.js", "/style.css": "style.css"}[request.path]
                     kind = {"/": "text/html", "/app.js": "text/javascript", "/style.css": "text/css"}[request.path]
                     self.reply(200, (WEB / filename).read_bytes(), kind + "; charset=utf-8")
+                elif request.path == "/architecture":
+                    self.reply(200, (ROOT / "docs/ignition_demo/architecture.html").read_bytes(),
+                               "text/html; charset=utf-8")
                 elif request.path == "/favicon.ico":
                     self.reply(204, b"", "image/x-icon")
                 else:

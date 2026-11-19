@@ -29,7 +29,10 @@ inspection, validation-selected alert controls and CSV exports. Read the
 [learning guide](docs/ignition_demo/learning_guide.md), and
 [presentation](docs/ignition_demo/presentation.pptx).
 The [interactive architecture map](docs/ignition_demo/architecture.html) also
-shows the API, frontend wiring, reconstruction, launcher and capstone tools.
+shows both AI capabilities, the ignition demo API, the separate ignition
+development branch, and the learned fire-spread pipeline. Open **Architecture**
+in the demo site's header, or open the standalone HTML directly. Component
+source links point to the verified 18 November 2026 code snapshot.
 
 See [the ignition EDA](docs/eda/README.md) for full-panel counts and missingness,
 feature explanations, figures, the notebook, and commands to reproduce the

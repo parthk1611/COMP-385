@@ -21,6 +21,11 @@ approximately 5 GB of cache fingerprints before serving; allow time for this.
 The app loads its scripts, map geometry, fonts and styles locally. It needs no
 external map service. The Python server binds only to your computer.
 
+The header's **Architecture** link opens the full interactive Archify diagram
+at `/architecture` in a new tab. The same self-contained page is committed at
+`docs/ignition_demo/architecture.html` and can be opened directly without
+starting the prediction server.
+
 ## Setup on another Windows machine
 
 Use Python **3.12**. The packages below match the reconstructed model. An
@@ -89,6 +94,7 @@ numeric values are JSON `null`. Scores are fractions between 0 and 1.
 
 | GET endpoint | Response |
 | --- | --- |
+| `/architecture` | Full interactive architecture of both AI capabilities |
 | `/api/metadata` | Date range, model provenance, eight cutoffs, validation/test results and limitations |
 | `/api/grid` | EPSG:3978 cell origins, geographic centroids and simplified study boundary |
 | `/api/predictions?date=2019-07-01` | Scores, recorded labels, weather quality and all eight daily confusion tables |
@@ -118,9 +124,12 @@ Read `docs/ignition_demo/learning_guide.md`, then follow
 original results and this reconstruction's evidence.
 
 The shared `docs/ignition_demo/architecture.html` map includes the API and
-frontend connections. Its code links open the feature branch on GitHub;
-generated model/data files are marked for local rebuilding. The original
-local Archify map retains its Cursor links.
+frontend connections, the separate ignition development branch, and the
+learned fire-spread pipeline. Its source links open the exact 18 November 2026
+code snapshot on GitHub. Generated model/data files still require local
+rebuilding or transfer. The editable Archify specification and compact
+verification record are beside the HTML as `architecture.json` and
+`architecture-verification.json`.
 
 The editable presentation is ready to use. Regenerating it with
 `build_presentation.mjs` additionally requires the bundled Artifact Tool,

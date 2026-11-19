@@ -104,7 +104,16 @@ class HttpTests(unittest.TestCase):
 
     def test_static_allowlist_and_csv_headers(self):
         with self.get("/") as response:
-            self.assertIn(b"Ontario Ignition Atlas", response.read())
+            page = response.read()
+            self.assertIn(b"Ontario Ignition Atlas", page)
+            self.assertIn(b'href="/architecture"', page)
+        with self.get("/architecture") as response:
+            self.assertEqual(response.status, 200)
+            self.assertIn("text/html", response.headers["Content-Type"])
+            page = response.read()
+            self.assertIn(b"implemented architecture", page)
+            self.assertIn(b'data-node-id="coordinate-hgb"', page)
+            self.assertIn(b'data-node-id="cnn-training"', page)
         with self.get("/api/download?date=2019-05-01") as response:
             self.assertIn("attachment", response.headers["Content-Disposition"])
         with self.assertRaises(HTTPError) as raised:
