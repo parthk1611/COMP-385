@@ -1,0 +1,444 @@
+{
+  "status": "complete",
+  "variants": {
+    "baseline_15": {
+      "candidate": "iter_80_l2_1p0_leaves_15_min_100",
+      "params": {
+        "max_iter": 80,
+        "class_weight": null,
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 100,
+        "l2_regularization": 1.0
+      },
+      "mean_fold_average_precision": 0.006865465957835044,
+      "fold_average_precision": {
+        "2012": 0.008893499998883404,
+        "2013": 0.011528905554848416,
+        "2014": 0.0013902110965160453,
+        "2015": 0.003845180907927679,
+        "2016": 0.008669532230999677
+      },
+      "mean_fold_roc_auc": 0.8696736890434804,
+      "mean_fold_brier_score": 0.00037901413062392845,
+      "mean_fold_log_loss": 0.0029079115313490997,
+      "variant": "baseline_15"
+    },
+    "baseline_31": {
+      "candidate": "iter_80_l2_1p0_leaves_31_min_100",
+      "params": {
+        "max_iter": 80,
+        "class_weight": null,
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 100,
+        "l2_regularization": 1.0
+      },
+      "mean_fold_average_precision": 0.00619101433769122,
+      "fold_average_precision": {
+        "2012": 0.007578190189988416,
+        "2013": 0.013261117892349622,
+        "2014": 0.0014198042155547444,
+        "2015": 0.004033562000564557,
+        "2016": 0.00466239738999876
+      },
+      "mean_fold_roc_auc": 0.867979455640499,
+      "mean_fold_brier_score": 0.0003794429758611989,
+      "mean_fold_log_loss": 0.0029240128578188807,
+      "variant": "baseline_31"
+    },
+    "coordinates_15": {
+      "candidate": "iter_80_l2_1p0_leaves_15_min_100",
+      "params": {
+        "max_iter": 80,
+        "class_weight": null,
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 100,
+        "l2_regularization": 1.0
+      },
+      "mean_fold_average_precision": 0.006965525097349347,
+      "fold_average_precision": {
+        "2012": 0.010238445335159507,
+        "2013": 0.009042434402703234,
+        "2014": 0.001749552313396256,
+        "2015": 0.004511448819081327,
+        "2016": 0.009285744616406409
+      },
+      "mean_fold_roc_auc": 0.8724773143932307,
+      "mean_fold_brier_score": 0.0003788769892459241,
+      "mean_fold_log_loss": 0.002892797322143867,
+      "variant": "coordinates_15"
+    },
+    "coordinates_31": {
+      "candidate": "iter_80_l2_1p0_leaves_31_min_100",
+      "params": {
+        "max_iter": 80,
+        "class_weight": null,
+        "learning_rate": 0.1,
+        "max_leaf_nodes": 31,
+        "min_samples_leaf": 100,
+        "l2_regularization": 1.0
+      },
+      "mean_fold_average_precision": 0.006649264176998629,
+      "fold_average_precision": {
+        "2012": 0.006539791105458494,
+        "2013": 0.013474871204746074,
+        "2014": 0.0017747708385355955,
+        "2015": 0.0038711111513600074,
+        "2016": 0.007585776584892977
+      },
+      "mean_fold_roc_auc": 0.8718785954820127,
+      "mean_fold_brier_score": 0.0003794403730780276,
+      "mean_fold_log_loss": 0.0029194419358309835,
+      "variant": "coordinates_31"
+    }
+  },
+  "effects": {
+    "coordinates_at_15_leaves": {
+      "mean_ap_delta": 0.00010005913951430245,
+      "relative_mean_ap_change": 0.014574267810637531,
+      "year_ap_deltas": {
+        "2012": 0.0013449453362761026,
+        "2013": -0.0024864711521451824,
+        "2014": 0.0003593412168802106,
+        "2015": 0.0006662679111536477,
+        "2016": 0.0006162123854067322
+      }
+    },
+    "coordinates_at_31_leaves": {
+      "mean_ap_delta": 0.0004582498393074083,
+      "relative_mean_ap_change": 0.07401853950128312,
+      "year_ap_deltas": {
+        "2012": -0.0010383990845299219,
+        "2013": 0.00021375331239645128,
+        "2014": 0.0003549666229808511,
+        "2015": -0.00016245084920454974,
+        "2016": 0.0029233791948942165
+      }
+    },
+    "capacity_without_coordinates": {
+      "mean_ap_delta": -0.0006744516201438238,
+      "relative_mean_ap_change": -0.09823828772672338,
+      "year_ap_deltas": {
+        "2012": -0.001315309808894988,
+        "2013": 0.0017322123375012061,
+        "2014": 0.000029593119038699104,
+        "2015": 0.00018838109263687825,
+        "2016": -0.004007134841000916
+      }
+    },
+    "capacity_with_coordinates": {
+      "mean_ap_delta": -0.000316260920350718,
+      "relative_mean_ap_change": -0.04540374428785954,
+      "year_ap_deltas": {
+        "2012": -0.0036986542297010126,
+        "2013": 0.00443243680204284,
+        "2014": 0.000025218525139339594,
+        "2015": -0.0006403376677213191,
+        "2016": -0.001699968031513432
+      }
+    }
+  },
+  "mean_ap_interaction": 0.0003581906997931058,
+  "year_ap_interactions": {
+    "2012": -0.0023833444208060245,
+    "2013": 0.0027002244645416337,
+    "2014": -0.00000437459389935951,
+    "2015": -0.0008287187603581974,
+    "2016": 0.0023071668094874842
+  },
+  "best_variant_by_mean_ap": "coordinates_15",
+  "best_vs_tuned_baseline": {
+    "mean_ap_delta": 0.00010005913951430245,
+    "relative_mean_ap_change": 0.014574267810637531,
+    "year_ap_deltas": {
+      "2012": 0.0013449453362761026,
+      "2013": -0.0024864711521451824,
+      "2014": 0.0003593412168802106,
+      "2015": 0.0006662679111536477,
+      "2016": 0.0006162123854067322
+    }
+  },
+  "selection_rule": "Highest unweighted mean AP over all five development years; exact ties retain variant order",
+  "scope": "Exploratory development comparison; no final-model promotion or 2017--2019 evaluation",
+  "original_and_prior_outputs_unchanged": {
+    "docs/modeling/final_test.json": "db8efbdd7b851a6cec972d5fd9a5cc44969aefb4e36710e10d1ef751dffc37c6",
+    "docs/modeling/final_freeze.json": "4fe95c2f0888d4e80d80faf364310359f710a30580a609b27063bcd487a0d5bc",
+    "docs/modeling/final_report.md": "79e77c0cdc156af232acd9a999cd6d1cb6c442fb9c6ab5781cc0412f97617b76",
+    "docs/modeling/configuration.json": "0cced9a08c90ebf26e9694846081804dab74a8fb54949c53c3e12f0c3d93aa6b",
+    "docs/modeling/calibration_decision.json": "6999a90d4719d7b306b56187d0894cdd3e4e19f9bc3acd9d1fe530ecf0c92482",
+    "docs/modeling/tuning/results.json": "375e68f0079aba6e33ed9a116a8da7fcb7f266fc8f2c3894eb5f3c854ef17bf1",
+    "docs/modeling/coordinates/results.json": "2bd67dea0cb3c8e6c3ae7902e5b728feb7ded3050a8d129959fc097c5270c74a",
+    "artifacts/ignition_modeling/hgb_tuning/results.json": "375e68f0079aba6e33ed9a116a8da7fcb7f266fc8f2c3894eb5f3c854ef17bf1",
+    "artifacts/ignition_modeling/hgb_coordinates/results.json": "2bd67dea0cb3c8e6c3ae7902e5b728feb7ded3050a8d129959fc097c5270c74a"
+  },
+  "fit_provenance": {
+    "new_fit_years": [
+      2012,
+      2014,
+      2015,
+      2016
+    ],
+    "reused_fit_years": [
+      2013
+    ]
+  },
+  "recorded_configuration": {
+    "experiment": "fixed-coordinate-capacity-v1",
+    "params_15": {
+      "max_iter": 80,
+      "class_weight": null,
+      "learning_rate": 0.1,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 100,
+      "l2_regularization": 1.0
+    },
+    "params_31": {
+      "max_iter": 80,
+      "class_weight": null,
+      "learning_rate": 0.1,
+      "max_leaf_nodes": 31,
+      "min_samples_leaf": 100,
+      "l2_regularization": 1.0
+    },
+    "seed": 385,
+    "threads": 2,
+    "python": "3.12.16",
+    "packages": {
+      "numpy": "2.3.5",
+      "pandas": "3.0.1",
+      "scipy": "1.16.2",
+      "scikit-learn": "1.7.2",
+      "joblib": "1.5.2",
+      "threadpoolctl": "3.6.0",
+      "psutil": "7.1.0"
+    },
+    "fold_years": [
+      [
+        2010,
+        2011,
+        2012
+      ],
+      [
+        2010,
+        2012,
+        2013
+      ],
+      [
+        2010,
+        2013,
+        2014
+      ],
+      [
+        2010,
+        2014,
+        2015
+      ],
+      [
+        2010,
+        2015,
+        2016
+      ]
+    ],
+    "new_fit_years": [
+      2012,
+      2014,
+      2015,
+      2016
+    ],
+    "reused_fit_years": [
+      2013
+    ],
+    "cache_manifest_sha256": "7832fb5ae3070a59f5cbadbaf79d04af55cebc57e3ce122542c6697d865af69f",
+    "cache_files_sha256": {
+      "X.f64": "fb5e5443c47658f0cc79505d80a4d9f669b5d395bb90f769015d20949c0b48eb",
+      "y.u8": "5751eef8fd39b7f4bddc7b2c9555edf7f237ef6d4bc6f5306109ccbc4ab96fac",
+      "grid.u16": "e4ecb367eb3d99b88cbe99724b32d51624bc8d0e3686e4d8694deab2f78b3b03"
+    },
+    "source_code_sha256": {
+      "tuning.py": "f8d14754740dfc49659310047fad75264763994fa2a5bf746b6f42677b8b943f",
+      "histogram.py": "665c433e9447814b4250ebdf4f00557341f910d5751159802ae1d68640bc080b",
+      "preprocessing.py": "53d27d8a2518ad1baba079d32cf79dce6aece01fe93a9c4de6c6035f9e0e05ab",
+      "contract.py": "a0d10323bc9155a9504956afb2bf497703522dd0ad110e06fce56a5dfc56bfa7",
+      "data.py": "46a0db6df03ac3457e44bd27b789e5b9252ef97e92982e78cddd3ef29367ef58",
+      "weather.py": "95cc7a4349793e8b5cf0ccd3a19ed4011498d824ad7287677ec8cc171686b1f4",
+      "evaluation.py": "bd2ab19d8acca9f807ee35a6fbc55f052cd15903d3918c1174b4d66fd80f0880",
+      "splits.py": "696a35593b2dca24e4c9974731185136ba69d72cd12f8941e203f4d3fae0af21",
+      "run.py": "85df55c7a1cb0b72941cd0e71c61ed069adc35813578296e64f78c2878904949",
+      "coordinates.py": "839ab52b4b4eab600b59bca9d4b165ac81ca98b96312a5eb758d4572f807260d",
+      "coordinate_capacity.py": "a19d8199c15e5c7c6e11fd7da1d84a19694538ab2ec7a6cb3973bb31d5a2e919"
+    },
+    "prior_configurations_sha256": {
+      "tuning": "0c8bdff6771adae4d258c83bd93fe822cdb9444e5fd1430504062ec8a478cdfa",
+      "coordinates": "222437ab32738c349c8da7d086d3b52623b0943298b09c6885059631a48d32e1"
+    },
+    "diagnostic_files_sha256": {
+      "coordinates_31leaf_2013.joblib": "a61ff96e6fd807abb9fa815385dc5dd2e1d9842f949f471758bab8926bab80ce",
+      "coordinates_31leaf_2013.npz": "928b62adea122b97f0945e1caa278545501d7906cdf56360c5323144e5f0838e",
+      "capacity_interaction_2013.json": "5adfeb5d33ec4b732d0922dbb874efc9d2decbe62d9897bb0e5a57633a3a37d8"
+    },
+    "feature_manifest": {
+      "feature_set_version": "ignition-weather-v2-cell-centres-v1",
+      "crs": "EPSG:3978",
+      "units": "metres",
+      "raw_features": [
+        "calendar_day_of_year",
+        "calendar_doy_sin",
+        "calendar_doy_cos",
+        "calendar_is_weekend",
+        "calendar_day_length_hours",
+        "terrain_elevation_mean_m",
+        "terrain_slope_deg",
+        "terrain_aspect_sin",
+        "terrain_aspect_cos",
+        "terrain_ruggedness_m",
+        "terrain_sample_count",
+        "terrain_coverage_fraction",
+        "cwfis_station_count",
+        "cwfis_nearest_station_km",
+        "cwfis_observation_coverage_fraction",
+        "cwfis_imputed_station_fraction",
+        "cwfis_calcstatus_nonzero_fraction",
+        "cwfis_missing",
+        "cwfis_temp_c",
+        "cwfis_rh_pct",
+        "cwfis_wind_speed_kmh",
+        "cwfis_precip_mm",
+        "cwfis_ffmc",
+        "cwfis_dmc",
+        "cwfis_dc",
+        "cwfis_isi",
+        "cwfis_bui",
+        "cwfis_fwi",
+        "cwfis_dsr",
+        "cwfis_precip_7d_mm",
+        "cwfis_precip_7d_coverage_days",
+        "fire_history_same_cell_30d",
+        "fire_history_neighborhood_30d",
+        "fire_history_same_cell_365d",
+        "fire_history_neighborhood_365d",
+        "fire_history_days_since_same_cell",
+        "cell_centroid_easting_m",
+        "cell_centroid_northing_m"
+      ],
+      "transformed_features": [
+        "calendar_day_of_year",
+        "calendar_doy_sin",
+        "calendar_doy_cos",
+        "calendar_is_weekend",
+        "calendar_day_length_hours",
+        "terrain_elevation_mean_m",
+        "terrain_slope_deg",
+        "terrain_aspect_sin",
+        "terrain_aspect_cos",
+        "terrain_ruggedness_m",
+        "terrain_sample_count",
+        "terrain_coverage_fraction",
+        "cwfis_station_count",
+        "cwfis_nearest_station_km",
+        "cwfis_observation_coverage_fraction",
+        "cwfis_imputed_station_fraction",
+        "cwfis_calcstatus_nonzero_fraction",
+        "cwfis_missing",
+        "cwfis_temp_c",
+        "cwfis_rh_pct",
+        "cwfis_wind_speed_kmh",
+        "cwfis_precip_mm",
+        "cwfis_ffmc",
+        "cwfis_dmc",
+        "cwfis_dc",
+        "cwfis_isi",
+        "cwfis_bui",
+        "cwfis_fwi",
+        "cwfis_dsr",
+        "cwfis_precip_7d_mm",
+        "cwfis_precip_7d_coverage_days",
+        "fire_history_same_cell_30d",
+        "fire_history_neighborhood_30d",
+        "fire_history_same_cell_365d",
+        "fire_history_neighborhood_365d",
+        "fire_history_days_since_same_cell",
+        "fire_history_days_since_same_cell__censored",
+        "cell_centroid_easting_m",
+        "cell_centroid_northing_m"
+      ],
+      "added_features": {
+        "cell_centroid_easting_m": "grid_x_m + 5000",
+        "cell_centroid_northing_m": "grid_y_m + 5000"
+      },
+      "join": "cache grid.u16 -> checksum-pinned grid-file row order",
+      "timing": "Static cell geometry, identical on every date; no ignition-point coordinates",
+      "source_grid_sha256": "b22741d83b64c2b78c19fbf182848566644a23fad4aeef3301ff25ef7c6c3f35"
+    },
+    "protected_outputs_before": {
+      "docs/modeling/final_test.json": "db8efbdd7b851a6cec972d5fd9a5cc44969aefb4e36710e10d1ef751dffc37c6",
+      "docs/modeling/final_freeze.json": "4fe95c2f0888d4e80d80faf364310359f710a30580a609b27063bcd487a0d5bc",
+      "docs/modeling/final_report.md": "79e77c0cdc156af232acd9a999cd6d1cb6c442fb9c6ab5781cc0412f97617b76",
+      "docs/modeling/configuration.json": "0cced9a08c90ebf26e9694846081804dab74a8fb54949c53c3e12f0c3d93aa6b",
+      "docs/modeling/calibration_decision.json": "6999a90d4719d7b306b56187d0894cdd3e4e19f9bc3acd9d1fe530ecf0c92482",
+      "docs/modeling/tuning/results.json": "375e68f0079aba6e33ed9a116a8da7fcb7f266fc8f2c3894eb5f3c854ef17bf1",
+      "docs/modeling/coordinates/results.json": "2bd67dea0cb3c8e6c3ae7902e5b728feb7ded3050a8d129959fc097c5270c74a",
+      "artifacts/ignition_modeling/hgb_tuning/results.json": "375e68f0079aba6e33ed9a116a8da7fcb7f266fc8f2c3894eb5f3c854ef17bf1",
+      "artifacts/ignition_modeling/hgb_coordinates/results.json": "2bd67dea0cb3c8e6c3ae7902e5b728feb7ded3050a8d129959fc097c5270c74a"
+    },
+    "scope": "Four fixed-parameter development fits; no sampling, new features, calibration or reserved-year evaluation"
+  },
+  "supporting_results": {},
+  "tables": {
+    "development_comparison.csv": [
+      {
+        "variant": "baseline_15",
+        "max_leaf_nodes": "15",
+        "mean_ap": "0.006865465957835044",
+        "ap_2012": "0.008893499998883404",
+        "ap_2013": "0.011528905554848416",
+        "ap_2014": "0.0013902110965160453",
+        "ap_2015": "0.003845180907927679",
+        "ap_2016": "0.008669532230999677",
+        "mean_roc_auc": "0.8696736890434804",
+        "mean_brier": "0.00037901413062392845",
+        "mean_log_loss": "0.0029079115313490997"
+      },
+      {
+        "variant": "baseline_31",
+        "max_leaf_nodes": "31",
+        "mean_ap": "0.00619101433769122",
+        "ap_2012": "0.007578190189988416",
+        "ap_2013": "0.013261117892349622",
+        "ap_2014": "0.0014198042155547444",
+        "ap_2015": "0.004033562000564557",
+        "ap_2016": "0.00466239738999876",
+        "mean_roc_auc": "0.867979455640499",
+        "mean_brier": "0.0003794429758611989",
+        "mean_log_loss": "0.0029240128578188807"
+      },
+      {
+        "variant": "coordinates_15",
+        "max_leaf_nodes": "15",
+        "mean_ap": "0.006965525097349347",
+        "ap_2012": "0.010238445335159507",
+        "ap_2013": "0.009042434402703234",
+        "ap_2014": "0.001749552313396256",
+        "ap_2015": "0.004511448819081327",
+        "ap_2016": "0.009285744616406409",
+        "mean_roc_auc": "0.8724773143932307",
+        "mean_brier": "0.0003788769892459241",
+        "mean_log_loss": "0.002892797322143867"
+      },
+      {
+        "variant": "coordinates_31",
+        "max_leaf_nodes": "31",
+        "mean_ap": "0.006649264176998629",
+        "ap_2012": "0.006539791105458494",
+        "ap_2013": "0.013474871204746074",
+        "ap_2014": "0.0017747708385355955",
+        "ap_2015": "0.0038711111513600074",
+        "ap_2016": "0.007585776584892977",
+        "mean_roc_auc": "0.8718785954820127",
+        "mean_brier": "0.0003794403730780276",
+        "mean_log_loss": "0.0029194419358309835"
+      }
+    ]
+  }
+}
