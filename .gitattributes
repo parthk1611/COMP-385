@@ -1,3 +1,7 @@
 # Preserve the byte hashes recorded by training and independent verification.
 scripts/ignition_modeling/*.py text eol=lf
 docs/modeling/*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+
+# Preserve the checked Archify HTML bytes and its renderer's blank-line spacing.
+docs/ignition_demo/architecture.html -text whitespace=-blank-at-eol linguist-generated=true
+docs/ignition_demo/architecture.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol

@@ -1,0 +1,820 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Ontario wildfire modelling — implemented architecture",
+    "subtitle": "Rank historical ignition risk and compare the spread of known fires. Code snapshot: 18 November 2026.",
+    "locale": "en",
+    "output": "docs/ignition_demo/architecture.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/parthk1611/COMP-385.git",
+      "revision": "8ad6898b8d91184d837f18ec732803e88261d5a6",
+      "provider": "github",
+      "link_mode": "web"
+    },
+    "views": [
+      {
+        "id": "ignition-demo",
+        "label": "Ignition demo",
+        "focus": [
+          "ignition-sources",
+          "time-safe-features",
+          "corrected-cache",
+          "frozen-hgb",
+          "demo-files",
+          "prediction-api",
+          "risk-map"
+        ],
+        "note": "The running map uses the frozen 40-iteration HGB."
+      },
+      {
+        "id": "ignition-research",
+        "label": "Ignition development",
+        "focus": [
+          "corrected-cache",
+          "coordinate-hgb",
+          "search-ablation",
+          "paired-bootstrap"
+        ],
+        "note": "Coordinate HGB, feature trials and Bayesian uncertainty are separate from the demo."
+      },
+      {
+        "id": "spread-models",
+        "label": "Fire spread",
+        "focus": [
+          "spread-data",
+          "fbp-replay",
+          "spread-inputs",
+          "cell-model-training",
+          "cnn-training",
+          "spread-model-files",
+          "holdout-comparison",
+          "viewer-export",
+          "spread-viewer"
+        ],
+        "note": "FBP and ten learned models are evaluated; the exported viewer shows plain CNN versus FBP."
+      }
+    ]
+  },
+  "components": [
+    {
+      "id": "ignition-sources",
+      "type": "database",
+      "label": "Ignition source data",
+      "sublabel": "NFDB / CWFIS / CDEM / grid",
+      "pos": [
+        40,
+        60
+      ],
+      "size": [
+        220,
+        90
+      ],
+      "sources": [
+        {
+          "path": "scripts/build_ignition_feature_panel.py",
+          "line": 564,
+          "end_line": 586
+        },
+        {
+          "path": "docs/ignition_features.md",
+          "line": 1,
+          "end_line": 35
+        }
+      ]
+    },
+    {
+      "id": "time-safe-features",
+      "type": "backend",
+      "label": "Build cell-day panel",
+      "sublabel": "Calendar / terrain / past history",
+      "tag": "10 km cells; 2010–2019",
+      "pos": [
+        370,
+        60
+      ],
+      "size": [
+        220,
+        90
+      ],
+      "sources": [
+        {
+          "path": "scripts/build_ignition_feature_panel.py",
+          "line": 610,
+          "end_line": 652
+        }
+      ]
+    },
+    {
+      "id": "corrected-cache",
+      "type": "database",
+      "label": "Corrected input cache",
+      "sublabel": "36 predictors + labels + dates",
+      "tag": "All 17,798,320 rows retained",
+      "pos": [
+        700,
+        60
+      ],
+      "size": [
+        220,
+        90
+      ],
+      "sources": [
+        {
+          "path": "scripts/ignition_modeling/data.py",
+          "line": 33,
+          "end_line": 60
+        },
+        {
+          "path": "scripts/ignition_modeling/data.py",
+          "line": 85,
+          "end_line": 125
+        }
+      ]
+    },
+    {
+      "id": "frozen-hgb",
+      "type": "backend",
+      "label": "Reconstruct HGB 40",
+      "sublabel": "Archived recipe; fit 2010–2016",
+      "tag": "2018 policy; frozen 2019 test",
+      "pos": [
+        1030,
+        60
+      ],
+      "size": [
+        220,
+        90
+      ],
+      "sources": [
+        {
+          "path": "scripts/ignition_demo/reconstruct.py",
+          "line": 119,
+          "end_line": 145
+        },
+        {
+          "path": "docs/modeling/final_report.md",
+          "line": 20,
+          "end_line": 55
+        }
+      ]
+    },
+    {
+      "id": "demo-files",
+      "type": "database",
+      "label": "Frozen demo files",
+      "sublabel": "Model / policy / scores / checks",
+      "tag": "Generated local artifacts",
+      "pos": [
+        1360,
+        60
+      ],
+      "size": [
+        220,
+        90
+      ],
+      "sources": [
+        {
+          "path": "scripts/ignition_demo/reconstruct.py",
+          "line": 129,
+          "end_line": 170
+        },
+        {
+          "path": "scripts/ignition_demo/server.py",
+          "line": 32,
+          "end_line": 57
+        }
+      ]
+    },
+    {
+      "id": "paired-bootstrap",
+      "type": "backend",
+      "label": "Paired day bootstrap",
+      "sublabel": "B9 versus baseline; 2,000 draws",
+      "tag": "Gain interval includes zero",
+      "pos": [
+        40,
+        250
+      ],
+      "size": [
+        220,
+        90
+      ],
+      "sources": [
+        {
+          "path": "experiments/ignition/bayesian/bootstrap.py",
+          "line": 165,
+          "end_line": 189
+        },
+        {
+          "path": "experiments/ignition/bayesian/README.md",
+          "line": 134,
+          "end_line": 193
+        }
+      ]
+    },
+    {
+      "id": "search-ablation",
+      "type": "backend",
+      "label": "Search and ablations",
+      "sublabel": "TPE / XGBoost / history / lightning",
+      "tag": "Development folds 2012–2016",
+      "pos": [
+        370,
+        250
+      ],
+      "size": [
+        220,
+        90
+      ],
+      "sources": [
+        {
+          "path": "experiments/ignition/README.md",
+          "line": 35,
+          "end_line": 49
+        },
+        {
+          "path": "experiments/ignition/bayesian/experiment.py",
+          "line": 155,
+          "end_line": 193
+        }
+      ]
+    },
+    {
+      "id": "coordinate-hgb",
+      "type": "backend",
+      "label": "Coordinate HGB 80",
+      "sublabel": "38 raw / 39 transformed inputs",
+      "tag": "Development refit; separate model",
+      "pos": [
+        700,
+        250
+      ],
+      "size": [
+        220,
+        90
+      ],
+      "sources": [
+        {
+          "path": "experiments/ignition/common.py",
+          "line": 30,
+          "end_line": 59
+        },
+        {
+          "path": "experiments/ignition/coordinates/experiment.py",
+          "line": 19,
+          "end_line": 44
+        },
+        {
+          "path": "experiments/ignition/README.md",
+          "line": 51,
+          "end_line": 77
+        }
+      ]
+    },
+    {
+      "id": "risk-map",
+      "type": "frontend",
+      "label": "Ignition risk map",
+      "sublabel": "Date / cell / alerts / CSV export",
+      "tag": "Ontario Ignition Atlas",
+      "pos": [
+        1030,
+        250
+      ],
+      "size": [
+        220,
+        90
+      ],
+      "sources": [
+        {
+          "path": "ignition_demo/web/app.js",
+          "line": 17,
+          "end_line": 50
+        },
+        {
+          "path": "Start-IgnitionDemo.ps1",
+          "line": 1,
+          "end_line": 11
+        }
+      ]
+    },
+    {
+      "id": "prediction-api",
+      "type": "backend",
+      "label": "Python prediction API",
+      "sublabel": "Load frozen model; score daily rows",
+      "tag": "Loopback HTTP; 9,673 cells/day",
+      "pos": [
+        1360,
+        250
+      ],
+      "size": [
+        220,
+        90
+      ],
+      "sources": [
+        {
+          "path": "scripts/ignition_demo/server.py",
+          "line": 87,
+          "end_line": 114
+        },
+        {
+          "path": "scripts/ignition_demo/server.py",
+          "line": 138,
+          "end_line": 174
+        }
+      ]
+    },
+    {
+      "id": "spread-data",
+      "type": "database",
+      "label": "Spread replay data",
+      "sublabel": "VIIRS / ERA5 / fuel / terrain",
+      "tag": "Known fires; separate dataset",
+      "pos": [
+        40,
+        490
+      ],
+      "size": [
+        220,
+        90
+      ],
+      "sources": [
+        {
+          "path": "capability_2_fire_spread/scripts/build_spread_master.py",
+          "line": 76,
+          "end_line": 95
+        },
+        {
+          "path": "capability_2_fire_spread/scripts/build_spread_master.py",
+          "line": 120,
+          "end_line": 130
+        }
+      ]
+    },
+    {
+      "id": "fbp-replay",
+      "type": "backend",
+      "label": "Replay and FBP physics",
+      "sublabel": "Active front / wind / fuel / slope",
+      "tag": "90 m propagation; 375 m scoring",
+      "pos": [
+        370,
+        490
+      ],
+      "size": [
+        220,
+        90
+      ],
+      "sources": [
+        {
+          "path": "capability_2_fire_spread/scripts/spread_modeling/replay.py",
+          "line": 133,
+          "end_line": 179
+        },
+        {
+          "path": "capability_2_fire_spread/scripts/spread_modeling/simulator.py",
+          "line": 1,
+          "end_line": 48
+        },
+        {
+          "path": "capability_2_fire_spread/docs/modeling/simulator.md",
+          "line": 1,
+          "end_line": 40
+        }
+      ]
+    },
+    {
+      "id": "spread-inputs",
+      "type": "backend",
+      "label": "Build cells and patches",
+      "sublabel": "Features / labels / FBP arrivals",
+      "tag": "6 km candidates; CNN map patches",
+      "pos": [
+        700,
+        490
+      ],
+      "size": [
+        220,
+        90
+      ],
+      "sources": [
+        {
+          "path": "capability_2_fire_spread/scripts/spread_modeling/cell_table.py",
+          "line": 40,
+          "end_line": 53
+        },
+        {
+          "path": "capability_2_fire_spread/scripts/spread_modeling/cell_table.py",
+          "line": 67,
+          "end_line": 113
+        },
+        {
+          "path": "capability_2_fire_spread/scripts/spread_modeling/cnn_patches.py",
+          "line": 127,
+          "end_line": 153
+        }
+      ]
+    },
+    {
+      "id": "cell-model-training",
+      "type": "backend",
+      "label": "Train per-cell models",
+      "sublabel": "Logistic / RF / MLP / HGB / XGB",
+      "tag": "8 variants; year-based CV",
+      "pos": [
+        1030,
+        490
+      ],
+      "size": [
+        220,
+        90
+      ],
+      "sources": [
+        {
+          "path": "capability_2_fire_spread/scripts/spread_modeling/train.py",
+          "line": 40,
+          "end_line": 87
+        },
+        {
+          "path": "capability_2_fire_spread/scripts/spread_modeling/contract.py",
+          "line": 58,
+          "end_line": 82
+        }
+      ]
+    },
+    {
+      "id": "cnn-training",
+      "type": "backend",
+      "label": "Train spatial CNNs",
+      "sublabel": "Small U-Net / hybrid / transforms",
+      "tag": "CNN + CNN hybrid; 2012–2020",
+      "pos": [
+        1030,
+        660
+      ],
+      "size": [
+        220,
+        90
+      ],
+      "sources": [
+        {
+          "path": "capability_2_fire_spread/scripts/spread_modeling/train_cnn.py",
+          "line": 38,
+          "end_line": 89
+        },
+        {
+          "path": "capability_2_fire_spread/docs/modeling/learned_models.md",
+          "line": 25,
+          "end_line": 38
+        }
+      ]
+    },
+    {
+      "id": "spread-model-files",
+      "type": "database",
+      "label": "Saved spread models",
+      "sublabel": "Joblib / PyTorch / CNN predictions",
+      "tag": "Generated; excluded from Git",
+      "pos": [
+        1360,
+        575
+      ],
+      "size": [
+        220,
+        90
+      ],
+      "sources": [
+        {
+          "path": "capability_2_fire_spread/scripts/spread_modeling/train.py",
+          "line": 80,
+          "end_line": 87
+        },
+        {
+          "path": "capability_2_fire_spread/scripts/spread_modeling/train_cnn.py",
+          "line": 75,
+          "end_line": 87
+        },
+        {
+          "path": "capability_2_fire_spread/scripts/spread_modeling/contract.py",
+          "line": 28,
+          "end_line": 35
+        }
+      ]
+    },
+    {
+      "id": "holdout-comparison",
+      "type": "backend",
+      "label": "Compare on holdout",
+      "sublabel": "AP / recall / IoU / fire bootstrap",
+      "tag": "2021–2024; 770 steps / 125 fires",
+      "pos": [
+        1360,
+        850
+      ],
+      "size": [
+        220,
+        90
+      ],
+      "sources": [
+        {
+          "path": "capability_2_fire_spread/scripts/spread_modeling/compare.py",
+          "line": 64,
+          "end_line": 94
+        },
+        {
+          "path": "capability_2_fire_spread/scripts/spread_modeling/compare.py",
+          "line": 114,
+          "end_line": 156
+        }
+      ]
+    },
+    {
+      "id": "viewer-export",
+      "type": "backend",
+      "label": "Export replay viewer",
+      "sublabel": "Plain CNN + FBP + observed cells",
+      "tag": "Embed scores and replay data",
+      "pos": [
+        1030,
+        850
+      ],
+      "size": [
+        220,
+        90
+      ],
+      "sources": [
+        {
+          "path": "capability_2_fire_spread/scripts/spread_viewer/export.py",
+          "line": 132,
+          "end_line": 158
+        },
+        {
+          "path": "capability_2_fire_spread/scripts/spread_viewer/export.py",
+          "line": 113,
+          "end_line": 118
+        }
+      ]
+    },
+    {
+      "id": "spread-viewer",
+      "type": "frontend",
+      "label": "Spread replay viewer",
+      "sublabel": "Map / next-pass growth / comparison",
+      "tag": "Self-contained HTML; no model API",
+      "pos": [
+        700,
+        850
+      ],
+      "size": [
+        220,
+        90
+      ],
+      "sources": [
+        {
+          "path": "capability_2_fire_spread/scripts/spread_viewer/export.py",
+          "line": 43,
+          "end_line": 48
+        },
+        {
+          "path": "capability_2_fire_spread/scripts/spread_viewer/export.py",
+          "line": 81,
+          "end_line": 110
+        },
+        {
+          "path": "capability_2_fire_spread/viewer/viewer_template.html",
+          "line": 1,
+          "end_line": 35
+        }
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Capability 1 · Daily ignition risk, with a separate development branch",
+      "wraps": [
+        "ignition-sources",
+        "time-safe-features",
+        "corrected-cache",
+        "frozen-hgb",
+        "demo-files",
+        "paired-bootstrap",
+        "search-ablation",
+        "coordinate-hgb",
+        "risk-map",
+        "prediction-api"
+      ],
+      "pad": 24
+    },
+    {
+      "kind": "region",
+      "label": "Capability 2 · Incident-conditioned fire spread and historical replay",
+      "wraps": [
+        "spread-data",
+        "fbp-replay",
+        "spread-inputs",
+        "cell-model-training",
+        "cnn-training",
+        "spread-model-files",
+        "holdout-comparison",
+        "viewer-export",
+        "spread-viewer"
+      ],
+      "pad": 24
+    }
+  ],
+  "connections": [
+    {
+      "id": "ignition-sources-to-time-safe-features",
+      "from": "ignition-sources",
+      "to": "time-safe-features",
+      "label": "read sources",
+      "variant": "default"
+    },
+    {
+      "id": "time-safe-features-to-corrected-cache",
+      "from": "time-safe-features",
+      "to": "corrected-cache",
+      "label": "correct weather",
+      "variant": "default"
+    },
+    {
+      "id": "corrected-cache-to-frozen-hgb",
+      "from": "corrected-cache",
+      "to": "frozen-hgb",
+      "label": "training rows",
+      "variant": "default"
+    },
+    {
+      "id": "frozen-hgb-to-demo-files",
+      "from": "frozen-hgb",
+      "to": "demo-files",
+      "label": "save freeze",
+      "variant": "emphasis"
+    },
+    {
+      "id": "demo-files-to-prediction-api",
+      "from": "demo-files",
+      "to": "prediction-api",
+      "label": "load model",
+      "variant": "default"
+    },
+    {
+      "id": "corrected-cache-to-prediction-api",
+      "from": "corrected-cache",
+      "to": "prediction-api",
+      "label": "daily inputs",
+      "variant": "default"
+    },
+    {
+      "id": "risk-map-to-prediction-api",
+      "from": "risk-map",
+      "to": "prediction-api",
+      "label": "GET /api/*",
+      "variant": "default"
+    },
+    {
+      "id": "prediction-api-to-risk-map",
+      "from": "prediction-api",
+      "to": "risk-map",
+      "label": "JSON / CSV",
+      "variant": "emphasis"
+    },
+    {
+      "id": "corrected-cache-to-coordinate-hgb",
+      "from": "corrected-cache",
+      "to": "coordinate-hgb",
+      "label": "add centres",
+      "variant": "default"
+    },
+    {
+      "id": "coordinate-hgb-to-search-ablation",
+      "from": "coordinate-hgb",
+      "to": "search-ablation",
+      "label": "fold baseline",
+      "variant": "default"
+    },
+    {
+      "id": "search-ablation-to-paired-bootstrap",
+      "from": "search-ablation",
+      "to": "paired-bootstrap",
+      "label": "paired scores",
+      "variant": "default"
+    },
+    {
+      "id": "spread-data-to-fbp-replay",
+      "from": "spread-data",
+      "to": "fbp-replay",
+      "label": "load fire",
+      "variant": "default"
+    },
+    {
+      "id": "fbp-replay-to-spread-inputs",
+      "from": "fbp-replay",
+      "to": "spread-inputs",
+      "label": "replay steps",
+      "variant": "default"
+    },
+    {
+      "id": "spread-inputs-to-cell-model-training",
+      "from": "spread-inputs",
+      "to": "cell-model-training",
+      "label": "cell table",
+      "variant": "default"
+    },
+    {
+      "id": "spread-inputs-to-cnn-training",
+      "from": "spread-inputs",
+      "to": "cnn-training",
+      "label": "map patches",
+      "variant": "default"
+    },
+    {
+      "id": "cell-model-training-to-spread-model-files",
+      "from": "cell-model-training",
+      "to": "spread-model-files",
+      "label": "save models",
+      "variant": "default"
+    },
+    {
+      "id": "cnn-training-to-spread-model-files",
+      "from": "cnn-training",
+      "to": "spread-model-files",
+      "label": "save maps",
+      "variant": "default"
+    },
+    {
+      "id": "spread-model-files-to-holdout-comparison",
+      "from": "spread-model-files",
+      "to": "holdout-comparison",
+      "label": "load scores",
+      "variant": "default"
+    },
+    {
+      "id": "spread-inputs-to-holdout-comparison",
+      "from": "spread-inputs",
+      "to": "holdout-comparison",
+      "label": "holdout rows",
+      "variant": "default"
+    },
+    {
+      "id": "holdout-comparison-to-viewer-export",
+      "from": "holdout-comparison",
+      "to": "viewer-export",
+      "label": "read results",
+      "variant": "default"
+    },
+    {
+      "id": "spread-model-files-to-viewer-export",
+      "from": "spread-model-files",
+      "to": "viewer-export",
+      "label": "CNN scores",
+      "variant": "default"
+    },
+    {
+      "id": "viewer-export-to-spread-viewer",
+      "from": "viewer-export",
+      "to": "spread-viewer",
+      "label": "write HTML",
+      "variant": "emphasis"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Project purpose",
+      "items": [
+        "Rank historical ignition risk in Ontario and compare where an existing wildfire spreads between satellite passes.",
+        "The two capabilities use separate datasets and targets. Ignition predictions do not initialize the current spread implementation."
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "What the interfaces actually use",
+      "items": [
+        "Ignition: the Python API loads the verified, frozen 40-iteration HGB and the corrected 36-predictor cache.",
+        "Spread: the exported HTML embeds plain CNN and FBP predictions. It does not train models or call a live prediction API."
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Latest ignition development",
+      "items": [
+        "Retained research configuration: coordinate HGB, 80 iterations, mean development AP 0.006965525. Its saved refit is separate from the demo.",
+        "Bayesian B9: AP 0.007055028 (+1.28%); paired whole-day uncertainty spans zero. No replacement of the demo or new blind 2019 test."
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Training, artifacts and scope",
+      "items": [
+        "Spread: fit and select on 2012–2020 fire years, then evaluate on 2021–2024. Ten learned models include eight per-cell variants and two CNNs.",
+        "New model binaries are generated and absent on this checkout. The architecture shows implemented build paths, not local deployment readiness.",
+        "Both products are retrospective. Spread uses observed reanalysis weather; final-perimeter footprint and fuel-repair limitations remain documented."
+      ]
+    }
+  ]
+}

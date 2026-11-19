@@ -1,0 +1,33 @@
+{
+  "source_revision": "8ad6898b8d91184d837f18ec732803e88261d5a6",
+  "source_snapshot_local_date": "2026-11-18",
+  "archify_version": "3.2.0",
+  "components": 19,
+  "html_sha256": "e625b3261f8f5c4a489e5e898682f41f5e1274a20c9a0a6d767794732c3fa29e",
+  "specification_sha256": "f1a493d564e40c50191d0ee9412adf7c28cb3a0f1fe37539f8c043313bf5c69c",
+  "archify_gates": {
+    "repository_validation": "pass",
+    "artifact_delivery": "pass",
+    "strict_artifact_check": "pass",
+    "desktop_browser_checks": "pass"
+  },
+  "demo_tests": {
+    "command": "python -m unittest discover -s tests -p test_ignition_demo.py -v",
+    "tests_run": 14,
+    "passed": 14,
+    "failed": 0,
+    "skipped": 0,
+    "includes": ["architecture HTTP route", "home-page link", "existing HTTP contracts", "frozen-model integration"]
+  },
+  "site_browser_check": {
+    "route": "/architecture",
+    "viewport_widths": [1440, 1024, 390],
+    "navigation_link_visible_and_unclipped": true,
+    "horizontal_overflow": false,
+    "opens_full_diagram_in_new_tab": true,
+    "original_demo_state_preserved": true,
+    "javascript_page_errors": 0,
+    "screenshots_created": false
+  },
+  "visual_review": "The unchanged detailed HTML was visually reviewed before the image exports were removed."
+}

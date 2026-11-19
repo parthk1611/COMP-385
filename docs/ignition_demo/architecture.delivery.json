@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "e08d467a-f76a-411b-a717-4b4022bcdba4",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "C:\\Users\\manav\\OneDrive\\Desktop\\Centennial college\\Semester - 6\\COMP 385\\Repo\\COMP-385\\docs\\ignition_demo\\architecture.json",
+  "output": "C:\\Users\\manav\\OneDrive\\Desktop\\Centennial college\\Semester - 6\\COMP 385\\Repo\\COMP-385\\docs\\ignition_demo\\architecture.html",
+  "specification": {
+    "sha256": "f1a493d564e40c50191d0ee9412adf7c28cb3a0f1fe37539f8c043313bf5c69c",
+    "bytes": 21161
+  },
+  "artifact": {
+    "sha256": "e625b3261f8f5c4a489e5e898682f41f5e1274a20c9a0a6d767794732c3fa29e",
+    "bytes": 894147
+  }
+}
