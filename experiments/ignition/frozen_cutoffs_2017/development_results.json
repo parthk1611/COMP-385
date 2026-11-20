@@ -1,0 +1,112 @@
+{
+  "pooled": {
+    "top_1pct_daily": {
+      "TP": 413,
+      "FP": 88827,
+      "FN": 2971,
+      "TN": 8806949,
+      "total_cell_days": 8899160,
+      "total_fire_cell_days": 3384
+    },
+    "development_recall_50pct": {
+      "TP": 1692,
+      "FP": 521782,
+      "FN": 1692,
+      "TN": 8373994,
+      "total_cell_days": 8899160,
+      "total_fire_cell_days": 3384
+    }
+  },
+  "folds": {
+    "2012": {
+      "top_1pct_daily": {
+        "TP": 162,
+        "FP": 17686,
+        "FN": 1245,
+        "TN": 1760739,
+        "total_cell_days": 1779832,
+        "total_fire_cell_days": 1407
+      },
+      "development_recall_50pct": {
+        "TP": 890,
+        "FP": 205801,
+        "FN": 517,
+        "TN": 1572624,
+        "total_cell_days": 1779832,
+        "total_fire_cell_days": 1407
+      }
+    },
+    "2013": {
+      "top_1pct_daily": {
+        "TP": 55,
+        "FP": 17793,
+        "FN": 472,
+        "TN": 1761512,
+        "total_cell_days": 1779832,
+        "total_fire_cell_days": 527
+      },
+      "development_recall_50pct": {
+        "TP": 206,
+        "FP": 105503,
+        "FN": 321,
+        "TN": 1673802,
+        "total_cell_days": 1779832,
+        "total_fire_cell_days": 527
+      }
+    },
+    "2014": {
+      "top_1pct_daily": {
+        "TP": 40,
+        "FP": 17808,
+        "FN": 253,
+        "TN": 1761731,
+        "total_cell_days": 1779832,
+        "total_fire_cell_days": 293
+      },
+      "development_recall_50pct": {
+        "TP": 83,
+        "FP": 39522,
+        "FN": 210,
+        "TN": 1740017,
+        "total_cell_days": 1779832,
+        "total_fire_cell_days": 293
+      }
+    },
+    "2015": {
+      "top_1pct_daily": {
+        "TP": 88,
+        "FP": 17760,
+        "FN": 496,
+        "TN": 1761488,
+        "total_cell_days": 1779832,
+        "total_fire_cell_days": 584
+      },
+      "development_recall_50pct": {
+        "TP": 214,
+        "FP": 66328,
+        "FN": 370,
+        "TN": 1712920,
+        "total_cell_days": 1779832,
+        "total_fire_cell_days": 584
+      }
+    },
+    "2016": {
+      "top_1pct_daily": {
+        "TP": 68,
+        "FP": 17780,
+        "FN": 505,
+        "TN": 1761479,
+        "total_cell_days": 1779832,
+        "total_fire_cell_days": 573
+      },
+      "development_recall_50pct": {
+        "TP": 299,
+        "FP": 104628,
+        "FN": 274,
+        "TN": 1674631,
+        "total_cell_days": 1779832,
+        "total_fire_cell_days": 573
+      }
+    }
+  }
+}

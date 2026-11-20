@@ -1,0 +1,27 @@
+{
+  "started_at_utc": "2026-11-20T16:24:45.859599+00:00",
+  "cutoffs_sha256": "aab78389929c75209d4ab3eadc466a7984062102e55dbffc999b10b256631be1",
+  "cutoffs_frozen_at_utc": "2026-11-20T16:24:39.022360+00:00",
+  "year": 2017,
+  "model_sha256": "5dd1c909a9d0ea4903567ee66f4831d9e687e62156b6288812888ec3e830cb89",
+  "completed_at_utc": "2026-11-20T16:24:48.110411+00:00",
+  "rows_scored": 1779832,
+  "prediction_passes": 1,
+  "model_fit_calls": 0,
+  "cache_selection": [
+    12458824,
+    14238656
+  ],
+  "selected_X_sha256": "28b604d00dda1de2abcaa73c11f6be7847e6d7774905fd023a4aad6ce6b816c4",
+  "selected_y_sha256": "3150ee7c1bcaccdb248c426580d07543e1a9cfb558290378b013d68d63975330",
+  "predictions_sha256": "552837f15601105b77ac0a4bb417c4732218d4dc8a2f79f443afeea3134176cd",
+  "python": "3.12.16",
+  "packages": {
+    "numpy": "2.3.5",
+    "scikit-learn": "1.7.2",
+    "joblib": "1.5.2",
+    "matplotlib": "3.11.2"
+  },
+  "experiment_source_sha256": "c6a0f2c8101caee371356a973519490f7a837f4871c53705e4a8dff75699fd6c",
+  "scope": "2017 only, frozen 2010--2016 model and unchanged training-period v3 cache; no fitting/calibration or 2018--2019 observation access."
+}

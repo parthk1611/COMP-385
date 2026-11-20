@@ -1,0 +1,100 @@
+{
+  "frozen_at_utc": "2026-11-20T16:24:39.022360+00:00",
+  "selection_years": [
+    2012,
+    2013,
+    2014,
+    2015,
+    2016
+  ],
+  "test_observations_accessed": false,
+  "policies": {
+    "top_1pct_daily": {
+      "type": "daily_rank_budget",
+      "fraction": 0.01,
+      "cells_per_day": 97,
+      "total_cells_per_day": 9673,
+      "rounding": "ceil",
+      "order": "probability descending, frozen grid-file index ascending",
+      "note": "Exactly 97 cells daily, including quiet days; not a fixed probability threshold."
+    },
+    "development_recall_50pct": {
+      "type": "fixed_probability_threshold",
+      "probability_threshold": 0.0015253566853376931,
+      "comparison": ">=",
+      "target_recall": 0.5,
+      "selection": "Highest inclusive threshold with pooled OOF recall at least 0.5; include all score ties.",
+      "development_true_positives": 1692,
+      "development_fire_cell_days": 3384
+    }
+  },
+  "model_path": "artifacts/ignition_modeling/retained_coordinate_hgb/selected_system.joblib",
+  "model_sha256": "5dd1c909a9d0ea4903567ee66f4831d9e687e62156b6288812888ec3e830cb89",
+  "model_metadata_sha256": "8f9a276cdd7d06b6a2eb52ae8d300381ba867656e5aecf136db70ae51c795e52",
+  "cache_path": "data/interim/ignition_modeling_cache",
+  "cache_manifest_sha256": "ebc13ce6b473eebe1696ce571bba884a4408a01e60176062894ff3297282f696",
+  "cache_version": "ignition-v1-weather-asof-global-date-coordinates-v3",
+  "grid_sha256": "b22741d83b64c2b78c19fbf182848566644a23fad4aeef3301ff25ef7c6c3f35",
+  "oof_sources": [
+    {
+      "year": 2012,
+      "path": "artifacts/ignition_modeling/reruns/coordinates_20261119/fold_2012_iter_80_l2_1p0_leaves_15_min_100.npz",
+      "sha256": "808c9f50eef47092cd5a1a087898ed9f3742fe5b37241c62be5accdc91a8d903",
+      "rows": 1779832,
+      "positive_cell_days": 1407,
+      "training_years": [
+        2010,
+        2011
+      ]
+    },
+    {
+      "year": 2013,
+      "path": "artifacts/ignition_modeling/reruns/coordinates_20261119/fold_2013_iter_80_l2_1p0_leaves_15_min_100.npz",
+      "sha256": "49e47c606fa0af68c9df5a46dfda473dfe16e09c6c5754c1368e89d3a5208d3b",
+      "rows": 1779832,
+      "positive_cell_days": 527,
+      "training_years": [
+        2010,
+        2012
+      ]
+    },
+    {
+      "year": 2014,
+      "path": "artifacts/ignition_modeling/reruns/coordinates_20261119/fold_2014_iter_80_l2_1p0_leaves_15_min_100.npz",
+      "sha256": "63bcab7bd3f132a3a86d7b13c1bb65dd41ea1a6c73945ac373eaacb57c04a49b",
+      "rows": 1779832,
+      "positive_cell_days": 293,
+      "training_years": [
+        2010,
+        2013
+      ]
+    },
+    {
+      "year": 2015,
+      "path": "artifacts/ignition_modeling/reruns/coordinates_20261119/fold_2015_iter_80_l2_1p0_leaves_15_min_100.npz",
+      "sha256": "6488a0f94613aa3c51cf73418e763ceb817c83e26e5d28cd7cb3e52a5793a47c",
+      "rows": 1779832,
+      "positive_cell_days": 584,
+      "training_years": [
+        2010,
+        2014
+      ]
+    },
+    {
+      "year": 2016,
+      "path": "artifacts/ignition_modeling/reruns/coordinates_20261119/fold_2016_iter_80_l2_1p0_leaves_15_min_100.npz",
+      "sha256": "00a16c0b7bc54e97b85d3358f9de348fb0491584ad3e446eaa797f8abade4414",
+      "rows": 1779832,
+      "positive_cell_days": 573,
+      "training_years": [
+        2010,
+        2015
+      ]
+    }
+  ],
+  "oof_verification_sha256": "6de04ebfaa70d9a8029c981705297166bd902d01e1886504e44df374b6bd2935",
+  "oof_recorded_cache_version": "ignition-v1-weather-asof-global-date-v2",
+  "oof_recorded_cache_manifest_sha256": "7832fb5ae3070a59f5cbadbaf79d04af55cebc57e3ce122542c6697d865af69f",
+  "oof_cache_note": "Saved OOF used the prior v2 cache plus derived censor/coordinates. Its verified 39-input order and grid match v3; all OOF labels match v3. OOF probabilities are reused unchanged, not regenerated.",
+  "experiment_source_sha256": "c6a0f2c8101caee371356a973519490f7a837f4871c53705e4a8dff75699fd6c"
+}

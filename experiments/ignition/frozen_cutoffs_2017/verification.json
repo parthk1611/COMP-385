@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "verified_at_utc": "2026-11-20T16:26:20.438819+00:00",
+  "checks": [
+    "Independent sklearn confusion matrices match all four CSV/JSON rows and every development fold",
+    "Independent boundary/tie ranking selects exactly 97 cells on each of 1,104 dates",
+    "Fixed threshold attains exactly 1692/3384 pooled OOF recall; next higher float misses target",
+    "All count totals and unsimplified precision/recall fractions match",
+    "Cutoff freeze predates scoring start and hashes match",
+    "Frozen model checksum unchanged; saved 2017 predictions match recorded checksum",
+    "Single-pass scoring record: 1779832 rows, no fitting",
+    "All four PNGs visually inspected: correct raw counts and requested row/column labels, no percentages"
+  ],
+  "model_rescored_for_verification": false,
+  "sha256": {
+    "cutoffs.json": "aab78389929c75209d4ab3eadc466a7984062102e55dbffc999b10b256631be1",
+    "confusion_matrices.csv": "50c196f20efb269639d1e81f455783e9e105f71265dcc3d5173154180a839ae9",
+    "results.json": "1f16a4dd0666f3a100f8b678e2a54a5d76faeeb667d46be0a16d4ea7ff808d72",
+    "development_2012_2016_oof_pooled__development_recall_50pct.png": "9ba2dc2d6728f236b847216235791f21c084f440323321109b9ebe371021a688",
+    "development_2012_2016_oof_pooled__top_1pct_daily.png": "c0c27584155c875fda37237b9032d0af451cb73e340d5fcc71f1584a054d26dd",
+    "heldout_2017__development_recall_50pct.png": "40183597fe66ce961c34c1617acec71eb81e2baa34d9a045704f4ad8346d20c1",
+    "heldout_2017__top_1pct_daily.png": "7c7c63bcee698a15a87ea51f2b4332812d9fb9f105249e59862b97649cc72340"
+  }
+}
