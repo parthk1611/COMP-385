@@ -200,7 +200,91 @@ def build_grid(
     return sorted(cells)
 
 
+def write_labels(cell_ids: list[str], labels_by_cell_day: dict[tuple[str, str], list[dict[str, str]]]) -> None:
+    """Write one row per cell per fire-season day, dates outermost, cells in the given (sorted) order."""
+    with tempfile.NamedTemporaryFile(
+        mode="wb", dir=LABELS.parent, prefix=f"{LABELS.name}.", suffix=".tmp", delete=False
+    ) as temporary_file:
+        temporary_path = Path(temporary_file.name)
+    try:
+        with gzip.open(temporary_path, "wt", encoding="utf-8", newline="") as destination:
+            writer = csv.DictWriter(
+                destination,
+                fieldnames=["grid_id", "ignition_date", "ignition", "ignition_count", "large_fire_200ha"],
+            )
+            writer.writeheader()
+            for current_date in fire_season_dates():
+                date_text = current_date.isoformat()
+                for identifier in cell_ids:
+                    events = labels_by_cell_day.get((identifier, date_text), [])
+                    writer.writerow(
+                        {
+                            "grid_id": identifier,
+                            "ignition_date": date_text,
+                            "ignition": int(bool(events)),
+                            "ignition_count": len(events),
+                            "large_fire_200ha": int(
+                                any(event["large_fire_200ha"] == "1" for event in events)
+                            ),
+                        }
+                    )
+        os.replace(temporary_path, LABELS)
+    finally:
+        temporary_path.unlink(missing_ok=True)
+
+
+def build_from_frozen() -> None:
+    """Rebuild only the daily labels from the tracked frozen grid and filtered events, without the boundary.
+
+    The pinned Ontario Fire Region boundary can no longer be downloaded with its recorded checksum.  The two
+    things it produced, the 9,673-cell grid and the 8,109 events inside the region, are tracked in git.  The
+    labels are a pure function of them, so this rebuilds the labels exactly, leaves the grid, events and audit
+    untouched, and stops if any count differs from the tracked audit.
+    """
+    with GRID.open(encoding="utf-8", newline="") as source:
+        cell_ids = [row["grid_id"] for row in csv.DictReader(source)]
+    if cell_ids != sorted(cell_ids) or len(set(cell_ids)) != len(cell_ids):
+        raise ValueError("Frozen grid must list unique cells in sorted order.")
+    known = set(cell_ids)
+    labels_by_cell_day: dict[tuple[str, str], list[dict[str, str]]] = defaultdict(list)
+    included = 0
+    with FILTERED_EVENTS.open(encoding="utf-8", newline="") as source:
+        for event in csv.DictReader(source):
+            if event["grid_id"] not in known:
+                raise ValueError(f"Frozen event {event['nfdb_fire_id']} lies outside the frozen grid.")
+            labels_by_cell_day[(event["grid_id"], event["ignition_date"])].append(event)
+            included += 1
+    counts = {
+        "included_events": included,
+        "grid_cells": len(cell_ids),
+        "fire_season_days": len(fire_season_dates()),
+        "label_rows": len(cell_ids) * len(fire_season_dates()),
+        "positive_cell_days": len(labels_by_cell_day),
+        "large_fire_positive_cell_days": sum(
+            any(event["large_fire_200ha"] == "1" for event in events) for events in labels_by_cell_day.values()
+        ),
+    }
+    expected = json.loads(AUDIT.read_text(encoding="utf-8"))["counts"]
+    differences = {key: (value, expected.get(key)) for key, value in counts.items() if expected.get(key) != value}
+    if differences:
+        raise ValueError(f"Frozen inputs disagree with the tracked label audit: {differences}")
+    LABELS.parent.mkdir(parents=True, exist_ok=True)
+    write_labels(cell_ids, labels_by_cell_day)
+    print(f"Rebuilt {counts['label_rows']:,} daily label rows from the frozen grid and events: {LABELS}")
+    print(f"Counts match the tracked audit: {counts}")
+
+
 def main() -> None:
+    import argparse
+
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--from-frozen", action="store_true",
+        help="rebuild only the labels from the tracked grid and filtered events (no boundary needed)",
+    )
+    if parser.parse_args().from_frozen:
+        build_from_frozen()
+        return
     if not BOUNDARY.exists():
         raise FileNotFoundError(f"Download the Ontario Fire Region boundary first: {BOUNDARY}")
     if not EVENTS.exists():
@@ -235,35 +319,7 @@ def main() -> None:
                 }
             )
 
-    with tempfile.NamedTemporaryFile(
-        mode="wb", dir=LABELS.parent, prefix=f"{LABELS.name}.", suffix=".tmp", delete=False
-    ) as temporary_file:
-        temporary_path = Path(temporary_file.name)
-    try:
-        with gzip.open(temporary_path, "wt", encoding="utf-8", newline="") as destination:
-            writer = csv.DictWriter(
-                destination,
-                fieldnames=["grid_id", "ignition_date", "ignition", "ignition_count", "large_fire_200ha"],
-            )
-            writer.writeheader()
-            for current_date in fire_season_dates():
-                date_text = current_date.isoformat()
-                for identifier, *_ in cells:
-                    events = labels_by_cell_day.get((identifier, date_text), [])
-                    writer.writerow(
-                        {
-                            "grid_id": identifier,
-                            "ignition_date": date_text,
-                            "ignition": int(bool(events)),
-                            "ignition_count": len(events),
-                            "large_fire_200ha": int(
-                                any(event["large_fire_200ha"] == "1" for event in events)
-                            ),
-                        }
-                    )
-        os.replace(temporary_path, LABELS)
-    finally:
-        temporary_path.unlink(missing_ok=True)
+    write_labels([identifier for identifier, *_ in cells], labels_by_cell_day)
 
     audit.update(
         {

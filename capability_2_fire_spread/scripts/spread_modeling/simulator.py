@@ -103,6 +103,37 @@ def _repair_burn_scar(codes: np.ndarray, inside: np.ndarray) -> np.ndarray:
     return repaired
 
 
+def prepare_weather(hourly: pd.DataFrame, daily: pd.DataFrame) -> pd.DataFrame:
+    """Hourly weather with the day's BUI and FFMC, an hourly FFMC and the day of year, as `simulate` reads it.
+
+    `hourly` needs time_utc, time_local, temp_c, rh_pct, wind_speed_kmh, wind_direction_deg and precip_mm;
+    `daily` needs date (local, YYYY-MM-DD), ffmc and bui.
+    """
+    weather = hourly.sort_values("time_utc").reset_index(drop=True).copy()
+    daily = daily.set_index("date")
+    local_date = weather.time_local.dt.strftime("%Y-%m-%d")
+    weather["bui"] = local_date.map(daily.bui).ffill().bfill()
+    weather["day_of_year"] = weather.time_local.dt.dayofyear
+    # Hourly fine fuel moisture.  The daily code describes mid-afternoon, so the hourly series is
+    # re-seeded from it at 16:00 each day and the two never drift apart.
+    daily_ffmc = local_date.map(daily.ffmc).ffill().bfill()
+    codes, previous = [], float(daily_ffmc.iloc[0])
+    for row, daily_value, hour in zip(weather.itertuples(), daily_ffmc, weather.time_local.dt.hour):
+        previous = float(daily_value) if hour == 16 else hourly_ffmc(row.temp_c, row.rh_pct, row.wind_speed_kmh, row.precip_mm, previous)
+        codes.append(previous)
+    weather["ffmc"] = codes
+    weather["ffmc_daily"] = daily_ffmc.values
+    return weather
+
+
+def grid_convergence(x: float, y: float) -> float:
+    """True bearing (degrees) of grid north at an EPSG:3978 point."""
+    to_geographic = Transformer.from_crs("EPSG:3978", "EPSG:4326", always_xy=True)
+    lon0, lat0 = to_geographic.transform(x, y)
+    lon1, lat1 = to_geographic.transform(x, y + 1_000)
+    return Geod(ellps="GRS80").inv(lon0, lat0, lon1, lat1)[0]
+
+
 def load_case(fire_id: str, settings: Settings | None = None, shared: dict | None = None) -> FireCase:
     """Load one fire's grids, weather and satellite record.  `shared` caches the big tables between fires."""
     import rasterio  # only needed to read the grids, so `simulate` runs without it
@@ -143,27 +174,9 @@ def load_case(fire_id: str, settings: Settings | None = None, shared: dict | Non
     span = keys_y.max() - keys_y.min() + 1
     cell375_keys = [(int(value // span + keys_x.min()), int(value % span + keys_y.min())) for value in unique]
 
-    weather = shared["hourly"][fire_id].sort_values("time_utc").reset_index(drop=True).copy()
-    daily = shared["daily"][fire_id].set_index("date")
-    local_date = weather.time_local.dt.strftime("%Y-%m-%d")
-    weather["bui"] = local_date.map(daily.bui).ffill().bfill()
-    weather["day_of_year"] = weather.time_local.dt.dayofyear
-    # Hourly fine fuel moisture.  The daily code describes mid-afternoon, so the hourly series is
-    # re-seeded from it at 16:00 each day and the two never drift apart.
-    daily_ffmc = local_date.map(daily.ffmc).ffill().bfill()
-    codes, previous = [], float(daily_ffmc.iloc[0])
-    for row, daily_value, hour in zip(weather.itertuples(), daily_ffmc, weather.time_local.dt.hour):
-        previous = float(daily_value) if hour == 16 else hourly_ffmc(row.temp_c, row.rh_pct, row.wind_speed_kmh, row.precip_mm, previous)
-        codes.append(previous)
-    weather["ffmc"] = codes
-    weather["ffmc_daily"] = daily_ffmc.values
-
-    to_geographic = Transformer.from_crs("EPSG:3978", "EPSG:4326", always_xy=True)
+    weather = prepare_weather(shared["hourly"][fire_id], shared["daily"][fire_id])
     to_grid = Transformer.from_crs("EPSG:4326", "EPSG:3978", always_xy=True)
-    centre_x, centre_y = window["west"] + columns * pixel / 2, window["north"] - rows * pixel / 2
-    lon0, lat0 = to_geographic.transform(centre_x, centre_y)
-    lon1, lat1 = to_geographic.transform(centre_x, centre_y + 1_000)
-    convergence = Geod(ellps="GRS80").inv(lon0, lat0, lon1, lat1)[0]
+    convergence = grid_convergence(window["west"] + columns * pixel / 2, window["north"] - rows * pixel / 2)
     ignition = None
     if pd.notna(fire.ignition_longitude):
         ix, iy = to_grid.transform(fire.ignition_longitude, fire.ignition_latitude)

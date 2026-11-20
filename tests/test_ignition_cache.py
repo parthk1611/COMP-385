@@ -132,7 +132,7 @@ def prepare_fixture(fixture, cache, *, report_path=None, weather_days=None):
 
 class IgnitionCacheTests(unittest.TestCase):
     def test_writes_and_reloads_all_39_predictors_and_only_corrects_weather(self):
-        with tempfile.TemporaryDirectory() as temporary:
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as temporary:  # Windows keeps memory-mapped cache files open
             fixture = panel_fixture(temporary)
             cache = fixture.root / "cache"
             archival = fixture.root / "docs/modeling/corrected_weather_audit.json"
@@ -172,7 +172,7 @@ class IgnitionCacheTests(unittest.TestCase):
             self.assertEqual(json.loads(explicit_report.read_text()), report)
 
     def test_rejects_archival_audits_and_wrong_schema_or_provenance(self):
-        with tempfile.TemporaryDirectory() as temporary:
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as temporary:  # Windows keeps memory-mapped cache files open
             fixture = panel_fixture(temporary)
             changes = [
                 ("schema", "feature_set_version", "ignition-feature-v1.0.0"),
@@ -202,7 +202,7 @@ class IgnitionCacheTests(unittest.TestCase):
                                    audit_path=fixture.audit_path, grid_path=fixture.grid)
 
     def test_rejects_reordered_source_even_with_a_matching_checksum(self):
-        with tempfile.TemporaryDirectory() as temporary:
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as temporary:  # Windows keeps memory-mapped cache files open
             fixture = panel_fixture(temporary)
             frame = pd.read_csv(fixture.source, float_precision="round_trip")
             frame[list(reversed(frame.columns))].to_csv(fixture.source, index=False)
@@ -213,7 +213,7 @@ class IgnitionCacheTests(unittest.TestCase):
                                    audit_path=fixture.audit_path, grid_path=fixture.grid)
 
     def test_production_grid_size_is_not_relaxed_by_fixture_support(self):
-        with tempfile.TemporaryDirectory() as temporary:
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as temporary:  # Windows keeps memory-mapped cache files open
             fixture = panel_fixture(temporary)
             with patch.object(data, "ROOT", fixture.root), self.assertRaisesRegex(ValueError, "9673"):
                 data.prepare_cache(fixture.source, fixture.root / "cache", audit_path=fixture.audit_path)
@@ -224,7 +224,7 @@ class IgnitionCacheTests(unittest.TestCase):
                         {contract.HISTORY_FEATURE: 0., contract.HISTORY_CENSOR_FEATURE: 0.},
                         {contract.COORDINATE_FEATURES[0]: 15000.},
                         {contract.COORDINATE_FEATURES[1]: -45000.}):
-            with self.subTest(invalid=invalid), tempfile.TemporaryDirectory() as temporary:
+            with self.subTest(invalid=invalid), tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as temporary:  # Windows keeps memory-mapped cache files open
                 fixture = panel_fixture(temporary, invalid=invalid)
                 with patch.object(data, "index_archive") as index_archive, self.assertRaises(ValueError):
                     data.prepare_cache(fixture.source, fixture.root / "cache",
@@ -233,14 +233,14 @@ class IgnitionCacheTests(unittest.TestCase):
                 self.assertFalse((fixture.root / "cache/manifest.json").exists())
 
     def test_rejects_incomplete_corrected_weather_dates(self):
-        with tempfile.TemporaryDirectory() as temporary:
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as temporary:  # Windows keeps memory-mapped cache files open
             fixture = panel_fixture(temporary)
             with self.assertRaisesRegex(ValueError, "dates are incomplete"):
                 prepare_fixture(fixture, fixture.root / "cache", weather_days=lambda *_: iter(()))
             self.assertFalse((fixture.root / "cache/manifest.json").exists())
 
     def test_load_rejects_old_version_reordering_and_wrong_file_sizes(self):
-        with tempfile.TemporaryDirectory() as temporary:
+        with tempfile.TemporaryDirectory(ignore_cleanup_errors=True) as temporary:  # Windows keeps memory-mapped cache files open
             root = Path(temporary)
             matrix = np.arange(3 * len(contract.FEATURE_NAMES), dtype=np.float64).reshape(3, -1)
             matrix[1, contract.FEATURE_NAMES.index(contract.HISTORY_FEATURE)] = np.nan
