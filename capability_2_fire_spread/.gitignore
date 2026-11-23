@@ -11,7 +11,11 @@ data/interim/*.csv
 data/interim/*.csv.gz
 data/interim/*.geojson
 
-# The viewer page already contains this data; export_spread_viewer_data.py rebuilds both.
+# The cell table, CNN patches, fitted models and per-step scores are rebuilt by the
+# spread_modeling scripts; their results and audits are tracked in docs/modeling/.
+artifacts/
+
+# The viewer page already contains this data; scripts/spread_viewer/export.py rebuilds both.
 viewer/spread_viewer_data.js
 
 # Local editor and tool settings; not part of the project.
