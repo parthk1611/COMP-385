@@ -18,6 +18,13 @@ simulator's **36%**. It also ranks the cells that will burn half as well again
 (average precision 0.33 against 0.22). The gap narrows on long runs, where every
 model still under-predicts how far the head travels.
 
+**Linked to capability 1.** The FBP simulator also runs from a single start
+point, so it can follow on from the ignition model. Pick a 10 km cell the
+ignition model scores on a 2019 day, and the simulator grows a fire from that
+cell's centre ("what if a fire started here?"). For this, its two settings were
+re-tuned on 2012–2016 fires only and tested on 2017–2018 and 2020–2024, so 2019
+is never used. See [Linking with capability 1](#linking-with-capability-1-fbp-from-an-ignition-point).
+
 ## From raw data to results
 
 ![From raw data to each model's results](docs/modeling/pipeline.png)
@@ -93,7 +100,9 @@ fire on a map is this project's own design:
 - **Replay:** each step starts from the area burned at one satellite pass and
   spreads from the stretch of edge where flames were last seen.
 - **Tuning:** two multipliers were tuned on 24 fires from 2012–2020: every
-  rate × 0.8, and flank and back rates × a further 0.25 (Experiment 1).
+  rate × 0.8, and flank and back rates × a further 0.25 (Experiment 1). The
+  link with capability 1 uses its own tuning that never sees 2019: rate × 1.3,
+  flank × 0.1 (see [Linking with capability 1](#linking-with-capability-1-fbp-from-an-ignition-point)).
 
 ### How it was checked
 
@@ -123,6 +132,134 @@ fuel types. The rest of the design (physics, wind, fuel moisture, fuel type,
 slope, replay against dated fire growth) follows the proposal. How it differs
 from Cell2Fire, the open-source FBP simulator, is in
 [comparison_with_cell2fire.md](docs/modeling/comparison_with_cell2fire.md).
+
+## Linking with capability 1: FBP from an ignition point
+
+Capability 1 scores whether a 10 km cell has an ignition on a local day.
+`scripts/spread_modeling/ignition_bridge.py` takes such a cell and day and grows
+a fire from it with the FBP simulator. The ignition demo calls it from its
+"What if a fire started here?" section (`/api/spread`). Full details are in
+[ignition_bridge.md](docs/modeling/ignition_bridge.md).
+
+### Why FBP and not the CNN
+
+The CNN and the other learned models predict the *next* satellite pass from a
+fire that already exists. They need its burned area, active front and previous
+direction of spread. A predicted ignition has none of these. FBP needs only a
+start point, a start time, fuel, terrain and weather, so it can start from
+nothing.
+
+### What one run does
+
+1. **Start point and time.** The cell's centre, at a chosen hour (default
+   14:00, the afternoon peak) in local standard time: CST west of 90° W,
+   otherwise EST, as in the spread dataset. The ignition model gives only a day
+   and a 10 km cell, so both are assumptions the user controls. If the start's
+   90 m cell is water or non-fuel, it moves to the nearest burnable cell
+   within 1 km.
+2. **Inputs for a window around the start.** The window is 10–35 km from the
+   start to each edge, depending on run length. The inputs are fetched and cached
+   in `artifacts/ignition_bridge/`, so only the first run at a place needs the
+   internet:
+   - **fuel:** FBP Fuel Types 2024 at 90 m, from the same CWFIS service and
+     lattice as the dataset's fuel windows;
+   - **terrain:** MRDEM-30, warped to the same 90 m grid;
+   - **weather:** hourly ERA5 / ERA5-Land at the start from Open-Meteo, from
+     1 April (or 30 days earlier) so the FWI codes have a season of history. It
+     goes through the dataset's own `daily_fire_weather` and hourly FFMC code.
+3. **Burn-scar repair, but only for later fires.** The 2024 map shows scars of
+   fires that burned after the start date. Inside the Ontario Fire Disturbance
+   perimeters of fires that started on or after that date (through 2024), land
+   gets the fuel of the nearest burnable cell outside. Older scars are kept,
+   because they were real when the fire started.
+4. **Spread.** `simulator.simulate` from the start cell for 6–72 hours with the
+   bridge's tuned settings. The result carries every reached 90 m cell with
+   its arrival time (up to 80,000 cells), the same rolled up to the 375 m
+   satellite grid (earliest arrival per cell), the area burned by the end of
+   each hour, and each hour's wind. The demo animates the fire from these. It
+   also reports the area, the head distance and direction, the weather at the
+   start, and whether the fire hit the window's edge.
+
+A run takes 3–5 s once a place is cached, and about 30 s the first time.
+
+### How the settings were re-tuned
+
+The published tuning used 2 fires from 2019, the year the combined demo is
+shown on. `scripts/spread_modeling/tune_simulator_bridge.py` re-tunes the same
+two multipliers without it:
+
+- **Split by year.** Tune on 2012–2016 (43 fires, 157 scored steps). Test once
+  on 2017–2018 (59 fires, 302 steps) and on 2020–2024 (50 fires, 314 steps).
+  2019 is never read. The fires are every trackable, monitored (`MON`) fire of
+  500–30,000 ha, the same rule as Experiment 1, but all of them rather than a
+  sample of 24. Test fires after 2019 only measure the chosen setting; they
+  cannot change it.
+- **Replay.** As in Experiment 1, each fire is replayed between satellite passes
+  6–30 h apart, and the simulated new area is compared with the 375 m cells
+  first seen burning at the next pass.
+- **Grid search.** Every combination of 15 rate scales (0.2–1.6) and 11 flank
+  scales (0.05–1.0), 165 settings, each replayed on all 43 tuning fires. That
+  is about 5 minutes on 12 cores.
+- **Objective (same as Experiment 1).** The simulated head should run as far
+  as the observed head, and the simulated area should be 1.3 × the cells the
+  satellite saw. The error is `|log(distance ratio)| + |log(area ratio / 1.3)|`,
+  and the smallest wins; an exact tie goes to the higher overlap (IoU). Recall
+  is not used to choose, because a bigger area always raises it.
+- **Leakage guards.** The tuning script refuses tuning years from 2019 on and
+  any split that contains 2019. The bridge refuses a settings file that breaks
+  either rule.
+
+**Chosen: rate × 1.3, flank × 0.1** (on 2012–2016: head distance ratio 0.79,
+area ratio 1.30).
+
+| Test steps | Setting | Recall | Even-growth recall | IoU | Even-growth IoU | Head distance ratio | Area ratio |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 2017–2018 (302) | **chosen 1.3 / 0.1** | 0.191 | 0.200 | 0.091 | 0.079 | 0.51 | 0.62 |
+| | published 0.8 / 0.25 | 0.270 | 0.284 | 0.103 | 0.095 | 0.66 | 1.13 |
+| 2020–2024 (314) | **chosen 1.3 / 0.1** | 0.264 | 0.268 | 0.109 | 0.104 | 0.69 | 1.00 |
+| | published 0.8 / 0.25 | 0.354 | 0.373 | 0.114 | 0.114 | 0.91 | 1.78 |
+| All test (616) | **chosen 1.3 / 0.1** | 0.229 | 0.235 | 0.100 | 0.092 | 0.59 | 0.79 |
+| | published 0.8 / 0.25 | 0.313 | 0.329 | 0.108 | 0.105 | 0.77 | 1.50 |
+| Long runs ≥ 1.5 km (232) | **chosen 1.3 / 0.1** | 0.181 | 0.150 | 0.093 | 0.073 | 0.30 | 0.51 |
+
+Even growth burns the same area as the setting it sits beside, so each pair of
+columns compares like with like.
+
+What this shows:
+
+- **The chosen setting burns too little on later fires.** It hit the area
+  target on 2012–2016 but reaches only 0.79 of it on the test fires, so its
+  recall is below the published setting's, which burns about twice the area.
+- **It still beats even growth on overlap.** Its IoU is higher than even
+  growth's in both test periods (0.100 against 0.092 pooled). On long runs it
+  beats even growth on recall too (0.181 against 0.150), so wind, fuel and slope
+  help most where the fire runs. The published setting is slightly ahead on
+  IoU (0.108).
+- **The choice is fragile.** The error surface is a long, flat valley: a faster
+  head with a narrower flank, or a slower head with a wider flank, gives much
+  the same fire. Along the valley floor, rate × flank stays near 0.12–0.13
+  on 2012–2016 fires (0.18 on 2012–2018). (1.3, 0.1) is an isolated dip in
+  that valley on 43 fires, mostly from 2012.
+  Tuned on all 102 fires from 2012–2018, the search picks rate × 0.9,
+  flank × 0.2 instead.
+- **Every setting under-predicts long runs.** Where the head ran 1.5 km or
+  more, the simulated head reaches 0.30 of the observed distance, so spread
+  maps will look small on blow-up days.
+
+Every setting's tuning scores are in `docs/modeling/bridge_simulator_grid.csv`.
+The report is `bridge_simulator_tuning.json` and the step scores are
+`bridge_simulator_tune_steps.csv` and `bridge_simulator_test_steps.csv`.
+
+### Limits of the linked run
+
+- **Hindcast, not forecast.** The run uses the reanalysis weather that actually
+  followed, which nobody had in advance.
+- **Most high-scoring cells had no fire that day.** A spread run answers "what
+  if a fire started here", not "a fire started here".
+- **Post-2019 information in the inputs.** There is no 2019 fuel map, so the
+  2024 map is used. Its later scars are repaired with perimeters of fires that
+  burned after the start. Neither is used to tune the settings.
+- **One deterministic run**, with no crown fire, spotting or suppression.
 
 ## How to run
 
@@ -167,12 +304,24 @@ python -m scripts.spread_modeling.cnn_patches      #    map patches for the CNN
 python -m scripts.spread_modeling.train_cnn        # 3  the two CNNs (GPU)
 python -m scripts.spread_modeling.compare          # 4  every model against the simulator on holdout fires, once
 python -m scripts.spread_viewer.export             #    the viewer: the CNN beside the FBP simulator on 3 test fires
-python -m unittest discover -s tests -v            #    54 tests (see Testing)
+python -m unittest discover -s tests -v            #    68 tests (see Testing)
 ```
 
 Rough times on a laptop (16 cores, RTX 4050): cell table 2 min, per-cell models
 about 3.5 h (gradient boosting is most of it), CNNs 35 min on the GPU,
 comparison 4 min.
+
+**Link with capability 1** (`python -m` from this folder):
+
+```sh
+python -m scripts.spread_modeling.tune_simulator_bridge   # re-tune FBP on 2012-2016, test on 2017-2018 and 2020-2024 (~6 min)
+python -m scripts.spread_modeling.ignition_bridge --longitude -90.7 --latitude 50.9 --date 2019-05-29 --hour 14 --hours 24
+```
+
+The second command prints one run as JSON. The ignition demo runs the same
+command for the selected cell. It needs the per-fire fuel and terrain windows
+and the processed dataset for the tuning, and internet access the first time
+the bridge runs at a new place.
 
 ## Results
 
@@ -358,8 +507,8 @@ already beats the simulator on big steps, 0.348 against 0.290.)
 
 ## Testing
 
-`python -m unittest discover -s tests -v` (from this folder) runs five test
-files, 54 tests in all. Unit tests use small synthetic inputs and run
+`python -m unittest discover -s tests -v` (from this folder) runs six test
+files, 68 tests in all. Unit tests use small synthetic inputs and run
 anywhere; end-to-end tests use the real data, the generated cell table and the
 fitted models, and are skipped when those files are absent (a fresh clone).
 
@@ -370,6 +519,7 @@ fitted models, and are skipped when those files are absent (a fresh clone).
 | `test_spread_models.py` | Unit + real data | 11 | Model contract: no model uses an outcome or perimeter column; only hybrids see the simulator; the no-fuel ablation has no fuel; every family gets the same base features; top-k picking and the simulator's ranking; CNN rotations turn the wind arrows correctly and can be undone; zero long-run weight trains exactly the plain CNN; on a real fire, the replay reproduces the published simulator scores, a step's features do not change when every later satellite pass is deleted (no future information), and labels mark exactly the cells first seen at the next pass |
 | `test_spread_pipeline.py` | Unit | 10 | Split and training: every fire is split by its year alone (2012–2020 / 2021–2024 / 2025); step AP is undefined without new burning and 1 for a perfect ranking; mean step AP skips steps without new burning; the area scale brings the median area ratio to 1.3; matched recall counts hits among the top k over all new cells; the fire bootstrap gives the mean inside its interval; every model family trains on rows with missing values and returns valid probabilities; each cross-validation fold leaves out exactly its year and the final fit uses every row; a forbidden feature stops training; training refuses rows from the test years |
 | `test_spread_end_to_end.py` | End to end | 10 | Real data: no year crosses the split and no fire is on both sides; step, fire, row and positive counts match the build audit; the simulator's 150 published test steps are all included; rebuilding a test fire from the processed dataset gives exactly the saved cell-table rows; reloading every saved model (8 per-cell, 2 CNNs) reproduces its published recall on the 150 published steps; the simulator reproduces its published score; every model's headline recall is the mean of its 770 step scores; the CNN beats the simulator with a 95% interval above zero; every step score shown in the viewer equals the comparison's |
+| `test_ignition_bridge.py` | Unit | 14 | Link with capability 1 (offline, synthetic grids): the window snaps to the fuel map's lattice and contains the start; it grows with run length within 10–35 km; local standard time follows the dataset; the start moves off water only to burnable fuel within 1 km; tuning years must end before 2019 and no split may contain 2019; ties go to the higher IoU; the bridge refuses settings tuned or tested on 2019; only scars of fires that started on or after the run date are repaired; in a uniform forest with a west wind the fire runs east; reached cells sit on the 375 m grid once each; the hourly burned area never shrinks and ends at the run's total, with one wind record per hour (the demo animation); longer runs burn more; no burnable fuel gives no spread with a reason; run length and start hour are validated |
 
 ### Latest run (2026-11-18)
 
@@ -382,6 +532,12 @@ fitted models, and are skipped when those files are absent (a fresh clone).
 | `test_spread_end_to_end.py` | 10 passed (22 s) |
 | **All** | **54 passed in 54 s** |
 | All, without the generated files | 44 passed, 10 end-to-end tests skipped, no failures |
+
+On 2026-11-19, after the link with capability 1 was added, the
+`test_ignition_bridge.py` tests ran: 14 passed (0.8 s). The simulator tests
+were run again (15 passed). So were the real-fire replay tests (3 passed),
+which confirm the simulator still reproduces its published scores after its
+weather preparation was moved into a shared function.
 
 What the end-to-end tests confirmed on the real data:
 

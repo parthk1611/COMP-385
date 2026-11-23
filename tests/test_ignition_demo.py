@@ -5,6 +5,7 @@ import json
 import tempfile
 import threading
 import unittest
+from unittest import mock
 from http.server import ThreadingHTTPServer
 from pathlib import Path
 from urllib.error import HTTPError
@@ -26,7 +27,7 @@ from scripts.ignition_demo.common import read_json, write_json
 from scripts.ignition_demo.common import (
     CACHE, OUTPUT, FEATURE_NAMES, alert_policy, checked_probabilities, confusion, validate_date,
 )
-from scripts.ignition_demo.server import DemoStore, make_handler
+from scripts.ignition_demo.server import DemoStore, SpreadUnavailable, make_handler, spread_parameters
 
 
 class PolicyTests(unittest.TestCase):
@@ -65,6 +66,13 @@ class PolicyTests(unittest.TestCase):
     def test_missing_artifacts_have_recovery_instruction(self):
         with tempfile.TemporaryDirectory() as temporary, self.assertRaisesRegex(FileNotFoundError, "reconstruct first"):
             DemoStore(Path(temporary), Path(temporary))
+
+    def test_spread_parameters_default_to_afternoon_day_run_and_are_bounded(self):
+        self.assertEqual(spread_parameters({}), (14, 24))
+        self.assertEqual(spread_parameters({"start_hour": ["0"], "hours": ["72"]}), (0, 72))
+        for params in [{"start_hour": ["24"]}, {"start_hour": ["-1"]}, {"hours": ["0"]}, {"hours": ["73"]}, {"hours": ["1.5"]}, {"start_hour": ["noon"]}]:
+            with self.subTest(params=params), self.assertRaises(ValueError):
+                spread_parameters(params)
 
 
 def export_fixture(root):
@@ -119,7 +127,8 @@ def export_fixture(root):
 class HttpTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.temporary = tempfile.TemporaryDirectory()
+        # Windows cannot delete the cache files while the store still memory-maps them.
+        cls.temporary = tempfile.TemporaryDirectory(ignore_cleanup_errors=True)
         cls.output, cls.cache, cls.grid_path, cls.X, cls.y, cls.bundle = export_fixture(cls.temporary.name)
         cls.store = DemoStore(cls.output, cls.cache, cls.grid_path)
         cls.server = ThreadingHTTPServer(("127.0.0.1", 0), make_handler(cls.store))
@@ -179,6 +188,29 @@ class HttpTests(unittest.TestCase):
         with self.assertRaises(HTTPError) as raised:
             self.get("/api/cell?date=2019-05-01&grid_id=unknown")
         self.assertEqual(raised.exception.code, 404)
+
+    def test_spread_runs_from_the_cell_centre_and_maps_errors(self):
+        """The spread route seeds the bridge at the selected cell's centre; the bridge itself is replaced here."""
+        calls = []
+
+        def bridge(longitude, latitude, day, hour, hours):
+            calls.append((longitude, latitude, day, hour, hours))
+            if hours == 6:
+                raise SpreadUnavailable("weather service unreachable")
+            return {"spread": True, "start": {"local_date": day, "hours": hours}, "reached_cells": [{"x": 0, "y": 0, "minutes": 0.0}]}
+
+        with mock.patch("scripts.ignition_demo.server.run_spread_bridge", bridge):
+            with self.get("/api/spread?date=2019-05-01&grid_id=cell&start_hour=9&hours=48") as response:
+                result = json.load(response)
+            self.assertEqual(calls[-1], (-80.0, 50.0, "2019-05-01", 9, 48))
+            self.assertEqual(result["ignition"]["grid_id"], "cell")
+            self.assertEqual(result["ignition"]["score"], self.store.cell("2019-05-01", "cell")["score"])
+            for query, code in [("?date=2019-05-01&grid_id=unknown", 404), ("?date=2019-05-01&grid_id=cell&hours=6", 502),
+                                ("?date=2019-05-01", 400), ("?date=2019-05-01&grid_id=cell&hours=100", 400),
+                                ("?date=2020-07-01&grid_id=cell", 400)]:
+                with self.subTest(query=query), self.assertRaises(HTTPError) as raised:
+                    self.get("/api/spread" + query)
+                self.assertEqual(raised.exception.code, code)
 
     def test_static_allowlist_and_csv_headers(self):
         with self.get("/") as response:

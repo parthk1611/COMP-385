@@ -8,6 +8,8 @@ import csv
 import io
 import json
 import logging
+import subprocess
+import sys
 import threading
 import webbrowser
 from functools import lru_cache
@@ -26,6 +28,48 @@ from scripts.ignition_modeling.data import load_cache
 from scripts.ignition_modeling.run import predict_bundle
 from scripts.ignition_modeling.weather import sha256
 from .common import CACHE, OUTPUT, WEB, alert_policy, checked_probabilities, confusion, nullable, read_json, validate_date
+
+
+SPREAD_ROOT = ROOT / "capability_2_fire_spread"
+SPREAD_TIMEOUT_S = 600
+
+
+class SpreadUnavailable(RuntimeError):
+    """The spread simulation could not run (missing tuning, network failure, bad source data)."""
+
+
+def spread_parameters(params):
+    """Validate the spread request's start hour (local standard time, 0-23) and duration (1-72 h)."""
+    try:
+        hour = int(params.get("start_hour", ["14"])[0])
+        hours = int(params.get("hours", ["24"])[0])
+    except ValueError:
+        raise ValueError("start_hour and hours must be whole numbers") from None
+    if not 0 <= hour <= 23:
+        raise ValueError("start_hour must be 0-23")
+    if not 1 <= hours <= 72:
+        raise ValueError("hours must be 1-72")
+    return hour, hours
+
+
+def run_spread_bridge(longitude, latitude, day, hour, hours):
+    """Run capability 2's FBP bridge in its own process; the two capabilities' `scripts` packages must not mix."""
+    command = [sys.executable, "-m", "scripts.spread_modeling.ignition_bridge", "--longitude", repr(float(longitude)),
+               "--latitude", repr(float(latitude)), "--date", day, "--hour", str(hour), "--hours", str(hours)]
+    try:
+        done = subprocess.run(command, cwd=SPREAD_ROOT, capture_output=True, text=True, timeout=SPREAD_TIMEOUT_S, check=False)
+    except subprocess.TimeoutExpired:
+        raise SpreadUnavailable(f"The spread simulation took longer than {SPREAD_TIMEOUT_S} s") from None
+    lines = done.stdout.strip().splitlines()
+    try:
+        result = json.loads(lines[-1]) if lines else None
+    except json.JSONDecodeError:
+        result = None
+    if done.returncode != 0 or not isinstance(result, dict) or "error" in result:
+        logging.error("Spread bridge failed (%s): %s", done.returncode, done.stderr[-2000:])
+        message = result.get("error") if isinstance(result, dict) else None
+        raise SpreadUnavailable(message or "The spread simulation failed; see the local server window")
+    return result
 
 
 class DemoStore:
@@ -88,6 +132,8 @@ class DemoStore:
             raise ValueError("Duplicate reference grid IDs")
         self.ids = np.memmap(cache / "grid.u16", dtype="uint16", mode="r", shape=(len(self.y),))
         self.lock = threading.RLock()
+        self.spread_lock = threading.Lock()
+        self.spread_results = {}
         self.results = {}
         self.metadata = {
             "title": "Ontario Ignition Atlas", "first_date": "2019-05-01", "last_date": "2019-10-31",
@@ -158,6 +204,23 @@ class DemoStore:
                 "features": {name: nullable(X[i, j]) for j, name in enumerate(FEATURE_NAMES)},
                 "context_note": "Inputs are context, not causal explanations of this score."}
 
+    def spread(self, day, grid_id, hour, hours):
+        """FBP spread from this cell's centre, starting at `hour` local standard time on `day` (retrospective)."""
+        if grid_id not in self.lookup:
+            raise KeyError("Unknown grid cell")
+        _, _, p = self.day(day)
+        row = self.grid.iloc[self.lookup[grid_id]]
+        key = (day, grid_id, hour, hours)
+        with self.spread_lock:  # one simulation at a time; repeated requests are served from memory
+            if key not in self.spread_results:
+                result = run_spread_bridge(row.centroid_longitude, row.centroid_latitude, day, hour, hours)
+                result["ignition"] = {"grid_id": grid_id, "date": day, "score": float(p[self.lookup[grid_id]]),
+                                      "seed": "10 km cell centre"}
+                if len(self.spread_results) >= 64:
+                    self.spread_results.pop(next(iter(self.spread_results)))
+                self.spread_results[key] = result
+            return self.spread_results[key]
+
     def download(self, day):
         X, y, p = self.day(day)
         stream = io.StringIO(newline="")
@@ -193,7 +256,7 @@ def make_handler(store):
                     self.reply(200, store.metadata)
                 elif request.path == "/api/grid":
                     self.reply(200, store.map_grid())
-                elif request.path in ("/api/predictions", "/api/cell", "/api/download"):
+                elif request.path in ("/api/predictions", "/api/cell", "/api/download", "/api/spread"):
                     if len(params.get("date", [])) != 1:
                         raise ValueError("Supply exactly one date")
                     day = validate_date(params["date"][0])
@@ -203,6 +266,11 @@ def make_handler(store):
                         if len(params.get("grid_id", [])) != 1:
                             raise ValueError("Supply exactly one grid_id")
                         self.reply(200, store.cell(day, params["grid_id"][0]))
+                    elif request.path == "/api/spread":
+                        if len(params.get("grid_id", [])) != 1:
+                            raise ValueError("Supply exactly one grid_id")
+                        hour, hours = spread_parameters(params)
+                        self.reply(200, store.spread(day, params["grid_id"][0], hour, hours))
                     else:
                         self.reply(200, store.download(day), "text/csv; charset=utf-8", f"ignition_{day}.csv")
                 elif request.path in ("/", "/app.js", "/style.css"):
@@ -220,6 +288,8 @@ def make_handler(store):
                 self.reply(400, {"error": str(error)})
             except KeyError as error:
                 self.reply(404, {"error": str(error).strip("'")})
+            except SpreadUnavailable as error:
+                self.reply(502, {"error": str(error)})
             except FileNotFoundError:
                 self.reply(503, {"error": "Required local artifact is unavailable; rebuild the demo"})
             except (BrokenPipeError, ConnectionResetError):
