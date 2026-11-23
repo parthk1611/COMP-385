@@ -60,9 +60,12 @@ PUBLISHED_SETTING = (0.8, 0.25)
 ROS_SCALES = [round(v, 2) for v in np.arange(0.2, 1.61, 0.1)]  # 15 values
 FLANK_SCALES = [0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.4, 0.5, 0.6, 0.75, 1.0]  # 11 values
 REPORT = MODELING_DOCS / "bridge_simulator_tuning.json"  # what ignition_bridge.py reads
-GRID = MODELING_DOCS / "bridge_simulator_grid.csv"
-TUNE_STEPS = MODELING_DOCS / "bridge_simulator_tune_steps.csv"
-TEST_STEPS = MODELING_DOCS / "bridge_simulator_test_steps.csv"
+
+
+def outputs(tag: str = "") -> tuple:
+    """Report, grid, tuning-step and test-step files; an empty tag writes the files the bridge reads."""
+    stem = "bridge_simulator" + (f"_{tag}" if tag else "")
+    return tuple(MODELING_DOCS / f"{stem}{suffix}" for suffix in ("_tuning.json", "_grid.csv", "_tune_steps.csv", "_test_steps.csv"))
 
 
 def eligible_fires(first_year: int, last_year: int, tuning: bool = True) -> list[str]:
@@ -91,11 +94,20 @@ def replay_all(pool: Pool, fires: list[str], setting: tuple[float, float]) -> pd
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--workers", type=int, default=12)
+    parser.add_argument("--tune-years", type=int, nargs=2, default=TUNE_YEARS, metavar=("FIRST", "LAST"))
+    parser.add_argument("--test-years", type=int, nargs=2, action="append", metavar=("FIRST", "LAST"),
+                        help="a test period; repeat for several (default: 2017-2018 and 2020-2024)")
+    parser.add_argument("--tag", default="", help="suffix for the output files; empty writes the files the bridge reads")
     args = parser.parse_args()
     log = action_log("bridge simulator tuning")
-    tune_fires = eligible_fires(*TUNE_YEARS)
-    test_fires = {period: eligible_fires(*period, tuning=False) for period in TEST_PERIODS}
-    log.info(f"START: grid of {len(ROS_SCALES)} rate scales x {len(FLANK_SCALES)} flank scales on {len(tune_fires)} fires from {TUNE_YEARS}; "
+    tune_years = tuple(args.tune_years)
+    test_periods = tuple(tuple(p) for p in args.test_years) if args.test_years else TEST_PERIODS
+    report_path, grid_path, tune_steps_path, test_steps_path = outputs(args.tag)
+    tune_fires = eligible_fires(*tune_years)
+    test_fires = {period: eligible_fires(*period, tuning=False) for period in test_periods}
+    if any(first <= tune_years[1] for first, _ in test_periods):
+        raise ValueError("test periods must come after the tuning years")
+    log.info(f"START: grid of {len(ROS_SCALES)} rate scales x {len(FLANK_SCALES)} flank scales on {len(tune_fires)} fires from {tune_years}; "
              f"then one test on {', '.join(f'{len(f)} fires from {p}' for p, f in test_fires.items())}; {RESERVED_YEAR} never read")  # fmt: skip
     began = time.perf_counter()
     with Pool(args.workers) as pool:
@@ -114,9 +126,9 @@ def main() -> None:
     published = pd.concat([published_scores for _, published_scores in tested.values()], ignore_index=True)
 
     MODELING_DOCS.mkdir(parents=True, exist_ok=True)
-    grid.round(4).to_csv(GRID, index=False)
-    tuning[(tuning.ros_scale == chosen[0]) & (tuning.flank_scale == chosen[1])].sort_values(["fire_id", "from_observation"]).round(4).to_csv(TUNE_STEPS, index=False)
-    test.sort_values(["fire_id", "from_observation"]).round(4).to_csv(TEST_STEPS, index=False)
+    grid.round(4).to_csv(grid_path, index=False)
+    tuning[(tuning.ros_scale == chosen[0]) & (tuning.flank_scale == chosen[1])].sort_values(["fire_id", "from_observation"]).round(4).to_csv(tune_steps_path, index=False)
+    test.sort_values(["fire_id", "from_observation"]).round(4).to_csv(test_steps_path, index=False)
 
     def label(period: tuple[int, int]) -> str:
         return f"{period[0]}-{period[1]}"
@@ -125,8 +137,8 @@ def main() -> None:
         "dataset_version": DATASET_VERSION,
         "created_at_utc": datetime.now(UTC).isoformat(),
         "purpose": f"FBP settings for the ignition -> spread bridge; no {RESERVED_YEAR} fire is read",
-        "tune_years": list(TUNE_YEARS),
-        "test_years": [list(period) for period in TEST_PERIODS],
+        "tune_years": list(tune_years),
+        "test_years": [list(period) for period in test_periods],
         "reserved_year": RESERVED_YEAR,
         "fire_selection": "every trackable, monitored (MON) fire of 500-30,000 ha in those years",
         "scoring": f"new 375 m cells between consecutive satellite passes {MIN_HOURS}-{MAX_HOURS} h apart with at least {MIN_NEW_CELLS} observed new cells",
@@ -145,10 +157,10 @@ def main() -> None:
         },  # fmt: skip
         "seconds": round(time.perf_counter() - began, 1),
     }
-    REPORT.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
+    report_path.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
     pooled = report["test"]["pooled"]
     log.info(f"DONE: test {pooled['chosen']['steps']} steps of {pooled['chosen']['fires']} fires: recall {pooled['chosen']['mean_recall']} "
-             f"(published setting {pooled['published_0.8_0.25']['mean_recall']}, even growth {pooled['chosen']['mean_even_growth_recall']}); wrote {REPORT.name}")  # fmt: skip
+             f"(published setting {pooled['published_0.8_0.25']['mean_recall']}, even growth {pooled['chosen']['mean_even_growth_recall']}); wrote {report_path.name}")  # fmt: skip
 
 
 if __name__ == "__main__":
